@@ -11,5 +11,6 @@ Welcome to the DeltaV AI Integration vault. This serves as a hub for all notes a
 - [[06-Systematic-Approach-for-Recommendation/Overview|Systematic Approach]]
 - [[07-Iterative-Improvement-and-Learning/Overview|Iterative Improvement]]
 - [[08-Work-Tracking-and-Progress/Daily-Progress-Log|Work Tracking & Progress]]
+- [[GitHub-Integration]]
 
 Use the notes in each section to navigate and update progress as the project evolves.
