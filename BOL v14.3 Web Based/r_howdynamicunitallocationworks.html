@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="How dynamic unit allocation works" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="dynamic unit allocation, unit allocation, programmatic unit allocation, auto-select units, equipment trains, unit selection policy, unit selection" name="DC.subject" /><meta content="dynamic unit allocation, unit allocation, programmatic unit allocation, auto-select units, equipment trains, unit selection policy, unit selection" name="keywords" /><meta content="c_dynamic_unit_allocation.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_howdynamicunitallocationworks" name="DC.Identifier" /><title>How dynamic unit allocation works</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_dynamic_unit_allocation.html" /><link rel="next" href="c_dua_unitautoselectionprocess.html" /></head><body class="fixed" id="r_howdynamicunitallocationworks" data-relpath="r_howdynamicunitallocationworks.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_howdynamicunitallocationworks"></a>
+
+<h1 class="topictitle1">How dynamic unit allocation works</h1>
+<div><div></div>
+<div class="section" id="r_howdynamicunitallocationworks__section_901F98EF2DB04914AB254442B29F603A"><a name="r_howdynamicunitallocationworks__section_901F98EF2DB04914AB254442B29F603A"></a><p>Unit selection is done in the context of a unit alias. A unit alias represents one of the units that the recipe requires. Typically several unit procedures can run on the same unit (where the steps are using the same unit alias). When a unit is selected it is assigned to a unit alias. Once a unit is assigned, all unit procedures using that unit alias run on the same unit.</p>
+<p>Unit aliases can have one of two selection modes, From_Policy or Defer. The selection mode controls whether the unit selection is performed by the system (From_Policy) or by the operator (Defer).</p>
+<p>Unit aliases (in an equipment train class) that are resolved using a unit selection policy (a From_Policy selection mode) must have the policy specified. </p>
+<p>Additionally, the initial selection mode (From_Policy or Defer), must be selected for each unit alias in the equipment train class that uses a unit selection policy. This controls what the selection mode is when the batch is created. The operator (with the appropriate key) can change the mode when the batch is created or when rebinding equipment.</p>
+<div class="note"><span class="notetitle">Note:</span> <p>The operator needs the key for the BATCH_CHANGE_SELECTION_MODE lock to change the selection mode of a unit alias.</p>
+</div>
+<p>Operator selected units (that is, where the selection mode is Defer) are filtered by the equipment configuration factors. Programmatically allocated units are further processed by the downstream equipment filtering, priority choice sorting and run-time equipment filtering.</p>
+<p>Dynamic unit allocation filters the list of all possible units for each unit alias based on the following factors:</p>
+<a name="r_howdynamicunitallocationworks__ul_40432EE431B640FF9B20067DC692F72F"></a><ul id="r_howdynamicunitallocationworks__ul_40432EE431B640FF9B20067DC692F72F">
+<li id="r_howdynamicunitallocationworks__li_DF9446FC644C4A40831C64C7B80216B2"><div class="li_content"><p><strong>Equipment Configuration</strong> - Equipment configuration is applied to all unit aliases, regardless of selection mode (Defer or From_Policy)
+</p>
+<a name="r_howdynamicunitallocationworks__ul_A192ECB4212A451A8C8682BB5E4878B9"></a><ul id="r_howdynamicunitallocationworks__ul_A192ECB4212A451A8C8682BB5E4878B9">
+<li id="r_howdynamicunitallocationworks__li_DA0E6B7A2C4F4A1C892179305C383B07"><div class="li_content"><p>The unit is assigned to this Batch Executive.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_5AEF03FCF4E9444F952584DBF74689ED"><div class="li_content"><p>The unit belongs to an equipment train that is used by the procedure.</p>
+</div></li>
+
+</ul>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_17CF74712A384AC59816DC2C74C64BFF"><div class="li_content"><p><strong>Downstream Equipment Filtering</strong> - Downstream filtering is applied to unit aliases with Defer and From_Policy selection mode. The order of the bullets represents the precedence of the filters.
+</p>
+<a name="r_howdynamicunitallocationworks__ul_6F2BCD5BB7F84FFD8CFCC2DAEDBE73A2"></a><ul id="r_howdynamicunitallocationworks__ul_6F2BCD5BB7F84FFD8CFCC2DAEDBE73A2">
+<li id="r_howdynamicunitallocationworks__li_03DED0C456AC46469F43A006DD84B88B"><div class="li_content"><p>The unit is valid for the unit alias as defined in the equipment train referenced.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_70F6909B99E94A3D8F256C30FD35ACDF"><div class="li_content"><p>The unit can be resolved to the downstream unit alias&#39; unit class (where downstream unit aliases are configured). That is the unit has the downstream units as required by equipment train configuration.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_C4EFA931E6E842E49DF104D91EFB23F9"><div class="li_content"><p>The unit is configured as downstream of the preceding unit module (where downstream units are configured). That is, the unit is downstream of the assigned upstream unit (for this, there must be a unit alias that has the current (being evaluated) unit alias downstream of it.</p>
+</div></li>
+
+</ul>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_9429F842F8984FEEADFB95B42CEE567D"><div class="li_content"><p><strong>Equipment Sorting</strong> - Equipment sorting is based on the priority choice in the unit selection policy and is applied after downstream equipment filtering. Equipment sorting is only performed on unit aliases with the From_Policy selection mode. The following choices are available (only one can be selected per unit selection policy):
+</p>
+<a name="r_howdynamicunitallocationworks__ul_3F96BCF1FED74A758882B5D0FB3DEF8E"></a><ul id="r_howdynamicunitallocationworks__ul_3F96BCF1FED74A758882B5D0FB3DEF8E">
+<li id="r_howdynamicunitallocationworks__li_C0D2C607D88A447A82948F575BB259EF"><div class="li_content"><p>First Available where the list of units is sorted by the order in the equipment train. If the equipment train does not have an ordered list of units, the list is sorted alphabetically.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_D2B7CC0CD56B448084CE9FC39BC0D160"><div class="li_content"><p>Least Recently Used where the list of units is sorted by the $IDLE_TIME parameter value in descending order. $IDLE_TIME is reset when the NUMPHASES parameter is not zero.</p>
+</div></li>
+
+</ul>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_F51224DCA192488C96C47E62E770995B"><div class="li_content"><p><strong>Run-Time Equipment Filtering</strong> - Run-time equipment filtering is applied only to aliases with From_Policy selection mode. Acquire requests are sent to all possible units and if a unit is not acquired within 10 seconds (the default timeout period), the process is repeated until a unit is acquired. 
+ The order of the bullets represents the precedence of the run-time filtering.
+</p>
+<a name="r_howdynamicunitallocationworks__ul_DAD1146A1CF640D5A45189CDFA456CA0"></a><ul id="r_howdynamicunitallocationworks__ul_DAD1146A1CF640D5A45189CDFA456CA0">
+<li id="r_howdynamicunitallocationworks__li_226725154CE346BA85800CE8994C9301"><div class="li_content"><p>Another step or unit alias in the batch is not already using the unit.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_CC4696D9CA4E479D863438450F62B56F"><div class="li_content"><p>The unit&#39;s MSTATE parameter&#39;s value is In Service.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_3996DB68BA9B47BF84983302B2835D72"><div class="li_content"><p>The unit&#39;s $AVAILABLE parameter&#39;s value is OK.</p>
+</div></li>
+
+<li id="r_howdynamicunitallocationworks__li_DE7C7B6F7FF348A0B03300AB0B35B4C7"><div class="li_content"><p>The unit selection policy evaluates to TRUE for this unit.</p>
+</div></li>
+
+</ul>
+</div></li>
+
+</ul>
+<p>The unit selection policy is used to determine valid units during the execution of a recipe. The policy allows units to be discarded from selection based on the evaluation of the expression and applies the priority choice option to the remaining units.  The unit selection policy is evaluated one time through the list of possible units (unless the evaluation times out).</p>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

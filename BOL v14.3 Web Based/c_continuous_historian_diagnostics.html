@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV Diagnostics and the Continuous Historian subsystem" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Maintain" name="DC.Coverage" /><meta content="Continuous Historian subsystem, diagnostics, DeltaV Continuous Historian, Advanced Continuous Historian, Advanced Continuous Historian, PI Server, PI Server" name="DC.subject" /><meta content="Continuous Historian subsystem, diagnostics, DeltaV Continuous Historian, Advanced Continuous Historian, Advanced Continuous Historian, PI Server, PI Server" name="keywords" /><meta content="c_workstations.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_continuous_historian_diagnostics" name="DC.Identifier" /><title>DeltaV Diagnostics and the Continuous Historian subsystem</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_configuring_the_continuous_historian_properties.html" /><link rel="next" href="r_client_application_support.html" /></head><body class="fixed" id="c_continuous_historian_diagnostics" data-relpath="c_continuous_historian_diagnostics.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_continuous_historian_diagnostics"></a>
+
+<h1 class="topictitle1">DeltaV Diagnostics and the Continuous Historian
+	 subsystem</h1>
+<div><div></div>
+ 
+	 <p>Only top-level diagnostic information about the health and performance
+		of the Continuous Historian subsystem is available as diagnostic parameters and
+		visible in DeltaV Diagnostics. Diagnostic parameters expose status Booleans or
+		numeric levels that give you a way to use custom alarm logic to draw more
+		attention to problems in the historian. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> The Continuous Historian subsystem exposed in DeltaV Diagnostics 
+		<span>depends on which historian</span> is<span>
+		  installed</span>, as follows: 
+		<a name="c_continuous_historian_diagnostics__ul_CDA837D5F3694DC6805AA76DD9803091"></a><ul id="c_continuous_historian_diagnostics__ul_CDA837D5F3694DC6805AA76DD9803091"> 
+		  <li id="c_continuous_historian_diagnostics__li_4F2F2DFD193F4183A2DC737FBF68DC4A"><div class="li_content"> Diagnostic parameters for
+			 the CHIST subsystem are listed for a workstation where the DeltaV Continuous
+			 Historian is installed while DeltaV services are running. 
+		  </div></li>
+ 
+		  <li id="c_continuous_historian_diagnostics__li_B2BFFBF214944907805A3BA4F174E455"><div class="li_content">Some
+			 diagnostic parameters for the CHIST subsystem are also listed when the Advanced
+			 Continuous Historian or OSIsoft PI Server is installed on an Application
+			 Station, as indicated in the footnotes for the following table. 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <p>The Continuous Historian subsystem exposes the following parameters: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_continuous_historian_diagnostics__table_A654F2BAC2B544F3B980B8850826BD8D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_continuous_historian_diagnostics__table_A654F2BAC2B544F3B980B8850826BD8D" rules="all" summary="" width="100%"><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d870623e76" valign="top" width="19.047619047619047%"> 
+				  <p>Name 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d870623e82" valign="top" width="19.047619047619047%"> 
+				  <p>Type 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d870623e88" valign="top" width="61.904761904761905%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> BadRead 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history collection tags that should be on scan
+				  but cannot be read for data sampling. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> BadWrite<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history collection tags that should be on scan
+				  but cannot be written to historical data storage. If greater than 0, forces
+				  OINTEG to 1 (BAD). 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> DCLoad 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Float32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Data collection loading factor. Percent of time available
+				  for scanning used for scanning. For example, 20 indicates that scanning took
+				  20% of the time available to the scanning process. Greater than 100 indicates
+				  that scanning is not keeping up with the configured scan rates. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> DCStop<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Boolean 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> 
+				  <span class="nowrap">0 = NO</span>, 
+				  <span class="nowrap">1 = YES</span>. The string value is
+				  displayed in Diagnostics. 
+				  <p>YES, if real-time data collection has been stopped due to: 
+				  </p>
+ 
+				  <a name="c_continuous_historian_diagnostics__ul_75419ADDA8F1424DAD6829A6ACDBEB3F"></a><ul id="c_continuous_historian_diagnostics__ul_75419ADDA8F1424DAD6829A6ACDBEB3F"> 
+					 <li id="c_continuous_historian_diagnostics__li_0C096FBE83D9400E8C039D6680338EEB"><div class="li_content"> Data storage
+						database could not be opened for writing 
+					 </div></li>
+ 
+					 <li id="c_continuous_historian_diagnostics__li_3B2E0B75C96D4205B20D9295C5E56256"><div class="li_content"> Data storage disk
+						has too little free space for normal operation 
+						<p>If YES, forces OINTEG to 1 (BAD). 
+						</p>
+ 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> ErlActive<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of early active historical data set creations since
+				  DeltaV software and the DeltaV Continuous Historian were started. The number of
+				  times that the current historical data set created was size-limited rather than
+				  corresponding to the desired time period. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> Exist<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Boolean 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> 1 if the DeltaV Continuous Historian is installed on this
+				  workstation; otherwise, reports a read error. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> ExpFails<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of failed attempts to export a historical data set
+				  since DeltaV software and the DeltaV Continuous Historian were started. Remains
+				  0 if no Automatic Export directory is configured. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%">HistRev 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%">String 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%">Indicates the revision level of the
+				  continuous historian software. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> HsLoad<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Float32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Historical data storage process loading factor. Percent of
+				  time used in each historical data storage cycle. For example, 20 indicates
+				  that, in the last historical data storage, 20% of the time was used, and 80% of
+				  the time was waiting for the next storage cycle. Greater than 100 indicates
+				  that the historical data server’s memory data cache is filling because storage
+				  is not keeping up with the scanning interface. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> HsWrites<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of samples written to historical data storage during
+				  the last storage cycle. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> Items<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history collection tags currently configured.  
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> ItemPSec<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history collection tags currently being scanned
+				  per second. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%">Load<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%">Float32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%">The current loading status of the scan system
+				  as a percentage, from 0 to 100 percent. For example, a value of 1.1 indicates
+				  that the scan system is 1.1% loaded. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> LongRead<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of long outstanding reads that could be causing a
+				  loading problem on the server but are not included in the SAMPREAD value. 
+				  <a name="c_continuous_historian_diagnostics__ul_BE78F1FC96174390B88D62A61FA3B143"></a><ul id="c_continuous_historian_diagnostics__ul_BE78F1FC96174390B88D62A61FA3B143"> 
+					 <li id="c_continuous_historian_diagnostics__li_8131D2D91B1848B7A7C4BF2601B47B16"><div class="li_content"> If 0, no reads
+						are in progress. In this case, a non-incremental SAMPREAD value indicates that
+						no read activity has occurred in the last reporting period. 
+					 </div></li>
+ 
+					 <li id="c_continuous_historian_diagnostics__li_AC303B3E6B3F4188AC5DE100DA47A864"><div class="li_content"> If greater than
+						zero, at least one, possibly significant read is in progress. In this case, the
+						LONGREAD value indicates the duration for the longest read in progress. The
+						duration indicates the significance of the read. 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> NumClient<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of clients connected to the historical data server. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> OInteg<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Boolean 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Composite integrity of the DeltaV Continuous Historian data
+				  collection and historical data server. 
+				  <span class="nowrap">0 = GOOD</span> , 
+				  <span>1 = BAD</span>. The string value is displayed in Diagnostics. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> OnScan<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history collection tags currently configured that
+				  are on scan; excludes items that are disabled or cannot be read or stored to
+				  historical database. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> PriUtil<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Float32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Primary storage utilization factor. Percent of the Primary
+				  storage target size that is currently consumed by active and current historical
+				  data sets. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> PriXsMb<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Excess disk space in MB (1,048,576 bytes) currently on the
+				  Primary storage drive if the Primary storage area reached the configured size
+				  target. Computed as: 
+				  <p> 
+					 <var class="varname">available disk space on the Primary storage
+						drive</var> – 
+					 <var class="varname">Primary storage size target</var> + 
+					 <var class="varname">Primary storage used</var> 
+				  </p>
+ 
+				  <p>This value becomes negative if there is insufficient storage
+					 on the Primary storage drive for the Primary storage area to reach its
+					 configured maximum size target; that is, if disk space is likely to run out,
+					 which will cause history collection to stop. If less than 0, forces OINTEG to 1
+					 (BAD). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> ReadPSec<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of history samples sent to historical data storage
+				  per second. When compression is enabled, only samples for parameters that have
+				  changed are sent to historical data storage. When compression is disabled, a
+				  sample is sent each scan cycle regardless of a parameter change being detected.
+				  
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> SampRead<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> An incremental count of all the data samples read since the
+				  historical data server started. This count does not include reads in progress.
+				  Under normal operating conditions, the historical data server updates its
+				  diagnostic information every 30 seconds. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> ScanChks<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Items scanned activity counter, displaying in Diagnostics
+				  the number of times since the DeltaV system has been started or restarted that
+				  it checks a history tag for a new value. As long as one or more history tags
+				  are configured for data collection, this parameter increases until it reaches
+				  its maximum value, 2<sup>32</sup>, and rolls over to zero. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> SCTORec<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Scanner connection timeout recoveries, displaying in
+				  Diagnostics the number of times since the DeltaV system has been started or
+				  restarted that the scanning interface has recovered from a connection timeout.
+				  These timeouts tend to occur on workstations that are extremely overloaded with
+				  interactive activities for many seconds at a time. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> Server<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Boolean 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Historical data server is available. 
+				  <span class="nowrap">0 = NO</span> (not available), 
+				  <span class="nowrap">1 = YES</span> (available). 
+				  <p>Forces OINTEG to 1 (BAD) if SERVER is equal to 0 and ITEMS is
+					 greater than 0. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> SiLoad<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Float32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Scanning interface loading factor. Percent of time used in
+				  each scanning interface data transfer. For example, 20 indicates that the
+				  scanned data transfer took 20% of the cycle time, and 80% of the time was
+				  waiting for the next transfer cycle. Greater than 100 indicates that the
+				  scanner process in memory data cache is filling because the scanning interface
+				  is not keeping up with scanning. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> SiWrites<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__DVCH</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> Int32 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> Number of samples transferred by the scanning interface
+				  during the last transfer cycle. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d870623e76 " valign="top" width="19.047619047619047%"> SwRev<a href="c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI">c_continuous_historian_diagnostics.html#c_continuous_historian_diagnostics__ACH_DVCH_PI</a>
+				  
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e82 " valign="top" width="19.047619047619047%"> String 
+				</td>
+ 
+				<td class="cellrowborder" headers="d870623e88 " valign="top" width="61.904761904761905%"> The DeltaV software revision number. 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div><div class="p"><a id="c_continuous_historian_diagnostics__ACH_DVCH_PI"><sup>1</sup></a>  DeltaV Continuous
+					 Historian, Advanced Continuous Historian, and PI Server</div><div class="p"><a id="c_continuous_historian_diagnostics__DVCH"><sup>2</sup></a>  DeltaV Continuous
+					 Historian only</div><div class="p"><a id="c_continuous_historian_diagnostics__ACH_PI"><sup>3</sup></a>  Advanced
+					 Continuous Historian and PI Server</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

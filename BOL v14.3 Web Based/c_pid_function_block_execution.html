@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="PID function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_io_config.html" name="DC.Relation" scheme="URI" /><meta content="c_io_options.html" name="DC.Relation" scheme="URI" /><meta content="c_control_options.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_pid.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_pid_function_block_execution" name="DC.Identifier" /><title>PID function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_pid.html" /><link rel="next" href="c_pid_function_block_modes.html" /></head><body class="fixed" id="c_pid_function_block_execution" data-relpath="c_pid_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_pid_function_block_execution"></a>
+
+<h1 class="topictitle1">PID function block execution</h1>
+<div><div></div>
+ 
+	 <p id="c_pid_function_block_execution__blockexecutionpidfunctionblock"><a name="c_pid_function_block_execution__blockexecutionpidfunctionblock"></a>The PID function block provides
+		proportional (P) + integral (I) + derivative (D) control. Two PID equation
+		forms are supported in the block, both forms supporting external reset and
+		feedforward: 
+	 </p>
+ 
+	 <p>A conventional Standard PID with feedforward, 
+		<br /><div class="imageleft"><img class="imageleft" src="newEqn1.gif" /></div><br />
+	 </p>
+ 
+	 <p>and Series PID with derivative filter applied only to derivative action,
+		with feedforward 
+	 </p>
+ 
+	 <br /><div class="imageleft"><img class="imageleft" src="newEqn2.gif" /></div><br />
+	 <p>Where: 
+	 </p>
+ 
+	 <p>E(s) is error (SP-PV) 
+	 </p>
+ 
+	 <p>KNL is nonlinear gain applied to P + I terms but not to D term.
+		Nonlinear action is activated in FRSIPID_OPTS by selecting 
+		<span class="uicontrol">Use Nonlinear Gain Modification</span>. 
+	 </p>
+ 
+	 <p><a name="c_pid_function_block_execution__image_0C96DB4DCA744B378748F4002B77EAB0"></a><img id="c_pid_function_block_execution__image_0C96DB4DCA744B378748F4002B77EAB0" src="fbImage103.gif" /> is reset time (parameter RESET)
+		in seconds. 
+	 </p>
+ 
+	 <p> 
+		<a name="c_pid_function_block_execution__image_A4F706A51E434CFE8C64C09B51DA32FB"></a><img id="c_pid_function_block_execution__image_A4F706A51E434CFE8C64C09B51DA32FB" src="fbImage104.gif" /> is derivative time (parameter
+		RATE) in seconds  
+	 </p>
+ 
+	 <p>GAIN<sub>a</sub> is normalized gain after scaling the parameter GAIN
+		from PV to OUT (DeltaV works in engineering units so it is necessary that the
+		parameter GAIN be scaled to maintain the meaning of the normalized entry). 
+	 </p>
+ 
+	 <p>F(s) is the feedforward contribution. 
+	 </p>
+ 
+	 <p>s is the Laplace notation for derivative with respect to time. 
+	 </p>
+ 
+	 <p id="c_pid_function_block_execution__knl"><a name="c_pid_function_block_execution__knl"></a>The following diagram illustrates how the nonlinear tuning
+		parameters are used in the calculation of KNL. 
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_execution__fig_3480AB250B2845BF8F981212120F9670"><a name="c_pid_function_block_execution__fig_3480AB250B2845BF8F981212120F9670"></a><div><span class="figcap">KNL calculation</span></div> 
+		 
+		<a name="c_pid_function_block_execution__image_D4EAD791313D4714899427022E363EFD"></a><img id="c_pid_function_block_execution__image_D4EAD791313D4714899427022E363EFD" src="KNL_Diag.gif" /> 
+	 </div>
+ 
+	 <p>Where: 
+	 </p>
+ 
+	 <p> 
+		<strong>NL_MINMOD</strong> is the gain applied when the absolute value of error is
+		less than NL_GAP. To get deadband behavior, set NL_MINMOD to 0. 
+	 </p>
+ 
+	 <p> 
+		<strong>NL_GAP</strong> is the control gap. When the absolute value of error is
+		less than NL_GAP, KNL = NL_MINMOD. 
+	 </p>
+ 
+	 <p> 
+		<strong>NL_TBAND</strong> is the transition band over which KNL is linearly
+		adjusted as a function of error. 
+	 </p>
+ 
+	 <p> 
+		<strong>NL_HYST</strong> is a hysteresis value. Until absolute value of error
+		exceeds NL_GAP + NL_HYST, KNL = NL_MINMOD. Once absolute value of error has
+		exceeded NL_GAP + NL_HYST, absolute value of error must return to a value less
+		than NL_GAP before KNL returns to a value of NL_MINMOD. If NL_GAP is 0, then
+		the value of NL_HYST has no meaning (effectively assumed to be 0). 
+	 </p>
+ 
+	 <p>You can select the specifics of block execution by configuring I/O
+		selection, signal conversion and filtering, feedforward calculations, tracking
+		variables, setpoint and output limiting, PID equation structures, and block
+		output action. The mode of the block determines setpoint and output selection. 
+	 </p>
+ 
+	 <p>The Use PIDPlus option in the FRSIPID_OPTS parameter is an enhancement
+		to the PID block that provides better control for applications in the following
+		areas:  
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__ul_F3EDD4CC326C400082ABF72A89B9326C"></a><ul id="c_pid_function_block_execution__ul_F3EDD4CC326C400082ABF72A89B9326C"> 
+		<li id="c_pid_function_block_execution__li_08304965C5B5452C80F9299E0F2C7812"><div class="li_content"> 
+		  <p>exception reporting execution 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_D4970BB342654D22A50C1EAD61D8B716"><div class="li_content"> 
+		  <p>improved integral term algorithm 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_28271B24070E41E39022CFEEEB629D1B"><div class="li_content"> 
+		  <p>enhanced saturation recovery 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>  Use PIDPlus cannot be enabled in PID blocks assigned to H1 cards or
+		  to PID blocks converted for use in fieldbus devices. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>DeltaV Books Online provides general guidance for using the PIDPlus
+		feature. For help with assessing the benefits of PIDPlus for your particular
+		application, please contact your local Emerson representative or sales office. 
+	 </p>
+ 
+	 <p> 
+		<strong>Exception reporting</strong> 
+	 </p>
+ 
+	 <p>One increasingly common example is control using wireless transmitters
+		where exception reporting is used to increase battery life. Another example is
+		a process that uses an analyzer to measure the controlled variable, meaning new
+		updates can come at irregular intervals and the update rate is slower than the
+		block scan rate.  
+	 </p>
+ 
+	 <p>The Use PIDPlus option performs its time-based calculations based on the
+		actual time interval between measurements, not necessarily the block scan rate.
+		When Use PIDPlus is enabled, the PID block updates its reset and derivative
+		contribution to the control output only on scans where a new measurement is
+		available. 
+	 </p>
+ 
+	 <p>A conventional PID algorithm&#39;s control performance suffers when it
+		executes faster than new process data is available (the I and D terms continue
+		to update causing I to integrate and D to remain unchanged between reported
+		process value changes). 
+	 </p>
+ 
+	 <p> 
+		<strong>Integral term algorithm</strong> 
+	 </p>
+ 
+	 <p>When the Use PIDPlus option is enabled, the integral term algorithm is
+		enhanced and results in more robust control when the reset value approaches the
+		scan rate. In the more common case where RESET is significantly larger than the
+		scan rate, the integral term produces nearly the same results whether or not
+		Use PIDPlus is selected. 
+	 </p>
+ 
+	 <p> 
+		<strong>Enhanced saturation recovery</strong> 
+	 </p>
+ 
+	 <p>When Use PIDPlus is enabled, a feature referred to as enhanced
+		saturation recovery also becomes enabled. This feature&#39;s behavior is determined
+		by the parameter RECOVERY_FLTR. The block behavior is unchanged unless this
+		parameter value is modified from its default value. 
+	 </p>
+ 
+	 <p>Saturation refers to situations where the OUT parameter is limited at
+		the OUT_LO_LIM or OUT_HI_LIM value. The output may remain saturated during
+		normal operation, for example, in a pressure relief application where the
+		control valve remains closed unless a disturbance increases the pressure to the
+		point where the valve must open to maintain the setpoint. In other applications
+		the control valve continually regulates during normal operation. But the output
+		may temporarily be forced into saturation by a disturbance or setpoint change. 
+	 </p>
+ 
+	 <p>Enhanced saturation recovery provides control over saturation recovery,
+		that is, how soon and at what rate the output moves off the limit. 
+	 </p>
+ 
+	 <p>The default value of RECOVERY_FLTR is 1.0. Valid values are between 0.0
+		and 1.0. A value of 1.0 causes the saturation recovery identical to a PID
+		without this parameter. When Use PIDPlus is enabled, decreasing RECOVERY_FLTR
+		values result in a less filtered saturation recovery. For example, a value of
+		0.4 causes the valve in the fore-mentioned pressure relief application to come
+		off the seat sooner and open faster, with less pressure overshoot. A value of
+		0.0 results in the most aggressive response. 
+	 </p>
+ 
+	 <p>When Use PIDPlus is enabled, the block uses the RECOVERY_FLTR value only
+		when the output has been saturated continuously for a period equal to or longer
+		than the reset time. This prevents noise from causing erratic behavior as the
+		output approaches the limit. 
+	 </p>
+ 
+	 <p>Enhanced saturation recovery is independent of anti-reset windup, which
+		is not affected by the Use PIDPlus option. Enhanced saturation recovery 
+		modifies the algorithm while OUT is at a limit and suspends modification on the
+		scan after OUT moves off the limit. Anti-reset windup modifications occur when
+		OUT is off the limit and moving toward the ARW_HI_LIM or ARW_LO_LIM value. 
+	 </p>
+ 
+	 <p>Enhanced saturation recovery applies only in automatic modes.
+		Transitions out of Local Override mode are not affected by enhanced saturation
+		recovery. 
+	 </p>
+ 
+	 <p> 
+		<strong>I/O selection</strong> 
+	 </p>
+ 
+	 <p>When you configure the PID function block, you select whether the source
+		of the input value is a wired function block connection or a process input
+		channel. 
+	 </p>
+ 
+	 <p> 
+		<strong>Input from another block</strong> — When you want the source to be an input
+		from another function block, the input source (usually another block&#39;s output
+		value) is connected to the IN connector on the PID function block. With a
+		fieldbus extension, the connection to IN must be from another function block. 
+	 </p>
+ 
+	 <p> 
+		<strong>Input from a process input channel</strong> — When you want the source to
+		be an input from a process input channel, you configure the Device Signal Tag
+		(DST) of the desired channel in the IO_IN parameter. There is no IO_IN
+		parameter in the fieldbus extension. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> When IO_IN is configured and IN is connected, the I/O input channel
+		  referenced by IO_IN takes precedence and IN is ignored. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>You can configure anti-aliasing filtering, NAMUR limit detection, and
+		overrange/underrange detection for the channel parameters. 
+	 </p>
+ 
+	 <p> 
+		<strong>Simulation</strong> 
+	 </p>
+ 
+	 <p>To support testing, you can enable simulation. This allows the
+		measurement value and status to be supplied manually or from another block. 
+	 </p>
+ 
+	 <p>During configuration, decide whether you want the simulated value/status
+		to be entered manually into the function block or whether it will be supplied
+		by another block. 
+	 </p>
+ 
+	 <p>When the value is entered manually: 
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__ul_8A3F2B6668FC4A3487E2DD67D9E20D2C"></a><ul id="c_pid_function_block_execution__ul_8A3F2B6668FC4A3487E2DD67D9E20D2C"> 
+		<li id="c_pid_function_block_execution__li_00A442FEE9AE495E8C7E5AA9EACB55B1"><div class="li_content"> 
+		  <p>The operator first enables simulation by selecting the SIMULATE
+			 parameter and setting the 
+			 <span class="uicontrol">Simulate Enabled</span> check box in the 
+			 <span class="uicontrol">Simulate Enabled/Disabled</span> field. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_A6EF72C876284702A1E6FFCD100E9C1B"><div class="li_content"> 
+		  <p>When SIMULATE_IN is not connected (status = Bad: NotConnected), the
+			 operator enters the value to be used in the SIMULATE parameter 
+			 <span class="uicontrol">Simulate Value</span> field. In online operation, the
+			 operator can enter a simulated status value in the 
+			 <span class="uicontrol">Simulate Status</span> field. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> Make sure SIMULATE_IN is not connected if you want to enter the value
+		  or status manually. When SIMULATE_IN is connected, the value entered in the
+		  SIMULATE_IN 
+		  <span class="uicontrol">Simulate Value</span> field is used as the simulated
+		  value. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>When the value/status from another block is used: 
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__ul_F31AE811BDCD4B169262071AEE34BC9F"></a><ul id="c_pid_function_block_execution__ul_F31AE811BDCD4B169262071AEE34BC9F"> 
+		<li id="c_pid_function_block_execution__li_1B481D2EB9BA4D74B9934736F1228864"><div class="li_content"> 
+		  <p>During configuration, connect SIMULATE_IN to the desired block
+			 output or parameter. Do not enter a value in the 
+			 <span class="uicontrol">Simulate Value</span> field of the SIMULATE_IN input;
+			 the block uses the connected value automatically. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_4D001417AD8F4A888D0575B0004EDFD8"><div class="li_content"> 
+		  <p>During operation, the operator enables simulation by selecting the
+			 SIMULATE parameter and setting the 
+			 <span class="uicontrol">Simulate Enabled</span> check box in the 
+			 <span class="uicontrol">Simulate Enabled/Disabled</span> field. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> Do not enter a value for the SIMULATE_IN parameter. If you enter a
+		  value and the status of SIMULATE_IN is not Bad: NotConnected, the value entered
+		  for SIMULATE_IN overrides any value you enter in SIMULATE. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>There is no SIMULATE_IN in fieldbus. 
+	 </p>
+ 
+	 <p> 
+		<strong>Signal conversion</strong> 
+	 </p>
+ 
+	 <div class="p">Select direct, indirect, or indirect square root signal conversion with
+		the linearization type (L_TYPE) parameter: 
+	 <a name="c_pid_function_block_execution__ul_2CB74D5D8122441384CB2CA1C55BD5DA"></a><ul id="c_pid_function_block_execution__ul_2CB74D5D8122441384CB2CA1C55BD5DA"> 
+		<li id="c_pid_function_block_execution__li_84D1EB13F6734EF188F8650B836AB146"><div class="li_content"> 
+		  <p> 
+			 <strong>Direct signal conditioning</strong> — simply passes through the value
+			 accessed from the I/O channel (or the simulated value when simulation is
+			 enabled). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_8902717624FA49458EA0BE2E29C527A3"><div class="li_content"> 
+		  <p> 
+			 <strong>Indirect signal conditioning</strong> — converts the accessed channel
+			 input value (or the simulated value when simulation is enabled) to the range
+			 and units of the PV parameter (PV_SCALE). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_9CB13F0FDD494C2DAF9D5F6FB39B6B26"><div class="li_content"> 
+		  <p> 
+			 <strong>Indirect square root signal conditioning</strong> — converts the
+			 accessed channel input value (or the simulated value when simulation is
+			 enabled) by taking the square root of the value and scaling it to the range and
+			 units of the PV parameter (PV_SCALE). 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>You can view the accessed value (in percent) through the FIELD_VAL
+		parameter. 
+	 </p>
+ 
+	 <p>When the converted input value is below the limit specified by the
+		LOW_CUT parameter and the Low Cutoff I/O option (IO_OPTS) is enabled (True), a
+		value of 0.0 is used for the converted value (PV). This option can be useful
+		with zero-based measurement devices such a flowmeters. 
+	 </p>
+ 
+	 <div class="p">You can choose to reverse the range for conversion to account for
+		fail-open actuators by selecting the following I/O option: 
+	 <a name="c_pid_function_block_execution__ul_47E38C6F02D441628CA843BA5B484989"></a><ul id="c_pid_function_block_execution__ul_47E38C6F02D441628CA843BA5B484989"> 
+		<li id="c_pid_function_block_execution__li_73F377AEC53847E9A8A77CE2228FC5AB"><div class="li_content"> 
+		  <p> 
+			 <strong>Increase to Close</strong> — This option has an impact when a device
+			 signal tag is configured in IO_OUT. Increase to Close causes the milliamp
+			 signal on the analog output channel to be inverted in Man mode (and in Auto
+			 mode). That is, a full scale value on OUT will result in 4 mA on the channel.
+			 When IO_OUT is configured, the OUT value is the implied valve position and is
+			 not inverted when Increase to Close is True. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> You can set I/O options in Out of Service mode only. 
+		</p>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Feedforward Calculation</strong> 
+	 </p>
+ 
+	 <p>You can activate the feedforward function with the FF_ENABLE parameter.
+		When FF_ENABLE is True, the feedforward value (FF_VAL) is scaled (FF_SCALE) to
+		a common range for compatibility with the output scale (OUT_SCALE). A gain
+		value (FF_GAIN) is applied to achieve the total feedforward contribution. 
+	 </p>
+ 
+	 <p> 
+		<strong>Tracking</strong> 
+	 </p>
+ 
+	 <p>You can specify output tracking with control options and parameters. You
+		can set control options in Out of Service mode only. 
+	 </p>
+ 
+	 <p>The Track Enable control option (CONTROL_OPTS) must be True for the
+		track function to operate. When the Track in Manual control option is True,
+		tracking can be activated and maintained when the block is in Man mode. When
+		Track in Manual is False, tracking is disabled in Manual mode. Activating the
+		track function causes the block&#39;s actual mode to go to Local Override (LO). 
+	 </p>
+ 
+	 <p>The tracking value parameter (TRK_VAL) specifies the value to be
+		converted and tracked into the output when the track function is operating. The
+		track scale parameter (TRK_SCALE) specifies the range of TRK_VAL. 
+	 </p>
+ 
+	 <p>When the track control parameter (TRK_IN_D) is True and the Track Enable
+		control option is True, the TRK_VAL input is converted to the appropriate value
+		and output in units of OUT_SCALE. 
+	 </p>
+ 
+	 <p> 
+		<strong>Setpoint and output limit constraints</strong> 
+	 </p>
+ 
+	 <p>During download OUT_HI_LIM, OUT_LO_LIM, SP_HI_LIM, and SP_LO_LIM are set
+		to their configured values. If you have not changed these values from their
+		defaults they are set as follows during the first execution of the block: 
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__ul_AD3ED8088FA044CF8B415BF50383A4E2"></a><ul id="c_pid_function_block_execution__ul_AD3ED8088FA044CF8B415BF50383A4E2"> 
+		<li id="c_pid_function_block_execution__li_965330047B1E43218FD127A3DD729B94"><div class="li_content"> 
+		  <p>OUT_HI_LIM is set to OUT_SCALE(EU100) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_E11665B3EF13434FA41883AE6C6EBFE5"><div class="li_content"> 
+		  <p>OUT_LO_LIM is set to OUT_SCALE(EU0) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_2048476DDF4941BA9D6AD241FFB11ECC"><div class="li_content"> 
+		  <p>SP_HI_LIM is set to PV_SCALE(EU100) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_350840AC601846D59FE554159CC81401"><div class="li_content"> 
+		  <p>SP_LO_LIM is set to PV_SCALE(EU0) 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>During runtime the limits are restricted as follows: 
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__ul_4F9CEE58956B4845A3E48E25F2CD6048"></a><ul id="c_pid_function_block_execution__ul_4F9CEE58956B4845A3E48E25F2CD6048"> 
+		<li id="c_pid_function_block_execution__li_3A0E940268D74B1EA95DBB843AEB021D"><div class="li_content"> 
+		  <p>OUT_HI_LIM is restricted to OUT_SCALE(EU100) + 0.1 ×
+			 (OUT_SCALE(EU100) - OUT_SCALE(EU0)). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_26B391A0A4BF4099B33C8F714600E0A8"><div class="li_content"> 
+		  <p>OUT_LO_LIM is restricted to OUT_SCALE(EU0) - 0.1 × (OUT_SCALE(EU100)
+			 - OUT_SCALE(EU0)). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_AB91580E05E644978086DE6793D3E1D7"><div class="li_content"> 
+		  <p>SP_HI_LIM is restricted to PV_SCALE(EU100) + 0.1 ×( PV_SCALE(EU100)
+			 - PV_SCALE(EU0)). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_772EA9F92B994CC98F04C4CF745E01B7"><div class="li_content"> 
+		  <p>SP_LO_LIM is restricted to PV_SCALE(EU0) - 0.1 × (PV_SCALE(EU100) -
+			 PV_SCALE(EU0)). 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>The SP or OUT parameters are not changed as a result of changing the
+		scale or limits. However, if OUT violates the new limits OUT is forced within
+		the limits on the next execution of the block. 
+	 </p>
+ 
+	 <p> 
+		<strong>Setpoint selection and limiting</strong> 
+	 </p>
+ 
+	 <p>Setpoint selection is determined by the mode. The following diagram
+		shows the method for setpoint selection: 
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_execution__fig_5B0C86F494344F7BAA55FBA35DC73D2F"><a name="c_pid_function_block_execution__fig_5B0C86F494344F7BAA55FBA35DC73D2F"></a><div><span class="figcap">PID function block setpoint selection</span></div> 
+		 
+		<a name="c_pid_function_block_execution__image_B582F5D3D5174B84A652AEE460375FF1"></a><img id="c_pid_function_block_execution__image_B582F5D3D5174B84A652AEE460375FF1" src="fbhelp0178.gif" /> 
+	 </div>
+ 
+	 <p>You can limit the setpoint by configuring the SP_HI_LIM and SP_LO_LIM
+		parameters. In Cas mode, the setpoint comes from the CAS_IN input. In Auto
+		mode, the setpoint is adjusted by the operator. You can limit the setpoint rate
+		of change by configuring the SP_RATE_UP and SP_RATE_DN parameters. 
+	 </p>
+ 
+	 <p> 
+		<strong>Output selection and limiting</strong> 
+	 </p>
+ 
+	 <p>Output selection is determined by mode. In Auto, Cas, and RCas modes,
+		the output is computed by the PID control equation. In Man and ROut modes, the
+		output can be entered manually. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> If the IO_OUT parameter is defined for direct output, use any
+		  connection to OUT for calculation purposes only (for example, an input to a
+		  calculation block). 
+		</p>
+ 
+	 </div>
+ 
+	 <p>You can limit the output by configuring the OUT_HI_LIM and OUT_LO_LIM
+		parameters. 
+	 </p>
+ 
+	 <p> 
+		<strong>Bumpless transfer and setpoint tracking</strong> 
+	 </p>
+ 
+	 <div class="p">You can select setpoint tracking by configuring the following control
+		options (CONTROL_OPTS): 
+	 <a name="c_pid_function_block_execution__ul_D21AF7DC66EE4695BF13F72400C65B86"></a><ul id="c_pid_function_block_execution__ul_D21AF7DC66EE4695BF13F72400C65B86"> 
+		<li id="c_pid_function_block_execution__li_861886B33FE54C0E99FBB4193060CA08"><div class="li_content"> 
+		  <p> 
+			 <strong>SP-PV Track in LO or IMan</strong> 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_DE47376F590D480184BFFC0919083BF2"><div class="li_content"> 
+		  <p> 
+			 <strong>SP-PV Track in Man</strong> 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_CB8E644DFD4540028CBD6DA9901861F9"><div class="li_content"> 
+		  <p> 
+			 <strong>SP-PV Track in ROut</strong> 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When one of these options is set, the SP value is set to the PV value
+		while in the specified mode. 
+	 </p>
+ 
+	 <div class="p">You can select the value that an upstream controller uses for bumpless
+		transfer and reset limiting by configuring the following control option: 
+	 <a name="c_pid_function_block_execution__ul_2D9BED21E8BE4EC6836EEBEDD681C195"></a><ul id="c_pid_function_block_execution__ul_2D9BED21E8BE4EC6836EEBEDD681C195"> 
+		<li id="c_pid_function_block_execution__li_E86CF8904C0F41AEB160C1658D8C3068"><div class="li_content"> 
+		  <p> 
+			 <strong>Use PV for BKCAL_OUT</strong> 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When this option is not selected, the working setpoint (SP_WRK) is used
+		for BKCAL_OUT. 
+	 </p>
+ 
+	 <p>With the Use PV for BKCAL_OUT control option, the BKCAL_OUT value tracks
+		the PV value. A master controller whose BKCAL_IN parameter receives the slave
+		PID block&#39;s BKCAL_OUT in an open cascade strategy forces its OUT to match
+		BKCAL_IN, thus tracking the PV from the slave PID block. If the master is
+		another PID, then if the master PID has selected Dynamic Reset Limit in
+		FRSIPID_OPTS the external reset portion of the master PID now uses the PV of
+		the secondary as its input. This provides an automatic adjustment of reset
+		action in the master based on the performance of the slave. 
+	 </p>
+ 
+	 <p>You can set control options in Out of Service mode only. 
+	 </p>
+ 
+	 <p> 
+		<strong>PID Equation Structures</strong> 
+	 </p>
+ 
+	 <p>Parameter STRUCTURE in the PID is used to select which of the three PID
+		actions (Proportional, Integral and Derivative) are active and how the actions
+		are applied. 
+	 </p>
+ 
+	 <div class="p">You can select the PID equation structure to apply controller action by
+		configuring the STRUCTURE parameter. Select one of the following choices: 
+	 <a name="c_pid_function_block_execution__ul_F69835D8A1ED4DA1B2E978291685880E"></a><ul id="c_pid_function_block_execution__ul_F69835D8A1ED4DA1B2E978291685880E"> 
+		<li id="c_pid_function_block_execution__li_9CFD2144D07040468FE09CDDAA3ACE35"><div class="li_content"> 
+		  <p> 
+			 <strong>PID Action on Error</strong> — Proportional, integral and derivative
+			 action are applied to the error (SP - PV). If RATE is non-zero, a setpoint
+			 change will exhibit both a proportional and derivative kick. This structure is
+			 typically used to get fastest possible setpoint response when derivative action
+			 is used (RATE&gt;0) and RATE is not so large as to make the resultant kick too
+			 great. A small SPFILTER value or SP RATE limiting can be used to reduce the
+			 worst case kick. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_C9FA68757DFD4E949BEFDAED5B379651"><div class="li_content"> 
+		  <p> 
+			 <strong>PI Action on Error, D Action on PV</strong> — Proportional and integral
+			 action are applied to error; derivative action is applied to PV. A setpoint
+			 change will exhibit a proportional kick. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_B8A8D52E28A04F20BC3C677608D2A722"><div class="li_content"> 
+		  <p> 
+			 <strong>I Action on Error, PD Action on PV</strong> — Integral action is
+			 applied to error; proportional and derivative action are applied to PV. There
+			 is no proportional or derivative kick on a setpoint change. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_CA227D05A6B94CC29907A23901580099"><div class="li_content"> 
+		  <p> 
+			 <strong>PD Action on Error</strong> — Proportional and derivative actions are
+			 applied to error; there is no integral action. This structure results in a
+			 steady state offset of PV from SP. The size of the offset is determined by the
+			 GAIN of the PID and the process gain. Offset is typically adjusted with BIAS of
+			 the PID. A setpoint change will exhibit a proportional and derivative (if
+			 RATE&gt;0) kick. 
+		  </p>
+ 
+		  <p>Use CONTROL_OPTS selection Act on IR with PD Action on Error to
+			 avoid process bumps when SP = PV and the MODE changes from MAN to AUTO. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_8F4A93E2C437418A8682F1E208EBC085"><div class="li_content"> 
+		  <p> 
+			 <strong>P Action on Error, D Action on PV</strong> — Proportional action is
+			 applied to error; derivative action is applied to PV; there is no integral
+			 action. This structure will result in a steady state offset of PV from SP; the
+			 size of the offset will be determined by GAIN of the PID and the process gain.
+			 Offset is typically adjusted with BIAS of the PID. A setpoint change will
+			 exhibit a proportional kick. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_DB8842FCB78C45C4B64E205381851F4F"><div class="li_content"> 
+		  <p> 
+			 <strong>ID Action on Error</strong> — Integral and derivative action are
+			 applied to error; there is no proportional action. This structure is typically
+			 selected for use in integral-only applications (RATE=0). It is also used in
+			 cases where the process exhibits the tendency to first move in the opposite
+			 direction from its final steady state value. There is a derivative kick on an
+			 SP change. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_ECA245CB53C34712A0EDD47282B5D92E"><div class="li_content"> 
+		  <p> 
+			 <strong>I Action on Error, D Action on PV</strong> — Integral action applied to
+			 error; derivative action applied to PV; there is no proportional action. This
+			 structure is typically selected for use in integral-only applications (RATE=0).
+			 It is also used in cases where the process exhibits the tendency to first move
+			 in the opposite direction from its final steady state value. There is no
+			 derivative kick on an SP change. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_F7CE35B4487B45BCBF477B1CC6E5E834"><div class="li_content"> 
+		  <p> 
+			 <strong>Two Degrees of Freedom Controller</strong> — Two parameters (BETA and
+			 GAMMA) can be adjusted to determine the degree of proportional (BETA) action
+			 and derivative (GAMMA) that will be applied to SP changes. The range for BETA
+			 and GAMMA is 0-1. BETA=0 means no proportional action is applied to SP change.
+			 BETA=1 means full proportional action is applied to SP change. GAMMA=0 means no
+			 derivative action applied to SP change. GAMMA=1 means full derivative action is
+			 applied to SP change. For values greater than 0 and less than 1, the number
+			 represents the decimal fraction of the action applied to SP change. This
+			 structure then can be used to get any of the structures that include all three
+			 (actions) with adjustable action on SP changes for proportional and derivative
+			 action. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>If a structure other than Two Degrees of Freedom Controller are used,
+		the block automatically uses values as follows for BETA and GAMMA. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_pid_function_block_execution__table_6A439F9735C24905AB35F584DD2C8397"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_pid_function_block_execution__table_6A439F9735C24905AB35F584DD2C8397" rules="all" summary=""> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1256820e699" valign="top" width="33.33333333333333%"> 
+				  <p>Value of STRUCTURE 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1256820e705" valign="top" width="33.33333333333333%"> 
+				  <p>Value used by the block for BETA 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1256820e711" valign="top" width="33.33333333333333%"> 
+				  <p>Value used by the block for GAMMA 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>PID action on error 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>PI action on error, D action on PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>I action on error, PD action on PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>PD action on error 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>P action on error, D action on PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>ID action on error 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>na 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>I action on error, D action on PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>na 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1256820e699 " valign="top" width="33.33333333333333%"> 
+				  <p>Two Degrees of freedom 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e705 " valign="top" width="33.33333333333333%"> 
+				  <p>(uses configured value) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1256820e711 " valign="top" width="33.33333333333333%"> 
+				  <p>(uses configured value) 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p>Often, when tuning a control loop for disturbance rejection, the
+		setpoint response exhibits considerable overshoot. This is particularly true
+		when there is derivative action required and the derivative action is taken
+		only on PV (to avoid large bumps in output as the result of modest setpoint
+		changes). The Two Degrees of Freedom structure provided by DeltaV software
+		allows shaping of the setpoint response by adjusting the proportional and
+		derivative action applied to setpoint. The adjustment parameters are BETA (for
+		proportional) and GAMMA (for derivative). Tuning range is from no action to
+		full action (0 to 1). 
+	 </p>
+ 
+	 <p>Two Degrees of Freedom is selected with the STRUCTURE parameter. The
+		following figure illustrates the setpoint response for a loop tuned for good
+		disturbance rejection with little or no overshoot in the disturbance response.
+		Adjustment of BETA and GAMMA can significantly reshape the setpoint response
+		and drastically reduce the overshoot from that of a PID that has full
+		proportional and no derivative action on setpoint.     
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_execution__fig_B95B32F980A74C09B5B1791EDB0B1F09"><a name="c_pid_function_block_execution__fig_B95B32F980A74C09B5B1791EDB0B1F09"></a><div><span class="figcap">SP response for different structures</span></div> 
+		 
+		<a name="c_pid_function_block_execution__image_931E2C7DADFE4D119EB904D9BD514DC0"></a><img id="c_pid_function_block_execution__image_931E2C7DADFE4D119EB904D9BD514DC0" src="fbhelp0179.gif" /> 
+	 </div>
+ 
+	 <p>When Use Nonlinear Gain Modification is selected in FRSIPID_OPTS,
+		proportional action (if called for by STRUCTURE) is applied to error and
+		standard form equation is applied. 
+	 </p>
+ 
+	 <p> 
+		<strong>Reverse and Direct Action</strong> 
+	 </p>
+ 
+	 <p>You can select the block output action by configuring the Direct Acting
+		control option. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> You can set control options in Out of Service mode only. 
+		</p>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Reset Limiting</strong> 
+	 </p>
+ 
+	 <p>The PID function block provides a selection between clamped integral
+		action or dynamic reset limiting (external reset) that prevents windup when a
+		change in output cannot be acted on because of a downstream limit. By selecting
+		Dynamic Reset Limit in FRSIPID_OPTS a master PID in a cascade uses the
+		BKCAL_OUT of the slave block. If the slave block passes back PV then the reset
+		action dynamically uses the PV of the slave. 
+	 </p>
+ 
+	 <p> 
+		<strong id="c_pid_function_block_execution__resetimplementation"><a name="c_pid_function_block_execution__resetimplementation"></a>Reset Implementation</strong> 
+	 </p>
+ 
+	 <p>The reset component of the PID block is implemented with a positive
+		feedback network as shown in the following figure. 
+	 </p>
+ 
+	 <a name="c_pid_function_block_execution__image_5A498424562F4A2FBA4FB3317D15375F"></a><img id="c_pid_function_block_execution__image_5A498424562F4A2FBA4FB3317D15375F" src="reset.gif" /> 
+	 <p>The behavior of the reset component depends on the FRSIPID_OPTS 
+		<span class="uicontrol">Dynamic Reset Limit</span> option. If this option is
+		selected, the BKCAL_OUT value of a downstream block is input to the reset
+		calculation. Thus, if the downstream block(s) cannot act on the PID block
+		output, the reset contribution is automatically limited, eliminating windup. If
+		the option is not selected (the default) the reset contribution is clamped if a
+		limit condition is indicated by the BKCAL_IN status and the calculated change
+		in output will drive the output further into the limit. 
+	 </p>
+ 
+	 <p> 
+		<strong>Block Errors</strong> 
+	 </p>
+ 
+	 <div class="p">The following conditions are reported in the BLOCK_ERR parameter: 
+	 <a name="c_pid_function_block_execution__ul_D0D329DA982A4E519BA0C41EA566FDE1"></a><ul id="c_pid_function_block_execution__ul_D0D329DA982A4E519BA0C41EA566FDE1"> 
+		<li id="c_pid_function_block_execution__li_D5E88C6CC9BC494AB4347ADADC88AEF4"><div class="li_content"> 
+		  <p> 
+			 <strong>Out of Service</strong> — The block is in Out of Service (OOS) mode. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_9202EE88B2DA4C28993B86B663F9A695"><div class="li_content"> 
+		  <p> 
+			 <strong>Readback failed</strong> — The I/O readback failed. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_C84D0F793E8F4C53AA0D6CCEF8C1EE43"><div class="li_content"> 
+		  <p> 
+			 <strong>Output failure</strong> — Either the output hardware or the DST is bad.
+			 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_D10A441205454F47AEC5EACE66E17FC9"><div class="li_content"> 
+		  <p> 
+			 <strong>Local Override</strong> — The block is in Local Override (LO) mode. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_A243F25A3CAE47958839B9E16CF9EB17"><div class="li_content"> 
+		  <p> 
+			 <strong>Simulate active</strong> — Simulation is enabled, and the block is
+			 using a simulated value in its execution. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_pid_function_block_execution__li_7EB07F52F4184F7EAD008FF4F17FD57C"><div class="li_content"> 
+		  <p> 
+			 <strong>Input failure/process variable has Bad status</strong> — The source of
+			 the block&#39;s process variable is bad. Indicates a bad status on a linked IN
+			 parameter, a hardware failure (if the block directly references DSTs) a
+			 non-existent Device Signal Tag (DST), or a Bad status on the SIMULATE
+			 parameter. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_io_config.html">I/O configuration overview</a></div>
+<div><a href="c_io_options.html">I/O options</a></div>
+<div><a href="c_control_options.html">Control options</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

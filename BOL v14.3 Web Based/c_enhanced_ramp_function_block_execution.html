@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Enhanced Ramp function block configuration and execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_enhanced_ramp.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_enhanced_ramp_function_block_execution" name="DC.Identifier" /><title>Enhanced Ramp function block configuration and execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_enhanced_ramp.html" /><link rel="next" href="c_enhanced_ramp_function_block_status_handling.html" /></head><body class="fixed" id="c_enhanced_ramp_function_block_execution" data-relpath="c_enhanced_ramp_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_enhanced_ramp_function_block_execution"></a>
+
+<h1 class="topictitle1">Enhanced Ramp function block configuration and execution</h1>
+<div><div></div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__RefTarget"><a name="c_enhanced_ramp_function_block_execution__RefTarget"></a><h2 class="sectiontitle">Reference the target function block</h2> 
+       
+      <p>The Enhanced Ramp function block allows you to specify parameters to
+        be ramped in a target function block. These parameters are specified through
+        the configuration of external reference parameters in the Enhanced Ramp
+        function block. You must specify the MODE parameter of the target function
+        block, as well as the parameter that should be ramped in the target function
+        block when it is in the respective mode. The Enhanced Ramp function block can
+        ramp target function block parameters in the AUTO, MAN, RCAS, ROUT, and LO
+        modes, but are not permitted when the target function block mode is CAS. 
+      </p>
+ 
+      <div class="p">The Enhanced Ramp function block includes the following external
+        reference parameters: 
+      
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+            <tr valign="middle"> 
+              <th class="cellrowborder" id="d974096e41" valign="middle" width="20%">External reference parameter 
+              </th>
+ 
+              <th class="cellrowborder" id="d974096e44" valign="middle" width="50%">Description 
+              </th>
+ 
+              <th class="cellrowborder" id="d974096e47" valign="middle" width="10%">Mode 
+              </th>
+ 
+              <th class="cellrowborder" id="d974096e50" valign="middle" width="20%">Example 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_MODE 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e44 " valign="middle" width="50%">The target function block mode parameter.
+                This parameter must be configured. 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">n/a 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/MODE 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_RAMP_AUTO 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e44 " rowspan="5" valign="middle" width="50%">The target function block
+                parameter to be ramped when its mode is: 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">AUTO 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/SP 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_RAMP_LO 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">LO 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/TRK_VAL 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_RAMP_MAN 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">MAN 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/OUT 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_RAMP_RCAS 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">RCAS 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/RCAS_IN 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d974096e41 " valign="middle" width="20%">REF_RAMP_ROUT 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e47 " valign="middle" width="10%">ROUT 
+              </td>
+ 
+              <td class="cellrowborder" headers="d974096e50 " valign="middle" width="20%">PID1/ROUT_IN 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+      <div class="tip"><span class="tiptitle">Tip:</span> For ramp modes that are not used, specify 
+        <samp class="codeph">#IGNORE</samp> to prevent a warning message from being
+        generated during download. 
+      </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__SpecRampType"><a name="c_enhanced_ramp_function_block_execution__SpecRampType"></a><h2 class="sectiontitle">Specify the ramp type</h2> 
+       
+      <div class="p"> Use the ERAMP_TYPE parameter to indicate whether to use the time
+        duration or the ramp rate for ramp calculation: 
+      <ul> 
+        <li><div class="li_content"> Specify the 
+          <em>Use Time parameter</em> option of the ERAMP_TYPE parameter to use
+          the configured ERAMP_TIME parameter value for ramp calculation. 
+        </div></li>
+ 
+        <li><div class="li_content">Specify the 
+          <em>Use Rate parameter</em> option of the ERAMP_TYPE parameter to use
+          the configured ERAMP_RATE parameter value for ramp calculation. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p> You can specify the time units for ramp calculation with the
+        TIME_UNIT parameter. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__ObeyLimits"><a name="c_enhanced_ramp_function_block_execution__ObeyLimits"></a><h2 class="sectiontitle"><em>Obey the limits</em> option</h2> 
+       
+      <p>In some cases, it is desirable to enforce limits when ramping by
+        specifying the 
+        <em>Obey the limits</em> option of the ERAMP_OPTS parameter. If the 
+        <em>Obey the limits</em> option is enabled, you can configure a low limit
+        (LO_LIM) and a high limit (HI_LIM) to be used. 
+      </p>
+ 
+      <ul> 
+        <li><div class="li_content"> Low limit (LO_LIM) – The minimum value allowed for: 
+          <div class="p"> 
+          <ul> 
+            <li><div class="li_content">The IN and ERAMP_END_VALUE parameters of the ramp 
+            </div></li>
+ 
+            <li><div class="li_content">The OUT parameter 
+            </div></li>
+ 
+          </ul>
+ 
+          </div>
+ 
+        </div></li>
+ 
+        <li><div class="li_content"> High limit (HI_LIM) – The maximum value allowed for: 
+          <div class="p"> 
+          <ul> 
+            <li><div class="li_content">The IN and ERAMP_END_VALUE parameters of the ramp 
+            </div></li>
+ 
+            <li><div class="li_content">The OUT parameter 
+            </div></li>
+ 
+          </ul>
+ 
+          </div>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      <p>An entry or value that is lower than LO_LIM or higher than HI_LIM is
+        clamped to the configured limit value. By default, the 
+        <em>Obey the limits</em> option is disabled. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__VariableEndpoint"><a name="c_enhanced_ramp_function_block_execution__VariableEndpoint"></a><h2 class="sectiontitle"> 
+      <em>Variable endpoint</em> option</h2> 
+       
+      <p>The 
+        <em>Variable endpoint</em> option of the ERAMP_OPTS parameter allows for
+        the execution of a ramp without a static endpoint. 
+      </p>
+ 
+      <div class="p">If the 
+        <em>Variable endpoint</em> option of the ERAMP_OPTS parameter is enabled:
+        
+      <ul> 
+        <li><div class="li_content"> Settings for the 
+          <em>Autotracking</em>, 
+          <em>Reset if IN value changes</em>, and 
+          <em>Use REF_RAMP_VAL as IN</em> options of the ERAMP_OPTS parameter are
+          
+          <em>overridden</em>, as indicated in the following table: 
+          
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+                <tr> 
+                  <th class="cellrowborder" id="d974096e273" valign="top" width="NaN%">Option 
+                  </th>
+ 
+                  <th class="cellrowborder" id="d974096e276" valign="top" width="NaN%">Setting if 
+                    <em>Variable endpoint</em> option enabled 
+                  </th>
+ 
+                </tr>
+</thead>
+ 
+              <tbody> 
+                <tr> 
+                  <td class="cellrowborder" headers="d974096e273 " valign="top" width="NaN%"><em>Autotracking</em> 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d974096e276 " valign="top" width="NaN%">Enabled 
+                  </td>
+ 
+                </tr>
+ 
+                <tr> 
+                  <td class="cellrowborder" headers="d974096e273 " valign="top" width="NaN%"><em>Reset if IN value changes</em> 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d974096e276 " valign="top" width="NaN%">Disabled 
+                  </td>
+ 
+                </tr>
+ 
+                <tr> 
+                  <td class="cellrowborder" headers="d974096e273 " valign="top" width="NaN%"><em>Use REF_RAMP_VAL as IN</em> 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d974096e276 " valign="top" width="NaN%">Enabled 
+                  </td>
+ 
+                </tr>
+ 
+              </tbody>
+ 
+            </table>
+</div>
+ 
+        </div></li>
+ 
+        <li><div class="li_content"> When a ramp starts, the ERAMP_END_VALUE and IN parameter values
+          are used to calculate the ramp rate or ramp time. 
+        </div></li>
+ 
+        <li><div class="li_content"> The ramp rate stays the same during the ramp unless the
+          ERAMP_RATE, ERAMP_TIME, or ERAMP_TYPE parameter values are changed. 
+        </div></li>
+ 
+        <li><div class="li_content"> During the ramp, the ERAMP_END_VALUE parameter value continues to
+          be read and compared with the IN parameter value to evaluate when a ramp ends. 
+        </div></li>
+ 
+        <li><div class="li_content"> After the TIME_REMAIN parameter value evaluates to zero or the IN
+          and ERAMP_END_VALUE parameter values are equal, the ramp ends and the COMPLETE
+          parameter value is set to 1 (True). 
+        </div></li>
+ 
+        <li><div class="li_content"> After a ramp ends, the OUT parameter value may not equal the
+          ERAMP_END_VALUE parameter value. 
+        </div></li>
+ 
+        <li><div class="li_content"> The ERAMP_ACTIVE, TIME_REMAIN, ERAMP_STATE, and OUT parameter
+          values are set appropriately (for more information, refer to 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__RampComplete"> End a ramp</a>). 
+        </div></li>
+ 
+      </ul>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  When the absolute value of the difference between the IN and
+        ERAMP_END_VALUE parameter values is less than or equal to the VAR_THRESHOLD
+        parameter value, the IN parameter values is set to the ERAMP_END_VALUE
+        parameter value. 
+      </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__RampOneDirectionOnly"><a name="c_enhanced_ramp_function_block_execution__RampOneDirectionOnly"></a><h2 class="sectiontitle"> Ramp in one direction options</h2> 
+       
+      <p> If 
+        <em>Ramp up</em> or 
+        <em>Ramp down</em> is specified for the ERAMP_DIR parameter, a ramp can
+        function in one direction only. If you specify 
+        <em>Ramp down</em> for the ERAMP_DIR parameter after the REF_RAMP_VAL
+        parameter is already below the ERAMP_END_VALUE parameter value, the ramp stops.
+        
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> The ERAMP_DIR parameter, if specified as 
+        <em>Ramp up</em> or 
+        <em>Ramp down</em>, is prioritized over the ERAMP_RATE parameter value
+        (or the ramp rate implied by the IN and ERAMP_END_VALUE parameter values). 
+         
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__EnableRamp"><a name="c_enhanced_ramp_function_block_execution__EnableRamp"></a><h2 class="sectiontitle">Enable a ramp</h2> 
+       
+      <p>A ramp does not start until the operator or other function block logic
+        sets ramp parameters and enables the ramp. A ramp is enabled when the
+        ERAMP_ENABLE parameter input transitions from 0 (False) to 1 (True). The
+        operator or other function block logic can enable a ramp. 
+      </p>
+ 
+      <div class="p"> When a ramp is enabled: 
+      <ul> 
+        <li><div class="li_content"> The COMPLETE and ERAMP_ACTIVE parameter values are set to 0. 
+           
+        </div></li>
+ 
+        <li><div class="li_content"> The Named state of the ERAMP_STATE parameter is set to 
+          <em>Enabled</em>. 
+        </div></li>
+ 
+        <li><div class="li_content"> The current target block mode is evaluated; when it matches the
+          specified ERAMP_IN_MODE parameter value, the ERAMP_ACTIVE parameter value
+          transitions to 1, starting the ramp. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p">A ramp starts under the following conditions: 
+      <ul> 
+        <li><div class="li_content">The ERAMP_STATE parameter is set to 
+          <em>Enabled</em>. 
+        </div></li>
+ 
+        <li><div class="li_content">The COMPLETE parameter value is 0 (False). 
+        </div></li>
+ 
+        <li><div class="li_content">The PAUSE parameter value is 0 (False). 
+        </div></li>
+ 
+        <li><div class="li_content">The current target block mode matches the specified ERAMP_IN_MODE
+          parameter value. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p"> When a ramp starts: 
+      <ul> 
+        <li><div class="li_content"> The ERAMP_ACTIVE parameter value is set to 1 (True). 
+          <p>While a ramp is active, the OUT parameter is written to the target
+            block parameter to be ramped, REF_RAMP_VAL. If the 
+            <em>Obey the limits</em> option of the ERAMP_OPTS parameter is
+            enabled and the OUT parameter is outside the configured limits, OUT is clamped
+            to the appropriate limit, and then written to the target block ramp parameter. 
+          </p>
+ 
+        </div></li>
+ 
+        <li><div class="li_content">The ERAMP_STATE parameter is set to 
+          <em>Ramping</em>. 
+        </div></li>
+ 
+        <li><div class="li_content">If the 
+          <em>Auto Tracking</em> option of the ERAMP_OPTS parameter is enabled,
+          the IN parameter value is used as the ramp starting point. 
+        </div></li>
+ 
+        <li><div class="li_content"> If the 
+          <em>Auto Tracking</em> option of the ERAMP_OPTS parameter is not
+          enabled, the Enhanced Ramp function block uses the following values as the ramp
+          starting point: 
+          <ul> 
+            <li><div class="li_content"> If the TRK_IN_D parameter value is 1 (True), the IN parameter
+              value is used as the ramp starting point. 
+              <div class="note"><span class="notetitle">Note:</span>  If the 
+                <em>Use REF_RAMP_VAL as IN</em> option of the ERAMP_OPTS
+                parameter is enabled, the current REF_RAMP_VAL parameter value is used as the
+                ramp starting point. If the IN parameter value is wired, the wired value is
+                used. 
+              </div>
+ 
+            </div></li>
+ 
+            <li><div class="li_content">If the TRK_IN_D parameter value is 0 (False), the previous OUT
+              parameter value is used as the ramp starting point. 
+            </div></li>
+ 
+          </ul>
+ 
+          <div class="note"><span class="notetitle">Note:</span>  If the 
+            <em>Obey the limits</em> option of the ERAMP_OPTS parameter is
+            enabled and the ramp starting point is out of range, it is clamped to the limit
+            value, and the ramp ends. As needed, the Enhanced Ramp function block
+            calculates the ramp rate. 
+          </div>
+ 
+        </div></li>
+ 
+        <li><div class="li_content"> The ERAMP_END_VALUE parameter value specifies the ramp end point
+          and the final OUT parameter target value (except for some 
+          <em>Variable endpoint</em>, 
+          <em>Ramp up</em>, or 
+          <em>Ramp down</em> configurations; for more information, refer to 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__VariableEndpoint"> 
+      Variable endpoint option</a>
+          and 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__RampOneDirectionOnly"> Ramp in one direction options</a>).
+          
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__DisableRamp"><a name="c_enhanced_ramp_function_block_execution__DisableRamp"></a><h2 class="sectiontitle">Disable a ramp</h2> 
+       
+      <div class="p"> A ramp is disabled before completion if the ERAMP_ENABLE parameter
+        input transitions from 1 (True) to 0 (False). The operator, Enhanced Ramp
+        function block logic, or other function block logic can disable a ramp. 
+      <ul> 
+        <li><div class="li_content"> The operator or other function block logic can disable a ramp by
+          setting the ERAMP_ENABLE parameter to 0 (False). 
+        </div></li>
+ 
+        <li><div class="li_content"> A ramp can be disabled by Enhanced Ramp function block logic. 
+          <p>If the ERAMP_ACTIVE parameter is 1 (True), the current target
+            block mode does not match the ERAMP_IN_MODE parameter value, and the 
+            <em>Pause if mode changes</em> option of the ERAMP_OPTS parameter is
+            not enabled, the ramp is disabled. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p"> If a ramp is disabled: 
+      <ul> 
+        <li><div class="li_content"> The COMPLETE, PAUSE, and ERAMP_ACTIVE parameter values are 0
+          (False). 
+        </div></li>
+ 
+        <li><div class="li_content">The TIME_REMAIN parameter value is set to 0 seconds. 
+        </div></li>
+ 
+        <li><div class="li_content"> The ERAMP_STATE parameter is set to 
+          <em>Stopped</em>. 
+        </div></li>
+ 
+        <li><div class="li_content">If the 
+          <em>Autotracking</em> option of the ERAMP_OPTS parameter is enabled,
+          the OUT parameter value tracks the IN parameter value. 
+        </div></li>
+ 
+        <li><div class="li_content"> If the 
+          <em>Autotracking</em> option of the ERAMP_OPTS parameter is disabled,
+          the OUT parameter value depends on the TRK_IN_D parameter value as follows: 
+          <ul> 
+            <li><div class="li_content"> If the TRK_IN_D parameter value is 0 (False), the OUT
+              parameter value persists at its last previous value. 
+            </div></li>
+ 
+            <li><div class="li_content"> If the TRK_IN_D parameter value is 1 (True), the OUT parameter
+              value tracks the IN parameter value. 
+              <div class="note"><span class="notetitle">Note:</span>  
+              </div>
+ If the 
+              <em>Use REF_RAMP_VAL as IN</em> option of the ERAMP_OPTS parameter
+              is enabled, the OUT parameter value tracks the REF_RAMP_VAL parameter value. If
+              the IN parameter value is wired, the wired value is used. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__PauseRamp"><a name="c_enhanced_ramp_function_block_execution__PauseRamp"></a><h2 class="sectiontitle">Pause a ramp</h2> 
+       
+      <div class="p"> The operator, other function block logic, or Enhanced Ramp function
+        block logic can pause a ramp. 
+      <ul> 
+        <li><div class="li_content"> The operator or other function block logic can pause a ramp by
+          setting the PAUSE parameter value to 1 (True) when the ramp is active. 
+        </div></li>
+ 
+        <li><div class="li_content">Enhanced Ramp function block logic sets the ERAMP_STATE parameter
+          to 
+          <em>Paused</em> when the 
+          <em>Pause if mode changes</em> option is enabled and the current target
+          block mode does not match the ERAMP_IN_MODE parameter value. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p"> When a ramp is paused: 
+      <ul> 
+        <li><div class="li_content"> The ERAMP_ACTIVE parameter value is 0 (False). 
+        </div></li>
+ 
+        <li><div class="li_content"> The OUT and TIME_REMAIN parameter values persist at their current
+          value. 
+        </div></li>
+ 
+        <li><div class="li_content"> The Named state of the ERAMP_STATE parameter is 
+          <em>Paused</em>. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__ResumeRamp"><a name="c_enhanced_ramp_function_block_execution__ResumeRamp"></a><h2 class="sectiontitle">Resume a paused ramp</h2> 
+       
+      <div class="p">The PAUSE or RESUME parameter can be used by the operator or by other
+        function block logic to resume a paused ramp. 
+      <ul> 
+        <li><div class="li_content">Changing the PAUSE parameter value from 1 (True) to 0 (False)
+          resumes a paused ramp under the following conditions: 
+          <ul> 
+            <li><div class="li_content">The COMPLETE parameter evaluates to 0 (False). 
+            </div></li>
+ 
+            <li><div class="li_content">The ERAMP_ENABLE parameter value is 1 (True). 
+            </div></li>
+ 
+            <li><div class="li_content">The current target block mode matches the specified
+              ERAMP_IN_MODE parameter value. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li><div class="li_content">Changing the RESUME parameter value from False to True resumes a
+          paused ramp under the following conditions: 
+          <ul> 
+            <li><div class="li_content">The PAUSE parameter value is 0 (False), following a mode change
+              when the 
+              <em>Pause if mode changes</em> option of the ERAMP_OPTS parameter
+              is enabled. 
+            </div></li>
+ 
+            <li><div class="li_content">The COMPLETE parameter evaluates to 0 (False). 
+            </div></li>
+ 
+            <li><div class="li_content">The ERAMP_ENABLE parameter value is 1 (True). 
+            </div></li>
+ 
+            <li><div class="li_content">The current target block mode matches the specified
+              ERAMP_IN_MODE parameter value. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>When a paused ramp is resumed, the TIME_REMAIN and ERAMP_RATE
+        parameter values at the time the ramp was paused persist. 
+      </p>
+ 
+      <p> If the operator or other function block logic sets the ERAMP_ENABLE
+        parameter value to 0 (False) when a ramp is paused, it is disabled. The
+        TIME_REMAIN, ERAMP_STATE, and OUT parameter values are set appropriately. For
+        more information, refer to 
+        <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__DisableRamp">Disable a ramp</a>. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__ResetRamp"><a name="c_enhanced_ramp_function_block_execution__ResetRamp"></a><h2 class="sectiontitle"> Reset a ramp during execution</h2> 
+       
+      <div class="p"> During the execution of the Enhanced Ramp function block, a ramp is
+        recalculated with new values if: 
+      <ul> 
+        <li><div class="li_content">The Named state of the ERAMP_TYPE parameter changes. 
+        </div></li>
+ 
+        <li><div class="li_content">The ERAMP_TIME parameter value changes. 
+        </div></li>
+ 
+        <li><div class="li_content">The ERAMP_RATE parameter value changes. 
+        </div></li>
+ 
+        <li><div class="li_content">The IN parameter value changes, and: 
+          <ul> 
+            <li><div class="li_content">The 
+              <em>Reset if IN value changes</em> option of the ERAMP_OPTS
+              parameter is enabled. 
+            </div></li>
+ 
+            <li><div class="li_content">The 
+              <em>Variable endpoint</em> option of the ERAMP_OPTS parameter is
+              not enabled. 
+            </div></li>
+ 
+            <li><div class="li_content">The 
+              <em>Use REF_RAMP_VAL as IN</em> option of the ERAMP_OPTS parameter
+              is not enabled. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li><div class="li_content">The ERAMP_END_VALUE parameter value changes and the 
+          <em>Variable endpoint</em> option of the ERAMP_OPTS parameter is not
+          enabled. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_enhanced_ramp_function_block_execution__RampComplete"><a name="c_enhanced_ramp_function_block_execution__RampComplete"></a><h2 class="sectiontitle"> End a ramp</h2> 
+       
+      <p> 
+      </p>
+ 
+      <div class="p">A ramp ends under the following conditions: 
+      <ul> 
+        <li><div class="li_content"> If the 
+          <em>Variable endpoint</em> option of the ERAMP_OPTS parameter is not
+          enabled, ramp calculation ends after the final value is written to the target
+          block parameter to be ramped. The COMPLETE parameter value transitions to 1
+          (True) after the last SP and OUT limit is written and verified. 
+           
+        </div></li>
+ 
+        <li><div class="li_content"> If the 
+          <em>Variable endpoint</em> option of the ERAMP_OPTS parameter is
+          enabled, the ramp ends if the TIME_REMAIN parameter value evaluates zero or if
+          the IN and ERAMP_END_VALUE parameter values are equal. 
+        </div></li>
+ 
+        <li><div class="li_content"> If 
+          <em>Ramp down</em> is specified for the ERAMP_DIR parameter, the ramp
+          ends if the ERAMP_END_VALUE parameter value goes below the REF_RAMP_VAL
+          parameter value. 
+           
+        </div></li>
+ 
+        <li><div class="li_content"> If 
+          <em>Ramp up</em> is specified for the ERAMP_DIR parameter, the ramp
+          ends if the ERAMP_END_VALUE parameter value exceeds the REF_RAMP_VAL parameter
+          value. 
+           
+        </div></li>
+ 
+        <li><div class="li_content"> If the 
+          <em>Obey limits</em> option of the ERAMP_OPTS parameter is enabled, the
+          ramp ends if the IN, ERAMP_END_VALUE, or OUT parameter value is out of range
+          while clamped to the limit value. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p">After a ramp ends: 
+      <ul> 
+        <li><div class="li_content">The ERAMP_ACTIVE parameter value is 0 (False). 
+        </div></li>
+ 
+        <li><div class="li_content"> The TIME_REMAIN parameter value is zero. 
+        </div></li>
+ 
+        <li><div class="li_content"> The OUT parameter value equals the ERAMP_END_VALUE parameter value
+          (except for some 
+          <em>Variable endpoint</em>, 
+          <em>Ramp up</em>, or 
+          <em>Ramp down</em> configurations; for more information, refer to 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__VariableEndpoint"> 
+      Variable endpoint option</a>
+          and 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__RampOneDirectionOnly"> Ramp in one direction options</a>),
+          as when the ERAMP_STATE parameter is set to 
+          <em>Stopped</em> (for more information, refer to 
+          <a href="c_enhanced_ramp_function_block_execution.html#c_enhanced_ramp_function_block_execution__DisableRamp">Disable a ramp</a>). 
+        </div></li>
+ 
+        <li><div class="li_content">The ERAMP_STATE parameter value is set to 
+          <em>Complete</em>. 
+        </div></li>
+ 
+        <li><div class="li_content"> If it is not wired, the PAUSE parameter value is set to 0 (False).
+          
+        </div></li>
+ 
+        <li><div class="li_content">If it is not wired, the ERAMP_ENABLE parameter value is set to 0
+          (False), allowing another ramp to start. 
+          <p>If the ERAMP_ENABLE parameter is wired, you must explicitly set it
+            to 0 (False) before starting another ramp. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Effect of HART error conditions on function block status (Classic I/O)" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_hart_error_conditions_classic.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_effect_hart_errors_fblock_status" name="DC.Identifier" /><title>Effect of HART error conditions on function block status (Classic I/O)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_hart_error_conditions_classic.html" /><link rel="next" href="r_effect_hart_errors_diagnostic_params.html" /></head><body class="fixed" id="r_effect_hart_errors_fblock_status" data-relpath="r_effect_hart_errors_fblock_status.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_effect_hart_errors_fblock_status"></a>
+
+<h1 class="topictitle1">Effect of HART error conditions on function block status (Classic
+	 I/O)</h1>
+<div><div></div>
+
+	 <div class="section" id="r_effect_hart_errors_fblock_status__section_4D60F82B44EE48549E510E7A7D80F904"><a name="r_effect_hart_errors_fblock_status__section_4D60F82B44EE48549E510E7A7D80F904"></a>
+		<p>This section lists the status returned to HART function block
+		  parameters based on the HART error conditions. For ease of use, the information
+		  is presented in tables organized around the channel types to which the
+		  parameters apply (three tables showing parameters that apply to both AI and AO
+		  channels, AO only, and AI only).
+		</p>
+
+		<p>This table lists the HART parameters that apply to both AI and AO
+		  channels (HART_PV, HART_SV, HART_TV, HART_FV) and the status returned to a
+		  function block based on the HART Error conditions shown. The error conditions
+		  are processed in the order shown in the table.
+		</p>
+
+		
+<div class="tablenoborder"><a name="r_effect_hart_errors_fblock_status__table_13A6BF9256274FF49B2DED4808A1A353"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_fblock_status__table_13A6BF9256274FF49B2DED4808A1A353" rules="all" summary=""><caption><span class="tablecap">HART Error Conditions and Status Returned for Both AI and AO
+		  Channels (Classic I/O)</span></caption><thead align="left">
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e39" rowspan="2" valign="top">
+				  <p>HART Error Condition
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" colspan="4" id="d2581714e45" valign="top">
+				  <p>Status returned to:
+				  </p>
+
+				</th>
+ 
+			 </tr>
+
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e54" valign="top">
+				  <p>HART_PV
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e60" valign="top">
+				  <p>HART_SV
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e66" valign="top">
+				  <p>HART_TV
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e72" valign="top">
+				  <p>HART_FV
+				  </p>
+
+				</th>
+ 
+			 </tr>
+</thead>
+
+		  <tbody>
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Controller Configuration Error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>I/O card A/D error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>I/O card open loop
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>I/O card loss of digital comms
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>PV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>DV not configured in controller
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>DV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Diagnostics in progress
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>High, low, or high high alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Scale error and no comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Scale error and good comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device malfunction
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device configuration changed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device cold start
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device more status available
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device analog output current fixed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device analog output saturated
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device non-primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Device alerts enabled and device ID mismatch
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>Stale data
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e39 d2581714e54 " valign="top">
+				  <p>HART busy, HART update warning, 5% comm error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e60 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e66 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 d2581714e72 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e45 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+		  </tbody>
+
+		</table>
+</div>
+
+		<p>This table lists the HART parameters that apply to AO channels only
+		  (OUT, HART_DV_SLOT0, HART_DV_SLOT1, HART_DV_SLOT2, HART_DV_SLOT3) and the
+		  status returned to a function block based on the HART Error conditions. The
+		  error conditions are processed in the order shown in the table.
+		</p>
+
+		
+<div class="tablenoborder"><a name="r_effect_hart_errors_fblock_status__table_A2F1D120B7654F4A82D71420858C9322"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_fblock_status__table_A2F1D120B7654F4A82D71420858C9322" rules="all" summary=""><caption><span class="tablecap">HART Error Conditions and Status Returned for AO Channels Only
+		  (Classic I/O)</span></caption><thead align="left">
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e862" rowspan="2" valign="top">
+				  <p>HART Error Condition
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" colspan="5" id="d2581714e868" valign="top">
+				  <p>Status returned to:
+				  </p>
+
+				</th>
+ 
+			 </tr>
+
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e877" valign="top">
+				  <p>OUT
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e883" valign="top">
+				  <p>HART_DV_SLOT0
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e889" valign="top">
+				  <p>HART_DV_SLOT1
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e895" valign="top">
+				  <p>HART_DV_SLOT2
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e901" valign="top">
+				  <p>HART_DV_SLOT3
+				  </p>
+
+				</th>
+ 
+			 </tr>
+</thead>
+
+		  <tbody>
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Controller Configuration Error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>I/O card A/D error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>I/O card open loop
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>I/O card loss of digital comms
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>PV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>DV not configured in controller
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>DV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Diagnostics in progress
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>High, low, or high high alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Scale error and no comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Scale error and good comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device malfunction
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device configuration changed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device cold start
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device more status available
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device analog output current fixed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device analog output saturated
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device non-primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Device alerts enabled and device ID mismatch
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>Stale data
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e862 d2581714e877 " valign="top">
+				  <p>HART busy, HART update warning, 5% comm error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e883 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e889 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e895 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 d2581714e901 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e868 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+		  </tbody>
+
+		</table>
+</div>
+
+		<p>This table lists the HART parameters that apply to AI channels only
+		  (FIELD_VAL_PCT and HART_FIELD_VAL)and the status returned to a function block
+		  based on the HART Error conditions. The error conditions are processed in the
+		  order shown in the table.
+		</p>
+
+		
+<div class="tablenoborder"><a name="r_effect_hart_errors_fblock_status__table_40D57DDA3E274316987EA78A29E552D9"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_fblock_status__table_40D57DDA3E274316987EA78A29E552D9" rules="all" summary=""><caption><span class="tablecap">HART Error Conditions and Status Returned for AI Channels Only
+		  (Classic I/O)</span></caption><thead align="left">
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e1849" rowspan="2" valign="top">
+				  <p>HART Error Condition
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" colspan="2" id="d2581714e1855" valign="top">
+				  <p>Status returned to:
+				  </p>
+
+				</th>
+ 
+			 </tr>
+
+			 <tr> 
+				<th class="cellrowborder" id="d2581714e1864" valign="top">
+				  <p> FIELD_VAL_PCT
+				  </p>
+
+				</th>
+ 
+				<th class="cellrowborder" id="d2581714e1870" valign="top">
+				  <p> HART_FIELD_VAL
+				  </p>
+
+				</th>
+ 
+			 </tr>
+</thead>
+
+		  <tbody>
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Controller Configuration Error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>I/O card A/D error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>I/O card open loop
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>I/O card loss of digital comms
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>PV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>DV not configured in controller
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>DV not reported by device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Diagnostics in progress
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>High, low, or high high alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadDeviceFailure
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Scale error and no comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadNoCommLUV
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Scale error and good comm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadConfigError
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device malfunction
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadDeviceFailure<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device configuration changed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device cold start
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device more status available
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device analog output current fixed
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device analog output saturated
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>BadNonSpecific<a href="r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>r_effect_hart_errors_fblock_status.html#r_effect_hart_errors_fblock_status__footnote1_unique_1</sup></a>
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device non-primary variable out of limits
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Device alerts enabled and device ID mismatch
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>Stale data
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>UncertainNonSpecific
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr> 
+				<td class="cellrowborder" headers="d2581714e1849 d2581714e1864 " valign="top">
+				  <p>HART busy, HART update warning, 5% comm error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 d2581714e1870 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2581714e1855 " valign="top">
+				  <p>No effect
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+		  </tbody>
+
+		</table>
+</div>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div><div class="p"><a id="r_effect_hart_errors_fblock_status__footnote1_unique_1"><sup>1</sup></a>  If not ignored by the
+						configuration</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Defining phase parameters" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="parameters, phase input, phase report, phase algorithm" name="DC.subject" /><meta content="parameters, phase input, phase report, phase algorithm" name="keywords" /><meta content="c_configuringnamedsets.html" name="DC.Relation" scheme="URI" /><meta content="c_scalingaparameter.html" name="DC.Relation" scheme="URI" /><meta content="c_parameter_data_types.html" name="DC.Relation" scheme="URI" /><meta content="c_creatingphaseclasses.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_definingphaseparameters" name="DC.Identifier" /><title>Defining phase parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_definingphasemessages.html" /><link rel="next" href="c_configuringareas.html" /></head><body class="fixed" id="c_definingphaseparameters" data-relpath="c_definingphaseparameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_definingphaseparameters"></a>
+
+<h1 class="topictitle1">Defining phase parameters</h1>
+<div><div></div>
+
+    <p>Phase parameters are user-configurable parameters, of the types input, report, and phase algorithm. Phase parameters are created at the phase class level. Every phase created inherits the phase parameter defined for its class. Input parameters are used to transfer recipe data from the Batch Executive to the phase logic. Report parameters are used to transfer data from the controller to the batch journal. Phase algorithm parameters define variables for the unit module&#39;s phase algorithm and are not inherited by the phase logic module.</p>
+
+    <p>If the parameter has a named set data type, you must configure the named set to be used for this parameter.</p>
+
+    <p>
+      <strong>Input Phase Parameters</strong>
+    </p>
+
+    <p>Input phase parameters specify values that are downloaded to the phase logic in the controller when the phase runs. The phase logic then uses these values to control the unit in which the phase runs. Phase parameter values can be specified in the recipe, included in recipe formulas, or requested from the operator at run time.</p>
+
+    <div class="fignone" id="c_definingphaseparameters__fig_06C2FC1B5A024CCE96E5614D98DFAB7E"><a name="c_definingphaseparameters__fig_06C2FC1B5A024CCE96E5614D98DFAB7E"></a><div><span class="figcap">Input Phase Parameter Properties Dialog</span></div>
+      
+      <a name="c_definingphaseparameters__image_EB8DE5199E7646A181469A8D1EE0FD03"></a><img id="c_definingphaseparameters__image_EB8DE5199E7646A181469A8D1EE0FD03" src="help0019.gif" />
+    </div>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> If creating a scalable batch, use the integer or real data type for the input phase parameter. </p>
+
+    </div>
+
+    <p>
+      <strong>Report Phase Parameters</strong>
+    </p>
+
+    <p>Report phase parameters are typically used to capture and report actual process values or batch values used by the phase. From the phase logic in the controller, batch report values are uploaded to the DeltaV Batch Executive when the phase completes and can be used for batch history purposes, provided the Batch Historian subsystem is enabled.</p>
+
+    <div class="fignone" id="c_definingphaseparameters__fig_CFD3D19266B1481C9493C2C07F50F314"><a name="c_definingphaseparameters__fig_CFD3D19266B1481C9493C2C07F50F314"></a><div><span class="figcap">Report Phase Parameter Properties Dialog</span></div>
+      
+      <a name="c_definingphaseparameters__image_169B0BC461404C328109280CC834CBAA"></a><img id="c_definingphaseparameters__image_169B0BC461404C328109280CC834CBAA" src="help0020.gif" />
+    </div>
+
+    <p>
+      <strong>Phase Algorithm Parameter</strong>
+    </p>
+
+    <p>Phase algorithm parameters are used in the phase logic in the controller when the unit phase runs. The phase algorithm parameter provides intermediate storage during calculations in the phase logic.</p>
+
+    <p>The phase algorithm inherits phase algorithm parameters when a unit module is created.</p>
+
+    <p>Phase algorithm parameters can be of the same parameter types as any user-defined parameter in DeltaV software. </p>
+
+    <div class="fignone" id="c_definingphaseparameters__fig_19A3D0F60D9B4B5E9B197A2CC95FC5C9"><a name="c_definingphaseparameters__fig_19A3D0F60D9B4B5E9B197A2CC95FC5C9"></a><div><span class="figcap">Phase Algorithm Parameter Properties Dialog</span></div>
+      
+      <a name="c_definingphaseparameters__image_350F77FB2AF84E3D8506CA8CDA440773"></a><img id="c_definingphaseparameters__image_350F77FB2AF84E3D8506CA8CDA440773" src="help0021.gif" />
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_configuringnamedsets.html">Configuring named sets</a></div>
+<div><a href="c_scalingaparameter.html">Scaling a parameter</a></div>
+<div><a href="c_parameter_data_types.html">Parameter data types</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

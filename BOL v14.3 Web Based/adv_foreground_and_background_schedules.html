@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Running foreground and background schedules" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adv_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="adv_foreground_and_background_schedules" name="DC.Identifier" /><title>Running foreground and background schedules</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="adv_scheduler_basics.html" /><link rel="next" href="adv_designing_schedules.html" /></head><body class="fixed" id="adv_foreground_and_background_schedules" data-relpath="adv_foreground_and_background_schedules.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="adv_foreground_and_background_schedules"></a>
+
+<h1 class="topictitle1">Running foreground and background schedules</h1>
+<div><div></div>
+
+    
+      
+    
+    <div class="section" id="adv_foreground_and_background_schedules__RunningForegroundandBackgroundSchedules"><a name="adv_foreground_and_background_schedules__RunningForegroundandBackgroundSchedules"></a><h2 class="sectiontitle">Running Foreground and Background Schedules</h2>
+      
+      <p>You can select whether you want your schedules to run as foreground or background tasks. When you create a new schedule, the default is for it to run in the foreground. To run a schedule in the foreground, DeltaV Operate must be running in the run-time environment. Running a schedule in the foreground is useful for testing and debugging VBA scripts.</p>
+
+      <p>To run a schedule in the background, the FixBackgroundServer task must be running. If the FixBackgroundServer task is not running, it is automatically started when a schedule is added to the background task. To create a schedule that runs in the background you must change the default setting in the Scheduler Properties dialog box, which is available by right-clicking a schedule and selecting Scheduler Properties from the pop-up menu. You can use this dialog box to change the default setting for a new schedule or for an existing schedule that is set to run in the foreground. Also, you can select whether you want a schedule to run in the foreground or the background, set the window properties, and set the statistics refresh rates.</p>
+
+    </div>
+
+    <div class="section" id="adv_foreground_and_background_schedules__OpeningPicturesfromBackgroundSchedules"><a name="adv_foreground_and_background_schedules__OpeningPicturesfromBackgroundSchedules"></a><h2 class="sectiontitle">Opening Pictures from Background Schedules</h2>
+      
+      <p>If a picture opens from a background schedule while you are editing a picture or schedule in the WorkSpace, you may experience unexpected behavior. In some instances, the picture may open over a modal dialog box and you will not be able to get back to the dialog box.</p>
+
+      <p>To avoid this problem, we recommend that when adding an entry to a background schedule, you configure the schedule to check whether DeltaV Operate is in the run-time or configuration environment before opening a picture.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Schedules that are configured to run in the background cannot reference pictures. When FixBackgroundServer opens a schedule that references a picture, it also tries to open that picture. Since FixBackgroundServer cannot open pictures, an error message appears.</p>
+
+      </div>
+
+      <p>For more information on creating new schedules and using the Scheduler Properties dialog box, refer to Creating and Editing Schedules and Entries in the topic <a href="adv_designing_schedules.html">Designing Schedules</a>.</p>
+
+    </div>
+
+    <div class="section" id="adv_foreground_and_background_schedules__StartingtheFixBackgroundServerTask"><a name="adv_foreground_and_background_schedules__StartingtheFixBackgroundServerTask"></a><h2 class="sectiontitle">Starting the FixBackgroundServer Task</h2>
+      
+      <p>The FixBackgroundServer task can run on its own or as a Windows service.</p>
+
+    </div>
+
+    <div class="section" id="adv_foreground_and_background_schedules__section_439D8B51C566473A8E13E877D1451231"><a name="adv_foreground_and_background_schedules__section_439D8B51C566473A8E13E877D1451231"></a><h2 class="sectiontitle">Adding Schedules to the Background Task Startup List</h2>
+      
+      <p>Normally, you want your schedules to start automatically when DeltaV Operate is started. To do this, you must add the schedules to the background task startup list. If you are adding entries to a schedule that is already running in the background, you can choose whether or not to start monitoring the entry immediately.</p>
+
+    </div>
+
+    <div class="section" id="adv_foreground_and_background_schedules__BackgroundScheduleChecklist"><a name="adv_foreground_and_background_schedules__BackgroundScheduleChecklist"></a><h2 class="sectiontitle">Foreground Schedule Checklist</h2>
+      
+      <p>The following is an overview of the steps necessary to successfully implement a foreground schedule:</p>
+
+      <a name="adv_foreground_and_background_schedules__ol_DD6E81F1440549DF95AE48360902C793"></a><ol id="adv_foreground_and_background_schedules__ol_DD6E81F1440549DF95AE48360902C793">
+        <li id="adv_foreground_and_background_schedules__li_0E160F079FD9465C952C9C71ED2DE88F"><div class="li_content">
+          <p>Create a foreground schedule in the configuration environment of DeltaV Operate.</p>
+
+        </div></li>
+
+        <li id="adv_foreground_and_background_schedules__li_E175544981A74C8794A0778DB6A290CB"><div class="li_content">
+          <p>Monitor entries as necessary from the run-time environment of DeltaV Operate.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="adv_foreground_and_background_schedules__section_6292F5960DAD44C285F0EC5D0B34596E"><a name="adv_foreground_and_background_schedules__section_6292F5960DAD44C285F0EC5D0B34596E"></a><h2 class="sectiontitle">Background Schedule Checklist</h2>
+      
+      <p>When creating a schedule that runs in the background, you can create it directly as a background schedule or create a foreground schedule and convert it to a background schedule. The following is an overview of the steps necessary to successfully implement a background schedule:</p>
+
+      <a name="adv_foreground_and_background_schedules__ol_1E85D510BC9B4059A29794AB62063C47"></a><ol id="adv_foreground_and_background_schedules__ol_1E85D510BC9B4059A29794AB62063C47">
+        <li id="adv_foreground_and_background_schedules__li_B3849EFEE3A7404CA3FAC6FA8C5810C6"><div class="li_content">
+          <p>Create a background schedule in the configuration environment of DeltaV Operate.</p>
+
+        </div></li>
+
+        <li id="adv_foreground_and_background_schedules__li_62113381AB7D47D9ADF7FF041176C01B"><div class="li_content">
+          <p>Add the schedule to the background task startup list, using the Background Startup tab in the User Preferences dialog box.</p>
+
+        </div></li>
+
+        <li id="adv_foreground_and_background_schedules__li_79630426F82043BA8F3A5751139C2F12"><div class="li_content">
+          <p>Monitor entries as necessary from the run-time environment in DeltaV Operate.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

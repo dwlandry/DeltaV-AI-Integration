@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Redundant DeltaV OPC Mirror" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC Mirror, redundant, Redundant OPC Mirror" name="DC.subject" /><meta content="OPC Mirror, redundant, Redundant OPC Mirror" name="keywords" /><meta content="c_deltav_opc_mirror.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_opc_mirror_supported_configurations.html" name="DC.Relation" scheme="URI" /><meta content="t_install_opc_mirror_for_redundancy.html" name="DC.Relation" scheme="URI" /><meta content="c_running_the_opc_mirror_configuration_program.html" name="DC.Relation" scheme="URI" /><meta content="c_using_server_monitoring_with_redundant_opc_mirror.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_redundant_deltav_opc_mirror" name="DC.Identifier" /><title>Redundant DeltaV OPC Mirror</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_using_opc_mirror.html" /><link rel="next" href="c_deltav_opc_mirror_supported_configurations.html" /></head><body class="fixed" id="c_redundant_deltav_opc_mirror" data-relpath="c_redundant_deltav_opc_mirror.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_redundant_deltav_opc_mirror"></a>
+
+<h1 class="topictitle1">Redundant DeltaV OPC Mirror</h1>
+<div><div></div>
+ 
+	 <p>To run redundant OPC Mirror clients, you must install OPC Mirror on both
+		members of an Application Station pair with the 
+		<span class="uicontrol">Enable Redundancy for Assigned Modules</span> option
+		enabled. You can then configure OPC Mirror so that it participates in
+		switchover decision-making for the Application Stations. The OPC Mirror clients
+		inherit their active or standby redundancy roles from the core DeltaV
+		redundancy subsystem. 
+	 </p>
+ 
+	 <p>A redundant OPC Mirror client can communicate with other OPC servers
+		installed on the same Application Station or on another DeltaV or non-DeltaV
+		workstation. A redundant OPC Mirror client works together with the redundant
+		DeltaV OPC Data Access Server and Application Station where it is installed
+		such that if a failure occurs with the active OPC Mirror, the entire
+		Application Station where the active OPC Mirror is running will switch over to
+		allow the standby OPC Mirror to assume the active role. The active OPC Mirror
+		can monitor OPC servers to which it is connected, and transfer data between
+		them; it does not transfer data from or monitor OPC servers connected
+		separately to the standby OPC Mirror. Similarly, the standby OPC Mirror can
+		monitor only OPC servers to which it is connected; however, the standby OPC
+		Mirror does not transfer data between the OPC servers to which it is connected
+		until it assume the active role. 
+	 </p>
+ 
+	 <p>You configure the active OPC Mirror with the data mapping between the
+		appropriate OPC servers. After the active OPC Mirror is configured, the
+		configuration information is copied to the standby DeltaV OPC Mirror, and OPC
+		Mirror is ready for redundant operation. The active OPC Mirror monitors its
+		configured OPC servers and transfers data as required. The standby OPC Mirror
+		is in hot standby mode, meaning it can monitor its configured OPC servers, but
+		does not transfer data. Hot standby allows the standby OPC Mirror to assume the
+		active role very quickly after failure of the active OPC Mirror. 
+	 </p>
+ 
+	 <p>When configuring a redundant OPC Mirror client on a redundant DeltaV OPC
+		Data Access Server, set the 
+		<span class="uicontrol">Hostname</span> field to 
+		<span class="uicontrol">Local Machine</span> in the 
+		<span class="wintitle">New Pipe</span> or 
+		<span class="wintitle">Pipe Properties</span> dialogs. 
+	 </p>
+ 
+	 <p>The primary differences between the active and standby OPC Mirror
+		clients in a redundant configuration are the following: 
+	 </p>
+ 
+	 <a name="c_redundant_deltav_opc_mirror__ul_305D18A0C1A94AF19092DA49B0A47F64"></a><ul id="c_redundant_deltav_opc_mirror__ul_305D18A0C1A94AF19092DA49B0A47F64"> 
+		<li id="c_redundant_deltav_opc_mirror__li_71B4B8E5A0AF4A208482A3F218B85CD0"><div class="li_content"> 
+		  <p>The active OPC Mirror can transfer data between OPC servers; the
+			 standby OPC Mirror reads data from OPC servers to which it is connected, but
+			 does not write data. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_redundant_deltav_opc_mirror__li_62767AC87B724CB2A159D3DB635B4BD2"><div class="li_content"> 
+		  <p>You can start the OPC Mirror Configuration program to define pipes
+			 or set server monitor configuration options only on the Application Station
+			 where the active OPC Mirror is running. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_deltav_opc_mirror_supported_configurations.html">DeltaV OPC Mirror supported configurations</a><br />
+</li>
+<li class="ulchildlink"><a href="t_install_opc_mirror_for_redundancy.html">Install OPC Mirror for redundancy</a><br />
+</li>
+<li class="ulchildlink"><a href="c_running_the_opc_mirror_configuration_program.html">Running the OPC Mirror Configuration program</a><br />
+</li>
+<li class="ulchildlink"><a href="c_using_server_monitoring_with_redundant_opc_mirror.html">Using server monitoring with redundant OPC Mirror</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

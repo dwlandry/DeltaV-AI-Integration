@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Controller redundancy" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="redundant controllers, switchovers, Perf_Index" name="DC.subject" /><meta content="redundant controllers, switchovers, Perf_Index" name="keywords" /><meta content="c_nodes.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_controllerredundancy" name="DC.Identifier" /><title>Controller redundancy</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_intercontrollercommunications.html" /><link rel="next" href="c_online_ctrl_migration.html" /></head><body class="fixed" id="c_controllerredundancy" data-relpath="c_controllerredundancy.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_controllerredundancy"></a>
+
+<h1 class="topictitle1">Controller redundancy</h1>
+<div><div></div>
+ 
+	 <div class="section"> 
+		<p>The DeltaV system supports redundant controllers. A redundant
+		  controller consists of a pair of standard controllers on separate 2-wide
+		  power/controller carriers connected together. The controllers in a pair must be
+		  the same model<span> (for example MD Plus, SX, PK, and so on)</span>.
+		  Each controller requires a separate power supply mounted on its carrier to
+		  support redundancy. 
+		</p>
+ 
+		<p>One of the controllers in the pair is the active controller. The other
+		  controller is the standby controller. The standby controller contains the same
+		  configuration as the active controller. When an active controller fails, the
+		  standby controller takes over providing uninterrupted control operation without
+		  user intervention. The standby controller gets updates of certain parameter
+		  values in the active controller over the redundancy link, but does not execute
+		  control logic. When the switchover occurs, the new active controller reads back
+		  I/O data and the modules begin to execute. A limited amount of
+		  re-initialization occurs in order to resume control without disruption. For
+		  example, certain control and output function blocks begin executing in
+		  out-of-service mode and climb to their target mode in order to force
+		  handshaking with other blocks. In most cases control actions resume on the
+		  first scan after a switchover. For complex modules, one or a few scans of
+		  handshaking may be required. The apparent mode change on a switchover is
+		  expected and has no adverse effect on control. 
+		</p>
+ 
+		<p>Even though each controller in a redundant pair does have its own MAC
+		  address and node address, a redundant controller counts as a single node on the
+		  DeltaV control network in terms of network capacity. 
+		</p>
+ 
+		<p>A redundant controller requires a redundant controller license.
+		  Downloading a redundant controller without a license results in a description
+		  of &quot;Redundancy Not Licensed&quot; in Process History View. In addition, the RedEnb
+		  diagnostics parameter has a value of NO if no license is present. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Performance considerations for MD Plus and SD Plus
+		  controllers</h2> 
+		 
+		<p>Redundancy typically requires more controller CPU than the same
+		  configuration in a simplex controller. Additionally, larger configurations
+		  (more modules, more parameters) require more CPU time for redundancy processing
+		  than a smaller configuration. A majority of the redundancy processing time is
+		  allocated against the 35% of total controller CPU that is reserved for overhead
+		  processes. A minor amount of the redundancy processing will be allocated to the
+		  65% of time reserved for user-configured control processing and decreases the
+		  FreTim parameter by several percent. 
+		</p>
+ 
+		<p>It is important to note that the FreTim parameter is the percentage of
+		  the available processor time for execution of the user configuration. Available
+		  processor time is approximately 65% of the total CPU that is reserved for user
+		  configuration tasks and the remaining 35% of controller processor time is
+		  reserved for other controller functions. The controller&#39;s idle time measures
+		  the entire CPU time available and is shown in the DeltaV Diagnostics&#39; Time
+		  Utilization Chart. 
+		</p>
+ 
+		<p>It is possible that certain extraordinary configurations which perform
+		  properly with a simplex controller may not do so when a redundant controller is
+		  added. For example, additional CPU load from redundancy processing could cause
+		  the overhead processes to consume more than the allocated 35% of processor
+		  time. Additional load could be due to a higher than typical number of modules
+		  or parameters or other atypical usage (such as communications loading exceeding
+		  the recommended limits). When this occurs, overhead processing can consume some
+		  of the 65% of the CPU allocated to the user configuration. If adequate FreTim
+		  is available, this is not a problem. However, when FreTim is very low, the
+		  overhead system processes and the user configuration tasks compete for the CPU
+		  resources. In most cases this results in module slippage. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>You can use the DeltaV Controller Load Estimator tool to assist in
+			 determining controller load by measuring the controllers&#39; Free CPU in %
+			 (FreTim).  However, the Controller Load Estimator might not adequately account
+			 for redundant CPU loading on systems with more than 500 modules if the
+			 redundancy creates additional overhead loading exceeding the 35% reserved for
+			 system functions. Monitoring the FreTim parameter and the Time Utilization
+			 Chart is also important.  The Controller Load Estimator is provided on the
+			 DeltaV installation disk #1 in the 
+			 <span class="filepath">_Support\Tools\LoadEstimator</span> folder. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Performance considerations for 
+		  <span>MX, MQ, 
+		  </span>P-series and S-series controllers</h2> 
+		 
+		<div class="p"> Use the DeltaV Diagnostics 
+		  <span class="wintitle">Controller Performance</span> dialog to monitor the
+		  performance of 
+		  <span>MX, MQ, SX, SQ, 
+		  </span>SZ, and PK controllers<span> as well as the EIOC</span>.
+		  This dialog shows a graphical representation of the controller&#39;s runtime
+		  performance based on an indexed value from 1 to 5. The performance indices
+		  shown in the dialog are: 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <strong>Control Performance Index: 
+			 </strong> an indicator of controller module execution. Included in this
+			 metric is the amount of CPU time spent executing control for the high, medium,
+			 and low priority modules. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong> Comms Performance Index:</strong> an indicator of the data that is
+			 transmitted and received by the controller. This metric takes into account
+			 bandwidth comparisons in terms of the average amount of data sent and received
+			 as compared to the maximum bandwidth that is supported for the controller,
+			 solicited and unsolicited data transfers, 
+			 <span>the amount of Remote I/O data sent and received, 
+			 </span>and the depth of the communications queue. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <strong>System Performance Index:</strong> an all inclusive indicator of the
+			 controller processor&#39;s total free time. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong> Free Memory Index:</strong> an all inclusive indicator of the
+			 controller&#39;s free memory. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The dialog also shows the overall performance index (Perf_Index) which
+		  is a comparison of the smallest values of the other indices. Refer to the
+		  DeltaV Diagnostics online help for more information on using the 
+		  <span class="wintitle">Controller Performance</span> dialog. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Switchovers</h2> 
+		 
+		<p>A switchover from the active to the standby controller can occur for
+		  the following reasons: 
+		</p>
+ 
+		<a name="c_controllerredundancy__ul_EC9E17602A23488E9D21F67F30451C94"></a><ul id="c_controllerredundancy__ul_EC9E17602A23488E9D21F67F30451C94"> 
+		  <li id="c_controllerredundancy__li_DDE3A5FE64CD43CF9A0AA18831EAC02C"><div class="li_content"> 
+			 <p>Hardware failure within the active controller 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_662D22653D8F4466A937B68230BCDE8B"><div class="li_content"> 
+			 <p>Communications failure between the active controller and the I/O
+				subsystem 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_2B1C6DE96F9943C1B5D4DAB9B80E86DA"><div class="li_content"> 
+			 <p>Communications failure of both the primary and secondary network
+				connections in the active controller 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_7E6070871C0444158025F3D88C4D27D0"><div class="li_content"> 
+			 <p>Removal of the active controller from the carrier 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_105712E34BB44B35A3F46F7F3C6930CA"><div class="li_content"> 
+			 <p>Manual switchover request 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_8884CEDF06384E19BBA8727C8E1BFF2A"><div class="li_content"> 
+			 <p>Loss of power supply for the active controller 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_0FDC479AC0AA460A96B5213CD3975F11"><div class="li_content"> 
+			 <p>Memory failure (the active controller detects a RAM or ROM
+				failure) 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_7E47F0FC15F04BF6A264F5EC7117CA73"><div class="li_content"> 
+			 <p>Software watchdog timer trip 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>When a switchover occurs, the node status area on the Alarm Banner
+		  indicates the status change to the operator. The system regenerates active,
+		  unacknowledged and suppressed alarms. The system does not regenerate alarms
+		  that are both inactive and acknowledged. Alarm states are maintained during a
+		  switchover but General I/O Failure (IOF) Alarms may change state momentarily. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>If a switchover occurs on an MD Plus or SD Plus controller while the
+			 ProfessionalPLUS workstation is offline, the controller Diagnostics parameters 
+			 <em>PAvail</em> remains 
+			 <em>No</em> and 
+			 <em>Status</em> remains 
+			 <em>Standby not detected</em> until the ProfessionalPLUS workstation is
+			 online. 
+		  </p>
+ 
+		</div>
+ 
+		<p>The system stores a record of each switchover and the reason it
+		  occurred (if known). The switchover is logged in the Event Chronicle. After a
+		  switchover, the controller attempts to communicate with all of its I/O. The
+		  Event Chronicle description: Switchover I/O Readback Timeout means that after a
+		  redundancy switchover, the controller was unable to communicate with its I/O
+		  before the timeout period. 
+		</p>
+ 
+		<p>If the standby controller should fail, the software disables
+		  switchovers until you replace the failed unit. 
+		</p>
+ 
+		<p>Generally, there is no user impact related to a controller switchover.
+		  However, there are certain situations that the user should be aware of when
+		  configuring control. These relate to unit modules and phases, and HART digital
+		  variables, external references to other controllers, and forced debug parameter
+		  values. 
+		</p>
+ 
+		<p>Unit module and phase runtime data are not transferred to the standby
+		  controller before PAVAIL=YES and therefore one should wait at least 1 minute
+		  beyond PAVAIL=YES before doing a switchover so that the standby controller is
+		  ready to take control. 
+		</p>
+ 
+		<p>HART digital variables will have a value of zero with Bad status for
+		  six or more seconds after a controller switchover. If you access a HART digital
+		  variable in an expression (Calc, Condition, or Action function block; SFC
+		  transition or action), be sure to also consider the status of the variable in
+		  the expression. For example, use the value only when the status is Good.
+		  Accessing HART digital variables in AI function blocks or by external reference
+		  parameters should be done for monitoring, not control purposes. 
+		</p>
+ 
+		<p>A Condition function block that references a parameter in another
+		  controller has the potential to change its OUT_D parameter when the referenced
+		  controller switches over. You can prevent this by selecting the 
+		  <span class="uicontrol">Abort on Read Errors</span> option in ALGO_OPTS. This
+		  is recommended unless you want OUT_D.ST to be BadNoCommNUV during the
+		  switchover. In this case leave the 
+		  <span class="uicontrol">Abort on Read Errors</span> option deselected and
+		  change ERROR_OPT to 
+		  <span class="uicontrol">Use Last</span>. 
+		</p>
+ 
+		<p>Forced debug parameter values (that is, those set in Control Studio&#39;s
+		  debug mode) are not retained following a controller switchover. The value of
+		  the parameter is set to the default value as configured. If forced debug
+		  parameters exist, the system displays a warning when you start or terminate a
+		  debug session. 
+		</p>
+ 
+		<p>In general, the system regenerates process and device alarms during a
+		  controller switchover. This includes all active, unacknowledged and suppressed
+		  alarms. Inactive and acknowledged alarms are not regenerated. General I/O
+		  Failure (IOF) alarms may change state momentarily. The Time In values
+		  (displayed in the alarm list) and the alarm states are not affected by the
+		  regeneration. The Time Last values on the alarm list are updated. Alarm strings
+		  may not be maintained. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Manual Switchovers</h2> 
+		 
+		<p>Users with the Diagnostic Key can initiate a switchover from DeltaV
+		  Diagnostics. In Diagnostics, a redundant controller has a Redundancy subsystem.
+		  To perform a manual switchover, right-click the Redundancy subsystem, and then
+		  click 
+		  <span class="uicontrol">Redundancy switchover</span>. 
+		</p>
+ 
+		<p>Controllers have three parameters that determine whether a manual
+		  switchover can occur: 
+		</p>
+ 
+		<a name="c_controllerredundancy__ul_5B1E7113795246C18A4DC4067482D654"></a><ul id="c_controllerredundancy__ul_5B1E7113795246C18A4DC4067482D654"> 
+		  <li id="c_controllerredundancy__li_D71602F1DAE04B2596DD7DF5FEE29AE1"><div class="li_content"> 
+			 <p><strong>PExist</strong> -- indicates whether the standby controller is
+				physically present 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_6B56135B712440D88B71D961E2D27B59"><div class="li_content"> 
+			 <p><strong>PAvail</strong> -- indicates whether the standby controller has
+				received a download and is ready to take over 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_811D86EBDA394420955784EFF28AC3D4"><div class="li_content"> 
+			 <p><strong>RedEnb</strong> -- indicates whether redundancy has been enabled for
+				the pair. In order for redundancy to be enabled, the active controller must
+				have received a download. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>In order for a manual switchover to occur, all three of the above
+		  parameters must have a value of Yes. If not, the Status parameter provides
+		  additional details about why the controller cannot switch over. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Configuration Analysis tool</h2> 
+		 
+		<div class="p" id="c_controllerredundancy__config_analysis_tool"><a name="c_controllerredundancy__config_analysis_tool"></a>The Configuration Analysis tool checks
+		  control module logic for items that might affect a controller switchover. The
+		  tool enables you to check for any of the following in your logic: 
+		<ul> 
+		  <li><div class="li_content"><strong>Incorrect Function Block Order</strong> – First-time module execution
+			 after a switchover can be affected if function block wiring, feedback wiring
+			 and module execution order are not correct. Function block execution order
+			 determines the actual order. The tool locates instances where the function
+			 block wiring does not match the function block execution order. Feedback
+			 wiring, such as the wiring between function block BKCAL parameters, is expected
+			 and is not noted by the tool. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong>SFC Confirm Expressions Hardcoded to True</strong> – SFC confirm
+			 expressions hardcoded as TRUE can cause unexpected results if the action
+			 expression does not happen immediately on switchover. Actions with confirm
+			 expressions set to TRUE are marked as complete immediately with no retry
+			 mechanism if the write fails (for example, if the write is being done to a
+			 controller at the instant it is undergoing a switchover). For this reason use
+			 of TRUE confirms is not recommended, readback of written parameters or
+			 confirmation of the write status with the .AWST parameter should be used. TRUE
+			 confirms in actions that reference only internal parameters are omitted from
+			 the check. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Review the results of the analysis report to determine if the items
+		  in the report are configured as intended. 
+		</div>
+ 
+		</div>
+ 
+		<p>To access the tool in Control Studio, open the module and click 
+		  <span class="menucascade"><span class="uicontrol">Main button</span> 
+			  &gt; <span class="uicontrol">Module</span> &gt; <span class="uicontrol">Controller Switchover,
+				Analyze Configuration</span></span>. You can add this command to
+		  the Quick Access toolbar. Click the down arrow for the 
+		  <span class="uicontrol">Customize Quick Access Toolbar</span>, then click 
+		  <span class="uicontrol">More Commands</span> and click 
+		  <span class="uicontrol">Analyze Configuration</span>. 
+		</p>
+ 
+		<p>To access the tool in DeltaV Explorer, select the module from any
+		  location in the hierarchy and right-click,<span class="uicontrol"> Analyze
+			 Configuration</span>. You can perform analysis on any of the following
+		  items in DeltaV Explorer: 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"><strong>Area: 
+			 </strong>Displays the analysis report for all modules (excluding SIS
+			 modules) inside the area. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p><strong>Library Items: 
+				</strong>Displays the analysis report for individual modules or entire
+				containers. This includes Composite Templates, Module Templates, Equipment
+				Module Classes, Control Module Classes, and Phase Classes. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p><strong>Individual Control Module:</strong> Displays the analysis report for
+				modules inside the areas subsytem or the controller module assignments
+				subsystem. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Creating a Controller Placeholder</h2> 
+		 
+		<p>To create a placeholder for a redundant controller in DeltaV Explorer,
+		  add a controller node, and then click the 
+		  <span class="uicontrol">Redundant Controller</span> option on the node&#39;s 
+		  <span class="wintitle">Properties</span> dialog. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Installing a Redundant Controller</h2> 
+		 
+		<p>Installing a redundant controller is as simple as installing a single
+		  controller. The auto-sense feature in the DeltaV system recognizes two
+		  controllers on adjacent, connected carriers as a redundant controller. 
+		</p>
+ 
+		<p>Refer to the DeltaV hardware manuals for physical installation
+		  instructions. 
+		</p>
+ 
+		<p>After installation, drag the controller from the Decommissioned
+		  Controllers section to the control network or to a redundant placeholder.
+		  Assign an appropriate redundant license to the controller and download the
+		  controllers to enable redundancy. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Installing a Standby Controller</h2> 
+		 
+		<p>You can connect a second controller to an existing controller&#39;s
+		  carrier to introduce redundant control without interrupting your process. The
+		  system automatically commissions a standby controller when you install it. It
+		  is not necessary to remove or decommission the active controller. The active
+		  controller continues to operate without interruption. How the standby
+		  controller gets its configuration depends on the controller type: 
+		</p>
+ 
+		<a name="c_controllerredundancy__ul_AD8FBC6F32FA47319CF8CE0177FBE4B5"></a><ul id="c_controllerredundancy__ul_AD8FBC6F32FA47319CF8CE0177FBE4B5"> 
+		  <li id="c_controllerredundancy__li_8E8940B20F944FCD941EFDE703360957"><div class="li_content"> 
+			 <p><span> MQ, MX, SQ, SX, and 
+				</span>PK controllers — The standby controller receives its
+				configuration from the active partner over the redundancy link. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_29BF1123246F4053AE6F1EF7063EAFCE"><div class="li_content"> 
+			 <p> MD Plus and SD Plus controllers — The system automatically
+				assigns the standby with an address and downloads the standby controller with
+				the latest download and with any online changes made to the active controller. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>To install a standby controller follow these steps: 
+		</p>
+ 
+		<div class="cautiontitle">CAUTION:</div><div class="caution"> 
+		  <p> Follow the steps in the order shown. Do not install a second 2-wide
+			 carrier that already has a power supply and controller installed. Doing so will
+			 result in a loss of configuration data for the active controller. 
+		  </p>
+ 
+		</div>
+ 
+		<a name="c_controllerredundancy__ol_07A5C4C9BCE644A281F1A62F1665C4EA"></a><ol id="c_controllerredundancy__ol_07A5C4C9BCE644A281F1A62F1665C4EA"> 
+		  <li id="c_controllerredundancy__li_9A0A2EBDE05446F0BBB93F49312C2D71"><div class="li_content"> 
+			 <p>Using the DeltaV Explorer, assign an appropriate redundant
+				controller license to the controller node that you want to make redundant in
+				DeltaV Explorer. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_8A21852EB1864E8085B1F70A1EF359D7"><div class="li_content"> 
+			 <p>Install a second 
+				<span>2-wide or 
+				</span>controller carrier to the left of the current controller&#39;s
+				carrier. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_8B49BD0486D643A6843BAFD5F383E6DB"><div class="li_content"> 
+			 <p>Insert the appropriate Power Supply according to the controller
+				hardware instructions<span> (different controller models have
+				  different slots for the power supply)</span>. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_07904D4D8DF747C7ABC2AC5A1F2498D7"><div class="li_content"> 
+			 <p>Connect a controller to the carrier. The version of the controller
+				you connect must match the existing controller&#39;s version. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_CD544F1BDB3347378B3D66CF23A7D509"><div class="li_content"> 
+			 <p>DeltaV Explorer displays a redundant controller icon in place of
+				the simplex icon. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_controllerredundancy__li_6CD3352CF1C94B0C8016413220EFAA1F"><div class="li_content"> 
+			 <p>If you are changing a simplex controller to a redundant pair,
+				there is a one-time step required. In the DeltaV Explorer, right-click the
+				controller, click 
+				<span class="uicontrol">Download</span>, and then click 
+				<span class="uicontrol">Setup Data</span>. This turns on redundancy for the
+				pair but does not disrupt any existing process control. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ol>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Replacing a Failed Controller</h2> 
+		 
+		<p>When a switchover occurs, remove the failed controller and plug in a
+		  replacement. The system automatically commissions the replacement and makes it
+		  the standby controller. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Removing Controllers</h2> 
+		 
+		<p>The commissioning and decommissioning function in the DeltaV Explorer
+		  affects both controllers in the pair. You can remove one controller in a
+		  redundant pair without decommissioning it. For example, if you remove the
+		  standby controller and reinstall it, the address is reestablished, the standby
+		  receives a current download and is ready to accept a switchover. If you remove
+		  the active controller without decommissioning, the standby takes over control.
+		  When you reinstall the controller, the address is reestablished and the
+		  reinstalled controller becomes the standby controller. Anytime one controller
+		  is removed from a pair, the DeltaV Explorer continues to identify the
+		  controller as redundant. If you want to change a redundant controller to
+		  simplex, you must change the properties of the controller in DeltaV Explorer
+		  and download the controller&#39;s setup data. 
+		</p>
+ 
+		<p>Do not disconnect a carrier and its controller while the controller is
+		  powered and operating. If a controller and carrier must be removed, power down
+		  the controller before disconnecting the carrier and its controller. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> Before removing 
+			 <strong>both</strong> the controllers of a redundant pair, decommission the
+			 node through the DeltaV Explorer. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Diagnostics</h2> 
+		 
+		<p>The DeltaV Diagnostics displays a redundant controller icon in place
+		  of the simplex icon for redundant controllers and placeholders. The DeltaV
+		  Diagnostics enables you to view diagnostics, MAC addresses, and node (IP)
+		  addresses for both controllers in a pair. Diagnostics also enables you to flash
+		  the lights on either controller in the pair independently using the 
+		  <span class="uicontrol">Identify Controller</span> menu selection. All
+		  diagnostic and address information for the standby controller is accessed
+		  through the active controller at the Standby level (below the Redundancy
+		  Subsystem). Diagnostics requires a commissioned communicating controller to be
+		  able to flash the lights (unlike DeltaV Explorer, which can use the database
+		  MAC address when the controller is decommissioned). However, you can Telnet or
+		  perform a TCP/IP PING directly to the primary or secondary network connection
+		  node addresses on the standby. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Upgrading Controller Firmware</h2> 
+		 
+		<p>If the redundant controllers require a firmware upgrade (such as for a
+		  DeltaV version upgrade), the controllers contain flash ROM that allows you to
+		  update the firmware while your process is running. Simply upgrade the standby
+		  controller, then perform a manual switchover from Diagnostics. You can then
+		  upgrade controller that you recently switched to standby at your convenience.
+		  There is no downtime. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,4227 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="VCR specifications" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="devices, VCRs supported, fieldbus devices, fieldbus, VCRs, Free VCRs, maximum number supported, publisher VCRs, subscriber VCRs, VCR limits, VCR, free, publisher, subscriber" name="DC.subject" /><meta content="devices, VCRs supported, fieldbus devices, fieldbus, VCRs, Free VCRs, maximum number supported, publisher VCRs, subscriber VCRs, VCR limits, VCR, free, publisher, subscriber" name="keywords" /><meta content="c_foundation_fieldbus_technology_and_deltav.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_vcr_specs" name="DC.Identifier" /><title>VCR specifications</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_retaining_the_commiss_status.html" /><link rel="next" href="c_serial_devices_and_dv_system.html" /></head><body class="fixed" id="r_vcr_specs" data-relpath="r_vcr_specs.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_vcr_specs"></a>
+
+<h1 class="topictitle1">VCR specifications</h1>
+<div><div></div>
+<div class="section" id="r_vcr_specs__section_A80FF940A43D43DBB515ACA828EFAF83"><a name="r_vcr_specs__section_A80FF940A43D43DBB515ACA828EFAF83"></a><p>The following tables list the VCR specifications for certain fieldbus devices. The tables are organized according to whether the devices use Free VCRs or not.</p>
+<p>The following table shows the maximum number of free VCRs for those devices supported by the DeltaV system that use Free VCRs. Each port on the H1 card supports a maximum of 50 linkable VCRs (a maximum of 50 device subscribers or 35 H1 publishers). Enabling fieldbus alarms in a device consumes one alarm VCR and reduces by one the available number of Free VCRs for publisher and subscriber links.</p>
+
+<div class="tablenoborder"><a name="r_vcr_specs__table_34AE4F9F5B85431094A9F236BA4CDD0C"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vcr_specs__table_34AE4F9F5B85431094A9F236BA4CDD0C" rules="all" summary=""><caption><span class="tablecap">fieldbus Device Free VCRs</span></caption><thead align="left"><tr><th class="cellrowborder" id="d3280756e84" valign="top" width="50%">Device</th>
+<th class="cellrowborder" id="d3280756e86" valign="top" width="10%">Revision</th>
+<th class="cellrowborder" id="d3280756e88" valign="top" width="20%">Max number free VCRs</th>
+<th class="cellrowborder" id="d3280756e90" valign="top" width="20%">Link master capable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ASCO Controls 4449</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>CSI 9210 Machinery Health Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic 0990 ELQ On/Off Extended
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic 22C0 ELQ On/Off Advanced
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic 7360 ELQ Positioner Extended
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic 8000 ELQ Positioner Basic
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+El-O-Matic A2C0 ELQ On/Off Pneumatic
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+4
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic DD30 ELQ Positioner Advanced
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+El-O-Matic F800 ELQ On/Off Basic
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Fisher-Rosemount Systems DeltaV H1 Carrier
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Fisher Controls DVC5000f fieldbus Digital Valve Controller (300)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Fisher Controls DVC5000f AO/PID Digital Valve Controller (5400)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+7
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Fisher Controls DVC5000f AO/PID/IS Digital Valve Controller (5420)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+8 </p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+16
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Fisher Controls DVC5000f DO/DI Digital Valve Controller
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+7 </p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+11
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Fisher Controls DVC6000f -  SC rev 1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="4" valign="top" width="50%"><p>Micro Motion 2000 (2700 Coriolis Flow Meter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Micro Motion 5300 (Coriolis Flow Meter)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+5 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 644 fieldbus Temperature Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Rosemount 848 fieldbus Temperature Device
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+5
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+16
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 848L Logic fieldbus Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 752 fieldbus Remote Display</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Rosemount 3244MV fieldbus Temperature Transmitter
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+9</p>
+<p>
+(this revision supports a maximum of 5 subscriber VCRs)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="5" valign="top" width="50%"><p>
+Rosemount 3051 fieldbus Pressure Transmitter
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+7
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>23</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 3144 fieldbus Temperature Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 3900 TankRadar REX Level Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount 5600 TankRadar PRO Level Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="4" valign="top" width="50%"><p>
+Rosemount 8742 Magnetic Flow
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+4
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="5" valign="top" width="50%"><p>
+Rosemount 8800 fieldbus Vortex Flow Transmitter
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+5
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+4
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical 1000 Continuous Gas Analyzer</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical 1100 MLT Continuous Gas Analyzer</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Rosemount Analytical 4081 pH fieldbus Transmitter 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+5
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+7
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Rosemount Analytical 4081 C/T fieldbus Transmitter
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Rosemount Analytical 4081 Flue Gas 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Rosemount Analytical OXT 5000</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Rosemount Analytical 1000 Continuous Gas Analyzer
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical 5081 pH fieldbus Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical 5081A fieldbus Transmitter (Amperometric)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical 5081C/T fieldbus Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical Xmt-A-FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>19</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical Xmt-C/T-FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>19</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rosemount Analytical  Xmt-P-FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>19</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Valve Automation D3A0 FieldQ Pneumatic Valve Actuator</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>15</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+ABB Pressure Transmitter (600T)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+11
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB 2000T Pressure Transmitter Rev 1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB 2000T/2600T (263/265) Pressure Series</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>ABB 2600T (262/264) Pressure Series</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB 2600T (267/269) Pressure Series Rev 2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB TRIO-WIRL Flow Meter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB FXE4000 Magmeter Series</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB FSM4000 Magmeter Series</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB pH/ORP/pION Transmitter (TB82pH)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB TB82TE Conductivity, Concentration Transmitter (2- Electrode)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB TB82EC Conductivity, Concentration Transmitter (4-Electrode)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB Temperature Transmitter (TF02, TF102, TF202)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>ABB  TZID-C120</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Anderson Instruments Pressure TB-Interface</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Anderson Instruments Temperature TB-Interface</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>AUMA Aumatic FF H1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>BEKA associates Ltd. fieldbus Display</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>BEKA associates Ltd. fieldbus Indicator</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Biffi FF 2000 v4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Berthold Technologies Uni-Probe LB490</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Berthold Technologies Uni-Probe LB491</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Buerkert Werke Power I/O Box
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Dresser FVP Valve Positioner</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Dresser FVP (software download)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Dynamic Flow Computers</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+EIM Controls EA00 Positioner
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+EIM Controls ED00 fieldbus OnOffValve
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+8
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Endress+Hauser CERABAR S
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Endress+Hauser DELTABAR S
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Gammapilot M</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Endress+Hauser MICROPILOT II
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="4" valign="top" width="50%"><p>
+Endress+Hauser Micropilot M
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+11
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Endress+Hauser Promass 83
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+14
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Endress+Hauser DELTAPILOT S
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+11
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Endress+Hauser LEVELFLEX M
+
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>Y</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Liquiline M CM 42 Cond</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Liquiline M CM 42 pH/ORP</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Endress+Hauser Promag 53
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+10
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Prosonic Flow 92</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>24</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Endress+Hauser Prosonic 93</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Endress+Hauser PROSONIC M</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Prowirl 72</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser Prowirl 73</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Endress+Hauser RID1X</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>24</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Foxboro-Eckardt RTT15-F</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>FlowServe AccuMX Application</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>15</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+FlowServe Valve Controller
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+4 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+5
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Fuji Electric FCX-A2 Pressure Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Heinrichs Messtechnik</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Honeywell Pressure Transmitter (ST3000FF) 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+10
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+7
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+11
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Honeywell  Temperature Transmitter (STT35F)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Invensys Process Systems (Foxboro) IASPT10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>22</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>32</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Invensys Process Systems (Foxboro) SRD960 Valve Positioner </p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Invensys Process Systems (Foxboro) SRD991 Valve Positioner </p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>16</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Knick Elektronische Messgerate Stratos FF 2231X Oxy</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Knick Elektronische Messgerate Stratos FF 2231X pH</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Knick Elektronische Messgerate Stratos FF 2232X CondI</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>KOSO America REXA XPAC Actuator</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>KROHNE BM 70 A/P Radar Level Meter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+5
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>KROHNE IFC090 Compact Electromagnetic Flowmeter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>KTEK AT100</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>24</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Limitorque MX100</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>15</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>LEDEEN LFFC-LD-1.0</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Magnetrol, Model 705 3.x</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Magnetrol, Orion Jupiter Model 2xx</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>MagTech LTM-300</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>METTLER-TOLEDO Oxy 4100 FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>METTLER-TOLEDO pH 2100 FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>METTLER-TOLEDO Cond Ind 7100e FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>METTLER-TOLEDO M700 FF700</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Metso Automation NELES Valve-1 Positioner</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Metso Automation ND9000F Valve Controller (Rev 1)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Metso Automation ND9000F Valve Controller (Rev 2)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Metso Automation ND9000F Valve Controller (Rev 3)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>21</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>MTL F809F</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Ohmart fieldbus Level/Density</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>OVAL Corporation EX-DELTA (Vortex Flowmeter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Pepperl+Fuchs RDO-TI-Ex8-FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Pepperl+Fuchs FDO-VC-Ex4.FF
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+21
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>PR Electronics PRetop 5350 FF (Head Mount Temperature Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>PR Electronics PRetrans 6350 (Panel Mount Temperature Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Rotork, ROTORK ACTUATOR</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+SAMSON AG Advanced Positioner Type 3787
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+10
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+14
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>SAMSON AG Positioner 373x5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Siemens AG Positioner SIPART PS2 FF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>StoneL Corporation FF VCT</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" colspan="1" headers="d3280756e84 " rowspan="2" valign="top"><p>StoneL Corporation FF I/O Module 52</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" colspan="1" headers="d3280756e84 " rowspan="2" valign="top"><p>StoneL Corporation FF I/O Module F2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+TopWorx DVC-FF Discrete Valve Controller
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+16
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>VEGA Grieshaber VEGABAR (Pressure Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>VEGA Grieshaber VEGACAL</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>VEGA Grieshaber VEGA FLEX (Guided Microwave Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>VEGA Grieshaber VEGA PULS (Radar Level Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Vega Grieshaber VEGASON (Ultrasonic Level Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yamatake Corporation ATT (Temperature Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yamatake Corporation Standard Magnetic Flow Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yamatake Corporation DST (Pressure Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Yamatake Corporation AVP (Valve Positioner)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric, AV550G</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric, AXF</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric, DO202-F Dissolved Oxygen Transmitter</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric DYF/LC1 (Vortex Flowmeter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>Yokogawa Electric EJA100A (Pressure Transmitter)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric EJX</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>
+Yokogawa Electric YVP Valve Positioner 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+12
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric YVP Valve Positioner (software download)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Yokogawa Electric AE100 (Mag Flowmeter)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+9
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Yokogawa Electric YTA320 (Temperature Transmitter)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+25
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+Yokogawa Electric DAQSTATION
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+17
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+Y
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="2" valign="top" width="50%"><p>
+Yokogawa Electric YF100 (YEWFLOW) Vortex Flowmeter
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>
+10
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric, YPK (Software Download)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric, YVP (Software Download)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>20</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>Yokogawa Electric PH202-F (pH Analyzer)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>Yokogawa Electric SC202-F (Conductivity/Resistivity Analyzer)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " rowspan="3" valign="top" width="50%"><p>Yokogawa Electric ISC202-F (Inductivity/Conductivity Analyzer)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric ROTAMASS</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Yokogawa Electric ROTAMASS</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>25</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Westlock BIFFIICON2000</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e84 " valign="top" width="50%"><p>Westlock FPAC Valve Controller EL40106</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e86 " valign="top" width="10%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e88 " valign="top" width="20%"><p>17</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e90 " valign="top" width="20%"><p>N</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>The following table shows the maximum number of Publisher and Subscriber VCRs for these generic devices supported by the DeltaV system. These devices do not support Free VCRs. Each port on the H1 card supports a maximum of 50 VCRs.</p>
+
+<div class="tablenoborder"><a name="r_vcr_specs__table_748344CA1D40403692B75E14541011C9"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vcr_specs__table_748344CA1D40403692B75E14541011C9" rules="all" summary=""><caption><span class="tablecap">fieldbus Device Subscriber and Publisher Links</span></caption><thead align="left"><tr><th class="cellrowborder" id="d3280756e4077" valign="top" width="NaN%">Device</th>
+<th class="cellrowborder" id="d3280756e4079" valign="top" width="NaN%">Revision</th>
+<th class="cellrowborder" id="d3280756e4081" valign="top" width="NaN%">Max number  publisher VCRs</th>
+<th class="cellrowborder" id="d3280756e4083" valign="top" width="NaN%">Max number subscriber VCRs</th>
+<th class="cellrowborder" id="d3280756e4085" valign="top" width="NaN%">Link master capable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Dynisco Instrumnets FFX</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>23</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>23</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Cerabar S</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Cerabar S</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Deltabar S</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Deltabar S</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Deltapilot S</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Liquiline M CM 42 Doxygen</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>0</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Prowirl 72</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Prowirl 73</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Temperature Transmitter TMT 85</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Temperature Transmitter TMT 162</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>Endress+Hauser Temperature Transmitter TMT 165</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="2" valign="top" width="NaN%"><p>
+Flowserve Corporation</p>
+<p>
+BUSWITCH
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+2 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="2" valign="top" width="NaN%"><p>KTEK AT100</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>KTEK MT5000</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="2" valign="top" width="NaN%"><p>Rotork ROTORK (IQ, AQ, Q, IQM, AQM Electric Actuator)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>14</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>SMAR Pressure Transmitter (LD302)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>SMAR Temperature Transmitter (TT302)</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>N</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>
+SMAR Current Transmitter (IF302) 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+2 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>
+SMAR Current Output Transmitter (FI302)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+2 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>
+SMAR Basic Positioner Transmitter (FP302)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+2 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " rowspan="3" valign="top" width="NaN%"><p>
+SMAR Advanced Positioner Transmitter (FY302)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+2 
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4085 " valign="top" width="NaN%"><p>
+N 
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>
+3
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>
+6
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>
+N
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3280756e4077 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4079 " valign="top" width="NaN%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4081 " valign="top" width="NaN%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d3280756e4083 " valign="top" width="NaN%"><p>Y</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

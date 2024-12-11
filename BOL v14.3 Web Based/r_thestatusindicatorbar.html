@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="The status indicator bar" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Operate" name="DC.Coverage" /><meta content="indicators, Batch Operator Interface" name="DC.subject" /><meta content="indicators, Batch Operator Interface" name="keywords" /><meta content="c_batchapplicationmanager.html" name="DC.Relation" scheme="URI" /><meta content="c_communicationsproblems.html" name="DC.Relation" scheme="URI" /><meta content="c_thebatchoperatorinterfacecontrols.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_thestatusindicatorbar" name="DC.Identifier" /><title>The status indicator bar</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_thecommandbuttonbar.html" /><link rel="next" href="c_usingthebatchoperatorinterface.html" /></head><body class="fixed" id="r_thestatusindicatorbar" data-relpath="r_thestatusindicatorbar.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_thestatusindicatorbar"></a>
+
+<h1 class="topictitle1">The status indicator bar</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_thestatusindicatorbar__section_C2BFF07463304EB2A05DBB05AD1B43EC"><a name="r_thestatusindicatorbar__section_C2BFF07463304EB2A05DBB05AD1B43EC"></a> 
+		<p>The status indicator bar, located at the bottom right-hand corner of
+		  the Batch Operator Interface and DeltaV Operate Batch Controls windows,
+		  displays the recipe component for the current batch as well as the current
+		  status of the connected Batch Executive and that Executive&#39;s connection to
+		  DeltaV services, the Batch Recipe Simulator, and the DeltaV Batch SoftPhase
+		  Server. The last two panes are used to display the node name of the connected
+		  Batch Executive and the current time from the Batch Executive node. The color
+		  and text displayed in these panes varies depending on the status of the
+		  connection to the Batch Executive.
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_thestatusindicatorbar__table_974B3791D0D84D188E7C929C1A5FFCFC"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thestatusindicatorbar__table_974B3791D0D84D188E7C929C1A5FFCFC" rules="all" summary=""> 
+			  
+			  
+			  
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d3258818e58" valign="top" width="NaN%"> 
+					 <p>Batch Executive State
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e64" valign="top" width="NaN%"> 
+					 <p>Batch Executive Field Background Color
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e70" valign="top" width="NaN%"> 
+					 <p>Time Field Text (Batch Operator Interface)
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e76" valign="top" width="NaN%"> 
+					 <p>Time Field Background Color (Batch Operator Interface)
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e82" valign="top" width="NaN%"> 
+					 <p>Status Message (DeltaV Operate Batch Controls)
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e89" valign="top" width="NaN%"> 
+					 <p>Cause
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Running
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Green
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>Time
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Gray
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>&lt;no text&gt;
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The Batch Executive is running.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Stopped
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Red
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>STOPPED
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Red
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>The batch executive is stopped.
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The Batch Executive is currently not running.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Unknown
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Orange
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>UNKNOWN
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Orange
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>Awaiting connection to Batch Executive node.
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The Batch Executive is in an indeterminate state (for
+						example, when it is starting up) or the Batch Operator Interface (or Batch
+						Controls) cannot communicate with the Batch Executive node (for example, when
+						the Batch Executive node is rebooted in a system with a simplex Batch
+						Executive).
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+
+				<tr valign="top">
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%">
+					 <p>Unknown
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%">
+					 <p>Orange
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%">
+					 <p>UNKNOWN
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%">
+					 <p>Light Blue
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%">
+					 <p>Awaiting connection to Batch Executive node.
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%">
+					 <p> This Batch Executive is at its maximum number of
+						connections.
+					 </p>
+
+				  </td>
+
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Lost
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Yellow
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>LOST
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Yellow
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>The connection to the server has been lost.
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The Batch Operator Interface (or the Batch Control) had
+						network communication with the Batch Executive node and now that connection is
+						lost.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Downloading
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Purple
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>&lt;Time&gt;
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Gray
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>The connected server is processing a download.
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The Batch Executive is being downloaded. You can control
+						currently running batches. You cannot add a new batch until the Batch Executive
+						field is green.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e58 " valign="top" width="NaN%"> 
+					 <p>Switching
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e64 " valign="top" width="NaN%"> 
+					 <p>Magenta
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e70 " valign="top" width="NaN%"> 
+					 <p>SWITCHING
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e76 " valign="top" width="NaN%"> 
+					 <p>Magenta
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e82 " valign="top" width="NaN%"> 
+					 <p>A batch executive switchover is in progress.
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e89 " valign="top" width="NaN%"> 
+					 <p>The active Batch Executive is switching to the standby. When
+						the switchover is complete, the computer that was previously the standby is now
+						the active Batch Executive.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>To the left of the Batch Executive node&#39;s pane are up to three panes
+		  that display the status of the connection between the Batch Executive and
+		  DeltaV Services (DELTAV), the Recipe Simulator (DVBSIM), and the Soft Phase
+		  Server (SoftPhase) if configured. The color of these panes varies depending on
+		  the connection status between the server and the Batch Executive:
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_thestatusindicatorbar__table_E446A37EC20246E3855F26AA130A7E81"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thestatusindicatorbar__table_E446A37EC20246E3855F26AA130A7E81" rules="all" summary="" width="100%"> 
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d3258818e400" valign="top" width="NaN%"> 
+					 <p>Connected Server States
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e406" valign="top" width="NaN%"> 
+					 <p>Connected Server Field Background Color
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3258818e412" valign="top" width="NaN%"> 
+					 <p>Cause
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e400 " valign="top" width="NaN%"> 
+					 <p>Running
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e406 " valign="top" width="NaN%"> 
+					 <p>Green
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e412 " valign="top" width="NaN%"> 
+					 <p>Communications between the Batch Executive and the specific
+						server are good.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e400 " valign="top" width="NaN%"> 
+					 <p>Stopped
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e406 " valign="top" width="NaN%"> 
+					 <p>Red
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e412 " valign="top" width="NaN%"> 
+					 <p>No communication exists between the specific server and the
+						batch Executive. For example, in the case of the Recipe Simulator and the Soft
+						Phase Server, it could mean that the server is not currently running.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d3258818e400 " valign="top" width="NaN%"> 
+					 <p>Unknown
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e406 " valign="top" width="NaN%"> 
+					 <p>Orange
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3258818e412 " valign="top" width="NaN%"> 
+					 <p>The connection between the server and the Batch Executive is
+						indeterminate. For example, in the case of the Recipe Simulator and the Soft
+						Phase Server, this could mean that the server is starting up and has not fully
+						established communication.
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="fignone" id="r_thestatusindicatorbar__fig_56FF9BB79A0D42489E2EB8AA2EFAD815"><a name="r_thestatusindicatorbar__fig_56FF9BB79A0D42489E2EB8AA2EFAD815"></a><div><span class="figcap">Status Indicator Bar with Good Statuses</span></div> 
+		   
+		  <a name="r_thestatusindicatorbar__image_2609C68888EE407C9CB29139B70F4D9E"></a><img id="r_thestatusindicatorbar__image_2609C68888EE407C9CB29139B70F4D9E" src="help0129.gif" /> 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> The Batch Operator Interface requires a Good status to successfully
+			 run a batch.
+		  </p>
+ 
+		</div>
+ 
+		<div class="fignone" id="r_thestatusindicatorbar__fig_EB0FEB96D43B4A0087E5A59EC948D7B3"><a name="r_thestatusindicatorbar__fig_EB0FEB96D43B4A0087E5A59EC948D7B3"></a><div><span class="figcap">Status Indicator Bar with Stopped Status for Batch
+			 Executive</span></div> 
+		   
+		  <a name="r_thestatusindicatorbar__image_D8B706B3400F42DBB97483D6456B83E1"></a><img id="r_thestatusindicatorbar__image_D8B706B3400F42DBB97483D6456B83E1" src="help0130.gif" /> 
+		</div>
+ 
+		<p>You can view Batch Executive statistics from the Batch Application
+		  Manager application to receive additional information on the Executive state. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_batchapplicationmanager.html">Batch Application Manager</a></div>
+<div><a href="c_communicationsproblems.html">Communications problems</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

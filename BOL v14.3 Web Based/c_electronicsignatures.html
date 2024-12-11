@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Electronic signatures" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="electronic signatures, signatures, electronic" name="DC.subject" /><meta content="electronic signatures, signatures, electronic" name="keywords" /><meta content="c_configuring_electronic_signatures.html" name="DC.Relation" scheme="URI" /><meta content="c_using_signature_policies_with_contained_modules.html" name="DC.Relation" scheme="URI" /><meta content="c_electronic_signatures_at_run_time.html" name="DC.Relation" scheme="URI" /><meta content="c_using_electronic_signatures_when_acknowledging_alarms_on_pictures.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_electronicsignatures" name="DC.Identifier" /><title>Electronic signatures</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_lock_examples.html" /><link rel="next" href="c_configuring_electronic_signatures.html" /></head><body class="fixed" id="c_electronicsignatures" data-relpath="c_electronicsignatures.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_electronicsignatures"></a>
+
+<h1 class="topictitle1">Electronic signatures</h1>
+<div><div></div>
+
+    <p id="c_electronicsignatures__electronicsignatures"><a name="c_electronicsignatures__electronicsignatures"></a>Electronic signatures are user names and
+      passwords that provide accountability for operator writes to certain module
+      parameters and fields from DeltaV Operate and Control Studio online. Electronic
+      Signatures do not apply to writes to OPC and to the DeltaV Excel Add-in
+      application. Electronic signatures is a DeltaV system preference that can be
+      disabled (hidden) if not required or enabled selectively on an area-by-area,
+      module-by-module basis. Electronic signatures does not change the existing
+      DeltaV security feature that controls who is able to make changes to
+      parameters. Rather, it uses a signature to authenticate the operator&#39;s
+      identity. That is, the signature is used as an additional check to ensure that
+      the operator is who he claims to be. The operator must have a valid user name
+      and password and the required privileges to perform the action in the area in
+      which the module resides. The write is not allowed if the operator fails to
+      enter a valid username and password and if the operator does not have the
+      required privileges in the area in which the module resides.
+    </p>
+
+    <p>Depending upon the criticality of a module to the process, no signature,
+      one signature (confirmer), or two signatures (confirmer and verifier) can be
+      configured. It is possible to allow the same person to be both the confirmer
+      and verifier of an operator write. Typically, the verifier is a higher-level
+      employee whose signature approves the change the confirmer is making. The
+      verifier must hold the key to the ACTION_VERIFY function lock. To allow the
+      same person to be both Confirmer and Verifier, select 
+      <span class="uicontrol">Properties</span> from the Electronic Signatures context
+      menu and select the check box. If the electronic signature succeeds,  the date
+      and time the electronic signature authentication occurred, the node from which
+      the change occurred, a description of the action, and the confirmer and
+      verifier names are recorded in the Event Chronicle and can be seen through the
+      Process History View application. Similarly, failed attempts at confirming or
+      verifying an action are also recorded and visible through the Process History
+      View. In addition to the Process History View application, failed confirm or
+      verify attempts are also recorded in the Batch Historian if it is collecting
+      Event Chronicle events and can be viewed through the Batch History View
+      application.
+    </p>
+
+    <p><strong>Operator comments</strong>
+    </p>
+
+    <p> The operator has the option of entering a comment about the parameter
+      change. Operator comments are recorded in the Desc2 field in the Process
+      History View application. This field is truncated at 240 characters. By
+      default, the system adds the string VALUE SIGNED FOR = xxxxx before the
+      comment. That is, the system adds additional characters to your comment and
+      these additional characters are counted in the 240 character limit. So for
+      example if you changed a value to 365 and entered the comment &quot;changed value
+      for tank1&quot; the Desc2 field will total 48 characters and read:
+    </p>
+
+    <p>VALUE SIGNED FOR = 365 (changed value for tank1)
+    </p>
+
+    <p>The system calculates the length of the string VALUE SIGNED FOR  = xxxxx
+      plus the length of the comment. If the comment will cause Desc2 to exceed 240
+      characters, the system posts a message asking that the comment be shortened.
+      The length of the comment is limited to the lesser of: 200 characters or what
+      fits in the Desc2 field. If VALUE SIGNED FOR is a string that exceeds that 240
+      characters, the value is truncated at 240 characters in the Desc2 field in
+      Process History View and no comment is saved with the value.
+    </p>
+
+    <p>The DeltaV system does not enforce the use of operator comments; this
+      decision is left to plant managers.
+    </p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> Do not use the ENTER key to create a line break in the 
+        <span class="uicontrol">Comment</span> field. Pressing the ENTER key in the 
+        <span class="uicontrol">Comment</span> field is the same as selecting the 
+        <span class="uicontrol">OK</span> button; it dismisses the dialog and performs
+        the command.
+      </p>
+
+    </div>
+
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_configuring_electronic_signatures.html">Configuring electronic signatures</a><br />
+</li>
+<li class="ulchildlink"><a href="c_using_signature_policies_with_contained_modules.html">Using signature policies with contained modules</a><br />
+</li>
+<li class="ulchildlink"><a href="c_electronic_signatures_at_run_time.html">Electronic signatures at run time</a><br />
+</li>
+<li class="ulchildlink"><a href="c_using_electronic_signatures_when_acknowledging_alarms_on_pictures.html">Using electronic signatures when acknowledging alarms on pictures</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

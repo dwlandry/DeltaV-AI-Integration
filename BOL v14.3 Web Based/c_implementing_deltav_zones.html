@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Implementing DeltaV Zones" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Zones, configuration, Inter-Zone Servers" name="DC.subject" /><meta content="Zones, configuration, Inter-Zone Servers" name="keywords" /><meta content="c_auto_sensing_remote_zone_areas.html" name="DC.Relation" scheme="URI" /><meta content="c_exporting_and_importing_zone_topologies.html" name="DC.Relation" scheme="URI" /><meta content="c_hardware_alarm_messages.html" name="DC.Relation" scheme="URI" /><meta content="c_zones_events_alarms.html" name="DC.Relation" scheme="URI" /><meta content="c_redundant_inter_zone_servers.html" name="DC.Relation" scheme="URI" /><meta content="c_remote_zone_areas.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_zones1.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_implementing_deltav_zones" name="DC.Identifier" /><title>Implementing DeltaV Zones</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_zones_hardware_architecture.html" /><link rel="next" href="c_remote_zone_areas.html" /></head><body class="fixed" id="c_implementing_deltav_zones" data-relpath="c_implementing_deltav_zones.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_implementing_deltav_zones"></a>
+
+<h1 class="topictitle1">Implementing DeltaV Zones</h1>
+<div><div></div>
+ 
+	 <p>The following figure shows a portion of the DeltaV Explorer hierarchy of
+		a DeltaV system whose zone name is ZONE_A. IZS_A is the Inter-Zone Server in
+		ZONE_A.
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__image_7E1A0D9F23584B739170D145EE0F3877"></a><img id="c_implementing_deltav_zones__image_7E1A0D9F23584B739170D145EE0F3877" src="exp_zone2only.gif" /> 
+	 <p>The following list contains general procedures to implement DeltaV Zones
+		to connect existing DeltaV systems.
+	 </p>
+ 
+	 <p>The following assumes the DeltaV systems are offline, not running a
+		process.
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__ol_0F2DEFCC2A7D49BDBA598DE4666A736D"></a><ol id="c_implementing_deltav_zones__ol_0F2DEFCC2A7D49BDBA598DE4666A736D"> 
+		<li id="c_implementing_deltav_zones__li_A1506F2BA18E4223AEA28F2504B11AC2"><div class="li_content"> Install, configure, and set
+		  binding order for network interface connections (NIC) in the Inter-Zone
+		  Servers. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_26102604398E4BEE8334AA03E39277C9"><div class="li_content">Connect Inter-Zone Servers
+		  to DeltaV Networks and each other through switches. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_94C63C5938444A6087FF8F4DFF1ECF21"><div class="li_content"> Upgrade DeltaV software on
+		  all workstations within each DeltaV system 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_4EB12E73AC0943B79E48DED045F8E5EA"><div class="li_content">Install DeltaV software on
+		  Inter-Zone Servers. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_968990475AEA42879B75255CC7A78410"><div class="li_content"> On the 
+		  <span class="wintitle">Select Your Workstation Type</span> dialog, select 
+		  <span class="uicontrol">Inter-Zone Server</span>. 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>From the ProfessionalPLUS workstation in each DeltaV system:
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__ol_767096FEDF5340EE9EDA4B7C0FD9B73A"></a><ol id="c_implementing_deltav_zones__ol_767096FEDF5340EE9EDA4B7C0FD9B73A"> 
+		<li id="c_implementing_deltav_zones__li_E73DC3AE63254C8CAEE2A7573270F2E5"><div class="li_content">Select the 
+		  <span class="uicontrol">Enable Zones</span> check box in the 
+		  <span class="wintitle">System Preferences</span> dialog. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_CEC3257661D64211872F2C368B7AF0F8"><div class="li_content">Name the zone from the 
+		  <span class="wintitle">Properties</span> dialog of top-level node
+		  (DeltaV_System) in DeltaV Explorer. This name is how other DeltaV systems
+		  specify this system. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_5495554E1C184DF094577CBAE182CD32"><div class="li_content">Create an Inter-Zone Server
+		  under the Control Network. This Inter-Zone Server represents the IZS hardware
+		  installed in the DeltaV system. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_5D2F1E023AA24521978D4F060807F47C"><div class="li_content">If you are installing
+		  redundant Inter-Zone Servers, select the 
+		  <span class="uicontrol">Inter-Zone Server is redundant</span> check box on the
+		  server&#39;s 
+		  <span class="wintitle">Properties</span> dialog. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_B3A592B5D8DE4FD982610ACE63A33406"><div class="li_content">Create a Remote Zone
+		  container under the IZS for every other DeltaV system this system is connected
+		  to. 
+		  <p>You create the Remote Zone containers manually by selecting the
+			 Inter-Zone Server and then selecting 
+			 <span class="uicontrol">New Zone</span> from the context menu.
+		  </p>
+ 
+		  <div class="note"><span class="notetitle">Note:</span> The Remote Zone container names 
+			 <em>must</em> be the zone names given to the other systems in their
+			 configurations. 
+		  </div>
+ 
+		  <p>Each Remote Zone container has two subfolders: Local Shared Areas
+			 and Remote Zone Areas. You manually populate the Local Shared Areas folder. The
+			 Remote Zone Areas folder is populated either by exporting and importing zone
+			 topologies or by auto-sensing remote zones.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_3200F3CAD6DB4E59819BC66F7EB1D882"><div class="li_content">In Local Shared Areas under
+		  each Remote Zone container, specify the areas in this DeltaV system whose
+		  parameter data you want to be visible in the system represented by the Remote
+		  Zone container. You also specify whether the other system has read or read and
+		  write access to each area. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_1A186728B9DF4502B71092DCE3013271"><div class="li_content">Select 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Export</span> &gt; <span class="uicontrol">Workstation
+				Configuration</span></span> to create a cfg file. 
+		  <p>You will use this configuration file to set up the Inter-Zone Server
+			 in this DeltaV system.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>From the Inter-Zone Server in each DeltaV system:
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__ol_B9B0AC2751964663BD8A4E4A7EB147B3"></a><ol id="c_implementing_deltav_zones__ol_B9B0AC2751964663BD8A4E4A7EB147B3"> 
+		<li id="c_implementing_deltav_zones__li_7C72EAABE68347D49C88E42CEB1D9BB4"><div class="li_content">Run Workstation
+		  Configuration. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_C01A8CF05D0B4B888512D643992D9F57"><div class="li_content">Select 
+		  <span class="uicontrol">Inter-Zone Server</span> in the Select Workstation Type
+		  area of the dialog. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_47DF97F481B746C4BA9B7051C708A5DD"><div class="li_content">Browse to and select the
+		  .cfg file you created earlier. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_8507ADE91E9845F7BE3B9EEC26E9FD82"><div class="li_content">Determine if you are
+		  installing redundant Inter-Zone Servers. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_D484DB4C4D2A4603B3369C403479F907"><div class="li_content">Set the Primary and
+		  Secondary DeltaV and Primary and Secondary IZCN network NICs. 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>If you want users to be able to write to areas you shared as read and
+		write from other zones, populate Remote Zone Areas.
+	 </p>
+ 
+	 <p>There are two ways to populate Remote Zone Areas. After you create all
+		Remote Zone containers and populate all Local Shared Areas in the Remote Zone
+		containers from every ProfessionalPLUS workstation:
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__ul_55424AE72A3F405C9380A8B2EB3DF030"></a><ul id="c_implementing_deltav_zones__ul_55424AE72A3F405C9380A8B2EB3DF030"> 
+		<li id="c_implementing_deltav_zones__li_9D08AB01011D49B488F140440B62387F"><div class="li_content">Auto-sensing Zone topologies
+		</div></li>
+
+		<li id="c_implementing_deltav_zones__li_F978BFFE45124D0EA60962B2E32F1B05"><div class="li_content">Importing Zone topologies
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>Assign the Remote Zone Areas to the Alarms and Events subsystem of a
+		local Operator Station (not an Application Station) to have alarms appear in
+		the alarm banner and displays (if the areas are shared as read and write) and
+		alarms and events to be recorded in the Event Chronicle.
+	 </p>
+ 
+	 <p>The Remote Zone Areas are also available in the DeltaV User Manager when
+		you assign members to groups or keys to users.
+	 </p>
+ 
+	 <p>From the ProfessionalPLUS workstation in each DeltaV system:
+	 </p>
+ 
+	 <a name="c_implementing_deltav_zones__ol_E270965B155B48FBA3ABA8BB35F54D7A"></a><ol id="c_implementing_deltav_zones__ol_E270965B155B48FBA3ABA8BB35F54D7A"> 
+		<li id="c_implementing_deltav_zones__li_2391078A4C1442B8847D57ECF1F65BCD"><div class="li_content">After Workstation
+		  Configuration completes on the IZS, download the Inter-Zone Server from the
+		  ProfessionalPLUS workstation. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_3D2F0A3E90824DBAB231D85B04C7C880"><div class="li_content">Create new modules or modify
+		  existing modules to read data from other DeltaV systems as required for your
+		  situation. 
+		</div></li>
+ 
+		<li id="c_implementing_deltav_zones__li_EA5A2209CAFF4273838AC728FFAE2354"><div class="li_content">Create new operator pictures
+		  or modify existing pictures to incorporate data from other DeltaV systems as
+		  required for your situation. 
+		  <p>You can use the DeltaV Upgrade Picture Expert to use existing
+			 pictures to create pictures that access data from other DeltaV systems.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>The following sections expand on installation procedures that are unique
+		for DeltaV Zones.
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_auto_sensing_remote_zone_areas.html">Auto-sensing Remote Zone Areas</a></div>
+<div><a href="c_exporting_and_importing_zone_topologies.html">Exporting and importing Zone topologies</a></div>
+<div><a href="c_hardware_alarm_messages.html">Hardware alarm messages</a></div>
+<div><a href="c_zones_events_alarms.html">Inter-Zone alarms and events</a></div>
+<div><a href="c_redundant_inter_zone_servers.html">Redundant Inter-Zone Servers</a></div>
+<div><a href="c_remote_zone_areas.html">Remote Zone Areas</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Phase logic parameters" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="parameters, batch, phase logic, phase logic parameters, AUTO_RESTART, BATCH_ID, BCOMMAND, BSTATUS, CLASS, COMMANDMASK, CONFIRM_FAIL, DOWNLOAD_REQ, FAIL_INDEX, INITIAL_STATE, OWNER, PAUSE_REQ, PAUSED, PHASE, PHASE_ACT, PHASE_ENABLE, PROMPT, PROMPT_FLOAT, PROMPT_INT, PROMPT_STRING, REQDATA, REQUEST, RESTART_TYPE, SINGLE_STEP, SIZE, STATE_TIME, STEP_INDEX, SWITCHED_OVER, TOO_LONG_TIME, UNIT, WATCHDOG, WDOG_STATE, WDOG_TIME, XCOMMAND" name="DC.subject" /><meta content="parameters, batch, phase logic, phase logic parameters, AUTO_RESTART, BATCH_ID, BCOMMAND, BSTATUS, CLASS, COMMANDMASK, CONFIRM_FAIL, DOWNLOAD_REQ, FAIL_INDEX, INITIAL_STATE, OWNER, PAUSE_REQ, PAUSED, PHASE, PHASE_ACT, PHASE_ENABLE, PROMPT, PROMPT_FLOAT, PROMPT_INT, PROMPT_STRING, REQDATA, REQUEST, RESTART_TYPE, SINGLE_STEP, SIZE, STATE_TIME, STEP_INDEX, SWITCHED_OVER, TOO_LONG_TIME, UNIT, WATCHDOG, WDOG_STATE, WDOG_TIME, XCOMMAND" name="keywords" /><meta content="c_fblk_params.html" name="DC.Relation" scheme="URI" /><meta content="r_unitmoduleparameters.html" name="DC.Relation" scheme="URI" /><meta content="c_parameter_data_types.html" name="DC.Relation" scheme="URI" /><meta content="c_parameter_filtering.html" name="DC.Relation" scheme="URI" /><meta content="c_controlstudio.html" name="DC.Relation" scheme="URI" /><meta content="c_usingtheoperatorpromptparameters.html" name="DC.Relation" scheme="URI" /><meta content="c_usingtheconfirmfailparameter.html" name="DC.Relation" scheme="URI" /><meta content="c_usingthedownload_reqparameter.html" name="DC.Relation" scheme="URI" /><meta content="c_usingthepause_req_paused_andsinglestepparameters.html" name="DC.Relation" scheme="URI" /><meta content="c_usingtherequestandreqdataparameters.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_phaselogicparameters" name="DC.Identifier" /><title>Phase logic parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_failuremonitor.html" /><link rel="next" href="c_usingtheoperatorpromptparameters.html" /></head><body class="fixed" id="r_phaselogicparameters" data-relpath="r_phaselogicparameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_phaselogicparameters"></a>
+
+<h1 class="topictitle1">Phase logic parameters</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_phaselogicparameters__section_A49BE519B4DF49AB91E7E843BF95337B"><a name="r_phaselogicparameters__section_A49BE519B4DF49AB91E7E843BF95337B"></a> 
+		<p>The following parameters are specific to phase logic. Other common
+		  parameters are also used in the phase logic. Those parameters are defined in
+		  the Function block - parameters topic. The unit module also has parameters
+		  specific to the unit module level. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_phaselogicparameters__table_E99DB003F2ED46D0A0F7BDF090DE58B3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_phaselogicparameters__table_E99DB003F2ED46D0A0F7BDF090DE58B3" rules="all" summary=""><caption><span class="tablecap">Phase Logic-Specific Parameters</span></caption> 
+		   
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d2974558e169" valign="top" width="23.809523809523807%"> 
+				  <p>Parameter 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d2974558e175" valign="top" width="14.285714285714285%"> 
+				  <p>Units 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d2974558e181" valign="top" width="23.809523809523807%"> 
+				  <p>Data Type 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d2974558e187" valign="top" width="38.095238095238095%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>AUTO_RESTART 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Set to instruct the phase whether or not to auto-restart from
+					 a holding condition. 
+				  </p>
+ 
+				  <p> If a phase is HELD and AUTO_RESTART is set to TRUE, the phase
+					 will immediately execute its RESTART_LOGIC and go back to RUNNING (without the
+					 operator clicking 
+					 <span class="uicontrol">Restart</span>). 
+				  </p>
+ 
+				  <p> An operator can restart a phase from DeltaV Operate while the
+					 phase is still under DeltaV Batch control. 
+				  </p>
+ 
+				  <p> An AUTO_RESTART parameter is also provided at the unit
+					 module. When set, it propagates down to all phases in the unit module. 
+				  </p>
+ 
+				  <p> The default value is FALSE. The phase must be in either the
+					 HOLDING or HELD state to set this parameter to TRUE. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>BATCH_ID 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>String 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Records the ID of the batch for the phase at run time. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>BCOMMAND 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Commands the phase to go to a particular state, as defined by
+					 the state transition diagram. This parameter is to be used exclusively by the
+					 DeltaV Batch Executive, while the phase owner is DeltaV Batch. 
+				  </p>
+ 
+				  <p> 
+					 <strong>Caution</strong> Do not write to this parameter directly as it
+					 can cause the Batch Executive to lose control of the phase. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>BSTATUS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows the state of the phase. 
+				  </p>
+ 
+				  <p>This parameter uses the phase_state named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>CLASS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>String 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Returns the name of the phase class for the phase. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>COMMANDMASK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to displays only the set of valid commands that a user
+					 can issue. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>CONFIRM_FAIL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Activates confirmation of failing for the composite block. The
+					 default is False. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>DOWNLOAD_REQ 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Indicates a Download command has been received and is still
+					 pending. This is reset by the phase logic after detection or action. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>FAIL_INDEX 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows and defines the failure of a phase or phase interface,
+					 where 0 = No Failure and any non-zero integer = Failure. 
+				  </p>
+ 
+				  <p>FAIL_INDEX values are limited to the inclusive range, 0-255.
+					 Attempting to write a value outside this range will cause an &quot;Invalid
+					 PHASE_FAILURE enumeration value&quot; message to be displayed at the Batch Operator
+					 Interface. 
+				  </p>
+ 
+				  <p>However, the value 255 defaults in the PHASE_FAILURE named set
+					 as Failed. It is recommended that you do not write the 255 value to the
+					 FAIL_INDEX. 
+				  </p>
+ 
+				  <p>The translation string for any positive integer less than 255
+					 can be specified in the PHASE_FAILURES named set. 
+				  </p>
+
+				  <p>Note that the hold logic executes from the first hold step
+					 when the FAIL_INDEX changes to a 
+					 <strong>higher</strong> value, even when the hold logic is currently
+					 running (holding). Therefore, the Phase_Failures named set values should be
+					 configured so that the most serious condition has the highest value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>INITIAL_STATE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Defines the state that the SFC is in when downloaded (Sequence
+					 Active or Sequence Idle). Determines the initial state of the SFC. In a phase,
+					 it is the state when the Run logic initiates. The default is Sequence Active. 
+				  </p>
+ 
+				  <p>This parameter is available when you drill down into the
+					 composite block. 
+				  </p>
+ 
+				  <p>This parameter uses the sfc_initial_states named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>OWNER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Identifies if the control mode is DeltaV Batch or if the
+					 control is External. When the batch is running External, the parameter
+					 controlling the phase&#39;s transitions is XCOMMAND, which allows the user to
+					 control the phase. 
+				  </p>
+ 
+				  <p>This parameter uses the phase_owner_id named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PAUSE_REQ 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows that the operator requested the Paused state. This is
+					 set and cleared by the Batch Executive, based on the operator Pause and Resume
+					 commands and the Single-step mode. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PAUSED 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows that the phase is in the Paused state. This is set and
+					 cleared by the phase logic, based on the PAUSE_REQ flag. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PHASE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>String 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Returns the phase short name that the operator uses for the
+					 phase. The short name is configured in the unit. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PHASE_ACT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Determines whether or not an alarm is generated associated
+					 with the phase on the unit. 
+				  </p>
+ 
+				  <p> During each execution of the phase logic a failure condition
+					 is computed that is used to set PHASE_ACT if ALARMENB is True. 
+				  </p>
+ 
+				  <p>FailureCondition = TooLong || (FAILINDEX &lt;&gt; 0) ||
+					 (PHASE_ENABLE==FALSE) where TooLong = (TOOLONGTIME &gt; 0) &amp;&amp; (TIME
+					 &gt; TOOLONGTIME) and the TIME is the time that the phase has been executing. 
+				  </p>
+ 
+				  <p>The PHASE_ACT parameter is referenced by the associated
+					 module&#39;s alarm parameter at the module level. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PHASE_CURRENT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Indicates whether a loaded phase is using the latest version
+					 of the phase definition. Typically, if you download a new phase definition to a
+					 controller with a loaded phase using an older definition, the phase continues
+					 to use the old definition until it is reloaded. 
+				  </p>
+ 
+				  <p>If the loaded phase is using the latest definition,
+					 PHASE_CURRENT is set to TRUE. 
+				  </p>
+ 
+				  <p>If the loaded phase is using an older definition,
+					 PHASE_CURRENT is set to FALSE. 
+				  </p>
+ 
+				  <p>This parameter is read-only. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PHASE_ENABLE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Enables phase logic execution. True = enabled; False =
+					 disabled. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PROMPT_BOOL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to store the operator response to a Boolean prompt (where
+					 the operator selects either yes or no as a response). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PROMPT_FLOAT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Floating Point 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to store the operator response to a floating point prompt
+					 (where the operator enters a real number in a blank field as a response). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PROMPT_INT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>32-bit signed integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to store the operator response to an integer prompt
+					 (where the operator enters a value in a blank field as a response). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>PROMPT_STRING 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>String 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to store the operator response to a string prompt (where
+					 the operator enters a string in a blank field as a response). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>REQDATA1...5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to pass request data between the phase logic and the
+					 DeltaV Batch Executive. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>REQUEST 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>A request to the DeltaV Batch Executive from the phase logic. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>RESTART_TYPE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Specifies whether, upon restart, the RUN_LOGIC should resume
+					 at the first SFC step or the SFC step from which it was HELD. 
+				  </p>
+ 
+				  <p>This parameter uses the phase_restart_types named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>SINGLE_STEP 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows the continuous pause request. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>SIZE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>32-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Contains an estimated size for an instantiated phase. The
+					 value of this parameter is used when phases are created to determine if there
+					 is enough memory available to start the phase(s). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>STATE_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>Seconds 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Floating point 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows the time the module has remained in the current state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>STEP_INDEX 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Configured by the user, the STEP_INDEX can be used to indicate
+					 each step in a phase to track the phase while running. This is an integer
+					 written by the phase logic for use by recipe logic or DeltaV Operate. 
+				  </p>
+ 
+				  <p>A phase&#39;s STEP_INDEX is reset to zero (0) after the phase is
+					 sent a Start command. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>SWITCHED_OVER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Boolean 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows that the controller in which the phase is running has
+					 undergone a redundant switch over. This is cleared by the phase logic after
+					 use. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>TOO_LONG_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>32-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>The time after which the phase alarm will be set. 
+				  </p>
+ 
+				  <p>The initial value is determined when a phase is created. It
+					 subsequently can be written to by the user. A value of zero disables too long
+					 timing, which can contribute to setting a phase alarm. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>UNIT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Shows the equipment ID of the unit. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>WATCHDOG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>16-bit unsigned integer 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to verify communication with the DeltaV Batch Executive. 
+				  </p>
+ 
+				  <p>The Batch Executive writes to the WATCHDOG parameter when the
+					 phase state is not idle and the owner is DeltaV Batch. The phase logic checks
+					 the WATCHDOG parameter every time it executes and clears it. 
+				  </p>
+ 
+				  <p>When the WATCHDOG parameter is unit based (for unit modules),
+					 the Unit&#39;s WATCHDOG parameter controls the WATCHDOG parameter for the active
+					 phases on that unit. That is, the unit phases&#39; WATCHDOG parameters inherit the
+					 unit&#39;s WATCHDOG parameter&#39;s value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>WDOG_STATE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named Set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Used to indicate the state of communication between the phase
+					 logic and the Batch Executive. 
+				  </p>
+ 
+				  <p>There are three states: OK, Suspect, and Failed. 
+				  </p>
+ 
+				  <p>If the WATCHDOG parameter is cleared, then the state is OK. If
+					 the WATCHDOG parameter is not cleared after one check, then the state is
+					 Suspect. If the WATCHDOG parameter is not cleared after the time out value is
+					 passed, then the state is Failed. 
+				  </p>
+ 
+				  <p>This parameter uses the phase_wdog_states named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>WDOG_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>Seconds 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Floating point 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Records the time since the WATCHDOG parameter was last
+					 cleared. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e169 " valign="top" width="23.809523809523807%"> 
+				  <p>XCOMMAND 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e175 " valign="top" width="14.285714285714285%"> 
+				  <p>None 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e181 " valign="top" width="23.809523809523807%"> 
+				  <p>Named set 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e187 " valign="top" width="38.095238095238095%"> 
+				  <p>Commands the phase to go to a particular state, as defined by
+					 the state transition diagram. This parameter is used when running the batch
+					 externally. See OWNER parameter. 
+				  </p>
+ 
+				  <p>This parameter uses the phase_command named set. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> The data types used in these parameters refer to standard DeltaV
+			 parameter data types. 
+		  </p>
+ 
+		</div>
+ 
+		<p>These parameters are filtered. Refer to the following table to see how
+		  the parameters are filtered. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_phaselogicparameters__table_16ED76A1DD784936A6DCA73BA1F2C6B1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_phaselogicparameters__table_16ED76A1DD784936A6DCA73BA1F2C6B1" rules="all" summary=""><caption><span class="tablecap">Default Batch Parameter Filter Categories</span></caption> 
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d2974558e1279" valign="top" width="NaN%"> 
+				  <p>Parameter 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" colspan="6" id="d2974558e1285" valign="top"> 
+				  <p>Filter Category 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>Common Configurable</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>Advanced Configurable</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>I/O References</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>Connectors</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>Online Parameters</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p> 
+					 <strong>Quick Configuration</strong> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>AUTO_RESTART 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>BATCH_ID 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>BCOMMAND 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>BSTATUS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>CLASS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>COMMANDMASK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>CONFIRM_FAIL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>DOWNLOAD_REQ 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>FAIL_INDEX 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>INITIAL_STATE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>OWNER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PAUSE_REQ 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PAUSED 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PHASE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PHASE_ACT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PHASE_ENABLE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PROMPT_BOOL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PROMPT_FLOAT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PROMPT_INT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>PROMPT_STRING 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>REQDATA1…5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>REQUEST 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>RESTART_TYPE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>SINGLE_STEP 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>SIZE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>STATE_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>STEP_INDEX 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>TOO_LONG_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>UNIT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>User-configured Batch Parameter 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>WATCHDOG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>WDOG_STATE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>WDOG_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2974558e1279 " valign="top" width="NaN%"> 
+				  <p>XCOMMAND 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				  <p>X 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2974558e1285 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_usingtheoperatorpromptparameters.html">Using the operator prompt parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_usingtheconfirmfailparameter.html">Using the confirm_fail parameter</a><br />
+</li>
+<li class="ulchildlink"><a href="c_usingthedownload_reqparameter.html">Using the download_req parameter</a><br />
+</li>
+<li class="ulchildlink"><a href="c_usingthepause_req_paused_andsinglestepparameters.html">Using the PAUSE_REQ, PAUSED, and SINGLE STEP parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_usingtherequestandreqdataparameters.html">Using the request and reqdata parameters</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_params.html">Function block parameters</a></div>
+<div><a href="r_unitmoduleparameters.html">Unit module parameters</a></div>
+<div><a href="c_parameter_data_types.html">Parameter data types</a></div>
+<div><a href="c_parameter_filtering.html">Parameter filtering</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

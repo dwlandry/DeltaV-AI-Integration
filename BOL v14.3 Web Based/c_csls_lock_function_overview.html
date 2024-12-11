@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Lock and Unlock functions" name="DC.Title" /><meta content="CSLS, physical Key-lock, lock/unlock" name="DC.subject" /><meta content="CSLS, physical Key-lock, lock/unlock" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_442" name="DC.Identifier" /><title>Logic Solver Lock and Unlock functions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_grant_keys_to_sis_locks.html" /><link rel="next" href="t_add_sis_controller.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_442" data-relpath="c_csls_lock_function_overview.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_442"></a>
+
+<h1 class="topictitle1">Logic Solver Lock and Unlock functions</h1>
+<div> 
+	 <p>The CSLS must be unlocked to commission, decommission, download, debug
+		SIS modules and allow HART write commands. Locking also prevents a
+		user-initiated logic solver switchover. 
+	 </p>
+ 
+	 <p>The Lock and Unlock functions are software-based. You lock and unlock
+		the CSLS in DeltaV Explorer through the CSLS context (right-click) menus. 
+	 </p>
+ 
+	 <div class="section"><h2 class="sectiontitle"> 
+		<strong>Physical key switches</strong></h2> 
+		 
+		<p>The physical key switches on the CSLS carrier and SIS Controller
+		  carrier can be used to allow or prevent users from using the Unlock function.
+		  The key switches require physical presence by plant personnel. The Unlock
+		  software function works in conjunction with the physical key switches as
+		  described below. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle"> 
+		<strong>CSLS physical key-switch</strong> </h2> 
+		 
+		<p>Enable or disable the physical key switch by selecting or clearing the
+		  
+		  <span class="uicontrol">Enable Key-Switch</span> checkbox on the 
+		  <span class="uicontrol">CSLS Properties</span> dialog 
+		  <span class="uicontrol">(Security tab)</span>. 
+		</p>
+ 
+		<p>If the key-switch is enabled, it must be in the unlocked position for
+		  the Unlock software function to work. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">SIS Controller physical key-switch</h2> 
+		 
+		<p>The Keylock Ethernet Isolation Port (EIP) module enables the physical
+		  key switch on the SIS Controller carrier. When enabled by the Keylock EIP, the
+		  key switch on the carrier inhibits the unlock function for all assigned CSLSs.
+		  This enables you manage the unlock function for several CSLSs from one
+		  location. 
+		</p>
+ 
+		<p>If the Keylock EIP module is installed, key-switch functionality is
+		  enabled for the SIS Controller. There is no software means to enable or disable
+		  the functionality for the SIS Controller key switch. 
+		</p>
+ 
+		<p>Typically, you would use either the key-switches on the CSLSs or the
+		  key-switch on the SIS Controller to manage the unlock inhibit functions. For
+		  example, if you have the Keylock EIP module installed on your SIS Controller
+		  carrier, turn the key switch on the SIS Controller carrier to the locked
+		  position and turn all the assigned CSLS key switches to the unlocked position
+		  during normal operations. When you need to use the Unlock software function,
+		  turn the key switch on the SIS Controller carrier to the unlocked position. 
+		</p>
+ 
+		<p>If you do not have the Keylock EIP module installed in the SIS
+		  Controller carrier, turn the CSLS key switches to the locked position during
+		  normal operations (if physical presence is required at your site to inhibit the
+		  unlock software function). Turn the key switch on a particular CSLS when you
+		  want to use the Unlock software function for that CSLS. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">CSLS key-switch single unlock function</h2> 
+		 
+		<p>You can use the unlock inhibit key switch on the CSLS carrier to
+		  perform a single software unlock. This enables you to allow unlock for the
+		  CSLSs without having to go back and turn the key switch to the locked (inhibit)
+		  position. It also reduces the chances of leaving the key switch in the unlocked
+		  (allow) position. To enable a single-unlock function, turn the key switch to
+		  the unlock position until the LED flashes red on the active CSLS. Then, turn
+		  the key switch back to the lock position. The LED will flash red (at a faster
+		  rate) before turning off to indicated that the CSLS is in the single unlock
+		  allowed state. You will then be able to perform one software unlock function
+		  within the next five minutes. The CSLS automatically returns to the unlock
+		  inhibited state in five minutes (or immediately after a software unlock
+		  occurs). At an appropriate time, you can lock the CSLS, knowing that the keys
+		  switch is in the locked position.
+		</p>
+
+		<div class="note"><span class="notetitle">Note:</span> The single unlock functionality requires CSLS major revision 2 or
+		  higher.
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">SIS Controller Auto Lock function</h2> 
+		 
+		<p>The Auto Lock function automatically returns the SIS Controller to the
+		  Locked (inhibit) state after a user-configured time has expired. This prevents
+		  the controller from remaining in the Unlocked (allow) state indefinitely. When
+		  the Auto Lock function is enabled, users do not have to remember to return the
+		  controller to the Locked state. 
+		</p>
+ 
+		<p>You enable and configure Auto Lock on the 
+		  <span class="uicontrol">SIS Controller Properties</span> dialog 
+		  <span class="uicontrol">(Security tab)</span>. Use the dialog to enable the
+		  Auto Lock function and to set a time after which the controller returns to the
+		  Locked state. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">CSLS Unlocked Alert</h2> 
+		 
+		<p>The CSLS Unlocked Alert occurs when either the CSLS or SZ controller&#39;s
+		  key switch is in the unlock inhibit position, CSLS is unlocked and the
+		  configured time of CSLS unlocked alert has been exceeded. 
+		</p>
+ 
+		<p>You enable and configure CSLS Unlocked Alert on the 
+		  <span class="uicontrol">SIS Controller Properties</span> dialog 
+		  <span class="uicontrol">(Security tab)</span>. Use the dialog to enable the
+		  function and to set a time after the alert occurs. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

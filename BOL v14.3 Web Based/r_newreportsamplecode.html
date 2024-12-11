@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="New report sample code" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="batch reports, sample code" name="DC.subject" /><meta content="batch reports, sample code" name="keywords" /><meta content="t_creatingabatchreport.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_newreportsamplecode" name="DC.Identifier" /><title>New report sample code</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_creatingabatchreport.html" /><link rel="next" href="r_appndxe.html" /></head><body class="fixed" id="r_newreportsamplecode" data-relpath="r_newreportsamplecode.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_newreportsamplecode"></a>
+
+<h1 class="topictitle1">New report sample code</h1>
+<div><div></div>
+
+    <div class="section" id="r_newreportsamplecode__section_CEAB8F1C5A7044568D68D3256CA60587"><a name="r_newreportsamplecode__section_CEAB8F1C5A7044568D68D3256CA60587"></a>
+      <p>
+        <strong>Code associated with Step 1</strong>
+      </p>
+
+      <pre class="pre">
+<span class="#008000">&#39; Force us to properly define variables.
+</span>Option Explicit
+<span class="#008000">
+&#39;///
+&#39;/// Define the global variables.
+&#39;///
+&#39; In order to have type &#39;Database&#39; and other DAO types defined properly, you have
+&#39; to select <strong>Project &gt;&gt; References </strong>from the VB menu above and scroll down
+&#39; through the selections to the <strong>Microsoft DAO 3.51 Object Library </strong>and check it.
+</span>Dim myDB As Database
+<span class="#008000">
+&#39; In order to have type &#39;Word.Application&#39; defined properly, you have
+&#39; to select <strong>Project &gt;&gt; References </strong>from the VB menu above and scroll down
+&#39; through the selections to the <strong>Microsoft Word 8.0 Object Library </strong>and check it.
+</span>Dim appWD As Word.Application
+Public CurrentReport As Word.Document <span class="#008000">&#39;Word.Documents
+</span>Dim HistDSN As String<span class="#008000"> &#39; Entered Historian DSN
+</span>Dim UserBatchID As String <span class="#008000">&#39; Entered batchID to generate a report for
+
+&#39; Some data for a batch as a demo printout
+</span>Dim uniqueID() As String <span class="#008000">&#39; Unique for each batch
+</span>Dim Recipe As String <span class="#008000">&#39; The recipe used for the batch
+</span>Dim Formula As String <span class="#008000">&#39; The formula used for the batch
+</span>Dim StartTime As String <span class="#008000">&#39; Batch Start
+</span>Dim EndTime As String <span class="#008000">&#39; Batch End
+</span>
+<span class="#008000">&#39; Define a type that holds various information about a parameter
+</span>Private Type Parameter
+Name As String
+Value As String
+ChangedValue As String
+End Type
+<span class="#008000">
+&#39; Now set up an array of this user-defined type
+</span>Dim Parameters() As Parameter
+</pre>
+
+      <p>
+        <strong>Form associated with Step 2</strong>
+      </p>
+
+      
+        <p><a name="r_newreportsamplecode__image_101DEB55EDAA4CB58602CABFE1AFAD4C"></a><img id="r_newreportsamplecode__image_101DEB55EDAA4CB58602CABFE1AFAD4C" src="Step2_Form.gif" /></p>
+
+      
+      <p>
+        <strong>Code associated with Steps 3-9</strong>
+      </p>
+
+      <pre class="pre">
+Private Sub Command1_Click()
+Dim BatchCount As Integer
+<span class="#008000">
+&#39; We need to do the following to generate a report:
+&#39; 1) Read the user&#39;s entries
+</span><span class="#008000"> </span>ReadUserEntries
+<span class="#008000">&#39; 2) Connect to a historian using the DSN
+</span> ConnectToHistorian
+<span class="#008000">&#39; 3) Check for the BatchID and uniqueID(s) using SQL to query
+</span> If (CheckForBatchID) Then
+<span class="#008000"> &#39;Do all the uniqueIDs found
+</span> For BatchCount = 0 To UBound(uniqueID) - 1
+ <span class="#008000">&#39; 4) Open a WORD document for our output
+ </span>OpenWORDDocument
+ <span class="#008000">&#39; 5) Read some batch data using SQL - need UniqueID to access this
+ </span>ReadBatchData (uniqueID(BatchCount))
+ <span class="#008000">&#39; 6) Format and output the data to WORD
+ </span>OutputBatchData (uniqueID(BatchCount))
+ <span class="#008000">&#39; 7) Save the report
+ </span>SaveReport (BatchCount)
+ Next
+ Else <span class="#008000">&#39;Didn&#39;t find the user&#39;s BatchID
+ </span>MsgBox &quot;No matching batchID found.&quot;, vbOKOnly
+ End If
+ <span class="#008000">&#39; Wind down gracefully
+ </span>Set myDB = Nothing
+ End
+End Sub
+<span class="#008000">
+&#39;
+&#39; 1) Get user inputs from the form
+&#39; This can be expanded to populate a listbox with batchids, DSNs, etc.
+&#39;
+</span>Sub ReadUserEntries()
+ HistDSN = Text1.Text
+ UserBatchID = Text2.Text
+End Sub
+
+<span class="#008000">&#39;
+&#39; 2) Connect to a historian using the DSN
+&#39;
+</span>Sub ConnectToHistorian()
+ Dim sDAOConnect As String
+ On Error GoTo HandleError
+<span class="#008000">
+&#39; Construct a connection string using the main database and the DSN
+</span>sDAOConnect = &quot;ODBC;DATABASE=DVHisDB;DSN=&quot; &amp; HistDSN
+<span class="#008000">
+&#39; Connect up
+</span>Set myDB = DBEngine.Workspaces(0).OpenDatabase(&quot;&quot;, 0, True, sDAOConnect)
+
+ Exit Sub
+
+HandleError:
+ HandleError
+End Sub
+<span class="#008000">
+&#39;
+&#39; 3) Check for the BatchID(s) using SQL to query
+&#39;     Note that a batchID can be duplicated, so we get ALL unique IDs.
+&#39;
+</span>Function CheckForBatchID() As Boolean
+ Dim SQLQuery As String
+ Dim myRS As Recordset
+ Dim currentID As Integer
+
+ On Error GoTo HandleError
+
+<span class="#008000"> &#39; Construct a query from the batchview for unique IDs
+</span>
+SQLQuery = &quot;SELECT uniqueid FROM batchview WHERE BatchID=&#39;&quot; &amp; UserBatchID &amp; &quot;&#39;&quot;
+<span class="#008000">
+&#39; Get a Recordset with desired data from the database
+</span> Set myRS = myDB.OpenRecordset(SQLQuery, dbOpenSnapshot, dbReadOnly)
+<span class="#008000">
+&#39; Make sure there is at least one ID
+</span> If Not myRS.EOF Then
+ myRS.MoveLast
+ myRS.MoveFirst
+<span class="#008000">
+&#39; Initialize the array and counter for the loop
+</span> ReDim uniqueID(0)
+ currentID = 0
+<span class="#008000">
+&#39; Loop through all the IDs found, saving them in the array
+&#39; The array size is increased for each one (keeping the old ones)
+</span> While Not myRS.EOF
+ currentID = UBound(uniqueID)
+ ReDim Preserve uniqueID(currentID + 1)
+ uniqueID(currentID) = myRS.Fields(&quot;uniqueid&quot;)
+ currentID = currentID + 1
+ myRS.MoveNext
+ Wend
+ CheckForBatchID = True
+ Else
+ CheckForBatchID = False
+ End If
+<span class="#008000">
+&#39; Clean Up
+</span> myRS.Close
+ Set myRS = Nothing
+
+ Exit Function
+
+HandleError:
+ HandleError
+End Function
+<span class="#008000">
+&#39;
+&#39; 4) Open a WORD document for our output
+&#39; A more detailed version of this is found in the BatchReport sourcecode
+&#39;
+</span>Sub OpenWORDDocument()
+<span class="#008000">
+&#39; Start or link to Word
+</span> Dim tempWord As Word.Application
+ Dim start As Long
+ Err.Number = 0
+<span class="#008000">
+&#39; If word is running we can link to it (Err.Number = 0), but
+&#39; either way we continue down below the &#39;notLoaded:&#39; line
+</span> On Error GoTo notLoaded
+ Set appWD = GetObject(, &quot;Word.application.8&quot;)
+
+notLoaded:
+<span class="#008000">
+&#39; If didn&#39;t find an instance of Word, create one
+</span> If Err.Number = 429 Then
+<span class="#008000">
+&#39; Create a temporary instance of word and then delete it after
+&#39; creating the real one. This is necessary to ensure that a user doesn&#39;t
+&#39; get control of the copy of Word reserved for the Batch Report
+&#39; Ref: Microsoft Tech Support Q188546
+</span> On Error GoTo HandleError <span class="#008000">&#39; An error creating will end the program
+</span>
+Set tempWord = CreateObject(&quot;Word.Application.8&quot;)
+Set appWD = CreateObject(&quot;Word.Application.8&quot;)
+tempWord.Quit
+Set tempWord = Nothing
+End If
+Exit Sub
+HandleError:
+HandleError
+End Sub
+<span class="#008000">
+&#39;
+&#39; 5) Read some batch data using SQL
+&#39;
+</span>Sub ReadBatchData(uniqueID As String)
+ Dim SQLQuery As String
+ Dim myRS As Recordset
+ Dim sDate As Date
+ Dim eDate As Date
+ Dim FirstDate As Date
+ Dim LastDate As Date
+ Dim parminx As Integer
+
+ On Error GoTo HandleError
+<span class="#008000">
+&#39;/////////////////////
+&#39; Read the Batch Start/End Times and Recipe from batchview
+</span> SQLQuery = &quot;SELECT starttime, endtime, Recipe FROM batchview _
+ WHERE uniqueid=&#39;&quot; &amp; uniqueID &amp; &quot;&#39;&quot;
+ Set myRS = myDB.OpenRecordset(SQLQuery, dbOpenSnapshot, dbReadOnly)
+<span class="#008000">
+&#39; Put the times into their variables - should only be one record
+</span> If Not myRS.EOF Then
+ sDate = myRS.Fields(&quot;starttime&quot;)
+ eDate = myRS.Fields(&quot;endtime&quot;)
+<span class="#008000">
+&#39; Check for Batch Start after Default start time (1/1/1980)
+</span> FirstDate = &quot;1/2/1980&quot;<span class="#008000"> &#39; Note that locale settings affect the default
+</span> If sDate &lt; FirstDate Then
+ StartTime = &quot;&lt;Default Batch Start Time&gt;&quot; <span class="#008000">&#39; The batch has not been started
+</span> Else
+ StartTime = sDate
+ End If
+<span class="#008000">
+&#39; Check for Batch End before Default end time (1/1/2035)
+</span> LastDate = &quot;12/31/2034&quot; <span class="#008000">&#39; Note that locale settings affect the default
+</span> If eDate &gt; LastDate Then
+ EndTime = &quot;&lt;Default Batch End Time&gt;&quot; <span class="#008000">&#39; The batch has not ended
+</span> Else
+ EndTime = eDate
+ End If
+<span class="#008000">
+&#39; Save the Recipe name
+</span> Recipe = myRS.Fields(&quot;Recipe&quot;)
+
+ Else <span class="#008000">&#39; No data available
+</span> StartTime = &quot;Not Available&quot;
+ EndTime = &quot;Not Available&quot;
+ Recipe = &quot;Not Available&quot;
+ End If
+<span class="#008000">
+&#39; Clean up before starting next query
+</span> myRS.Close
+ Set myRS = Nothing
+<span class="#008000">
+&#39;/////////////////////
+&#39; Read the Batch Formula and Parameters from batchformulaview
+</span> SQLQuery = &quot;SELECT DISTINCT * FROM batchformulaview _
+ WHERE uniqueid=&#39;&quot; &amp; uniqueID &amp; &quot;&#39;&quot;
+ Set myRS = myDB.OpenRecordset(SQLQuery, dbOpenSnapshot, dbReadOnly)
+ ReDim Parameters(0)
+ If Not myRS.EOF Then
+ myRS.MoveLast
+ myRS.MoveFirst
+
+<span class="#008000"> &#39; Get the formula from the first record
+</span> Formula = myRS.Fields(&quot;formula&quot;)
+
+<span class="#008000">
+&#39; Save all the parameter information in the array
+</span> ReDim Parameters(myRS.RecordCount)
+ For parminx = 0 To myRS.RecordCount - 1
+ Parameters(parminx).Name = myRS.Fields(&quot;valuename&quot;)
+ Parameters(parminx).Value = myRS.Fields(&quot;value&quot;)
+<span class="#008000">
+&#39; Null string can cause an error
+</span> If Not IsNull(myRS.Fields(&quot;change&quot;)) Then
+ Parameters(parminx).ChangedValue = myRS.Fields(&quot;change&quot;)
+ Else
+ Parameters(parminx).ChangedValue = &quot;&quot;
+ End If
+ myRS.MoveNext
+ Next
+ End If
+
+ Exit Sub
+
+HandleError:
+ HandleError
+End Sub
+
+Sub OutputBatchData(uniqueID As String)
+
+<span class="#008000"> &#39; A table for nicer output
+</span> Dim ParamTable As Word.Table
+ Dim paraminx As Integer
+<span class="#008000">
+&#39; Make MSWORD visible
+</span> appWD.Visible = True
+<span class="#008000">
+&#39; Maximize the Word window and then minimize it to get
+&#39; a full window when accessing it
+</span> appWD.WindowState = wdWindowStateMaximize
+ appWD.WindowState = wdWindowStateMinimize
+<span class="#008000">
+&#39; Create new report document
+</span>appWD.Documents.Add
+ Set CurrentReport = appWD.ActiveDocument
+<span class="#008000">
+&#39; Print the collected data
+</span> With appWD.Selection
+ .Font.Name = &quot;arial&quot;
+ .Font.Size = 12
+ .TypeParagraph
+ .TypeText Text:=&quot;BatchID: &quot; &amp; UserBatchID
+ .TypeParagraph
+ .TypeText Text:=&quot;UniqueID: &quot; &amp; uniqueID
+ .TypeParagraph
+ .TypeParagraph
+ .TypeText Text:=&quot;Formula: &quot; &amp; Formula
+ .TypeParagraph
+ .TypeText Text:=&quot;Recipe: &quot; &amp; Recipe
+ .TypeParagraph
+ .TypeParagraph
+
+ If UBound(Parameters) &gt; 0 Then
+ Set ParamTable = CurrentReport.Tables.Add(Range:= _
+ appWD.Selection.Range, NumRows:=UBound(Parameters), _
+ NumColumns:=3)
+<span class="#008000">
+&#39; Set up the column sizes to match heading text
+</span> ParamTable.Columns(1).Width = appWD.InchesToPoints(2.5)
+ ParamTable.Columns(2).Width = appWD.InchesToPoints(1.5)
+ ParamTable.Columns(3).Width = appWD.InchesToPoints(1.5)
+<span class="#008000">
+&#39; Add the heading text
+</span>.TypeText Text:=&quot;Parameter Name&quot;
+ .MoveRight Unit:=wdCell
+ .TypeText Text:=&quot;Parameter Value&quot;
+ .MoveRight Unit:=wdCell
+ .TypeText Text:=&quot;Changed Value&quot;
+ .MoveRight Unit:=wdCell
+<span class="#008000">
+&#39; Loop through all parameters
+&#39; Note that MoveRight three times ends up on the next line
+</span> For paraminx = 0 To UBound(Parameters) - 1
+ .TypeText Text:=Parameters(paraminx).Name
+ .MoveRight Unit:=wdCell
+ .TypeText Text:=Parameters(paraminx).Value
+ .MoveRight Unit:=wdCell
+ .TypeText Text:=Parameters(paraminx).ChangedValue
+ .MoveRight Unit:=wdCell
+ Next
+ Set ParamTable = Nothing
+ End If
+
+End With
+
+End Sub
+
+Sub SaveReport(FileNumber As Integer)
+ Dim FileName As String
+
+<span class="#008000"> &#39; Users are most likely to expect File1, File2, File3, etc.
+</span> FileNumber = FileNumber + 1
+<span class="#008000">
+&#39; Save each unique report in a different file
+</span> FileName = &quot;C:\&quot; &amp; UserBatchID &amp; &quot;_&quot; &amp; FileNumber &amp; &quot;.doc&quot;
+ CurrentReport.SaveAs FileName:=FileName
+
+End Sub
+
+<span class="#008000">&#39;
+&#39; Generic routine for trapping errors. Exits after notifying user.
+&#39;
+</span>Sub HandleError()
+
+HandleError:
+ Dim strError As String
+ Dim errLoop As Error
+<span class="#008000">
+&#39; Enumerate Errors collection and display properties of each Error object.
+</span> For Each errLoop In Errors
+ With errLoop
+ strError = &quot;Error #&quot; &amp; .Number &amp; vbCr
+ strError = strError &amp; &quot;Description: &quot; &amp; .Description &amp; vbCr
+ strError = strError &amp; &quot;Source: &quot; &amp; .Source &amp; vbCr
+ End With
+ MsgBox strError, vbOKOnly, &quot;Error Occurred&quot;
+ Next
+<span class="#008000">
+&#39; Shutdown and release the DB
+</span> Set myDB = Nothing
+
+ End
+
+End Sub
+</pre>
+
+      <pre class="pre">
+ 
+</pre>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

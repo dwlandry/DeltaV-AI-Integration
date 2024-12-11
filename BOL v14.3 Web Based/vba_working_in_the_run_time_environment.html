@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Working in the run-time environment" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_working_in_the_run_time_environment" name="DC.Identifier" /><title>Working in the run-time environment</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_accessing_real_time_data.html" /><link rel="next" href="vba_working_with_the_scheduler_and_the_doevents_function.html" /></head><body class="fixed" id="vba_working_in_the_run_time_environment" data-relpath="vba_working_in_the_run_time_environment.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_working_in_the_run_time_environment"></a>
+
+<h1 class="topictitle1">Working in the run-time environment</h1>
+<div><div></div>
+ 
+    <p id="vba_working_in_the_run_time_environment__WorkingintheRuntimeEnvironment"><a name="vba_working_in_the_run_time_environment__WorkingintheRuntimeEnvironment"></a>DeltaV Operate VBA allows you to
+      dynamically control your objects and pictures while you are working in the
+      run-time environment. This topic focuses on how you can script your
+      applications to perform a variety of functions at run time, such as:
+    </p>
+ 
+    <a name="vba_working_in_the_run_time_environment__ul_B6E3555060624E79AEC2CEF0A05EC309"></a><ul id="vba_working_in_the_run_time_environment__ul_B6E3555060624E79AEC2CEF0A05EC309"> 
+      <li id="vba_working_in_the_run_time_environment__li_28F5028C297B424CBCEDD803F09503D3"><div class="li_content"> 
+        <p>Changing data sources.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="vba_working_in_the_run_time_environment__li_C6525A921042432F8456DFDC334ECEA4"><div class="li_content"> 
+        <p>Changing properties in objects, or in pens of a chart.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="vba_working_in_the_run_time_environment__li_E7635DE0AC9B426BB499264F2CABC857"><div class="li_content"> 
+        <p>Entering data in global forms.
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ChangingDataSources"><a name="vba_working_in_the_run_time_environment__ChangingDataSources"></a><h2 class="sectiontitle">Changing Data Sources</h2> 
+       
+      <p>This topic illustrates how you can write scripts that dynamically
+        change the data source of objects &quot;on the fly&quot; at run-time. As discussed in 
+        <a href="vba_working_with_ifix_objects.html">Working with DeltaV Operate Objects</a>, animating objects
+        begins by making a connection to a data source. The first example shows you how
+        to create direct connection while in the run-time environment.
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> When you change a data source at run time, the change does not
+          remain intact when you switch back to the configuration environment. The
+          behavior of the picture depends on the status of the picture cache. In
+          addition, if you add or delete scripts in run mode, the picture will not be
+          loaded into cache when it is closed. Refer to 
+          <a href="drw_using_picture_caching.html">Using Picture Caching</a> for more information.
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__CreatingaDirectConnectiontoanObject"><a name="vba_working_in_the_run_time_environment__CreatingaDirectConnectiontoanObject"></a><h2 class="sectiontitle">Creating a Direct Connection to an Object</h2> 
+       
+      <p>The following example connects an AI tag to the Horizontal Fill
+        Percentage of a rectangle when you click it in the run-time environment.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_CF9A5BE4B67E4D209338AA35090D6E53"></a><ol id="vba_working_in_the_run_time_environment__ol_CF9A5BE4B67E4D209338AA35090D6E53"> 
+        <li id="vba_working_in_the_run_time_environment__li_BB8EF4B67B6F4D6782E5744A21E36615"><div class="li_content"> 
+          <p>Draw a rectangle on your screen.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_69AD08F5475045DBA20FDB9F3B0F17A7"><div class="li_content"> 
+          <p>Create an AI database Tag with RA as the I/O address (using the
+            SIM driver).
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2BC78E69860441489CCCC3691002F333"><div class="li_content"> 
+          <p>Right-click the rectangle and select Edit Script from the pop-up
+            menu.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2CAD62AFA35D44B69F33250CDEFB6A68"><div class="li_content"> 
+          <p>Enter the following code in the rectangle&#39;s Click event:
+          </p>
+ 
+          <pre class="pre">
+Dim lstatus as Long
+Rect1.Connect &quot;HorizontalFillPercentage&quot;, _    
+&quot;dvsys.AI.F_CV&quot;, lstatus
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_B1DF8C4EBF184D6C83979438C2B2C13F"><div class="li_content"> 
+          <p>Switch to Run and Click the rectangle.
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+      <p>Before you click the rectangle, it is solid. After you click it, the
+        rectangle starts to fill based on the AI tag&#39;s value. You have dynamically
+        connected the rectangle&#39;s fill level to the database tag.
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ChangingaTextObjectsCaption"><a name="vba_working_in_the_run_time_environment__ChangingaTextObjectsCaption"></a><h2 class="sectiontitle">Example: Changing the Data Source of an Animation Connected to an
+        Object</h2> 
+       
+      <p>As discussed in 
+        <a href="vba_working_with_ifix_objects.html">Working with DeltaV Operate Objects</a>, there are three
+        different types of animation objects — Lookup, Linear, and Format. The example
+        below shows you how to set an object, and change the source of the animation
+        object that is connected to it while you are in the run-time environment.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_1FC1FE63A06F4B03BB5E91B391EE5497"></a><ol id="vba_working_in_the_run_time_environment__ol_1FC1FE63A06F4B03BB5E91B391EE5497"> 
+        <li id="vba_working_in_the_run_time_environment__li_6643B56C26B14824B517AA85DEE8E9BB"><div class="li_content"> 
+          <p>Create an AI block (AI1) with RA as the I/O address, and another
+            AI block (AI2) with RG as the I/O address.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_ED7A4E29DD124C6B811D743E7CDF3C88"><div class="li_content"> 
+          <p>Create two Data links. Connect one Data link to AI1, and connect
+            the other to AI2.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_8ADE88CAD8794956992AE9C931D935E8"><div class="li_content"> 
+          <p>Add a rectangle, and animate its Foreground Color (a Lookup
+            object) using AI1 as the data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_015083F16FF44921AA80583FAECA1CE2"><div class="li_content"> 
+          <p>Now animate the fill of the rectangle (a Linear object), and use
+            AI1as the data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2B43B1C3CF344137BCC6D6C581B5C56C"><div class="li_content"> 
+          <p>Edit the rectangle&#39;s Click event.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_062652F9764F4CDDB0961A09D53AAF60"><div class="li_content"> 
+          <p>Enter the following code:
+          </p>
+ 
+          <pre class="pre">
+Dim AllObj As Object
+Dim SingleObj As Object
+Dim Count As Integer
+Dim ObjCount as Integer
+
+<strong>&#39;Set AllObj equal to the collection of contained objects 
+</strong><strong>&#39;in the picture.
+</strong>Set AllObj = _
+Application.ActiveDocument.Page.ContainedObjects
+
+<strong>&#39;Check how many objects are in the picture. 
+</strong>For Each SingleObj In AllObj
+    Count = AllObj.Count
+    <strong>&#39;Look through all of the objects in the picture.
+</strong>    While Count &gt; 0
+        <strong>&#39;If the current object (shape) has contained objects,
+</strong>        <strong>&#39;check the number of objects (animations) it contains.
+</strong>        If SingleObj.ContainedObjects.Count &gt; 0 Then
+            ObjCount = SingleObj.ContainedObjects.Count
+            <strong>&#39;For each object contained in the current object, 
+</strong>            <strong>&#39;check its class name.
+</strong>            While ObjCount &gt; 0
+                Select Case _
+                SingleObj.ContainedObjects._
+                Item(ObjCount).ClassName
+                <strong>&#39;If the contained object is a Lookup
+</strong>                <strong>&#39;(table), change the data source to
+</strong>                <strong>&#39;DVSYS.AI2.F_CV
+</strong>
+                Case &quot;Lookup&quot;
+                SingleObj.ContainedObjects._
+                Item(ObjCount).Source = _
+                &quot;dvsys.AI2.F_CV&quot;
+                <strong>&#39;If the contained object is a Linear object,
+</strong>                <strong>&#39;change the data source to 
+</strong>                <strong>&#39;DVSYS.AI2.F_CV
+</strong>
+                Case &quot;Linear&quot;
+                SingleObj.ContainedObjects._
+                Item(ObjCount).Source = _
+                &quot;dvsys.AI2.F_CV&quot;
+                End Select
+
+                 ObjCount = ObjCount - 1
+             Wend
+        End If
+    Count = Count - 1
+    Wend
+Next SingleObj
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__90772"><div class="li_content"> 
+          <p>Switch to the run-time environment and click the rectangle.
+          </p>
+ 
+          <p>Both the Fill and Color animations change from the current value
+            of AI1 to the current value of AI2.
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ChangingaVariableObjectsCurrentValue"><a name="vba_working_in_the_run_time_environment__ChangingaVariableObjectsCurrentValue"></a><h2 class="sectiontitle">Changing a Text Object&#39;s Caption</h2> 
+       
+      <p>The following example changes the caption of text you have entered
+        when you click on the text at run-time.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_4D121AF1B94A4F87A462E8B46D330218"></a><ol id="vba_working_in_the_run_time_environment__ol_4D121AF1B94A4F87A462E8B46D330218"> 
+        <li id="vba_working_in_the_run_time_environment__li_F4FF632A56294E04B13716142CC701CD"><div class="li_content"> 
+          <p>Create a Text object and enter &quot;Hello&quot;.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2116FE8F0C714D31808C48EFC3FEB32F"><div class="li_content"> 
+          <p>Edit the Text object&#39;s Click event.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2BE5C217EF214BED80072E030BB89337"><div class="li_content"> 
+          <p>Enter the following code:
+          </p>
+ 
+          <pre class="pre">
+Text1.Caption = &quot;New Caption&quot;
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__90798"><div class="li_content"> 
+          <p>Switch to Run and click on the Text object.
+          </p>
+ 
+          <p>The caption of the Text object will change from Hello to New
+            Caption.
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ChangingtheDataSourceofaDataLink"><a name="vba_working_in_the_run_time_environment__ChangingtheDataSourceofaDataLink"></a><h2 class="sectiontitle">Changing a Variable Object&#39;s Current Value</h2> 
+       
+      <p>This example shows you how to write a script that changes a Variable
+        object&#39;s current value when clicking text at run time.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_B777126205C24844BBB41720B38E2CE0"></a><ol id="vba_working_in_the_run_time_environment__ol_B777126205C24844BBB41720B38E2CE0"> 
+        <li id="vba_working_in_the_run_time_environment__li_CCAFF36E9BCF4E3F9E7F74E3CDA5515F"><div class="li_content"> 
+          <p>Create a Variable object.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_353D302A40FC462CB381BF705F57FB71"><div class="li_content"> 
+          <p>Change the object&#39;s type to Long.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_06CC401C38334AF4899AB1C45749CFD4"><div class="li_content"> 
+          <p>Create a Text object.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_C70FD17866FA4ACBACCAF59EF5B4DEB3"><div class="li_content"> 
+          <p>Using the Animations dialog box, animate the Text object&#39;s Caption
+            using the Variable object&#39;s CurrentValue property as its data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_BC2D95DA13CB4FAC82FE21798490EC0C"><div class="li_content"> 
+          <p>Right-click the Text object and select Edit Script from the pop-up
+            menu.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_C7E308132A104D1ABE15940381F402BF"><div class="li_content"> 
+          <p>Enter the following code in the Text object&#39;s Click event: 
+          </p>
+ 
+          <pre class="pre">
+Variable1.CurrentValue = Variable1.CurrentValue + 10
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__90850"><div class="li_content"> 
+          <p>Switch to the run-time environment and click the Text object.
+          </p>
+ 
+          <p>The caption of the Text object increments by 10 (as will the
+            Variable&#39;s current value).
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ChangeaFIXEventsDataSource"><a name="vba_working_in_the_run_time_environment__ChangeaFIXEventsDataSource"></a><h2 class="sectiontitle">Changing the Data Source of a Data Link</h2> 
+       
+      <p>This example details how to change the data source of a Data link in
+        the run-time environment using the Format object.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_EA753AB65AAC4625880FB2C73DFD2798"></a><ol id="vba_working_in_the_run_time_environment__ol_EA753AB65AAC4625880FB2C73DFD2798"> 
+        <li id="vba_working_in_the_run_time_environment__li_D6B99AE2C4404C4F876D897F5A20FEDA"><div class="li_content"> 
+          <p>Create an AI block with RA as the I/O address, and a DO block in
+            the database.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_A73178884CC04E88AF3CEAB0820DECD6"><div class="li_content"> 
+          <p>Create a Data link and connect it to the AI block.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_A2E2EE0A8E56469B9B7C086703BF5366"><div class="li_content"> 
+          <p>Right-click the Data link and select Edit Script from the pop-up
+            menu.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__90882"><div class="li_content"> 
+          <p>Enter the following code in the Data link&#39;s Click event: 
+          </p>
+ 
+          <pre class="pre">
+DataLink1.ContainedObjects.Item(1).Source = _
+&quot;dvsys.DO.F_CV&quot;
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__90894"><div class="li_content"> 
+          <p>Initialize the DO block, switch to the run-time environment, and
+            click the Data link.
+          </p>
+ 
+          <p>The caption of the Data link changes to the current value of the
+            DO block.
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__ReplacingStringProperties"><a name="vba_working_in_the_run_time_environment__ReplacingStringProperties"></a><h2 class="sectiontitle">Change a FIX Event&#39;s Data Source</h2> 
+       
+      <p>To change the data source of a FIX event in the run-time environment:
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_D89C8F45EAEB4D26A5A1745A60EFDE00"></a><ol id="vba_working_in_the_run_time_environment__ol_D89C8F45EAEB4D26A5A1745A60EFDE00"> 
+        <li id="vba_working_in_the_run_time_environment__li_7F0E98DE7A4949239B8DFB06F1F8FB92"><div class="li_content"> 
+          <p>Create an AI block and a DO block in Database Manager.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_928560438E3541FBBCDB39154CB5B7FF"><div class="li_content"> 
+          <p>Create a new Picture.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_E49AB52353134C3DA408238730C39AB7"><div class="li_content"> 
+          <p>Insert a FIX event.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_8B12A501DAFB469E9564F2C0CD2AE9BF"><div class="li_content"> 
+          <p>Name the FIX event, and choose the AI block as a data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_30B02A29E9704C6CB98DD232C4983F31"><div class="li_content"> 
+          <p>Add a rectangle to your picture. Right-click the rectangle and
+            select Edit Script from the pop-up menu.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_F35C32D15869431F8DC4E37B25817577"><div class="li_content"> 
+          <p>Enter the following code in the rectangle&#39;s Click event: 
+          </p>
+ 
+          <pre class="pre">
+Dim obj As Object
+Dim Count As Integer
+
+<strong>&#39;Set obj equal to the collection of objects contained in 
+&#39;the active picture
+</strong>Set obj = 
+Application.ActiveDocument.Page.ContainedObjects
+Count = obj.Count
+</pre>
+ 
+          <pre class="pre">
+
+</pre>
+ 
+          <pre class="pre">
+<strong>&#39;Loop through all of the objects in the picture to find 
+&#39;any that are Event objects.
+</strong>While Count &gt; 0
+    <strong>&#39;If the object is an Event object, change its source
+</strong>    If obj.Item(Count).ClassName = &quot;FixEvent&quot; Then
+        obj.Item(Count).Source = &quot;dvsys.DO.F_CV&quot;
+        <strong>&#39;Display a message box that describes the change.
+</strong>        MsgBox &quot;The Fix Event &quot; &amp; obj.Item(Count).Name &amp; _
+        &quot; is now connected to the data source &quot;  &amp; _
+        obj.Item(Count).Source
+    End If
+    Count = Count - 1
+Wend
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_DD2B3A7F43B24A41BA8E2B89C76EDF61"><div class="li_content"> 
+          <p>Switch to the run-time environment and click the rectangle. The
+            message box appears stating that the source has changed.
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_9810576E5C6549F3B88CFDF1B9B2BC85"><a name="vba_working_in_the_run_time_environment__section_9810576E5C6549F3B88CFDF1B9B2BC85"></a><h2 class="sectiontitle">Replacing String Properties</h2> 
+       
+      <p>You can use the FindReplace object to replace string properties of an
+        object at run time. The following example uses the FindReplaceInObject method
+        to accomplish this.
+      </p>
+ 
+      <p>The code in this example searches through a group of objects within a
+        picture and changes their data sources by replacing AO with AI.
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ol_359A026A12B34CDC90BC895086A14CA3"></a><ol id="vba_working_in_the_run_time_environment__ol_359A026A12B34CDC90BC895086A14CA3"> 
+        <li id="vba_working_in_the_run_time_environment__li_011200DAF90346DFB7577A6E086A8D18"><div class="li_content"> 
+          <p>Insert a Data link and assign dvsys.AO.F_CV as the data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_3B27177055274812BAAB610F628C437E"><div class="li_content"> 
+          <p>Insert a rectangle and animate its HorizontalFillPercentage using
+            AO as the data source.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_0261D896B7FD4E7FBEACF336AA069E47"><div class="li_content"> 
+          <p>Now duplicate the rectangle three times.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_3313445D4ACF4836BFFE141BDEB96BB4"><div class="li_content"> 
+          <p>Select all the rectangles and group them.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_D70177C923894D768A1751162DAB5E49"><div class="li_content"> 
+          <p>Name the group &quot;MyGroup&quot;.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_A1136314DA354C798E504BC8274D38E6"><div class="li_content"> 
+          <p>Create a Push button by clicking 
+            <span class="menucascade"><span class="uicontrol">Insert</span> &gt; <span class="uicontrol">Push
+                Button</span></span>. Right-click the Push button and select Edit
+            Script from the pop-up menu.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_A4D1444EE81B49BB947C6A215DFBA4E8"><div class="li_content"> 
+          <p>Enter the following code in the Push button&#39;s Click event: 
+          </p>
+ 
+          <pre class="pre">
+Dim Success As Boolean
+FindReplace.FindReplaceInObject MyGroup, 4, &quot;AO&quot;, &quot;AI&quot;,_
+    Success
+<strong>&#39;The 4 indicates to search through data sources only.</strong>
+</pre>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__91026"><div class="li_content"> 
+          <p>Switch to the run-time environment and click the Push button.
+          </p>
+ 
+          <p>The FindReplace object searches MyGroup and changes all instances
+            of AO to AI. Because the Data link&#39;s data source falls outside of MyGroup, it
+            remains unchanged. 
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_C28CC118F85A40639F4F88E43AE2058E"><a name="vba_working_in_the_run_time_environment__section_C28CC118F85A40639F4F88E43AE2058E"></a><h2 class="sectiontitle">Tag Search at Run Time</h2> 
+       
+      <p>The Tag Search Utility allows wildcard searches of the combined area,
+        name, and description text of database objects. The objects searched include
+        modules, controllers, workstations, Wireless I/O cards (WIOCs), and CHARM I/O
+        cards (CIOCs). The search generates a list of database objects that include the
+        search text. You can select one of the objects listed and then perform any of
+        the following actions from buttons on the utility (note that some actions may
+        not be applicable to the object selected).
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ul_6F33A5AA73B64925A505E37B82689178"></a><ul id="vba_working_in_the_run_time_environment__ul_6F33A5AA73B64925A505E37B82689178"> 
+        <li id="vba_working_in_the_run_time_environment__li_4FB138DDF03845A3BB4628F1E82B0F80"><div class="li_content"> 
+          <p>Open the object&#39;s faceplate
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_C4C04A52FB6D4D5395B9B47A28934DA6"><div class="li_content"> 
+          <p>Open a module&#39;s detail display
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_2275A983318443C39B7A67C7482114A3"><div class="li_content"> 
+          <p>Open a module&#39;s primary control display (if defined)
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_B2BA647E8C18489FBE4166B26FD8F433"><div class="li_content"> 
+          <p>Open Control Studio online for a selected module
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_4230B6BA81A04D9981E0153906294511"><div class="li_content"> 
+          <p>Open a Process History chart for the object
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      <p>The search is performed on data that was downloaded at the time of the
+        search.  If newer data is available (a download was performed), perform a
+        search to update the list of results.
+      </p>
+ 
+      <p>The Tag Search button 
+        <span><a name="vba_working_in_the_run_time_environment__image_03F948EABE064C0FB4D92F87ED099226"></a><img id="vba_working_in_the_run_time_environment__image_03F948EABE064C0FB4D92F87ED099226" src="TagSearch_btn.gif" /></span> is found on the DeltaV
+        picture toolbars (for example, Toolbar_1280x1024_xp and Toolbar_1680x1050_xp;
+        OperatorKeyboardToolbar and OperKeyToolbar_1680x1050_XP; and, TSToolbar and
+        TSToolbar_1680x1050_XP toolbars). When one of the picture toolbars is included
+        on the picture, the operator can perform a tag search by clicking the Tag
+        Search button at run time.  In a multiple monitor system, the toolbar is found
+        on the primary screen.
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_663D0356431A4CB28D2A2AA5528CD47C"><a name="vba_working_in_the_run_time_environment__section_663D0356431A4CB28D2A2AA5528CD47C"></a><h2 class="sectiontitle">Tag Search Syntax</h2> 
+       
+      <p>The following notations are permitted in the tag search:
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ul_3837D2DF385C423A89BD07CCDB1F324D"></a><ul id="vba_working_in_the_run_time_environment__ul_3837D2DF385C423A89BD07CCDB1F324D"> 
+        <li id="vba_working_in_the_run_time_environment__li_FD9F9CD73FA14CC1890F80D0D4CFA9D0"><div class="li_content"> 
+          <p># —  matches strings containing any single digit from 0-9.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_A2BAA83FFE484E809587D96C85764F08"><div class="li_content"> 
+          <p>? —  matches any single character.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_181A266A2ECA47718F668349DEF859D7"><div class="li_content"> 
+          <p>* —  matches zero or more characters.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_C77A6727178C4A6CBF0EE8C4DD7967C5"><div class="li_content"> 
+          <p>literal special characters —  #, ?, and * must be in square
+            brackets to find the literal character. All other special characters match
+            themselves.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_67FDF377405C4E549D524BDC0BAC3DE9"><div class="li_content"> 
+          <p>[<em>characterlist</em>] —  matches any single character in
+            characterlist (can also include digits).
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_11A6B51B025543499186A5D8C8C0BC9D"><div class="li_content"> 
+          <p>[!<em>characterlist</em>] —  matches any single character 
+            <em><strong>not</strong></em> in characterlist (can also include digits).
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_CAC1D5AF8EFC4C8BAD60FAF6EE33CCC5"><div class="li_content"> 
+          <p>Hyphen (-)  —  inside square brackets at the beginning of the
+            characterlist (after an exclamation point if one is used) or at the end of
+            characterlist matches itself. In any other location within square brackets, the
+            hyphen identifies a range of characters delimited by the characters on either
+            side of the hyphen.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_701C6AF9AB7E4B47A4BAE351350738AB"><div class="li_content"> 
+          <p>When a range of characters is specified, they must appear in
+            ascending sort order (that is, from lowest to highest). Thus, [A-Z] is a valid
+            pattern, but [Z-A] is not.
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      <p>Example search strings:
+      </p>
+ 
+      <a name="vba_working_in_the_run_time_environment__ul_14DAC50643624387ABCBFEB8F9CF8953"></a><ul id="vba_working_in_the_run_time_environment__ul_14DAC50643624387ABCBFEB8F9CF8953"> 
+        <li id="vba_working_in_the_run_time_environment__li_DD68ABB986F74EFE92CD4E73D3C48EB8"><div class="li_content"> 
+          <p>* —  returns a list of all database items.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_7773CF95E6BD48C980CDC6267C8D94D5"><div class="li_content"> 
+          <p>AREA_[!B] —  returns a list of all items containing the string
+            AREA_ followed by any character unless the string contained is AREA_B.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_E5AD3C7D5DF14E3AB271CBF4BC08664D"><div class="li_content"> 
+          <p>B?T —  finds BAT123khg but does not find CAT123khg.
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_D8C82043124149FBA405C490C916393B"><div class="li_content"> 
+          <p>M*[#]3 —  finds MIXER #3 but does not find BOILER #3.
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_F7D1DDFB50094EF0892C61B50609E0C3"><a name="vba_working_in_the_run_time_environment__section_F7D1DDFB50094EF0892C61B50609E0C3"></a><h2 class="sectiontitle">To use the tag search</h2> 
+       
+      <a name="vba_working_in_the_run_time_environment__ol_2D7E6A717FAE4BC49F18388F8BB67636"></a><ol id="vba_working_in_the_run_time_environment__ol_2D7E6A717FAE4BC49F18388F8BB67636"> 
+        <li id="vba_working_in_the_run_time_environment__li_67CEBEEBA8AD4A0F81347D4E6FE733E4"><div class="li_content"> 
+          <p>Click the tag search button from the picture&#39;s toolbar. 
+            <span><a name="vba_working_in_the_run_time_environment__image_252E74BD28E542CFB4B467079B20ED69"></a><img id="vba_working_in_the_run_time_environment__image_252E74BD28E542CFB4B467079B20ED69" src="TagSearch_btn.gif" /></span>
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_26806AF50F57490DA978FEE5F1E430DE"><div class="li_content"> 
+          <p>Enter a search string in the field. 
+          </p>
+ 
+          <p>The contents of the list are updated as you enter characters. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_695468407B814C19BF39F10BE9D3BE11"><div class="li_content"> 
+          <p>Click on any line in the results list to select an object. The
+            list can be sorted by clicking the column heading ( Area, Name, Description).
+          </p>
+ 
+        </div></li>
+ 
+        <li id="vba_working_in_the_run_time_environment__li_51557A2CC9354EA0BA34309F3AC93E9C"><div class="li_content"> 
+          <p>Click one of the action buttons (Faceplate, Detail, Graphic, and
+            so on). Double-clicking the line opens the object&#39;s faceplate (if it exists).
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_E8C5F444814243A2B2348B85D5AAFD47"><a name="vba_working_in_the_run_time_environment__section_E8C5F444814243A2B2348B85D5AAFD47"></a><h2 class="sectiontitle">Creating Global Forms for Data Entry</h2> 
+       
+      <p>This example shows how to create a UserForm in the UserGlobals page
+        and reference it from a picture for the purpose of data entry. Inserting
+        run-time accessible forms in the User Globals page allows only one copy of the
+        form on the system. This makes version control easier and minimizes the size of
+        the picture files.
+      </p>
+ 
+      <p>This example uses a form that you create in User Globals. The
+        following figure shows how it should appear in the run-time environment.
+      </p>
+ 
+      <div class="fignone" id="vba_working_in_the_run_time_environment__fig_72E9AD1F0F45411E83952A975B789F83"><a name="vba_working_in_the_run_time_environment__fig_72E9AD1F0F45411E83952A975B789F83"></a><div><span class="figcap">Data Entry Dialog Box</span></div> 
+         
+        <a name="vba_working_in_the_run_time_environment__image_49678A43AC98419B8ED964F04C1BB11C"></a><img id="vba_working_in_the_run_time_environment__image_49678A43AC98419B8ED964F04C1BB11C" src="dataentry.gif" /> 
+      </div>
+ 
+      <p>This example contains a UserForm 
+        <strong>frmListEntry</strong> and a module 
+        <strong>UGSubs</strong>, both of which are located in Project_User. The name of
+        the picture is LISTENTRY1.GRF.
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_B61950B1CF1948DC880C1C61A91F0E06"><a name="vba_working_in_the_run_time_environment__section_B61950B1CF1948DC880C1C61A91F0E06"></a><h2 class="sectiontitle">Example: Form Code</h2> 
+       
+      <pre class="pre">
+
+Option Explicit
+Dim strDataSource As String
+<strong>&#39;Custom subroutine to pass DataSource and List items to form
+</strong>Public Sub SetupTheData(DataSource As String, _
+Optional Item1 As String, Optional Item2 As String, _
+Optional Item3 As String, Optional Item4 As String, _
+Optional Item5 As String, Optional Item6 As String)
+<strong>&#39;Get the data source and any passed-in items for the list.
+</strong><strong>&#39;This example uses six items, but there is no limit.
+</strong>
+strDataSource = DataSource
+    If Item1 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item1
+    If Item2 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item2
+    If Item3 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item3
+    If Item4 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item4
+    If Item5 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item5
+    If Item6 &lt;&gt; &quot;&quot; Then EntryBox.AddItem Item6
+
+End Sub
+
+Private Sub CancelButton_Click()
+    Unload Me
+
+End Sub
+
+Private Sub OKButton_Click()
+    Dim DataObj As Object
+
+    On Error GoTo ErrorHandler
+    <strong>&#39;Write the chosen value from the list to the tag.
+</strong>    Set DataObj = System.FindObject(strDataSource)
+    DataObj.Value = EntryBox.Value
+    Unload Me
+    Exit Sub
+    ErrorHandler:
+        MsgBox &quot;Error &quot; + Str(Err.Number) + &quot; has occurred&quot; _
+        + Chr(10) + Chr(13) + Err.Description
+
+End Sub
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_066F0DC071B24541B91FC2F1C1D6365A"><a name="vba_working_in_the_run_time_environment__section_066F0DC071B24541B91FC2F1C1D6365A"></a><h2 class="sectiontitle">Example: Module Code</h2> 
+       
+      <pre class="pre">
+
+Option Explicit
+<strong>&#39;Declare the Form object.
+</strong><strong>&#39;This must be in a Module to use the user-defined data type.
+</strong><strong>&#39;The user-defined data type allows Quick Info and Auto
+</strong><strong>&#39;Complete to work.
+</strong>Public ListForm As frmListEntry
+Public Sub GetListForm()
+    <strong>&#39;Creates a new instance of the form.
+</strong>    Set ListForm = New frmListEntry
+
+End Sub
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_in_the_run_time_environment__section_F9D3566BCE88422DB07422B6A7803234"><a name="vba_working_in_the_run_time_environment__section_F9D3566BCE88422DB07422B6A7803234"></a><h2 class="sectiontitle">Example: Object Code</h2> 
+       
+      <pre class="pre">
+
+Private Sub CommandButton1_Click()
+
+    On Error GoTo ErrorHandler
+    <strong>&#39;Create an instance of the form.
+</strong>    UGSubs.GetListForm
+    <strong>&#39;Pass in the tag to control and load the form list with</strong> 
+    <strong>&#39;choices. Use text or numbers as appropriate for the 
+</strong>    <strong>&#39;tag-field data type.
+</strong>    UGSubs.ListForm.SetupTheData _
+    &quot;Fix32.BATCH1.BATCH-RECIPENAME.A_CV&quot;, _
+    &quot;Off&quot;, &quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;
+    <strong>&#39;Show the form.
+</strong>    UGSubs.ListForm.Show
+    Exit Sub
+    ErrorHandler:
+        HandleError
+
+End Sub
+
+</pre>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

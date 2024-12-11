@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using Inspect with InSight" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="application guidelines, application guidelines, tuning rules, DeltaV Inspect, DeltaV Inspect, application guidelines, tuning guidelines, guidelines, application, tuning, intelligent tuner, oscillation index, tuning index, tuning rules, variability index" name="DC.subject" /><meta content="application guidelines, application guidelines, tuning rules, DeltaV Inspect, DeltaV Inspect, application guidelines, tuning guidelines, guidelines, application, tuning, intelligent tuner, oscillation index, tuning index, tuning rules, variability index" name="keywords" /><meta content="c_insight_perform_reports.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_diag.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_extended_blocks.html" name="DC.Relation" scheme="URI" /><meta content="r_pid_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_inspect.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_inspect.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_F5C51024B2DE4C6AA99ECAAA03273E50" name="DC.Identifier" /><title>Using Inspect with InSight</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_inspect.html" /><link rel="next" href="c_insight_application_examples.html" /></head><body class="fixed" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50" data-relpath="c_insight_using_dv_inspect.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50"></a>
+
+<h1 class="topictitle1">Using Inspect with InSight</h1>
+<div> 
+    <p>InSight performance monitoring does not require any configuration or
+      setup. To use InSight for performance monitoring, click 
+      <span class="menucascade"><span class="uicontrol">Start</span> &gt; <span class="uicontrol">DeltaV Advanced
+          Control</span> &gt; <span class="uicontrol">Inspect with InSight</span></span>.
+      The following figure shows DeltaV InSight opened to the Overview page. 
+    </p>
+ 
+    <div class="p"> 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_7D4B61F9393B4890B7508536B209E599"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_7D4B61F9393B4890B7508536B209E599"></a><div><span class="figcap">InSight Interface for Performance Monitoring</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_9549148B50D0434D846C2C5E3E971EF6"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_9549148B50D0434D846C2C5E3E971EF6" src="Inspect-Overview.png" /> 
+      </div>
+ 
+    </div>
+ 
+    <p>Before InSight will recognize any changes or downloads of modules to a
+      controller, you must download the controller setup data. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span> The first time that you access InSight for performance
+      monitoring, it displays the number of modules active as 0 because, by default,
+      no areas are enabled for data collection. To enable an area for Inspect, select
+      the area in the hierarchy, and then click 
+      <span class="uicontrol">Enable Inspect for Area</span> on the context menu. 
+    </div>
+ 
+    <p>The InSight user interface for performance monitoring consists of the
+      hierarchy in the left pane and three pages: 
+      <span class="wintitle">Overview</span>, 
+      <span class="wintitle">Summary</span>, and 
+      <span class="wintitle">Devices</span>. 
+    </p>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_24330D2048D641878F00605C6B5E9798"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_24330D2048D641878F00605C6B5E9798"></a><h2 class="sectiontitle">Overview Page </h2> 
+       
+      <p>The 
+        <span class="wintitle">Overview</span> page includes a summary of the blocks
+        that have one or more abnormal conditions and shows active device alerts. The 
+        <span class="wintitle">Overview</span> page contains the following sections: 
+      </p>
+ 
+      <p> 
+        <strong>Control Condition</strong> 
+      </p>
+ 
+      <p>This section graphically shows the percent of downloaded modules
+        containing blocks that have abnormal conditions. The actual number of modules
+        that have each of the abnormal conditions is listed on the graph. The Tuning
+        value indicates the number of loops that would benefit from the Adaptive Tuning
+        recommendations. The Variability Index is a measure of the quality of the
+        control. The Oscillation Index, available when Process Learning is enabled,
+        defines how a PV&#39;s signal resembles the oscillatory signal. It is assumed that
+        the oscillatory signal may have a regular shape (sine or square wave) or an
+        irregular shape. The area of each half period of oscillations is calculated.
+        The oscillation index is calculated as the ratio of two successive areas,
+        limited to 1. Oscillation index calculations are filtered to provide stable
+        values. The index for an oscillatory signal with constant amplitude of the
+        oscillations is equal to one; the index for a signal with decaying amplitude of
+        the oscillations is less than one. The Device Alert value presents a summary of
+        the information on the 
+        <span class="uicontrol">Devices</span> tab. When an abnormal device alert
+        occurs, the associated module or block shows a device alert. The Control
+        Utilization values indicate the percent time the control was within variability
+        and the control blocks were used as designed. 
+      </p>
+ 
+      <p> 
+        <strong>Devices in Alert Section</strong> 
+      </p>
+ 
+      <p>This section graphically shows the percent of devices monitored at
+        each of the four alert levels: Device Failed, Maintenance Soon, Advisory, and
+        Communications Failed. The actual number of devices at each of the alert levels
+        is shown on the graph. The numbers include all devices (fieldbus or not) that
+        are monitored for maintenance state. 
+      </p>
+ 
+      <p>The information of interest is the worst currently active alert level
+        for the monitored device. For example, a device may have multiple alert levels
+        active at one time but only the highest level will be reflected in the
+        overview. For fieldbus devices, this alert information comes directly from the
+        device&#39;s shadow block. Communications Failed is the highest priority for
+        fieldbus devices; no other alerts are present when Communications Failed is
+        Active. For nonfieldbus devices, add Diagnostic function blocks to modules to
+        report device alerts. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_8A741C1E94F04894BAE49E77A89C38A6"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_8A741C1E94F04894BAE49E77A89C38A6"></a><h2 class="sectiontitle">Summary Page </h2> 
+       
+      <p>The 
+        <span class="wintitle">Summary</span> page provides performance information and
+        a summary of abnormal conditions for all modules or only for modules that have
+        exceeded limits, depending on the setting you selected in the Filters area.
+        When DeltaV System, an Area , or module is selected in the hierarchy, the 
+        <span class="wintitle">Summary</span> page shows overview information for the
+        selection. For example, when an Area is selected in the hierarchy, the 
+        <span class="wintitle">Summary</span> page provides overview information for all
+        modules in that area that contain I/O and Control function blocks. Modules
+        containing I/O function blocks (AI, AO, DI, DO, and PIN) and Control function
+        blocks (DC, FLC, MPC, NN, PID, and Ratio) appear in the Module Name list. Also,
+        with the exception of the FFMDI, FFMDO, and FFMAI blocks, modules containing
+        most of the extended function blocks appear in the Module Name list. The
+        abnormal conditions that can be detected are abnormal block mode, limited
+        control, uncertain input, and whether the limits for average variability index
+        and oscillation index have been exceeded. The Tuning column indicates if the
+        loop would benefit from the Adaptive Tuning recommendation. The Report column
+        indicates if reporting is enabled or disabled for the block. Use the context
+        menu commands to enable or disable reporting. When reporting is enabled on a
+        block, information about that block is included in performance reports that can
+        be exported from InSight and used in office applications such as Excel.
+        Reporting can also be used as filtering criteria to limit the information shown
+        on the 
+        <span class="wintitle">Summary</span> page. Similarly, to filter the information
+        shown on this page, you can assign a priority (1-5) to modules and blocks. Use
+        the context menu commands to assign a priority. The priority applies to modules
+        and blocks below the selection. You can select multiple items on this page
+        using the standard methods of multiple selection: shift-click and
+        control-click. A grayed cell indicates that the condition does not apply to the
+        block. Context menu commands are available from the module and block level. Use
+        these commands to open Control Studio and Diagnostics from a module, to enable
+        or disable Inspect for a module or block, enable and disable reports, and set a
+        priority for a module or block. The following image shows the 
+        <span class="wintitle">Summary</span> page with an area selected in the
+        hierarchy. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_FA3A718A6BB24AB181FBB41A9F034ACE"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_FA3A718A6BB24AB181FBB41A9F034ACE"></a><div><span class="figcap">Summary Page with an Area Selected in the Hierarchy</span></div> 
+           
+          <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_6BF8437170514A8BA7764DFEEE01BE6F"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_6BF8437170514A8BA7764DFEEE01BE6F" src="InSpect-Summary.png" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>Modules are listed in alphabetical order. Select a module in the
+        hierarchy to see performance information about the I/O and Control blocks in
+        the module. If one or more blocks in a module has exceeded one of the limits,
+        the associated problem is indicated by an icon. You can change the icon from
+        the 
+        <span class="uicontrol">View</span> menu. To see detailed information about a
+        block, double-click the icon related to that block on the 
+        <span class="wintitle">Summary</span> page or select the block in the hierarchy.
+        
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_99C33414B3044E2D83D703172E1809EA"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_99C33414B3044E2D83D703172E1809EA"></a><div><span class="figcap">Summary Page with a Block Selected in the Hierarchy</span></div> 
+           
+          <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_3E9546BA2FDF4236A3A2CFA10D498CA2"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_3E9546BA2FDF4236A3A2CFA10D498CA2" src="Inspect-block-Summary.png" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>Use the information on the block 
+        <span class="wintitle">Summary</span> page to identify conditions causing the
+        module to exceed its limits, as well as the percent of time that the condition
+        was abnormal. 
+      </p>
+ 
+      <p> 
+        <strong>Control Conditions</strong> 
+      </p>
+ 
+      <p>The % Limited column shows the percent of time that an abnormal
+        condition has existed during the currently selected time frame. If the %
+        Limited value exceeds the number in the Limit column, the value in the %
+        Limited column is shown in red. This condition also causes the exceeded icon to
+        be shown on the area and module summaries for this block. The limits shown in
+        this area are global limits that apply to all blocks. Conditions not applicable
+        to the currently selected block are marked n/a. Oscillation and Tuning are only
+        applicable when Process Learning is enabled on the block. Device Alert is only
+        applicable when the block is assigned to a fieldbus or HART device. Variability
+        is based on Variability Index and Standard Deviation. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> The MPC, MPCPro, and Neural Network (NN) function
+        blocks have multiple input and output values that can cause limited control or
+        uncertain input conditions. For these multivariable blocks, the Inspect
+        application is unable to display the current value of the parameter that is
+        causing the limited or uncertain input condition and displays n/a in the
+        Current Value column and active values in the % Limited and Limit columns. To
+        identify the source of limited control or uncertain input for multivariable
+        blocks, use the blocks&#39; engineering or operator applications such as PredictPro
+        or MPC Operate Pro. 
+      </div>
+ 
+      <p> 
+        <strong>Performance Indices</strong> 
+      </p>
+ 
+      <p>The Average column shows the average values for the selected time
+        frame. Indices not assigned to the Continuous Historian are marked n/a.
+        Averages are calculated on the Current and Previous time frames. Averages are
+        not calculated on the Now time frame. Conditions not applicable to the
+        currently selected block are marked n/a. The Oscillation and Tuning indices are
+        only applicable when learning is enabled on the block. The limits shown in this
+        area only apply to this block. 
+      </p>
+ 
+      <p>The Easy InSight History Collection command simplifies history
+        assignment by adding the control performance indices (Standard Deviation,
+        Variability Index, Tuning Index, and Oscillation Index) to the Continuous
+        Historian&#39;s history collection for the selected block. To access this command,
+        expand a module under an Area in the DeltaV Explorer and select the command
+        from the block&#39;s context menu. By default, this command uses a history sampling
+        period of 60 x module execution rate. Be aware that if the block scan rate is
+        greater than the history sampling period, it is possible to collect history
+        multiple times per block and clutter the historian with unnecessary data. It is
+        recommended that you manually adjust the historian sample rate if you use the
+        Easy InSight History Collection command with a block running at a scan rate
+        greater than 60 x module execution rate. To manually adjust the sampling rate,
+        select the Continuous Historian in the DeltaV Explorer, and then select 
+        <span class="uicontrol">History Collection</span> from the context menu. 
+      </p>
+ 
+      <p>You can modify the trend for a block parameter by selecting the
+        parameter in the Legend. Click 
+        <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Legend
+            Enabled</span></span> to view the Legend. 
+      </p>
+ 
+      <p>The current values for the selected block&#39;s parameters (Out, PV, SP)
+        as well as the Normal and Target modes and Standard Deviation time are provided
+        in the table in the lower-right corner of the 
+        <span class="wintitle">Summary</span> page. 
+      </p>
+ 
+      <p> 
+        <strong>Write to Inspect Alarm</strong> 
+      </p>
+ 
+      <p>The Write to Inspect Alarm command is available from the 
+        <span class="wintitle">Summary</span> page. Select and right-click a block to
+        access this command. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C38DC6B268DF4E6ABB5260D6749794A3"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C38DC6B268DF4E6ABB5260D6749794A3"></a><div><span class="figcap">Accessing the Write to Inspect Alarm Command</span></div> 
+           
+          <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_27773C9C6D4D447FAB591BB7297B7725"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_27773C9C6D4D447FAB591BB7297B7725" src="WriteToInspectAlarm.gif" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>When this command is selected, the block&#39;s INSPECT_ACT parameter will
+        trigger the Inspect block alarm if Inspect is enabled and one or more of the
+        block limits have been exceeded. The Inspect block alarm is triggered if both
+        of the following conditions are true: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ED6536DF7B034E45850891646D8A3DB8"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ED6536DF7B034E45850891646D8A3DB8"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_979356409BD84A36AE7D46187073E0D7"><div class="li_content">The Write to Inspect Alarm
+          command has been selected from InSight for this block. 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_7A2E64DBD1FF434B892D72DB820CEF89"><div class="li_content">With the &quot;Current Hour&quot;
+          filter selected, InSight indicates that an abnormal condition exists for Mode,
+          Control, Input, or Variability. Note that an abnormal condition exists for
+          Variability only if both the Variability Index and the Standard Deviation have
+          exceeded their limits. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>To assign the INSPECT Block Alarm, select the block in Control Studio,
+        and then click Assign Alarm on the context menu. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_27BDD62574104850AA445D8F42A59598"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_27BDD62574104850AA445D8F42A59598"></a><h2 class="sectiontitle">Devices Page </h2> 
+       
+      <p>Select the 
+        <span class="uicontrol">Devices</span> tab to display the 
+        <span class="wintitle">Devices</span> page. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_8C1CD855D9B04C7C9999E1A23D839220"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_8C1CD855D9B04C7C9999E1A23D839220"></a><div><span class="figcap">Devices Page</span></div> 
+           
+          <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_977E62A5389348F9B25B885A73D17FBB"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_977E62A5389348F9B25B885A73D17FBB" src="Inspect-devices.PNG" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>The 
+        <span class="wintitle">Devices</span> page provides a list of field devices that
+        have abnormal alert conditions. Filter selections are available to show all
+        devices, devices in alert only, fieldbus devices in alert only, or none. The
+        time frame is always 
+        <em>Now</em> for information shown. The 
+        <span class="wintitle">Devices</span> page lists the device name (or the
+        associated Diagnostic block name for nonfieldbus devices) and the active alert
+        conditions, if any, for each device. Right-clicking a block or device opens a
+        menu from which you can open the appropriate detail analysis application, if
+        one exists. If a fieldbus device is selected, you can view the device status
+        with AMS Device Manager software. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_FB46065782A34E579BBD78F8D5FA5F78"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_FB46065782A34E579BBD78F8D5FA5F78"></a><h2 class="sectiontitle">Selecting Items to Monitor </h2> 
+       
+      <p>InSight monitors all I/O and Control blocks that are downloaded to any
+        DeltaV plant area, process cell or unit module that has been enabled through
+        the InSight interface. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> InSight limits the number of blocks it watches to
+        10,000. The system prevents you from enabling an area that would add enough
+        blocks to exceed the limit. 
+      </div>
+ 
+      <p>To enable and disable InSight performance and utilization
+        calculations, select the area, process cell, or unit module and select a
+        command from the context menu in the Inspect hierarchy. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_382F07B6BEE54BB9B8D9F699B761A5C3"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_382F07B6BEE54BB9B8D9F699B761A5C3"></a><div><span class="figcap">Enabling Inspect from the Hierarchy</span></div> 
+           
+          <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_832BF106A482434B8ABE5B81D793E117"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_832BF106A482434B8ABE5B81D793E117" src="SelectItemsToMonitor.gif" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>For those modules that are contained within an area assigned to
+        InSight, the software automatically includes all of the I/O function blocks
+        (AI, AO, DI, DO, and PIN) and Control function blocks (DC, FLC, MPC, PID, and
+        Ratio) as long as those modules have been downloaded to a DeltaV controller. As
+        modules are added or deleted, InSight detects these changes. In other words, no
+        module-level configuration is necessary for tags to be included in InSight. You
+        can enable and disable performance and utilization calculations for individual
+        modules by selecting the module in the hierarchy and using the context menu
+        commands. 
+      </p>
+ 
+      <p>Note that if you disable all the blocks in a module and have the
+        Filters area Modules toggle set to Limit Exceeded Only, the module you disabled
+        disappears from the 
+        <span class="uicontrol">Module Name</span> list. To make it reappear, set the 
+        <span class="uicontrol">Modules</span> toggle to 
+        <span class="uicontrol">All Modules</span>. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_3A0C3669D6304EF7891F06FDE8C67513"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_3A0C3669D6304EF7891F06FDE8C67513"></a><h2 class="sectiontitle">Using the Context Menu Commands </h2> 
+       
+      <p>Context menu commands are available from all levels in the InSight
+        hierarchy. The context level commands vary depending upon the item selected. To
+        use the context menu commands, select and right-click an item in the hierarchy.
+        From the DeltaV system level you can: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_CEE4134F5ED54B9B9FC9DBE3A83B94F8"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_CEE4134F5ED54B9B9FC9DBE3A83B94F8"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_531357798428466290818F7007DA9569"><div class="li_content">Enable/Disable Inspect for
+          the DeltaV system 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_CE27D13A913443DBAE9E539F70A68532"><div class="li_content">Enable/Disable Inspect for
+          the DeltaV system and all sub-areas 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_F620F4AE6F4343969749E655D34E32FD"><div class="li_content">Enable/Disable InSight
+          Performance Reports 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_3DE0F313CC1A489D8AB698E794C5CA2F"><div class="li_content">Set priorities 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_F2ECFABEA7814FA79CD3C748EA238374"><div class="li_content">Change Performance Index
+          Limits 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>For modules, you can use the context menu commands to: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ADC5E04118E94E509DC44AA206A52AFF"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ADC5E04118E94E509DC44AA206A52AFF"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_ACC8B6A94E8643E99EC0895A83173563"><div class="li_content">Open Control Studio in
+          various modes in context with the module 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_AF64E474D1E844B19E01945B2F748E6A"><div class="li_content">Launch Diagnostics in
+          context with the module 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_4E636F83B00D4DA783B0133BF57F7FB5"><div class="li_content">Enable Inspect for the
+          module 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_47EF2A978B7842CE890C560CAF9ED1FA"><div class="li_content">Enable/Disable InSight
+          Performance Reports for the module 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_DA902EADC3EC4BBB8EE1FE57C83FD303"><div class="li_content">Set priorities 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_D249678FCFA84962AC66D4A7B9136650"><div class="li_content">Change Performance Index
+          Limits 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>For blocks, you can use the context menu commands to: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_1099C6BCC853431AB82D8276CEEC2174"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_1099C6BCC853431AB82D8276CEEC2174"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_782236D4B7C145B39A6EBCB825EA9835"><div class="li_content">Enable Inspect for the
+          block 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_023065600BC64876BA97212065207D5D"><div class="li_content">Enable/Disable InSight
+          Performance Reports for the block 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_1CD6DC6FB7D84E148F357E6AD6339F4A"><div class="li_content">Write to the Inspect Alarm
+          
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_416A67A725D74F1493B13A3A9CA73C84"><div class="li_content">Set priorities 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_4EF5E0C2FEA04DE7A8372751481BBE7D"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_4EF5E0C2FEA04DE7A8372751481BBE7D"></a><h2 class="sectiontitle">Filtering Items to Monitor </h2> 
+       
+      <p>The filter settings you make help determine what modules and blocks
+        are included in the performance and utilization calculations. You can filter by
+        time period, block types, report status, priority, device status, and module
+        status. You can set filters from the 
+        <span class="wintitle">Filters</span> dialog which is accessed through the 
+        <span class="uicontrol">Options</span> menu or from the InSight Toolbar. The
+        filter selections from the toolbar and dialog are the same; the only difference
+        is how they are accessed. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_DC2120465F0E456CB8C4F91BA6B55FCE"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_DC2120465F0E456CB8C4F91BA6B55FCE"></a><div><span class="figcap">Filter Toolbar</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_DE24FFDEA1EB4F76AB778047C839671D"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_DE24FFDEA1EB4F76AB778047C839671D" src="FilterToolbar.gif" /> 
+      </div>
+ 
+      <p>The following section describes the filter selections when accessed
+        from the 
+        <span class="wintitle">Filters</span> dialog There are three areas on the 
+        <span class="wintitle">Filters</span> dialog: 
+        <span class="uicontrol">Time Filters</span>, 
+        <span class="uicontrol">Control Filters</span>, and 
+        <span class="uicontrol">Device Filters</span>. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C5404DAFF6894DE99D148105CD080643"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C5404DAFF6894DE99D148105CD080643"></a><div><span class="figcap">Filters Dialog</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_E5F1C65755FF4A09ABA6E202F25C3239"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_E5F1C65755FF4A09ABA6E202F25C3239" src="FiltersDialog.png" /> 
+      </div>
+ 
+      <p>There are two time filter pulldown lists: 
+        <span class="uicontrol">Time Frame</span> and 
+        <span class="uicontrol">Time Window</span>. The choices for 
+        <span class="uicontrol">Time Frame</span> are 
+        <span class="uicontrol">Now</span>, 
+        <span class="uicontrol">Current</span>, and 
+        <span class="uicontrol">Previous</span>. The choices for 
+        <span class="uicontrol">Time Window</span> are 
+        <span class="uicontrol">Hour</span>, 
+        <span class="uicontrol">Shift</span>, and 
+        <span class="uicontrol">Day</span>. If you select 
+        <span class="uicontrol">Now</span>, the 
+        <span class="uicontrol">Time Window</span> options are not available and the
+        InSight performance monitoring view shows the instantaneous parameter values of
+        the block and uses these values to determine if a module is in the Module list.
+        By combining selections in the two lists you can filter the data for the
+        following time periods: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_AFE72914CBDA40B39695F85B85ACD934"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_AFE72914CBDA40B39695F85B85ACD934"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_785EC17F8B4F48A7A249425FF7CC9C39"><div class="li_content">Current Hour 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_611C3044B9E443D0B21EFDE23349611C"><div class="li_content">Current Shift 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_276E3D486C8A4A8FA42F2BC679B74E3A"><div class="li_content">Current Day 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_C4970994A6C944ACA0AA658BFE930C4B"><div class="li_content">Previous Hour 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_2AC7C32E388F47349C57EB03B683CA74"><div class="li_content">Previous Shift 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_BD6593B718504FC8B65DA73C8C5C55DA"><div class="li_content">Previous Day 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>In the Block Types area, select one or more types of blocks to include
+        in the InSight window. To display only Control blocks with Process Learning
+        enabled, select Identification Enabled only in the Block Types area. When
+        Process Learning is enabled for Control blocks, the DeltaV system automatically
+        identifies process models. 
+      </p>
+ 
+      <p>In the Modules area, you can elect to show all modules in the Modules
+        list or only those modules that have at least one block that exceeds a limit
+        (either for average variability or percent of time that the mode, control, or
+        input was abnormal). 
+      </p>
+ 
+      <p>In the Report area, you can elect to show data for all modules and
+        blocks or only for modules and blocks with reports enabled. 
+      </p>
+ 
+      <p>In the Priority area, you can display data for modules and blocks
+        based on the priority selection: 
+        <span class="uicontrol">All Priorities</span>, 
+        <span class="uicontrol">Priority 1-4</span>, 
+        <span class="uicontrol">Priority 1-3</span>, 
+        <span class="uicontrol">Priority 1-2</span>, and 
+        <span class="uicontrol">Priority 1</span>. 
+      </p>
+ 
+      <p>In the Device Filters area, select whether you want to see data for
+        all devices, only devices in alert, only fieldbus devices in alert, or none. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_9032405807DA4477A92DF35E8AAB30DD"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_9032405807DA4477A92DF35E8AAB30DD"></a><h2 class="sectiontitle">Setting Limits </h2> 
+       
+      <p>Limits used by InSight are, in some cases, set on individual blocks
+        while other limits globally apply to all input, output, and control blocks in
+        the system. If one or more blocks in a module has exceeded one of the limits,
+        the problem is indicated by an icon on the 
+        <span class="wintitle">Summary</span> page. Select a block in the Inspect
+        hierarchy or double-click a block on the 
+        <span class="wintitle">Summary</span> page to see block limits. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_35FFB96C74C547F7A7472FD1C2FF3821"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_35FFB96C74C547F7A7472FD1C2FF3821"></a><div><span class="figcap">Block Limits on the Block Summary Page</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_C3729E9F49CC4EC79104ADF88D7EC3BB"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_C3729E9F49CC4EC79104ADF88D7EC3BB" src="IndividualLimits.png" /> 
+      </div>
+ 
+      <p>The limits under Control Conditions are global limits for all blocks.
+        The limits under Performance Indices are per block. The Performance Index
+        Limits Utility can be used to set performance limits on multiple blocks. 
+      </p>
+ 
+      <p> 
+        <strong>Setting Limits on Individual Blocks</strong> 
+      </p>
+ 
+      <p>The limits for the performance indices: Standard Deviation,
+        Oscillation Index, Variability Index, and Tuning Index are by block. The Tuning
+        Index indicates the potential for improving control performance by updating
+        controller tuning according to the adaptive model and users&#39; tuning
+        requirements. The Oscillation Index defines how a PV&#39;s signal resembles the
+        oscillatory signal. The defaults are: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ABA344DAC15546D89DA6D28E1EC26383"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_ABA344DAC15546D89DA6D28E1EC26383"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_245D923471F54DE39EDEBCB260F7F0BD"><div class="li_content">Standard Deviation is 5%
+          of the EU span 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_5C52D8F1D3D846E18AB3630CE5242DCF"><div class="li_content">Oscillation Index is 50%
+          of the value 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_E51AC09FAE844A578B595678549DB068"><div class="li_content">Variability Index, is 30%
+          of the value 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_2A4730658DB34440AE7B68321AA3748F"><div class="li_content">Tuning Index is 50% of the
+          value 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>If you have Tune privileges you can change these limits. To change a
+        limit, click the limit you want to change and modify it in its cell. 
+      </p>
+ 
+      <p> 
+        <strong>Setting Global Limits</strong> 
+      </p>
+ 
+      <p>For all blocks, a default limit of 10% is provided for Incorrect Mode,
+        Limited Control, Uncertain Input, Large Variability, Oscillation, Tuning, and
+        Device Alerts. If you have tune privileges, you can change these limits using
+        the 
+        <span class="wintitle">Global Limits for Inspect Statistics</span> dialog. Be
+        aware that these limits affect all input, output, and control blocks and not
+        just the selected block. Click 
+        <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Global Limits
+            Setup</span></span> to open this dialog. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_56AD53E47D24472E8730B40C0B3FABC1"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_56AD53E47D24472E8730B40C0B3FABC1"></a><div><span class="figcap">Dialog for Setting Global Limits</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_1A2DD157B3A34552A81817CC0590B790"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_1A2DD157B3A34552A81817CC0590B790" src="GlobalLimits.png" /> 
+      </div>
+ 
+      <p>Percent time limits are used only when the time filter is set to
+        current and previous hour, shift, and day. When 
+        <span class="uicontrol">Current</span> and 
+        <span class="uicontrol">Previous</span> are selected as the time filter,
+        Inspect indicates an abnormal condition on the 
+        <span class="uicontrol">Summary</span> tab when the abnormal tuning condition
+        exceeds the percent (%) time limit. For example if the percent (%) time limit
+        is set to 10%, the abnormal tuning condition must have existed for more than
+        six (6) minutes in the previous hour before Inspect indicates it as an abnormal
+        condition on the 
+        <span class="uicontrol">Summary</span> tab. When 
+        <span class="uicontrol">Now</span> is selected as the time filter and an
+        abnormal tuning condition occurs, Inspect indicates the condition regardless of
+        how long the condition existed. 
+      </p>
+ 
+      <p>Percent time limits detect when blocks are not operating as expected
+        for too long a period of time. Limits can be set on: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_3A3E0CCBC5614AE68D8D431B34714739"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_3A3E0CCBC5614AE68D8D431B34714739"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_489F3339277E40DB95C1BF8E1E3C0DA6"><div class="li_content">Incorrect mode - the
+          percent of time the mode is incorrect (not in the configured Normal mode) 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_526F604925A541999719C6F2098F4671"><div class="li_content">Limited control - the
+          percent of time the control is Limited 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_BE112F8D0CF344CC8EDE89899B522235"><div class="li_content">Uncertain input - the
+          percent of time the block PV is Bad, Uncertain, or Limited 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_5017CD7C922942EEAF0A369C2C713C47"><div class="li_content">Large variability - the
+          percent of time the Variability Index exceeds the block-specific Variability
+          Index limit 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_0E38429F2B904DE8A14A3FFD0EDD5FE3"><div class="li_content">Tuning - the percent of
+          time the Tuning Index exceeds the block-specific Tuning Index limit 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_52B881AF128B4A7EAAC4044FE5CF6B22"><div class="li_content">Oscillation - the percent
+          of time the Oscillation Index must exceed the block-specific Oscillation Index
+          limit 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_2917AE8ACEA5464A947D45D6360AD12D"><div class="li_content">Device alert - the percent
+          of time that a device alert must be present 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The Tuning Filter section is used to determine when tuning
+        recommendations are displayed in InSight. Each PID block with Pprocess Learning
+        enabled has a Tuning Index and Tuning Index Limit parameter (ADP_TUN_IDX_LIM).
+        An abnormal tuning condition exists when the value of the Tuning Index exceeds
+        the block&#39;s Tuning Index Limit value. The Tuning Filter selections are: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_CFB906EE6F3E47FEA2FCD5EDAFBFA4F6"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_CFB906EE6F3E47FEA2FCD5EDAFBFA4F6"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_3014FC60260447EAB2AAB1258B5D7585"><div class="li_content"> 
+          <span class="uicontrol">None</span> - Inspect displays abnormal tuning based
+          on each block&#39;s Tuning Index Limit (ADP_TUN_IDX_LIM) value 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_3E23B0F8BDDB491CB78542F59E220FE5"><div class="li_content"> 
+          <span class="uicontrol">20%</span> - Inspect displays abnormal tuning for all
+          blocks when the Tuning Index 20% regardless of the Tuning Index Limit
+          (ADP_TUN_IDX_LIM) value 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_E1D2365F9FD5426295DE7E24E9390992"><div class="li_content"> 
+          <span class="uicontrol">50%</span> - Inspect displays abnormal tuning for all
+          blocks when the Tuning Index 50% 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The options under &quot;Display only if&quot; are additional filters that enable
+        you to refine the tuning filter selections: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_7AFEB57534144633BB77C6FC41884006"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_7AFEB57534144633BB77C6FC41884006"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_C231D1BF984E41E8AB1678844C699601"><div class="li_content"> 
+          <span class="uicontrol">Model has High Quality</span> - Inspect displays
+          abnormal tuning only based on High Quality models and if the tuning index meets
+          the criteria specified in the Tuning Filter selection (None, 20%, 50%) 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_E1AD2609F0D14DDFA53E97CA1E2CEFC8"><div class="li_content"> 
+          <span class="uicontrol">Loop has High Standard Deviation</span> - Inspect
+          displays abnormal tuning only if the loop exceeds its high standard deviation
+          limit and if the tuning index meets the criteria specified in the Tuning Filter
+          selection (None, 20%, 50%) 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="note"><span class="notetitle">Note:</span> Global limits for percent time abnormal are set or
+        changed from the Inspect clients but are stored in the server. All clients use
+        the same set of global limits, regardless of which client set them. Block
+        specific limits for detection of high Standard Deviation, Variability Index,
+        Tuning Index, and Oscillation Index are stored in the associated block. 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_5BC4FF7FC9324411A30CA866A1396D0B"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_5BC4FF7FC9324411A30CA866A1396D0B"></a><h2 class="sectiontitle">Using the Performance Index Limits Utility </h2> 
+       
+      <p>The Performance Index Limits Utility is used to set limits on the
+        performance indices (Standard Deviation, Variability Index, Oscillation Index,
+        and Tuning Index) on multiple PID blocks with Process Learning enabled. It can
+        also be used to set the standard deviation time on PID blocks. Performance
+        limits can be set to a calculated average plus a user-specified bias value or
+        to a user-specified fixed value. For standard deviation time on PID blocks, the
+        performance limit can be set through a user-specified fixed value or
+        automatically by the application. Click 
+        <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Change
+            Performance Index Limits</span></span> to open this utility: 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_43AF5890272542F489DA79A51B5E6BD1"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_43AF5890272542F489DA79A51B5E6BD1"></a><div><span class="figcap">Performance Index Limits Utility</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_7B37468D39114ED2BCBD440B100DE2E1"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_7B37468D39114ED2BCBD440B100DE2E1" src="PerfIndexLimitsUtility.png" /> 
+      </div>
+ 
+      <p> 
+        <strong>Selecting Blocks</strong> 
+      </p>
+ 
+      <p>Select the blocks from the hierarchy in the left pane. You can select
+        all blocks in all areas in the DeltaV system, all blocks in all modules in a
+        selected area, all blocks in a module, or individual blocks. In the preceding
+        image, all blocks in the module PID_LOOP_1 are selected. To select an
+        individual block, expand the hierarchy under the area and module containing the
+        block. Click the check box to the left of an item to select it. A check mark
+        indicates the item is selected. 
+      </p>
+ 
+      <p> 
+        <strong>Selecting Limits</strong> 
+      </p>
+ 
+      <p>After you select the items in the hierarchy, select the limits that
+        you want to change in the Performance Index Limits section. You can click the 
+        <span class="uicontrol">Show current averages button</span> to display the
+        current averages in the Data View table. The 
+        <span class="uicontrol">Show current averages button</span> is not enabled
+        until a limit is selected in the Performance Index Limits area. The following
+        image shows the Performance Index Limits area. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C489EEF690ED49E7A6CA69F6FEC21032"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_C489EEF690ED49E7A6CA69F6FEC21032"></a><div><span class="figcap">Performance Index Limits Area</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_170D35904AAC4BD5BD303C42F65EE97C"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_170D35904AAC4BD5BD303C42F65EE97C" src="PerfIndexLimitsArea.gif" /> 
+      </div>
+ 
+      <p> 
+        <strong>Selecting the Time Frame</strong> 
+      </p>
+ 
+      <p>Select the time frame from which data calculations are made. If
+        history is not available for a block, you can specify that the current value is
+        used. 
+      </p>
+ 
+      <p> 
+        <strong>Setting Performance Limits</strong> 
+      </p>
+ 
+      <p>There are two ways to set performance limits: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_DF6FF437159F4997853A1E8EB783932B"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_DF6FF437159F4997853A1E8EB783932B"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_7E3C40B4B2444C3EA3C03244F64D6759"><div class="li_content">Adding a bias value to the
+          calculated average 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_05D1C8FFBF7E49F7B8D500CD694BEDFE"><div class="li_content">Adding a fixed value 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>To set a performance limit, select either the 
+        <span class="uicontrol">Calculated average plus bias</span> value option or the
+        
+        <span class="uicontrol">Fixed value</span> option, select the limits that you
+        want to change in the Performance Index Limits area, click the 
+        <span class="uicontrol">Show current averages 
+        </span> button to display the current averages, specify a bias
+        value or fixed value, and click the 
+        <span class="uicontrol">Execute</span> button. The newly calculated limits are
+        shown in the data view table which is shown below. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_8F7B6DF25C06412BA0741A52E60DDE39"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_8F7B6DF25C06412BA0741A52E60DDE39"></a><div><span class="figcap">Data View Table</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_3855F3711BEA47F383B8967BF9AD3FDB"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_3855F3711BEA47F383B8967BF9AD3FDB" src="DataView.png" /> 
+      </div>
+ 
+      <p> 
+        <strong>Setting a Standard Deviation Time</strong> 
+      </p>
+ 
+      <p>For standard deviation time on a PID, the choices are: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_55D7AD77ADCE412EB15C519F9EAEA4B5"></a><ul id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ul_55D7AD77ADCE412EB15C519F9EAEA4B5"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_E46C3882434440DE8886E6D7BA61B69E"><div class="li_content">Adding a bias value 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_463218A4B51C441197AB9977A6F66795"><div class="li_content">Automatically setting the
+          limit through InSight 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>To set the standard deviation time on a PID, select the 
+        <span class="uicontrol">Auto set</span> option or deselect this option and
+        specify a bias value. When the 
+        <span class="uicontrol">Auto set</span> option is selected, the utility
+        determines the appropriate value to use. If the PID block has Process Learning
+        enabled, the value for the 
+        <span class="uicontrol">Auto set</span> option is BLOCK\ADP_TSS; if process
+        learning is not enabled, the value for the 
+        <span class="uicontrol">Auto set</span> option is BLOCK\RESET*4. Click the 
+        <span class="uicontrol">Execute</span> button after entering a bias value or
+        selecting 
+        <span class="uicontrol">Auto set</span>. The newly calculated limit is shown in
+        the Data View area. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="note"><span class="notetitle">Note:</span> The average standard deviation calulated by the PID block is zero
+          if an SP-PV Track option such as SP-PV Track in LO or IMan is selected for the
+          PID block&#39;s CONTROL_OPTS parameter. 
+        </div>
+ 
+      </div>
+ 
+      <p> 
+        <strong>Understanding the Status Icons</strong> 
+      </p>
+ 
+      <p>Icons in the hierarchy indicate the status of the limit setting. A
+        green check mark indicates complete success and the red X indicates the failure
+        of at least one limit setting. You can double-check the icons to see a result
+        summary of which limits failed and which succeeded. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_3554E6BA028B4B67997735F97EB058A8"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_3554E6BA028B4B67997735F97EB058A8"></a><div><span class="figcap">Result Summary Dialog</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_CE4B6A2FF55149559CBB335259960338"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_CE4B6A2FF55149559CBB335259960338" src="ResultDialog.gif" /> 
+      </div>
+ 
+      <p>You cannot change limit settings on nodes with a status icon. You must
+        first clear the image. To clear an image, select it and click 
+        <span class="uicontrol">Clear State Image</span> from the context menu. 
+      </p>
+ 
+      <p>Use the 
+        <span class="uicontrol">Update Learning Enabled</span> button on the
+        Performance Index Limits Utility to update the PID block&#39;s ENABLE_LEARNING
+        parameter. 
+      </p>
+ 
+      <p>Use the 
+        <span class="uicontrol">Initialize Models</span> tab to re-initialize the
+        selected blocks to the last approved model. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_93841AD6C21C4426A176242F45DDA4F3"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_93841AD6C21C4426A176242F45DDA4F3"></a><h2 class="sectiontitle">Deleting Module Assignments from Controllers </h2> 
+       
+      <p>If you need to delete module assignments from controllers in your
+        configuration the recommended way is: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ol_9AF7FF283952422D8422F1CC1D578385"></a><ol id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__ol_9AF7FF283952422D8422F1CC1D578385"> 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_39AF812D3C04458D8FB7BB6F17DD7C27"><div class="li_content">Select Assigned Modules
+          for the controller. 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_3620FACF6FA14EA587FC188521999B3E"><div class="li_content">Right-click the module,
+          and then select 
+          <span class="uicontrol">Delete Assignment</span>. 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_549F5455FF7A454184BCF727D0408619"><div class="li_content">Right-click the module
+          again, and then select 
+          <span class="menucascade"><span class="uicontrol">Download</span> &gt; <span class="uicontrol">Delete From
+              Controller</span></span>. 
+        </div></li>
+ 
+        <li id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__li_AE491CD39BE44EFDB8AE0F2A56F1672C"><div class="li_content">Download Setup Data to the
+          controller. 
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>If you attempt to remove module assignments from your configuration by
+        deleting the assignment to a controller, then performing a total download, you
+        must download the controller twice (total download followed by 
+        <span class="menucascade"><span class="uicontrol">Download</span> &gt; <span class="uicontrol">Setup
+            Data</span></span>) to prevent the InSight user interface from
+        displaying modules that have not been completely removed from the controller.
+        This additional download is necessary because of the way the system manages
+        module assignments and deletions during the download process. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_18B9AF2C313F479CA3FF61562CEC8A7D"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_18B9AF2C313F479CA3FF61562CEC8A7D"></a><h2 class="sectiontitle">Variability Limits </h2> 
+       
+      <p>Variability Index shows a control loop performance relative to the
+        best possible performing loop (Minimum Variance Control Loop). In theory, a
+        perfectly tuned loop has Variability Index close to zero. It should be noted,
+        however, that minimum variance control is neither achievable in real control
+        loop nor desirable to achieve. At perfect minimum variance control, a control
+        loop experiences excessive movement of the controller output and has a rather
+        narrow stability margin. Variability Index close to one hundred percent (100%)
+        indicates an extremely poorly tuned loop. To achieve a compromise between as
+        low as possible variability and reasonable loop stability margin, Variability
+        Index of around fifty percent (50%) should be satisfactory for most loops. Fine
+        adjustment of Variability Index limits should be determined based on the loop
+        performance when it is correctly tuned. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_711ECD743CA6450EB68725DB22F0B157"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_711ECD743CA6450EB68725DB22F0B157"></a><h2 class="sectiontitle">Printing </h2> 
+       
+      <p>When you select either the 
+        <span class="uicontrol">Print</span> icon or 
+        <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Print</span></span>,
+        a dialog appears from which you can print either an active module summary
+        report or a detail report on the local workstation printer or the selected
+        network printer. The active module summary report contains the Performance
+        Index, Control Utilization, total number of active modules, and the number of
+        modules with one or more blocks that is in an incorrect mode or has Limited
+        Control, Uncertain input, or large variability. The detail report contains the
+        Percent Time Abnormal, Average Standard Deviation, and Average Variability
+        Index for each I/O or Control block for the selected 
+        <span class="uicontrol">Time Frame</span>. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_1322C7F0CFA54E01B933DE0A613D099E"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__section_1322C7F0CFA54E01B933DE0A613D099E"></a><h2 class="sectiontitle">Defining an Inspect Operator Interface </h2> 
+       
+      <p>The DeltaV system includes two items you can use to create ways for
+        operators to interact with InSight: the Inspect function block and the Inspect
+        dynamo. 
+      </p>
+ 
+      <p>Use the Inspect dynamo in the DeltaV system to include InSight
+        utilization calculation results in operator displays. When you insert the
+        dynamo in a display, it prompts you for the tag of an Inspect block. The dynamo
+        also shows the area over which the calculations are made and a button operators
+        can use to enable and disable the calculations for the area. The following
+        figure shows how the Inspect dynamo appears in a display. 
+      </p>
+ 
+      <div class="fignone" id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_143090B774B34B7E8AB5CE9514E919AE"><a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__fig_143090B774B34B7E8AB5CE9514E919AE"></a><div><span class="figcap">Inspect Dynamo</span></div> 
+         
+        <a name="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_9465181AC1724165B966FE80B8FAA67D"></a><img id="concept_F5C51024B2DE4C6AA99ECAAA03273E50__image_9465181AC1724165B966FE80B8FAA67D" src="inspectdynamo.gif" /> 
+      </div>
+ 
+      <p>From the dynamo, an operator can enable or disable InSight
+        calculations for the area named in the dynamo. The two fields on the dynamo
+        show the calculated performance and utilization for the modules in the area.
+        The background color of these fields is invisible if the data status is good,
+        orange for uncertain status, red for bad status, or magenta when data is not
+        being communicated. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_perform_reports.html">InSight Performance Reports </a></div>
+<div><a href="c_insight_dvtune_using.html">Using Tune with InSight</a></div>
+<div><a href="c_fblk_spec_diag.html">Diagnostic function block</a></div>
+<div><a href="c_fblk_extended_blocks.html">Extended function blocks</a></div>
+<div><a href="r_pid_function_block_parameters.html">PID function block parameters</a></div>
+<div><a href="c_fblk_spec_inspect.html">Inspect function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="System time" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="system time, troubleshooting, Network Time Protocol, NTP, GPS network time server, network time server, SOE card, SOE card, using with a network time server, Master Time Server, SystemTime.exe, DeltaV System Time dialog, Windows Date and Time, Taskbar clock, clock, Windows Date and Time, DeltaV Continuous Historian, system time, Advanced Continuous Historian, system time, OSIsoft PI Server" name="DC.subject" /><meta content="system time, troubleshooting, Network Time Protocol, NTP, GPS network time server, network time server, SOE card, SOE card, using with a network time server, Master Time Server, SystemTime.exe, DeltaV System Time dialog, Windows Date and Time, Taskbar clock, clock, Windows Date and Time, DeltaV Continuous Historian, system time, Advanced Continuous Historian, system time, OSIsoft PI Server" name="keywords" /><meta content="t_proc_assign_the_system_time_to_a_node.html" name="DC.Relation" scheme="URI" /><meta content="c_workstations1.html" name="DC.Relation" scheme="URI" /><meta content="t_synchronize_time_with_an_external_network.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_system_time" name="DC.Identifier" /><title>System time</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_windows_logon_and_deltav_logon.html" /><link rel="next" href="t_synchronize_time_with_an_external_network.html" /></head><body class="fixed" id="c_system_time" data-relpath="c_system_time.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_system_time"></a>
+
+<h1 class="topictitle1">System time</h1>
+<div><div></div>
+ 
+	 <p>DeltaV uses the Network Time Protocol (NTP) to synchronize system time
+		for all workstations and controllers on the DeltaV Control Network. Any
+		physical DeltaV workstation can be defined as the Master Time Server node using
+		the 
+		<span class="wintitle">Physical Network Properties</span> dialog in DeltaV
+		Explorer. 
+	 </p>
+ 
+	 <p>DeltaV systems that require precise system time derive master time from
+		a Global Positioning System (GPS) network time server configured to a specific
+		IP address on the DeltaV Control Network. A GPS network time server is a
+		requirement for DeltaV systems that include SOE cards (Sequence of Events).
+		Consult with your Emerson representative or sales office for current GPS
+		specifications and requirements for use with DeltaV systems. Refer to the
+		documentation for the GPS network time server for installation and
+		configuration information and to the M-series hardware reference manual for
+		specific network settings that are required to configure the GPS network time
+		server for use with DeltaV. 
+	 </p>
+ 
+	 <p>The 
+		<span class="uicontrol">TimeInSync</span> diagnostics parameter reports a status
+		of 
+		<var class="varname">True</var> if the system time for the node remains within
+		the following specifications from the NTP server time: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1400291e91" valign="top" width="33.33333333333333%">DeltaV device 
+				</th>
+ 
+				<th class="cellrowborder" id="d1400291e94" valign="top" width="33.33333333333333%">No GPS network time server 
+				</th>
+ 
+				<th class="cellrowborder" id="d1400291e97" valign="top" width="33.33333333333333%">GPS network time server in use 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1400291e91 " valign="top" width="33.33333333333333%">Workstations 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e94 " valign="top" width="33.33333333333333%">50 ms 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e97 " valign="top" width="33.33333333333333%">10 ms 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1400291e91 " valign="top" width="33.33333333333333%">Controllers 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e94 " valign="top" width="33.33333333333333%">50 ms 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e97 " valign="top" width="33.33333333333333%">3 ms 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1400291e91 " valign="top" width="33.33333333333333%">Remote I/O nodes 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e94 " valign="top" width="33.33333333333333%">50 ms 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e97 " valign="top" width="33.33333333333333%">3 ms 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1400291e91 " valign="top" width="33.33333333333333%">Virtual workstations 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e94 " valign="top" width="33.33333333333333%">200 ms 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1400291e97 " valign="top" width="33.33333333333333%">200 ms 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <div class="section"><h2 class="sectiontitle">System time when not using a GPS network time server</h2> 
+		 
+		<p>If a GPS network time server is not in use, a single workstation
+		  serves as the Master Time Server node to keep system time for the entire DeltaV
+		  system. By default, the Professional<em>PLUS</em> workstation is the Master Time
+		  Server node. However, you can use DeltaV Explorer to define another workstation
+		  as the Master Time Server node by using the 
+		  <span class="wintitle">Physical Network Properties</span> dialog in DeltaV
+		  Explorer. 
+		</p>
+ 
+		<p>By default, system time is derived from the same internal clock used
+		  by the Windows Date and Time utility. However, to synchronize system time for
+		  all workstations and controllers on the DeltaV Control Network, you must run 
+		  <span class="filepath">deltav\bin\SystemTime.exe</span> to open the 
+		  <span class="wintitle">DeltaV System Time</span> dialog. By clicking the 
+		  <span class="uicontrol">Apply</span> button in the 
+		  <span class="wintitle">DeltaV System Time</span> dialog, time and date settings
+		  are applied to the Master Time Server node, which broadcasts them to all
+		  workstations and controllers on the DeltaV Control Network. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Troubleshooting</h2> 
+		 
+		<p>Running 
+		  <span class="filepath">deltav\bin\SystemTime.exe</span> requires administrator
+		  privileges. It is strongly recommended that you do not run 
+		  <span class="filepath">deltav\bin\SystemTime.exe</span> on a workstation other
+		  than the one defined as the Master Time Server node for DeltaV. Setting and
+		  synchronizing system time can have an unpredictable impact on the Event
+		  Journal, historical data, and domains. 
+		</p>
+ 
+		<div class="cautiontitle">CAUTION:</div><div class="caution"> 
+		  <p>Do not attempt to change system time by using the Windows Date and
+			 Time utility, accessed from the Control Panel or the Taskbar clock. The Windows
+			 Date and Time utility does not synchronize system time on all workstations and
+			 controllers on the DeltaV Control Network. Use the Windows Date and Time
+			 utility only to specify the local time zone and to enable the 
+			 <span class="uicontrol">Automatically adjust clock for Daylight Saving
+				Time</span> option. 
+		  </p>
+ 
+		</div>
+ 
+		<div class="important"><span class="importanttitle">Important:</span>  
+		  <p>Setting the system time while a historian other than the DeltaV
+			 Continuous Historian is running may cause unexpected results. The Advanced
+			 Continuous Historian and OSIsoft PI Server, for example, track system time
+			 according to the Windows clock, including the time zone and Daylight Savings
+			 Time (DST) settings. If the system time is wrong, the historical data is not
+			 correct. Before setting the system time or changing the time zone in DeltaV,
+			 refer to the 
+			 <cite>OSIsoft PI Server System Management Guide</cite> for more
+			 information on PI Server system time specifications and considerations. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="t_synchronize_time_with_an_external_network.html">Synchronize time with an external network</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_proc_assign_the_system_time_to_a_node.html">Define the Master Time Server node</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

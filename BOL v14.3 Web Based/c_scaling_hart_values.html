@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Scaling HART Values" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_link_initialization.html" name="DC.Relation" scheme="URI" /><meta content="c_troubleshoot_ff_loops.html" name="DC.Relation" scheme="URI" /><meta content="c_HART_devices_and_the_DeltaV_System.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_scaling_hart_values" name="DC.Identifier" /><title>Scaling HART Values</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_hart_device_templates.html" /><link rel="next" href="c_smart_commissioning_hart_devices.html" /></head><body class="fixed" id="c_scaling_hart_values" data-relpath="c_scaling_hart_values.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_scaling_hart_values"></a>
+
+<h1 class="topictitle1">Scaling HART Values</h1>
+<div><div></div>
+ 
+    <div class="section" id="c_scaling_hart_values__section_662C2D40F6BA4587904477BB64ECBD0D"><a name="c_scaling_hart_values__section_662C2D40F6BA4587904477BB64ECBD0D"></a> 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> The scaling for AOUT is the same as for AIN, except that it does
+          not have LTYPE or OUT_SCALE. 
+        </p>
+ 
+        <p> If the units selected are Special Units (&quot;&quot;, &quot;-&quot;, &quot;no units&quot;), then
+          the scale and the units information are uploaded from the device and saved in
+          the function block. 
+        </p>
+ 
+        <p> Once the function block is running and the units have been
+          synchronized between the DeltaV system and the device, anytime the units or
+          scale information is changed in the device by AMS Device Manager or a handheld
+          device, the units are uploaded to the controller. 
+        </p>
+ 
+        <p> An exception to this occurs if, during scaling, the controller
+          receives a nonrecoverable error from the device, in which case it continues
+          attempting to recover the error indefinitely by reinitializing the HART link.
+          During this time, it must ignore configuration change flags from the device (It
+          might have already changed the units but not the scale, so we cannot read the
+          device&#39;s values and replace the controller&#39;s.). Therefore, the user cannot
+          change the scaling information in the device and expect it to be uploaded to
+          the controller. The user must recover the error by changing the scale
+          information in the function block. The user can use one of the Special Units to
+          upload the scaling information from the device if needed. 
+        </p>
+ 
+      </div>
+ 
+      <p>When the IO_IN parameter of an Analog Input function block references
+        the HART_FIELD_VAL parameter, the AI function block downloads scaling values
+        and units to the HART transmitter to provide the correct translation between
+        transmitter units and process units. You select the type of scaling by
+        configuring the linearization type parameter (L_TYPE): 
+      </p>
+ 
+      <p><strong>Direct signal conditioning</strong> — The values for 0% and 100% of
+        OUT_SCALE are downloaded to the transmitter and the Analog Input function block
+        OUT parameter is scaled using these values. 
+      </p>
+ 
+      <p><strong>Indirect signal conditioning</strong> — The values for 0% and 100% and
+        the units of XD_SCALE are downloaded to the transmitter. The channel input
+        value is scaled using a linear interpolation between the range values of
+        XD_SCALE and the range values of OUT_SCALE. 
+      </p>
+ 
+      <p><strong>Indirect square root signal conditioning</strong> — The values for 0%
+        and 100% and the units of XD_SCALE are downloaded to the transmitter. The
+        normalized channel input value has a square root applied before it is scaled
+        using a linear interpolation between the range values of XD_SCALE and the range
+        values of OUT_SCALE. 
+      </p>
+ 
+      <p><strong>Direct Independent signal conditioning</strong> — Passes through the
+        accessed channel input values (or the simulated value when simulation is
+        enabled). OUT_SCALE is independent of XD_SCALE. 
+      </p>
+ 
+      <p>For example, if you have a transmitter with a range of 
+        <span class="nowrap">x°C</span> to 
+        <span class="nowrap">y°C</span> and you want to use the range 100°C
+        to 
+        <span class="nowrap">300°C</span> for control, configure L_TYPE =
+        Direct and OUT_SCALE = 
+        <span class="nowrap">100°C</span> to 
+        <span class="nowrap">300°C</span>. The range 
+        <span class="nowrap">100°C</span> to 
+        <span class="nowrap">300°C</span> is downloaded to the transmitter,
+        and the channel input value of 
+        <span class="nowrap">100°C</span> to 
+        <span class="nowrap">300°C</span> is displayed in the HART_FIELD_VAL
+        parameter. 
+      </p>
+ 
+      <p>If you have a transmitter with a range of x inches to y inches and you
+        want to use the range 0 inches to 150 inches for the transmitter and the range
+        of 0 gallons to 3000 gallons per minute for control, configure L_TYPE =
+        Indirect square root, XD_SCALE = 0 to 150 in., and OUT_SCALE = 0 to 3,000
+        gallons per minute. The range 0 to 150 inches is downloaded to the transmitter,
+        and the channel input value of 0 to 150 inches is displayed in the
+        HART_FIELD_VAL parameter. 
+      </p>
+ 
+      <p>Because these values are downloaded to the transmitter during link
+        initialization, make sure you configure the correct values in XD_SCALE and
+        OUT_SCALE. Many HART devices have different rules on initialization values. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_link_initialization.html">Link initialization</a></div>
+<div><a href="c_troubleshoot_ff_loops.html">Troubleshooting fieldbus loops</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

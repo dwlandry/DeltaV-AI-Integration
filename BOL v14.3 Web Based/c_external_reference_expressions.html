@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="External reference expressions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="external reference expressions, external references, data, examples, DeviceNet, external reference expression examples, Profibus, fieldbus" name="DC.subject" /><meta content="external reference expressions, external references, data, examples, DeviceNet, external reference expression examples, Profibus, fieldbus" name="keywords" /><meta content="c_accessing_intelligent_field_device_diagnostic_data.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_external_reference_expressions" name="DC.Identifier" /><title>External reference expressions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_accessing_intelligent_field_device_diagnostic_data.html" /><link rel="next" href="c_device_specific_module_templates.html" /></head><body class="fixed" id="c_external_reference_expressions" data-relpath="c_external_reference_expressions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_external_reference_expressions"></a>
+
+<h1 class="topictitle1">External reference expressions</h1>
+<div><div></div>
+<p>A module can use external reference expressions to gain access to a diagnostic parameter. DeltaV provides no browser support or wizards with which to create the path required to reference bus device diagnostic data directly from an external reference parameter. Instead, you must manually enter a path with the following syntax, including the special prefix, /&amp;:</p>
+<p>/&amp;<em>device_specifier</em>/<em>parameter_specifier</em>/<em>data_type</em></p>
+
+<div class="tablenoborder"><a name="c_external_reference_expressions__table_90A57BD1CD3E4DD6900B7611FAB2366E"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_external_reference_expressions__table_90A57BD1CD3E4DD6900B7611FAB2366E" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d985569e57" valign="top" width="33.33333333333333%"><p>Path component</p>
+</th>
+
+<th class="cellrowborder" id="d985569e61" valign="top" width="66.66666666666666%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d985569e57 " valign="top" width="33.33333333333333%"><p>/&amp;<em>device_specifier</em></p>
+</td>
+
+<td class="cellrowborder" headers="d985569e61 " valign="top" width="66.66666666666666%"><p>The device tag that uniquely identifies the field device. The device tag must be prefixed by the special character sequence /&amp;. The /&amp; prefix enables the database to do limited verification of the path.
+
+</p>
+<p><strong>Note </strong> An invalid reference following the <em>device_specifier,</em> such as a negative number or number containing a decimal point, is not checked and no warning will indicate that it could not be resolved.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d985569e57 " valign="top" width="33.33333333333333%"><p><em>parameter_specifier</em></p>
+</td>
+
+<td class="cellrowborder" headers="d985569e61 " valign="top" width="66.66666666666666%"><p>The device-dependent component or set of components that uniquely identifies the parameter.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d985569e57 " valign="top" width="33.33333333333333%"><p><em>data_type</em></p>
+</td>
+
+<td class="cellrowborder" headers="d985569e61 " valign="top" width="66.66666666666666%"><p>The component of the path that specifies the expected data type of the value in the device. DeviceNet and fieldbus devices require the <em>data_type</em> component for access to diagnostic data. The path for a Profibus DP device, however, does not use the <em>data_type</em> component.
+
+
+</p>
+<p>Valid <em>data_type</em> components include:</p>
+<a name="c_external_reference_expressions__ul_FC4BCA701A454A6FBE7B85E5300FD9A6"></a><ul id="c_external_reference_expressions__ul_FC4BCA701A454A6FBE7B85E5300FD9A6">
+<li id="c_external_reference_expressions__li_468C0C214F0D4A17804967F189966F65"><div class="li_content"><p>FP — Floating point</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_1BFCFF5A3C554F30AA7E1B53251E0279"><div class="li_content"><p>FS — Floating point with status (fieldbus only)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_EDEB8C7D6F474CB1B481D3144B453913"><div class="li_content"><p>DS — Discrete with status (fieldbus only)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_8B89F44A37024F56871105C4D56F7081"><div class="li_content"><p>UI — Unsigned integer</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_D5CF24771A344C7A9BFC2E20AB3481C3"><div class="li_content"><p>SI — Signed integer</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_415BC9539EED434D8155DD36481A2C9F"><div class="li_content"><p>SG — String</p>
+</div></li>
+
+</ul>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<div class="important"><span class="importanttitle">Important:</span> <p> A reference to diagnostic data in an internal write parameter or in an input or output parameter results in a database error.</p>
+</div>
+<div class="section" id="c_external_reference_expressions__section_A8DD0BB2CC88453E80C9C35B0ACDDF02"><a name="c_external_reference_expressions__section_A8DD0BB2CC88453E80C9C35B0ACDDF02"></a><h2 class="sectiontitle">Fields in external references parameters</h2><p>The following fields can be used in an expression to specify an external reference parameter:</p>
+
+<div class="tablenoborder"><a name="c_external_reference_expressions__table_C8499B4ABC6441AC8AC3F0AE52816030"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_external_reference_expressions__table_C8499B4ABC6441AC8AC3F0AE52816030" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d985569e162" valign="top" width="14.285714285714285%"><p>Field</p>
+</th>
+
+<th class="cellrowborder" colspan="3" id="d985569e166" valign="top"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d985569e162 " valign="top" width="14.285714285714285%"><p>CV</p>
+</td>
+
+<td class="cellrowborder" colspan="3" headers="d985569e166 " valign="top"><p>The current parameter value. This is the default if <em>field</em> is not otherwise specified.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d985569e162 " valign="top" width="14.285714285714285%"><p>ST</p>
+</td>
+
+<td class="cellrowborder" colspan="3" headers="d985569e166 " valign="top"><p>Status</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d985569e162 " valign="top" width="14.285714285714285%"> </td>
+
+<td class="cellrowborder" headers="d985569e166 " valign="top" width="28.57142857142857%"><p>DeviceNet:</p>
+<a name="c_external_reference_expressions__ul_C71E71F38A4F40DF949A2121A354C3CE"></a><ul id="c_external_reference_expressions__ul_C71E71F38A4F40DF949A2121A354C3CE">
+<li id="c_external_reference_expressions__li_5B20F65EA3DA40BEAF5B68EA12FA7B8C"><div class="li_content"><p>Good (128)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_FE40AE0A09CB4E13923A4AD220B4A31B"><div class="li_content"><p>No usable value (24)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_A3EF668DB2954C1EA7F43CB00FC5CE65"><div class="li_content"><p>Timeout (20; or 24, if no previous usable value)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_DEF8A973787449578DC8ECCEC132D7FF"><div class="li_content"><p>Loss of communication (20; or 24, if no previous usable value)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_9109796222A741899D8D26C4F1D7FE3E"><div class="li_content"><p>Configuration error (4)</p>
+</div></li>
+
+</ul>
+</td>
+
+<td class="cellrowborder" headers="d985569e166 " valign="top" width="28.57142857142857%"><p>Fieldbus:</p>
+<a name="c_external_reference_expressions__ul_0492985A540149C59747294FCB332B78"></a><ul id="c_external_reference_expressions__ul_0492985A540149C59747294FCB332B78">
+<li id="c_external_reference_expressions__li_1CE48A3A8F2D45E38EE01B9F0B1A750B"><div class="li_content"><p>Good (device-dependent, per fieldbus standard)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_134B2044610D45078C916E9A7597E59C"><div class="li_content"><p>No usable value (24)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_7286E06E966C4508B55244D24EB0E2F0"><div class="li_content"><p>Loss of communication (20; or 24, if no previous usable value)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_D967099AB58544859E8F704C8A4648CF"><div class="li_content"><p>Configuration error (4)</p>
+</div></li>
+
+</ul>
+</td>
+
+<td class="cellrowborder" headers="d985569e166 " valign="top" width="28.57142857142857%"><p>Profibus DP:</p>
+<a name="c_external_reference_expressions__ul_F3FCDEB2E0CE44F0BC13A92F3C174CCE"></a><ul id="c_external_reference_expressions__ul_F3FCDEB2E0CE44F0BC13A92F3C174CCE">
+<li id="c_external_reference_expressions__li_E546ACB9EDD4486A9252E2290DC259E5"><div class="li_content"><p>Good (128)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_FB58F20E305C4791B1484355D4FA9987"><div class="li_content"><p>No usable value (24)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_C69CD74A64404C739D04182BD301D289"><div class="li_content"><p>Timeout (20; or 24, if no previous usable value)</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_9C76C77389E847068BC176E71954680B"><div class="li_content"><p>Loss of communication (20; or 24, if no previous usable value)</p>
+</div></li>
+
+</ul>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d985569e162 " valign="top" width="14.285714285714285%"><p>CST</p>
+</td>
+
+<td class="cellrowborder" colspan="3" headers="d985569e166 " valign="top"><p>Communications status, an 8-bit signed value. The following are valid values:
+
+</p>
+<a name="c_external_reference_expressions__ul_3414B0B2984A43F58BDBF95D191E7B7B"></a><ul id="c_external_reference_expressions__ul_3414B0B2984A43F58BDBF95D191E7B7B">
+<li id="c_external_reference_expressions__li_BA67DB1E829A493B8A4FF1B662B83953"><div class="li_content"><p>COMM_STATUS_NORMAL</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_413CF640706A4638812B1FC57D4671B0"><div class="li_content"><p>COMM_STATUS_MODULE_NOT_CONFIGURED
+</p>
+<p>(e.g. invalid path)</p>
+</div></li>
+
+</ul>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_external_reference_expressions__section_197467DB93DD47FD8B27D61460AD584F"><a name="c_external_reference_expressions__section_197467DB93DD47FD8B27D61460AD584F"></a><h2 class="sectiontitle">Examples</h2><p>The following sections illustrate specific examples of the path required to reference bus device diagnostic data directly from an external reference parameter.</p>
+</div>
+<div class="section" id="c_external_reference_expressions__section_8E0139C69D394BA79CFDC3A431A159E8"><a name="c_external_reference_expressions__section_8E0139C69D394BA79CFDC3A431A159E8"></a><h2 class="sectiontitle">Fieldbus</h2><p>The <em>parameter_specifier</em> component (leading zeroes are not required) consists of the object index of the parameter and an optional subindex. The subindex is not required if the path is to a parameter that has status.</p>
+<p><em>object_index</em>/<em>subindex</em></p>
+<p>where:</p>
+<a name="c_external_reference_expressions__ul_6D518286B32A4E0BB65F56C8C1E70ACA"></a><ul id="c_external_reference_expressions__ul_6D518286B32A4E0BB65F56C8C1E70ACA">
+<li id="c_external_reference_expressions__li_7C9E22416868414A803E909A6E402E85"><div class="li_content"><p><em>object_index</em> is the object index in the form OI<em>nnnnn</em>, with <em>nnnnn</em> representing the UINT16 object index number, 0 through 65535</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_0CB0B7CC9C174532A6DCD8A824149FD8"><div class="li_content"><p><em>sub_index</em> is the optional subindex in the form SU<em>nnn</em>, with <em>nnn</em> representing the UINT8 subindex number, 0 through 255</p>
+</div></li>
+
+</ul>
+<p>For example, for a device named PDT1 at an address within the valid range of 20-35, a module can use the following path to read the parameter at object index 1200 as float:</p>
+<p>/&amp;PDT1/OI1200/FS</p>
+<p>To read the third field of a float array at object index 1400, a module can use the following path:</p>
+<p>/&amp;PDT1/OI1400/SU3/FP</p>
+</div>
+<div class="section" id="c_external_reference_expressions__section_6D6149484415457BBD7CB2D7CA81D3D8"><a name="c_external_reference_expressions__section_6D6149484415457BBD7CB2D7CA81D3D8"></a><h2 class="sectiontitle">DeviceNet</h2><p>Modules can read a read-only parameter for a DeviceNet device. The <em>parameter_specifier</em> component (leading zeroes are not required) consists of the class code, instance, and attribute ID.</p>
+<p>C<em>nnnnn</em>/I<em>nnnnn</em>/A<em>nnn</em></p>
+<p>where:</p>
+<a name="c_external_reference_expressions__ul_FD7E39FD6DE84FD0942873EC9D08BA99"></a><ul id="c_external_reference_expressions__ul_FD7E39FD6DE84FD0942873EC9D08BA99">
+<li id="c_external_reference_expressions__li_4968C012B1F24B9EAA1D6B1BC555104C"><div class="li_content"><p>C<em>nnnnn</em> represents the UINT16 class code, 0 to 65535</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_5984F0FADC7B4C80B9BDA1BA64A93D79"><div class="li_content"><p>I<em>nnnnn</em> represents the UINT16 instance, 0 to 65535</p>
+</div></li>
+
+<li id="c_external_reference_expressions__li_8DF7473660604BFE97BF42FA7F98B03A"><div class="li_content"><p>A<em>nnn</em> represents the UINT8 attribute ID, 0 to 255</p>
+</div></li>
+
+</ul>
+<p>For example, for a device named PDT1 at address 16, a module can use the following path to read the parameter at class code 1, instance2, and attribute ID 33 as float:</p>
+<p>/&amp;PDT1/C1/I2/A33/FP</p>
+<div class="note"><span class="notetitle">Note:</span> <p> By default, DeltaV assumes that DeviceNet devices represent diagnostic parameters in little-endian format, as defined by the DeviceNet protocol.</p>
+</div>
+<div class="tip"><span class="tiptitle">Tip:</span> <p> DeltaV reads raw values stored by a DeviceNet device. For a parameter stored as an integer, but which needs to be displayed as a floating point value, you may need to add either a Divide (DIV) function block or other expression to appropriately scale the value. For example, if a value is stored as the unsigned integer 47, and the meaning of the value is hundredths of amps, you can specify that the value be divided by 100 to force it to display as 0.47.</p>
+</div>
+</div>
+<div class="section" id="c_external_reference_expressions__section_FC17FFAB966F4F15AA4FD9EF0ACCDA0A"><a name="c_external_reference_expressions__section_FC17FFAB966F4F15AA4FD9EF0ACCDA0A"></a><h2 class="sectiontitle">Profibus DP</h2><p>Every Profibus DP device is given a byte array, including status, named DIAGMSG that contains the diagnostics message appearing in DeltaV Diagnostics. The first 6 bytes of the array have fixed meaning; the remaining bytes, if any, are device-dependent. The size of the array can be determined by reading the ROWS field of the parameter. You can read individual bytes from the array using the same [<em>index</em>] syntax supported by floating point arrays. The maximum size of the array is 220 bytes; if necessary, the diagnostic message is truncated and bytes beyond the limit are not accessible.</p>
+<p>Because access to Profibus DP diagnostic information is through a well-known parameter name, the <em>parameter_specifier</em> component of the path is always DIAGMSG and the <em>data_type</em> component is not used.</p>
+<p>For example, a module can use the following path to read a Profibus DP diagnostics parameter:</p>
+<p>/&amp;PDT1/DIAGMSG</p>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

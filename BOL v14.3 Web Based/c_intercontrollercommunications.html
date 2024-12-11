@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Inter-Controller communication guidelines" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="controller communication, communications, controller" name="DC.subject" /><meta content="controller communication, communications, controller" name="keywords" /><meta content="c_nodes.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_intercontrollercommunications" name="DC.Identifier" /><title>Inter-Controller communication guidelines</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_decommissioning.html" /><link rel="next" href="c_controllerredundancy.html" /></head><body class="fixed" id="c_intercontrollercommunications" data-relpath="c_intercontrollercommunications.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_intercontrollercommunications"></a>
+
+<h1 class="topictitle1">Inter-Controller communication guidelines</h1>
+<div><div></div>
+
+	 <p>This section describes controller communication behaviors in order to
+		help you design your system to ensure data transmission between DeltaV nodes.
+	 </p>
+
+	 <p><strong>Reads</strong> - Reads are the preferred method for communications. For
+		example, Controller B has an input parameter defined as an external reference
+		to a parameter in Controller A. Controller B initiates unsolicited updates with
+		a one-time request for data from Controller A. From then on, Controller A
+		updates Controller B when the exception criteria are met (a status or data
+		value changes). Any references in Controller B are then reading buffered data
+		that is automatically updated by the system&#39;s communications processes. This is
+		called unsolicited sending.
+	 </p>
+
+	 <p>The unsolicited send occurs at the same priority as low priority modules
+		on the source node. When referencing a parameter in another node in an
+		expression, you can verify communications with that parameter or node with the
+		.CST field. The .CST field can be referenced in blocks such as the CALC block
+		or SFC expression.
+	 </p>
+
+	 <p>When verifying the status of a reference in another controller, .CST is
+		recommended instead of .ST. The .ST value is set by the sending node. As such,
+		if communications is lost, the .ST value does not change and holds its last
+		value. The CST value is set by the receiving node. Every time the module
+		executes, the .CST value is updated with the current remote status.
+	 </p>
+
+	 <p>Your configuration should be designed to accommodate occasional,
+		intermittent bad status. It may not be good practice to immediately trip an
+		emergency shutdown on a single instance of bad status. You can configure
+		timeouts on bad status as appropriate to avoid unnecessary shutdowns.
+	 </p>
+
+	 <p>Similarly, it may not be appropriate to design control logic with
+		immediate response to unexpected events. On any interlock or shutdown
+		conditional logic, provide appropriate time delays before the system takes
+		significant action in response to the event. For example, it may be appropriate
+		in some cases to allow a bad status for several seconds before shutting down or
+		taking other serious action. Time delays can prevent unnecessary shutdowns in
+		the event of intermittent events caused by electrical noise, redundant
+		controller switchovers, partial downloads, and so on.
+	 </p>
+
+	 <p><strong>Buffered Asynchronous Writes</strong> - When calculation block
+		expressions, action block expressions, and SFC/PLM/Phase Class actions write to
+		a parameter in another node, the output is buffered. This is followed by an
+		asynchronous write request to the destination node with the new data. These
+		occur at a priority lower than low priority modules on the source node.
+		Buffered asynchronous writes are also done for external reference parameters in
+		other nodes.
+	 </p>
+
+	 <p>With these definitions in mind, note the following functionality
+		regarding data exchange between nodes:
+	 </p>
+
+	 <a name="c_intercontrollercommunications__ul_9765AE840F7E4DD88D4A60E6801C7F01"></a><ul id="c_intercontrollercommunications__ul_9765AE840F7E4DD88D4A60E6801C7F01"> 
+		<li id="c_intercontrollercommunications__li_54885FC401B94C9F950D0BDE7EF3EB28"><div class="li_content">
+		  <p>Buffered writes are processed every 500 milliseconds.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_E356753E72134BC99DCC9053599EAE40"><div class="li_content">
+		  <p>Reading data is preferable to writing data, both for loading reasons
+			 and for communications status reasons. A read operation has the appropriate
+			 status, depending on the state of communications. At the destination, a written
+			 value holds the last value and last status and does not indicate communications
+			 problems if they exist. If there is a communication failure between nodes, a
+			 written value does not reflect the current value and status of the source data.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_B2BA1C7E1C854067938CA6302B9FE77B"><div class="li_content"> 
+		  <p>Normal situations occur in which both reads and writes fail. Partial
+			 downloads, overload, redundancy switches, and other operations can all cause a
+			 read or write operation to fail (possibly without any indication of failure) at
+			 some instant.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_6869FCAD9BC8499BA621AE54D98C2654"><div class="li_content">
+		  <p>Unsolicited send operations contain a maximum of 4000 parameters per
+			 second for SX/MX controllers and 2000 parameters per second for SD Plus and MD
+			 Plus controllers. This total is enforced. If the same parameter is being
+			 requested by multiple nodes, that parameter is counted multiple times against
+			 this maximum. If there are more than the maximum number of unsolicited
+			 parameters to be sent through an unsolicited send operation within a second,
+			 the excess parameters are held until the next second. This means that, although
+			 the parameter data eventually arrives at the receiving node, the date may be
+			 slightly older than expected. Develop configurations using a limit of 2000
+			 parameters per second for SX/MX controllers and 1000 parameters per second for
+			 SD Plus and MD Plus controllers. Exceeding these recommended limits may affect
+			 system performance. In general, 2000 parameters per second for SD Plus and MD
+			 Plus controllers and 4000 parameters per second for SX/MX controllers cannot be
+			 sustained to another single node due to receive limitations and overhead and
+			 handshaking limitations.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_553318CAA0FF48B28E377F9C49A0C927"><div class="li_content">
+		  <p>Write operations of either type are recommended to be no more than
+			 40 per second per node for SX/MX controllers and 20 per second per node for SD
+			 Plus and MD Plus controllers.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_A01BC6E5D9FB43288CB20274266A4704"><div class="li_content">
+		  <p>The scan rate of modules configured with asynchronous writes must be
+			 greater than 100 ms to allow processing time between write operations.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_260A816CFE16434F9B420292875462F2"><div class="li_content">
+		  <p>Reading any or all array elements from one controller to another is
+			 supported. Write operations of arrays from node to node are not supported. An
+			 error is returned to the caller.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_CBC0C9765BD0458BA4C38D007DD9CAB2"><div class="li_content">
+		  <p>Due to normal system dynamics, a group of buffered asynchronous
+			 writes (such as multiple actions in a single SFC step) does not necessarily act
+			 on the destination parameters in a predictable order.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_B51CF1AD2AA34333AD59364ED5059567"><div class="li_content">
+		  <p>Due to the relative priority of the various read and write
+			 operations versus other tasks in each node, in cases of overload situations,
+			 reads and writes may not occur when expected.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_263BEB8D426C47B497C107B1BD2A1FA9"><div class="li_content">
+		  <p>A pulse action that writes to a parameter in another controller will
+			 retry the write as necessary while the step is active. With the step active,
+			 this continues until the write gets confirmation from the destination node of
+			 success. Possible write failures that will set ERROR and RERROR to TRUE include
+			 the write being rejected due to a wrong mode or the value being invalid for the
+			 data type. In these cases, the write will be retried on the next execution of
+			 the module. Between executions of the module, ERROR and RERROR will be TRUE,
+			 but will toggle back to FALSE while the action status is PENDING. If the next
+			 attempted write again fails, the cycle repeats. 
+		  </p>
+
+		  <p>In cases of communications failure, the retry mechanism will
+			 continue to attempt the write as long as the step remains active. In a
+			 communications failure scenario, feedback is not available from the destination
+			 and ERROR and RERROR will remain false. The write continues to be retried as
+			 long as the step is active. 
+		  </p>
+
+		  <p>If controllers are heavily loaded, the write may be re-buffered if
+			 necessary until there is feedback of success or failure. 
+		  </p>
+
+		  <p>When a write fails, the action gets an error, which rolls up to the
+			 step, composite, and SFC level in parameters called ERROR and RERROR. The
+			 phase&#39;s failure monitor can examine these parameters at the run logic level and
+			 actions can be taken to inform the operator that a write has failed or other
+			 actions can be performed as appropriate for the users implementation.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_intercontrollercommunications__li_EE33C4C8C5EF4CB3B704243332A7E92B"><div class="li_content">
+		  <p>Keep inter-module and inter-controller communications to a minimum.
+			 Place I/O references within the control module, not in a separate I/O module.
+			 Keep related modules with inter-module references in same controller.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

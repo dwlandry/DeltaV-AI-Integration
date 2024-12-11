@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Creating global scripts" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_creating_global_scripts" name="DC.Identifier" /><title>Creating global scripts</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_manipulating_pictures.html" /><link rel="next" href="vba_accessing_real_time_data.html" /></head><body class="fixed" id="vba_creating_global_scripts" data-relpath="vba_creating_global_scripts.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_creating_global_scripts"></a>
+
+<h1 class="topictitle1">Creating global scripts</h1>
+<div><div></div>
+ 
+	 <p id="vba_creating_global_scripts__CreatingGlobalScripts"><a name="vba_creating_global_scripts__CreatingGlobalScripts"></a>DeltaV Operate includes global pages that
+		allow you to store public objects, methods, forms, and variable objects so they
+		can be accessed from anywhere within your system.
+	 </p>
+ 
+	 <p>The 
+		<strong>FactoryGlobals</strong>page contains the subroutines and all of their
+		supporting variables, forms, and functions. The FactoryGlobals file is
+		write-protected to maintain the integrity of these scripts. See the
+		globalsubroutines.txt file, located in the DeltaV\iFIX\NLS folder, for more
+		information on the subroutines that are stored in the FactoryGlobals page.
+	 </p>
+ 
+	 <p>The 
+		<strong>User</strong> page is the location where you can put your own objects,
+		methods, forms, and variables that you want to use globally.
+	 </p>
+ 
+	 <p>Since you can access the items that you define as 
+		<strong>public</strong> in the User page from anywhere in the system, make sure
+		that what you enter is really what you want to expose. If you create a global
+		public variable, remember that it can be changed from any script at any time.
+	 </p>
+ 
+	 <p>This section provides examples of the items that you might want to
+		include in your User page, including:
+	 </p>
+ 
+	 <a name="vba_creating_global_scripts__ul_43A16EAE0A594DD3B3A8D272FDFFB1CA"></a><ul id="vba_creating_global_scripts__ul_43A16EAE0A594DD3B3A8D272FDFFB1CA"> 
+		<li id="vba_creating_global_scripts__li_B241C35307D1416FA30761524CFE578D"><div class="li_content"> Variable objects 
+		</div></li>
+ 
+		<li id="vba_creating_global_scripts__li_7FFF9AA9F2424591930CB85453937CEB"><div class="li_content"> Threshold tables 
+		</div></li>
+ 
+		<li id="vba_creating_global_scripts__li_6599449A68234806A155E0251C9EA2DB"><div class="li_content"> Procedures (VBA subroutines
+		  and functions) 
+		</div></li>
+ 
+		<li id="vba_creating_global_scripts__li_BC430B2A2DCE407E9AB7656589362C33"><div class="li_content"> Forms 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="section" id="vba_creating_global_scripts__CreatingaGlobalVariableObject"><a name="vba_creating_global_scripts__CreatingaGlobalVariableObject"></a><h2 class="sectiontitle">Creating a Global Variable Object</h2> 
+		 
+		<p>Variable objects can be stored in the User page so that they can be
+		  accessible throughout your application, regardless of which pictures are open. 
+		</p>
+ 
+		<p>To make a variable object global by adding it to the User page:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_719FAD7C85674D458BFE68E749537F7D"></a><ol id="vba_creating_global_scripts__ol_719FAD7C85674D458BFE68E749537F7D"> 
+		  <li id="vba_creating_global_scripts__li_0C0BB3EB31C440A2B126A6110502AF78"><div class="li_content"> Double-click the Globals
+			 folder in DeltaV Operate system tree. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_F1CDBBD508D64897B145CF3D791F6C95"><div class="li_content"> Right-click the User icon
+			 and select Create Variable. An icon representing the Variable object appears
+			 under the User icon. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_688E8A3B3FC348F9985EFC8F02BBEBBE"><div class="li_content"> Right-click the Variable
+			 object icon and select Animations. The Animations dialog box appears. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_0AAE8AB3772C469C8B6350CB9E9E909D"><div class="li_content"> Set values for the
+			 Variable object and click OK. 
+		  </div></li>
+ 
+		</ol>
+ 
+		<p>You can also create a global variable using the Variable Expert:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_91D25F52863B4723A83BB1CD75B90D36"></a><ol id="vba_creating_global_scripts__ol_91D25F52863B4723A83BB1CD75B90D36"> 
+		  <li id="vba_creating_global_scripts__li_943B137D96C6446B8EFB79836CB89439"><div class="li_content"> Select the Variable
+			 Expert from the Toolbox. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_549882C6A13D4F72A82A71CAC18C4A57"><div class="li_content"> Assign a name and type
+			 for the variable. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_3C5BB24D052B41EBA20802D299BDB1FD"><div class="li_content"> Select the Global
+			 Variable option and click OK. 
+		  </div></li>
+ 
+		</ol>
+ 
+	 </div>
+ 
+	 <div class="section" id="vba_creating_global_scripts__CreatingaGlobalThresholdTable"><a name="vba_creating_global_scripts__CreatingaGlobalThresholdTable"></a><h2 class="sectiontitle">Creating a Global Threshold Table</h2> 
+		 
+		<p>You can also configure a system-wide threshold table. Global threshold
+		  tables provide you with more centralized control over your system&#39;s data
+		  conversions. If you created a global threshold table that defined colors for
+		  value ranges, and you need to change a color or a value because you are moving
+		  to a different system, you only need to change it in one place.
+		</p>
+ 
+		<p>To create a global threshold table that is used for all current alarms
+		  in the system:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_551CD5ABADC34F72B99588166C63CBEF"></a><ol id="vba_creating_global_scripts__ol_551CD5ABADC34F72B99588166C63CBEF"> 
+		  <li id="vba_creating_global_scripts__li_A42333C2EF3647C0BABFA1E5A709084E"><div class="li_content"> Double-click the Globals
+			 folder in the DeltaV Operate system tree. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_517443E51E394851A7C2F05E5AF4A0D2"><div class="li_content"> Right-click the User icon
+			 and select Create Threshold Table from the pop-up menu. The Custom Lookup Table
+			 dialog box appears as shown in the following figure. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_2BD1D084CF124B558FC76C2C0A693A13"><div class="li_content"> Keep the default values
+			 of the dialog box and click OK. A threshold table icon appears under the User
+			 icon. 
+		  </div></li>
+ 
+		</ol>
+ 
+		<div class="fignone" id="vba_creating_global_scripts__213700"><a name="vba_creating_global_scripts__213700"></a><div><span class="figcap">Custom Lookup Table Dialog Box</span></div> 
+		   
+		  <a name="vba_creating_global_scripts__image_E09FDAA8C0CB473F8FFFA2434E1D29B6"></a><img id="vba_creating_global_scripts__image_E09FDAA8C0CB473F8FFFA2434E1D29B6" src="thresholdtable.gif" /> 
+		</div>
+ 
+		<p>To name the table:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_106C1020B76F4ADF88830B6247CD0CB3"></a><ol id="vba_creating_global_scripts__ol_106C1020B76F4ADF88830B6247CD0CB3"> 
+		  <li id="vba_creating_global_scripts__li_6BC651027F3B44D3A94023C999AACAA8"><div class="li_content"> Right-click the new
+			 threshold table&#39;s icon in the DeltaV Operate system tree and select Property
+			 Window from the pop-up menu. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_B7EDC00A67B24A639521D7DEEBE19E00"><div class="li_content"> Enter
+			 CurrentAlarmThresholds as the value for the Name property. 
+		  </div></li>
+ 
+		</ol>
+ 
+		<p>Once you have named your threshold table, you can make connections
+		  from DeltaV Operate objects to this table. The following procedure provides an
+		  example of how to connect an object, in this case an oval, to a global
+		  threshold table named CurrentAlarmThresholds.
+		</p>
+ 
+		<p>To connect an oval to a global threshold table:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_7DE16B3105884BD3B2412C5B98E2BA44"></a><ol id="vba_creating_global_scripts__ol_7DE16B3105884BD3B2412C5B98E2BA44"> 
+		  <li id="vba_creating_global_scripts__li_13E5EC1E94F34F6AACC57DBFFDCA24AF"><div class="li_content"> Create an oval. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_9635AC4DC5D04DFCB4D89284FEE16F93"><div class="li_content"> Right-click on the oval
+			 and select Animations. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_177B9AE61CC5470AAB4CDFA1F9C5C768"><div class="li_content">Select the Color tab.
+		  </div></li>
+
+		  <li id="vba_creating_global_scripts__li_5FEDAF11828D4A8CA63054E0D4B28AE0"><div class="li_content">Select the Animations
+			 checkbox next to the property you want to animate.
+		  </div></li>
+
+		  <li id="vba_creating_global_scripts__li_FBC9A51ABD9649E983693484A4AA950B"><div class="li_content"> In the Data Source field,
+			 enter a database tag.
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_181FF32775644081BA04826BF9953483"><div class="li_content">Select Advanced at the
+			 bottom of the lookup table.
+		  </div></li>
+
+		  <li id="vba_creating_global_scripts__li_C9AA201D0AD6448590DB4BE66C5FC367"><div class="li_content">Under Shared Lookup
+			 Object, enter the global Thresholds table name in the Table field. 
+		  </div></li>
+ 
+		</ol>
+ 
+		<p>The oval will now use the CurrentAlarmThresholds table instead of a
+		  custom table. Likewise, you can configure all objects that are assigned a Color
+		  By Current Alarm animation to use the CurrentAlarmThresholds table. If you ever
+		  need to change a color, value, or type, you only have to change it in one
+		  place.
+		</p>
+ 
+		
+	 </div>
+ 
+	 <div class="section" id="vba_creating_global_scripts__CreatingaGlobalProcedure"><a name="vba_creating_global_scripts__CreatingaGlobalProcedure"></a><h2 class="sectiontitle">Creating a Global Procedure</h2> 
+		 
+		<p>You may want global access to subroutines and functions if you use
+		  them frequently. DeltaV Operate provides global subroutines and functions, such
+		  as 
+		  <strong>OpenPicture</strong>, 
+		  <strong>ToggleDigitalPoint</strong>, and 
+		  <strong>OnScan</strong>, that you can use in your pictures and schedules. You can
+		  also include your own global subroutines and functions in the User page.
+		</p>
+ 
+		<p>The following example adds a global subroutine to the User page:
+		</p>
+ 
+		<a name="vba_creating_global_scripts__ol_571997E04C8E450F9AB254782AED9F7A"></a><ol id="vba_creating_global_scripts__ol_571997E04C8E450F9AB254782AED9F7A"> 
+		  <li id="vba_creating_global_scripts__li_FA5E6E47ED7144FCA7AE1006EE1CE394"><div class="li_content"> Open the Visual Basic
+			 Editor. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_F2FDEE0CC440422EBCFABC0F73BCC288"><div class="li_content"> If the Project Explorer
+			 is not already displayed in the VBE, select Project Explorer from the View
+			 menu. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_F63E191F2E954C78B365C5A53EB35137"><div class="li_content"> Select the Project_User
+			 project in the Project Explorer. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_141E4980CCF74F9B8DEE1B4733CE0B29"><div class="li_content"> From the Insert menu,
+			 select Module. You need to store your code in a module and not in the
+			 Project_User page itself. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__210503"><div class="li_content"> 
+			 <p>Enter the following code in the Code window: 
+			 </p>
+ 
+			 <pre class="pre">
+Public Sub DisplayMyMessage()
+    MsgBox &quot;This is my message box.&quot;
+End Sub
+</pre>
+ 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_E780694D415D4E55AD465767999A059C"><div class="li_content"> Close the Code window and
+			 create a rectangle in your picture. 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_5C762177FA0C4E70B19790159AC55639"><div class="li_content"> Right-click the rectangle
+			 and select Edit Script from the pop-up menu. VBE opens the Code window for the
+			 rectangle&#39;s Click event. Enter the following in the Code window: 
+			 <pre class="pre">
+DisplayMyMessage
+</pre>
+ 
+		  </div></li>
+ 
+		  <li id="vba_creating_global_scripts__li_00A425DC7FD44C7EB940C2196469D65C"><div class="li_content"> When you click the
+			 rectangle in the run-time environment, the message box that was stored in the
+			 Project_User page appears. 
+		  </div></li>
+ 
+		</ol>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

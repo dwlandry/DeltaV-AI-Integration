@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Evaluate fatal CSLS errors" name="DC.Title" /><meta content="CSLS, fatal error" name="DC.subject" /><meta content="CSLS, fatal error" name="keywords" /><meta content="c_fault_detect_response_repair.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_440" name="DC.Identifier" /><title>Evaluate fatal CSLS errors</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_evaluate_respond_faults.html" /><link rel="next" href="r_error_recovery_summary.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_440" data-relpath="c_evaluate_fatal_errors.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_440"></a>
+
+<h1 class="topictitle1">Evaluate fatal CSLS errors</h1>
+<div> 
+	 <p> Fatal errors result in a reset of the affected CSLS. The evidence of a
+		fatal error occurrence changes based on the time since the fatal error
+		occurred. Immediately after a fatal error the CSLS unit resets and begins its
+		power-up testing, which completes in about one minute. During this time the
+		CSLS unit is not reporting diagnostic information to the DeltaV controller. A
+		redundant partner of this CSLS unit indicates that its partner is not available
+		while it is power-up testing. If the fatal error is transient, the 
+		<em>partner not available</em> condition clears when power-up testing is
+		complete. But if the fatal error is persistent, the 
+		<em>partner not available</em> condition remains. 
+	 </p>
+ 
+	 <p> The CSLS unit stores the reason for a fatal error in a diagnostic
+		parameter called PAST_ERROR (PastError in Diagnostics Explorer). The value of
+		PastError is updated when the CSLS unit finishes power-up testing following a
+		reset due to a fatal error. Persistent fatal errors are expected to cause the
+		same condition to be detected when the CSLS unit begins running its continuous
+		diagnostic tests. The outcome is another reset. When a CSLS detects the same
+		fatal error on two back-to-back resets, it enters a reduced startup state where
+		SIS modules do not execute and outputs cannot be powered on. The CSLS unit
+		reports non-zero PAST_ERROR and DiagStatus is 
+		<em>Persistent Fatal Error After Powerup</em>. 
+	 </p>
+ 
+	 <p> When a 
+		<em>simplex</em> CSLS is in reduced startup state it forwards PastError
+		into FAILED alarm. Immediately after the fatal error is detected COMM alarm is
+		posted, which becomes inactive when power-up tests complete. At that time
+		FAILED alarm becomes active. 
+	 </p>
+ 
+	 <p> When a 
+		<em>standby</em> CSLS unit (in redundant CSLS) is in reduced startup state
+		it reports its condition via MAINT alarm only since the active CSLS continues
+		to operate. Immediately after the fatal error on standby CSLS is detected MAINT
+		alarm (Standby CSLS is not communicating) is posted, which becomes inactive
+		when power-up tests complete. At that time MAINT alarm (CSLS Not Fully
+		Operational) becomes active. 
+	 </p>
+ 
+	 <p> When an 
+		<em>active</em> CSLS unit (in redundant CSLS) is in reduced startup state
+		(with the standby CSLS unit either absent or in reduced startup mode as well)
+		it forwards PastError into FAILED alarm. Immediately after the fatal error on
+		active CSLS is detected COMM alarm is posted, which becomes inactive when
+		power-up tests complete. At that time FAILED alarm becomes active. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>Persistent fatal errors generally require a hardware repair. The
+		  hardware should be returned to Emerson for repair. Before returning the
+		  hardware, perform a manual reset of the affected CSLS unit using Diagnostics
+		  Explorer. If the error continues to be present after power-up tests complete,
+		  which is expected, please contact the Global Service Center (GSC) for technical
+		  support prior to contacting Customer Service for a Material Return Tracking
+		  (MRT) number. The GSC will help determine the necessary action and forward the
+		  call to Customer Service if needed. For contact information, visit: 
+		</p>
+ 
+		<p> http://www.emersonprocess.com/systems/support/ratecard.htm 
+		</p>
+ 
+	 </div>
+ 
+	 <p> The PastError parameter retains the reason for the most recent fatal
+		error. PastError clears (returns to Good) the next time a reset occurs that is
+		not due to an error condition, for example, a manual reset is done. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

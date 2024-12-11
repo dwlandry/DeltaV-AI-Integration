@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Channel parameters" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="I/O channels, CHARM I/O channels, parameters, analog input channel parameters, discrete input channel parameters, discrete output channel parameters, RTD channel parameters, Thermocouple channel parameters, mV channel parameters, millivolt channel parameters, Pulse Input channel parameters, SOE Discrete Input channel" name="DC.subject" /><meta content="I/O channels, CHARM I/O channels, parameters, analog input channel parameters, discrete input channel parameters, discrete output channel parameters, RTD channel parameters, Thermocouple channel parameters, mV channel parameters, millivolt channel parameters, Pulse Input channel parameters, SOE Discrete Input channel" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="c_channel_parameters" name="DC.Identifier" /><title>Channel parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_card_parameters.html" /><link rel="next" href="c_dv_redundant_io.html" /></head><body class="fixed" id="c_channel_parameters" data-relpath="r_channel_parameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_channel_parameters"></a>
+
+<h1 class="topictitle1">Channel parameters</h1>
+<div><div></div>
+ 
+	 <div class="section" id="c_channel_parameters__section_1BD3F4B9DCDB47668B9579BB54193A91"><a name="c_channel_parameters__section_1BD3F4B9DCDB47668B9579BB54193A91"></a> 
+		<div class="p">The properties associated with the I/O channel types are described by 
+		  <strong>channel parameters</strong>. You modify the channel parameters through
+		  DeltaV Explorer. All channels have the following nonconfigurable parameters: 
+		<a name="c_channel_parameters__ul_BE795E48035A4D52A35801A89F322F4E"></a><ul id="c_channel_parameters__ul_BE795E48035A4D52A35801A89F322F4E"> 
+		  <li id="c_channel_parameters__li_2E563412ABC84FA08A5CD9A091D78CD6"><div class="li_content"> 
+			 <p><strong>OINTEG</strong> — Represents the overall integrity of the channel (0
+				= Good, 1 = Bad). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_channel_parameters__li_351596993E3547C7856521BAC17E9251"><div class="li_content"> 
+			 <p><strong>STATUS</strong> — Text description of the current condition of the
+				channel. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_channel_parameters__li_45AE66CF0FA94AC797EBDA456CA77F35"><div class="li_content"> 
+			 <p><strong>ST_REV</strong> — Incremented each time a configuration parameter is
+				modified. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The following table lists the available channel parameters by channel
+		  type. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_channel_parameters__table_167699174BA54910BA4A6EAC73CC9D57"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_channel_parameters__table_167699174BA54910BA4A6EAC73CC9D57" rules="all" summary=""><caption><span class="tablecap">Channel Parameters</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d2393351e97" valign="top">Channel type 
+				</th>
+ 
+				<th class="cellrowborder" id="d2393351e100" valign="top">Channel parameter 
+				</th>
+ 
+				<th class="cellrowborder" id="d2393351e103" valign="top">Can configure 
+				</th>
+ 
+				<th class="cellrowborder" id="d2393351e106" valign="top">Description 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="5" valign="top"> 
+				  <p>Analog Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FIELD_VAL_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The last value reported by the card (in percent of range) and
+					 the current status of the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FILTER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls the filtering performed on the I/O card. You should
+					 consider the execution rate of the control modules using the channel when you
+					 configure FILTER. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>NAMUR_ENA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls whether NAMUR alarming is performed on the channel.
+					 If enabled and if the transmitter supports it, an analog value that is outside
+					 the NAMUR limits (106.25% and –2.5%) for four seconds has its status marked as 
+					 <strong>Bad: Sensor Failure</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OVERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 overrange. If the signal is above this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>HighLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>UNDERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 underrange. If the signal is below this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>LowLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="2" valign="top"> 
+				  <p>HART Analog Input Channel: 
+				  </p>
+ 
+				  <p>Analog Process Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HART_FIELD_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The 4 to 20 mA signal of the HART transmitter, scaled in the
+					 range and engineering units of XD_SCALE or OUT_SCALE, depending on L_TYPE. HART
+					 status is applied. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FIELD_VAL_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The 4 to 20 mA signal of the HART transmitter, in percent of
+					 range. HART status is not applied. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="4" valign="top"> 
+				  <p>HART Analog Input Channel: 
+				  </p>
+ 
+				  <p>HART Dynamic Variables 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HART_PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The Primary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_SV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Secondary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_TV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Tertiary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_FV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Fourth Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART Analog Input Channel: 
+				  </p>
+ 
+				  <p>System Status Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>NO_COMM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Set to True (1) if digital communication with the HART
+					 instrument has stopped or was never started. If digital communication is
+					 successful, this parameter is set to False (0) immediately. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="7" valign="top"> 
+				  <p>HART Analog Input Channel:  
+				  </p>
+ 
+				  <p> HART Field Device Status Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>DEV_MALFUNC 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Set and cleared by tracking Field Device Malfunction (HART
+					 status bit #7) from the HART instrument. If the HART instrument detects a
+					 malfunction within itself, this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DEV_CFG_MISMATCH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Indicates if the physically installed device does not match
+					 the configured device. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>MORE_STATUS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking More Status Available (HART status
+					 bit #4) from a HART instrument. This indicates that there are additional
+					 details that the devices can return. If this is set use AMS Device Manager or
+					 HART handheld device to get additional information. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>NPV_PAST_LIM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Non-Primary Variable Out of
+					 Limits (HART status bit #1) from a HART instrument. If one of the measured
+					 Non-Primary Variables is outside its sensor operating limits (high or low),
+					 this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_FIXED 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Process Variable Analog Output
+					 Fixed (HART status bit #3) from a HART instrument. If the HART device analog
+					 output value is fixed to a requested value, this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_PAST_LIM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Primary Variable Out of Limits
+					 (HART status bit #0) from a HART instrument. If the measured Primary Variable
+					 is outside the sensor operating limits (high or low), this parameter is set to
+					 True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_SAT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Primary Variable Analog Output
+					 Saturated status from a HART instrument. If the analog output from the HART
+					 device is out of range (high or low), this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="6" valign="top"> 
+				  <p>HART Analog Input Channel: 
+				  </p>
+ 
+				  <p>Other Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FILTER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls the filtering performed on the I/O card. You should
+					 consider the execution rate of the control modules using the channel when you
+					 configure FILTER. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_ERRORS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Selects which HART status error values are ignored. This
+					 parameter acts as a mask to hide HART status error notifications that you
+					 select as unimportant to your operation. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>NAMUR_ENA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls whether NAMUR alarming is performed on the channel.
+					 If enabled and if the transmitter supports it, an analog value that is outside
+					 the NAMUR limits (106.25% and –2.5%) for four seconds has its status marked as 
+					 <strong>Bad: Sensor Failure</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OVERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 overrange. If the signal is above this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>HighLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>UNDERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 underrange. If the signal is below this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>LowLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HINTEG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>For HART analog input and output channels, HINTEG indicates
+					 that a HART error is present (0=Good, 1=Bad) even if HART_ERRORS is configured
+					 to ignore the error. When HART_ERRORS is configured to ignore one or more HART
+					 errors, a corresponding active HART error does not contribute to Bad OINTEG on
+					 the channel; however, it does contribute to Bad HINTEG on the channel. HINTEG
+					 is always Bad when OINTEG is Bad. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="4" valign="top"> 
+				  <p>Analog Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FAIL_ACTION_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls the behavior of the channel when the card goes into
+					 failure action condition due to lost communication with the controller. You can
+					 configure the channel to hold the value at the start of the failure action
+					 condition (select Hold last value) or to go to the failure action value
+					 (FAIL_ACTION_VAL). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The value the channel transitions to when the card goes into
+					 failure action condition, in percent. This value is used only if
+					 FAIL_ACTION_MODE is configured to set the value to FAIL_ACTION_VAL. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>INIT_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The value the channel goes to upon initial download before any
+					 function block action, in percent. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OUT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The current value driven to the card, in percent, and the
+					 fieldbus status of the output channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="4" valign="top"> 
+				  <p>HART Analog Output Channel: 
+				  </p>
+ 
+				  <p>Dynamic Variables 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HART_PV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The Primary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_SV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Secondary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_TV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Tertiary Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_FV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Fourth Variable returned by the HART transmitter, in
+					 engineering units. This value is read digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="9" valign="top"> 
+				  <p>HART Analog Output Channel: 
+				  </p>
+ 
+				  <div class="p">Device Variables<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+				  </div>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HART_DV_SLOT0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The slot 0 device variable value. This value is read
+					 digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_DV_SLOT1<a href="r_channel_parameters.html#c_channel_parameters__footnote2"><sup>r_channel_parameters.html#c_channel_parameters__footnote2</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 1 device variable value. This value is read
+					 digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_DV_SLOT2<a href="r_channel_parameters.html#c_channel_parameters__footnote2"><sup>r_channel_parameters.html#c_channel_parameters__footnote2</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 2 device variable value. This value is read
+					 digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART_DV_SLOT3<a href="r_channel_parameters.html#c_channel_parameters__footnote2"><sup>r_channel_parameters.html#c_channel_parameters__footnote2</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 3 device variable value. This value is read
+					 digitally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DV_SLOT_CONFIG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The mask that determines which slot codes are enabled. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DV_SLOT0_CODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 0 device variable code sent digitally from the AO
+					 card. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DV_SLOT1_CODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 1 device variable code sent digitally from the AO
+					 card. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DV_SLOT2_CODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 2 device variable code sent digitally from the AO
+					 card. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DV_SLOT3_CODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The slot 3 device variable code sent digitally from the AO
+					 card. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HART Analog Output Channel: 
+				  </p>
+ 
+				  <p>System Status Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>NO_COMM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Set to True (1) if digital communication with the HART
+					 instrument has stopped or was never started. If digital communication is
+					 successful, this parameter is set to False (0) immediately. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="5" valign="top"> 
+				  <p>HART Field Device Status Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>DEV_MALFUNC 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Set and cleared by tracking Field Device Malfunction (HART
+					 status bit #7) from the HART instrument. If the HART instrument detects a
+					 malfunction within itself, this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>NPV_PAST_LIM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Non-Primary Variable Out of
+					 Limits (HART status bit #1) from a HART instrument. If one of the measured
+					 Non-Primary Variables is outside its sensor operating limits (high or low),
+					 this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_FIXED 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Process Variable Analog Output
+					 Fixed (HART status bit #3) from a HART instrument. If the HART device analog
+					 output value is fixed to a requested value, this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_PAST_LIM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Primary Variable Out of Limits
+					 (HART status bit #0) from a HART instrument. If the measured Primary Variable
+					 is outside the sensor operating limits (high or low), this parameter is set to
+					 True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PV_SAT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Set and cleared by tracking the Primary Variable Analog Output
+					 Saturated status from a HART instrument. If the analog output from the HART
+					 device is out of range (high or low), this parameter is set to True (1). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="6" valign="top"> 
+				  <p>HART Analog Output Channel: 
+				  </p>
+ 
+				  <p>Other Values 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HART_ERRORS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Selects which HART status error values are ignored. This
+					 parameter acts as a mask to hide HART status error notifications that you
+					 select as unimportant to your operation. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls the behavior of the channel when the card goes into
+					 failure action condition due to lost communication with the controller. You can
+					 configure the channel to hold the value at the start of the failure action
+					 condition (select Hold last value) or to go to the failure action value
+					 (FAIL_ACTION_VAL). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The value the channel transitions to when the card goes into
+					 failure action condition, in percent. This value is used only if
+					 FAIL_ACTION_MODE is configured to set the value to FAIL_ACTION_VAL. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>INIT_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The value the channel goes to upon initial download before any
+					 function block action, in percent. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OUT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The current value driven to the card, in percent, and the
+					 fieldbus status of the output channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>HINTEG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>For HART analog input and output channels, HINTEG indicates
+					 that a HART error is present (0=Good, 1=Bad) even if HART_ERRORS is configured
+					 to ignore the error. When HART_ERRORS is configured to ignore one or more HART
+					 errors, a corresponding active HART error does not contribute to Bad OINTEG on
+					 the channel; however, it does contribute to Bad HINTEG on the channel. HINTEG
+					 is always Bad when OINTEG is Bad. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="6" valign="top"> 
+				  <p>Discrete Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FIELD_VAL_D 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The last Boolean value reported by the card and the current
+					 status of the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FILTER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Use the filter to eliminate false detection of events in the
+					 presence of noise or contact bounce from the source. Set FILTER to None, Fast,
+					 or Slow. 
+				  </p>
+ 
+				  <p><strong>NONE</strong>: Use NONE when the source for the channel is
+					 bounceless and noise will not be coupled into the signal wiring because of the
+					 proximity of the source and/or the routing of the wiring. Bounceless sources
+					 are typically solid state, not mechanical, contacts. If the response time is
+					 not critical, it may be more appropriate to use one of the other choices. 
+				  </p>
+ 
+				  <p><strong>FAST</strong>: Use FAST when the source is a mechanical contact
+					 with relatively quick settling time (generally small relay contacts or snap
+					 switches). This setting should remove most noise coupled into the signal
+					 wiring. The response is slower than the NONE setting and faster than the SLOW
+					 setting. 
+				  </p>
+ 
+				  <p><strong>SLOW</strong>: Use SLOW when response time is not critical, in
+					 electrically noisy environments, or when interfacing to large mechanical relay
+					 contacts. The response is very slow in comparison to the other two options. 
+				  </p>
+ 
+				  <p>The filter behaves like a lowpass filter driving an input. The
+					 break frequency is 5 Hz for FAST and 0.43 Hz for SLOW. This should eliminate
+					 changes of state due to noise or contact bounce. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>LINEFAULT_DETECT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Enables the card to detect open and short circuit, if a user
+					 has added external resistors to the wiring. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DEBOUNCE_OPTS 
+				  </p>
+ 
+				  <p> (DI CHARMs only) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Allows you to select a debounce filter. Options are: 
+				  </p>
+ 
+				  <p><strong>None:</strong> No effect on the input value. The input state
+					 equals the raw state. If the DeltaV system cannot obtain a reading for the raw
+					 state in 10 samples, it sets bad status. 
+				  </p>
+ 
+				  <p><strong>Delay:</strong> The input state turns On or Off after the raw
+					 state has been on or off for at least the configured time duration. 
+					 <a href="r_delay_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_500">Delay filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Glitch:</strong> The input state change is held for at least the
+					 configured time duration. A change to the raw state during the hold time causes
+					 the input state to respond to the change after the hold expires and then hold
+					 again for the configured time. 
+					 <a href="r_glitch_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_502">Glitch filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p> 
+					 <strong>Average:</strong> The CHARM samples input 1000 times per second.
+					 When the Average option is selected the counter is incremented or decremented
+					 once per sample. When the input is True the counter is incremented. When the
+					 input is False, the counter is decremented. If the counter decrements to zero,
+					 the output is set to False and the counter ignores further decrements. If the
+					 counter increments up to the threshold, the output is set to True and the
+					 counter ignores further increments. If the counter is between zero and the
+					 threshold, the output retains its previous state. The threshold determines the
+					 amount of filtering: a threshold of one performs no filtering and a threshold
+					 of N requires a signal to be present for N accumulated samples before the
+					 output changes state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>INVERT 
+				  </p>
+ 
+				  <p> (DI CHARMs only) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Causes the Discrete Input CHARM&#39;s reported value to be the
+					 inverse of its raw value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OUT_FILTER_OPTS 
+				  </p>
+ 
+				  <p> (DI CHARMs only) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Allows you to select an output filter. Options are: 
+				  </p>
+ 
+				  <p><strong>None:</strong> No effect on the output value. The output state
+					 equals the raw state. 
+				  </p>
+ 
+				  <p><strong>Extend:</strong> The output state is held for the configured
+					 time duration. The output state responds only to the most recent raw state at
+					 the end of the configured hold time. 
+					 <a href="r_extend_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_501">Extend filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Delay:</strong> The output state is delayed by the configured
+					 filter time. The delay affects the output on both changes from off to on and
+					 from on to off. If the state changes but does not maintain the state for
+					 greater than or equal to filter time, the output state does not change. 
+					 <a href="r_delay_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_500">Delay filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Delay On:</strong> The output state turns On after the raw state
+					 has been on for at least the configured time duration. 
+					 <a href="r_delay-on_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_499">Delay on filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Delay Off:</strong> The output state turns Off after the raw
+					 state has been Off for at least the configured time duration. 
+					 <a href="r_delay-off_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_498">Delay off filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Glitch:</strong> The input state change is held for at least the
+					 configured time duration. A change to the raw state during the hold time causes
+					 the input state to respond to the change after the hold expires and then hold
+					 again for the configured time. 
+					 <a href="r_glitch_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_502">Glitch filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				  <p><strong>Settle:</strong> An output state change is held until a matching
+					 raw state is maintained for the configured time duration. A change in the raw
+					 state causes a change in the output state. 
+					 <a href="r_settle_filter.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_503">Settle filter: Discrete input CHARMs</a>
+					 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="3" valign="top"> 
+				  <p>Pulse Count Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>COUNTER_IN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>The last counter value reported by the card and the status of
+					 the channel. At 65535, the counter rolls to zero. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>LINEFAULT_DETECT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Enables the card to detect open and short circuit, if a user
+					 has added external resistors to the wiring. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>HIGH_FREQ_ENA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>When this parameter is enabled, the size of COUNTER_IN changes
+					 from 16 bit to 32 bit and the frequency input range is 500 Hz through 10 k Hz
+					 for all DI CHARMs except DI 120 VAC and DI 230 VAC CHARMs. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="4" valign="top"> 
+				  <p>Pulse Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>COUNTER_IN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Tracks the number of pulses on this channel. The parameter
+					 value rolls to zero when the counter reaches 65, 536 for the DI card&#39;s Pulse
+					 Input channel and 4,294,967,296 for the Multifunction card&#39;s Pulse Input
+					 channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FILTER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls the filtering performed on the I/O card. The value
+					 you select depends on the frequency range of the signal, the desired response
+					 time, and the desired accuracy. If the channel is operating in the high end of
+					 the specified frequency range of the card, you can configure relatively small
+					 filters and still meet the card&#39;s accuracy specification. If the channel is
+					 operating in the low end of the card&#39;s frequency range, then larger filters are
+					 required to meet the accuracy specification. The larger filters have better
+					 accuracy but slower response time. Smaller filters have quicker response time
+					 but can lose some accuracy. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FREQUENCY 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Pulse frequency input. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>RESET_COUNT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Resets the counter to zero when a value of one is written to
+					 the parameter. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="5" valign="top"> 
+				  <p>Discrete Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FAIL_ACTION_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls the behavior of the channel when the card goes into
+					 failure action condition due to lost communication with the controller. You can
+					 configure the channel to hold the value at the start of the failure action
+					 condition (select Hold last value) or to go to the failure action value
+					 (FAIL_ACTION_VAL). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Boolean value the channel transitions to when the card
+					 goes into failure action condition. This value is used only if FAIL_ACTION_MODE
+					 is configured to set the value to FAIL_ACTION_VAL. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>INIT_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Boolean value the channel goes to upon initial download
+					 before any function block action. The initial value is configurable; the
+					 default value is zero. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>LINEFAULT_DETECT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Enables the card to detect open and short circuit, if a user
+					 has added external resistors to the wiring. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OUT_D 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The current Boolean value driven to the card and the status of
+					 the output channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="6" valign="top"> 
+				  <p>Continuous Pulse Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FAIL_ACTION_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls the behavior of the channel when the card goes into
+					 failure action condition due to lost communication with the controller. You can
+					 configure the channel to continue to output the current pulse at the start of
+					 the failure action condition (select Hold last value) or to go to the failure
+					 action value (FAIL_ACTION_VAL). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Boolean value the channel transitions to when the card
+					 goes into failure action condition. This value is used only if FAIL_ACTION_MODE
+					 is configured to set the value to FAIL_ACTION_VAL. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>INIT_ON_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percentage of the PULSE_PERIOD the channel is on during
+					 initial download before any function block action. You set INIT_ON_TIME to zero
+					 for no pulse. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>LINEFAULT_DETECT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Enables the card to detect open and short circuit, if a user
+					 has added external resistors to the wiring. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>ON_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The current percentage of the PULSE_PERIOD the channel drives
+					 its output TRUE (1, On) and the status of the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PULSE_PERIOD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The length of time between pulses of the channel, from 0.1 to
+					 100 seconds. The pulse period consists of the output channel being ON for a
+					 portion of the period (based on the on-time value from a module) and OFF for
+					 the remainder of the period.
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="5" valign="top"> 
+				  <p>Momentary Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FAIL_ACTION_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls the behavior of the channel when the card goes into
+					 failure action condition due to lost communication with the controller. You can
+					 configure the channel to complete the current pulse at the start of the failure
+					 action condition (select Hold last value) or to go to the failure action value
+					 (FAIL_ACTION_VAL). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FAIL_ACTION_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The Boolean value the channel transitions to when the card
+					 goes into failure action condition. This value is used only if FAIL_ACTION_MODE
+					 is configured to set the value to FAIL_ACTION_VAL. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>LINEFAULT_DETECT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Enables the card to detect open and short circuit, if a user
+					 has added external resistors to the wiring. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OUT_D 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls the pulse for the channel. The channel outputs a
+					 pulse of specified duration each time OUT_D is one. OUT_D also includes the
+					 current status of the channel. Note that when the channel is configured as
+					 momentary external references and function blocks always interpret OUT_D as
+					 zero. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>PULSE_DURATION 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Specifies the length of time (in seconds) that the channel is
+					 turned on when the OUT_D parameter of the channel is changed from 0 to 1. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="6" valign="top"> 
+				  <p>All RTD, 
+				  </p>
+ 
+				  <p> Thermocouple, 
+				  </p>
+ 
+				  <p> Voltage, and mV Channel Types 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>CJT_CHARM (Thermocouple mV input CHARM) only 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Specifies which CHARM is used to provide the CJT (Cold
+					 Junction Temperature) compensation value for all other CHARMs configured as
+					 thermocouple. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FIELD_VAL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The value of the sensor or analog signal scaled in the range
+					 and engineering units of XD_SCALE or OUT_SCALE, depending upon L_TYPE. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FIELD_VAL_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The last value reported by the card (in percent of range) and
+					 the current status of the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FILTER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Controls the filtering performed on the I/O card. You should
+					 consider the execution rate of the control modules using the channel when you
+					 configure FILTER. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>OVERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 overrange. If the signal is above this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>HighLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>UNDERRANGE_PCT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The percent value at which the analog value is considered
+					 underrange. If the signal is below this limit, the status of the parameter
+					 associated with this channel is 
+					 <strong>LowLimited</strong>. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="2" valign="top"> 
+				  <p>RTD Channel Types Only 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>COMPENSATION 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Resistance in ohms of the length of the wire(s) for 2-wire
+					 RTD. 
+				  </p>
+ 
+				  <p>Although this parameter is available for 3 and 4 wire RTD
+					 channels, it is only useful in 2-wire RTD channel type configurations. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>NUM_WIRES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Number of wires in the RTD sensor 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="2" valign="top"> 
+				  <p>SOE Discrete Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>CHATTER_CONTROL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Controls whether chatter control is enabled or disabled. 
+				  </p>
+ 
+				  <p>When CHATTER_CONTROL is enabled, the card stops reporting
+					 events that occur repeatedly at intervals less than or equal to 50 milliseconds
+					 and DeltaV Diagnostics reports a status of CHATTERING for the channel. The
+					 CHATTERING status continues to be reported until the pulse rate becomes greater
+					 than or equal to 200 milliseconds. (Pulse rates between 50 and 200
+					 milliseconds, inclusive, are not deterministic.) 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>FIELD_VAL_D 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>The last Boolean value reported by the card and the current
+					 status of the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " rowspan="4" valign="top"> 
+				  <p>User-defined RTD Channel Type 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>FULLSCALE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e106 " valign="top"> 
+				  <p>Maximum temperature. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>ALPHA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>RTD sensor alpha coefficient. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>DELTA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>RTD sensor delta coefficient. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2393351e97 " valign="top"> 
+				  <p>ZERO 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e100 " valign="top"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2393351e103 " valign="top"> 
+				  <p>RTD resistance in ohms at 0 degrees Celsius 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  When using the DV_SLOT variables to read
+						the instrument mode from a HART output device, the DeltaV system treats these
+						values as floating point values. Therefore, the DV_SLOT variable associated
+						with the instrument mode contains the following values for instrument mode: 
+						<a name="c_channel_parameters__ul_446A9752478E49BD9F4245A38E6237E1"></a><ul id="c_channel_parameters__ul_446A9752478E49BD9F4245A38E6237E1"> 
+						  <li id="c_channel_parameters__li_0C1E08A758BA4E1492FCA0A680FAB796"><div class="li_content"> 
+							 <p> Out of service = 0 
+							 </p>
+ 
+						  </div></li>
+ 
+						  <li id="c_channel_parameters__li_14DB9633A09345A1A6D784808B0B9318"><div class="li_content"> 
+							 <p> In service = 1.4013E-045 
+							 </p>
+ 
+						  </div></li>
+ 
+						</ul>
+ 
+						<p> When using an AI function block to reference these
+						  values, the scale of the block must be set appropriately to prevent seeing a 0
+						  value for both instrument modes. 
+						</p>
+ 
+						<div class="p"> The DeltaV system also treats the control mode read from
+						  the HART output device as a floating point value. Each HART output device has
+						  its own definition for control mode. Following are the DV_SLOT values that
+						  correspond to the possible control mode integer values: 
+						<a name="c_channel_parameters__ul_560713BE02F745E9B9317F24051063B3"></a><ul id="c_channel_parameters__ul_560713BE02F745E9B9317F24051063B3"> 
+						  <li id="c_channel_parameters__li_E7E598EA42AC42569E003BD513737059"><div class="li_content"> 
+							 <p> 0 (Test) = 0 
+							 </p>
+ 
+						  </div></li>
+ 
+						  <li id="c_channel_parameters__li_CC51C3AC772745929120241E4DB6E505"><div class="li_content"> 
+							 <p> 1 = 1.4013E-045 
+							 </p>
+ 
+						  </div></li>
+ 
+						  <li id="c_channel_parameters__li_2234C0E498094210A71EDE97B76B2172"><div class="li_content"> 
+							 <p> 2 (Digital) = 2.8026E-045 
+							 </p>
+ 
+						  </div></li>
+ 
+						  <li id="c_channel_parameters__li_805AE9AC9FC744B9A20B03D0DE9E48B3"><div class="li_content"> 
+							 <p> 3 (Analog RSP) = 4.2039E-045 
+							 </p>
+ 
+						  </div></li>
+ 
+						</ul>
+ 
+				  </div>
+ 
+				  <p> When using an AI function block to reference these values,
+					 the scale of the block must be set appropriately to handle these values. 
+				  </p>
+</div><div class="p"><a id="c_channel_parameters__footnote2"><sup>2</sup></a>  This channel parameter is not
+						supported in devices implementing the HART Protocol prior to revision 7.
+						Therefore, you should not configure this channel parameter for a device that
+						implements an earlier level of the HART protocol.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

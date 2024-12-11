@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="How DeltaV SIS systems annunciate faults" name="DC.Title" /><meta content="CSLS fault annunciation" name="DC.subject" /><meta content="CSLS fault annunciation" name="keywords" /><meta content="c_fault_detect_response_repair.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_437" name="DC.Identifier" /><title>How DeltaV SIS systems annunciate faults</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fault_detect_response_repair.html" /><link rel="next" href="c_csls_diagnostic_params.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_437" data-relpath="c_how_sis_annunciates_faults.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_437"></a>
+
+<h1 class="topictitle1">How DeltaV SIS systems annunciate faults</h1>
+<div> 
+	 <p> DeltaV SIS systems provide standard alarms to annunciate, in DeltaV
+		Operate, faults detected by the CSLS. No special configuration is needed. At
+		runtime the alarms are part of a container with the CSLS name. When a CSLS
+		alarm appears on the alarm banner in DeltaV Operate and is clicked by the
+		operator, the CSLS faceplate opens. The faceplate shows the active alarm(s):
+		FAILED_ALM, MAINT_ALM, ADVISE_ALM, or COMM_ALM. It also shows the text for the
+		active condition or the words 
+		<em>Multiple conditions</em> if more than one alert condition is active for
+		the particular alarm. 
+	 </p>
+ 
+	 <p> A button on the faceplate toolbar opens Diagnostics Explorer in the
+		context of the CSLS. The CSLS container has a number of diagnostic parameters
+		accessible at runtime by the CSLS path similar to those of controllers. 
+	 </p>
+ 
+	 <div class="p"> For example, the following are examples of the paths supported: 
+	 <ul> 
+		<li><div class="li_content"> 
+		  <p> 
+			 <em>CSLS_name</em>/<em>param_name</em>, 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><em> CSLS_name</em>/COMM/<em>param_name</em>, 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> 
+			 <em>CSLS_name</em>/CHARMS/CHM<em>x-xx</em>/<em>param_name</em>, 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> 
+			 <em>CSLS_name</em>/REDU/<em>param_name</em>, 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> 
+			 <em>CSLS_name</em>/REDU/STBY/<em>param_name</em>, 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> A redundant CSLS has diagnostic parameters for each CSLS unit.
+		Additional diagnostics parameters are provided under active CSLS unit to report
+		the state of the redundant pair. The following figure is an example of
+		Diagnostics Explorer showing the diagnostic parameters for the highlighted
+		CSLS. There is an 
+		<em>alerts</em> bitstring parameter associated with the Failed, Maint, and
+		Advise alarms. The alarm is active if any bit is set in the corresponding
+		alerts parameter. 
+	 </p>
+ 
+	 <p> The Comm alarm is active if the DeltaV SIS controller cannot
+		communicate with the CSLS (with both units, if redundant). Please note that
+		CSLS Comm alarm is not necessarily an indication of the CSLS failure since it
+		could be merely a wire disconnect. 
+	 </p>
+ 
+	 <div class="fignone"><div><span class="figcap"> Diagnostics Explorer Showing Contents of the CSLS</span></div> 
+		<br /><div class="imageleft"><img class="imageleft" src="csls_params.png" /></div><br />
+		
+	 </div>
+ 
+	 <p> The following figure is an example of the Diagnostics Explorer showing
+		the diagnostic parameters of the standby CSLS unit of a redundant pair. There
+		is a bitstring parameter for the status of each subsystem. The bits in these
+		subsystem status parameters map into bits of the alerts parameters in the CSLS.
+		A simplex CSLS has direct mapping, but a redundant CSLS combines most of the
+		subsystem status conditions from both partners into the alerts parameters. If
+		the subsystem status condition is active in either CSLS unit, the mapped alert
+		condition is active. 
+	 </p>
+ 
+	 <div class="fignone"><div><span class="figcap"> Diagnostics Explorer Showing Contents of the standby CSLS
+		  unit</span></div> 
+		<br /><div class="imagecenter"><img class="imagecenter" src="csls_stby_params.png" /></div><br />
+		
+	 </div>
+ 
+	 <p> Refer to the SLS Diagnostic Parameters topic in the DeltaV SIS book in
+		DeltaV Books Online for details on the subsystem status and alert bitstring
+		parameters. 
+	 </p>
+ 
+	 <div class="p"> The topic describes: 
+	 <ul> 
+		<li><div class="li_content"> 
+		  <p> The text and meaning of each condition 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> How subsystem status bits map into alert bits 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> What action to take when an alert condition becomes active 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> Which conditions annunciate and impact device integrity 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> Which conditions are event-only and do not impact device integrity 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> You can change the priority of the Failed, Maint, Advise, and Comm
+		alarms. Because certain error conditions can exist momentarily, avoid alarm
+		priorities that are auto-acknowledging. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

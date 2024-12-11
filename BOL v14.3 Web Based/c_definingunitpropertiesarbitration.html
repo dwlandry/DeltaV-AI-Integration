@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Defining unit properties - arbitration" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="units, arbitration, equipment ID, owners, maximum number, equipment needed, unit properties, PLM - arbitration" name="DC.subject" /><meta content="units, arbitration, equipment ID, owners, maximum number, equipment needed, unit properties, PLM - arbitration" name="keywords" /><meta content="c_controlstudio.html" name="DC.Relation" scheme="URI" /><meta content="c_recipestudio.html" name="DC.Relation" scheme="URI" /><meta content="c_creatingphaselogicmoduleunits.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_definingunitpropertiesarbitration" name="DC.Identifier" /><title>Defining unit properties - arbitration</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_definingunitpropertiesdisplays.html" /><link rel="next" href="c_definingunitpropertiestools.html" /></head><body class="fixed" id="c_definingunitpropertiesarbitration" data-relpath="c_definingunitpropertiesarbitration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_definingunitpropertiesarbitration"></a>
+
+<h1 class="topictitle1">Defining unit properties - arbitration</h1>
+<div><div></div>
+
+    <p>Use the <span class="uicontrol">Arbitration</span> tab to manage the use of shared plant equipment by batch recipes. Unit arbitration refers to how the unit is owned and released through different phases of the recipe. For example, Reactor Tank 1 is filled from Charge Tank A and Charge Tank B, but it can only be filled from one tank at a time. If Charge Tank A has not finished transferring the substance into Reactor Tank 1, then the step that controls discharging Charge Tank B must wait. How Charge Tank B waits is partially defined by the arbitration properties of Reactor Tank 1 (the components of waiting are controlled by how the phase logic and the recipe phases are defined). </p>
+
+    <p>All PLM-based units (as well as process cells and unit modules) configured in DeltaV Explorer are assigned a unique equipment ID. The DeltaV system uses these IDs to arbitrate equipment and service requests for ownership.</p>
+
+    <p>The <span class="uicontrol">Maximum Owners</span> setting defines the maximum number of requesters that can simultaneously own or use the unit. Requesters can include (1) the operator acquiring the equipment directly, through the arbitration or phase control screen, (2) a recipe, which acquires units and phases as part of recipe operation, or (3) another equipment entity that has this unit identified in its <span class="uicontrol">Equipment Needed</span> field and has been requested by one of the first two methods.</p>
+
+    <p>By default, this number is set to one, meaning that only one requester can own this piece of equipment at any one time. Increasing this number is not recommended for Phase Logic Modules since a phase logic module cannot be successfully run by multiple owners at the same time.</p>
+
+    <p>The <span class="uicontrol">Equipment Needed</span> setting specifies additional equipment items that are required in order for this unit to execute and is needed only where equipment arbitration is an issue. You can assign needed equipment to a process cell, a unit, or a phase. The needed equipment items must be configured in DeltaV Explorer before they will be available in this dialog.</p>
+
+    
+<div class="tablenoborder"><a name="c_definingunitpropertiesarbitration__table_5F9D3ABA04934B8DB7E76782C9E6B3E4"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_definingunitpropertiesarbitration__table_5F9D3ABA04934B8DB7E76782C9E6B3E4" rules="all" summary=""><caption><span class="tablecap">Arbitration Results for Assigning Equipment Needed.</span></caption>
+        
+        
+        
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>To a phase</p>
+
+            </td>
+
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>When the recipe phase begins and as listed below.</p>
+
+            </td>
+
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>When the recipe phase completes and as listed below.</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>To a unit</p>
+
+            </td>
+
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>When the unit procedure begins and as listed below.</p>
+
+            </td>
+
+            <td class="cellrowborder" valign="top" width="NaN%">
+              <p>When the unit procedure completes and as listed below.</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>In addition to the above table, any resource can be acquired and released:</p>
+
+    <a name="c_definingunitpropertiesarbitration__ul_447D2274C4A74B3DA16A4502BEA14DB2"></a><ul id="c_definingunitpropertiesarbitration__ul_447D2274C4A74B3DA16A4502BEA14DB2">
+      <li id="c_definingunitpropertiesarbitration__li_0EB87D54B2F0432E80B4CFD1A93D6FC8"><div class="li_content">
+        <p>Using the Equipment Needed function resulting from acquire or release of another equipment item</p>
+
+      </div></li>
+
+      <li id="c_definingunitpropertiesarbitration__li_4B37614901FF4789ABC36EF550021491"><div class="li_content">
+        <p>Through phase logic acquire and release requests</p>
+
+      </div></li>
+
+      <li id="c_definingunitpropertiesarbitration__li_879ADC1710C44F72BEF57E2A623B0E25"><div class="li_content">
+        <p>By the operator at the arbitration screen (or, for phases, at the phase control screen)</p>
+
+      </div></li>
+
+    </ul>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> When the resource assignment is to a process cell, the resource can only be acquired and released as listed above.</p>
+
+    </div>
+
+    <p>To define the arbitration properties of the unit, select an equipment ID from the list. Enter the maximum owners. If any additional units are required along with this unit, click the <span class="uicontrol">Add</span> button and select the units needed. Click <span class="uicontrol">OK</span> when done or go to the <span class="uicontrol">General</span> tab.</p>
+
+    <p>
+      <span class="uicontrol">Equipment ID</span>: To define a unique ID for resources used in a Batch control, select an available number in the range of 1 through 65535 in the <span class="uicontrol">Equipment ID</span> box. The system uses equipment IDs to acquire and release resources. The number specified here can be referenced by the phase logic modules and unit phases. The resources that have IDs are: units modules, process cells, unit phases, phase logic modules, equipment modules and control modules. Control and equipment modules must have equipment IDs when used for Batch control.</p>
+
+    <p>
+      <span class="uicontrol">Maximum owners</span>: Specifies the number of requesters that can use this resource simultaneously. Enter the number in the <span class="uicontrol">Maximum Owners</span> box.
+</p>
+
+    <p>
+The maximum number of owners setting defines the maximum number of requesters that can simultaneously use the resource. By default, this number is set to one, which is sufficient for most applications. Increasing this number allows multiple requesters to use the resource simultaneously.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The same phase can not run more than once concurrently on a unit even if the maximum owners is set to more than 1. Maximum owners allows different recipes to own the same unit and run on that unit simultaneously.</p>
+
+    </div>
+
+    <p>
+      <span class="uicontrol">Equipment needed</span>: Displays the resources used by this resource. Before this resource can be acquired, it must first acquire all the items in <span class="uicontrol">Equipment Needed</span>.</p>
+
+    <p>
+      <span class="uicontrol">Add</span> button: Adds a resource to the list. Click <span class="uicontrol">Add</span> and browse for all the valid options. The valid options include unit modules, unit phases, phase logic modules, equipment modules and control modules.</p>
+
+    <p>
+      <span class="uicontrol">Delete</span> button: Deletes a resource from the list. Select the resource on the list and click <span class="uicontrol">Delete</span>.</p>
+
+    <div class="fignone" id="c_definingunitpropertiesarbitration__fig_F7281346D59A4BCE91EDC00466D7A71A"><a name="c_definingunitpropertiesarbitration__fig_F7281346D59A4BCE91EDC00466D7A71A"></a><div><span class="figcap">Module Arbitration Properties</span></div>
+      
+      <a name="c_definingunitpropertiesarbitration__image_46BC583B7A054679866243A57271E0AD"></a><img id="c_definingunitpropertiesarbitration__image_46BC583B7A054679866243A57271E0AD" src="PLM_Prop_Arbit.gif" />
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_controlstudio.html">Control Studio</a></div>
+<div><a href="c_recipestudio.html">Recipe Studio</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

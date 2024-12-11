@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV Neural" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="DeltaV Neural, error back propagation, neural algorithm, neural network, artificial, building" name="DC.subject" /><meta content="DeltaV Neural, error back propagation, neural algorithm, neural network, artificial, building" name="keywords" /><meta content="c_fblk_spec_neural.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_lab_entry.html" name="DC.Relation" scheme="URI" /><meta content="c_neural_dvn_using.html" name="DC.Relation" scheme="URI" /><meta content="c_neural_dvn_extdata.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_346" name="DC.Identifier" /><title>DeltaV Neural</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_simulate_dvsim_algo.html" /><link rel="next" href="c_neural_dvn_using.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346" data-relpath="c_neural_dvn_main.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346"></a>
+
+<h1 class="topictitle1">DeltaV Neural</h1>
+<div> 
+    <p>DeltaV Neural is a collection of tools you use to implement neural
+      networks in the DeltaV environment. With DeltaV Neural, you can create virtual
+      sensors to monitor and predict process parameters that are otherwise expensive,
+      difficult, or impossible to measure directly. Neural networks are sometimes
+      referred to as intelligent or software sensors.
+    </p>
+ 
+    <p>Hard-to-measure variables are usually quality variables or variables
+      directly related to the economic interest of the production. These variables
+      are often measured by gathering product samples periodically and analyzing them
+      offline in a laboratory. The obvious time delay incurred in analyzing the test
+      samples, which can be as much as several hours, makes timely control
+      adjustments difficult. The product may become out of specification, and this
+      may be undiscovered until the next sample is analyzed.
+    </p>
+ 
+    <p>DeltaV Neural consists of the following tools:
+    </p>
+ 
+    <div class="p"> 
+    <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_BDC3FD43F21C4A61A32E8ED8A0CB2D11"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_BDC3FD43F21C4A61A32E8ED8A0CB2D11"> 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_ED2E8F0FE9EC4448B35C94BE3CACA6DA"><div class="li_content"> 
+        <strong>Neural Network (NN) function block</strong>, which implements software
+        sensors.
+      </div></li>
+ 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_E54C2FD9CE4D4ACFA90EDB760743E564"><div class="li_content"> 
+        <strong>Lab_Entry (LE) function block</strong>, which accepts lab sample analysis
+        for training and continuous update of a neural network.
+      </div></li>
+ 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_D0B40C9498A440B8AC636FF8B9DC17CB"><div class="li_content"> 
+        <strong>Neural application</strong> for training the neural network using
+        historical process data.
+      </div></li>
+ 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_B396B39046324369B5DEA4A0BCA30A09"><div class="li_content"> 
+        <strong>NN and Lab Entry dynamos</strong> to create displays that operators use
+        to enter lab data and view the virtual sensor&#39;s current and future output
+        value.
+      </div></li>
+ 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_A55780113A6F49D696663874173864C2"><div class="li_content"> 
+        <strong>NN and Lab Entry Faceplates</strong> 
+      </div></li>
+ 
+      <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_760A279FE0264B07B72ECCAF88F92E0F"><div class="li_content"> 
+        <strong>NN and Lab Entry Detail Displays</strong> 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+    <p>This chapter discusses the algorithm that creates and trains the neural
+      network that the NN function block uses and describes the functionality
+      provided by the Neural Network function block and the Lab Entry function block.
+      The manner in which the Neural application identifies the upstream measurements
+      that impact the measurement obtained by lab analysis or online sampled
+      analyzers is also discussed. In addition, there is an overview of the
+      predefined functionality provided in DeltaV Operate to interact with the NN
+      function block. The Neural Network function block can be used to provide a
+      continuous estimate of a measurement that is available only through analysis of
+      grab samples. It can also, in conjunction with a sampled analyzer, predict the
+      measurement and detect when the estimated and sampled values differ
+      significantly. The NN function block is contained in the Advanced Control
+      palette. You configure and download this function block in the same way as
+      other DeltaV control blocks. The Lab Entry function block is also part of the
+      Advanced Control palette. You can use it to enter the lab analysis of the
+      measurement that is estimated by the neural network function block.
+    </p>
+ 
+    <p>With DeltaV Neural, you can collect data on your process and lab
+      analysis by downloading the module containing the NN function block and the LE
+      function block. The Neural application uses data collected by the Continuous
+      Historian during normal operation to determine the sensitivity of the lab
+      analysis to upstream inputs. The application then uses historical data of
+      inputs that have a significant impact to train the neural network to predict
+      the sampled value. You can evaluate the accuracy of the model using the tools
+      included with the Neural application. DeltaV Neural generates a network matrix
+      for the NN function block from the verified model. DeltaV Operate includes
+      dynamos you can use to create a neural network operator interface.
+    </p>
+ 
+    <p>After you generate the trained neural network using the DeltaV Neural
+      application, you can download the module containing the NN function block with
+      the updated neural network matrix into a DeltaV controller. Through the dynamos
+      provided for a neural network operator interface, you can place the neural
+      network into operation and allow it to be updated using new lab samples. If the
+      diagnostics associated with the NN function block indicate that the process has
+      significantly changed, you can easily retrain the neural network and download
+      it to the NN function block.
+    </p>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_A455E6DD94DF4C62BEBD45C12A0E16D3"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_A455E6DD94DF4C62BEBD45C12A0E16D3"></a><h2 class="sectiontitle">DeltaV Neural Algorithm</h2> 
+       
+      <p>This section presents the technical background and implementation of
+        the neural network (NN) as implemented in DeltaV Neural. The DeltaV Neural
+        application uses a multilayered feedforward neural network architecture that is
+        trained with the error back propagation algorithm. Compared to traditional
+        neural network products, DeltaV Neural contains many advanced features, such
+        as:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_1A1DAEA2CF744C028D573B86595ECC7A"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_1A1DAEA2CF744C028D573B86595ECC7A"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_8655C82A7C5F4990B702E58FAFEEBED8"><div class="li_content">sensitivity analysis of
+          upstream measurements
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_29D2F199ADFB4900B205F91AF20CACC0"><div class="li_content">automatic estimation of
+          the delay in the response to a change in process input
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_5EABD16C3D56479397D008C7626CE17A"><div class="li_content">automatic network update
+          based on analyzer or lab entry of new sample values and estimation of future
+          value of the measurement based on current upstream conditions
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_7A41A55D7C3B47CFA434B17BFF861AD8"><div class="li_content">diagnostics to detect
+          deviation in estimate from new sample values.
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The accuracy of the measurement estimate is substantially improved as
+        a result of these enhancements. Understanding the details of the neural network
+        algorithm is not necessary to successfully use the DeltaV Neural product.
+        Unless you have an interest in how the neural network algorithm and training
+        are implemented in DeltaV Neural, skip to the Using DeltaV Neural topic.
+      </p>
+ 
+      <p>The NN function block uses a feedforward neural network structure.
+        Training of the neural network is performed using backward propagation. The
+        neural network is validated by comparing the project output and the lab or
+        analyzer data. Adaption of the neural network is based on comparison of
+        predicted measurement value to the real sampled value. The neural network
+        algorithm is embedded in the DeltaV controller as a function block and is
+        supported by DeltaV Neural.
+      </p>
+ 
+      <p>Neural networks (or 
+        <strong>artificial neural networks</strong>), as implemented in DeltaV Neural,
+        are structured to mimic the operation of the neurons in the human brain. The
+        pulse inputs to the artificial neurons are 
+        <strong>weighted</strong> (that is, some impulses are stronger than others). The
+        weighted inputs are summed and the neuron fires (that is, it sends an output)
+        if the sum of the weighted inputs is equal to or greater than the 
+        <strong>threshold</strong> for the neuron. Artificial neural networks are
+        composed of artificial neurons that process weighted input values with a
+        transfer function to determine the output value of the neuron. This subsection
+        provides the general theory of artificial neural networks. An artificial neuron
+        (or node) handles three basic functions. It must:
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_00B58F89494142B6820C8F3F28562B84"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_00B58F89494142B6820C8F3F28562B84"></a><h2 class="sectiontitle">Artificial Neural Networks</h2> 
+       
+      <p>Neural networks (or 
+        <strong>artificial neural networks</strong>), as implemented in DeltaV Neural,
+        are structured to mimic the operation of the neurons in the human brain. The
+        pulse inputs to the artificial neurons are 
+        <strong>weighted</strong> (that is, some impulses are stronger than others). The
+        weighted inputs are summed and the neuron fires (that is, it sends an output)
+        if the sum of the weighted inputs is equal to or greater than the 
+        <strong>threshold</strong> for the neuron. Artificial neural networks are
+        composed of artificial neurons that process weighted input values with a
+        transfer function to determine the output value of the neuron. This subsection
+        provides the general theory of artificial neural networks. An artificial neuron
+        (or node) handles three basic functions. It must:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_8056CC86B8CC474EACBE0299B292CFC9"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_8056CC86B8CC474EACBE0299B292CFC9"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_1A4A38D45549436A946CC3E03B0AC7D4"><div class="li_content">evaluate the inputs,
+          applying the weighting factor to each one
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_9C0945406FA84211BF44B516A3571B8F"><div class="li_content">calculate a total for the
+          combined inputs and compare that to some threshold level
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_832F27FD0B5C4A3F9FBE86E621C74EB3"><div class="li_content">determine what the output
+          should be
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The following figure shows a single artificial neuron.
+      </p>
+ 
+      <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_B7D6164582E543F3B83ED58C40842E18"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_B7D6164582E543F3B83ED58C40842E18"></a><div><span class="figcap">Artificial neuron</span></div> 
+         
+        <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_DD5BE1B29C8B41E7BA615F3D1E296390"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_DD5BE1B29C8B41E7BA615F3D1E296390" src="deltavneural_fig5.gif" /> 
+      </div>
+ 
+      <p>Each artificial neuron can have multiple inputs, all of which are
+        received simultaneously. Each input to a neuron has a 
+        <strong>weight</strong> value (<em>W<sub>ij</sub></em>), which determines the
+        relative impact of that input. (The initial weight for a neuron will change
+        according to its rules for modification and as the network learns from various
+        inputs.)
+      </p>
+ 
+      <p>Several important activities take place within the artificial neuron.
+        Each input signal is multiplied by a weight, and the results are summed with a
+        constant bias input, which resembles the threshold in a natural neuron. This
+        sum is then passed to a transfer function. If the sum of the inputs is greater
+        than zero, the neuron generates an 
+        <strong>excitatory</strong> (positive) signal. If the sum of the inputs is less
+        than zero, an 
+        <strong>inhibitory</strong> (negative) signal is generated. Both response types
+        are significant.
+      </p>
+ 
+      <p>The 
+        <strong>transfer</strong> function is generally nonlinear. Linear (straight line)
+        functions are sometimes used in combination with nonlinear transfer functions.
+        Often, the transfer function of choice is a sigmoid (an S-shaped curve), as
+        shown in the following figure. The curve approaches a minimum and maximum value
+        at the asymptotes. Mathematically, this function is convenient because its
+        derivatives are easy to calculate.
+      </p>
+ 
+      <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_60F9629F82EE401593932F7AC2118915"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_60F9629F82EE401593932F7AC2118915"></a><div><span class="figcap">Sigmoid Transfer Function</span></div> 
+         
+        <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_AB9A7303394E48E9A8AD02BB19A890BA"></a><div class="imagecenter"><img class="imagecenter" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_AB9A7303394E48E9A8AD02BB19A890BA" src="deltavneural_fig4.gif" /></div><br /> 
+      </div>
+ 
+      <p>The output (<em>Y<sub>j</sub></em>) of an artificial neuron is the input
+        to one or more other neurons. An individual artificial neuron by itself is not
+        useful. Only when combined with other neurons in a neural network does it
+        become useful. For example, the human brain includes a hundred billion
+        (10<sup>11</sup>) or so neurons. Typically, each neuron can interact directly
+        with 10,000 others, yielding a total of 10<sup>15</sup> connections. Brain
+        power comes from the sheer numbers and multiple connections of so many neurons
+        operating in concert. Artificial neural networks cannot approach this
+        complexity, being subject to limitations on the number of inputs, connections,
+        and outputs, but are powerful tools regardless.
+      </p>
+ 
+      <p>There are many ways to combine artificial neurons to construct a
+        network. One of the most common is to create a 
+        <strong>multilayer feedforward network</strong> (MFN), such as the one shown in
+        the following figure, which is most useful in process industries.
+      </p>
+ 
+      <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_BF3912D757214139B4151FD164C826E8"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_BF3912D757214139B4151FD164C826E8"></a><div><span class="figcap">Example Neural Network</span></div> 
+         
+        <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_347ACBCB5FBA49FEAC64858E1D56A4B2"></a><div class="imagecenter"><img class="imagecenter" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_347ACBCB5FBA49FEAC64858E1D56A4B2" src="deltavneural_fig3.gif" /></div><br /> 
+      </div>
+ 
+      <p>In this case, the neurons form three layers:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_8E99B3147C7243DD9AF652D973248F79"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_8E99B3147C7243DD9AF652D973248F79"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_096EE6889C3544A2A6D4D77E126543C1"><div class="li_content">an input layer
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_12BD194355BA4275A1AFA7C7B88E6B96"><div class="li_content">a hidden layer
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_97556398E3284C5586C4A2993FFCB160"><div class="li_content">an output layer
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>It is a 
+        <strong>feedforward</strong> network because, when fully connected, the output of
+        each neuron in a layer acts as an input to all of the neurons in the next
+        layer, with none sending outputs to neurons in their own layer or any previous
+        layers. Given enough hidden neurons, a three-layer feedforward network can
+        represent any continuous nonlinear function to desired accuracy.
+      </p>
+ 
+      <p>The 
+        <strong>input layer</strong> receives information from the outside world.
+        Typically, the input layer consists of one neuron for each measured input
+        variable of the process being modeled. Usually, the neurons in this layer
+        perform no function other than buffering of the input signals. They do not have
+        nonlinear transfer functions but let input information pass through directly to
+        the next layer. Therefore, they are called 
+        <strong>linear</strong> neurons.
+      </p>
+ 
+      <p>The 
+        <strong>hidden layer</strong> processes information from the input layer and
+        sends the results to the output layer. The hidden layer is internal to the
+        network and has no direct contact with the outside world. Hidden neurons
+        usually have sigmoidal transfer functions necessary to capture nonlinear
+        information.
+      </p>
+ 
+      <p>The 
+        <strong>output layer</strong> sends out calculated values as the neural network&#39;s
+        output information. Typically, the output layer consists of 
+        <strong>linear</strong> neurons that each collect inputs from all of the neurons
+        in the hidden layer.
+      </p>
+ 
+      <p>Bias neurons are necessary in a feedforward network. They are
+        connected to each neuron, except in the input layer. The bias neurons behave
+        similarly to other neurons in the same layer, except that they do not receive
+        inputs from other neurons. They are constant-source inputs, which provide a
+        value of one (1.0). As is shown in the previous figure, there are many more
+        connecting lines than there are neurons. The neural network multiplies the
+        signals carried by each neuron by weights, which are adjusted during the
+        training and fixed after being trained.
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_0B59928CEE1D45D691EBBD5111EF1FC8"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_0B59928CEE1D45D691EBBD5111EF1FC8"></a><h2 class="sectiontitle">Building a Neural Network</h2> 
+       
+      <p>Normally, building a neural network model requires the following
+        tasks:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ol_E09E054205BC4F85960A47CFB98AEE24"></a><ol id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ol_E09E054205BC4F85960A47CFB98AEE24"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_7E677D63B1624326879385DBF60A3B01"><div class="li_content"> 
+          <strong>Data collection</strong> - This operation is essential since process
+          data is the only base for building a neural network. The quality of the data
+          determines the quality of the model.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_4A8C421CD9C54AE29165734619812319"><div class="li_content"> 
+          <strong>Data preprocessing</strong> - This operation is necessary because real
+          process data often contains missing values, 
+          <strong>outliers</strong> (data values outside the control limits you set), and
+          possibly undesired data from different sources. This data has to be conditioned
+          or preprocessed before it is used for network training.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_FCE466C9689D4FE397A11E06E227EA11"><div class="li_content"> 
+          <strong>Variable and time delay selection</strong> - This operation determines
+          which of the available process variables are important ones that significantly
+          affect the variables to be predicted. Inclusion of irrelevant variables can
+          degrade the prediction accuracy.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_B04726638BFA451C9A62CEC3C1DED5A8"><div class="li_content"> 
+          <strong>Network training</strong> - This operation determines the number of
+          hidden neurons and adjusts the weights based on a well-conditioned set of
+          training data. The network&#39;s ability to change the weights allows the network
+          to modify its neurons&#39; behavior in response to their inputs or to 
+          <strong>learn</strong>.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_9E9276EC62C244EDAC04EC27954DB834"><div class="li_content"> 
+          <strong>Network verification</strong> - This operation uses a separate set of
+          data to test how well the network works.
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>Before a neural network can be used for process control, it must be
+        trained. Training, as the word suggests, consists of presenting historical
+        process information to the network and then comparing the network output to a
+        target value and adjusting the network weights to match the network output to
+        the target.
+      </p>
+ 
+      <p>Training a neural network with a specific number of hidden nodes
+        involves the following steps:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ol_281FB1D0F2084D21B593B186E0B788B7"></a><ol id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ol_281FB1D0F2084D21B593B186E0B788B7"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_C1086706919E4CC8865C845E6399765D"><div class="li_content">Gather and preprocess
+          historical data and then divide the data into two sets: one set for training
+          and the other set for testing.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_172EE225B71443B791C91C181D22DB0F"><div class="li_content">Present the 
+          <strong>training set</strong> of data to the network.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_D9FB2EC1589B4E8D90526F8A894A7696"><div class="li_content">From the inputs, forward
+          propagate the training data through all layers of the network and, finally, to
+          the outputs.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_F172C4A1E9844CBAA89BB2921DE943F9"><div class="li_content">Compute the error between
+          the network output and the actual (target) output values.
+          <p>If they are equal, do nothing. Otherwise, adjust the weights of
+            the neural network according to a training method backward through the network.
+            This step is known as 
+            <strong>back propagation</strong>. One path of forward and backward
+            propagation through all data is one training epoch.
+          </p>
+
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_850AA0B4066A4F7399DD4D915F157EC7"><div class="li_content">Present the 
+          <strong>testing set</strong> of data to the network after the weights are
+          adjusted in one epoch.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_096580D0537E49CDB1678FF73FE6CB16"><div class="li_content">From the inputs, propagate
+          the testing signals through all layers of the network and, finally, to the
+          outputs.
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_2321BA1E0ED0439AB9D29CB4ACD712B9"><div class="li_content">Compute the error between
+          the network output and the actual (target) output values.
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>If the least test errors are achieved, training is complete.
+        Otherwise, return to step 2.
+      </p>
+ 
+      <p>Training and testing a neural network involves:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_2A8CED1315754D3BAB5B58DDCB9CECA4"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__ul_2A8CED1315754D3BAB5B58DDCB9CECA4"> 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_2A62D540CA744931BFE556183CE2C885"><div class="li_content"> Feedforward Propagation 
+        </div></li>
+ 
+        <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__li_D3B62A1813404466AAE727F1CB982C24"><div class="li_content"> Error Back Propagation 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The following subsections examine the components of the Neural Net
+        training algorithm and some of the mathematics involved. See the following
+        figure for an example of a simple three-layer neural network.
+      </p>
+ 
+      <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_DC33010B48BA46BCB5E3F60A226EEBFE"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__fig_DC33010B48BA46BCB5E3F60A226EEBFE"></a><div><span class="figcap">Three-Layer Neural Network </span></div> 
+         
+        <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_EDD0CB68D032406789B9276C5589D812"></a><div class="imagecenter"><img class="imagecenter" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_EDD0CB68D032406789B9276C5589D812" src="deltavneural_fig2.gif" /></div><br /> 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_3B04A329D59D40C79B71B89BCAD02599"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_3B04A329D59D40C79B71B89BCAD02599"></a><h2 class="sectiontitle">Feedforward Propagation</h2> 
+       
+      <p> 
+        <strong>Feedforward propagation</strong> processes information in a forward
+        direction only. This technique essentially calculates the network output based
+        on given input data values. During this operation, weights on the network&#39;s
+        interconnections are not changed or updated.
+      </p>
+ 
+      <p>The following equation relates values from the input layer to each
+        hidden neuron input:
+      </p>
+ 
+      <p> 
+        <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_28B87E013D364C2EA8F66059C0A6717B"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_28B87E013D364C2EA8F66059C0A6717B" src="FFProp1.gif" /> 
+      </p>
+ 
+      <p>where:
+      </p>
+ 
+      <p> 
+        <em>M</em> = Number of input errors
+      </p>
+ 
+      <p> 
+        <em>ij</em> = Individual elements of a vector or a matrix
+      </p>
+ 
+      <p> 
+        <em>W1<sub>0j</sub></em> = Input bias weight
+      </p>
+ 
+      <p> 
+        <em>W1<sub>ij</sub></em> = Input layer weight from the i<sup>th</sup>
+        input neuron to the j<sup>th</sup> hidden neuron.
+      </p>
+ 
+      <p>The results of the summation in each hidden neuron then go through a
+        sigmoidal transfer function, 
+        <em>s</em>(<em>x</em>), which is:
+      </p>
+ 
+      <p> 
+        <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_5717AE9A42C64159B820827CA1375FB1"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_5717AE9A42C64159B820827CA1375FB1" src="FFProp2.gif" /> 
+      </p>
+ 
+      <p>where:
+      </p>
+ 
+      <p> 
+        <span class="nowrap"><em>s</em>(<em>x</em>) = (1 - 
+          <em>exp</em> ((-<em>x</em>))/(1 + 
+          <em>exp</em> (-<em>x</em>))</span>
+      </p>
+ 
+      <p> 
+        <em>exp</em> = Exponential function
+      </p>
+ 
+      <p>The calculated values from the output layer neurons are related to the
+        hidden layer outputs through the following equation:
+      </p>
+ 
+      <p> 
+        <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_E41389272ED94B1DAF58D181AE7FBA98"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__image_E41389272ED94B1DAF58D181AE7FBA98" src="FFProp3.gif" /> 
+      </p>
+ 
+      <p>where:
+      </p>
+ 
+      <p> 
+        <em>N</em> = Number of hidden neurons
+      </p>
+ 
+      <p> 
+        <em>W2<sub>0k</sub></em> = Hidden bias weight
+      </p>
+ 
+      <p> 
+        <em>W2<sub>jk</sub></em> = Output layer weights
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_9DA2F1CB743B4DA0B2DF5A4B5C6BBC4F"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_346__section_9DA2F1CB743B4DA0B2DF5A4B5C6BBC4F"></a><h2 class="sectiontitle">Error Back Propagation</h2> 
+       
+      <p>Once the network goes through feedforward propagation using an initial
+        set of weights, the software calculates output values and compares them to the
+        output data used as the desired target for the output values. The difference
+        between the calculated values and the target values is known as the 
+        <strong>error</strong>.
+      </p>
+ 
+      <p>Training adjusts the network weights in proportion to this error in
+        order to reduce the difference between the calculated and target values. To
+        correct the network output, the back propagation learning algorithm distributes
+        the output error to each individual weight. First, the program adjusts the
+        output layer weights based on the output error and then the input layer
+        weights. This weight adjustment process is known as 
+        <strong>error back propagation</strong>.
+      </p>
+ 
+      <p>A single implementation of the error back propagation uses the
+        gradient descent method, which always moves toward reducing the training error
+        with a properly assigned learning rate or step size. However, this approach
+        suffers from a number of problems, such as slow convergence and a fixed
+        learning rate.
+      </p>
+ 
+      <p>Instead of the gradient descent method, DeltaV Neural uses a modified
+        algorithm called the 
+        <strong>conjugate gradient method</strong>. This method significantly improves
+        the learning speed and robustness of the network with only a modest increase in
+        the computing memory usage. The conjugate gradient method combines current
+        information about the gradient with that of gradients from the previous
+        iteration to change the weights. The resulting conjugate gradient training is
+        actually adapting the learning rate to the best possible value, which results
+        in much faster training. Another advantage of this algorithm is that you do not
+        need to worry about specifying the learning rate
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_neural_dvn_using.html">Using DeltaV Neural</a><br />
+</li>
+<li class="ulchildlink"><a href="c_neural_dvn_extdata.html">Using External Historical Data with Neural</a><br />
+</li>
+</ul>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_spec_neural.html">Neural Network (NN) function block</a></div>
+<div><a href="c_fblk_spec_lab_entry.html">Lab Entry (LE) function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

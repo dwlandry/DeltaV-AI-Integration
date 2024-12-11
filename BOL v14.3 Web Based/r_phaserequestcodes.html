@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Phase request codes" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="phase request codes, direct requests, indirect requests, report values, messages, operator, operator prompts, phase to phase" name="DC.subject" /><meta content="phase request codes, direct requests, indirect requests, report values, messages, operator, operator prompts, phase to phase" name="keywords" /><meta content="c_designingphasemessages.html" name="DC.Relation" scheme="URI" /><meta content="c_examplephasetophasemessage.html" name="DC.Relation" scheme="URI" /><meta content="c_synchronizingphaseswithlinkgroups.html" name="DC.Relation" scheme="URI" /><meta content="c_controlstudio.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_phaserequestcodes" name="DC.Identifier" /><title>Phase request codes</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_unitmoduleparameters.html" /><link rel="next" href="r_dynamicoperatorpromptsandmessages.html" /></head><body class="fixed" id="r_phaserequestcodes" data-relpath="r_phaserequestcodes.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_phaserequestcodes"></a>
+
+<h1 class="topictitle1">Phase request codes</h1>
+<div><div></div>
+
+    <div class="section" id="r_phaserequestcodes__section_648F5A9BF94748BF8CA5326469502161"><a name="r_phaserequestcodes__section_648F5A9BF94748BF8CA5326469502161"></a>
+      <p>The following table is a reference for programming requests from phases. Use these codes in programming the phase logic to send information to the operator, to other phases, to the batch journal, and so on.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> The phase request codes are also used in the <span class="wintitle">Phase Configuration</span> dialog in Recipe Simulator to simulate the phase logic request programming and controller registers.</p>
+
+      </div>
+
+      
+<div class="tablenoborder"><a name="r_phaserequestcodes__table_3733EAFE72B54D758D1DDCC438F7F43E"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_phaserequestcodes__table_3733EAFE72B54D758D1DDCC438F7F43E" rules="all" summary=""><caption><span class="tablecap">Phase Logic Request Codes</span></caption>
+          
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" colspan="2" id="d2984756e81" valign="top">
+                <p>Purpose</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d2984756e87" valign="top" width="NaN%">
+                <p>Request</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>Download Parameters:</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to download phase parameter values.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>All phase parameters</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>1000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Range of parameters</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>11nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = size of range, REQDATA1 = ID of 1st</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Range,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>1100</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of 1st, REQDATA2 = size of range</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single parameter</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>12xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single parameter,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>1200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Upload Report Values:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to upload report values.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>All phase report values</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>2000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Range of report values</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>21nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = size of range, REQDATA1 = ID of 1st</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Range,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>2100</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of 1st, REQDATA2 = size of range</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single report value</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>22xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of report value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single report value,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>2200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of report value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Send Message to the Operator:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests controlling display of pre-configured phase messages at the phase summary view.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send message</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>30nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send message,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Clear message</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3100</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Integer</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>32nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+                <p>
+REQDATA1 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA2 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Integer indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+                <p>
+REQDATA2 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA3 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Floating Point</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>33nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+                <p>
+REQDATA1 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA2 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Floating Point indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3300</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+                <p>
+REQDATA2 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA3 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Boolean</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>34nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+                <p>
+REQDATA1 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA2 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>Boolean indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3400</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+                <p>
+REQDATA2 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA3 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>String</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>35nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+                <p>
+REQDATA1 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA2 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send Operator Prompt,
+
+</p>
+
+                <p>String indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>3500</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+                <p>
+REQDATA2 = confirm enabled (0= False, 1= True)</p>
+
+                <p>
+REQDATA3 = verify enabled (0= False, 1= True)</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Acquire Resources:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to allow the phase to acquire a resource.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single resource</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>40xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>4000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Multiple resources</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>41nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = number of resources, REQDATA1-argnn = ID of resources</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Release Resources:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to release a resource for a phase.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single resource</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>42xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>4200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Multiple resources</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>43nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = number of resources, REQDATA1-argnn = ID of resources</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>All resources</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>4400</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Acquire and Hold Resources:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to allow the phase&#39;s batch to acquire and hold a resource. That is, the phase issues the command to acquire and hold the resource for the entire batch.
+
+
+</p>
+
+                <p>The acquire and hold remains until the batch that now owns the resource completes or when a Release Held request is issued by a phase in that same batch.</p>
+
+                <p>If the batch is stopped or aborted, the batch retains the resource until removed from the Batch List; the resource can be revoked with the batch has been stopped or aborted.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single resource</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>45xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>4500</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Release Held Resources:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to release a held resource for a batch. That is, the phase issues the command to release the resource that was held for the batch.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single resource</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>46xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Single,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>4600</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of resource</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Messages to other phases:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to send a message ID and value(s) to linked phase(s).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send message</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>50nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn-ID of message, REQDATA1 = #of receivers, REQDATA2-argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send message, indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = message ID, REQDATA2 = #of receivers, REQDATA3 - argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send &amp; Wait</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>51nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn-ID of message, REQDATA1 = #of receivers, REQDATA2 - argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send &amp; Wait,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5100</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = message ID, REQDATA2 = #of receivers, REQDATA3 - argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send &amp; Wait for 1 receiver</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>52nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = message ID, REQDATA1-argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Send &amp; Wait for 1,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = message ID, REQDATA2-argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Cancel Message:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to cancel send of a message ID to linked phase(s). When canceling all messages, it cancels pending requests in the phase from where the requests originated.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Cancel message</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>53nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = ID of message</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Cancel,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5300</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = ID of message</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Cancel all messages</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5400</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>Waiting for a Message:</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the DeltaV Batch Executive to wait for a message ID between linked phase(s).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Wait for a message</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>55nn</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>nn = message ID, REQDATA1 - argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Wait,
+
+</p>
+
+                <p>indirect</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>5500</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>REQDATA1 = message ID, REQDATA2 - argnn = message value</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Abort Request:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests abort of any outstanding phase request.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Abort Request</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>6000</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>
+                  <strong>Download DeltaV Parameters:</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Download Customer Batch ID</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>71xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of (string) parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Download Unique Batch ID</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>72xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of (string) parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Download Phase ID</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>73xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of (integer) parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Download Formula Name</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>74xx</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>xx = ID of (string) parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>Abort Batch:</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the Batch Executive to ABORT the batch that this phase is running in.
+
+</p>
+
+                <p>
+                  <strong>Caution</strong> All other phases that are part of the same batch will also be aborted.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Abort Batch</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>8100</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>
+                  <strong>Note</strong> To cause an ABORT of a batch that is under External control, write to the XCOMMAND parameter from another module.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" colspan="2" headers="d2984756e81 d2984756e87 " valign="top">
+                <p>Stop Batch:</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>Requests the Batch Executive to STOP the batch that this phase is running in.
+
+</p>
+
+                <p>
+                  <strong>Caution</strong> All other phases that are part of the same batch will also be stopped.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e81 " valign="top" width="NaN%">
+                <p>Stop Batch</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e81 d2984756e87 " valign="top" width="NaN%">
+                <p>8200</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>
+                  <strong>Note</strong> To cause a STOP of a batch that is under External control, write to the XCOMMAND parameter from another module.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <div class="cautiontitle">CAUTION:</div><div class="caution">
+        <p> All phase requests will only work if the phase is running under the control of the Batch Executive. If the phase is running under External control, the phase request will be ignored and the phase logic will stop waiting for the REQUEST parameter to be set to zero (0), specifically because the REQUEST parameter will never be set when the phase is in External control.</p>
+
+      </div>
+
+      <p>Specific requests may require additional data such as parameters and arguments. Some examples of these data items are outlined below.</p>
+
+      <p>Direct vs. Indirect Requests</p>
+
+      <p>Direct requests embed the first request argument (number or ID), as the last two digits, together with the request call. Therefore, the number or ID cannot exceed 99. For example, REQUEST = 3001 is the request to send message ID 1 to the operator.</p>
+
+      <p>Indirect requests use an allocated location (REQDATA1...5) to contain the request argument (number or ID) so that the value&#39;s limit is not 99. You can manipulate this value by code that is separate from the communication code. For example, REQUEST = 3000 and REQDATA1 = 100 is sending message ID 100 to the operator.</p>
+
+      <p>Upload Report Values - Journal Entries</p>
+
+      <p>The report values combine other batch event information and then are written as journal entries in the batch journal.</p>
+
+      <p>Send Phase Messages to an Operator</p>
+
+      <p>An example of using phase requests is to create a message for the operator. This is done using the 3000 and 3100 series requests (refer to the Phase Request Codes table). These messages are also logged in the event journal. </p>
+
+      <p>Send Phase Messages to Other Phases</p>
+
+      <p>Phases that are members of a link group communicate with each other, defining the role of the link group. You can use this communication for the purposes listed in the following table. </p>
+
+      
+<div class="tablenoborder"><a name="r_phaserequestcodes__table_8B3C050E5D7F487A920354C79C2C852B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_phaserequestcodes__table_8B3C050E5D7F487A920354C79C2C852B" rules="all" summary=""><caption><span class="tablecap">Phase Communication Purposes</span></caption>
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d2984756e1570" valign="top" width="NaN%">
+                <p>Purpose</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d2984756e1576" valign="top" width="NaN%">
+                <p>Description</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e1570 " valign="top" width="NaN%">
+                <p>Synchronization</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e1576 " valign="top" width="NaN%">
+                <p>Performed to ensure that multiple phases are in exactly the proper state before they proceed. Since the phases can execute synchronization through this messaging function, there is no additional phase synchronization implementation in the phase, unit or Batch Executive.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e1570 " valign="top" width="NaN%">
+                <p>Permissive</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e1576 " valign="top" width="NaN%">
+                <p>Performed to ensure that one phase of the link group has passed a certain point before other phases can proceed.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2984756e1570 " valign="top" width="NaN%">
+                <p>Data Transfer</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2984756e1576 " valign="top" width="NaN%">
+                <p>Performed to move data from one phase to another.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_designingphasemessages.html">Designing phase messages</a></div>
+<div><a href="c_examplephasetophasemessage.html">Example phase-to-phase message</a></div>
+<div><a href="c_synchronizingphaseswithlinkgroups.html">Synchronizing phases with link groups</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

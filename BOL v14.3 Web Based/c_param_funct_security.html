@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Parameter, field, and function security" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="parameter security, security, locks, for parameters, Explorer, users, using locks to secure parameters from, database explorer" name="DC.subject" /><meta content="parameter security, security, locks, for parameters, Explorer, users, using locks to secure parameters from, database explorer" name="keywords" /><meta content="c_deltav_locks.html" name="DC.Relation" scheme="URI" /><meta content="r_locks_assigned_to_fb_params.html" name="DC.Relation" scheme="URI" /><meta content="r_locksassignedtofunctions.html" name="DC.Relation" scheme="URI" /><meta content="r_lock_examples.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_param_funct_security" name="DC.Identifier" /><title>Parameter, field, and function security</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_parameters.html" /><link rel="next" href="c_deltav_locks.html" /></head><body class="fixed" id="c_param_funct_security" data-relpath="c_param_funct_security.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_param_funct_security"></a>
+
+<h1 class="topictitle1">Parameter, field, and function security</h1>
+<div><div></div>
+ 
+	 <p id="c_param_funct_security__ParameterandFunctionSecurity"><a name="c_param_funct_security__ParameterandFunctionSecurity"></a>Through the use of locks and keys, the
+		DeltaV system provides security mechanisms at both the parameter and fields
+		level and at the function level. At the parameter and fields level, the DeltaV
+		system allows you to control which users can write to specific parameters and
+		parameter fields in the run-time information. At the function level, the DeltaV
+		system allows you to control which users can perform certain functions.  
+	 </p>
+ 
+	 <p>The DeltaV User Manager application provides an interface to the five
+		essential components of security: 
+	 </p>
+ 
+	 <ul> 
+		<li><div class="li_content"> 
+		  <p><strong>Locks</strong> - Prevent users from changing the parameters and
+			 parameter fields assigned to the lock and prevent users from performing certain
+			 functions. You use the Explorer to assign locks to parameters, parameter fields
+			 and functions. It is helpful to think of a lock as something that specifies the
+			 name of the key that grants access. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><strong>Keys</strong> - Provide permissions to individual users or whole
+			 groups of users. Each key is associated with a lock. You grant keys under the
+			 group and user properties dialogs. Users can be granted any number of keys or
+			 none at all. Some keys are area-based and others are node-based. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><strong>Groups</strong> - Enable you to classify users together and grant keys
+			 to everyone in the group. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><strong>Users</strong> - Are DeltaV system and Windows users. You can assign
+			 users to one or more groups. The DeltaV User Manager application also allows
+			 you to create new Windows users without accessing the Windows User Manager
+			 application. When you create a new user, you can specify whether the user is a
+			 Windows user, a DeltaV system user, or both. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><strong>Areas</strong> - Some keys can be granted to DeltaV users for specific
+			 areas. Use this feature to grant write access to operators for control modules
+			 within the operators&#39; responsibility and withhold access to other similar
+			 modules outside their responsibility. Other keys apply to all areas and the
+			 only choice when granting these keys is &lt;Sitewide&gt;. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p><strong>Nodes</strong> - Some keys can be granted to DeltaV users for specific
+			 nodes. The node must exist in the DeltaV database before you can assign keys to
+			 the user for the node. You can use a placeholder node until the actual node is
+			 commissioned in place of the placeholder. Use this feature to grant write
+			 access to operators for node-specific functions within the operators&#39;
+			 responsibility and withhold access to other node-specific functions outside
+			 their responsibility. Additionally, you can grant keys for these node-specific
+			 functions as &lt;Sitewide&gt; (all nodes). 
+		  </p>
+ 
+		  <p>The status bar in DeltaV Explorer shows the following for
+			 node-specific functions. 
+		  </p>
+ 
+		  
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left">
+				  <tr>
+					 <th class="cellrowborder" id="d1232130e107" valign="top" width="NaN%">Displayed
+					 </th>
+
+					 <th class="cellrowborder" id="d1232130e110" valign="top" width="NaN%">The user has this combination of keys 
+					 </th>
+
+					 <th class="cellrowborder" id="d1232130e113" valign="top" width="NaN%">Or, the user has this combination of keys
+						
+					 </th>
+
+					 <th class="cellrowborder" id="d1232130e116" valign="top" width="NaN%">Or, the user has this combination of keys
+						
+					 </th>
+
+					 <th class="cellrowborder" id="d1232130e119" valign="top" width="NaN%">Or, the user has this combination of keys
+						
+					 </th>
+
+				  </tr>
+</thead>
+
+				<tbody>
+				  <tr>
+					 <td class="cellrowborder" headers="d1232130e107 " valign="top" width="NaN%"><span class="uicontrol">Node Scoped Non-SIS 
+						</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e110 " valign="top" width="NaN%"><span class="uicontrol">Can Edit</span> and 
+						<span class="uicontrol">Can Setup Device</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e113 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e116 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e119 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+				  </tr>
+
+				  <tr>
+					 <td class="cellrowborder" headers="d1232130e107 " valign="top" width="NaN%"><span class="uicontrol">Node Scoped Non-SIS 
+						</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e110 " valign="top" width="NaN%"><span class="uicontrol">SIS Can Edit</span> and 
+						<span class="uicontrol">SIS Can Setup Device</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e113 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e116 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e119 " valign="top" width="NaN%">
+						<p>------
+						</p>
+
+					 </td>
+
+				  </tr>
+
+				  <tr>
+					 <td class="cellrowborder" headers="d1232130e107 " valign="top" width="NaN%"><span class="uicontrol">Node Scoped Both</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e110 " valign="top" width="NaN%"><span class="uicontrol">Can
+						  Configure</span>/<span class="uicontrol">SIS Can Configure</span> combined with
+						either 
+						<span class="uicontrol">Can Edit</span> or 
+						<span class="uicontrol">SIS Can Edit</span>
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e113 " valign="top" width="NaN%"><span class="uicontrol">Can Edit</span> combined
+						with 
+						<span class="uicontrol">SIS Can Edit</span> 
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e116 " valign="top" width="NaN%">Can 
+						<span class="uicontrol">Download</span>/<span class="uicontrol">SIS Can
+						  Download</span> combined with either 
+						<span class="uicontrol">Can Setup Devices</span> or 
+						<span class="uicontrol">SIS Can Setup Devices</span>.
+					 </td>
+
+					 <td class="cellrowborder" headers="d1232130e119 " valign="top" width="NaN%"><span class="uicontrol">Can Setup Devices</span>
+						combined with 
+						<span class="uicontrol">SIS Can Setup Devices</span> 
+					 </td>
+
+				  </tr>
+
+				</tbody>
+
+			 </table>
+</div>
+
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_deltav_locks.html">DeltaV locks</a><br />
+</li>
+<li class="ulchildlink"><a href="r_locks_assigned_to_fb_params.html">Locks assigned to function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="r_locksassignedtofunctions.html">Locks assigned to functions</a><br />
+</li>
+<li class="ulchildlink"><a href="r_lock_examples.html">Lock examples</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

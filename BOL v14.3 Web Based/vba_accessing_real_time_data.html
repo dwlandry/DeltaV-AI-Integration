@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Accessing real-time data" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_accessing_real_time_data" name="DC.Identifier" /><title>Accessing real-time data</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_creating_global_scripts.html" /><link rel="next" href="vba_working_in_the_run_time_environment.html" /></head><body class="fixed" id="vba_accessing_real_time_data" data-relpath="vba_accessing_real_time_data.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_accessing_real_time_data"></a>
+
+<h1 class="topictitle1">Accessing real-time data</h1>
+<div><div></div>
+
+    <p id="vba_accessing_real_time_data__AccessingRealTimeData"><a name="vba_accessing_real_time_data__AccessingRealTimeData"></a>DeltaV Operate gives you the flexibility to access all kinds of data to perform your scripting applications. This topic details how to access real-time data through various methods. The examples show you how to use the Data System OCX to perform group reads and writes and how to write to a database tag.</p>
+
+    <div class="section" id="vba_accessing_real_time_data__UsingtheDataSystemOCXforGroupReadsandWrites"><a name="vba_accessing_real_time_data__UsingtheDataSystemOCXforGroupReadsandWrites"></a><h2 class="sectiontitle">Using the Data System OCX for Group Reads and Writes</h2>
+      
+      <p>The Data System OCX is a logical control that gives you flexible read and write capability, allowing you to perform group reads and writes to a database. Typically, performing a read and write through scripting involves the following steps:</p>
+
+      <ol>
+        <li><div class="li_content">
+          <p>Create the data item (DI).</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Validate and add the DI to the OPC server.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Write the value to the DI.</p>
+
+        </div></li>
+
+      </ol>
+
+      <p>This process can take time, as each data item must be processed in the OPC server. If the OPC server is running at slower speeds, the process can take even longer. The Data System OCX simplifies this process by not requiring that you write to a single data item, changing the read and write process to the following steps:</p>
+
+      <ol>
+        <li><div class="li_content">
+          <p>Create the data item (DI).</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Validate and add the DI to the OPC server.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Hold the DI in memory, create and validate other DIs, and read and write the DIs in a group.</p>
+
+        </div></li>
+
+      </ol>
+
+      <p>Because it allows group reads and writes, the Data System OCX optimizes reading from and writing to large numbers of data points. You can create groups from VB scripts which can be returned from memory and written to at any time.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> To use the Datasystem OCX, you must ensure the reference to the OCX is included in the project. You determine this using the DeltaV Operate Datasytstem Access Control. To access this control, select References from the Tools menu. The References dialog box appears. Select Intellution FD Datasystem Access Control.</p>
+
+      </div>
+
+      <p>The following example illustrates how to use the Data System OCX to create a group of database tags and perform a group read and group write on them.</p>
+
+      <p>The following example writes a value of 50 to a group of database tags:</p>
+
+    </div>
+
+    <div class="section"><h2 class="sectiontitle">Example: Group Write</h2>
+      
+      <pre class="pre">
+Public Sub WriteValueToGroup()
+
+    <strong>&#39;Create the Data Server Object.
+</strong>    Dim FDS As Object
+    Dim DIItem As Object
+
+    <strong>&#39;Create an instance of the Data System control.
+</strong>    Set FDS = CreateObject(&quot;FixDataSystems.Intellution FD Data _
+        System Control&quot;)
+
+    <strong>&#39;You do not need to call CreateObject if you include a</strong> 
+    <strong>&#39;reference to the FIX Data System. This control can handle
+</strong>    <strong>&#39;multiple groups. For this example, we only need one group.
+</strong>    <strong>&#39;We will add all the data sources with new alarms to the
+</strong>    <strong>&#39;group and do a group read and then a group write.
+</strong>    FDS.Groups.Add &quot;TankGroup&quot;
+
+    <strong>&#39;Add all the Tank tags to the Data System OCX&#39;s Data Item
+</strong>    <strong>&#39;collection. You can add or delete groups without affecting
+</strong>    <strong>&#39;the order of the group should the position of an item
+</strong>    <strong>&#39;change. This is achieved by specifying a group name
+</strong>    <strong>&#39;(&quot;TankGroup&quot;)rather than listing item numbers.
+</strong>    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK1.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK2.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK3.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK4.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK5.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK6.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK7.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK8.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add &quot;FIX32.MYNODE.TANK9.F_CV&quot;
+    FDS.Groups(&quot;TankGroup&quot;).DataItems.Add _ 
+        &quot;FIX32.MYNODE.TANK10.F_CV&quot;
+
+    <strong>&#39;Read all of the data items that you added to the Data System</strong> 
+    <strong>&#39;control.
+</strong>    FDS.Groups(&quot;TankGroup&quot;).Read
+
+    <strong>&#39;If the value of each tag is not 50, then set it to 50.
+</strong>    For Each DIItem in FDS.Groups(&quot;TankGroup&quot;).DataItems
+        If DIItem.Value &lt;&gt; 50 Then
+            DIItem.Value = 50
+        End If
+    Next
+
+    <strong>&#39;Now write 50 to each tag in the database.
+</strong>    FDS.Groups(&quot;TankGroup&quot;).Write
+
+End Sub
+</pre>
+
+      <p>The next example does the following:</p>
+
+      <ol>
+        <li><div class="li_content">
+          <p>Creates a Data System OCX FDS.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Adds the data group DataGroup1 to the Groups collection.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Adds a Data Item to the DataItems collection.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>&gt;Reads the group DataGroup1.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Reads the DataItem.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section"><h2 class="sectiontitle">Example: Group Read</h2>
+      
+      <pre class="pre">
+Public Sub ReadValueFromGroup()
+<strong>    &#39;Create the Data System OCX 
+</strong>    Dim FDS As Object
+    Set FDS = CreateObject(&quot;FixDataSystems.Intellution FD Data_
+    System Control&quot;)
+
+<strong>    &#39;Add a group to the Groups collection
+</strong>    FDS.Groups.Add (&quot;DataGroup1&quot;)
+    FDS.Groups.Item(&quot;DataGroup1&quot;).DataItems.Add(&quot;Fix32._
+    DVSYS.AI1.F_CV&quot;)
+
+<strong>    &#39;Read DataGroup1
+</strong>    FDS.Groups.Item(&quot;DataGroup1&quot;).Read
+
+<strong>    &#39;Read the DataItem 
+</strong>    FDS.Groups.Item(&quot;DataGroup1&quot;).DataItems.Item(1).Read
+
+</pre>
+
+      <pre class="pre">
+End Sub
+</pre>
+
+      <p>The final example in this section shows you how to perform writes to alternate data sources:</p>
+
+      <ol>
+        <li id="vba_accessing_real_time_data__207987"><div class="li_content">
+          <p>Creates a Data System OCX FDS.</p>
+
+        </div></li>
+
+        <li id="vba_accessing_real_time_data__207989"><div class="li_content">
+          <p>Adds the data group DataGroup1 to the Groups collection.</p>
+
+        </div></li>
+
+        <li id="vba_accessing_real_time_data__207991"><div class="li_content">
+          <p>Adds a Data Item to the DataItems collection.</p>
+
+        </div></li>
+
+        <li id="vba_accessing_real_time_data__207993"><div class="li_content">
+          <p>Writes the value of the Group DataGroup1.</p>
+
+        </div></li>
+
+        <li id="vba_accessing_real_time_data__207995"><div class="li_content">
+          <p>Writes a value to the DataItem.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_accessing_real_time_data__ReadingfromandWritingtoaDatabaseTag"><a name="vba_accessing_real_time_data__ReadingfromandWritingtoaDatabaseTag"></a><h2 class="sectiontitle">Example: Writes to Alternate Sources</h2>
+      
+      <pre class="pre">
+Public Sub WriteToAlternateSources()
+<strong>    &#39;Create the Data System OCX
+</strong>    Dim FDS As New FixDataSystem
+    Dim g1 As FixDataSystems.Group
+    
+<strong>    &#39;Create the first group to read from
+</strong>    FDS.Groups.Add(&quot;DataGroup1&quot;)
+    Set g1=FDS.Groups.Item(&quot;DataGroup1&quot;)
+    
+<strong>    &#39;Add an item to the group to be read
+</strong>    g1.DataItems.Add(&quot;Fix32.MYNODE.AI1.F_CV&quot;)
+    
+<strong>    &#39;Read the group
+</strong>    g1.Read
+    
+<strong>    &#39;Get the value of the item
+</strong>    Dim x As Long
+    x=g1.DataItems.Item(1).Value
+    
+<strong>    &#39;Create the second group to write
+</strong>    Dim g2 As FixDataSystems.Group
+    FDS.Groups.Add(&quot;Group2&quot;)
+    Set g2=FDS.Groups.Item(&quot;Group2&quot;)
+    
+<strong>    &#39;Add the item, set it&#39;s value and write the group
+</strong>    g2.DataItems.Add(&quot;Fix32.MYNODE.AI2.F_CV&quot;)
+    g2.DataItems.Item(1).Value = x+1
+    g2.Write
+End Sub
+</pre>
+
+      <p>For more information on using the Data System OCX, including its related properties and methods, refer to the DataSystem OCX object topic of the Automation Reference Help file.</p>
+
+    </div>
+
+    <div class="section" id="vba_accessing_real_time_data__WritingaValuetoaDefinedDatabaseTag"><a name="vba_accessing_real_time_data__WritingaValuetoaDefinedDatabaseTag"></a><h2 class="sectiontitle">Reading from and Writing to a Database Tag</h2>
+      
+      <p>There are several ways to write a value to a database tag. The examples in this section show you how to:</p>
+
+      <ul>
+        <li><div class="li_content">
+          <p>Write a value directly to a defined database tag.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Write a value to a database tag using the WriteValue global subroutine.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Write a value to a database tag using its Value property.</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="vba_accessing_real_time_data__WritingaValueUsingtheWriteValueSubroutine"><a name="vba_accessing_real_time_data__WritingaValueUsingtheWriteValueSubroutine"></a><h2 class="sectiontitle">Writing a Value to a Defined Database Tag</h2>
+      
+      <p>The easiest way to write a value to a defined database tag is to perform a direct write:</p>
+
+      <pre class="pre">
+FIX32.NODE.AI1.F_CV = 50#
+</pre>
+
+      <p>In this example, a value of 50 is written to the database tag FIX32.NODE.AI1.F_CV. Because of the restrictions enforced by VBA naming conventions, this is not the recommended method for writing values through VBA scripting (see <a href="vba_vba_file_types.html">VBA File Types</a> for more on VBA naming conventions). The easiest methods for reading and writing values through VBA scripting are by using the WriteValue and ReadValue subroutines. These subroutines are described in more detail in the next section.</p>
+
+    </div>
+
+    <div class="section" id="vba_accessing_real_time_data__WriteaValueUsingtheDatabaseTagsValueProperty"><a name="vba_accessing_real_time_data__WriteaValueUsingtheDatabaseTagsValueProperty"></a><h2 class="sectiontitle">Writing a Value Using the WriteValue Subroutine</h2>
+      
+      <p>In order to overcome the limitations of VBA&#39;s naming conventions, DeltaV Operate provides the global subroutines <strong>WriteValue</strong> and <strong>ReadValue</strong> for writing values to and reading values from database tags. The following two examples show how to use the WriteValue subroutine to write a value to a tag.</p>
+
+      <p>This script writes a value of 50 to the FIX32.MYNODE.AI-1.F_CV tag:</p>
+
+      <pre class="pre">
+Private Sub CommandButton1_Click()
+    WriteValue &quot;50&quot;, &quot;AI-1&quot;
+Exit Sub
+</pre>
+
+      <p>If you omit the second parameter, the WriteValue subroutine writes a value of 60 to the first connection of the selected object in the run-time environment. For example, let&#39;s say that you have a rectangle selected in your picture, and that rectangle has a VerticalFillPercentage animation tied to the tag FIX32.MYNODE.AO3.F_CV. When you click a push button containing the following script:</p>
+
+      <pre class="pre">
+Private Sub CommandButton1_Click()
+    WriteValue &quot;60&quot;
+Exit Sub
+</pre>
+
+      <p>DeltaV Operate writes a value of 60 to the FIX32.MYNODE.AO3.F_CV tag.</p>
+
+    </div>
+
+    <div class="section"><h2 class="sectiontitle">Write a Value Using the Database Tag&#39;s Value Property</h2>
+      
+      <p>This example assumes that there is a color animation on a shape named <strong>Rect1</strong>. It receives the database tag connected to Rect1&#39;s ForegroundColor property and writes a value of 70.</p>
+
+    </div>
+
+    <div class="section"><h2 class="sectiontitle">Example: Using the Database Tag&#39;s Value Property</h2>
+      
+      <pre class="pre">
+Private Sub CommandButton1_Click()
+    Dim objDataTag as Object
+    Dim blnHasConnection as Boolean
+    Dim lStatus as Long
+    Dim lIndex as Long
+    Dim strPropertyName as String
+    Dim strExpression as String
+    Dim strFQE as String
+    Dim vtAnimationObjects
+    Dim objDataTag as Object
+    Dim strDataSourceName as String
+
+    Rect1.IsConnected &quot;ForegroundColor&quot;, blnHasConnection, _
+    lIndex, lStatus
+    Rect.GetConnectionInformation lIndex, strPropertyName, _
+    strExpression, strFQE, vtAnimationObjects
+
+    <strong>&#39;Assume that the first Animation object is the color 
+</strong>    <strong>&#39;animation object you are looking for. Set the string
+</strong>    <strong>&#39;name for the data source equal to the data source of 
+</strong>    <strong>&#39;the animation object.
+</strong>    strDataSourceName= vtAnimationObjects(0).Source
+
+    <strong>&#39;Use the FindObject method to get the database tag 
+</strong>    <strong>&#39;object with the string name FIX32.MYNODE.AI1.F_CV.
+</strong>    Set objDataTag = _ 
+        System.FindObject(&quot;FIX32.MYNODE.AI1.F_CV&quot;)
+
+    <strong>&#39;Set the Value property of the Database Tag object 
+</strong>    <strong>&#39;equal to 70.
+</strong>    ObjDataTag.Value = 70
+
+End Sub
+</pre>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

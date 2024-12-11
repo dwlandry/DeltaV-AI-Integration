@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="CHARM DST browsing" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_what_are_charms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_charm_dst_browsing" name="DC.Identifier" /><title>CHARM DST browsing</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_charmIO-bumpless_upgrade.html" /><link rel="next" href="t_copy_charms_from_cioc_to_cioc.html" /></head><body class="fixed" id="c_charm_dst_browsing" data-relpath="c_charm_dst_browsing.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_charm_dst_browsing"></a>
+
+<h1 class="topictitle1">CHARM DST browsing</h1>
+<div><div></div>
+
+	 <p>The DeltaV system uses unique Device Signal Tags (DSTs) to provide a
+		contextual meaning to device signals. A default DST, based on the signal
+		specification, is created for each channel. For CHARM I/O, DSTs are derived
+		from the CIOC name and the CHARM address in the form: CIOCNameCHM1-02. DSTs are
+		used to link a field signal to the control strategy and to provide flexibility
+		during control strategy development by allowing the physical I/O to be defined
+		late in the project. This keeps all control strategy references valid when a
+		channel is assigned to a new controller.
+	 </p>
+
+	 <p>Typically, users browse for DSTs from Control Studio when they are
+		assigning a function block to an I/O signal. Like other I/O, CHARM DSTs are
+		browsed with the 
+		<span class="wintitle">Browse</span> dialog. There are different types of device
+		tags available to the browser: valid I/O references, unassigned I/O references,
+		and All. When browsing for CHARM DSTs keep the following in mind about the
+		different types of DSTs presented by the browser:
+	 </p>
+
+	 <a name="c_charm_dst_browsing__ul_14F2465833F24E098CD2DA0AD0F6C26B"></a><ul id="c_charm_dst_browsing__ul_14F2465833F24E098CD2DA0AD0F6C26B"> 
+		<li id="c_charm_dst_browsing__li_B7C7A1725AF64E4694F7118AA8C3B384"><div class="li_content">
+		  <p><strong>Valid I/O references:</strong> Presents a list of defined DST
+			 references that are suitable for the selected function block. This list is
+			 presented in context with controllers. Assign DSTs to the same controller as
+			 the control module.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_charm_dst_browsing__li_3C729F8168C94D979EE13701C1AA868C"><div class="li_content">
+		  <p><strong>Unassigned I/O references:</strong> Presents a list of DSTs that are
+			 not bound to a physical channel. A signal type is not verified until the DST is
+			 bound to a physical channel.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_charm_dst_browsing__li_E402A43D251E4DFFAD8EB8DAC513C390"><div class="li_content">
+		  <p><strong>All:</strong> Presents a list of all valid and unassigned I/O
+			 references. This list includes all the DSTs defined in the system.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> A DST differs from a SCADA tag. 
+		</p>
+
+	 </div>
+
+	 <p>In addition to I/O function blocks, I/O references can be created using
+		external parameter references. The browser can be used to define external
+		parameter references and the reference can be made to module parameters, I/O
+		parameters, diagnostic parameters, or to DST parameters:
+	 </p>
+
+	 <a name="c_charm_dst_browsing__ul_2E5CEF6A51074907995E8E45982E35A0"></a><ul id="c_charm_dst_browsing__ul_2E5CEF6A51074907995E8E45982E35A0"> 
+		<li id="c_charm_dst_browsing__li_2431225DFF3D43F7A0CA203558775953"><div class="li_content">
+		  <p><strong>Module parameters:</strong> References are made to module parameter
+			 paths starting with the module name. Most runtime parameters in the system can
+			 be referenced.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_charm_dst_browsing__li_3DBE7D584D644E26AE84EC3DEEB38BD9"><div class="li_content">
+		  <p><strong>I/O parameters:</strong> References are made to physical I/O parameter
+			 paths starting with the controller name.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_charm_dst_browsing__li_A86C020D61B448A18B06D99A6B519F74"><div class="li_content">
+		  <div class="p"><strong>Diagnostic parameters:</strong> References are made to parameters
+			 structured around the physical hardware that reflect the integrity of the
+			 system.
+			 <div class="note"><span class="notetitle">Note:</span> 
+				<p> To ensure that CIOCs provide the highest possible I/O
+				  performance, external and dynamic references to diagnostic parameters of CIOCs
+				  are not reported in modules downloaded to controllers and do not resolve at run
+				  time. If you need to use these types of parameter references in your control
+				  strategy download the modules to a workstation&#39;s virtual controller.
+				</p>
+
+			 </div>
+
+		  </div>
+
+		</div></li>
+ 
+		<li id="c_charm_dst_browsing__li_94AF2BB698F54892B00A5E1FEDC6509F"><div class="li_content">
+		  <p><strong>DST parameters:</strong> Refer to the preceding descriptions of Valid
+			 I/O references, Unassigned I/O references, and All.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="IDVBCMCampaignEdit4::setexecutionmode4" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="r_idvbcmcampaignedit4interfacemethods.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_idvbcmcampaignedit4setexecutionmode4" name="DC.Identifier" /><title>IDVBCMCampaignEdit4::setexecutionmode4</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_idvbcmcampaignedit4removebatch2.html" /><link rel="next" href="r_idvbcmcampaignedit4setautoremove3.html" /></head><body class="fixed" id="r_idvbcmcampaignedit4setexecutionmode4" data-relpath="r_idvbcmcampaignedit4setexecutionmode4.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_idvbcmcampaignedit4setexecutionmode4"></a>
+
+<h1 class="topictitle1">IDVBCMCampaignEdit4::setexecutionmode4</h1>
+<div><div></div>
+<div class="section"><div class="note"><span class="notetitle">Note:</span> <p> There is not an equivalent Info method.</p>
+</div>
+<div class="note"><span class="notetitle">Note:</span> <p> Some previous versions of this method took only a confirmer name and a verifier name. The current method takes a confirmer name and password and a verifier name and password. If the old methods are used and confirmation is required for modifying campaigns, the confirmer and verifier names passed to SetExecutionMode(2) must be the same as those passed to AddCampaign or GetCampaignEdit (whichever call was made to retrieve the DVBCampaignEdit Object). Note also that there may be a potential issue here if the Add Campaign action does not require confirmation info, but the Campaign Modification action does. In this case, it may be necessary to call GetCampaignEdit after calling AddCampaign (and retrieve a new DVBCampaignEdit object) in order to pass the user names and passwords necessary.</p>
+</div>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><tbody><tr>
+<td class="cellrowborder" valign="top" width="NaN%"><p><strong>Method Signatures</strong></p>
+</td>
+
+<td class="cellrowborder" valign="top" width="NaN%"> </td>
+
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="NaN%"><p>
+C\C++
+</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="NaN%"><p>
+HRESULT SetExecutionMode4(</p>
+<p>
+VARIANT_BOOL bIsManual,</p>
+<p>
+VARIANT_BOOL bIsAutoRelease,</p>
+<p>
+VARIANT_BOOL bIsAutoStart,</p>
+<p>
+BSTR bstrConfirmerName,</p>
+<p>
+BSTR bstrConfirmerPassword,</p>
+<p>
+BSTR bstrVerifierName,</p>
+<p>
+BSTR bstrVerifierPassword,</p>
+<p>
+BSTR bstrComment,</p>
+<p>
+long lWait)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="NaN%"><p>
+VB
+</p>
+</td>
+
+<td class="cellrowborder" valign="top" width="NaN%"><p>
+Public Sub SetExecutionMode4(</p>
+<p>
+ByVal bIsManual As Boolean,</p>
+<p>
+ByVal bIsAutoRelease As Boolean,</p>
+<p>
+ByVal bIsAutoStart As Boolean,</p>
+<p>
+ByVal bstrConfirmerName As String,</p>
+<p>
+ByVal bstrConfirmerPassword As String,</p>
+<p>
+ByVal bstrVerifierName As String,</p>
+<p>
+ByVal bstrVerifierPassword As String,</p>
+<p>
+ByVal bstrComment As String,</p>
+<p>
+ByVal lWait As Long)
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>This method is used to change the execution mode of the campaign. It is only avaiable from the campaign edit object, which must be in the DEFINING state and not locked (unless by the caller). If bIsAutoStart is set, bIsAutoRelease is implied and should also be set. Setting a campaign&#39;s execution mode to manual immediately stops all automatic processing of batches unless they are under the control of the Batch Executive, in which case they must be stopped from the Batch Operator Interface or if the AutoRemove functionality has been associated with Manual mode.</p>
+<p><strong><span>Return Values</span></strong></p>
+<p>
+S_OK - success</p>
+<p>
+else - failed</p>
+<p><strong><span>Memory Allocation</span></strong></p>
+<p>
+none</p>
+<p><em>Visual Basic Usage Example</em></p>
+<pre class="pre">
+Private Sub Button1_Click()
+    Dim objCampaignEdit As IDVBCMCampaignEdit4
+    Call GetCampaignEditObject(objCampaignEdit)
+    Call objCampaignEdit.SetExecutionMode4(False, False, True)
+End Sub
+</pre>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d2699037e122" valign="top" width="NaN%"><p>Parameter Name</p>
+</th>
+
+<th class="cellrowborder" id="d2699037e126" valign="top" width="NaN%"><p>Purpose</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bIsManual
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Whether all batch control is done manually, through operator actions.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bIsAutoRelease
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Whether batches will be automatically sent to the Exectuive.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bIsAutoStart
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Whether batches will be automatically sent and started on the Batch Executive.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bstrConfirmerName
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Windows username of the confirmer. Optional (but may be required depending on configured actions on server).
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bstrConfirmerPassword
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Password for the user passed in for bstrConfirmerName
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bstrVerifierName
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Windows username of the verifier. Optional (but may be required depending on configured actions on server).
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+bstrVerifierPassword
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Password for the user passed in for bstrVerifierName
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>bstrComment</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>Optional. A string containing the comment to associate with this action.</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2699037e122 " valign="top" width="NaN%"><p>
+lWait
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2699037e126 " valign="top" width="NaN%"><p>
+Optional. Default = 30000. Time to wait for a server resource in milliseconds.
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

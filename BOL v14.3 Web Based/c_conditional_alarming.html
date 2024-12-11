@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Conditional alarming" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="alarming, conditional, alarms, conditional discrete, conditional high, conditional low, conditional alarming, conditional alarms" name="DC.subject" /><meta content="alarming, conditional, alarms, conditional discrete, conditional high, conditional low, conditional alarming, conditional alarms" name="keywords" /><meta content="c_alarm_configuration.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_conditional_alarming" name="DC.Identifier" /><title>Conditional alarming</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_standard_alarm_detection.html" /><link rel="next" href="c_conditional_setpoint_deviation_alarms.html" /></head><body class="fixed" id="c_conditional_alarming" data-relpath="c_conditional_alarming.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_conditional_alarming"></a>
+
+<h1 class="topictitle1">Conditional alarming</h1>
+<div><div></div>
+ 
+	 <p>The conditional alarming feature, available for only standard alarms,
+		lets you easily add alarm time delays and enable/disable alarms to minimize
+		nuisance alarms. 
+	 </p>
+ 
+	 <p>For example, when an upstream pump is turned off, the downstream low
+		flow alarm is temporarily not meaningful. The low flow alarm becomes a nuisance
+		alarm when the pump is off and should be disabled. The LO_ENAB parameter can be
+		used to dynamically enable/disable the alarm. When this pump is turned back on,
+		it may be best for the low flow alarm to remain disabled for a short period of
+		time, allowing the flow rate time to rise above the low flow alarm limit. The
+		LO_ENAB_DELAY parameter causes a delay in setting an alarm immediately after
+		the alarm has been enabled using the LO_ENAB parameter. 
+	 </p>
+ 
+	 <p> Conditional alarming for standard alarms is enabled through their
+		function block&#39;s 
+		<span class="wintitle">Block Alarms</span> dialog. When conditional alarming is
+		enabled, five new parameters are added to the block for each available ACT
+		parameter (HI_ACT, HI_HI_ACT, LO_ACT, LO_LO_ACT, DV_HI_ACT, DV_LO_ACT and
+		DISC_ACT). Conditional alarming parameters can be modified in either the 
+		<span class="wintitle">Block Alarms</span> dialog or an individual alarm&#39;s 
+		<span class="wintitle">Alarm Properties</span> dialog (Condition tab). The
+		Conditioning tab is available only when conditional alarming is enabled for
+		that alarm. 
+	 </p>
+ 
+	 <div class="section" id="c_conditional_alarming__section_FA1C7B1EB5AC4FD3A9BA75F6ED1D03F2"><a name="c_conditional_alarming__section_FA1C7B1EB5AC4FD3A9BA75F6ED1D03F2"></a><h2 class="sectiontitle"> Conditional alarming parameters</h2> 
+		 
+		<p>In the descriptions that follow, the term 
+		  <em>alarm_</em> is used to represent either HI, HI_HI, LO, LO_LO, DV_HI,
+		  DV_LO, or DISC, corresponding to the alarm being configured. The ACT parameter
+		  indicates the current status of its alarm condition, with 1 (true) representing
+		  an alarm condition. The five additional parameters are: 
+		</p>
+ 
+		<dl> 
+		   
+			 <dt class="dlterm"><em>alarm_</em>ENAB 
+			 </dt>
+ 
+			 <dd> 
+				<p>This parameter enables/disables conditional alarm processing for
+				  a single alarm. The default value for this parameter is enabled (1), when
+				  conditional alarming for a function block is enabled. You can write to the 
+				  <em>alarm_</em>ENAB parameter to dynamically enable/disable the
+				  alarm based on external process conditions. 
+				</p>
+ 
+				<p>When 
+				  <em>alarm_</em>ENAB is disabled (0): 
+				</p>
+ 
+				<a name="c_conditional_alarming__ul_7BB9C290875A40ACB859391445A55D75"></a><ul id="c_conditional_alarming__ul_7BB9C290875A40ACB859391445A55D75"> 
+				  <li id="c_conditional_alarming__li_4465E715635A4EE7B84C12BC3600AA5A"><div class="li_content"> 
+					 <p>The 
+						<em>alarm_</em>ACT parameter is immediately forced to 0
+						(false). 
+					 </p>
+ 
+				  </div></li>
+ 
+				  <li id="c_conditional_alarming__li_51A738E7EE43485F80AB6465E88F6E76"><div class="li_content"> 
+					 <p>No alarm processing occurs. 
+					 </p>
+ 
+				  </div></li>
+ 
+				</ul>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm"><em>alarm_</em>DELAY_ON 
+			 </dt>
+ 
+			 <dd> 
+				<p> This parameter delays the time (in seconds) that it takes for 
+				  <em>alarm_</em>ACT to be true (1) after the alarm condition is
+				  detected. If the alarm condition clears before the delay time is reached, the 
+				  <em>alarm_</em>ACT parameter remains false (0) and the timer is
+				  reset. Every time the alarm condition clears, the timer resets. 
+				</p>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm"><em>alarm_</em>DELAY_OFF 
+			 </dt>
+ 
+			 <dd> 
+				<p> This parameter delays the time (in seconds) that it takes for 
+				  <em>alarm_</em>ACT to be set to 0 (false) after the alarm condition
+				  clears. If the alarm condition reoccurs before the delay time is reached, the 
+				  <em>alarm_</em>ACT parameter remains true (1) and the timer is
+				  reset. Every time the alarm condition is detected, the timer resets. 
+				</p>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm"><em>alarm_</em>ENAB_DELAY 
+			 </dt>
+ 
+			 <dd> 
+				<p> This parameter delays the time (in seconds) before alarm
+				  processing begins immediately after the alarm is enabled (<em>alarm_</em>ENAB
+				  becomes true). The 
+				  <em>alarm_</em>ACT parameter is forced to 0 for the time specified
+				  (in seconds). The timer resets whenever 
+				  <em>alarm_</em>ENAB goes from zero to 1. 
+				</p>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm"><em>alarm_</em>HYS
+			 </dt>
+ 
+			 <dd> 
+				<p> This parameter is used as a deadband when resetting base alarm
+				  conditions for analog values. The block uses the value of 
+				  <em>alarm_</em>HYS instead of the standard ALARM_HYS. When
+				  conditional alarm detection is enabled, the block uses ALARM_HYS as the
+				  deadband for deviation alarm conditions only. 
+				</p>
+ 
+			 </dd>
+ 
+		   
+		</dl>
+ 
+		<p><strong>Example</strong> 
+		</p>
+ 
+		<p>Conditional alarming behavior is influenced by the module and block
+		  execution scan rates. For example, if a module executes at a five second scan
+		  rate and a block in the module executes every 10 module scans, then the block
+		  runs every 50 seconds. If any conditional alarming delay is set to 50 seconds
+		  or less, the delay condition is met the next time the block runs. So if the
+		  alarm condition is met, the alarm becomes active between 0 and 50 seconds after
+		  the alarm condition was met. If the delay condition was set to 51 seconds, the
+		  alarm would become active between 51 and 100 seconds after the alarm condition
+		  was met. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

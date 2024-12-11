@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV Predict" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="DeltaV Predict Algorithm, MPC controller, optimization, output constraints handling, process identification, process modeling" name="DC.subject" /><meta content="DeltaV Predict Algorithm, MPC controller, optimization, output constraints handling, process identification, process modeling" name="keywords" /><meta content="c_fblk_spec_mpc.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpc_process_sim.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_using_predict.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_using_ext_hist_data.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_tailor_perform_predict.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_D586A9ADA86743F0A247D9E9FCA9849A" name="DC.Identifier" /><title>DeltaV Predict</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_neural_dvn_extdata.html" /><link rel="next" href="c_predict_using_predict.html" /></head><body class="fixed" id="concept_D586A9ADA86743F0A247D9E9FCA9849A" data-relpath="c_predict.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A"></a>
+
+<h1 class="topictitle1">DeltaV Predict</h1>
+<div> 
+	 <p>DeltaV Predict implements multivariable, model predictive control in
+		DeltaV environments. It allows you to control interactive processes within
+		measurable operating constraints while automatically accounting for process
+		interaction and measurable disturbances. It also allows you to easily address
+		the numerous small and medium-sized multivariable processes (2×2, 3×3 or 8×8)
+		that can benefit from MPC technology.
+	 </p>
+ 
+	 <p>Predict allows users with moderate process control knowledge to apply
+		MPC control strategies. It also makes applying such strategies easier and
+		faster than it would be using a PID controller and traditional techniques to
+		address process disturbances, operating constraints, and loop interaction
+		through the application of feedforward, override control or decoupling
+		networks.
+	 </p>
+ 
+	 <p>DeltaV Predict consists of the following set of tools:
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__ul_D0A19E6C0686480DBC969CA1357934E8"></a><ul id="concept_D586A9ADA86743F0A247D9E9FCA9849A__ul_D0A19E6C0686480DBC969CA1357934E8"> 
+		<li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_2601A42515D946F285E087A9F7197BC4"><div class="li_content">Model Predictive Control
+		  (MPC) function block - allows you to implement multivariable control strategies
+		</div></li>
+ 
+		<li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_758C58E630FD4EA1AED6A5809A2D7CA2"><div class="li_content">MPC Simulation function
+		  block - allows you to create multivariable training systems
+		</div></li>
+ 
+		<li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_5325170604B247758F4547548C83E98D"><div class="li_content">Predict application - allows
+		  you to commission the MPC function block and create process models to use with
+		  the MPC Process Simulator function block
+		</div></li>
+ 
+		<li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_02080FC121CD4DEC93ADB88672855CBE"><div class="li_content">MPC Operate application and
+		  advanced control dynamos - enable operator to view and interact with control
+		  implemented with the MPC function block
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>The software components associated with the DeltaV Predict require that
+		you purchase licenses for the DeltaV controller and the ProfessionalPLUS
+		workstation.
+	 </p>
+ 
+	 <p>This chapter discusses the identification algorithm used for process
+		model identification as well as MPC control and process simulation. The control
+		and simulation functionality provided by the MPC and MPC Process Simulator
+		function blocks is described as well. This chapter also outlines how you can
+		use the Predict application to test a process and identify the associated step
+		response model to generate the control. In addition, it describes the
+		simulation provided by the MPC Process Simulator function block. It also
+		explains how to use a DeltaV Operate dynamo set to interface with the MPC
+		function block.
+	 </p>
+ 
+	 <p>The Model Predictive Control (MPC) function block can replace the
+		standard PID function block and other blocks that can be used with the PID
+		block to implement feedforward, decoupling networks, and override for
+		multivariable control. The MPC function block is contained in the Advanced
+		Control palette. You can configure and download this function block in a
+		similar way to other DeltaV control blocks. The MPC Process Simulator function
+		block is also part of the Advanced Control palette. You can use it to create an
+		offline operator training system for an application that utilizes model
+		predictive control.
+	 </p>
+ 
+	 <p>With DeltaV Predict, you can run an automated test on your process after
+		downloading the module containing the MPC function block. Data automatically
+		gathered by the Continuous Historian during testing is used by the Predict
+		application to create a step response model of your process. You can evaluate
+		the accuracy of the model using the verify support provided as part of the
+		model generation. DeltaV Predict uses the verified model to automatically
+		generate the controller matrix used by the MPC function block. Special advanced
+		control dynamos allow you to easily define an MPC operator interface.
+	 </p>
+ 
+	 <p>Once you have generated the control using DeltaV Predict, you can
+		download the module containing the MPC function block with the updated control
+		matrix into a DeltaV controller. Through the DeltaV Predict operator interface,
+		you can place the control into operation so that you can monitor it. A special
+		diagnostic screen allows you to detect any problems in MPC operation. If this
+		diagnostic tool shows that the process has changed, you can easily regenerate
+		the MPC controller and download it to the MPC function block.
+	 </p>
+ 
+	 <div class="section" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_13CD530022CC4E389960923278EEC051"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_13CD530022CC4E389960923278EEC051"></a><h2 class="sectiontitle">DeltaV Predict Algorithm </h2> 
+		 
+		<p>This section presents the technical background and implementation of
+		  Model Predictive Control (MPC) as implemented in DeltaV Predict. The applied
+		  predictive control algorithm has its roots in Dynamic Matrix Control (DMC) with
+		  significant modifications, such as prediction horizon-dependent penalty on
+		  error, control horizon-dependent penalties on moves, asymmetric funnel control,
+		  range control and reference trajectory. Controller robustness is substantially
+		  improved as a result of these enhancements.
+		</p>
+ 
+		<p>Understanding the details of the MPC algorithm is not necessary to
+		  successfully use DeltaV Predict. Skip to the Using DeltaV Predict topic unless
+		  you have an interest in how the MPC algorithm and the associated process
+		  identification are implemented in DeltaV Predict.
+		</p>
+ 
+		<p>Process identification is performed using two types of models: Finite
+		  Impulse Response (FIR) and Auto-Regressive (ARX). Model validation is
+		  accomplished by matching simulated and real process data. Constraints on the
+		  process outputs are handled by managing working setpoints of the controlled
+		  variables. Process optimization is achieved by maximizing or minimizing a
+		  selected process input until one manipulated variable approaches its limit.
+		  Such optimization is an inherent part of the MPC algorithm. The MPC algorithm
+		  is embedded in the DeltaV controller as a function block and is supported by
+		  DeltaV Predict.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_541BFA60092941F4B42D80B3C1E5F22D"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_541BFA60092941F4B42D80B3C1E5F22D"></a><h2 class="sectiontitle">Process Modeling and Identification </h2> 
+		 
+		<p>The process model is the basis of MPC technology. DeltaV Predict uses
+		  step response modeling for the MPC controller. This approach has been proven
+		  effective in numerous DMC applications. Step response modeling makes prediction
+		  of process outputs explicitly available for display in the application. The
+		  predicted error vector is computed as an input to the MPC controller.
+		  Displaying prediction to an operator is an important way to visually evaluate
+		  the process control. DeltaV Predict&#39;s operator interface displays the future
+		  process outputs. The MPC function block develops future process outputs as a
+		  process state and uses modified state space form for process modeling.
+		</p>
+ 
+		<p>For a single input, single output (SISO) process, the future
+		  prediction of the process output can be calculated as follows:
+		</p>
+ 
+		<p> 
+		  <em>x<sub>k+1</sub></em> = 
+		  <em>Ax<sub>k</sub></em> + 
+		  <em>BΔu<sub>k</sub></em> + 
+		  <em>FΔw<sub>k</sub></em>
+		</p>
+ 
+		<p> 
+		  <em>y<sub>0</sub></em> = 
+		  <em>Cx<sub>k+1</sub></em>
+		</p>
+ 
+		<p>where:
+		</p>
+ 
+		<p> 
+		  <em>x<sub>k</sub></em> = [<em>y</em><sup>0</sup>, 
+		  <em>y</em><sup>1</sup>, 
+		  <em>y<sup>i</sup></em>,…<em>y</em><sup><em>p</em>
+			 -1</sup>]<em><sup>T</sup></em> is vector of future output prediction 0,1…, 
+		  <em>i</em>,… , 
+		  <em>p</em>-1 steps ahead at the time 
+		  <em>k</em>
+		</p>
+ 
+		<p> 
+		  <em>A</em> is shift operator, which is defined as 
+		  <em>Ax<sub>k</sub></em> = [<em>y</em><sup>1</sup>, 
+		  <em>y</em><sup>2</sup>,…<em>y<sup>i</sup></em>,…, 
+		  <em>y</em><sup><em>p</em>-1</sup>, 
+		  <em>y</em><sup><em>p</em>-1</sup>]<em><sup>T</sup></em>
+		</p>
+ 
+		<p> 
+		  <em>B</em> = [<em>b</em><sub>0</sub>, 
+		  <em>b</em><sub>1</sub>,…<em>b<sub>i</sub></em>,…, 
+		  <em>b</em><sub><em>p</em>-1</sub>]<em><sup>T</sup></em> is vector of 
+		  <em>p</em> step response coefficients
+		</p>
+ 
+		<p>Δ<em>u<sub>k</sub></em> = 
+		  <em>u<sub>k</sub></em> - 
+		  <em>u</em><sub><em>k</em>-1</sub> is change on the process input/controller
+		  output at the time instant 
+		  <em>k</em>
+		</p>
+ 
+		<p>Δ<em>w<sub>k</sub></em> process output measurement - process model
+		  output, mismatch resulted from the noise, unmeasured disturbances, and model
+		  inaccuracy
+		</p>
+ 
+		<p> 
+		  <em>F</em> filter, 
+		  <em>p</em> dimension vector with unity default values
+		</p>
+ 
+		<p> 
+		  <em>C</em> is the operator that takes the first component of the 
+		  <em>x</em><sub><em>k</em>+1</sub> vector
+		</p>
+ 
+		<p>For an 
+		  <em>n</em> outputs and 
+		  <em>m</em> inputs process, vector 
+		  <em>Xk</em> has dimension 
+		  <em>n</em>*<em>p</em>, and vector 
+		  <em>B</em> is converted into a matrix with dimension 
+		  <em>n</em>*<em>p</em> rows and 
+		  <em>m</em> columns.
+		</p>
+ 
+		<p>You can identify the step response model using two modeling
+		  techniques: FIR and ARX. Use the short horizon process model to identify the
+		  differential FIR model. For example, the following equation applies to the SISO
+		  process:
+		</p>
+ 
+		<a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_338580B565EF48A595C5F4EEDE6FAAFB"></a><img id="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_338580B565EF48A595C5F4EEDE6FAAFB" src="siso1.png" /> 
+		<p>Where Δ<em>y<sub>k</sub></em> = 
+		  <em>y<sub>k</sub></em> - 
+		  <em>y</em><sub><em>k</em>-1</sub> is the change on the process output at
+		  the time instant 
+		  <em>k</em>.
+		</p>
+ 
+		<p> 
+		  <em>p</em> is prediction horizon, with a typical default value for MPC
+		  model 120. Identifying step response with full prediction horizon and as many
+		  as 120 coefficients causes overfitting and results in significant parameter
+		  uncertainty.
+		</p>
+ 
+		<p>By using a short horizon with 30 or 40 points for the FIR model, you
+		  can avoid model overfitting. An FIR model with a short horizon provides an
+		  initial part of the step response and is adequate for defining dead times using
+		  a heuristic approach. The dead times are then used in a ARX model, which has
+		  significantly fewer coefficients than an FIR model. For example, the following
+		  equation applies to the SISO process:
+		</p>
+ 
+		<a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_75EA77FA7ED24271A07EACC28D336790"></a><img id="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_75EA77FA7ED24271A07EACC28D336790" src="siso2.png" /> 
+		<p> 
+		  <em>A</em> and 
+		  <em>V</em> are autoregressive and moving average orders of ARX with a
+		  default value of 4.
+		</p>
+ 
+		<p>For a MIMO process, superposition is applied from each input (additive
+		  action) on every output both in FIR and ARX models.
+		</p>
+ 
+		<p>Use an ARX model and apply unit step on one of the inputs to get step
+		  responses for that input. To get a complete model, repeat the procedure of
+		  applying unit steps for every input.
+		</p>
+ 
+		<p>As a result of using this combined identification technique, an
+		  optimal process model is developed.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_2D6D4DFF42D340E598176D4C00DE396B"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_2D6D4DFF42D340E598176D4C00DE396B"></a><h2 class="sectiontitle">MPC Controller </h2> 
+		 
+		<p>The MPC controller minimizes the squared error of a controlled
+		  variable over prediction horizon and the squared error of controller output
+		  over control horizon:
+		</p>
+ 
+		<p> 
+		  <strong>min</strong> {||Γ<strong><sup>y</sup></strong>[<strong>X</strong>(k) - 
+		  <strong>R</strong>(k)]||<strong><sup>2</sup></strong> +
+		  ||Γ<sup>u</sup>Δ<strong>U</strong>(k)||<strong><sup>2</sup></strong>}
+		</p>
+ 
+		<p>Δ<strong>U</strong>(k)
+		</p>
+ 
+		<p>where:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__ul_70E18C608BF44360B85F82E563CC2C18"></a><ul id="concept_D586A9ADA86743F0A247D9E9FCA9849A__ul_70E18C608BF44360B85F82E563CC2C18"> 
+		  <li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_21385B7C93D2482A8AE001EDD1D8D915"><div class="li_content"> 
+			 <strong>X</strong>(k) = controlled output p-step ahead prediction vector
+		  </div></li>
+ 
+		  <li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_B7E9D979E8FE4350BC4BCEA637FD8E52"><div class="li_content"> 
+			 <strong>R</strong>(k) = p-step ahead setpoint vector
+		  </div></li>
+ 
+		  <li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_FD1AD5C39A2F417EB56188512EB56380"><div class="li_content">Δ<strong>U</strong>(k) = m-step
+			 ahead incremental controller output moves vector
+		  </div></li>
+ 
+		  <li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_AA7BA0C313F04E9F97BE3A801F215550"><div class="li_content">Γ<sup><strong>y</strong></sup> =
+			 diag(Γ<sup>y</sup>1,… , Γ<sup>y</sup><sub>p</sub>) = penalty matrix on the
+			 output error
+		  </div></li>
+ 
+		  <li id="concept_D586A9ADA86743F0A247D9E9FCA9849A__li_96E10B771E7643A1AE9587D7480E5678"><div class="li_content">Γ<sup><strong>u</strong></sup> =
+			 diag(Γ<sup>u</sup>1,… , Γ<sup>u</sup>m) = penalty matrix on the control moves
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The solution is in the form:
+		</p>
+ 
+		<p>Δ<strong>U</strong>(k) =
+		  (<strong>S<sup>uT</sup></strong>Γ<strong><sup>yT</sup></strong>Γ<strong><sup>y</sup>S<sup>u</sup></strong> +
+		  Γ<strong><sup>uT</sup></strong>Γ<strong><sup>u</sup></strong>)<sup>-1</sup><strong>S<sup>uT</sup></strong>Γ<strong><sup>yT</sup></strong>Γ<strong><sup>y</sup>E<sub>p</sub></strong>(k)
+		</p>
+ 
+		<p>where:
+		</p>
+ 
+		<p> 
+		  <strong>S<sup>u</sup></strong> = process dynamic matrix built from step
+		  responses, 
+		  <em>p</em> × 
+		  <em>m</em> for SISO model and 
+		  <em>p</em>*<em>no</em> × 
+		  <em>m</em>*<em>ni</em> matrix for MIMO model with 
+		  <em>ni</em> inputs and 
+		  <em>no</em> outputs
+		</p>
+ 
+		<p> 
+		  <strong>E<sub>p</sub></strong>(k) = error vector over prediction horizon
+		</p>
+ 
+		<p>The performance of the control algorithm can be modified using the
+		  following adjustable parameters: 
+		  <em>p, m</em>, Γ<strong><sup>u</sup></strong>, and Γ<strong><sup>y</sup></strong>. From an
+		  implementation standpoint, 
+		  <em>p</em> and 
+		  <em>m</em> are not convenient to use as tuning parameters. In DMC
+		  implementations, Γ<strong><sup>u</sup></strong> and Γ<strong><sup>y</sup></strong> are applied as
+		  scalars (that is, control error is multiplied by the scalar
+		  Γ<strong><sup>y</sup></strong> over the whole prediction horizon), and any controller
+		  moves over control horizon are multiplied by the scalar Γ<strong><sup>u</sup></strong>.
+		</p>
+ 
+		<p>The robustness of the controller can be significantly improved by
+		  shaping Γ<strong><sup>y</sup></strong> and Γ<strong><sup>u</sup></strong> coefficients dependent on
+		  control error and control move predictions. Various functions can be used for
+		  shaping the coefficients of Γ<strong><sup>y</sup></strong> - linear, exponential, and so
+		  on. The current implementation applies linear function with the option to set
+		  some initial coefficients to zero. The number of initial coefficients in
+		  Γ<strong><sup>y</sup></strong> equal to zero is called the patience factor. The
+		  application of incremental penalty on error function is preferred when the
+		  initial part of a step response is uncertain but process steady gain is
+		  reasonably well defined.
+		</p>
+ 
+		<p>Γ<strong><sup>u</sup></strong> is a basic controller-tuning parameter defined at
+		  the controller generation phase. Increasing Γ<strong><sup>u</sup></strong> makes control
+		  more damped, and, in reverse, decreasing Γ<strong><sup>u</sup></strong> makes the control
+		  action more aggressive and control response faster. Another degree of tuning
+		  can be achieved by applying decreasing penalties on future moves. This makes
+		  the first controller move less aggressive since next moves are relaxed and can
+		  be used with less penalties for error correction. It is readily apparent that
+		  the second and next moves, in this case, can violate move constraints. This is
+		  not a practical concern since controller moves are recalculated during every
+		  scan and only the first move is implemented. As a result, the first move is
+		  smaller and controller robustness is increased.
+		</p>
+ 
+		<p>In addition to shaping the controller structure at the generation
+		  phase, a number of features have been implemented to manage controller behavior
+		  and robustness online. Refer to the following figure.
+		</p>
+ 
+		<div class="fignone" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__fig_DB3CBE76D40E4365A8CA11503A7DD882"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__fig_DB3CBE76D40E4365A8CA11503A7DD882"></a><div><span class="figcap">Reference Trajectory with Funnel and Range Control</span></div> 
+		   
+		  <a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_1F2E98AA47774E8B9C711BA70D3BE8A5"></a><img id="concept_D586A9ADA86743F0A247D9E9FCA9849A__image_1F2E98AA47774E8B9C711BA70D3BE8A5" src="Clean.gif" /> 
+		</div>
+ 
+		<p>One important tuning parameter is the setpoint filter, which is also
+		  known as the reference trajectory. The Predict trajectory acts in a different
+		  way than the trajectory currently used in other MPC products. Instead of
+		  penalizing any departure from the trajectory, only those deviations that are
+		  below trajectory or above setpoint value are penalized (Area A and Area C if
+		  control range = 0). In addition, the control error is considered zero if the
+		  control variable is within range (Area C with range &gt; 0). These features
+		  constitute a funnel control, which can be shaped online by changing the
+		  setpoint filter time constant and range, which further enhances controller
+		  robustness and flexibiltiy.
+		</p>
+ 
+		<p>During controller generation, all of the controller settings are
+		  calculated depending on process model, and there is no need for user
+		  involvement. However, if you identify yourself as an Expert using the Option
+		  selection in DeltaV Predict, you can change default controller settings to
+		  enhance specific features.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_ED0AD0E728D141EF8625AC90A0884C0B"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_ED0AD0E728D141EF8625AC90A0884C0B"></a><h2 class="sectiontitle">Output Constraints Handling </h2> 
+		 
+		<p>A typical MPC configuration includes both controlled and constrained
+		  variables. The MPC controller does not take action on constrained variables
+		  unless a predicted constraint variable violates the constraint limit. In that
+		  case, the MPC controller changes the working setpoint of the selected
+		  controlled variable on the value:
+		</p>
+ 
+		<p>Δ<em>SP<sub>CV</sub></em> =
+		  -<em>r</em>*<em>G<sub>CV</sub></em><sub>-<em>AV</em></sub>*Δ<em>AV</em>
+		</p>
+ 
+		<p>where:
+		</p>
+ 
+		<p>Δ<em>AV</em> = the magnitude of the predicted steady state constraint
+		  violation
+		</p>
+ 
+		<p> 
+		  <em> G<sub>CV</sub></em><sub>-<em>AV</em></sub> = the gain relationship
+		  between constraint variable (<em>AV</em>) and 
+		  <em>CV</em>
+		</p>
+ 
+		<p> 
+		  <em>r</em> = the relaxation factor, &lt; 1
+		</p>
+ 
+		<p>Δ<em>SP<sub>CV</sub></em> = the change in working setpoint of the
+		  controlled variable
+		</p>
+ 
+		<p>The association between constrained variables and controlled variables
+		  is established during configuration. Therefore, the gain relationship is
+		  defined automatically from the process model. If the constraint limit violation
+		  ends, the working setpoint returns in a stepwise manner to the desired setpoint
+		  value.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_5A53CBF4E5CE468B8CF4392F6037091F"><a name="concept_D586A9ADA86743F0A247D9E9FCA9849A__section_5A53CBF4E5CE468B8CF4392F6037091F"></a><h2 class="sectiontitle">Optimization </h2> 
+		 
+		<p>The objectives of optimization often include maximizing product value
+		  and minimizing raw material cost. In most cases where a linear model is applied
+		  for control, linear programming (LP) can be applied for optimization equally
+		  well. The Simplex algorithm or its modifications serves for the LP optimal
+		  solution. If a feasible solution exists, it is always located at one of the
+		  limit intersections. We use this result to perform simple optimization. This is
+		  done using a priori knowledge where we know there are optimization targets,
+		  such as the minimization or maximization of one of the production parameters
+		  within constraints on process inputs.
+		</p>
+ 
+		<p>A typical MPC configuration can include three controlled parameters
+		  (CV), up to four constraint parameters (AVs), and up to four disturbances
+		  (DVs). To control three CVs, three manipulated variables (MVs) plus at least
+		  one additional MV are used for optimization. The extra MV controls a process
+		  input that sets up the optimized parameter for production rate or raw material
+		  cost. Finally, an extra CV is introduced, which is a shadow of the optimized
+		  MV. This is done by connecting the optimizing MV to an extra CV. In DeltaV
+		  Predict, we call this the optimizing CV. The MPC controller generated for this
+		  configuration becomes an optimizing controller. By setting the setpoint of the
+		  optimizing CV to a maximum (or minimum) achievable value of the optimizing MV,
+		  the MPC function block drives the optimizing MV toward optimal value at the
+		  setpoint of the optimizing CV until any of the manipulated variables (or,
+		  specifically, any predicted value of MV) violates an input limit. Then, the
+		  optimizing MV changes until all manipulated variables are within their input or
+		  output limits.
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_predict_using_predict.html">Using DeltaV Predict</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_using_ext_hist_data.html">Using External Historical Data with Predict</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_tailor_perform_predict.html">Tailoring MPC Control Performance</a><br />
+</li>
+</ul>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_spec_mpc.html">Model Predictive Control (MPC) function block</a></div>
+<div><a href="c_fblk_spec_mpc_process_sim.html">Model Predictive Control Process Simulator function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Implementing bussed field power for applications using DI and DO channels" name="DC.Title" /><meta content="Plan" name="DC.Coverage" /><meta content="Install" name="DC.Coverage" /><meta content="AppK_over.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_22D9BB1451FD456183528F95F8D936AF" name="DC.Identifier" /><title>Implementing bussed field power for applications using DI and DO channels</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="SizingRCSnubbers.html" /><link rel="next" href="MDplusMX.html" /></head><body class="fixed" id="reference_22D9BB1451FD456183528F95F8D936AF" data-relpath="BussedFieldPwrForDIAndDOApps.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_22D9BB1451FD456183528F95F8D936AF"></a>
+
+<h1 class="topictitle1">Implementing bussed field power for applications using DI and DO
+	 channels</h1>
+<div> 
+	 <div class="section" id="reference_22D9BB1451FD456183528F95F8D936AF__section_3016DC8823C8476CBFF09AA3BB43CF3F"><a name="reference_22D9BB1451FD456183528F95F8D936AF__section_3016DC8823C8476CBFF09AA3BB43CF3F"></a> 
+		<p>Observe the following guidelines if you implement bussed field power
+		  for applications that use DI and DO channels (I/O cards and CHARMs). 
+		</p>
+ 
+		<p>If you use DeltaV discrete input cards (isolated or dry contact) to
+		  sense a contact closure in a field device, use an arc suppression device at the
+		  contact. This arc suppression device can be an R-C snubber or a varistor, as
+		  shown in the following figure for isolated discrete inputs. 
+		</p>
+ 
+		<div class="fignone" id="reference_22D9BB1451FD456183528F95F8D936AF__fig_1F5D468FF279456E847F1132BDD31613"><a name="reference_22D9BB1451FD456183528F95F8D936AF__fig_1F5D468FF279456E847F1132BDD31613"></a><div><span class="figcap">Arc suppression device examples for contact closure detection
+			 (isolated discrete input cards)</span></div> 
+		   
+		  <br /><a name="reference_22D9BB1451FD456183528F95F8D936AF__image_A2E6D936E4D14171AC0F9AF4807953C8"></a><div class="imageleft"><img class="imageleft" id="reference_22D9BB1451FD456183528F95F8D936AF__image_A2E6D936E4D14171AC0F9AF4807953C8" src="Di24i_f1.gif" /></div><br /> 
+		</div>
+ 
+		<p>The following table lists example R-C values based on the load
+		  provided by the input card and the formulas provided in the Sizing R-C Snubbers
+		  topic. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="reference_22D9BB1451FD456183528F95F8D936AF__table_5032B45A5AFE4ED7A5915DAF630827B8"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_22D9BB1451FD456183528F95F8D936AF__table_5032B45A5AFE4ED7A5915DAF630827B8" rules="all" summary=""><caption><span class="tablecap">Example R-C values</span></caption> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d205906e54" valign="top" width="NaN%">Load from Input Card 
+				</th>
+ 
+				<th class="cellrowborder" id="d205906e57" valign="top" width="NaN%">R Value 
+				</th>
+ 
+				<th class="cellrowborder" id="d205906e60" valign="top" width="NaN%">C Value 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e54 " valign="top" width="NaN%">24 VDC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e57 " valign="top" width="NaN%">5 kΩ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e60 " valign="top" width="NaN%">2.4 nF 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e54 " valign="top" width="NaN%">120 VAC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e57 " valign="top" width="NaN%">60 Ω 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e60 " valign="top" width="NaN%">0.12 nF 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e54 " valign="top" width="NaN%">230 VAC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e57 " valign="top" width="NaN%">115 Ω 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e60 " valign="top" width="NaN%">0.01 nF 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>If you use DeltaV isolated discrete input cards to sense solid state
+		  devices such as triacs, you may need to place some resistance in parallel with
+		  the input to avoid false triggering due to leakage currents. Size the resistor
+		  so that the voltage level generated by leakage current through the switch is
+		  less than the upper limit for OFF voltage at the input card. The resistor
+		  wattage must support the following calculation for dissipation when the switch
+		  is ON: 
+		</p>
+ 
+		<br /><a name="reference_22D9BB1451FD456183528F95F8D936AF__image_3AD66CCE71D34A80BD7EB0D21D33DC1C"></a><div class="imageleft"><img class="imageleft" id="reference_22D9BB1451FD456183528F95F8D936AF__image_3AD66CCE71D34A80BD7EB0D21D33DC1C" src="DissCalc.png" /></div><br />
+		
+		<div class="p">where: 
+		  <p>V=voltage</p>
+ 
+		  <p>R=resistance</p>
+ 
+		</div>
+ 
+		<p>You can use DeltaV dry contact discrete input cards to sense a solid
+		  state device only if the leakage of the switch is less than the upper limit for
+		  OFF current of the input card. The following table lists the upper limit of the
+		  OFF current for the DeltaV input cards. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="reference_22D9BB1451FD456183528F95F8D936AF__table_2EF51E420AA448399F7C1772B6A49483"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_22D9BB1451FD456183528F95F8D936AF__table_2EF51E420AA448399F7C1772B6A49483" rules="all" summary=""><caption><span class="tablecap"> Current limits for input cards </span></caption> 
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d205906e139" valign="top" width="NaN%">Input Card Voltage Level 
+				</th>
+ 
+				<th class="cellrowborder" id="d205906e142" valign="top" width="NaN%">Upper Limit of OFF Current 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e139 " valign="top" width="NaN%">24 VDC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e142 " valign="top" width="NaN%">1 mA 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e139 " valign="top" width="NaN%">120 VAC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e142 " valign="top" width="NaN%">0.56 mA 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d205906e139 " valign="top" width="NaN%">230 VAC 
+				</td>
+ 
+				<td class="cellrowborder" headers="d205906e142 " valign="top" width="NaN%">0.28 mA 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>If you use DeltaV AC discrete output cards or CHARMs (high-side or
+		  isolated) to drive inductive loads such as relay coils, it is recommended that
+		  the kickback from the coil be suppressed at the coil with an R-C snubber or a
+		  varistor. The following figure is a wiring diagram example for a high-side
+		  discrete output. Sizing for the suppressor is load-dependent; refer to the
+		  Sizing R-C Snubbers topic and to the documentation for the field device or
+		  suppressor. 
+		</p>
+ 
+		<div class="fignone" id="reference_22D9BB1451FD456183528F95F8D936AF__fig_14CCC5143D764A178F50EE7881071B7B"><a name="reference_22D9BB1451FD456183528F95F8D936AF__fig_14CCC5143D764A178F50EE7881071B7B"></a><div><span class="figcap">Examples for driving inductive loads with AC output channels
+			 (high-side discrete output)</span></div> 
+		   
+		  <br /><div class="imageleft"><img class="imageleft" src="DOACH_F3.gif" /></div><br />
+		  
+		</div>
+ 
+		<p>If you use DC discrete output cards or CHARMs to drive inductive loads
+		  such as solenoid valves and relay coils, it is recommended that the kickback
+		  from the inductive load is suppressed at the device by a parallel
+		  reverse-biased diode (such as a 1N4004). The following figure is a wiring
+		  diagram example for a high-side discrete output. Connecting the snubber diode
+		  at the load ensures that the output channel circuitry is protected from the
+		  inductive kickback in all configurations. Additionally, it suppresses the
+		  electrical noise that would otherwise have been generated on the wiring and
+		  potentially coupled onto adjacent field wiring. 
+		</p>
+ 
+		<div class="fignone" id="reference_22D9BB1451FD456183528F95F8D936AF__fig_BFAD432740724D01BF7152C256A7F33E"><a name="reference_22D9BB1451FD456183528F95F8D936AF__fig_BFAD432740724D01BF7152C256A7F33E"></a><div><span class="figcap">Example for driving inductive loads with DC output channels
+			 (high-side discrete output)</span></div> 
+		   
+		  <br /><div class="imageleft"><img class="imageleft" src="DO24H_F2.gif" /></div><br />
+		  
+		</div>
+ 
+		<p>If your field device has low current requirements, you can connect a
+		  loading resistor in parallel with your load to limit the effect of leakage
+		  currents on DeltaV discrete AC output channels (cards and CHARMs). Size the
+		  resistor to provide a total load of 10 mA and to handle the heat dissipation
+		  for this load. For example, a 12 K Ω, 2 W resistor is appropriate for 120 VAC
+		  and a 23 K Ω, 3 W resistor is appropriate for 230 VAC. 
+		</p>
+ 
+		<p>In electrically noisy environments, place one varistor in parallel
+		  with the field terminal blocks at the I/O card or CHARM and another varistor in
+		  parallel with the bussed field power connection to the carrier. Size the
+		  varistor for 20% above the nominal line voltage. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

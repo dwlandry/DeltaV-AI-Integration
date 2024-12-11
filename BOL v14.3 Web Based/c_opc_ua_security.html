@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="OPC UA security" name="DC.Title" /><meta content="OPC UA security, certificates for OPC UA" name="DC.subject" /><meta content="OPC UA security, certificates for OPC UA" name="keywords" /><meta content="c_develop_certificate_solution.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_opc_ua_server.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_for_opc_ua_client.html" name="DC.Relation" scheme="URI" /><meta content="c_best_practices_opc_ua.html" name="DC.Relation" scheme="URI" /><meta content="c_develop_certificate_solution.html" name="DC.Relation" scheme="URI" /><meta content="r_certificate_store_locations.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_opc_ua_server.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_for_opc_ua_client.html" name="DC.Relation" scheme="URI" /><meta content="c_manage_opc_ua_certs.html" name="DC.Relation" scheme="URI" /><meta content="c_opc_ua_user_authentication.html" name="DC.Relation" scheme="URI" /><meta content="t_set_up_username_login_for_workstation.html" name="DC.Relation" scheme="URI" /><meta content="t_set_up_username_login_for_pk.html" name="DC.Relation" scheme="URI" /><meta content="t_setup_certificate_logon_wkserv_dvclient.html" name="DC.Relation" scheme="URI" /><meta content="t_setup_certificate_logon_wkserv_3pclient.html" name="DC.Relation" scheme="URI" /><meta content="t_setup_certificate_logon_pkserv_dvclient.html" name="DC.Relation" scheme="URI" /><meta content="t_setup_certificate_logon_pkserv_30client.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_opc_ua_security" name="DC.Identifier" /><title>OPC UA security</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_assign_an_opc_ua_signal_to_fb_param.html" /><link rel="next" href="c_best_practices_opc_ua.html" /></head><body class="fixed" id="c_opc_ua_security" data-relpath="c_opc_ua_security.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_opc_ua_security"></a>
+
+<h1 class="topictitle1">OPC UA security</h1>
+<div> 
+	 <div class="p"> OPC UA uses digital certificate security based on the X.509 standard.
+		OPC UA security enables you to: 
+	 <ul> 
+		<li><div class="li_content">sign and encrypt the data you send and receive 
+		</div></li>
+ 
+		<li><div class="li_content">verify the identity of the application (client or server) and user 
+		</div></li>
+ 
+		<li><div class="li_content">require authentication through a user name and password 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>DeltaV software supports these OPC UA security features. These features
+		are optional, but Emerson recommends that you use them to ensure the security
+		and integrity of the data that you receive and send to and from your DeltaV
+		control system. 
+	 </p>
+ 
+	 <p>Before you begin implementing security, review the subsections. These
+		subsections provide a basic overview of functionality. 
+	 </p>
+ 
+	 <div class="section"><h2 class="sectiontitle">References</h2> 
+		 
+		<div class="p">For more information about OPC UA security and digital certificates in
+		  general, refer to the following: 
+		<ul> 
+		  <li><div class="li_content"><cite>OPC Unified Architecture Specification Part 2: Security Model
+				(OPC Foundation)</cite> 
+		  </div></li>
+ 
+		  <li><div class="li_content"><cite>Digital Certificates for Web-Based DeltaV Applications
+				(DeltaV white paper)</cite> 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Security modes</h2> 
+		 
+		<p>You can specify whether you want the Sign security mode or the Sign
+		  and Encrypt security mode when you implement security. In addition, you specify
+		  whether to require user authentication. 
+		</p>
+ 
+		<p>When you select the Sign security mode, clients and servers can only
+		  communicate with trusted endpoints. When you select the Sign and Encrypt
+		  security mode, you get the sign security features described above. In addition,
+		  data is encrypted so that only trusted clients and servers in your application
+		  can read the data using a private key. 
+		</p>
+ 
+		<p>DeltaV OPC UA Security supports both CA-signed (Certificate Authority
+		  signed) and self-signed certificates. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Security policies</h2> 
+		 
+		<p>DeltaV OPC UA security supports the Basic128Rsa15, Basic256, and
+		  Basic256Sha256 security policies. Basic256Sha256 is the strongest of these
+		  policies. Select Basic256Sha256 if your client and server both support it. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Authentication</h2> 
+		 
+		<p>There are two types of user authentication, Username/Password Logon
+		  and Certificate Logon. You can select either or both options for DeltaV
+		  servers. 
+		  <span>For DeltaV clients, you can select one type from the
+			 drop-down list in the client&#39;s PDT properties dialog. 
+		  </span>
+		</p>
+ 
+		<p>If you select Username/Password logon, communications require a DeltaV
+		  username and password with the OPC UA option. If you select Certificate Logon,
+		  communications require a user certificate. 
+		</p>
+ 
+		<div class="p">When you implement OPC UA security, you select one of the following
+		  message formats: 
+		<ul> 
+		  <li><div class="li_content">Binary 
+		  </div></li>
+ 
+		  <li><div class="li_content">XML 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_best_practices_opc_ua.html">Best practices for optimizing OPC UA security in a DeltaV
+	 system</a><br />
+</li>
+<li class="ulchildlink"><a href="c_develop_certificate_solution.html">Developing a digital certification
+	 solution for OPC UA</a><br />
+</li>
+<li class="ulchildlink"><a href="r_certificate_store_locations.html">OPC UA certificate storage locations</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_implementing_security_opc_ua_server.html">Implementing security for a DeltaV OPC UA server</a><br />
+</li>
+<li class="ulchildlink"><a href="c_implementing_security_for_opc_ua_client.html">Implementing security for a DeltaV OPC UA client</a><br />
+</li>
+<li class="ulchildlink"><a href="c_manage_opc_ua_certs.html">Managing OPC UA security certificates</a><br />
+</li>
+<li class="ulchildlink"><a href="c_opc_ua_user_authentication.html">OPC UA user authentication</a><br />
+</li>
+<li class="ulchildlink"><a href="t_set_up_username_login_for_workstation.html">Set up Username/Password logon for an OPC UA workstation
+	 server</a><br />
+</li>
+<li class="ulchildlink"><a href="t_set_up_username_login_for_pk.html">Set up Username/Password logon for an OPC UA PK controller
+	 server</a><br />
+</li>
+<li class="ulchildlink"><a href="t_setup_certificate_logon_wkserv_dvclient.html">Set up Certificate Logon for a DeltaV OPC UA workstation server with
+	 DeltaV clients</a><br />
+</li>
+<li class="ulchildlink"><a href="t_setup_certificate_logon_wkserv_3pclient.html">Set up Certificate Logon for a DeltaV OPC UA workstation server with
+	 third-party clients</a><br />
+</li>
+<li class="ulchildlink"><a href="t_setup_certificate_logon_pkserv_dvclient.html">Set up Certificate Logon for a DeltaV OPC UA PK controller server with
+	 DeltaV clients</a><br />
+</li>
+<li class="ulchildlink"><a href="t_setup_certificate_logon_pkserv_30client.html">Set up Certificate Logon for a DeltaV OPC UA PK controller server with
+	 third-party clients</a><br />
+</li>
+</ul>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_develop_certificate_solution.html">Developing a digital certification
+	 solution for OPC UA</a></div>
+<div><a href="c_implementing_security_opc_ua_server.html">Implementing security for a DeltaV OPC UA server</a></div>
+<div><a href="c_implementing_security_for_opc_ua_client.html">Implementing security for a DeltaV OPC UA client</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

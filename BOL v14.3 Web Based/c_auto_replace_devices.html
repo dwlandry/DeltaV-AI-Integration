@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Automatically replacing fieldbus devices" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="t_create_device_placeholder.html" name="DC.Relation" scheme="URI" /><meta content="c_auto_commission_fb_devices.html" name="DC.Relation" scheme="URI" /><meta content="c_preventing_disturbances_from_replacing_devices.html" name="DC.Relation" scheme="URI" /><meta content="c_device_replacement.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_auto_replace_devices" name="DC.Identifier" /><title>Automatically replacing fieldbus devices</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_replacing_with_explorer_and_replacement_wizard.html" /><link rel="next" href="c_preventing_disturbances_from_replacing_devices.html" /></head><body class="fixed" id="c_auto_replace_devices" data-relpath="c_auto_replace_devices.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_auto_replace_devices"></a>
+
+<h1 class="topictitle1">Automatically replacing fieldbus devices</h1>
+<div><div></div>
+ 
+    <p>The DeltaV system supports the automatic replacement of fieldbus devices
+      when AMS Device Manager (licensed or unlicensed) is installed. When fieldbus
+      device auto-replacement is enabled as a DeltaV system property on the
+      ProfessionalPLUS workstation, it is possible to automatically replace a
+      fieldbus device on a segment as long as the replacement device matches the
+      manufacturer, type, revision, and device tag of a configured device placeholder
+      in the DeltaV Explorer. 
+    </p>
+ 
+    <p>To enable automatic fieldbus device replacement, select the active
+      database in the DeltaV Explorer, select 
+      <span class="uicontrol">Properties</span> from the context menu, and select the 
+      <span class="uicontrol">Enable Fieldbus Device Auto-replacement</span> option.
+      The active database is at the top level in the DeltaV Explorer hierarchy. By
+      default the active database is DeltaV_System. 
+    </p>
+ 
+    <div class="important"><span class="importanttitle">Important:</span>  
+      <p> Process loops that are configured to run in replacement devices begin
+        running immediately after the device is replaced. To prevent process
+        disturbances, certain types of fieldbus devices require preconfiguration such
+        as routine calibration and sensor configuration before commissioning. 
+      </p>
+ 
+    </div>
+ 
+    <p><a name="c_auto_replace_devices__image_9A0F04701F22462D824DB266D79ECABF"></a><img id="c_auto_replace_devices__image_9A0F04701F22462D824DB266D79ECABF" src="Properties.PNG" /> 
+    </p>
+ 
+    <p> 
+      <strong id="c_auto_replace_devices__direction"><a name="c_auto_replace_devices__direction"></a>Direction of Data Transfer</strong> 
+    </p>
+ 
+    <p>The direction of data transfer, that is whether the configuration data
+      is transferred from the device to the placeholder or from the placeholder to
+      the device, is determined by the 
+      <span class="uicontrol">Device data is master</span> option on the active
+      database&#39;s 
+      <span class="wintitle">Properties</span> dialog. The active database is at the top
+      level in the DeltaV Explorer hierarchy. In the above image, the active database
+      is DeltaV_System. When the 
+      <span class="uicontrol">Device data master</span> option is enabled, the device&#39;s
+      configuration data overwrites the device placeholder&#39;s configuration data in
+      the database during automatic device replacement. When this option is not
+      enabled, the device placeholder&#39;s configuration data in the database overwrites
+      the device&#39;s configuration data during automatic device replacement. When the 
+      <span class="uicontrol">Enable Fieldbus Device Auto-replacement</span> option is
+      enabled, the 
+      <span class="uicontrol">Device data is master</span> option is not enabled by
+      default. 
+    </p>
+ 
+    <p>Before replacing a device, be sure that the port is downloaded and that
+      the placeholder device is commissioned and downloaded. A blue triangle on an
+      item in DeltaV Explorer indicates that the item needs downloading. For example,
+      the port in the following image needs downloading. 
+    </p>
+ 
+    <div class="fignone" id="c_auto_replace_devices__fig_106440045A11492FAC2758F652D00EDF"><a name="c_auto_replace_devices__fig_106440045A11492FAC2758F652D00EDF"></a><div><span class="figcap">Port with Blue Triangle</span></div> 
+       
+      <a name="c_auto_replace_devices__image_2671F5C65BDD4FF4B23EADC153882A7A"></a><img id="c_auto_replace_devices__image_2671F5C65BDD4FF4B23EADC153882A7A" src="download.png" /> 
+    </div>
+ 
+    <p>To automatically replace a device, simply disconnect the existing
+      device, and connect the replacement device. 
+    </p>
+ 
+    <p>For the replacement service to start and complete properly ensure that: 
+    </p>
+ 
+    <a name="c_auto_replace_devices__ul_318F5B805F7E4F4F8C7F4C7EB86EC9D7"></a><ul id="c_auto_replace_devices__ul_318F5B805F7E4F4F8C7F4C7EB86EC9D7"> 
+      <li id="c_auto_replace_devices__li_0EE11AA89BA34BCE9EDE0E5B327656B1"><div class="li_content"> 
+        <p>Automatic device replacement is enabled on the active database&#39;s
+          Properties page 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_auto_replace_devices__li_E25A7312DE1B43F793DB0C10AACD58A8"><div class="li_content"> 
+        <p>The ProfessionalPLUS workstation&#39;s setup data has been downloaded 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_auto_replace_devices__li_81945486DE86459D8931ADF56AD36888"><div class="li_content"> 
+        <p>The direction of data transfer (device is master, database is
+          master) has been specified. 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_auto_replace_devices__li_BE0A5238E9BE47C39D278F091732F67B"><div class="li_content"> 
+        <p>The device to be replaced has been removed from the fieldbus segment
+          and the placeholder is not decommissioned 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_auto_replace_devices__li_357A47D897E64DFA800CE4952EB21C73"><div class="li_content"> 
+        <p>The port does not require a downloaded (no blue triangles on the
+          port) 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_auto_replace_devices__li_596369F72B514B5288F8CA7F9519F5ED"><div class="li_content"> 
+        <p>The replacement device is of the same manufacturer, device type,
+          device revision, and tag as the device to be replaced 
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p> 
+      <strong>Monitoring the Device Replacement Progress</strong> 
+    </p>
+ 
+    <p>While replacing a fieldbus device, use the Automatic Fieldbus Device
+      Replacement/Commission Monitor to monitor the progress of the device
+      replacement process. Open DeltaV Diagnostics and click 
+      <span class="menucascade"><span class="uicontrol">Tools</span> &gt; <span class="uicontrol">Automatic Fieldbus
+          Device Replacement/Commission Monitor</span></span>. 
+    </p>
+ 
+    <p><a name="c_auto_replace_devices__image_F4C8A27A22784DD4941AC17378A1D611"></a><img id="c_auto_replace_devices__image_F4C8A27A22784DD4941AC17378A1D611" src="DiagnosticsMonitor.PNG" /> 
+    </p>
+ 
+    <p>The information on the replacement progress is not automatically updated
+      in this dialog; click the 
+      <span class="uicontrol">Refresh</span> button periodically to update it. Click
+      the 
+      <span class="uicontrol">Help</span> button for more information on this dialog. 
+    </p>
+ 
+    <p> 
+      <strong>Examine any System Messages in Process History View</strong> 
+    </p>
+ 
+    <p>After device replacement is complete, it is good practice to use the
+      Process History View application to examine how the process functioned during
+      device replacement. For example, you would want to ensure that there are no
+      configuration errors with modules running in devices that were replaced. Click 
+      <span class="menucascade"><span class="uicontrol">Start</span> &gt; <span class="uicontrol">DeltaV
+          Operator</span> &gt; <span class="uicontrol">Process History View</span></span>.
+      Use the online help for information on using the application. The following
+      image shows a fieldbus device replacement event in Process History View. 
+    </p>
+ 
+    <p><a name="c_auto_replace_devices__image_97C6AD390279473491D76FADFE25239E"></a><img id="c_auto_replace_devices__image_97C6AD390279473491D76FADFE25239E" src="PHV_compact.png" /> 
+    </p>
+ 
+    <p> 
+      <strong>Common Error Messages Seen in Process History View</strong> 
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_auto_replace_devices__table_95E91497AD894B6097E5A0D01E0CD0A0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_auto_replace_devices__table_95E91497AD894B6097E5A0D01E0CD0A0" rules="all" summary=""> 
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d809262e195" valign="top" width="25%">Message 
+            </th>
+ 
+            <th class="cellrowborder" id="d809262e198" valign="top" width="32%">Explanation 
+            </th>
+ 
+            <th class="cellrowborder" id="d809262e201" valign="top" width="43%">Corrective action 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d809262e195 " valign="top" width="25%"> 
+              <p>Automatic fieldbus device replacement: [Device path and tag.
+                Replace [Device ID of original device] with [Device ID of replacement device]
+                not started: User selects reconciling to device, but AMS cannot. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d809262e198 " valign="top" width="32%"> 
+              <p>When the 
+                <span class="uicontrol">Device data is master</span> option is not
+                selected, the automatic device replacement or commissioning service supports
+                only those devices with a &quot;No download&quot; list included in the device description
+                file (DD). This file is provided by the device manufacturer. The &quot;No download&quot;
+                list is unique to each revision of each device and indicates certain parameters
+                such as sensor calibration that cannot be overwritten by the database. 
+              </p>
+ 
+              <p>This error message is most commonly seen when attempting to
+                commission or replace a device under the following circumstances: 
+              </p>
+ 
+              <p>The 
+                <span class="uicontrol">Device data is master</span> option is not
+                selected 
+              </p>
+ 
+              <p>The required &quot;No download list&quot; has not been provided by the
+                device manufacturer 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d809262e201 " valign="top" width="43%"> 
+              <p>Visit the DeltaV website under Resources for device
+                description files that support automatic fieldbus device replacement as they
+                become available. In addition, visit the website to: 
+              </p>
+ 
+              <a name="c_auto_replace_devices__ul_957DF8D60E344EEEB34DD4ACDD037E36"></a><ul id="c_auto_replace_devices__ul_957DF8D60E344EEEB34DD4ACDD037E36"> 
+                <li id="c_auto_replace_devices__li_9839E95DF10E4043B4EDF522CA78330A"><div class="li_content"> 
+                  <p>Determine if a particular device or revision supports auto
+                    replacement 
+                  </p>
+ 
+                </div></li>
+ 
+                <li id="c_auto_replace_devices__li_BAAE4869934B4379ABF6BD784ECB7BE1"><div class="li_content"> 
+                  <p>Download the device description files 
+                  </p>
+ 
+                </div></li>
+ 
+                <li id="c_auto_replace_devices__li_FA34952EE4434EFEBB1F83E719FA94D6"><div class="li_content"> 
+                  <p>Find instructions on how to incorporate the device
+                    description files into your DeltaV system 
+                  </p>
+ 
+                </div></li>
+ 
+              </ul>
+ 
+              <p>If the replacement device is not found on the website, it does
+                not support automatic fieldbus device replacement. In this case, manually
+                commission the device in DeltaV Explorer. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d809262e195 " valign="top" width="25%"> 
+              <p>Automatic fieldbus device replacement: [Device path and tag.
+                Replace [Device ID of original device] with [Device ID of replacement device]
+                failed:...Reconcile Started. AMS reconcile failed. The error code is
+                0x80004005..Failed. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d809262e198 " valign="top" width="32%"> 
+              <p>Reconciliation with the AMS Device Manager database has failed
+                for this device. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d809262e201 " valign="top" width="43%"> 
+              <p>Manually commission the device in DeltaV Explorer. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_create_device_placeholder.html">Create a device placeholder</a></div>
+<div><a href="c_auto_commission_fb_devices.html">Automatically commission fieldbus devices</a></div>
+<div><a href="c_preventing_disturbances_from_replacing_devices.html">Preventing process disturbances after replacing devices</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

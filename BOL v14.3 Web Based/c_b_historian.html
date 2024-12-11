@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Batch Historian" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Batch Historian" name="DC.subject" /><meta content="Batch Historian" name="keywords" /><meta content="c_thebatchhistoriansoftware.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_b_historian" name="DC.Identifier" /><title>Batch Historian</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_phaseconfiguration.html" /><link rel="next" href="c_thebatchhistoriansoftware.html" /></head><body class="fixed" id="c_b_historian" data-relpath="c_b_historian.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_b_historian"></a>
+
+<h1 class="topictitle1">Batch Historian</h1>
+<div><div></div>
+ 
+	 <p>A DeltaV Batch Historian receives data from the DeltaV control system
+		and saves that data to a SQL database. Several client applications make the
+		data available to users. The figure below shows how information flows into and
+		out of the Batch Historian. 
+	 </p>
+ 
+	 <p>A Batch Executive is the source of recipe execution information. As a
+		batch executes, batch events generated by the Batch Executive are passed to the
+		Batch Historian. The Campaign Manager is the source of campaign execution data.
+		Like Batch Executive, Campaign Manager automatically feeds campaign-related
+		events to the Batch Historian for storage. The Event Chronicle is the source of
+		process-related alarms and events, including operator changes, system messages,
+		and user-defined events. The Batch Historian copies this data into the main
+		database so that process data can be included in batch reports and queries. 
+	 </p>
+ 
+	 <p>Up to four Batch Historians can be enabled in a DeltaV system. A single
+		Batch Historian can receive events from multiple Batch Executives and Campaign
+		Managers; however, Batch Executives and Campaign Managers can feed their events
+		to only one Batch Historian. 
+	 </p>
+ 
+	 <p>Data stored in the Batch Historian database is viewed using Batch
+		History View. 
+	 </p>
+ 
+	 <div class="fignone" id="c_b_historian__fig_08AE0A7A915949BCA367497276C1147C"><a name="c_b_historian__fig_08AE0A7A915949BCA367497276C1147C"></a><div><span class="figcap">Information Flow in the Batch Historian</span></div> 
+		 
+		<a name="c_b_historian__image_67CF1F42232B461082FE8897D6655388"></a><img id="c_b_historian__image_67CF1F42232B461082FE8897D6655388" src="infoflow.gif" /> 
+	 </div>
+ 
+	 <p>Data received and stored by the Batch Historian includes: 
+	 </p>
+ 
+	 <a name="c_b_historian__ul_27DEF060E4B84F17958BF75D63A873F1"></a><ul id="c_b_historian__ul_27DEF060E4B84F17958BF75D63A873F1"> 
+		<li id="c_b_historian__li_F9A210EE2BC74DDC940EBF5855C732C0"><div class="li_content"> 
+		  <p>Product and recipe identification 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_3B3B6E3118D740E4AE93A151845E8008"><div class="li_content"> 
+		  <p>Formulation data and relevant changes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_5A2135BD155B46FC8BB5A35D7B1A02D2"><div class="li_content"> 
+		  <p>Procedural element state changes (Operations, Unit Procedures,
+			 Procedures) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_7AB2D0E2A2FB47929A9535AD1ED1EE52"><div class="li_content"> 
+		  <p>Phase state changes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_2B931E99CE9945B9A5AFE375BDB7B003"><div class="li_content"> 
+		  <p>Operator changes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_0967DD941FC24EA1B012E666568E1AC8"><div class="li_content"> 
+		  <p>Operator prompts and responses 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_462C8A5429A24708915ADA210B4C0F28"><div class="li_content"> 
+		  <p>Operator comments 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_91F4B364FC3B4E4882A858140763958E"><div class="li_content"> 
+		  <p>Equipment acquisitions and releases 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_1AB411DB137F495F8EBF00EF183C0C98"><div class="li_content"> 
+		  <p>Equipment relationships 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_9FE1839192E444F9A9ECF759B604E785"><div class="li_content"> 
+		  <p>Campaign creation data (recipe, formula values, equipment, and so
+			 on) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_F3AE18A1356947E981CD3555AF1B66CA"><div class="li_content"> 
+		  <p>Campaign modifications 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_81B819589CFF4D5F9A62B0A1FB071728"><div class="li_content"> 
+		  <p>Campaign execution activity 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_E46227F6C64C4FAA8E0FD0732480DFCA"><div class="li_content"> 
+		  <p>Controller I/O subsystem events from the Continuous Historian 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_8DAC88565A074408B81C307F49B775B1"><div class="li_content"> 
+		  <p>Process alarms 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_DFE8F7F2FEAC468CA650878FCDA2B045"><div class="li_content"> 
+		  <p>Process events 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_BF5EB1483EA74AC48FB53CB83A5850E5"><div class="li_content"> 
+		  <p>Device state changes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_B5CAC391CF9F4529839CD504F6A3D000"><div class="li_content"> 
+		  <p>Unexpected or unrecognized messages from the Batch Executive or the
+			 Continuous Historian 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_b_historian__li_5906D18ECE324227A4A0A5C079F9F408"><div class="li_content"> 
+		  <div class="p">Batch Analytics model name, version and deploy date for a batch that
+			 was monitored by Batch Analytics
+			 <div class="note"><span class="notetitle">Note:</span> If Batch Historian is shut down during the time a running batch
+				is being monitored, the model name and version will not be captured in the
+				Batch Historian database.
+			 </div>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_thebatchhistoriansoftware.html">The Batch Historian software</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

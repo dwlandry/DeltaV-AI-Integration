@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Create and combine example module classes" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="bulk edit, class-based modules containing class-based modules, bulk editing" name="DC.subject" /><meta content="bulk edit, class-based modules containing class-based modules, bulk editing" name="keywords" /><meta content="r_creating_cmd_driven_eqpmnt_mod.html" name="DC.Relation" scheme="URI" /><meta content="c_bulk_edit_class-based_containing_class-based.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_bulk_edit_create_combine_example_classes" name="DC.Identifier" /><title>Create and combine example module classes</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_bulk_edit_class-based_containing_class-based.html" /><link rel="next" href="c_bulk_edit_create_instantiate_example_template.html" /></head><body class="fixed" id="c_bulk_edit_create_combine_example_classes" data-relpath="c_bulk_edit_create_combine_example_classes.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_bulk_edit_create_combine_example_classes"></a>
+
+<h1 class="topictitle1">Create and combine example module classes</h1>
+<div><div></div>
+
+    <p>This class-based example consists of an equipment module class (TOTALIZER) that contains two control module classes (FLO_CTRL, and TTL_FLO). Note that successful import and export of a class-based module requires that you create a module template that the import/export format file can reference. The module template and the class-based module must have the same SubType (as defined in the module template <span class="wintitle">Properties</span> dialogs) and this SubType field must be the name of the module template. The following steps explain how to create the TOTALIZER class by creating its component parts, then combining them.</p>
+
+    <a name="c_bulk_edit_create_combine_example_classes__ol_CA947C88C1DE4425A17D8569FFC36FFB"></a><ol id="c_bulk_edit_create_combine_example_classes__ol_CA947C88C1DE4425A17D8569FFC36FFB">
+      <li id="c_bulk_edit_create_combine_example_classes__li_52C9647AEAF04E8F8CDD57711A6DCF1B"><div class="li_content">
+        <p>Create the totalizer named set as explained in the Batch Tutorial topic Creating a Command-Driven Equipment Module Class (TOTALIZER).</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_6B760F19BD054B42A7F2C12A209CBEA0"><div class="li_content">
+        <p>In DeltaV Explorer, navigate to <span class="filepath">Library/Advanced Definitions/Equipment Module Classes/General</span>. (You can create a new category if you want.)</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_E0C450C2BB324DABB590C41E588DFA64"><div class="li_content">
+        <p>Right-click and select <span class="uicontrol">New Equipment Module Class</span>.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_A8129424C2AC4598B80C8D1263F9AF88"><div class="li_content">
+        <p>In the <span class="wintitle">New</span> dialog, name the class TTLZER_CL (for <em>class</em>), select <span class="uicontrol">Command Driven</span> in the <span class="uicontrol">Algorithm Type</span> field, and browse to the totalizer named set in the <span class="uicontrol">Named Set Name</span> field.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_7DCD9BC62EB44389A35571433F75DAE7"><div class="li_content">
+        <p>Click <span class="uicontrol">OK</span>.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_BCA8687942C14534B0C1679D294CC435"><div class="li_content">
+        <p>Navigate to the General category of Control Module Classes.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_8BA729F8B892445BA25237645A564628"><div class="li_content">
+        <p>Right-click and select <span class="uicontrol">New Control Module Class</span>.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_290E932EA3C046B3ADF0EA593F394EA9"><div class="li_content">
+        <p>In the <span class="wintitle">New</span> dialog name the class FLO_CTRL_CL.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_4C8497289640482AA0931946C891F619"><div class="li_content">
+        <p>Click <span class="uicontrol">OK</span>.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_E26DB8F83164495A8C52449951CABCA0"><div class="li_content">
+        <p>Open the class in Control Studio and add a PID block to it.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_331CBBF3DBEF4F8C96295BCA4F159857"><div class="li_content">
+        <p>Save the class and close Control Studio.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_BC65312D27B749BD8B6F0746549BC0C7"><div class="li_content">
+        <p>Right-click again and create another control module class.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_66847A6DF2464B458E2F87D0DB60EE61"><div class="li_content">
+        <p>In the <span class="wintitle">New</span> dialog, name the class TTL_FLO_CL.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_47D7C96770D946A883CF24FAF9203BBA"><div class="li_content">
+        <p>Click <span class="uicontrol">OK</span>.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_8865C46C8D73447B8A57138E1A765D7B"><div class="li_content">
+        <p>Open the class in Control Studio and add an INT block to it.</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_A22E01F5C5F245089AF4BA69F5468CEA"><div class="li_content">
+        <p>Save the class and close Control Studio.
+</p>
+
+        <p>For this example you do not need to fully configure the classes, but at least put the blocks in the classes so you can see how to bulk edit parameters of contained blocks. </p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_3BEF9C6C662C47E6BECBB3B11266C69B"><div class="li_content">
+        <p>Drag FLO_CTRL_CL and TTL_FLO_CL and drop them onto TTLZER_CL.
+</p>
+
+        <p>The Advanced Definitions hierarchy should now look like the following.</p>
+<p><a name="c_bulk_edit_create_combine_example_classes__image_68D403BFE3864826BD0E1E9DB1E501BA"></a><img id="c_bulk_edit_create_combine_example_classes__image_68D403BFE3864826BD0E1E9DB1E501BA" src="eq2.gif" /></p>
+
+        
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_08F9ECB24ADB419AA24E82FE7D3FE7AD"><div class="li_content">
+        <p>Rename FLO_CTRL_CL_1 to FLO_CTRL_CNT (for <em>contained</em> module)</p>
+
+      </div></li>
+
+      <li id="c_bulk_edit_create_combine_example_classes__li_66FC95705F7041298698CCE7700FD4B6"><div class="li_content">
+        <p>Rename TTL_FLO_CL_1 to TTL_FLO_CNT.</p>
+
+      </div></li>
+
+    </ol>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_creating_cmd_driven_eqpmnt_mod.html">Creating a command-driven equipment module (TOTALIZER)</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

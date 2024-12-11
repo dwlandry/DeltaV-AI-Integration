@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Transferring signal data to DeltaV function blocks" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SmartPlant Instrumentation interface, compatible engineering units, editing data" name="DC.subject" /><meta content="SmartPlant Instrumentation interface, compatible engineering units, editing data" name="keywords" /><meta content="c_spi_control_transfer_data.html" name="DC.Relation" scheme="URI" /><meta content="c_SPI_edit_P2.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_spi_transfer_signal_deltav" name="DC.Identifier" /><title>Transferring signal data to DeltaV function blocks</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_spi_edit_instrument_signal_excel.html" /><link rel="next" href="c_spi_control_transfer_data.html" /></head><body class="fixed" id="c_spi_transfer_signal_deltav" data-relpath="c_spi_transfer_signal_deltav.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_spi_transfer_signal_deltav"></a>
+
+<h1 class="topictitle1">Transferring signal data to DeltaV function blocks</h1>
+<div><div></div>
+
+    <p>After you have configured your instrument data and saved it to the DeltaV database, you can bind (assign) DSTs to I/O function blocks. Binding may cause SPI instrument data to be transferred from the DST to the I/O function block if the SPI data is different and the SPI data was enabled for transfer to an I/O function block. </p>
+
+    <div class="section" id="c_spi_transfer_signal_deltav__section_FB17236DE8D446F79271CE29B80F14F9"><a name="c_spi_transfer_signal_deltav__section_FB17236DE8D446F79271CE29B80F14F9"></a><h2 class="sectiontitle">Transferring Conventional and HART Signal Data</h2>
+      
+      <p>For conventional and HART I/O, you bind DSTs and parameters to IO_IN and IO_OUT parameters of I/O function blocks from DeltaV Explorer or Control Studio. For example, from the IO_IN parameter <span class="wintitle">Properties</span> dialog of an AI block, select the DST TI-101-ISIG and FIELD_VAL_PCT. </p>
+
+      <p>After you close the IO_IN <span class="wintitle">Properties</span> dialog a confirmation dialog similar to the following appears. </p>
+<p><a name="c_spi_transfer_signal_deltav__image_85FDF08F5D49449CAEA0ADA24A8D5C99"></a><img id="c_spi_transfer_signal_deltav__image_85FDF08F5D49449CAEA0ADA24A8D5C99" src="transfer.gif" /></p>
+
+      
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> If you are working in Control Studio you must save the control module before assigning I/O for the transfer dialog to appear. After confirming the signal transfer, refresh Control Studio (press F5), then save the module again.</p>
+
+      </div>
+
+      <p>Review the parameter values and if they are correct, click <span class="uicontrol">Yes</span> to transfer those values to the function block. Any changes appear in DeltaV Explorer and Control Studio.</p>
+
+    </div>
+
+    <div class="section" id="c_spi_transfer_signal_deltav__section_5E304A3525A346059FA086F72F53EFC1"><a name="c_spi_transfer_signal_deltav__section_5E304A3525A346059FA086F72F53EFC1"></a><h2 class="sectiontitle">Transferring Fieldbus Signal Data</h2>
+      
+      <p>Binding a fieldbus device to the DeltaV configuration is similar to binding conventional and HART data. Instead of selecting an I/O signal in a DST, select a function block. Use the context menu to convert the block to a fieldbus block. Use the context menu again to select the <span class="uicontrol">Assign to Fieldbus</span> option. On the dialog that appears, select a fieldbus device and a function block in it. The transfer dialog that appears is similar to the one shown above.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Before you transfer fieldbus signal data you must convert target function blocks to fieldbus in Control Studio and save the control module so that the function block definition matches the signal definition. 
+</p>
+
+        <p>
+The transfer of fieldbus signal data to a Physical Block (created from the Special Items palette in Control Studio) is not supported.</p>
+
+      </div>
+
+      <p>Only if the signal data exists, is enabled, and you click <span class="uicontrol">Yes</span> on the confirmation dialog is the fieldbus device function block assigned to the function block and signal parameter data transferred. In all other cases the only result is that the fieldbus device function block is assigned to the function block.</p>
+
+    </div>
+
+    <div class="section" id="c_spi_transfer_signal_deltav__section_20BAE695DA054D8982A38889DA41820B"><a name="c_spi_transfer_signal_deltav__section_20BAE695DA054D8982A38889DA41820B"></a><h2 class="sectiontitle">Transferring Data from User-defined Bulk Edit or by Importing an fhx File</h2>
+      
+      <p>There are two other ways in which data can be transferred to function blocks:</p>
+
+      <a name="c_spi_transfer_signal_deltav__ul_720658684BB04DD0AA705E18B4D22622"></a><ul id="c_spi_transfer_signal_deltav__ul_720658684BB04DD0AA705E18B4D22622">
+        <li id="c_spi_transfer_signal_deltav__li_E48CCB2CADC848EABFDCAF7AA202BDCB"><div class="li_content">
+          <p>From a properly configured Bulk Edit worksheet in which I/O assignments are made.</p>
+
+        </div></li>
+
+        <li id="c_spi_transfer_signal_deltav__li_68CDA9D002344B84A5DF9A46425AE17A"><div class="li_content">
+          <p>By importing an fhx file that contains SPI instrument data and in which SPI data transfer is enabled.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>In both of these cases data is transferred to function blocks, but a confirmation dialog does not appear. However, messages appear in the standard <span class="filepath">\DVData\ImportExportProgress.log</span> file reporting the signals transferred for each function block. For example:</p>
+
+      <p>Information: Transferred enabled Instrument Signal parameters OUT_SCALE, XD_SCALE, L_VALUE from CTRL1C01CH01/FIELD_VAL_PCT to function block on path MODULE1/AI1 parameters OUT_SCALE, XD_SCALE, L_VALUE respectively.</p>
+
+      <p>If you need to retain this information for future use, you must save the log file with another name.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_spi_control_transfer_data.html">Controlling data transfer</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

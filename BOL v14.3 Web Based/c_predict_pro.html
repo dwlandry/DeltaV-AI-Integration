@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV PredictPro" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="confidence intervals, Controller generation, DeltaV Predict Algorithm, DeltaV PredictPro, Optimization and Model Predictive Control, Process modeling" name="DC.subject" /><meta content="confidence intervals, Controller generation, DeltaV Predict Algorithm, DeltaV PredictPro, Optimization and Model Predictive Control, Process modeling" name="keywords" /><meta content="c_fblk_spec_mpcpro.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_using_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_using_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_diff_Pro_Plus_blocks.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_ext_historic_data_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_external_models_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_tailor_perform_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_tailor_mpcplus_perform.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54" name="DC.Identifier" /><title>DeltaV PredictPro</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict_tailor_perform_predict.html" /><link rel="next" href="c_predict_pro_using_predict_pro.html" /></head><body class="fixed" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54" data-relpath="c_predict_pro.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54"></a>
+
+<h1 class="topictitle1">DeltaV PredictPro</h1>
+<div> 
+	 <p>DeltaV PredictPro implements model predictive control of large
+		multivariable processes in DeltaV environments. It allows you to define as many
+		as five control and economic objective functions for interactive processes
+		within measurable operating constraints while automatically accounting for
+		process interaction and measurable disturbances. With PredictPro you can
+		address a wide variety of multivariable processes as large as 40×80 that can
+		benefit from Model Predictive Control (MPC) technology. 
+	 </p>
+ 
+	 <p>PredictPro allows users with moderate process control knowledge to
+		quickly and easily apply MPC control strategies. Its ease of use and speed in
+		implementing MPC control strategies surpasses traditional MPC techniques and
+		PID control strategies. 
+	 </p>
+ 
+	 <p>DeltaV PredictPro consists of the following set of tools: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_7BFE8DF7CF204324BC438BCD7F4E2467"></a><ul id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_7BFE8DF7CF204324BC438BCD7F4E2467"> 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_10FDE9A60AD4411BBF9BFE162F97788F"><div class="li_content"> Model Predictive Control
+		  Professional Function Block (MPCPro) - used to implement large multivariable
+		  control strategies 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_1F70A0A8E9A3454BA6666EB06784C827"><div class="li_content"> Model Predictive Control
+		  Professional Plus Function Block (MPCPlus) - used to implement large
+		  multivariable control strategies and to achieve improved performance of highly
+		  constrained operations 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_8C0F064AADD84E3F88AA071773593027"><div class="li_content">PredictPro application -
+		  used to generate the model and controller for the MPCPro and MPCPlus function
+		  blocks and to test the model and control in a simulation environment 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_758E12FC41D84AC28E679D305E2D5484"><div class="li_content">MPC Operate Pro application
+		  and advanced control dynamos - used by operators to view and interact with
+		  control implemented with the MPCPro and MPCPlus function blocks 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>The software components associated with the DeltaV PredictPro
+		application require that you purchase licenses for the specific number of
+		Manipulated parameters used by the MPCPro block or MPCPlus block. 
+	 </p>
+ 
+	 <p>The following sections describe the MPCPro and MPCPlus algorithms and
+		provide information on using the PredictPro application. 
+	 </p>
+ 
+	 <p> 
+		<strong>Algorithm</strong> 
+	 </p>
+ 
+	 <p>The sections about the algorithm include information on the: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_85487E840BC544919DA6EB7CC86B9984"></a><ul id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_85487E840BC544919DA6EB7CC86B9984"> 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_DB534B3BAE0C45919685F3CF955EE711"><div class="li_content">Process model identification
+		  algorithm used to develop the process model for the MPCPro and MPCPlus
+		  controllers 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_21CB1E519BE34746B03DE98A375A32F4"><div class="li_content">Control functionality
+		  provided by the MPCPro and MPCPlus blocks 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Using PredictPro</strong> 
+	 </p>
+ 
+	 <p>The sections on using PredictPro include information on how to use: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_2EDAF2FB16834FF6A2F812629461DFFD"></a><ul id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_2EDAF2FB16834FF6A2F812629461DFFD"> 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_B8F3662B60B946538F078833448D7EC2"><div class="li_content">The PredictPro application
+		  to test a process and identify the associated step response model to generate
+		  the control 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_BBC97EB8BF68482F8CC166CB83F738AE"><div class="li_content">The PredictPro simulation
+		  environment to fully test MPCPro and MPCPlus control before placing it online 
+		</div></li>
+ 
+		<li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_7D75DCCCA90C45C496BE29C8BEACB208"><div class="li_content">A DeltaV Operate dynamo set
+		  to interface with the MPC function block 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>The MPCPro and MPCPlus function blocks are designed to address large
+		interactive control processes. The optimization capability embedded in both
+		blocks can be used to address a variety of multivariable process control
+		applications. The MPCPro and MPCPlus function blocks can be found on the
+		Advanced Control palette in the Control Studio application. Like other DeltaV
+		modules, modules containing the MPCPro function block are downloaded to a
+		DeltaV Controller<span> or to an Application Station</span>. 
+	 </p>
+ 
+	 <p>With DeltaV PredictPro, you can run an automated test on your process
+		after downloading the module containing the MPCPro or MPCPlus function block.
+		The PredictPro application uses data automatically gathered by the Continuous
+		Historian during testing to create a step response model of your process. You
+		can evaluate the accuracy of the model using the verify support provided by the
+		PredictPro application as part of the model generation. DeltaV PredictPro uses
+		the verified model to automatically generate the controller matrix used by the
+		MPCPro function block. The MPCPlus block does not require offline controller
+		generation; therefore after a verified model is downloaded to the MPCPlus
+		block, it is ready for operation. Special advanced control dynamos allow you to
+		easily define an MPCPro operator interface. 
+	 </p>
+ 
+	 <p>If you are using the MPCPro block and have generated the control using
+		DeltaV PredictPro, you can download the module containing the MPCPro function
+		block with the updated control matrix into a DeltaV controller. Through the
+		DeltaV PredictPro operator interface, you can place the control into operation
+		to monitor it. A special PredictPro diagnostic screen allows you to detect any
+		problems in MPCPro or MPCPlus operation. 
+	 </p>
+ 
+	 <div class="section" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_791BBC7450F445E39A0D779D4E2570D6"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_791BBC7450F445E39A0D779D4E2570D6"></a><h2 class="sectiontitle">DeltaV PredictPro Algorithm </h2> 
+		 
+		<p> This section presents the technical background and implementation of
+		  MPCPro and MPCPlus. Both predictive control algorithms have their roots in
+		  Dynamic Matrix Control (DMC). MPCPlus is a recent and advanced version of DMC.
+		  MPCPro has significant modifications to avoid online controller generation,
+		  resulting in unconstrained offline controller generation and the use of an
+		  online downloaded controller. Constraints on the process outputs are handled by
+		  an embedded LP optimizer that can adjust working setpoints of the controlled
+		  variables to achieve a user-defined control objective. Both algorithms use the
+		  embedded LP optimization to achieve user defined control objectives, asymmetric
+		  funnel control, range control, and reference trajectory. Control robustness is
+		  substantially improved as a result of these enhancements. 
+		</p>
+ 
+		<p>Understanding the details of the algorithms is not necessary to
+		  successfully use DeltaV PredictPro. The algorithm details are included
+		  primarily for the advanced user. A good process model is the key to model
+		  predictive control. Process identification is performed using two types of
+		  models: Finite Impulse Response (FIR) and Auto-Regressive (ARX). Model
+		  validation is accomplished by matching simulated and real process data. 
+		</p>
+ 
+		<p>Process optimization is implemented using an embedded linear program
+		  (LP) optimizer. It can be used to achieve operating objectives by maximizing or
+		  minimizing selected process variables while maintaining the process within
+		  constraint limits. As many as five control objective functions that an operator
+		  can select for the control can be defined. Such optimization is an inherent
+		  part of both algorithms. Both algorithms are embedded in the DeltaV controller 
+		  <span>and the Application Station 
+		  </span>as function blocks and are supported by the DeltaV PredictPro
+		  application. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_62D268BD500241B0A4566F2E57F62F27"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_62D268BD500241B0A4566F2E57F62F27"></a><h2 class="sectiontitle">Process modeling and confidence intervals</h2> 
+		 
+		<p>The process model is the basis of MPC technology. DeltaV PredictPro
+		  uses step response modeling for the generation of the MPC controller. This
+		  approach has been proven effective in numerous DMC applications. Step response
+		  modeling makes prediction of process outputs explicitly available for display
+		  in the application. The predicted error vector is computed first and used as an
+		  input to the MPC controller. Displaying the prediction to an operator is an
+		  important way to visually evaluate the current and future state of the process
+		  and the impact of process control intervention. DeltaV PredictPro&#39;s operator
+		  interface displays the future process outputs. 
+		</p>
+ 
+		<p>Step response modeling is the most common form of model representation
+		  for MPC. It makes the prediction of process outputs available explicitly.
+		  Future output prediction is used to compute the predicted error vector as an
+		  input to the MPC controller. This section reviews the basics of step response
+		  modeling and the more advanced topic of the confidence levels of the identified
+		  model parameters. 
+		</p>
+ 
+		<p>For a Single Input Single Output (SISO) process, the differential
+		  Finite Impulse Response (FIR) model describing the output response is: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_5A4EB245995E430FA8EF87DC7CD35D82"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_5A4EB245995E430FA8EF87DC7CD35D82" src="icimage12.gif" /> 
+		</p>
+ 
+		<p>where 
+		  <em>p</em> is the prediction horizon 
+		  <em>h<sub>I</sub></em> are the identified model impulse response
+		  coefficients, 
+		  <em>y<sub>k</sub></em> the model output, and 
+		  <em>u<sub>k</sub></em> the model input. Research has shown that
+		  typically, 30 to 120 coefficients are required for an impulse response to
+		  describe the dynamics of a simple first order plus dead time process and higher
+		  order complex processes. However, identifying the step response with the full
+		  prediction horizon and as many as 120 coefficients (especially in the MIMO
+		  case) causes overfitting and results in significant parameter uncertainty, a
+		  common problem for FIR identifiers. An alternative modeling technique,
+		  AutoRegressive with external inputs (ARX), has significantly fewer coefficients
+		  than FIR model. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_434E680B471E44E39855D85D876E47B8"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_434E680B471E44E39855D85D876E47B8" src="icimage14.gif" /> 
+		</p>
+ 
+		<p>where 
+		  <em>A, V</em> are the autoregressive and moving average orders of ARX, 
+		  <em>d</em> denotes the dead time, and 
+		  <em>a<sub>I</sub></em>, 
+		  <em>b<sub>I</sub></em> are the model coefficients. An order of four has
+		  been observed to satisfy the most practical applications. It has been shown
+		  that by using a short FIR horizon, the dead time can be identified and then
+		  used to better determine the ARX model. For a Multiple Input Multiple Output
+		  (MIMO) process, superposition is applied from each input (additive action) on
+		  every output. After ARX is defined, a unit step is applied on one of the inputs
+		  and the identified ARX model is used to get step responses for that input. 
+		</p>
+ 
+		<p>An understanding of confidence intervals can be derived by showing
+		  that process model identification can be presented as a mapping of the
+		  measurement data set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B75235C4B82D49DBB12DDA1B5E2F9FDD"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B75235C4B82D49DBB12DDA1B5E2F9FDD" src="icimage16.gif" /> into a model parameter estimate
+		  set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_029D739CBF614EAAAB83A1D26DF1400D"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_029D739CBF614EAAAB83A1D26DF1400D" src="icimage17.gif" /> contained into parameters set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_826B50CF749B4E90AD826479A50EACDC"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_826B50CF749B4E90AD826479A50EACDC" src="icimage18.gif" />: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7C3302B7124C44BEA215CE2F51A8968E"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7C3302B7124C44BEA215CE2F51A8968E" src="icimage19.gif" /> 
+		</p>
+<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_900599409BF247249C5120D472F50006"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_900599409BF247249C5120D472F50006" src="icimage20.gif" /> 
+		<p>In the above FIR and ARX model representations 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_CF1075A8323043F6BD3362DA1EBCBE3E"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_CF1075A8323043F6BD3362DA1EBCBE3E" src="icimage20.gif" /> is (<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6C69AE2A5B3F4D06918E27A1256C839E"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6C69AE2A5B3F4D06918E27A1256C839E" src="icimage13.gif" />) and (<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_FA9A459CE0BE47D490D4EB2678EAB686"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_FA9A459CE0BE47D490D4EB2678EAB686" src="icimage15.gif" />) respectively, a very important
+		  property of any identification technique is convergence of 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7C44701107044FF4A3579E537820D62C"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7C44701107044FF4A3579E537820D62C" src="icimage21.gif" /> when number of samples 
+		  <em>N</em> tends to infinity. Measurement and processing errors of data
+		  set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_56EC91E2BD484B4E9F1F0EAA85E5F9D5"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_56EC91E2BD484B4E9F1F0EAA85E5F9D5" src="icimage16.gif" /> have random components, therefore
+		  set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_412E38763528483BB01A8D295460EACC"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_412E38763528483BB01A8D295460EACC" src="icimage22.gif" /> is not a unique realization of
+		  the true model parameter set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B9A795A7CF244618BD9121AEAB3C828C"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B9A795A7CF244618BD9121AEAB3C828C" src="icimage23.gif" />. There are infinite possible
+		  realizations 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_9E268D3FEA08412EB113ACC09D9AA610"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_9E268D3FEA08412EB113ACC09D9AA610" src="icimage24.gif" /> of the true parameter set 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_DCEC03BB75444777939F78CC4C35C71F"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_DCEC03BB75444777939F78CC4C35C71F" src="icimage23.gif" /> developed from hypothetical data
+		  sets 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_E90E50EDE9584C14AD2462C5F3B1BE3B"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_E90E50EDE9584C14AD2462C5F3B1BE3B" src="icimage25.gif" />. Therefore
+		  parameters estimate 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3A05041E2C99477A803BDBBBE0D0188A"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3A05041E2C99477A803BDBBBE0D0188A" src="icimage26.gif" /> occurs with some probability.
+		  From a practical perspective, it is more interesting to know the probability
+		  distribution of the difference 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_2C914041B3864AAFB706C944A4CD141D"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_2C914041B3864AAFB706C944A4CD141D" src="icimage27.gif" />. When the distribution is known,
+		  the quantitative uncertainties of the estimate 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_8C3D3EEF39364CD5B59C3A013012B93C"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_8C3D3EEF39364CD5B59C3A013012B93C" src="icimage28.gif" /> are known. 
+		</p>
+ 
+		<p>The task is to estimate 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_37E6BDDBD6584F76BC5831A59C6F5961"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_37E6BDDBD6584F76BC5831A59C6F5961" src="icimage27.gif" /> without knowing 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_D2081916F53C4C1A8D91C585A9AE9674"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_D2081916F53C4C1A8D91C585A9AE9674" src="icimage23.gif" />. It has been proven that for
+		  large 
+		  <em>N</em>, every parameter from the estimate 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_BB33F3CC51D4446DBAEDC6005CBE77EC"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_BB33F3CC51D4446DBAEDC6005CBE77EC" src="icimage27.gif" /> asymptotically converges (with
+		  confidence level 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6B87BCAB461B43009181514E96A0108E"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6B87BCAB461B43009181514E96A0108E" src="icimage29.gif" />) to the normal distribution, with
+		  the density function: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_898FAEEEE20948DFA876A059380D44C6"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_898FAEEEE20948DFA876A059380D44C6" src="icimage30.gif" /> 
+		</p>
+ 
+		<p>As seen from the equation 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B8BEFB01683D4372BCE05E1528EDD788"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_B8BEFB01683D4372BCE05E1528EDD788" src="icimage31.gif" /> is the variance of the parameter
+		  estimate 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A18DC96D47FA4EC69C49BE9E553E3958"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A18DC96D47FA4EC69C49BE9E553E3958" src="icimage32.gif" />. 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_01410F1E7AB34A848181A2A230108634"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_01410F1E7AB34A848181A2A230108634" src="icimage31.gif" /> is the 
+		  <em>k,k</em> element of the covariance matrix 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3AF5BED21397400980F4A93F5E1D9606"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3AF5BED21397400980F4A93F5E1D9606" src="icimage33.gif" />. The equation for estimating the
+		  covariance matrix is: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3BEBD2C7901342F7B5601A32F3458547"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_3BEBD2C7901342F7B5601A32F3458547" src="icimage34.gif" /> 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_34F603C2548C48A593994B49192E661C"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_34F603C2548C48A593994B49192E661C" src="icimage16.gif" /> is the data set arranged in the
+		  same manner as used for identification (FIR or ARX in these examples); 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7F370F0E392B4896AC47C7964AA91F61"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7F370F0E392B4896AC47C7964AA91F61" src="icimage35.gif" /> is transpose of 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_C2C895B97E0D48E3A5DC355D7E6DE84F"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_C2C895B97E0D48E3A5DC355D7E6DE84F" src="icimage16.gif" />; 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A3A1C404A9D6441296212CF40F02630F"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A3A1C404A9D6441296212CF40F02630F" src="icimage36.gif" /> is set of errors between process
+		  outputs and model outputs. 
+		</p>
+ 
+		<p>Applying this equation however, requires calculation of the process
+		  model first in order to develop the error set. Alternatively, the covariance
+		  matrix 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_E3EB1C542C304607A22313284293CBE2"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_E3EB1C542C304607A22313284293CBE2" src="icimage37.gif" /> can be defined directly from
+		  singular value decomposition (SVD) of the data matrix : 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_0A508D9340F74061AC08B846A566918A"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_0A508D9340F74061AC08B846A566918A" src="icimage38.gif" /> 
+		</p>
+ 
+		<p>Matrices 
+		  <em>U, S, V</em> are products of the SVD. Then, 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_99F5D664E91F4DFC829C540D88A63543"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_99F5D664E91F4DFC829C540D88A63543" src="icimage39.gif" /> 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7EC33A4A3F6D4A4DAEA3FE65E9CAF9AD"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7EC33A4A3F6D4A4DAEA3FE65E9CAF9AD" src="icimage40.gif" /> 
+		</p>
+ 
+		<p>The 
+		  <em>V<sub>ji</sub></em> are elements of the 
+		  <em>V</em> matrix; 
+		  <em>w<sub>I</sub></em> are elements of the diagonal matrix 
+		  <em>S</em>; 
+		  <em>M</em> is the dimension of the matrix 
+		  <em>S</em>; 
+		</p>
+ 
+		<p>Standard deviation of the model parameters is defined as: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_DDC1ADAB8DFF4400A51F41403E8421F5"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_DDC1ADAB8DFF4400A51F41403E8421F5" src="icimage43.gif" /> 
+		</p>
+ 
+		<p>This presents the model quality information in a more usable form than
+		  the error probability distribution. Standard deviations of the model parameters
+		  establish the range of parameter value with a predefined probability. For
+		  example, a 95% confidence region means that the true parameter value lies in
+		  the region with a 95% probability. With the assumption of normal distribution
+		  of errors, range of 2σ(<em>a<sub>j</sub></em>) around the identified parameter
+		  value defines the 95% Confidence Interval (CI), 3σ gives the 99% CI, and so on.
+		  
+		</p>
+ 
+		<p>Step responses can be generated from parameter standard deviations
+		  σ(<em>a<sub>j</sub></em>), and from model parameters. The confidence regions are
+		  obtained over the prediction horizon, thus giving the range of response
+		  parameters such as gain and dead time. To get 95% confidence interval
+		  boundaries, double the standard deviation, compute the step response, and
+		  superimpose it on the original step response in both positive and negative
+		  directions. For 99% confidence intervals, triple the standard deviation, and
+		  proceed in a similar manner. An example of confidence intervals for a step
+		  response is shown in the following figure. The 95% and 99% confidence regions
+		  about the identified step response are depicted. Naturally, the region becomes
+		  larger for higher probability and vice-versa. For MPC models, a ninety five
+		  percent confidence interval is a practical choice. A useful interpretation of
+		  this information is in establishing ranges of the step response parameters. For
+		  example, for the response in the following figure, the gain has a range between
+		  1.4 and 2.05 with 95% confidence; and between 1.25 and 2.2 with 99% confidence.
+		  This information is applied towards estimating the parameters for robust
+		  controller generation. Having confidence intervals available for every step
+		  response in the process model, it is possible not only to detect errors on the
+		  model output but also to identify specific step responses that can most
+		  contribute to prediction errors. 
+		</p>
+ 
+		<div class="fignone" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_8AE9141416C04CE49B7D859EBD1B17CE"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_8AE9141416C04CE49B7D859EBD1B17CE"></a><div><span class="figcap">Confidence intervals represented in an identified step
+			 response</span></div> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A74D2E88751042F1B2A6229C23AF4E1F"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_A74D2E88751042F1B2A6229C23AF4E1F" src="icimage46.gif" /> 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_670E4E8BC5F44D6A9C780AC552846C00"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_670E4E8BC5F44D6A9C780AC552846C00"></a><h2 class="sectiontitle">Integrated optimization and Model Predictive Control</h2> 
+		 
+		<p>For processes with several Manipulated or Controlled variables,
+		  optimization techniques are an essential component of Model Predictive Control
+		  technology. One proven approach uses linear programming (LP) with steady state
+		  models. Linear programming is a mathematical technique for solving a set of
+		  linear equations and inequalities that maximizes or minimizes an additional
+		  function. This additional function is called the 
+		  <em>objective function</em>. Usually objective functions express economic
+		  value like cost or profit. 
+		</p>
+ 
+		<p>Specifically, MPCPro optimization considers incremental Manipulated
+		  Variable (MV) values at the present time or the sum of increments of the MV
+		  over control horizon, and incremental values of Controlled and Constrained
+		  Values (CV) at the end of prediction horizon, instead of positional current
+		  values as in typical LP applications. LP technique uses steady state model and
+		  therefore steady state condition is required for its application. With the
+		  prediction horizon normally used in MPC design, future steady state is
+		  guaranteed for self-regulating processes. Predicted process steady state
+		  equation for an 
+		  <em>m</em> by 
+		  <em>n</em> input-output process, with prediction horizon 
+		  <em>p,</em> control horizon 
+		  <em>c</em>, in the incremental form is: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_41B58A1A1CF94329A38E585188326D8B"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_41B58A1A1CF94329A38E585188326D8B" src="icimage47.gif" /> 
+		</p>
+ 
+		<p>where: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_868EB347956A45FD85E01893B3B6F031"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_868EB347956A45FD85E01893B3B6F031" src="icimage48.gif" /> denotes predicted changes in
+		  outputs at the end of prediction horizon 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_73B2676EC5224070ADC9BADEC0DD1476"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_73B2676EC5224070ADC9BADEC0DD1476" src="icimage49.gif" /> is the process steady state 
+		  <em>m</em> × 
+		  <em>n</em> gains matrix 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_50F17227E6EB4616924FC0C8F0D3330A"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_50F17227E6EB4616924FC0C8F0D3330A" src="icimage50.gif" /> denotes changes in manipulating
+		  variables at the end of control horizon 
+		</p>
+ 
+		<p>Vector 
+		  <span class="nowrap">Δ<em>MV</em>(<em>t + c</em>)</span> represents the
+		  sum of the changes over control horizon made by every controller output 
+		  <em>mvi</em>. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_EA842ABC4C4840A083482669D40B31C7"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_EA842ABC4C4840A083482669D40B31C7" src="icimage53.gif" /> 
+		</p>
+ 
+		<p>The changes should satisfy limits on both MVs and CVs. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_FAD714A3A2CF436E892DF232AD6ACE2B"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_FAD714A3A2CF436E892DF232AD6ACE2B" src="icimage54.gif" /> 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_5AE5EEE38CFB4C1CB46DCE51A41B1B99"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_5AE5EEE38CFB4C1CB46DCE51A41B1B99" src="icimage55.gif" /> 
+		</p>
+ 
+		<p>The objective function for maximizing product value and minimizing raw
+		  material cost can be defined jointly in the following way: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_91179DE19E01400ABB33C20ECD33AD2D"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_91179DE19E01400ABB33C20ECD33AD2D" src="icimage56.gif" /> 
+		</p>
+ 
+		<p>where 
+		  <em>UCV -</em> cost vector for a unit change in CV process value and 
+		  <em>UMV</em> - cost vector for a unit change in MV process value.
+		  Applying the objective function expressed in terms of MV only is: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_BAFAAA80EDF0475D9660711CE3FAE131"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_BAFAAA80EDF0475D9660711CE3FAE131" src="icimage57.gif" /> 
+		</p>
+ 
+		<p>The LP solution is always located at one of the vertices of the region
+		  of feasible solutions. This is shown in the following figure for a two
+		  dimensional problem. 
+		</p>
+ 
+		<div class="fignone" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D592B94D8D4C4D7990E57546DAD045AC"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D592B94D8D4C4D7990E57546DAD045AC"></a><div><span class="figcap">Optimization problem of a two dimensional system</span></div> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7F7B75F8EC4543E58BE3CE12DAB2D8F4"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_7F7B75F8EC4543E58BE3CE12DAB2D8F4" src="Willy2.gif" /> 
+		</div>
+ 
+		<p>The region of feasible solutions for two Control/Constraint variables
+		  and two Manipulated variables is an area contained within MV1 and MV2 limits
+		  represented by the vertical and horizontal lines and CV1 and CV2 limits
+		  represented by the straight lines as shown below. 
+		</p>
+ 
+		<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_514B3BAAD6D9442A9664E001A3944A7A"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_514B3BAAD6D9442A9664E001A3944A7A" src="icimage59.gif" /> 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_F71A843DD6CC40EC99E5510560991846"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_F71A843DD6CC40EC99E5510560991846" src="icimage60.gif" /> 
+		</p>
+ 
+		<p>The optimal solution is located at one of the vertices marked by
+		  arrows. To find this solution, the LP algorithm calculates the objective
+		  function for an initial vertex and improves the solution every step until it
+		  determines the vertex with maximum (or minimum) value of the objective function
+		  as the optimal solution. In addition to constraints and economic objectives,
+		  the PredictPro Optimizer also accounts for controlled objectives that include
+		  target set points for any selected CV, preferred settling values and equalizing
+		  for selected MVs. 
+		</p>
+ 
+		<p>Optimal MV values are applied to the MPCPro control as the target MV
+		  values to be achieved within control horizon. If the MPC controller is squared
+		  as in the MPCPro block, that is the number of MVs is equal to the number of
+		  CVs, then MV targets can be effectively achieved by changing the CV value. 
+		</p>
+ 
+		<p> 
+		  <span class="nowrap">ΔCV = A * ΔMVT</span> 
+		</p>
+ 
+		<p>ΔMVT - is the optimal MV target change 
+		</p>
+ 
+		<p> ΔCV - is the CV change to achieve optimal MV 
+		</p>
+ 
+		<p>This is the default option for the MPCPro block and can be used when
+		  the process is not over constrained. 
+		</p>
+ 
+		<p>The MPCPlus controller applies both CV and MV targets as optimizer
+		  objectives with any configuration. This approach improves constraint handling.
+		  Additionally, MPCPlus generates the controller online which accounts for actual
+		  constraints and objectives. 
+		</p>
+ 
+		<p> The option to include both CV and MV targets can be selected as well
+		  for offline MPCPro controller generation. This improves constraint handling;
+		  however, since the controller is generated offline, it may not perform as well
+		  as the MPCPlus controller. Specifically, the MPCPro controller will not use
+		  unconstrained MVs to compensate for constrained MVs, including MVs that are
+		  constrained by the Rate of Change ( Max MV Move Per Sec) limit. 
+		</p>
+ 
+		<p>The MPCPro algorithm working with the optimizer has two main
+		  objectives: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ol_C6E896D4436B4FF188B1022F8F105E5F"></a><ol id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ol_C6E896D4436B4FF188B1022F8F105E5F"> 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_B1120A26077541698C59037B74B609D0"><div class="li_content">Minimize CV control error
+			 with minimal MV moves within operational constraints. 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_41E780A2BC0C44869F74ACE3663A6B29"><div class="li_content">Achieve optimal steady
+			 state MV values set up by the optimizer and target CV values calculated
+			 directly from MV values. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>In operation, the optimizer sets up and updates the steady state
+		  targets for the MPC unconstrained controller at every scan, thus MPC controller
+		  executes the unconstrained MPCPro algorithm or the constrained MPCPlus
+		  algorithm. Since the targets are set in a manner that accounts for constraints,
+		  as long as a feasible solution exists, the controller works within constraint
+		  limits. Optimization therefore, is an integral part of the MPC controller. The
+		  integrated MPC controller and optimizer performs the following sequence of
+		  operations each scan: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ol_9571773D80E54A6E89C90F497A02D1C8"></a><ol id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ol_9571773D80E54A6E89C90F497A02D1C8"> 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_B376FB686311443ABB33DD3D94255144"><div class="li_content">Update CV and DV
+			 measurements 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_1E303C08C169413ABE6EDB69F664E10F"><div class="li_content">Update CV predictions 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_5C86B732DC064D03B3EA4A16DA2C8B2E"><div class="li_content">Determine optimal MV
+			 steady state targets and calculate CV targets by running the LP Optimizer 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_8D9D28604806419EADA745ED0F28B7B1"><div class="li_content">Determine dynamic MV
+			 outputs accounting for CV and MV targets by running the MPC controller 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_299BE7691EF74B849D1A92E7E88036B0"><div class="li_content">Update MV 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>The figure below shows communication between and integrated operation
+		  of the optimizer and MPC algorithm. There is a typical situation when the
+		  optimizer cannot find the optimal solution because constraint limits are too
+		  tight, there are too many set points, or the disturbances are too severe. In
+		  such cases the optimizer relaxes the system constraints by changing set points
+		  to range control (if defined) and/or abandoning some lower priority
+		  constraints. 
+		</p>
+ 
+		<p>Poor conditioning is another typical problem an optimizer has to deal
+		  with. As with the MPC algorithm, poor conditioning manifests itself as
+		  excessive changes in calculated MV targets, even for minor correction of
+		  constraints. In this approach, poor conditioning can be removed dynamically by
+		  changing configuration of active constraints (abandoning some constraints) or
+		  by removing the association between Constraint or Controlled variables and
+		  Manipulated variables that have excessive moves. 
+		</p>
+ 
+		<div class="fignone" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D823B5B37F7C4D9FBCAE247A816A6471"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D823B5B37F7C4D9FBCAE247A816A6471"></a><div><span class="figcap">MPC and Optimizer communication</span></div> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_65F040FC6F2E41EC9DD185F8988E6AF0"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_65F040FC6F2E41EC9DD185F8988E6AF0" src="MPCOptComm.gif" /> 
+		</div>
+ 
+		<p> MPCPro and MPCPlus are implemented as function blocks. The parameters
+		  used for configuration and operation can be displayed and edited in Control
+		  Studio and from predefined operator interfaces. Simple parameters such as MODE
+		  or SP can be displayed and modified of-line and online in the traditional way. 
+		</p>
+ 
+		<p> Function block technology features cascade inputs (CAS_IN) and remote
+		  cascade inputs (RCAS_IN) as well as corresponding back calculation outputs
+		  (BKCAL_OUT and RCAS_OUT) on both control and output function blocks. Using
+		  these connections, it is possible to attach a supervisory optimized MPC control
+		  strategy on top of an existing control strategy. Targets for the optimized MPC
+		  controller can be modified from the higher strategy. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_BFB83EB329184BBD97128E094A6C6B8C"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_BFB83EB329184BBD97128E094A6C6B8C"></a><h2 class="sectiontitle">Robust offline controller generation (MPCPro)</h2> 
+		 
+		<p>This section briefly demonstrates how Confidence Intervals (CI) are
+		  used towards robust controller generation. An MPCPro controller is generated
+		  from the process model and controller design parameters which are automatically
+		  calculated from the model. It minimizes the squared error of Controlled
+		  Variables over the prediction horizon and the squared values of the changes in
+		  Manipulated variables over the control horizon providing stable operation and
+		  acceptable performance over a wide range of process parameter changes. 
+		</p>
+ 
+		<p>Sensitivity of control to changes in process dynamics is determined by
+		  the controller robustness. From an implementation standpoint, it is observed
+		  that the penalty on moves (PM or POM) factor, that defines how much the MPC
+		  controller is penalized for changes in the MV output is the most convenient
+		  tuning parameter that impacts controller robustness. High PM values result in a
+		  slow controller with a wide stability margin. With these settings, the control
+		  is relatively insensitive to change in either the process or the model errors.
+		  Low PM values result in a fast controller with a narrow stability margin. When
+		  the model used in generating the control accurately reflects the process gain
+		  and dynamics, changing the PM value does not significantly affect the
+		  controller performance. Experimental observations show that the dead time
+		  margin and gain margins are strongly affected by the process dead time. It
+		  follows that dead time should be accounted for as a major factor in calculating
+		  
+		  <em>PM</em>. As can be expected, gain also influences the PM selection.
+		  Numerical experiments involving these two parameters have provided a 
+		  <em>PM</em> factor that has shown stable and responsive MPC operation for
+		  model error of up to about 50%: 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_EB60DDF723FB4CDFA7155DEE3E79F209"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_EB60DDF723FB4CDFA7155DEE3E79F209" src="icimage72.gif" /> 
+		</p>
+ 
+		<p>where 
+		  <em>DT<sub>I</sub></em> is the dead time in MPC scans for an 
+		  <span class="nowrap"><em>MV<sub>I</sub></em> – 
+			 <em>CV<sub>j</sub></em></span> pair, 
+		  <em>G<sub>I</sub></em> is gain (no units) for the 
+		  <span class="nowrap"><em>MV<sub>I</sub></em> – 
+			 <em>CV<sub>j</sub></em></span> pair, the criterion for pairing
+		  (particularly in the case of MIMO and SIMO systems) is that the chosen 
+		  <em>MV<sub>I</sub></em> has maximum influence on 
+		  <em>CV<sub>j</sub></em>, 
+		  <em>p</em> denotes the prediction horizon as before, and 
+		  <em>MV</em> and 
+		  <em>CV</em> denote Manipulated Variable and Controlled Variable
+		  respectively. Knowledge of the step response confidence intervals facilitates
+		  estimating the range of the gain and dead time parameters for a specific 
+		  <span class="nowrap"><em>MV<sub>I</sub></em> - 
+			 <em>CV<sub>j</sub></em></span> pair. In the following equation, these
+		  estimates are used in calculating PM values to design a controller for the
+		  worst case, in turn ensuring robust controller operation. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_0E3CF664FF034EC2B2CAEBB4FC27BE79"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_0E3CF664FF034EC2B2CAEBB4FC27BE79" src="icimage75.gif" /> 
+		</p>
+ 
+		<p>Consider a simple example of controller design for a SISO process
+		  whose true process parameters are dead time of 31 scans and steady state gain
+		  of 1.55. For the identified response, process gain is 1.0 and dead time is 20
+		  scans. This resulted in a 
+		  <em>PM</em> of 7.5 without using confidence intervals. The 95% confidence
+		  region resulted in a gain interval of 0.5 and dead time interval of 10 scans.
+		  Applying these ranges to the modified equation obtains a 
+		  <em>PM</em> of 15.0. The corresponding set point responses of the
+		  generated controller are shown in the following figure (without using CI) and
+		  in the figure after that (using CI). 
+		</p>
+ 
+		<div class="fignone" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_19B6313482DF4BC382CAB7060E5DD1FA"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_19B6313482DF4BC382CAB7060E5DD1FA"></a><div><span class="figcap">Setpoint response with 
+		  <em>PM</em> of 7.5 obtained without using CI</span></div> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6A71290807424A60B68433A5D0E63DF4"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_6A71290807424A60B68433A5D0E63DF4" src="icimage76.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D4437DCFF411418CBB132F6862E65EB2"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__fig_D4437DCFF411418CBB132F6862E65EB2"></a><div><span class="figcap">Setpoint response for same process as above but with 
+		  <em>PM</em> of 15 obtained using CI</span></div> 
+		  <a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_9793B108861D47838DF6726EC818B010"></a><img id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__image_9793B108861D47838DF6726EC818B010" src="icimage77.gif" /> 
+		</div>
+ 
+		<p>The MPC and Optimizer algorithm have been implemented as a control
+		  function block (MPCPro). In this way, the block has become a part of the system
+		  functionality with ease of configuration and reliable operation in any
+		  controller or workstation node. Many features of the MPCPro function block
+		  design are similar to the MPC function block for small and medium size
+		  processes. 
+		</p>
+ 
+		<p>The MPCPro function block has the following features: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_7F4049246D7C40D1BB28EAD60862D6D5"></a><ul id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__ul_7F4049246D7C40D1BB28EAD60862D6D5"> 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_F2CD56CEFC8E402F9CC67F134B4155DF"><div class="li_content">The process model matrix
+			 can be up to 40×80 (MV+DV)x(CV+AV) 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_6BE9251CD2A248668EFB8F24D098F8A5"><div class="li_content">The control matrix can be
+			 up to 40x40 (MVxCV) 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_85878B1DA45349269F2B637C36F29FDB"><div class="li_content">It can be configured,
+			 commissioned, operated, and diagnosed in integrated control system environments
+			 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_04E9A89092504EB3A2C8949F8258B899"><div class="li_content">The function block
+			 includes performance monitoring for controlled variables 
+		  </div></li>
+ 
+		  <li id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__li_F5D5EB312BCB4C2C862D1D81824ED5A2"><div class="li_content">Up to five objective
+			 functions can be defined for the optimizer based on priorities and user
+			 preference to minimize or maximize variables. The objective functions are
+			 selected manually or automatically during online operation. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_708EC379FC41404F814151FB116910CE"><a name="concept_EAE4115FCA5F43A0A6A1F9A337E1AB54__section_708EC379FC41404F814151FB116910CE"></a><h2 class="sectiontitle">Constrained online controller generation (MPCPlus)</h2> 
+		 
+		<p>MPCPlus dynamic move calculation has several enhancements. First, the
+		  control matrix is generated online at each control cycle. The most important
+		  advantage of this is that all dependent variables (CV and AV) are included in
+		  the Dynamic Matrix for the move calculation. The Penalty on Error (POE) for
+		  each dependent variable is adjusted at each control cycle. If a CV is far from
+		  its limits, its POE can be set to zero to effectively remove it from the
+		  dynamic control problem. Conversely, if a CV is near a limit, the full value of
+		  the POE is used. This way the dynamic move calculation at each control cycle
+		  includes only those CVs that are near limits and excludes those that are far
+		  from limits. 
+		</p>
+ 
+		<p>A second advantage of generating the control matrix online is that
+		  tuning changes in POM or POE are implemented at the next control cycle; there
+		  is no need to upload the control matrix. 
+		</p>
+ 
+		<p>The final enhancement in the Dynamic Move Calculation section is the
+		  enforcement of MV constraints on the future moves plan. This prevents the
+		  controller from planning on moves that cannot be implemented. The general
+		  approach is to first calculate the unconstrained MV solution and then to find
+		  the first MV to become constrained in time (find the earliest MV constraint
+		  violation). The allowable portion of the moves plan for this MV is then imposed
+		  on the problem. Next, the unconstrained solution using the remaining MVs is
+		  calculated and the process is repeated until either all MVs are constrained or
+		  the unconstrained solution does not violate any constraints. That is, when a
+		  constraint violation is detected in an MV moves plan, the allowable portion of
+		  that moves plan is implemented and the problem is re-solved with the remaining
+		  MVs. 
+		</p>
+ 
+		<p>After developing a model, the default tuning for POE and POM is set
+		  automatically. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_predict_pro_using_predict_pro.html">Using DeltaV PredictPro</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_pro_diff_Pro_Plus_blocks.html">Summary of the differences between the MPCPro and MPCPlus function
+	 blocks</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_pro_ext_historic_data_predict_pro.html">Using External Historical Data with PredictPro</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_pro_external_models_predict_pro.html">Using External Models with PredictPro</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_pro_tailor_perform_predict_pro.html">Tailoring MPCPro Control Performance</a><br />
+</li>
+<li class="ulchildlink"><a href="c_predict_pro_tailor_mpcplus_perform.html"> Tailoring MPCPlus Control Performance</a><br />
+</li>
+</ul>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_spec_mpcpro.html">Model Predictive Control Professional (MPCPro) function block</a></div>
+<div><a href="c_fblk_spec_mpcplus.html"> Model Predictive Control Professional Plus (MPCPlus) function
+	 block</a></div>
+<div><a href="c_predict_pro_using_predict_pro.html">Using DeltaV PredictPro</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

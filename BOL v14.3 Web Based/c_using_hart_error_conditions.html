@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using HART error conditions for control strategy" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_HART_devices_and_the_DeltaV_System.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_using_hart_error_conditions" name="DC.Identifier" /><title>Using HART error conditions for control strategy</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_diagnostic_status_text_hart_error_conditions.html" /><link rel="next" href="c_link_initialization.html" /></head><body class="fixed" id="c_using_hart_error_conditions" data-relpath="c_using_hart_error_conditions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_using_hart_error_conditions"></a>
+
+<h1 class="topictitle1">Using HART error conditions for control strategy</h1>
+<div><div></div>
+
+	 <div class="p">In addition to the status associated with the Analog Input function
+		block OUT parameter, you can reference the possible error conditions directly
+		in a control module by linking an Internal Read Parameter via an External
+		Reference to one of the HART channel Boolean parameters. The following are the
+		HART channel Boolean parameters:
+	 <a name="c_using_hart_error_conditions__ul_0F50966EA085403592379A764DAE018E"></a><ul id="c_using_hart_error_conditions__ul_0F50966EA085403592379A764DAE018E">
+		<li id="c_using_hart_error_conditions__li_084F4996BD98427D893223C2A87715CE"><div class="li_content">
+		  <p><strong>Field Device Malfunction</strong> 
+			 <strong>(DEV_MALFUNC)</strong> — True when the HART instrument detects a
+			 problem with itself or associated sensors.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_2072F88AAABE4E2D91EB1D297ABAE60E"><div class="li_content">
+		  <p><strong>PV Fixed (PV_FIXED)</strong> — True when the HART instrument has been
+			 in test loop mode or is in multidrop mode. In test loop mode, the HART
+			 instrument&#39;s analog output value is held at the configured value and does not
+			 reflect the process.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_BBDA2910B76F43F28B1DB5206DA4FB27"><div class="li_content">
+		  <p><strong>PV Saturated (PV_SAT)</strong> — True when the analog output of the
+			 HART instrument is saturated.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_7886643BAE4F415BA0B2CDC9EB9F5202"><div class="li_content">
+		  <p><strong>PV Past Limits</strong> 
+			 <strong>(PV_PAST_LIM)</strong> — True when the primary measurement is outside
+			 the sensor operating limits. In this case, the analog parameters (FIELD_VAL_PCT
+			 and HART_FIELD_VAL) and the digital parameter (HART_PV) are not reliable; this
+			 is reflected in their associated status values.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_E4C10FC199E5459C842335A5BA4244B9"><div class="li_content">
+		  <p><strong>NPV Past Limits (NPV_PAST_LIM)</strong> — True when one of the
+			 nonprimary measurements is outside the sensor operating limits. There is no
+			 indication of which nonprimary measurement is bad.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_06B9A301B0AE440FBBEC1FC64E03B939"><div class="li_content">
+		  <p><strong>No Communications (NO_COMM)</strong> — True when the HART channel
+			 cannot communicate digitally with the attached HART instrument.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_5181F48E80194A42ACF0C6DA10D63FD9"><div class="li_content">
+		  <div class="p"><strong>Overall Integrity (OINTEG)</strong> — True when one or more of the
+			 following conditions are True:
+		  <a name="c_using_hart_error_conditions__ul_EC1D81095F7A4D69B1FD840537B4360F"></a><ul id="c_using_hart_error_conditions__ul_EC1D81095F7A4D69B1FD840537B4360F"> 
+			 <li id="c_using_hart_error_conditions__li_393E376C35C44FB3A4095FAF236FEAC4"><div class="li_content">
+				<p>AI-HART card detects a problem with itself
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_BD813F21851A48CABE40E114D2B87387"><div class="li_content">
+				<p>An open or short is detected on a HART channel input
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_CB9750F669A14B8D9DF0E80517A911DA"><div class="li_content">
+				<p>An analog NAMUR high or low level is detected
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_142F65A67D224E4EAD839CEC71098637"><div class="li_content">
+				<p>DEV_MALFUNC is True
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_BDD04A7A6E924496AC5CD1F45D8E3247"><div class="li_content">
+				<p>PV_FIXED is True
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_FA05863457FA44D99F5FF8892EE0794F"><div class="li_content">
+				<p>There has been a problem configuring the HART instrument during
+				  initialization
+				</p>
+
+			 </div></li>
+ 
+			 <li id="c_using_hart_error_conditions__li_141C538DDDA8478A90D3AAC118BDB1BB"><div class="li_content">
+				<p>If any of the conditions related to the diagnostic status text
+				  strings listed above exist, OINTEG will be True (1) except for Good and Good –
+				  No Installed Config.
+				</p>
+
+			 </div></li>
+ 
+		  </ul>
+
+		  </div>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+
+	 <p><strong>Customizing Control on Error Conditions</strong>
+	 </p>
+
+	 <p>In some cases, you might want to use HART data even though the
+		instrument is reporting certain error conditions. The HART_ERRORS parameter
+		allows you to select which HART status error values are ignored in your control
+		strategy.
+	 </p>
+
+	 <p>The HART_ERRORS parameter masks HART error conditions that you determine
+		are not required for your application. For example, you might have a measured
+		variable that is outside limits occasionally but is not a problem for the
+		process. You can select the Ignore PV Out of Limits for All PV Status option in
+		the HART_ERRORS parameter to disregard this error condition.
+	 </p>
+
+	 <div class="p">You modify the HART_ERRORS parameter by selecting the channel properties
+		and checking one or more of the following actions:
+	 <a name="c_using_hart_error_conditions__ul_2DB90D050529485BBC2EB2CFAF345324"></a><ul id="c_using_hart_error_conditions__ul_2DB90D050529485BBC2EB2CFAF345324">
+		<li id="c_using_hart_error_conditions__li_2EA34716A68C4A4DA142BC35685505D2"><div class="li_content">
+		  <p><strong>Ignore PV Out of Limits for All PV Status</strong> — Primary Variable
+			 (PV) values that are higher or lower than the configured limits are ignored
+			 when determining PV statuses.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_1563C9C064A0453DA8BFE4926875AF45"><div class="li_content">
+		  <p><strong>Ignore NPV Out of Limits for All NPV Status</strong> — Non-Primary
+			 Variable (NPV) values that are higher or lower than the configured limits are
+			 ignored when determining NPV statuses.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_548F9852CFE54CF8B12A1A0292A728ED"><div class="li_content">
+		  <p><strong>Ignore PV Output Saturated for All PV Status</strong> — PV values that
+			 are output saturated are ignored when determining PV statuses.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_314620E6742841A38044522F8E87067C"><div class="li_content">
+		  <p><strong>Ignore PV Output Fixed for All PV Status</strong> — PV values that
+			 have a fixed output are ignored when determining PV statuses.
+		  </p>
+
+		</div></li>
+
+		<li id="c_using_hart_error_conditions__li_BC741FABF18B4D069C379CA7182A5429"><div class="li_content">
+		  <p><strong>Ignore FLD Device Malfunction for All Status</strong> — Values
+			 determined during a field device malfunction are ignored when determining
+			 statuses.
+		  </p>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> The default value for these actions is disabled (False). That is,
+		  these status conditions are not ignored. When you enable these actions, the
+		  block ignores the specified statuses.
+		</p>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

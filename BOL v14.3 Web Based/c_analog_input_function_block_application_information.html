@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Analog Input function block application information" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="example, Analog Input function block" name="DC.subject" /><meta content="example, Analog Input function block" name="keywords" /><meta content="c_hart_comm_with_deltav_system.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_analog_input.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_analog_input_function_block_application_information" name="DC.Identifier" /><title>Analog Input function block application information</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_analog_input_function_block_parameters.html" /><link rel="next" href="c_analog_input_function_block_advanced_information.html" /></head><body class="fixed" id="c_analog_input_function_block_application_information" data-relpath="c_analog_input_function_block_application_information.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_analog_input_function_block_application_information"></a>
+
+<h1 class="topictitle1">Analog Input function block application information</h1>
+<div><div></div>
+
+    <p id="c_analog_input_function_block_application_information__applicationinformationanaloginputfunctionblock"><a name="c_analog_input_function_block_application_information__applicationinformationanaloginputfunctionblock"></a>The method you use to configure an Analog Input function block and its associated input channel depends on whether the measurement is from a traditional 4 to 20 mA transmitter or a HART transmitter.</p>
+
+    <p>
+      <strong>Traditional 4 to 20 mA transmitter</strong>
+    </p>
+
+    <div class="p">When you are using a measurement from a traditional 4 to 20 mA transmitter, you configure the associated input channel and Analog Input function block as follows:<a name="c_analog_input_function_block_application_information__ul_CD7471DC86C54C44BA83745B305C668E"></a><ul id="c_analog_input_function_block_application_information__ul_CD7471DC86C54C44BA83745B305C668E"><li id="c_analog_input_function_block_application_information__li_5A0851E80B4040BBA6869C9855CC4A92"><div class="li_content"><p>
+      <strong>Channel type</strong>: Analog Input channel</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_A47DD36113764B56ABE2DA4607A65A4C"><div class="li_content"><p>
+      <strong>Analog Input block IO_IN parameter</strong>: FIELD_VAL_PCT</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_A2A3FB0F12014D8B8AD35FA022AF04B5"><div class="li_content"><p>
+      <strong>Analog Input block L_TYPE parameter</strong>: Select Indirect when the measurement is linearly related to the 4 to 20 mA signal. Select Indirect Square Root when this is a flow measurement using differential pressure and when square root extraction is not performed in the transmitter.</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_08286612E4B2492685A15F4946899B8D"><div class="li_content"><p>
+      <strong>Analog Input block XD_SCALE parameter</strong>: Set the range and engineering units to 0 — 100%.</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_F20E5FA9F5AE486AA2E6D25D3C9F61EF"><div class="li_content"><p>
+      <strong>Analog Input block OUT_SCALE parameter</strong>: Set the range and engineering units to the values that correspond to the transmitter&#39;s 4 to 20 mA signal.</p>
+</div></li>
+</ul>
+</div>
+
+    
+    
+    
+    
+    
+    <p>
+      <strong>HART transmitter</strong>
+    </p>
+
+    <div class="p"> When you are using a measurement from a HART transmitter connected to an analog input channel, you configure the associated input channel and Analog Input function block as follows:<a name="c_analog_input_function_block_application_information__ul_56F5B96291134793B2E930F8D8B40E2A"></a><ul id="c_analog_input_function_block_application_information__ul_56F5B96291134793B2E930F8D8B40E2A"><li id="c_analog_input_function_block_application_information__li_60BD651401194CE696DF5FBBCCD2DC92"><div class="li_content"><p>
+      <strong>Channel type</strong>: HART Analog Input Channel</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_DAAFEB439DAB497786C0446B36623EEB"><div class="li_content"><p>
+      <strong>Analog Input block IO_IN parameter</strong>: The analog input card passes the percent or engineering unit measurement of the Primary Variable (or the engineering unit value of a non-Primary Variable) based on the selection of IO_IN. The following table lists the IO_IN selections:</p>
+
+<div class="tablenoborder"><a name="c_analog_input_function_block_application_information__table_84508690A21C40AD8087A75A5313D064"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_input_function_block_application_information__table_84508690A21C40AD8087A75A5313D064" rules="all" summary=""><caption><span class="tablecap">Analog Input Function Block IO_IN Parameter Selections for HART Transmitters</span></caption>
+        
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d781572e112" valign="top" width="19.565217391304348%">
+              <p>Variable</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e118" valign="top" width="21.73913043478261%">
+              <p>Access</p>
+
+            </th>
+
+            <th class="cellrowborder" colspan="2" id="d781572e124" valign="top">
+              <p>IO_IN Selection</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>
+                <strong>Engineering Units</strong>
+              </p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>
+                <strong>Percent</strong>
+              </p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+              <p>Primary</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+              <p>4 to 20 mA</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>HART_FIELD_VAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>FIELD_VAL_PCT</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+              <p>Primary</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+              <p>Digital</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>HART_PV</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>N/A</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+              <p>Secondary</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+              <p>Digital</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>HART_SV</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>N/A</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+              <p>Tertiary</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+              <p>Digital</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>HART_TV</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>N/A</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e112 " valign="top" width="19.565217391304348%">
+              <p>4<sup>th</sup></p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e118 " valign="top" width="21.73913043478261%">
+              <p>Digital</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="45.65217391304348%">
+              <p>HART_FV</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e124 " valign="top" width="13.043478260869565%">
+              <p>N/A</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+<div class="note"><span class="notetitle">Note:</span> 
+      <p> When a channel value is accessed digitally, the update rate of the analog input channel value depends on the number of channels on the associated I/O card that are configured as HART Analog Input channels. When all eight channels are configured as HART channels, each channel is updated every six seconds. When there is only one such channel on the card, the channel is updated approximately every 0.5 seconds.
+</p>
+
+      <p>
+Therefore, when you are using the primary measurement in closed loop control of a fast or moderately fast process, we recommend that you define IO_IN to access the 4 to 20 mA signal. You can use the digital value when you require the improved accuracy and range of the digital value for a monitoring application or for a control application involving a slow process.</p>
+
+    </div>
+
+    </div></li>
+<li id="c_analog_input_function_block_application_information__li_CFF8818CC35D4D0B823FE510F77F6D4D"><div class="li_content"><p>
+      <strong>Analog Input block L_TYPE parameter</strong>: Select Direct to use an I/O parameter that provides its signal in the engineering units that you want for the block output.</p>
+
+    <p>Select Indirect when you want to convert the I/O parameter value to engineering units based on the input and output ranges defined by XD_SCALE and OUT_SCALE.</p>
+
+    <p>Select Indirect Square Root when the block I/O parameter value represents a flow measurement made using differential pressure, and when square root extraction is not performed by the transmitter.</p>
+
+    <p>Select Direct Independent for RTD and Thermocouple inputs to allow OUT_SCALE to be set to a narrower range than XD_SCALE.</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_CF191138661D4F279C02C790AE58BC8B"><div class="li_content"><p>
+      <strong>Analog Input block OUT_SCALE parameter</strong>: Set the desired ranges and engineering units for the PV and OUT parameters to correspond to the XD_SCALE range and the L_TYPE conversion.</p>
+</div></li>
+<li id="c_analog_input_function_block_application_information__li_92B7CF77815C4CA7BC66EE30D306DE48"><div class="li_content"><p>
+      <strong>Analog Input block XD_SCALE parameter</strong>: When the IO_IN channel type is FIELD_VALUE_PCT, configure XD_SCALE as 0 — 100%. When any other channel type is selected, configure XD_SCALE to match the range and units of the transmitter.</p>
+</div></li>
+</ul>
+</div>
+
+    
+    
+    
+    
+    
+    
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> When you select HART_FIELD_VAL as the channel type, the range and units defined by the XD_SCALE or the OUT_SCALE parameter are written to the transmitter. This assumes that the specified engineering units are supported by the transmitter. If the transmitter units you specify are not supported by the transmitter, the channel status is set to <em>Bad</em>.
+</p>
+
+      <p>
+When the range or units of the transmitter&#39;s Primary Variable for your application is different than that defined in OUT_SCALE, set L_TYPE to Indirect and define the input and output ranges in XD_SCALE and OUT_SCALE.</p>
+
+    </div>
+
+    <p>
+      <strong>Application example: Traditional Temperature Transmitter</strong>
+    </p>
+
+    <p>Assume a temperature transmitter is calibrated for a range of 200 to 400°F and is used in a monitor (non-control) application in which accuracy is important. You configure the associated input channel and Analog Input function block as follows.</p>
+
+    
+<div class="tablenoborder"><a name="c_analog_input_function_block_application_information__table_8456F53919ED47CCA7F99DA5BBCE9805"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_input_function_block_application_information__table_8456F53919ED47CCA7F99DA5BBCE9805" rules="all" summary=""><caption><span class="tablecap">Analog Input Function Block Configuration Example for a Traditional Temperature Transmitter</span></caption>
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d781572e378" valign="top" width="35%">
+              <p>Configuration Setting</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e384" valign="top" width="33%">
+              <p>Traditional 4 to 20 mA Transmitter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e390" valign="top" width="32%">
+              <p>HART Transmitter</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e378 " valign="top" width="35%">
+              <p>Channel Type</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e384 " valign="top" width="33%">
+              <p>Analog Input</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e390 " valign="top" width="32%">
+              <p>HART Analog Input</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e378 " valign="top" width="35%">
+              <p>AI Block IO_IN Parameter</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e384 " valign="top" width="33%">
+              <p>FIELD_VAL_PCT</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e390 " valign="top" width="32%">
+              <p>HART_PV</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e378 " valign="top" width="35%">
+              <p>L_TYPE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e384 " valign="top" width="33%">
+              <p>Indirect</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e390 " valign="top" width="32%">
+              <p>Direct</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e378 " valign="top" width="35%">
+              <p>XD_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e384 " valign="top" width="33%">
+              <p>0 to 100%</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e390 " valign="top" width="32%">
+              <p>200 to 400°F</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e378 " valign="top" width="35%">
+              <p>OUT_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e384 " valign="top" width="33%">
+              <p>200 to 400°F</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e390 " valign="top" width="32%">
+              <p>200 to 400°F</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>The following figure is the function block diagram for this example.</p>
+
+    <div class="fignone" id="c_analog_input_function_block_application_information__fig_AF7823D1486A443D94BFE21FCE0D1D11"><a name="c_analog_input_function_block_application_information__fig_AF7823D1486A443D94BFE21FCE0D1D11"></a><div><span class="figcap">Analog Input function block diagram example for a Traditional Temperature Transmitter</span></div>
+      
+      <a name="c_analog_input_function_block_application_information__image_A66D4F607E3E498B9BB0C567FB5B6D55"></a><img id="c_analog_input_function_block_application_information__image_A66D4F607E3E498B9BB0C567FB5B6D55" src="fbhelp0083.gif" />
+    </div>
+
+    <p>
+      <strong>Application example: Traditional Pressure Transmitter</strong>
+    </p>
+
+    <p>Assume the level of a small open tank is to be measured using a pressure tap near the bottom of the tank. Based on the tap location and the density of the material in the tank, the pressure transmitter is calibrated at 0 to 200 inH2O for a tank level of 0 to 10 ft. The level measurement is used to control the tank level. You configure the associated input channel and Analog Input function block as follows.</p>
+
+    
+<div class="tablenoborder"><a name="c_analog_input_function_block_application_information__table_F74436029FAB4E25968276517C4A979F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_input_function_block_application_information__table_F74436029FAB4E25968276517C4A979F" rules="all" summary=""><caption><span class="tablecap">Analog Input function block configuration example for a Traditional Pressure Transmitter</span></caption>
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d781572e547" valign="top" width="32%">
+              <p>Configuration Setting</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e553" valign="top" width="28.999999999999996%">
+              <p>Traditional 4 to 20 mA Transmitter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e559" valign="top" width="39%">
+              <p>HART Transmitter</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e547 " valign="top" width="32%">
+              <p>Channel Type</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e553 " valign="top" width="28.999999999999996%">
+              <p>Analog Input</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e559 " valign="top" width="39%">
+              <p>HART Analog Input</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e547 " valign="top" width="32%">
+              <p>AI Block IO_IN Parameter</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e553 " valign="top" width="28.999999999999996%">
+              <p>FIELD_VAL_PCT</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e559 " valign="top" width="39%">
+              <p>HART_FIELD_VAL</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e547 " valign="top" width="32%">
+              <p>L_TYPE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e553 " valign="top" width="28.999999999999996%">
+              <p>Indirect</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e559 " valign="top" width="39%">
+              <p>Indirect</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e547 " valign="top" width="32%">
+              <p>XD_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e553 " valign="top" width="28.999999999999996%">
+              <p>0 to 100%</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e559 " valign="top" width="39%">
+              <p>0 to 200 inH2O</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e547 " valign="top" width="32%">
+              <p>OUT_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e553 " valign="top" width="28.999999999999996%">
+              <p>0 to 10 ft.</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e559 " valign="top" width="39%">
+              <p>0 to 10 ft.</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>The following figure is the function block diagram for this example.</p>
+
+    <div class="fignone" id="c_analog_input_function_block_application_information__fig_5C279CEEF1454B01B3C21C7D27BBDF04"><a name="c_analog_input_function_block_application_information__fig_5C279CEEF1454B01B3C21C7D27BBDF04"></a><div><span class="figcap">Analog Input function block diagram example for a Traditional Pressure Transmitter</span></div>
+      
+      <a name="c_analog_input_function_block_application_information__image_FA10713E8D564F7D8E182CD6D54F2325"></a><img id="c_analog_input_function_block_application_information__image_FA10713E8D564F7D8E182CD6D54F2325" src="fbhelp0084.gif" />
+    </div>
+
+    <p>
+      <strong>Application example: Traditional Differential Pressure Transmitter</strong>
+    </p>
+
+    <p>Assume the liquid flow in a line is to be measured using the differential pressure across an orifice plate in the line. Based on the orifice specification sheet, the differential pressure transmitter was calibrated for 0 to 20 inH2O for a flow of 0 to 800 gal/min. The flow measurement is used in a flow control loop. If the transmitter was not set up to take the square root of the differential pressure, you configure the associated input channel and Analog Input function block as follows.</p>
+
+    
+<div class="tablenoborder"><a name="c_analog_input_function_block_application_information__table_7583510C635B41F8B69CA815E9008E30"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_input_function_block_application_information__table_7583510C635B41F8B69CA815E9008E30" rules="all" summary=""><caption><span class="tablecap">Analog Input function block configuration example for a Traditional Differential Pressure Transmitter</span></caption>
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d781572e716" valign="top" width="28.000000000000004%">
+              <p>Configuration Setting</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e722" valign="top" width="33%">
+              <p>Traditional 4 to 20 mA Transmitter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d781572e728" valign="top" width="39%">
+              <p>HART Transmitter</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e716 " valign="top" width="28.000000000000004%">
+              <p>Channel Type</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e722 " valign="top" width="33%">
+              <p>Analog Input</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e728 " valign="top" width="39%">
+              <p>HART Analog Input</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e716 " valign="top" width="28.000000000000004%">
+              <p>AI Block IO_IN Parameter</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e722 " valign="top" width="33%">
+              <p>FIELD_VAL_PCT</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e728 " valign="top" width="39%">
+              <p>HART_FIELD_VAL</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e716 " valign="top" width="28.000000000000004%">
+              <p>L_TYPE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e722 " valign="top" width="33%">
+              <p>Indirect Square Root</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e728 " valign="top" width="39%">
+              <p>Indirect Square Root</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e716 " valign="top" width="28.000000000000004%">
+              <p>XD_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e722 " valign="top" width="33%">
+              <p>0 to 100%</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e728 " valign="top" width="39%">
+              <p>0 to 20 inH2O</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d781572e716 " valign="top" width="28.000000000000004%">
+              <p>OUT_SCALE</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e722 " valign="top" width="33%">
+              <p>0 to 800 gal/min</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d781572e728 " valign="top" width="39%">
+              <p>0 to 800 gal/min</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>The function block diagram for this example is identical to the diagram for the previous example.</p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_hart_comm_with_deltav_system.html">HART communication with the DeltaV system</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Neural Network function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="NN function block, NN Function Block, block execution" name="DC.subject" /><meta content="NN function block, NN Function Block, block execution" name="keywords" /><meta content="c_neural_dvn_main.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_neural.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_neural_network_function_block_execution" name="DC.Identifier" /><title>Neural Network function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_neural_network_function_block_configuration.html" /><link rel="next" href="c_neural_network_function_block_modes.html" /></head><body class="fixed" id="c_neural_network_function_block_execution" data-relpath="c_neural_network_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_neural_network_function_block_execution"></a>
+
+<h1 class="topictitle1">Neural Network function block execution</h1>
+<div><div></div>
+
+    <p id="c_neural_network_function_block_execution__BlockExecutionNNFunctionBlock"><a name="c_neural_network_function_block_execution__BlockExecutionNNFunctionBlock"></a>The value, status, and associated
+      scaling of the configured inputs are reported unsolicited to the neural network
+      (NN) block. In both Auto and Man modes, inputs selected during sensitivity
+      analysis are used to calculate the process output. Also, the block calculates
+      the future output of the process for the current input values. If the value of
+      an input or output is outside the data range used to train the neural network,
+      the value is limited to the data range. If correction is enabled (CORR_ENABLE)
+      and the status of the sample is not limited, the block computes the model error
+      by taking the difference between the current sample process output (SAMPLE) and
+      the calculated Neural Network output delayed by the sample time (DELAY). After
+      limiting the difference to ± the correction limit (CORR_LIMIT), the block
+      filters the model error to obtain the calculated model correction bias
+      (CORR_BIAS). The block adds the calculated correction bias to the calculated
+      process output (OUT) and future output (FUTURE). Note that the NN block retains
+      OUT values upto a maximum delay of the Time to Steady State (TSS) value
+      configured in the DeltaV Neural application. Therefore, a SAMPLE value entered
+      with DELAY greater than TSS will not affect the CORR_BIAS value.
+    </p>
+
+    <p>In Auto mode, the OUT parameter and FUTURE parameter of the block
+      reflect the corrected process output and future value respectively. In Man
+      mode, the block updates the FUTURE parameter only.
+    </p>
+
+    <p>If one or more of the reference inputs is invalid, the NN block sets
+      Readback Failed and Input Failure/Bad PV in BLOCK_ERR. The status of all of the
+      inputs is set to Bad resulting in the OUT and FUTURE being set to Bad OOS (out
+      of service). Also, in the trend parameter list the inputs have a value of 0.0
+      and in the trend view the inputs with invalid references have the value 0.
+    </p>
+
+    <p>When one or more of the inputs used in the NN block has a status of Bad,
+      the Input Failure/Bad PV is set in BLOCK_ERR.
+    </p>
+
+    <p>If an input or output value is limited to the data range used in
+      training the NN, the Other Error is set in BLOCK_ERR and the FUTURE and OUT
+      have an Uncertain status. The value used in computing the NN prediction is
+      limited to the training range. Typically, FUTURE precedes OUT in going to
+      Uncertain because OUT uses the delayed inputs, which would have been within
+      training range. When the value is back within training range, FUTURE again
+      precedes OUT in returning to Good status. Your configuration of BAD_MASK
+      determines whether these conditions cause BAD_ACTIVE or ABNORMAL_ACTIVE to be
+      set.
+    </p>
+
+    <p>If the FOLLOW input is active (1) and the mode is AUTO, then the OUT
+      parameter value and status is forced to match the SAMPLE input value and
+      status. When the module that contains the NN block is downloaded, the block is
+      initialized using the current input values.  
+    </p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_neural_dvn_main.html">DeltaV Neural</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Configuring user accounts for OPC server and clients" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC user accounts, OPC user accounts, configuring" name="DC.subject" /><meta content="OPC user accounts, OPC user accounts, configuring" name="keywords" /><meta content="t_enable_dcom_on_the_pc.html" name="DC.Relation" scheme="URI" /><meta content="c_functional_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_configuring_user_accounts_for_opc_server_and_clients" name="DC.Identifier" /><title>Configuring user accounts for OPC server and clients</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_set_dcom_access_and_launch_permissions.html" /><link rel="next" href="c_redundant_deltav_opc_da_server.html" /></head><body class="fixed" id="c_configuring_user_accounts_for_opc_server_and_clients" data-relpath="c_configuring_user_accounts_for_opc_server_and_clients.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_configuring_user_accounts_for_opc_server_and_clients"></a>
+
+<h1 class="topictitle1">Configuring user accounts for OPC server and
+	 clients</h1>
+<div><div></div>
+ 
+	 <p>OPC uses Microsoft DCOM technology to allow a client to connect to a
+		server running across a network that uses TCP/IP. Any two machines configured
+		for DCOM communications can be set up to run as a DeltaV OPC client and server.
+		
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p>When configuring the OPC Mirror user (opcuser in our examples), you
+		  must, in DeltaV User Manager, grant the proper DeltaV groups and DeltaV keys to
+		  opcuser. This means if you are using OPC Mirror to write parameters to the
+		  DeltaV runtime system and those parameters are in modules running assigned to a
+		  specific area, you must grant the OPC Mirror user the 
+		  <span class="uicontrol">Control</span> key for the DeltaV area where those
+		  parameters are assigned. Or, you can add that OPC Mirror user to a DeltaV group
+		  that has the Control key for the DeltaV area where those parameters are
+		  assigned.
+		</p>
+
+	 </div>
+
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_B066D2729F614FF2B8AD9908C58B6F4A"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_B066D2729F614FF2B8AD9908C58B6F4A"></a><h2 class="sectiontitle">Client machine setup</h2> 
+		 
+		<p>For unsolicited callbacks to work, set the password for the
+		  DeltaVAdmin account on the client machine to be the same as that on the server
+		  machine. This is because the OPC server is running as DeltaVAdmin on the server
+		  machine. The DeltaVAdmin account is automatically created by the OPC Remote
+		  installation. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_5F6F79E3BAA041DC9A2DBE9A4B7E6B55"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_5F6F79E3BAA041DC9A2DBE9A4B7E6B55"></a><h2 class="sectiontitle">Server machine setup</h2> 
+		 
+		<p>The client application runs as a valid Windows account and DeltaV
+		  account to the server machine. The server is set up differently depending upon
+		  whether the computers are in a workgroup or domain. The following sections
+		  describe the various setup options. The term &quot;opcuser&quot; is used as an example
+		  user account name. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_3190B51A5F2C42A58D7EB40073B10869"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_3190B51A5F2C42A58D7EB40073B10869"></a><h2 class="sectiontitle">Both client and server machines are in a workgroup</h2> 
+		 
+		<p>The client runs as a local user if both client and server are in a
+		  workgroup. To set up the user on the server machine: 
+		</p>
+ 
+		<a name="c_configuring_user_accounts_for_opc_server_and_clients__ul_C158676F15634908B446FE7658002BF8"></a><ul id="c_configuring_user_accounts_for_opc_server_and_clients__ul_C158676F15634908B446FE7658002BF8"> 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_983ECBD856114F5C83AC6092F42F9934"><div class="li_content"> 
+			 <p>Use the DeltaV User Manager on the server machine to create a user
+				account (opcuser, for example) and assign it the same password as the client
+				machine. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_73439E6E37794FC58FCF1072F8217D77"><div class="li_content"> 
+			 <p>In DeltaV User Manager, make opcuser both an Operating System
+				Account and a DeltaV Database Account. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_9962F05F79CF4DE7B29C9F11BE9D108A"><div class="li_content"> 
+			 <p>In DeltaV User Manager, grant the proper DeltaV groups and DeltaV
+				keys to opcuser. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_59AC39EEFD8A424D8048516BC12E94B6"><div class="li_content"> 
+			 <p>From DeltaV Explorer, download the DeltaV machine. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_8CEA0E8E165F4CF7BA9DD9C5DD7B8AC1"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_8CEA0E8E165F4CF7BA9DD9C5DD7B8AC1"></a><h2 class="sectiontitle">The client runs as a domain user and the server is in a
+		  workgroup</h2> 
+		 
+		<p>Follow the steps described in the section: 
+		  <cite>Both the client and server machines are in a workgroup</cite>. 
+		</p>
+ 
+		<div class="p">Also, create the DeltaVAdmin account on the server (the DeltaV
+		  workstation) as follows: 
+		<ul> 
+		  <li><div class="li_content">as a local user account, with the same password as the domain
+			 account and also the client&#39;s local account. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Make the local DeltaVAdmin account a member of the local DeltaV
+			 user group. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Make the local DeltaVAdmin account a non-interactive account (the
+			 same as the domain DeltaVAdmin account). 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_773DB4D980B840F1AF91AE0FAC3F551C"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_773DB4D980B840F1AF91AE0FAC3F551C"></a><h2 class="sectiontitle">The client runs as local user and the server is in a
+		  domain</h2> 
+		 
+		<p>On the server machine, use the Windows User Manager application to: 
+		</p>
+ 
+		<a name="c_configuring_user_accounts_for_opc_server_and_clients__ul_4EEC3A05880B4ED1A928873921F2E534"></a><ul id="c_configuring_user_accounts_for_opc_server_and_clients__ul_4EEC3A05880B4ED1A928873921F2E534"> 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_A39901473631426FA3194A0FD96EB6D2"><div class="li_content"> 
+			 <p>Create a local user account (opcuser, for example). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_98CE358F9F0A430ABD8D4D747DB3194E"><div class="li_content"> 
+			 <p>Assign it the same password as the client machine. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_5AE05868291A4614BF722D770258D514"><div class="li_content"> 
+			 <p>Add it to the local DeltaV group. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>On the server machine, use DeltaV User Manager to: 
+		</p>
+ 
+		<a name="c_configuring_user_accounts_for_opc_server_and_clients__ul_B6CD4F45732247D280854230F611CBE4"></a><ul id="c_configuring_user_accounts_for_opc_server_and_clients__ul_B6CD4F45732247D280854230F611CBE4"> 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_7FD001DCB00745CE8B3C45D0E280737F"><div class="li_content"> 
+			 <p>Make the local account (in this example, opcuser) a DeltaV
+				Database account (select that option in the user account&#39;s properties). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_E832CAF7D7504F17A4A84DFDBFED63E8"><div class="li_content"> 
+			 <p>Grant the proper DeltaV groups and DeltaV keys to opcuser. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>On the server machine, use DeltaV Explorer to download the DeltaV
+		  machine. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_24C3E2087AA449599439325EC1208B52"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_24C3E2087AA449599439325EC1208B52"></a><h2 class="sectiontitle">The client runs as domainA user and the server is in domainB and
+		  domainB trusts domainA</h2> 
+		 
+		<p>When establishing the trust, configure the domain name system (DNS)
+		  for the domain being trusted using the DNS Manager on domainB&#39;s domain
+		  controller. 
+		</p>
+ 
+		<p>On the server machine (domainB), do the following: 
+		</p>
+ 
+		<a name="c_configuring_user_accounts_for_opc_server_and_clients__ul_8BCB858F3C8A462286CAEFA0473523E2"></a><ul id="c_configuring_user_accounts_for_opc_server_and_clients__ul_8BCB858F3C8A462286CAEFA0473523E2"> 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_6C42E1BA56D74F389174B9A49823A7D0"><div class="li_content"> 
+			 <p>Use Windows User Manager to add domainA\opcuser to the local
+				DeltaV group. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_E2AE94438B0E40B68CA16B7DA1CEBBCE"><div class="li_content"> 
+			 <p>Use the DeltaV User Manager to make opcuser a DeltaV Database
+				account (select that option in the user account&#39;s properties). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_FDB8CCF7A472451B97F87F2133FA682C"><div class="li_content"> 
+			 <p>In DeltaV User Manager, grant the proper DeltaV groups and DeltaV
+				keys to this user. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_configuring_user_accounts_for_opc_server_and_clients__li_094CF6566C314FE78DD0425F06920870"><div class="li_content"> 
+			 <p>From DeltaV Explorer, download the DeltaV machine. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">The client runs as domainA user and the server is in domainB and
+		  there is a two-way trust between the domains</h2> 
+		 
+		<p>When establishing the trust, configure the domain name system (DNS)
+		  for the domain being trusted using the DNS Manager on the domain controller (in
+		  this case, both domains will have a DNS entry for each other). 
+		</p>
+ 
+		<p>On the server machine (domainB), do the following: 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>Use Windows User Manager to add domainA\opcuser to the local
+				DeltaV group. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Use the DeltaV User Manager to make opcuser a DeltaV Database
+				account (select that option in the user account&#39;s properties). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>In DeltaV User Manager, grant the proper DeltaV groups and DeltaV
+				keys to this user. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>From DeltaV Explorer, download the DeltaV machine. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>In this scenario, the domainA (client side) does not need the local
+		  DeltaAdmin account that is created by OPC Remote installation. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_configuring_user_accounts_for_opc_server_and_clients__section_BA377587FF9D44BD9C6A306F734F15FD"><a name="c_configuring_user_accounts_for_opc_server_and_clients__section_BA377587FF9D44BD9C6A306F734F15FD"></a><h2 class="sectiontitle">The client runs as domainA User and the server is in domainB, and
+		  domainB does not trust domainA</h2> 
+		 
+		<p>Follow the steps described in the section: 
+		  <cite>The client runs as local user and the server is in a
+			 domain</cite>. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_enable_dcom_on_the_pc.html">Enable DCOM on the PC</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Hardware alarm condition parameters (Smart Switch)" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="hardware alarm condition parameters, Smart Switch, parameters, Smart Switch, hardware alarm condition parameters" name="DC.subject" /><meta content="hardware alarm condition parameters, Smart Switch, parameters, Smart Switch, hardware alarm condition parameters" name="keywords" /><meta content="c_smart_switch_module_classes.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_hardware_alarm_condition_parameters" name="DC.Identifier" /><title>Hardware alarm condition parameters (Smart Switch)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_general_parameters.html" /><link rel="next" href="c_alarm_parameters.html" /></head><body class="fixed" id="c_hardware_alarm_condition_parameters" data-relpath="c_hardware_alarm_condition_parameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_hardware_alarm_condition_parameters"></a>
+
+<h1 class="topictitle1">Hardware alarm condition parameters (Smart Switch)</h1>
+<div><div></div>
+ 
+	 <p>Except for changing the value of the alarm level (ignore, maint, advise
+		or fail) we strongly recommend that you do not adjust other default parameters
+		in the switch module unless instructed to do so by Emerson to solve a specific
+		issue. 
+	 </p>
+ 
+	 <p>A number of parameters hold information that determine how hardware
+		alarm condition information in the switch is transformed into one of the
+		PlantWeb-style hardware alarms. 
+	 </p>
+ 
+	 <p>For floating-point array parameters that hold information specific to a
+		switch port (expressed as m.p where m = module number and p = port number in
+		the module), the mapping of port m.p to port number (array index) 
+		<var class="varname">n</var> follows the rule: 
+	 </p>
+ 
+	 <p>Array index n = (switch module m - 1) * PPM + (switch module port p) 
+	 </p>
+ 
+	 <p>where PPM (Ports per Module): 
+	 </p>
+ 
+	 <a name="c_hardware_alarm_condition_parameters__ul_E27758A3AD47429AB3523DC0C6AF7FBD"></a><ul id="c_hardware_alarm_condition_parameters__ul_E27758A3AD47429AB3523DC0C6AF7FBD"> 
+		<li id="c_hardware_alarm_condition_parameters__li_4721E2BE9322402BA61A2559F3FEAD6A"><div class="li_content">Is 8 for FP20 and RM100
+		  switches. 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_E1A7564C93724636BBF987393E7B5058"><div class="li_content">Is 4 for MD20 and MD30
+		  switches. 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_E7187D67E588474296140170CD7B1C58"><div class="li_content">Is 24 for RM104 switch 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>Thus for an RM100: 
+	 </p>
+ 
+	 <a name="c_hardware_alarm_condition_parameters__ul_CD77D3C6C0F040C89B54DF8F3658F616"></a><ul id="c_hardware_alarm_condition_parameters__ul_CD77D3C6C0F040C89B54DF8F3658F616"> 
+		<li id="c_hardware_alarm_condition_parameters__li_2F05FEBEA6934295BFF92D4E69521103"><div class="li_content">Port 1.1 information goes
+		  into HAC_XXXXXXXX_PRT[1] 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_9F6314C697FB4FEDB98F9DDDD5282EE3"><div class="li_content">(1 - 1) * 1 = 1 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_A7FAE2D951A0446EA18A6F24D4328296"><div class="li_content">Port 4.8 information (if
+		  present) goes into HAC_XXXXXXXX_PRT[32] 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_E07F9AF46EA942FC80C9711A5C70439D"><div class="li_content">(4 - 1) * 8 = 32 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>For an MD30: 
+	 </p>
+ 
+	 <a name="c_hardware_alarm_condition_parameters__ul_CFF2A6360A51484F9739EF3ACB40AE18"></a><ul id="c_hardware_alarm_condition_parameters__ul_CFF2A6360A51484F9739EF3ACB40AE18"> 
+		<li id="c_hardware_alarm_condition_parameters__li_B597F88D8E914A49AC095EAD9A60B357"><div class="li_content">Port 7.4 information (if
+		  present) goes into HAC_XXXXXXXX_PRT[28] 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_E57B45ABB97C4F71BAE72512AD751C2D"><div class="li_content">(7 - 1) * 4 = 28 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="p">For an RM104: 
+	 <a name="c_hardware_alarm_condition_parameters__ul_82E77047D9D446D89F89B2FF11E82648"></a><ul id="c_hardware_alarm_condition_parameters__ul_82E77047D9D446D89F89B2FF11E82648"> 
+		<li id="c_hardware_alarm_condition_parameters__li_85AB832393CA447D8E8DA7A5FEF0E48D"><div class="li_content">Port 1.1 information goes
+		  into HAC_XXXXXXXX_PRT[1] 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_23CCAB712CE64027A76CC4FBF81530AF"><div class="li_content">(1 - 1) * 1 = 1 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_000045FBC82047D9AE405A1A184D9EB2"><div class="li_content">Port 1.24 information (if
+		  present) goes into HAC_XXXXXXXX_PRT[24] 
+		</div></li>
+ 
+		<li id="c_hardware_alarm_condition_parameters__li_9EDC4C0CF1844F9B829C6C9E1CAA4BB5"><div class="li_content">(1 - 1) * 24 = 24 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>Information for installed ports is not necessarily contiguous in the
+		array. 
+	 </p>
+ 
+	 <p>The parameter information that follows is arranged in the order the
+		parameters appear in the switch module class function block diagram. 
+	 </p>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_B6B100C3E6A14E13937C1380659E29F2_unique_1"><a name="c_hardware_alarm_condition_parameters__section_B6B100C3E6A14E13937C1380659E29F2_unique_1"></a><h2 class="sectiontitle">Switch Not Communicating</h2> 
+		 
+		<p>This condition is reported when the node hosting the switch module
+		  cannot communicate with the switch using the IP address in the MGMT_IP_ADDR
+		  parameter. Failure to communicate with the switch overrides all other switch
+		  conditions that may be configured causing them to become inactive: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_A6D05DB80E3742838779E2C7BDAF7FDC_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_A6D05DB80E3742838779E2C7BDAF7FDC_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_DA4C108BA84441BFAFD259F8419D341A_unique_1"><div class="li_content">It is not possible to
+			 configure the switch module to ignore the NOCOMM condition. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_00DA35DFAC3048B3A911711980706A22_unique_1"><div class="li_content">If there are any failures
+			 in reading information from the switch the raw NOCOMM condition is true. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_93E8BC54129B43758A0C438191C5B95E_unique_1"><div class="li_content">On/off delay logic is
+			 applied using the values in HAC_NOCOMM_OND and HAC_NOCOMM_OFFD. 
+		  </div></li>
+ 
+		</ul>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_27DBF3FDBA164DECBC286E502D6222F2_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_27DBF3FDBA164DECBC286E502D6222F2_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e148" valign="top" width="31.444241316270567%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e154" valign="top" width="18.281535648994517%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e160" valign="top" width="25.045703839122492%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e166" valign="top" width="25.22851919561243%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e148 " valign="top" width="31.444241316270567%"> 
+					 <p> HAC_NOCOMM_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e154 " valign="top" width="18.281535648994517%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e160 " valign="top" width="25.045703839122492%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e166 " valign="top" width="25.22851919561243%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e148 " valign="top" width="31.444241316270567%"> 
+					 <p> HAC_NOCOMM_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e154 " valign="top" width="18.281535648994517%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e160 " valign="top" width="25.045703839122492%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e166 " valign="top" width="25.22851919561243%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>There is no HAC_NOCOMM_PWA parameter supported because the not
+		  communicating condition is always mapped to the COMM_ALM for the switch. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_0156765CEDB64B5C9F22F4574B855D5A"><a name="c_hardware_alarm_condition_parameters__section_0156765CEDB64B5C9F22F4574B855D5A"></a><h2 class="sectiontitle">Switch Is Unlocked</h2> 
+		 
+		<p>If HAC_UNLOCKED_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for lockdown status and the time remaining on the
+		  lockdown timer 
+		</p>
+ 
+		<p>If the lockdown status is Unlocked and there is no time remaining on
+		  the lockdown timer the raw UNLOCKED condition is true. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_UNLOCKED_OND and
+		  HAC_UNLOCKED_OFFD. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the UNLOCKED condition, visible in the
+		  Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_71BC9EDEF9104466B66129145BE766E9"></a><ul id="c_hardware_alarm_condition_parameters__ul_71BC9EDEF9104466B66129145BE766E9"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_280CB3B931544224AB515A59458C2791"><div class="li_content">Subsystem: Switch 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_ED56E4855F00481EAC54211951D64B4A"><div class="li_content">Message: DeltaV network
+			 switch unlocked 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_2863296025C54516B93314C440DCCBD4"><div class="li_content">Alarm: Determined by value
+			 in HAC_UNLOCKED_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_25083EDB669546339BF4825B26EB1B85"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_25083EDB669546339BF4825B26EB1B85" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e278" valign="top" width="33.27841845140033%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e284" valign="top" width="16.474464579901152%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e290" valign="top" width="25.04118616144975%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e296" valign="top" width="25.205930807248766%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e278 " valign="top" width="33.27841845140033%"> 
+					 <p> HAC_UNLOCKED_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e284 " valign="top" width="16.474464579901152%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e290 " valign="top" width="25.04118616144975%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e296 " valign="top" width="25.205930807248766%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e278 " valign="top" width="33.27841845140033%"> 
+					 <p> HAC_UNLOCKED_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e284 " valign="top" width="16.474464579901152%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e290 " valign="top" width="25.04118616144975%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e296 " valign="top" width="25.205930807248766%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e278 " valign="top" width="33.27841845140033%"> 
+					 <p> HAC_UNLOCKED_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e284 " valign="top" width="16.474464579901152%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e290 " valign="top" width="25.04118616144975%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e296 " valign="top" width="25.205930807248766%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_8BE8A46B499D47B090F5406640B9F328_unique_1"><a name="c_hardware_alarm_condition_parameters__section_8BE8A46B499D47B090F5406640B9F328_unique_1"></a><h2 class="sectiontitle">Power Supply Unavailable</h2> 
+		 
+		<p>DeltaV Smart Switches support redundant power supply connections (and
+		  in the case of the RM100, an option for redundant power conversion
+		  electronics). Reporting the loss of one of the power sources allows repairs
+		  before both power sources fail. 
+		</p>
+ 
+		<p>If HAC_PSNAVAIL_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for the status of the power supply connections. 
+		</p>
+ 
+		<p>If either power supply connection is bad, the raw PSNAVAIL condition
+		  is true. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_PSNAVAIL_OND and
+		  HAC_PSNAVAIL_OFFD. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the PSNAVAIL condtion, visible in the
+		  Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_477C42DBC6EF4434ACF1FD1EC30BDEFD_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_477C42DBC6EF4434ACF1FD1EC30BDEFD_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_7FAA399E410F4A2E8A50F9FE49526A83_unique_1"><div class="li_content">Subsystem: Switch 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_E4A868DCA20B43AD9241A87ABBB3FE3A_unique_1"><div class="li_content">Message: Power supply 
+			 <var class="varname">n</var> unavailable (where 
+			 <var class="varname">n</var> is either 1 or 2 to reflect the power supply
+			 that is unavailable). 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_DEF4A7232FB3447F9F2A9B23A5583A26_unique_1"><div class="li_content">Alarm: Determined by value
+			 in HAC_PSNAVAIL_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>When the switch power supply is not redundant you should either: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_51BAF6744C3A43CEA0F9CAC70DC603C0_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_51BAF6744C3A43CEA0F9CAC70DC603C0_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_3B113E9EB3EE4258938CF2A076DB4949_unique_1"><div class="li_content">Make the (non-redundant)
+			 power connections to both Power supply 1 and Power supply 2, or 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_F4249A166BB141C3A625A417AAAFF847_unique_1"><div class="li_content">Configure HAC_PSNAVAIL_PWA
+			 as Ignore (0) to disable checking this condition. 
+		  </div></li>
+ 
+		</ul>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_986E982843AD4A65B1A7F00B9FF8E576_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_986E982843AD4A65B1A7F00B9FF8E576_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e453" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e459" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e465" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e471" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e453 " valign="top" width="NaN%"> 
+					 <p> HAC_PSNAVAIL_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e459 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e465 " valign="top" width="NaN%"> 
+					 <p> MAINT_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e471 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the MAINT alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e453 " valign="top" width="NaN%"> 
+					 <p> HAC_PSNAVAIL_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e459 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e465 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e471 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e453 " valign="top" width="NaN%"> 
+					 <p> HAC_PSNAVAIL_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e459 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e465 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e471 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_8A01A8E7E48745DC884DCD21E6FEBA9C_unique_1"><a name="c_hardware_alarm_condition_parameters__section_8A01A8E7E48745DC884DCD21E6FEBA9C_unique_1"></a><h2 class="sectiontitle">Switch Chassis High Temperature</h2> 
+		 
+		<p>DeltaV Smart Switches can detect and report their chassis temperature.
+		  Operating above their rated temperature range can result in deteriorating
+		  switch behavior. 
+		</p>
+ 
+		<p>If HAC_HITEMP_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for its chassis temperature and writes the value to the
+		  HAC_HITEMP_VAL parameter. 
+		</p>
+ 
+		<p>If the value in HAC_HITEMP_VAL becomes greater than the value in
+		  HAC_HITEMP_LIM the raw HITEMP condition is true. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_HITEMP_OND and
+		  HAC_HITEMP_OFFD. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the HITEMP condition, visible in the
+		  Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_ABA14A13633E4FA4A5F0A36A97C71722_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_ABA14A13633E4FA4A5F0A36A97C71722_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_094185486AFD40A3B26B99ED66BAE953_unique_1"><div class="li_content">Subsystem: Switch 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_DEDC3FD162D445D6872C90120C86B6CF_unique_1"><div class="li_content">Message: Switch
+			 temperature too high. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_4AB54128DF4F4CCDA3057B0C4A6C999D_unique_1"><div class="li_content">Alarm: Determined by value
+			 in HAC_HITEMP_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If DeltaV Smart Switches with different temperature ranges are
+		  employed, adjust HAC_HITEMP_LIM as desired in each switch module. 
+		</p>
+ 
+		<p>If historical data on switch temperature is required, configure
+		  continuous history recording on HAC_HITEMP_VAL. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_0FC62CF2B6E142E9A6FBA9755DC1193F_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_0FC62CF2B6E142E9A6FBA9755DC1193F_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e616" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e622" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e628" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e634" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e616 " valign="top" width="NaN%"> 
+					 <p> HAC_HITEMP_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e622 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e628 " valign="top" width="NaN%"> 
+					 <p> MAINT_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e634 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the MAINT alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e616 " valign="top" width="NaN%"> 
+					 <p> HAC_HITEMP_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e622 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e628 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e634 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e616 " valign="top" width="NaN%"> 
+					 <p> HAC_HITEMP_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e622 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e628 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e634 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e616 " valign="top" width="NaN%"> 
+					 <p> HAC_HITEMP_LIM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e622 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e628 " valign="top" width="NaN%"> 
+					 <p> 50 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e634 " valign="top" width="NaN%"> 
+					 <p> Configurable high temperature limit for the switch, in
+						degrees C. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e616 " valign="top" width="NaN%"> 
+					 <p> HAC_HITEMP_VAL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e622 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e628 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e634 " valign="top" width="NaN%"> 
+					 <p> Receives the chassis temperature read from the switch
+						(available for history capture). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_A1B71809A52F4A37BC4A4785E04E0471_unique_1"><a name="c_hardware_alarm_condition_parameters__section_A1B71809A52F4A37BC4A4785E04E0471_unique_1"></a><h2 class="sectiontitle">Switch Signal Relay Activated</h2> 
+		 
+		<p>You can use advanced switch management tools to configure the
+		  conditions that cause the signaling relay on the switch to activate. The
+		  signaling relay can then be used to drive local indication of the problems
+		  detected by the switch. 
+		</p>
+ 
+		<p>If HAC_SIGRACT_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for the status of the signal relay contacts. The value
+		  returned (1 = signal relay is activated; 2 = otherwise) is written to the
+		  HAC_SIGRACT_VAL parameter. 
+		</p>
+ 
+		<p>If HAC_SIGRACT_VAL has a value other than 2 the raw SIGRACT condition
+		  is true. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_SIGRACT_OND and
+		  HAC_SIGRACT_OFFD. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM HAC is active. 
+		</p>
+ 
+		<p>The result is reported as the SIGRACT condition visible in the
+		  Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_9747DA034D484C27BC0B69E2E649518F_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_9747DA034D484C27BC0B69E2E649518F_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_3521105316544C17B6875C42C858C9CB_unique_1"><div class="li_content">Subsystem: Switch 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_171614EBD29B4A9EA5AFD045939FBECF_unique_1"><div class="li_content">Message: Switch signal
+			 relay activated. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_1116897CCEE74E7FB336FCDD401362FA_unique_1"><div class="li_content">Alarm: Determined by value
+			 in HAC_SIGRACT_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If historical data on the state of the signal relay is required,
+		  configure continuous history recording on HAC_SIGRACT_VAL. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_53D4B6AE95C64C828B0FE33899414B2C_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_53D4B6AE95C64C828B0FE33899414B2C_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e831" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e837" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e843" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e849" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e831 " valign="top" width="NaN%"> 
+					 <p> HAC_SIGRACT_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e837 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e843 " valign="top" width="NaN%"> 
+					 <p> Ignored 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e849 " valign="top" width="NaN%"> 
+					 <p> This condition should be ignored by default. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e831 " valign="top" width="NaN%"> 
+					 <p> HAC_SIGRACT_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e837 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e843 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e849 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e831 " valign="top" width="NaN%"> 
+					 <p> HAC_SIGRACT_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e837 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e843 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e849 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e831 " valign="top" width="NaN%"> 
+					 <p> HAC_SIGRACT_VAL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e837 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e843 " valign="top" width="NaN%"> 
+					 <p> 2
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e849 " valign="top" width="NaN%"> 
+					 <p> Receives the status of the signal relay read from the
+						switch (available for history capture). 1 = signal relay is activated; 2 =
+						inactive. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_24208108BA6B413C9CE46E822D20121F"><a name="c_hardware_alarm_condition_parameters__section_24208108BA6B413C9CE46E822D20121F"></a><h2 class="sectiontitle">Port Expected Communications Absent</h2> 
+		 
+		<p>When locking a DeltaV Smart Switch, ports that have been communicating
+		  remain enabled, and all other ports are disabled (do not permit communications
+		  while the switch is locked). Given the nature of communications between nodes
+		  on the DeltaV control network, regular communications is expected on all
+		  enabled ports on locked switches (including switch to switch communications.) 
+		</p>
+ 
+		<p>If HAC_COMABSNT_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_17472F402CE64993B576B5EF2E5F217B"></a><ul id="c_hardware_alarm_condition_parameters__ul_17472F402CE64993B576B5EF2E5F217B"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_275DA5B2EA314589B0A08ABB4821F0AD"><div class="li_content">The list of all ports
+			 installed on the switch. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_70EC7754738E4C188A4030C6C6FA5C6C"><div class="li_content">The switch lock status 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_C2AFB9B1E8EB4047B6D4986CD2A4E6C6"><div class="li_content">Whether each port is
+			 enabled or disabled 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_041D0B7E131044F7B54E527CA1B10CA3"><div class="li_content">Information about bytes
+			 received in the last 60 seconds on each installed port. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If the switch is locked each enabled port is examined. If there have
+		  been 0 bytes of (unblocked) data received from any device or switch connected
+		  to a port in the last 60 seconds the raw COMABSNT condition is true for that
+		  port. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_COMABSNT_OND and
+		  HAC_COMABSNT_OFFD. The configurable on/off delay times are applied to all
+		  ports. Independent on/off delay timers used for each port. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the COMABSNT condition for that port,
+		  visible in the Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_9E7B7DC4F9A14555BCB0B1EBE55ACEF6"></a><ul id="c_hardware_alarm_condition_parameters__ul_9E7B7DC4F9A14555BCB0B1EBE55ACEF6"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_0AD868C260ED477880C21FB1B54B8385"><div class="li_content">Subsystem: Port 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_646072A38CB44D6F91C524B15AB4B334"><div class="li_content">Message: Expected
+			 communications absent on port m.p. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_6CC5CA345D3541698E15989920C0368B"><div class="li_content">Alarm: Determined by value
+			 in HAC_COMABSNT_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_06883C0CF05F41F3A7E865732B29F636"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_06883C0CF05F41F3A7E865732B29F636" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e1030" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1036" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1042" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1048" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1030 " valign="top" width="NaN%"> 
+					 <p> HAC_COMABSNT_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1036 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1042 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1048 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1030 " valign="top" width="NaN%"> 
+					 <p> HAC_COMABSNT_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1036 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1042 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1048 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1030 " valign="top" width="NaN%"> 
+					 <p> HAC_COMABSNT_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1036 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1042 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1048 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_47FA393CD24C4678A0ACF7DCA456BD60_unique_1"><a name="c_hardware_alarm_condition_parameters__section_47FA393CD24C4678A0ACF7DCA456BD60_unique_1"></a><h2 class="sectiontitle">Excessive Packets Discarded On Port</h2> 
+		 
+		<p>Unusually high levels of packets discarded (due to CRC errors, packets
+		  too small (runts) or packets too large (giants) can be an indicator of loose or
+		  deteriorating network cable connections, damaged network cables, or failing
+		  network interface electronics. 
+		</p>
+ 
+		<p>If HAC_DISCPKTS_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_C95AACD8138D4D89A821AA8B9DB21AD6_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_C95AACD8138D4D89A821AA8B9DB21AD6_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_479A42CC2859429297CD094BC4B311C7_unique_1"><div class="li_content">The list of all ports
+			 installed on the switch. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_4A604D93CF2745E2A116F571D997FF87_unique_1"><div class="li_content">Whether each port is
+			 enabled or disabled. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_BA51B5AD8235456786DEAC8455AC4F48_unique_1"><div class="li_content">Information about packets
+			 discarded (due to CRC errors, runts, and giants) in the last 60 seconds on each
+			 installed port. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>For each enabled port, the number of packets discarded in the last 60
+		  seconds is written to the corresponding array element in HAC_DISCPKTS_PRT[n]. 0
+		  is written for ports that are not installed or that are disabled. 
+		</p>
+ 
+		<p>The sum from all ports of the packets discarded in the last 60 seconds
+		  is written to HAC_DISCPKTS_VAL. 
+		</p>
+ 
+		<p>If the port is enabled, and if the number of discarded packets on this
+		  port in the last 60 seconds is greater than HAC_DISCPKTS_LIM the raw DISCPKTS
+		  condition is true for that port. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_DISCPKTS_OND and
+		  HAC_DISCPKTS_OFFD. The configurable on/off delay times are applied to all
+		  ports. Independent on/off delay timers used for each port. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM HAC is active. 
+		</p>
+ 
+		<p>The result is reported as the DISCPKTS condition for that port,
+		  visible in the Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_E60C944EB94C46249F3DC363F96BDCEF_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_E60C944EB94C46249F3DC363F96BDCEF_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_548786B993BD4717A247A6E96D489826_unique_1"><div class="li_content">Subsystem: Port 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_3E3034530C0B4D099A957738B73AFAE2_unique_1"><div class="li_content">Message: Excessive packets
+			 discarded on port m.p. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_01C2824918F94AC9858F5E4B165D9DDE_unique_1"><div class="li_content">Alarm: Determined by value
+			 in HAC_DISCPKTS_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If historical data on packet discard rates for this switch is desired,
+		  users should configure continuous history recording on HAC_DISCPKTS_VAL. Per
+		  port history could be captured by configuring history collection on individual
+		  elements of HAC_DISCPKTS_PRT[x]. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_7ADD266A93724828A90325BB70169C09_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_7ADD266A93724828A90325BB70169C09_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e1209" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1215" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1221" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1227" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_LIM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> 10 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> Configurable limit for packet discards on a port. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_VAL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> Receives total number of packets discarded from all enabled
+						ports in the last 60 seconds. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1209 " valign="top" width="NaN%"> 
+					 <p> HAC_DISCPKTS_PRT[<var class="varname">n</var>] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1215 " valign="top" width="NaN%"> 
+					 <p> Float Array 32 rows 1 column 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1221 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1227 " valign="top" width="NaN%"> 
+					 <p> For each enabled port, receives number of packets discarded
+						in the last 60 seconds. 0 for disabled ports. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_0049314A10894C27A653A261B2975B42"><a name="c_hardware_alarm_condition_parameters__section_0049314A10894C27A653A261B2975B42"></a><h2 class="sectiontitle">Excessive Packet Collisions On Port</h2> 
+		 
+		<p>If HAC_COLLIDES_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_48CA0D371FB0473EAFA1943022515BE1"></a><ul id="c_hardware_alarm_condition_parameters__ul_48CA0D371FB0473EAFA1943022515BE1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_1E769CBBA4F241C398193CB77C5B1004"><div class="li_content">The list of all ports
+			 installed on the switch. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_EC3EF41035C2459397BA224093157651"><div class="li_content">Whether each port is
+			 enabled or disabled 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_7EFD7A0037B345B4956DA36DBA15F59C"><div class="li_content">Information about packet
+			 collisions (including late collisions) in the last 60 seconds on each installed
+			 port. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>For each enabled port, the number of packet collisions in the last 60
+		  seconds is written to the corresponding array element in HAC_COLLIDES_PRT[n]. 0
+		  is written for ports that are disabled or not installed. 
+		</p>
+ 
+		<p>The sum from all ports of the packet collisions in the last 60 seconds
+		  is written to HAC_COLLIDES_VAL. 
+		</p>
+ 
+		<p>If the port is enabled, and if the number of packet collisions on this
+		  port in the last 60 seconds is greater than HAC_COLLIDES_LIM the raw COLLIDES
+		  condition is true for that port. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_COLLIDES_OND and
+		  HAC_COLLIDES_OFFD. The configurable on/off delay times are applied to all
+		  ports. Independent on/off delay timers used for each port. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the COLLIDES condition for that port,
+		  visible in the Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_7FE1115353D74869B90ADC58FE2325D8"></a><ul id="c_hardware_alarm_condition_parameters__ul_7FE1115353D74869B90ADC58FE2325D8"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_1B639FD2D1104ED08556A02B4904A025"><div class="li_content">Subsystem: Port 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_6437905A4E4947BC8CAC371D9C063DD9"><div class="li_content">Message: Excessive packet
+			 collisions on port m.p. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_398A3FA115B742419CC8DCE6DC733ED9"><div class="li_content">Alarm: Determined by value
+			 in HAC_COLLIDES_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If historical data on packet collision rates for this switch is
+		  required, configure continuous history recording on HAC_COLLIDES_VAL. Per port
+		  history can be captured by configuring history collection on individual
+		  elements of HAC_COLLIDES_PRT[n]. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_15B8B12AEC4B48F0B8122D639494C355"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_15B8B12AEC4B48F0B8122D639494C355" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e1470" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1476" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1482" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1488" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_LIM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> 10 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> Configurable limit for packet collisions on a port. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_VAL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> Receives total number of packet collisions from all enabled
+						ports in the last 60 seconds. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1470 " valign="top" width="NaN%"> 
+					 <p> HAC_COLLIDES_PRT[<var class="varname">n</var>] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1476 " valign="top" width="NaN%"> 
+					 <p> Float Array 32 rows 1 column 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1482 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1488 " valign="top" width="NaN%"> 
+					 <p> For each enabled port, receives number of packet collisions
+						in the last 60 seconds. 0 for disabled ports. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_CF4E0506F34B44D487A2360F88587006_unique_1"><a name="c_hardware_alarm_condition_parameters__section_CF4E0506F34B44D487A2360F88587006_unique_1"></a><h2 class="sectiontitle">High Link Utilization On Port</h2> 
+		 
+		<p>If HAC_HIUTIL_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates for: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_B0BC60B91B8C438F8B63444C977E767C_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_B0BC60B91B8C438F8B63444C977E767C_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_3973FE5D39F54178974C6BD26473446F_unique_1"><div class="li_content">The list of all ports
+			 installed on the switch. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_4A1A45BC3ACE406B8CEBA5431038E791_unique_1"><div class="li_content">Whether each port is
+			 enabled or disabled 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_DA1436CACC524EC39105314E767A04D4_unique_1"><div class="li_content">Information about the link
+			 utilization in the last 30 seconds on each installed port. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Link utilization information is for inbound
+		  communication on the ports. It does not include outbound communication. 
+		</div>
+ 
+		<p>For each enabled port, link utilization is written to the
+		  corresponding array element in HAC_HIUTIL_PRT[n]. 0 is written for ports that
+		  are disabled or not installed. 
+		</p>
+ 
+		<p>The maximum value from all elements of HAC_HIUTIL_PRT[n] elements is
+		  written to HAC_HIUTIL_VAL. 
+		</p>
+ 
+		<p>If the port is enabled and the link utilization on this port in the
+		  last 30 seconds is greater than HAC_HIUTIL_LIM the raw HIUTIL condition is true
+		  for that port. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> A common utilization limit as a percent of port speed
+		  is applied to all ports (connected to controllers, workstations and other
+		  switches), making the condition detection most sensitive to high traffic levels
+		  on ports connected to DeltaV workstations. 
+		</div>
+ 
+		<p>On/off delay logic is applied using the values in HAC_HIUTIL_OND and
+		  HAC_HIUTIL_OFFD. The configurable on/off delay times are applied to all ports.
+		  Independent on/off delay timers used for each port. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the HIUTIL condition for that port, visible
+		  in the Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_E02B80C75F7247FE9CDA3F4721EA6795_unique_1"></a><ul id="c_hardware_alarm_condition_parameters__ul_E02B80C75F7247FE9CDA3F4721EA6795_unique_1"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_BDD615B05E6C4C9D9745F7B1EB16D4EE_unique_1"><div class="li_content">Subsystem: Port 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_40403DB63D864F5A855656D8FA305B33_unique_1"><div class="li_content">Message: High link
+			 utilization on port m.p. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_DE112AE4DD64496098A9016778F8572D_unique_1"><div class="li_content">Alarm: Determined by value
+			 in HAC_HIUTIL_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If historical data on link utilization for this switch is required,
+		  configure continuous history recording on HAC_HIUTIL_VAL. Per port history can
+		  be captured by configuring history collection on individual elements of
+		  HAC_HIUTIL_PRT[n]. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_B2BF9D72E2824871BA5443D7939F6071_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_B2BF9D72E2824871BA5443D7939F6071_unique_1" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e1737" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1743" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1749" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e1755" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> 60 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_LIM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> 30 (percent) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> Configurable limit for packet link utilization on a port. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_VAL 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> Receives the maximum link utilization value (0 to 100 in
+						percent) from all enabled ports in the last 60 seconds. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e1737 " valign="top" width="NaN%"> 
+					 <p> HAC_HIUTIL_PRT[<var class="varname">n</var>] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1743 " valign="top" width="NaN%"> 
+					 <p> Float Array 32 rows 1 column 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1749 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e1755 " valign="top" width="NaN%"> 
+					 <p> For each enabled port, receives link utilization value (0
+						to 100 in percent) over the last 30 seconds. 0 for disabled ports. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_AB73F33927E94EAF8B09273AEAA161AF"><a name="c_hardware_alarm_condition_parameters__section_AB73F33927E94EAF8B09273AEAA161AF"></a><h2 class="sectiontitle">Locking Violation On Port</h2> 
+		 
+		<p>When DeltaV Smart Switches are locked, ports with no communications
+		  activity are disabled. The other ports remain enabled, and the switch stores
+		  the MAC addresses of devices connected to these ports at the time the switch
+		  was locked. This is typically one MAC address for most ports and multiple MAC
+		  addresses for ports connected to other switches. 
+		</p>
+ 
+		<p>While locked, the switch communicates only with the device (MAC
+		  address) stored for each port, blocking communications with any other device
+		  (MAC address). When the switch detects (and blocks) communications with any
+		  device other than the one stored for that port, it is considered a port locking
+		  violation. 
+		</p>
+ 
+		<p>Switches also detect devices attempting to communicate on disabled
+		  ports. These are also considered port locking violations. 
+		</p>
+ 
+		<p>Port locking violations indicate attempts to attach an unauthorized
+		  device, or replace an expected device with an unauthorized device using the
+		  enabled port. Multiple port locking violations could indicate that network
+		  cables were disconnected and inadvertently reconnected to different ports on a
+		  locked switch. 
+		</p>
+ 
+		<p>If HAC_BLOCKING_PWA.CVI has the value 1, 2, or 3 the workstation
+		  interrogates the switch for: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_D45D5651CEF448208314932ECE3035A4"></a><ul id="c_hardware_alarm_condition_parameters__ul_D45D5651CEF448208314932ECE3035A4"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_0A264DEADF234EEB815B9A0422769588"><div class="li_content">The list of all ports
+			 installed on the switch. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_3267E86328B44C05B6A926268D16B482"><div class="li_content">The switch lock status. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_D3A61D1F18CE42189EB9B72FFC781B6E"><div class="li_content">Information about the
+			 presence of blocked communications in the last 60 seconds due to port locking
+			 (on enabled and disabled ports) 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>If the switch is locked and one or more packets received on the
+		  (enabled or disabled) port in the last 60 seconds were blocked due to port
+		  locking the raw BLOCKING condition is true for that port. 
+		</p>
+ 
+		<p>On/off delay logic is applied using the values in HAC_BLOCKING_OND and
+		  HAC_BLOCKING_OFFD. The configurable on/off delay times are applied to all
+		  ports. Independent on/off delay timers used for each port. 
+		</p>
+ 
+		<p>The result from the on/off delay logic is forced inactive if the
+		  current NOCOMM condition is active. 
+		</p>
+ 
+		<p>The result is reported as the BLOCKING condition for that port,
+		  visible in the Condition Summary application: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_DAFC840E0F9849A9AD41A45523C07DB9"></a><ul id="c_hardware_alarm_condition_parameters__ul_DAFC840E0F9849A9AD41A45523C07DB9"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_FCA613403F1548029143FBBA51A0D718"><div class="li_content">Subsystem: Port 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_DD52587136894621A6D36979324D5F64"><div class="li_content">Message: Port locking
+			 violation on port m.p. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_51782BFCD78E4929966A5AAD70E0EB23"><div class="li_content">Alarm: Determined by value
+			 in HAC_BLOCKING_PWA 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>In some cases, the removal of a violating device does not clear the
+		  information in the switch about the presence of the violating device. 
+		</p>
+ 
+		<p>The switch module periodically commands the switch to clear
+		  information about (old) violating devices if the switch module is configured to
+		  detect port violations (HAC_BLOCKING_PWA.CVI has the value 1, 2, or 3). 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_E43C8EE8C7974E719D3838457C91BD8D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_E43C8EE8C7974E719D3838457C91BD8D" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e2007" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2013" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2019" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2025" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2007 " valign="top" width="NaN%"> 
+					 <p> HAC_BLOCKING_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2013 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2019 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2025 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2007 " valign="top" width="NaN%"> 
+					 <p> HAC_BLOCKING_OND 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2013 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2019 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2025 " valign="top" width="NaN%"> 
+					 <p> On delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2007 " valign="top" width="NaN%"> 
+					 <p> HAC_BLOCKING_OFD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2013 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2019 " valign="top" width="NaN%"> 
+					 <p> 600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2025 " valign="top" width="NaN%"> 
+					 <p> Off delay (seconds). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_3598A60EDAAF41A5AE346ADE95EDD5D1"><a name="c_hardware_alarm_condition_parameters__section_3598A60EDAAF41A5AE346ADE95EDD5D1"></a><h2 class="sectiontitle">Switch Port Communications Status</h2> 
+		 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_77C70B9D17294CA0A6129BE9F529FDE8"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_77C70B9D17294CA0A6129BE9F529FDE8" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e2134" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2140" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2146" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2152" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2134 " valign="top" width="NaN%"> 
+					 <p> LINK_STATUS_PRT[<var class="varname">n</var>] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2140 " valign="top" width="NaN%"> 
+					 <p> Float Array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2146 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2152 " valign="top" width="NaN%"> 
+					 <p>For each enabled port, the link status value: 
+					 </p>
+ 
+					 <a name="c_hardware_alarm_condition_parameters__ul_CC1E348278294839AD7B9DF318BA6B35"></a><ul id="c_hardware_alarm_condition_parameters__ul_CC1E348278294839AD7B9DF318BA6B35"> 
+						<li id="c_hardware_alarm_condition_parameters__li_C334B10DCF354679BF769350CE090DB9"><div class="li_content">0 — link is down
+						  (idle) or not connected 
+						</div></li>
+ 
+						<li id="c_hardware_alarm_condition_parameters__li_4FEF839F63E54866954793B7312F0ECD"><div class="li_content">&lt; 0 — the
+						  number of violating devices (blocked) (on a locked port) 
+						</div></li>
+ 
+						<li id="c_hardware_alarm_condition_parameters__li_14E6E45A2B04467FA0F894494CF0A0D6"><div class="li_content">&gt; 0 — the
+						  number of devices communicating through this port. 
+						</div></li>
+ 
+					 </ul>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_hardware_alarm_condition_parameters__section_BDCFAB9E27C94B2F94934E6DF187E776"><a name="c_hardware_alarm_condition_parameters__section_BDCFAB9E27C94B2F94934E6DF187E776"></a><h2 class="sectiontitle">Switch Management Password</h2> 
+		 
+		<p>The HAC_MGINFO_* and HAC_MGINFOREM_* parameters are defined for the
+		  switch management password change reminder. 
+		</p>
+ 
+		<p>For all the following parameters: 
+		</p>
+ 
+		<a name="c_hardware_alarm_condition_parameters__ul_7C638C33D89D459E891199046A0DCD5F_unique_2"></a><ul id="c_hardware_alarm_condition_parameters__ul_7C638C33D89D459E891199046A0DCD5F_unique_2"> 
+		  <li id="c_hardware_alarm_condition_parameters__li_CB7F90EB403E4618A86FBE1C13244BE8_unique_2"><div class="li_content"> The parameter category is
+			 either Configuration or Operating 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_BA6EF237AFD04E649D1F84D6234FC0E6_unique_2"><div class="li_content">Restore parameter value
+			 after restart is false (unchecked) 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_27F9794784A34C1088E5E55D218DD7FE"><div class="li_content">The &quot;Allow named set
+			 changes for new instances&quot; is false (unchecked), when applicable. 
+		  </div></li>
+ 
+		  <li id="c_hardware_alarm_condition_parameters__li_A52E46E3C6994B65B9A1194A403AD574_unique_2"><div class="li_content">The parameter filter is
+			 either Common Configuration or Advanced Configuration 
+		  </div></li>
+ 
+		</ul>
+ 
+		
+<div class="tablenoborder"><a name="c_hardware_alarm_condition_parameters__table_3AF8DEFCE001447498FE23E9DC4B6313"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_hardware_alarm_condition_parameters__table_3AF8DEFCE001447498FE23E9DC4B6313" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1083794e2242" valign="top" width="NaN%"> 
+					 <p>Parameter Name 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2248" valign="top" width="NaN%"> 
+					 <p>Parameter Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2254" valign="top" width="NaN%"> 
+					 <p>Default Value 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1083794e2260" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2242 " valign="top" width="NaN%"> 
+					 <p> HAC_MGINFOREM_PWA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2248 " valign="top" width="NaN%"> 
+					 <p> Named Set 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2254 " valign="top" width="NaN%"> 
+					 <p> ADVISE_ALM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2260 " valign="top" width="NaN%"> 
+					 <p> This condition should trigger the ADVISE alarm. If absent,
+						a value of &quot;(Ignored)&quot; is assumed. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2242 " valign="top" width="NaN%"> 
+					 <p> HAC_MGINFOREM_LIM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2248 " valign="top" width="NaN%"> 
+					 <p> Float 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2254 " valign="top" width="NaN%"> 
+					 <p> 0 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2260 " valign="top" width="NaN%"> 
+					 <p> Configurable limit for password reminder in days. Default
+						of 0 means there is no reminder. Set value to &gt;0 to create reminder. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1083794e2242 " valign="top" width="NaN%"> 
+					 <p> HAC_MGINFO_TM 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2248 " valign="top" width="NaN%"> 
+					 <p> String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2254 " valign="top" width="NaN%"> 
+					 <p> empty 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1083794e2260 " valign="top" width="NaN%"> 
+					 <p> The UTC time when the management password was last changed.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Add reads and writes to the opcServer class" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="Barcode tutorial, reads and writes" name="DC.subject" /><meta content="Barcode tutorial, reads and writes" name="keywords" /><meta content="t_implement_exception_reporting.html" name="DC.Relation" scheme="URI" /><meta content="c_barcode_tutorial.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_add_reads_and_writes_to_the_opcserver_class" name="DC.Identifier" /><title>Add reads and writes to the opcServer class</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_use_the_new_class.html" /><link rel="next" href="t_implement_exception_reporting.html" /></head><body class="fixed" id="t_add_reads_and_writes_to_the_opcserver_class" data-relpath="t_add_reads_and_writes_to_the_opcserver_class.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_add_reads_and_writes_to_the_opcserver_class"></a>
+
+<h1 class="topictitle1">Add reads and writes to the opcServer class</h1>
+<div><div></div>
+<div class="section" id="t_add_reads_and_writes_to_the_opcserver_class__context_31C127002806403184BDD4A9BF1BC13B"><a name="t_add_reads_and_writes_to_the_opcserver_class__context_31C127002806403184BDD4A9BF1BC13B"></a><p>The OPCServer class must be expanded to include functions for accessing the values of the parameters. These functions must be called to populate the fields on the Main form.</p>
+</div>
+<a name="t_add_reads_and_writes_to_the_opcserver_class__steps_943D36816392490587AA5179D6F483A6"></a><ol id="t_add_reads_and_writes_to_the_opcserver_class__steps_943D36816392490587AA5179D6F483A6"><li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_54A16246184F452BAA56507A89055F9B"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_54A16246184F452BAA56507A89055F9B"></a><span>Add two functions to the OPCServer class, ReadItemValue and SetItemValue. They should be public functions and should return a variant.</span></li>
+<li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_243D59D299084C59AD1696349ADCBBB0"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_243D59D299084C59AD1696349ADCBBB0"></a><span>Add the following parameters to the function ReadItemValue:
+</span> <pre class="codeblock">Public Function ReadItemValue(GroupName As String, ItemServerHandle As Long, 
+Optional FromDevice As Variant) As Variant</pre>
+</li>
+<li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_70FDACE5D1CC413EB860B5D271668253"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_70FDACE5D1CC413EB860B5D271668253"></a><span>In the function ReadItemValue, add the following code:
+</span> <pre class="codeblock">    Dim anOPCGroupHandle As Long
+    Dim DataSource As Integer
+    Dim DataNumItems As Long
+    Dim DataServerHandles(1) As Long
+    Dim DataValues() As Variant
+    Dim DataErrors() As Long
+    Dim DataQualities() As Variant
+    Dim DataTimeStamps() As Variant
+    
+    Dim Msg As String
+    
+    ReadItemValue = 0
+    On Error GoTo ErrorHandler
+    
+    &#39;Get all required Handles
+    anOPCGroupHandle = LookUpGroup(GroupName)
+    If anOPCGroupHandle &lt; 0 Then
+        MsgBox &quot;Error - Group not found&quot;
+        Exit Function
+    End If
+    
+    &#39;Get ready to do a SyncRead
+    DataSource = OPCCache
+    If Not IsMissing(FromDevice) Then
+        If FromDevice Then
+            DataSource = OPCDevice
+        End If
+    End If
+    
+    DataNumItems = 1
+    DataServerHandles(1) = ItemServerHandle
+    
+    MyGroups(GroupName).SyncRead DataSource, DataNumItems, DataServerHandles, _
+        DataValues, DataErrors, DataQualities, DataTimeStamps
+    
+    If DataErrors(1) &gt;= 0 Then
+        &#39;Item was read okay
+        ReadItemValue = DataValues(1)
+    Else
+        Msg = AnOpcServer.GetErrorString(DataErrors(1))
+        Msg = &quot;Error reading item &quot; &amp; MyGroups(GroupName).OPCItems.GetOPCItem
+        (ItemServerHandle).ItemID _
+            &amp; &quot;: &quot; &amp; Msg
+        MsgBox Msg
+    End If
+    
+    Exit Function
+    
+ErrorHandler:
+    MsgBox &quot;ReadItemValue: Error!&quot; &amp; vbCrLf _
+           &amp; &quot;Err.Number = &quot; &amp; Err.Number &amp; vbCrLf _
+           &amp; &quot;Err.Description = &quot; &amp; Err.Description &amp; vbCrLf _
+           &amp; &quot;Err.Source = &quot; &amp; Err.Source &amp; vbCrLf
+End Function</pre>
+
+<p>This function uses the SyncRead call of the OPCGroup interface. This call expects an array of server handles and it returns arrays of Values, Qualities, Timestamps and Errors.</p>
+
+<p>If the call to OPCRead fails an error is raised and execution jumps to the errHandler label. It is possible however, for the call to succeed but individual items fail. To verify this, the values in the Errors array should be checked. If an error value is zero then the read was successful and the value, quality and timestamp is meaningful. A positive non-zero result is success with qualifications. A negative non-zero result is failure and the value, quality and timestamp should be ignored. If the error value is not zero, a call is made to the DeltaV OPC Data Access Server function GetErrorString to get the text version of the error and display it to the user.</p>
+
+<p>A complete description of how to decipher quality codes can be found in the OPC specification (refer to references).</p>
+</li>
+<li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_F2B91AF6782E44188CF2A3950F05C2E6"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_F2B91AF6782E44188CF2A3950F05C2E6"></a><span>Add the following parameters to the function SetItemValue:
+</span> <pre class="codeblock">Public Function SetItemValue(GroupName As String, ItemServerHandle As Long, 
+Value As Variant) As Integer</pre>
+</li>
+<li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_F49B0CE05DE54A1696BFFAFBD4C2A242"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_F49B0CE05DE54A1696BFFAFBD4C2A242"></a><span>In the function SetItemValue, add the following code:
+</span> <pre class="codeblock">    Dim anOPCGroupHandle As Long
+    Dim DataNumItems As Long
+    Dim DataServerHandles() As Long
+    Dim DataValues() As Variant
+    Dim DataErrors() As Long
+    
+    Dim Msg As String
+    
+    SetItemValue = False
+    On Error GoTo ErrorHandler
+    
+    &#39;Get all required Handles
+    anOPCGroupHandle = LookUpGroup(GroupName)
+    If anOPCGroupHandle &lt; 0 Then
+        MsgBox &quot;Error - Group not found&quot;
+        Exit Function
+    End If
+    DataNumItems = 1
+    ReDim DataServerHandles(DataNumItems)
+    ReDim DataValues(DataNumItems)
+    ReDim DataErrors(DataNumItems)
+    
+    DataServerHandles(1) = ItemServerHandle
+    DataValues(1) = Value
+    
+    MyGroups(GroupName).SyncWrite DataNumItems, DataServerHandles,
+DataValues, DataErrors
+    If DataErrors(1) &gt;= 0 Then
+        &#39;Item was written okay
+        SetItemValue = True
+    Else
+        Msg = AnOpcServer.GetErrorString(DataErrors(1))
+        Msg = &quot;Error writing item &quot; &amp; MyGroups(GroupName).OPCItems.GetOPCItem
+        (ItemServerHandle).ItemID _
+            &amp; &quot;: &quot; &amp; Msg
+        MsgBox Msg
+    End If
+    Exit Function
+    
+ErrorHandler:
+    MsgBox &quot;SetItemValue: Error!&quot; &amp; vbCrLf _
+           &amp; &quot;Err.Number = &quot; &amp; Err.Number &amp; vbCrLf _
+           &amp; &quot;Err.Description = &quot; &amp; Err.Description &amp; vbCrLf _
+           &amp; &quot;Err.Source = &quot; &amp; Err.Source &amp; vbCrLf
+End Function</pre>
+</li>
+<li class="stepexpand" id="t_add_reads_and_writes_to_the_opcserver_class__step_293699B97111412DBB2BF87751C587F5"><a name="t_add_reads_and_writes_to_the_opcserver_class__step_293699B97111412DBB2BF87751C587F5"></a><span>Open the code window for the form Main. Add the following code to the sub Timer1_Timer:
+</span> <pre class="codeblock">txtTargetIngName = gOpcServer.ReadItemValue(&quot;IngredientInfo&quot;, _
+        gTargetIngStrHandle, True)
+    txtTargetIngNum = gOpcServer.ReadItemValue(&quot;IngredientInfo&quot;, _
+        gTargetIngHandle, True)
+    txtTargetIngAmt = gOpcServer.ReadItemValue(&quot;IngredientInfo&quot;, _
+        gTargetAmtHandle, True)</pre>
+</li>
+</ol>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_implement_exception_reporting.html">Implement exception reporting</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

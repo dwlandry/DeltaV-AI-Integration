@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Extended function blocks" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="extended function blocks" name="DC.subject" /><meta content="extended function blocks" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_extended_blocks" name="DC.Identifier" /><title>Extended function blocks</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_state_transition_diagram_function_block_application_information.html" /><link rel="next" href="c_fblk_special_items_palette.html" /></head><body class="fixed" id="c_fblk_extended_blocks" data-relpath="c_fblk_extended_blocks.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_extended_blocks"></a>
+
+<h1 class="topictitle1">Extended function blocks</h1>
+<div><div></div>
+<p>In order to communicate with a function block that runs in a fieldbus device, you must use an extended function block in the control strategy diagram. The extended function block resides in the controller and communicates with the function block running in a fieldbus device. Extended blocks are based on standard DeltaV function blocks but may have a slightly different set of parameters. These parameters may be specific to a device manufacturer (and are sometimes called custom parameters). Extended block names include the prefix, FF to differentiate them from the standard blocks.</p>
+<p>There are several ways to create an extended block. Refer to Control Studio help for details on these methods.</p>
+<a name="c_fblk_extended_blocks__ul_65E741289D0A46C09A78F47E8C50B01F"></a><ul id="c_fblk_extended_blocks__ul_65E741289D0A46C09A78F47E8C50B01F">
+<li id="c_fblk_extended_blocks__li_4C556E90A22246A39498916852435EE1"><div class="li_content"><p>Assign a standard block to a compatible block in a fieldbus device. In this case, the conversion from standard to extended is performed automatically. An extended block and an extended block of the same type with the _RMT suffix are not considered compatible. If you assign an extended block to an _RMT block of the same type, the block does not pick up the additional parameters in the _RMT block.</p>
+</div></li>
+
+<li id="c_fblk_extended_blocks__li_6160DCF722DA47568A16CC43CE2B7212"><div class="li_content"><p>Convert an unassigned standard block using the Convert command in Control Studio.</p>
+</div></li>
+
+<li id="c_fblk_extended_blocks__li_35B0BCF7E2F34EF6937F80129A074F4C"><div class="li_content"><p>Convert an already assigned extended block to another compatible one. For example, you can convert an FFAI to an FFAI_RMT. The assignment is retained if the device block supports the additional block parameters. The assignment is deleted if the device block does <strong>not</strong> support the additional parameters of the extended block.</p>
+</div></li>
+
+<li id="c_fblk_extended_blocks__li_BDF8F00772DA4E818A1FDE4157B3EA64"><div class="li_content"><p>Build a custom palette that includes the extended blocks you want to use and drag them onto the diagram.</p>
+</div></li>
+
+<li id="c_fblk_extended_blocks__li_7EF777E44F514C22B45244D079B145B0"><div class="li_content"><p>Use the Custom Block Assistant.</p>
+</div></li>
+
+<li id="c_fblk_extended_blocks__li_FF66B4342CF44CB2A4B51237300088AD"><div class="li_content"><p>Use the Physical Block Assistant.</p>
+</div></li>
+
+</ul>
+<p>The following table describes each extended block.</p>
+
+<div class="tablenoborder"><a name="c_fblk_extended_blocks__table_C8C7BCC67F644CEEA507BD9442A41CEE"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_fblk_extended_blocks__table_C8C7BCC67F644CEEA507BD9442A41CEE" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d990983e59" valign="top" width="NaN%"><p>Function Block</p>
+</th>
+
+<th class="cellrowborder" id="d990983e63" valign="top" width="NaN%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFAI</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Analog Input block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFAO</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Analog Output block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFARTHM</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Arithmetic block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFCTLSEL</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Control Selector block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFDI</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Discrete Input block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFDO</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Discrete Output block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFINT</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Integrator block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFISEL</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Input Selector block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFISELX</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Input Selector Extended block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFISEL_BASE</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Input Selector block that is a partial block definition containing the common parameters for FFISEL and FFISEL_STD. This block does not exist in any device.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFISEL_STD</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Input Selector block (standard).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMAI</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Fieldbus Multiplexed Analog Input block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMAO</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Fieldbus Multiplexed Analog Output block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMDI</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended H1 Carrier Multiple Discrete Input block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMDI_STD</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Multiple Discrete Input block.</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMDO</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended H1 Carrier Multiple Discrete Output block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMDO_STD</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Multiple Discrete Output block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFPID</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended PID block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFSGCR</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Signal Characterizer block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFSPLTR</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Splitter block.</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFAI_RMT</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Analog Input block with additional parameters supported by the Analog Input block in Emerson devices.
+
+</p>
+<p>Additional parameters are:</p>
+<p>
+ALM_SEL, OUT_D</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFAO_RMT</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Analog Output block with additional parameters supported by the Analog Output block in Emerson devices.<a href="c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23"><sup>c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23</sup></a>
+
+</p>
+<p>Additional parameters are:</p>
+<p>
+STDEV and STDEV_CAP. Although these parameters are also visible in the FFAO block, they only act as placeholders.</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFMAI_RMT</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended Fieldbus Multiplexed Analog Input block with additional parameters supported by the Multiplexed Analog Input block in Emerson devices.<a href="c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23"><sup>c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23</sup></a></p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d990983e59 " valign="top" width="NaN%"><p>FFPID_RMT</p>
+</td>
+
+<td class="cellrowborder" headers="d990983e63 " valign="top" width="NaN%"><p>Extended PID block with additional parameters supported by the PID block in Emerson devices.<a href="c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23"><sup>c_fblk_extended_blocks.html#c_fblk_extended_blocks__footnote1_unique_23</sup></a>
+
+</p>
+<p>Additional parameters are:</p>
+<p>
+BETA, BIAS, ERROR, FORM, GAMMA, IDEADBAND, SP_FTIME, SP_WRK, STRUCTURE</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="p"><a id="c_fblk_extended_blocks__footnote1_unique_23"><sup>1</sup></a>  Early versions of Emerson devices may not support this block.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

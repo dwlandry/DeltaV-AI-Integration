@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Create the failure monitor logic" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="failure monitor, opening, monitoring failure conditions, failure condition expressions, disabling, disabling failure monitoring, FAIL_MESSAGE block" name="DC.subject" /><meta content="failure monitor, opening, monitoring failure conditions, failure condition expressions, disabling, disabling failure monitoring, FAIL_MESSAGE block" name="keywords" /><meta content="c_creating_logic_to_monitor_phase_conditions_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_Create_failure_monitor_logic" name="DC.Identifier" /><title>Create the failure monitor logic</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_creating_logic_to_monitor_phase_conditions_overview.html" /><link rel="next" href="c_modifying_block1_of_failure_monitor.html" /></head><body class="fixed" id="t_Create_failure_monitor_logic" data-relpath="t_Create_failure_monitor_logic.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_Create_failure_monitor_logic"></a>
+
+<h1 class="topictitle1">Create the failure monitor logic</h1>
+<div><div></div>
+
+    <a name="t_Create_failure_monitor_logic__steps_7019D9FE00E1432797B2FBC48257773E"></a><ol id="t_Create_failure_monitor_logic__steps_7019D9FE00E1432797B2FBC48257773E"><li class="stepexpand" id="t_Create_failure_monitor_logic__step_1375DCB210C04972B25FFA2B7CE4DCE4"><a name="t_Create_failure_monitor_logic__step_1375DCB210C04972B25FFA2B7CE4DCE4"></a>
+        <span>Open the AGITATE phase class in Control Studio.</span>
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_F339BB66D85B481D822D60F1FA5D246B"><a name="t_Create_failure_monitor_logic__step_F339BB66D85B481D822D60F1FA5D246B"></a>
+        <span>Double-click the Fail_Monitor to open it.</span>
+      <span class="step_result">  It opens with one CALC block, named BLOCK1.</span></li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_9D0AB54439B6453FAA89BC34C73D886D"><a name="t_Create_failure_monitor_logic__step_9D0AB54439B6453FAA89BC34C73D886D"></a>
+        <span>Add four Condition blocks, one Boolean Fan In block, and one <span class="#000000">Calc/Logic block </span> to the diagram, as shown in the previous topic. (Look on the Logical and <span class="#000000">Analog Control</span> palettes for these items.)</span>
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_9C5C37807C1840D4BC3C3F4E37674363"><a name="t_Create_failure_monitor_logic__step_9C5C37807C1840D4BC3C3F4E37674363"></a>
+        <span>Rename the blocks as shown on the diagram.</span>
+        You can remove the display of the block template names by clicking click <span class="uicontrol">Diagram Preferences</span> on the <span class="uicontrol">Diagram</span> tab in the <span class="uicontrol">Layout</span> group. Then, clear the <span class="uicontrol">Template Names</span> check box.</li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_435BE9681D764C85A86873C1CCE26E87"><a name="t_Create_failure_monitor_logic__step_435BE9681D764C85A86873C1CCE26E87"></a>
+        <span>To change the number of inputs to the BFI1 block, select the block, select <span class="uicontrol">Extensible Parameters</span> from the context menu, and change the number of connectors to 4.
+</span>
+         
+          
+            <a name="t_Create_failure_monitor_logic__image_7192078CA53E46D9BF847892B60EBA39"></a><img id="t_Create_failure_monitor_logic__image_7192078CA53E46D9BF847892B60EBA39" src="bthelp0063.gif" />
+          
+          <div class="tip"><span class="tiptitle">Tip:</span> 
+            <p> If you would like more detailed information about the BFI block, click the <span class="uicontrol">Books Online</span> icon.</p>
+
+          </div>
+
+        
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_EBDF3674759F4EB6B1329C24DA6544BA"><a name="t_Create_failure_monitor_logic__step_EBDF3674759F4EB6B1329C24DA6544BA"></a>
+        <span>To change the number of outputs and inputs on the FAIL_MESSAGE block to 1 each, select <span class="uicontrol">Extensible Parameters</span> from the context menu, double-click the OUT (then the IN parameter), and change the number of connectors to 1.)
+</span>
+         
+          
+            <a name="t_Create_failure_monitor_logic__image_58C4F311A0864356AB4F37FB773B0F33"></a><img id="t_Create_failure_monitor_logic__image_58C4F311A0864356AB4F37FB773B0F33" src="bthelp0064.gif" />
+          
+        
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_B027677B2D124FE38CC7C9496BF40D77"><a name="t_Create_failure_monitor_logic__step_B027677B2D124FE38CC7C9496BF40D77"></a>
+        <span>Connect the blocks as shown in the following figure.
+</span>
+         
+          
+            <a name="t_Create_failure_monitor_logic__image_96840FB6A700480EA5DBF8D2E562089B"></a><img id="t_Create_failure_monitor_logic__image_96840FB6A700480EA5DBF8D2E562089B" src="bthelp0065.gif" />
+          
+        
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_4C94185D9C10415BA026731232B13432"><a name="t_Create_failure_monitor_logic__step_4C94185D9C10415BA026731232B13432"></a>
+        <span>For each condition block, select <span class="uicontrol">Expression</span> from the context menu and modify the expression to check for the failure conditions. (We have shown the expressions on the diagram as a configuration aid.)</span>
+      </li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_5BE08E8E5C6A46E19B483D35587DCD0D"><a name="t_Create_failure_monitor_logic__step_5BE08E8E5C6A46E19B483D35587DCD0D"></a>
+        <span>Set the DISABLE parameter for each condition block equal to 1.</span>
+        This initially disables the conditions so that the expressions are not monitored. During execution of the phase, we will selectively enable any condition that we want to monitor. To disable a condition, display all parameters in the Parameter View by selecting all the filters (all boxes selected). Click one of the Condition blocks (for example, BASE_IN_OPEN). Double-click the Disable parameter and change the value to 1. Continue for all the Condition blocks.</li>
+<li class="stepexpand" id="t_Create_failure_monitor_logic__step_C3746B8B74D441B998B584829B0D1FC9"><a name="t_Create_failure_monitor_logic__step_C3746B8B74D441B998B584829B0D1FC9"></a>
+        <span>Create the following expression for the FAIL_MESSAGE calculation block:
+</span>
+         
+          <pre class="pre">
+FAIL_MOD  :=  IN1;
+OUT1 :=  0;
+IF (FAIL_MOD = 1) THEN
+    OUT1  :=  &#39;phase_failures:Inlet Valve Open&#39;;
+ELSE
+    IF (FAIL_MOD = 2) THEN
+        OUT1  :=  &#39;phase_failures:Inlet Valve Open&#39;;
+     ELSE
+         IF (FAIL_MOD = 4) THEN
+             OUT1  := &#39;phase_failures:Outlet Not Closed&#39;;
+         ELSE
+             IF (FAIL_MOD = 8) THEN
+                 OUT1  :=  &#39;phase_failures:Agitator Stopped&#39;;
+              ENDIF;
+          ENDIF;
+      ENDIF;
+ ENDIF
+</pre>
+
+          <p>This expression determines which failure message should be displayed to the operator based on the first failure condition that was detected by the Boolean Fan In block. The failure message will later be written to the phase&#39;s FAIL_INDEX parameter.</p>
+
+        
+      </li>
+</ol>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

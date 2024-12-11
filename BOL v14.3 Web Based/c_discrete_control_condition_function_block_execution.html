@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Discrete Control Condition function block configuration and execution" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="c_fblk_spec_discrete_control_condition.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_number_of_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_algo_opts.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_delay_transition_true.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_delay_transition_false.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_disable_interlock_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_disable_permissive_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_disable_force_setpoint_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_latch_interlock_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_unlatch_interlock_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_detect_interlock_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_select_interlock_state_output.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_detect_permissive_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_detect_force_setpoint_conditions.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_select_force_setpoint_output.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_trap_first_active_interlock.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_reset_first_active_interlock.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_reset_function_block.html" name="DC.Relation" scheme="URI" /><meta content="c_dcc_interlock_desc.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_186" name="DC.Identifier" /><title>Discrete Control Condition function block configuration and execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_discrete_control_condition.html" /><link rel="next" href="c_dcc_number_of_conditions.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_186" data-relpath="c_discrete_control_condition_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_186"></a>
+
+<h1 class="topictitle1">Discrete Control Condition function block configuration and
+	 execution</h1>
+<div><p>
+  </p>
+ 
+	 <p>The following sections cover aspects of DCC block configuration and
+		their effect on block execution. 
+	 </p>
+ 
+	 <div class="p"> The DCC block supports up to 16 interlock conditions, 8 permissive
+		conditions, and 8 force setpoints. For each condition configure the following: 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_186__ol_2285D4DF149D487AA881DF268D936885"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__ol_2285D4DF149D487AA881DF268D936885"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_EC695F48F0594993B4DCF983B27BF31E"><div class="li_content"> Description 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_940BA959203740908731A680685D4636"><div class="li_content"> Expression 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_F679BB84AEFE429BB0EA623F3EA27D7F"><div class="li_content"> Delay On 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_9D5BD60F322746799FBAF45B4DB4A556"><div class="li_content"> Delay Off (interlock and
+		  permissive only) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_3CC65D37EC2B4F5FB39E39256C07623A"><div class="li_content"> If a reset is required
+		  (interlock only) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_A24F80215B1B4E15AA33F34D9A237AEA"><div class="li_content"> The interlock state
+		  (interlock only) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_D033217815A3417A8B445E6D78CE4DE1"><div class="li_content"> The force setpoint value
+		  (force setpoint only) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_2F73A90DFA8542C99E2523341725D2AF"><div class="li_content"> If the condition is
+		  disabled 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_186__li_F44D1B70EB884B3BAC2690B990311D31"><div class="li_content"> Prevent interlock
+		  conditions from being disabled by a configurable parameter (higher managed)
+		  (Interlock only) 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> The three condition types have several similar parameters describing
+		  different properties of each condition. When discussing these similar
+		  parameters in general the following convention is used: 
+		  <em>a</em>_PARAM<em>n</em>. For example 
+		  <em>a</em>_OUT_D<em>n</em>. 
+		  <em>OUT_D</em> is the parameter root, 
+		  <em>a</em> represents the three types of conditions (I, P, and F), and 
+		  <em>n</em> represents the condition number. For example, a_OUT_D<em>n</em>
+		  represents instances of I_OUT_D_[1-16], F_OUT_D_[1-8], and P_OUT_D_[1-8]. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_dcc_number_of_conditions.html">Configure the number of conditions and number of conditions
+	 used</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_algo_opts.html">The ALGO_OPTS option 
+  <em>Permit</em></a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_delay_transition_true.html">Delay conditions transitioning to True</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_delay_transition_false.html">Delay conditions transitioning to False</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_disable_interlock_conditions.html">Disable interlock conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_disable_permissive_conditions.html">Disable permissive conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_disable_force_setpoint_conditions.html">Disable force setpoint conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_latch_interlock_conditions.html">Latch interlock conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_unlatch_interlock_conditions.html">Unlatch interlock conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_detect_interlock_conditions.html">Detect interlock conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_select_interlock_state_output.html">Select the interlock state output value</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_detect_permissive_conditions.html">Detect permissive conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_detect_force_setpoint_conditions.html">Detect force setpoint conditions</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_select_force_setpoint_output.html">Select force setpoint output value</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_trap_first_active_interlock.html">Trap the first active interlock condition</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_reset_first_active_interlock.html">Reset the first active interlock condition</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_reset_function_block.html">Reset the function block</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_dcc_interlock_desc.html">Interlock description</a><br />
+
+  </li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

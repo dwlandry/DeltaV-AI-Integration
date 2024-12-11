@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Batch Executive Server configuration" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Batch Executive, configuring, archiving, batch events" name="DC.subject" /><meta content="Batch Executive, configuring, archiving, batch events" name="keywords" /><meta content="c_runcommands.html" name="DC.Relation" scheme="URI" /><meta content="c_thebatchexecutiveproperties.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_batchexecutiveserverconfiguration" name="DC.Identifier" /><title>Batch Executive Server configuration</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_enablingthebatchexecutive.html" /><link rel="next" href="c_batchexecutiveactionconfirmation.html" /></head><body class="fixed" id="c_batchexecutiveserverconfiguration" data-relpath="c_batchexecutiveserverconfiguration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_batchexecutiveserverconfiguration"></a>
+
+<h1 class="topictitle1">Batch Executive Server configuration</h1>
+<div><div></div>
+
+    <p>In addition to enabling the Batch Executive, there are certain Batch Executive behaviors that must be configured. These include the following items found on the <span class="uicontrol">Server</span> tab:</p>
+
+    <p>
+      <span class="uicontrol">Revision</span>:  This field is not currently implemented.</p>
+
+    <p>
+      <span class="uicontrol">Remove event files older than (days)</span> - remove records older than the number of days specified. Once past that day, the event file is deleted. It is advisable to remove event (.evt) files frequently thereby only storing a minimum (under a few hundred) event files at any given time. This will enhance the Batch Executive&#39;s performance. </p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p>If the event file is being accessed by a client when the maintenance cycle is run (12 AM), the file cannot be processed and the events that are older than the day specified are not removed.</p>
+
+    </div>
+
+    <p>
+      <span class="uicontrol">Restart behavior</span> - sets the method for restarting the Batch Executive in the event that it closes. The choices are as follows:</p>
+
+    <a name="c_batchexecutiveserverconfiguration__ul_29FB09E28AB04B169E8EA495DBBC08F8"></a><ul id="c_batchexecutiveserverconfiguration__ul_29FB09E28AB04B169E8EA495DBBC08F8">
+      <li id="c_batchexecutiveserverconfiguration__li_5AD7D6D491244FB5AB8254CC93C423A3"><div class="li_content">
+        <p>
+          <span class="uicontrol">Query User</span> - prompts the user to select between warm and cold restart, or to cancel the restarting process.</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_073400FBAF33435A89144449F4169D84"><div class="li_content">
+        <p>
+          <span class="uicontrol">Warm Restart</span> - returns the Batch Executive to its last known state. The warm restart method is the preferred restart method.
+After a warm restart of the Batch Executive, all current batches are put in the LOST state. The operator must RESTART each batch individually. </p>
+<p>
+If several batches had been waiting to acquire the same unit before the shutdown, they would have been queued in a certain order, dependent on when they made the acquire request. After the warm restart, these batches are queued in exactly the same order they were in before the warm restart. Review the order of the queue on the Arbitration screen of the Batch Operator Interface and verify that the current order is the correct order for the batches to use that unit.</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_BD21D547FD73403C9B4808D46E1B5AD8"><div class="li_content">
+        <p>
+          <span class="uicontrol">Cold Restart</span> - to start the DeltaV Batch Executive with an empty batch list and with no resources allocated to the operator. This method should only be used to clear the batch list in the unusual event where all previous batches have already been cleared out of the plant manually.</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>
+      <span class="uicontrol">Hold propagation limit</span> - sets to what recipe level a HOLD propagates. The Batch Executive responds based on the level set in the <span class="wintitle">Batch Executive Properties</span> dialog. The Batch Executive can either not propagate the HOLD (when <span class="uicontrol">None</span> is selected), or can hold the batch at the procedure level, the unit procedure level, the operation level, or the phase level.</p>
+
+    <p>The hold propagates only to the level specified, therefore, it is possible to have one unit procedure (or operation or phase) held while others in the same recipe continue to run. Parallel steps in a recipe are sent a Hold command when the first step goes Holding. To restart the held item in this instance, go to the recipe level above (that is, to the procedure when a unit procedure is held, and so on), put that item into manual mode and then restart the held item.</p>
+
+    <p>Hold propagation cannot be applied when a held step&#39;s upper levels are in Manual mode. That is, if an operation goes Held, but that step&#39;s unit procedure is in Manual mode, then hold propagation is not applied. When that unit procedure is put into Auto mode, then hold propagation is applied.</p>
+
+    <a name="c_batchexecutiveserverconfiguration__ul_FE2A95CA045243149F90E688A279341E"></a><ul id="c_batchexecutiveserverconfiguration__ul_FE2A95CA045243149F90E688A279341E">
+      <li id="c_batchexecutiveserverconfiguration__li_3A5F5BB0338C44B491A6F23113692DED"><div class="li_content">
+        <p>
+          <span class="uicontrol">None</span> - no propagation set. The HOLD remains at the level where it occurred.</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_D1FC7FB32FBE429EA73C37BCE0E33CCD"><div class="li_content">
+        <p>
+          <span class="uicontrol">BPC</span> - procedure level</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_D13E77DD7A2143919B925D2AC4080097"><div class="li_content">
+        <p>
+          <span class="uicontrol">UPC</span> - unit procedure level</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_7C06C22A87884366BF2342579FEFED5B"><div class="li_content">
+        <p>
+          <span class="uicontrol">UOP</span> - operation level</p>
+
+      </div></li>
+
+      <li id="c_batchexecutiveserverconfiguration__li_85DD5EFEE3B14051B7A4D4D8FF5CB676"><div class="li_content">
+        <p>
+          <span class="uicontrol">Phase</span> - phase level</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>
+      <span class="uicontrol">Allow manual phase history to be combined with other batch history</span> - enables the ability to combine a manual phase&#39;s history with another batch&#39;s history (for example, with the &#39;parent&#39; batch). If this option is enabled, the operator is given the option when starting a manual phase to select a batch (by batch ID) with which the manual phase history will be combined. The operator can also opt to not combine the histories.</p>
+
+    <p>If this option is not selected in the <span class="wintitle">Batch Executive Properties</span> dialog, the operator cannot combine histories when starting a manual phase.</p>
+
+    <p>
+      <span class="uicontrol">Allow change to the acquired unit for a step</span> - Enables the rebinding of equipment on previously active steps. The next time the step becomes active, it uses the new equipment binding.</p>
+
+    <p>
+      <span class="uicontrol">Allow recipe resynchronization</span> - enables recipe resynchronization when performing a restart of a batch that is in the Lost or Recovered Failed states. Use this when a recipe has been changed and downloaded and you want the batch to use the changed recipe when it is restarted.</p>
+
+    <div class="fignone" id="c_batchexecutiveserverconfiguration__fig_23229BF37F1040E28924A6796A755258"><a name="c_batchexecutiveserverconfiguration__fig_23229BF37F1040E28924A6796A755258"></a><div><span class="figcap">Server Properties of the Batch Executive</span></div>
+      
+      <a name="c_batchexecutiveserverconfiguration__image_271D69A11E2D4F9485D6F8F0F3016EEA"></a><img id="c_batchexecutiveserverconfiguration__image_271D69A11E2D4F9485D6F8F0F3016EEA" src="help0031.gif" />
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_runcommands.html">Run commands</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

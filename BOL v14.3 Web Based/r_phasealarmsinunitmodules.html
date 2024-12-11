@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Phase alarms in unit modules" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="phase alarms" name="DC.subject" /><meta content="phase alarms" name="keywords" /><meta content="r_unitmodules.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_phasealarmsinunitmodules" name="DC.Identifier" /><title>Phase alarms in unit modules</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_unitphaseproperties.html" /><link rel="next" href="c_units.html" /></head><body class="fixed" id="r_phasealarmsinunitmodules" data-relpath="r_phasealarmsinunitmodules.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_phasealarmsinunitmodules"></a>
+
+<h1 class="topictitle1">Phase alarms in unit modules</h1>
+<div><div></div>
+<div class="section" id="r_phasealarmsinunitmodules__phasealarmsinunitmodules"><a name="r_phasealarmsinunitmodules__phasealarmsinunitmodules"></a><h2 class="sectiontitle">Phase Alarms in Unit Modules</h2><p> The objectives for phase alarms in unit modules are to:</p>
+<ul>
+<li><div class="li_content"><p>Provide alarm annunciation (alarm banner, alarm horn, alarm summary, alarm type event records) when active phases in unit modules have errors or take an unusually long time to complete. In many cases, this relieves operators from having to monitor the execution of batches (or the completion of manually started phases) that normally run unattended.</p>
+</div></li>
+
+<li><div class="li_content"><p>Provide an easy configuration mechanism to enable phase alarms in unit modules.</p>
+</div></li>
+
+</ul>
+<p>Unlike other alarms in the DeltaV system, phase alarms are expected to exist for only the period of time the corresponding phase is instantiated. Therefore, a unit module with many phases only carries the alarm parameter and processing overhead for the few phases (maximum of 10) that are instantiated at any point in time.</p>
+<p>The following additional properties, which control the behavior of phase alarms in the unit module, are configured in the unit phase table for each phase:</p>
+<p><strong><span class="uicontrol">Enable failure alarms on this unit phase</span></strong> - Is a Boolean property. If False, then the values of the other alarm-related properties do not matter. Defaults to True.</p>
+<p><strong><span class="uicontrol">Phase alarm name</span></strong> - Is the name that will appear in the alarm details field in the alarm banner when this unit phase has a failure. Must pass the standard parameter name checks (characters, length, no name space collisions, and so on). Defaults to the unit phase name. If the phase class name is changed, the phase alarm name does not change. It remains the same as the original unit phase name.</p>
+<p><strong><span class="uicontrol">Unit phase alarm priority</span></strong> - Establishes the initial priority of the unit phase alarm for this phase. Possible values are CRITICAL, WARNING, ADVISORY, and LOG. Defaults to LOG.</p>
+<p><strong><span class="uicontrol">TOO_LONG_TIME</span></strong> - Indicates the maximum length of time that a unit phase should take to complete. This is configured as the limit value on the alarm, which is then used to populate the TOO_LONG_TIME parameter. It is an integer with units in seconds. The TOO_LONG_TIME parameter defaults to 0 (not enabled).</p>
+<p>When a unit phase is instantiated in a unit module, the following apply:</p>
+<ul>
+<li><div class="li_content"><p>The phase is created as a block in the unit module, with the phase class name as the block name.</p>
+</div></li>
+
+<li><div class="li_content"><p>If failure alarms are enabled, an alarm parameter is created at the unit module level with the configured phase alarm name and alarm priority. The initial alarm state is DISABLED and appears as the first recorded state for the unit phase alarm in the Event Chronicle.</p>
+</div></li>
+
+<li><div class="li_content"><p>While the unit phase is instantiated, the unit module periodically processes the phase alarm to see if the process has been running too long (timeout expired) and processes the alarm parameter based on the failure condition.</p>
+</div></li>
+
+</ul>
+<p>While the failure alarm (and its corresponding phase) exists, it operates as a permanent module-level alarm with the following properties:</p>
+<ul>
+<li><div class="li_content"><p>Its fields can be read, can appear on the unit phase detail display, and can be addressed via the unit module.</p>
+</div></li>
+
+<li><div class="li_content"><p>It can be individually acknowledged.</p>
+</div></li>
+
+<li><div class="li_content"><p>It can be disabled or enabled.</p>
+</div></li>
+
+<li><div class="li_content"><p>It can have its priority changed.</p>
+</div></li>
+
+<li><div class="li_content"><p>It is summarized via the ALARMS attribute.</p>
+</div></li>
+
+</ul>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

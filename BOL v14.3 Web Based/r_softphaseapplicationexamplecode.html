@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Soft phase application example code" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="DeltaV soft phases, external phases, DeltaV soft phase, examples, soft phase code, code - soft phase examples, soft phase examples, code" name="DC.subject" /><meta content="DeltaV soft phases, external phases, DeltaV soft phase, examples, soft phase code, code - soft phase examples, soft phase examples, code" name="keywords" /><meta content="c_softphaseapplicationexample.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_softphaseapplicationexamplecode" name="DC.Identifier" /><title>Soft phase application example code</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_softphaseapplicationexample.html" /><link rel="next" href="r_thecolor_stabilizer_db_xmlfile.html" /></head><body class="fixed" id="r_softphaseapplicationexamplecode" data-relpath="r_softphaseapplicationexamplecode.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_softphaseapplicationexamplecode"></a>
+
+<h1 class="topictitle1">Soft phase application example code</h1>
+<div><div></div>
+<div class="section"><p>The following section contains Visual Basic .NET code for creating the soft phase example. The standard code is provided by the template when you run CreateSoftPhase.exe.</p>
+<p><strong>UserCode.bas</strong></p>
+<pre class="pre">
+Option Strict Off
+Option Explicit On 
+Imports System.Xml
+</pre>
+<pre class="pre">
+Module usercode
+</pre>
+<pre class="pre">
+    &#39;define constants for the different operator prompt types
+    Public Const promptTypeBoolean As Long = 3400
+    Public Const promptTypeFloat As Long = 3300
+    Public Const promptTypeInteger As Long = 3200
+    Public Const promptTypeString As Long = 3500
+</pre>
+<pre class="pre">
+    &#39;Define constants for confirm and verify prompt options
+    Public Const noConfirmReqd As Boolean = False
+    Public Const confirmReqd As Boolean = True
+    Public Const noVerifyReqd As Boolean = False
+    Public Const VerifyReqd As Boolean = True
+</pre>
+<pre class="pre">
+    &#39;define constants for the errors that may be returned from the operator prompt function
+    Public Const promptSuccess As Long = 0
+    Public Const promptInvalidPromptType As Long = 10
+    Public Const promptInvalidMessageId As Long = 20
+    Public Const promptSetConfirmFlagError As Long = 30
+    Public Const promptSetVerifyFlagError As Long = 40
+    Public Const promptIssuePromptError As Long = 50
+    Public Const promptGetResultError As Long = 60
+    Public Const promptPhaseStateChangeError As Long = 70
+</pre>
+<pre class="pre">
+    Public Structure Lot
+        Dim Code As String
+        Dim Manufacturer As String
+        Dim Amount As Integer
+        Dim Expiration_Date As Date
+</pre>
+<pre class="pre">
+        Public Sub empty()
+            Code = &quot;&quot;
+            Manufacturer = &quot;&quot;
+            Amount = 0
+            Expiration_Date = #1/1/1979#
+        End Sub
+    End Structure
+</pre>
+<pre class="pre">
+    Public Function promptOperator(ByVal promptType As Long, _
+                                   ByVal messageId As Long, _
+                                   ByRef promptResult As Object, _
+                                   Optional ByVal confirm As Boolean = False, _
+                                   Optional ByVal verify As Boolean = False) As Long
+</pre>
+<pre class="pre">
+        Dim attrName As String
+        Dim attrValue As Object
+        Dim returnValue As Long
+        Dim responseAvailable As Boolean
+        Dim debugRequest As Object
+        Dim debugReqData1 As Object
+        Dim debugReqData2 As Object
+</pre>
+<pre class="pre">
+        &#39;verify the promptType is valid
+        Select Case promptType
+            Case promptTypeBoolean, promptTypeFloat, promptTypeInteger, promptTypeString
+</pre>
+<pre class="pre">
+                &#39;verify that the message id is valid - if it is, set the confirm and verify status registers and then issue the prompt
+                If (messageId &gt; 0) And (messageId &lt;= 99) Then
+</pre>
+<pre class="pre">
+                    &#39;if operator confirmation required set reqdata1 = 1 else set reqdata1 = 0
+                    If confirm = True Then
+                        attrValue = 1
+                    Else
+                        attrValue = 0
+                    End If &#39;confirm = True
+                    attrName = &quot;REQDATA1&quot;
+                    returnValue = WriteAttribute(attrName, attrValue)
+</pre>
+<pre class="pre">
+                    &#39;if supervisor verification required set reqdata2 = 1 else set reqdata2 = 0
+                    If verify = True Then
+                        attrValue = 1
+                    Else
+                        attrValue = 0
+                    End If &#39;verify = True
+                    attrName = &quot;REQDATA2&quot;
+                    returnValue = WriteAttribute(attrName, attrValue)
+</pre>
+<pre class="pre">
+                    &#39;issue the operator prompt
+                    attrName = &quot;REQUEST&quot;
+                    attrValue = promptType + messageId
+                    returnValue = WriteAttribute(attrName, attrValue)
+</pre>
+<pre class="pre">
+                    &#39;read back the values of request, reqdata1 and reqdata2
+                    &#39;to confirm that they have been set correctly - write values in debug messages.
+                    attrName = &quot;REQUEST&quot;
+                    returnValue = ReadAttribute(attrName, attrValue)
+                    debugRequest = attrValue
+</pre>
+<pre class="pre">
+                    attrName = &quot;REQDATA1&quot;
+                    returnValue = ReadAttribute(attrName, attrValue)
+                    debugReqData1 = attrValue
+</pre>
+<pre class="pre">
+                    attrName = &quot;REQDATA2&quot;
+                    returnValue = ReadAttribute(attrName, attrValue)
+                    debugReqData2 = attrValue
+</pre>
+<pre class="pre">
+                    DebugMessage(&quot;Operator prompt debug data follows:&quot;)
+                    DebugMessage(&quot;Request = &quot; + CStr(debugRequest))
+                    DebugMessage(&quot;Reqdata1 = &quot; + CStr(debugReqData1))
+                    DebugMessage(&quot;Reqdata2 = &quot; + CStr(debugReqData2))
+</pre>
+<pre class="pre">
+                    &#39;if the message id is not valid return an error and exit the function
+                Else
+                    promptOperator = promptInvalidMessageId
+                    promptResult = &quot;Error - Operator Prompt Not Issued: Invalid Message Id&quot;
+                    Exit Function
+                End If &#39;(messageId &gt; 0) And (messageId &lt;= 99)
+</pre>
+<pre class="pre">
+                &#39;if the prompt type is not valid return an error and exit the function
+            Case Else
+                promptOperator = promptInvalidPromptType
+                promptResult = &quot;Error - Operator Prompt Not Issued: Invalid Prompt Type&quot;
+                Exit Function
+        End Select &#39;promptType
+</pre>
+<pre class="pre">
+        &#39;wait for the operator to respond to the prompt (i.e. the request register will be set to 0)
+        responseAvailable = False
+        While responseAvailable = False
+            If GetPhaseState() = PHASE_STATE_RUNNING Then
+                Sleep(2000)
+                attrName = &quot;REQUEST&quot;
+                returnValue = ReadAttribute(attrName, attrValue)
+                If (returnValue = RW_NO_ERROR) And (attrValue = 0) Then
+                    responseAvailable = True
+                End If &#39;returnValue = RW_NO_ERRORR...
+            Else
+                &#39;phase state has changed - set error status and end the function
+                promptOperator = promptPhaseStateChangeError
+                promptResult = &quot;Error - Operator Prompt Cancelled Due To Phase State Change&quot;
+                Exit Function
+            End If &#39;GetPhaseState() = PHASE_STATE_RUNNING
+        End While
+</pre>
+<pre class="pre">
+        &#39;determine which of the phases parameters the response will be located in
+        Select Case promptType
+            Case promptTypeBoolean
+                attrName = &quot;PROMPT_BOOL&quot;
+            Case promptTypeFloat
+                attrName = &quot;PROMPT_FLOAT&quot;
+            Case promptTypeInteger
+                attrName = &quot;PROMPT_INT&quot;
+            Case promptTypeString
+                attrName = &quot;PROMPT_STRING&quot;
+        End Select
+</pre>
+<pre class="pre">
+        &#39;read the value of the response
+        returnValue = ReadAttribute(attrName, attrValue)
+</pre>
+<pre class="pre">
+        &#39;The operator prompt was successfully issued. Return a success code.
+        promptOperator = promptSuccess
+        promptResult = attrValue
+</pre>
+<pre class="pre">
+    End Function
+</pre>
+<pre class="pre">
+    Sub CancelPendingRequest()
+</pre>
+<pre class="pre">
+        Dim attrName As String
+        Dim attrValue As Object
+        Dim returnValue As Long
+</pre>
+<pre class="pre">
+        DebugMessage(&quot;Cancelling Request&quot;)
+        attrName = &quot;REQUEST&quot;
+        returnValue = -1
+</pre>
+<pre class="pre">
+        While returnValue &lt;&gt; RW_NO_ERROR
+            returnValue = ReadAttribute(attrName, attrValue)
+            Sleep(1000)
+        End While
+</pre>
+<pre class="pre">
+        If attrValue &lt;&gt; 0 Then
+            returnValue = -1
+            attrName = &quot;REQUEST&quot;
+            attrValue = 6000
+            While returnValue &lt;&gt; RW_NO_ERROR
+                returnValue = WriteAttribute(attrName, attrValue)
+                Sleep(1000)
+            End While
+</pre>
+<pre class="pre">
+            While (returnValue &lt;&gt; RW_NO_ERROR) Or (attrValue &lt;&gt; 0)
+                returnValue = ReadAttribute(attrName, attrValue)
+                Sleep(1000)
+            End While
+        End If
+    End Sub
+    Public Function AdjustLotCodeFromFile(ByVal Lot_Code As String, ByVal AdjustAmount As Integer) As Boolean
+        Dim bRet As Boolean
+        Dim xd As XmlDocument
+        Dim xnl As XmlNodeList
+        Dim xn As XmlNode
+</pre>
+<pre class="pre">
+        Try
+            bRet = False
+            xd = New XmlDocument
+            xd.Load(&quot;C:\color_stabilizer_db.xml&quot;)
+            xnl = xd.SelectNodes(&quot;Root/Lot&quot;)
+            Dim i As Integer
+            i = 0
+</pre>
+<pre class="pre">
+            While (i &lt; xnl.Count) And (bRet = False)
+                xn = xnl.Item(i)
+                Dim xn2 As XmlNode
+                xn2 = xn.SelectSingleNode(&quot;Code&quot;)
+</pre>
+<pre class="pre">
+                If Not (xn2 Is Nothing) And (xn2.InnerText = Lot_Code) Then
+                    bRet = True
+                    xn2 = xn.SelectSingleNode(&quot;Amount_Available&quot;)
+</pre>
+<pre class="pre">
+                    If Not (xn2 Is Nothing) Then
+                        Dim iAmount As Integer
+                        iAmount = xn2.InnerText
+                        iAmount -= AdjustAmount
+                        xn2.InnerText = iAmount
+                        xd.Save(&quot;C:\color_stabilizer_db.xml&quot;)
+                    End If
+                End If
+                i += 1
+            End While
+</pre>
+<pre class="pre">
+        Catch ex As Exception
+            DebugMessage(&quot;Error in AdjustLotCodeFromFile: &quot; &amp; ex.ToString())
+        End Try
+        Return bRet
+    End Function
+</pre>
+<pre class="pre">
+    Public Function FindLotCodeFromFile(ByVal Lot_Code As String, ByRef The_Lot As Lot) As Boolean
+        Dim bRet As Boolean
+        Dim xd As XmlDocument
+        Dim xnl As XmlNodeList
+        Dim xn As XmlNode
+</pre>
+<pre class="pre">
+        Try
+            bRet = False
+            xd = New XmlDocument
+            xd.Load(&quot;C:\color_stabilizer_db.xml&quot;)
+            xnl = xd.SelectNodes(&quot;Root/Lot&quot;)
+            Dim i As Integer
+            i = 0
+</pre>
+<pre class="pre">
+            While (i &lt; xnl.Count) And (bRet = False)
+                xn = xnl.Item(i)
+                Dim xn2 As XmlNode
+                xn2 = xn.SelectSingleNode(&quot;Code&quot;)
+</pre>
+<pre class="pre">
+                If Not (xn2 Is Nothing) And (xn2.InnerText = Lot_Code) Then
+                    The_Lot.Code = Lot_Code
+                    bRet = True
+                    xn2 = xn.SelectSingleNode(&quot;Manufacturer&quot;)
+</pre>
+<pre class="pre">
+                    If Not (xn2 Is Nothing) Then
+                        The_Lot.Manufacturer = xn2.InnerText
+                    End If
+</pre>
+<pre class="pre">
+                    xn2 = xn.SelectSingleNode(&quot;Amount_Available&quot;)
+</pre>
+<pre class="pre">
+                    If Not (xn2 Is Nothing) Then
+                        The_Lot.Amount = xn2.InnerText
+                    End If
+</pre>
+<pre class="pre">
+                    xn2 = xn.SelectSingleNode(&quot;Expiration_Date&quot;)
+</pre>
+<pre class="pre">
+                    If Not (xn2 Is Nothing) Then
+                        The_Lot.Expiration_Date = xn2.InnerText
+                    End If
+                End If
+                i += 1
+            End While
+</pre>
+<pre class="pre">
+        Catch ex As Exception
+            DebugMessage(&quot;Error in FindLotCodeFromFile: &quot; &amp; ex.ToString())
+        Finally
+        End Try
+</pre>
+<pre class="pre">
+        Return bRet
+    End Function
+</pre>
+<pre class="pre">
+    &#39;These are the five user methods.
+</pre>
+<pre class="pre">
+    Sub running()
+        &#39;define variables required for reading and writing phase attributes
+        Dim attrName As String
+        Dim attrValue As Object
+        Dim returnValue As Long
+        &#39;define the variables used specifically for the run logic
+        Dim operResponse As Object
+        Dim colorStabilizerAmountRequired As Integer
+        Dim colorStabilizerLotCode As String
+        Dim colorStabilizerManufacturerCode As String
+        Dim colorStabilizerAmountAvailable As Integer
+        Dim colorStabilizerExpirationDate As Date
+        Dim currentDate As Date
+        Dim count As Long
+        Dim continue As Boolean
+        Dim errorOccurred As Boolean
+        Dim bLotFound As Boolean
+        Dim The_Lot As Lot
+</pre>
+<pre class="pre">
+        &#39;as a precaution, cancel any pending request (there could be one if the phase is restarting).
+        Call CancelPendingRequest()
+</pre>
+<pre class="pre">
+        &#39;initialize variables that will be set via prompts
+        errorOccurred = False
+        colorStabilizerAmountRequired = 0
+        colorStabilizerLotCode = vbEmpty
+        &#39;check if a manual addition is required
+        DebugMessage(&quot;Enter the amount of color stabilizer to be added (0 for no addition): &quot;)
+        returnValue = promptOperator(promptTypeInteger, 1, operResponse, confirmReqd, noVerifyReqd)
+</pre>
+<pre class="pre">
+        If returnValue = promptSuccess Then
+            colorStabilizerAmountRequired = operResponse
+        Else
+            errorOccurred = True
+            GoTo PromptError
+        End If &#39;returnValue = promptSuccess
+</pre>
+<pre class="pre">
+        &#39;if the manual addition of color stabilizer is not required then the phase will complete
+        If colorStabilizerAmountRequired &lt;= 0 Then
+            GoTo Complete
+        End If &#39;color StabilizerAmountRequired &lt;= 0
+</pre>
+<pre class="pre">
+Start:
+        &#39;prompt the operator for the color stabilizer lot code
+        DebugMessage(&quot;Enter the color stabilizer lot code: &quot;)
+        returnValue = promptOperator(promptTypeString, 2, operResponse, confirmReqd, noVerifyReqd)
+        If returnValue = promptSuccess Then
+            colorStabilizerLotCode = operResponse
+        Else
+            errorOccurred = True
+            GoTo PromptError
+        End If &#39;returnValue = promptSuccess
+</pre>
+<pre class="pre">
+        &#39;initialize all of the variable which will be read from the materials database
+        colorStabilizerExpirationDate = &quot;01/01/1800&quot;
+</pre>
+<pre class="pre">
+        &#39;initialize the variables used to locate the specified color stabilizer lot code in the in the materials
+        &#39;database and check the expiration date
+        currentDate = Now()
+        count = 2
+        &#39;select the row from the materials database where the color stabilizer lot code matches the
+        &#39;color stabilizer lot code entered by the operator
+</pre>
+<pre class="pre">
+        bLotFound = FindLotCodeFromFile(colorStabilizerLotCode, The_Lot)
+</pre>
+<pre class="pre">
+        &#39;check if the current lot code is defined (if not, we&#39;ve reached the end of the list)
+        If bLotFound = False Then
+            &#39;inform operator that lot code entered was not found - continue with invalid code?
+            DebugMessage(&quot;Lot code not found in database - continue with invalid lot code?&quot;)
+            returnValue = promptOperator(promptTypeBoolean, 3, operResponse, confirmReqd, VerifyReqd)
+            continue = operResponse
+            If returnValue = promptSuccess Then
+                If continue = False Then
+                    colorStabilizerLotCode = vbEmpty
+                    GoTo Start
+                Else
+                    &#39;write the material manufacturing id for the material to be used
+                    attrName = &quot;CS_MANUFAC_DATA&quot;
+                    attrValue = &quot;Color Stabilizer Addition: Amount Added = &quot; + CStr(colorStabilizerAmountRequired) + _
+                                     &quot;, Lot Code = &quot; + colorStabilizerLotCode + _
+                                     &quot;, Lot Code Not Found in Color Stabilizer Database - Manufacturer&quot; + _
+                                     &quot; and Expiration Date unknown&quot;
+                    DebugMessage(attrValue)
+                    returnValue = WriteAttribute(attrName, attrValue)
+                End If &#39;continue = false
+            Else
+                errorOccurred = True
+                GoTo PromptError
+            End If &#39;returnValue = promptSuccess
+        ElseIf The_Lot.Code = colorStabilizerLotCode Then
+            colorStabilizerManufacturerCode = The_Lot.Manufacturer
+            colorStabilizerAmountAvailable = The_Lot.Amount
+            colorStabilizerExpirationDate = The_Lot.Expiration_Date
+</pre>
+<pre class="pre">
+            If (colorStabilizerAmountAvailable &lt; colorStabilizerAmountRequired) Then
+                &#39;inform the operator that there is not enough color stabilizer and ask if he wants to continue
+                DebugMessage(&quot;The materials database indicates that there is insufficient color&quot; + _
+                             &quot; stabilizer available.  Continue with this Lot Code?&quot;)
+                returnValue = promptOperator(promptTypeBoolean, 4, operResponse, confirmReqd, VerifyReqd)
+                If returnValue = promptSuccess Then
+                    continue = operResponse
+                    If continue = False Then
+                        colorStabilizerLotCode = vbEmpty
+                        GoTo Start
+                    Else
+                        colorStabilizerAmountRequired = colorStabilizerAmountAvailable
+                    End If &#39;continue = false
+                Else
+                    errorOccurred = True
+                    GoTo PromptError
+                End If &#39;returnValue = promptSuccess
+            End If &#39;colorStabilizerAmountAvailable &lt; colorStabilizerAmountRequired
+</pre>
+<pre class="pre">
+            If (colorStabilizerExpirationDate &lt; currentDate) Then
+                &#39;inform the operator that the color stabilizer is expired and ask if he wants to continue
+                DebugMessage(&quot;The materials database indicates that this color stabilizer lot&quot; + _
+                             &quot; code has expired.  Continue with this Lot Code?&quot;)
+                returnValue = promptOperator(promptTypeBoolean, 5, operResponse, confirmReqd, VerifyReqd)
+                If returnValue = promptSuccess Then
+                    continue = operResponse
+                    If continue = False Then
+                        colorStabilizerLotCode = vbEmpty
+                        GoTo Start
+                    End If &#39;continue = false
+                Else
+                    errorOccurred = True
+                    GoTo PromptError
+                End If &#39;returnValue = promptSuccess
+            End If &#39;colorStabilizerExpirationDate &lt; currentDate
+            &#39;write the material manufacturing id for the material to be used
+            attrName = &quot;CS_MANUFAC_DATA&quot;
+            attrValue = &quot;Color Stabilizer Addition: Amount Added = &quot; + CStr(colorStabilizerAmountRequired) + _
+                             &quot;, Manufactured By = &quot; + colorStabilizerManufacturerCode + _
+                             &quot;, Lot Code = &quot; + colorStabilizerLotCode + _
+                             &quot;, Expiration Date = &quot; + CStr(colorStabilizerExpirationDate)
+            DebugMessage(attrValue)
+            returnValue = WriteAttribute(attrName, attrValue)
+</pre>
+<pre class="pre">
+            If returnValue = RW_NO_ERROR Then
+                AdjustLotCodeFromFile(colorStabilizerLotCode, colorStabilizerAmountRequired)
+            End If &#39;returnValue = RW_NO_ERROR
+        End If &#39;The_Lot.Code = colorStabilizerLotCode
+</pre>
+<pre class="pre">
+PromptError:
+        &#39;execute error handling if an error has occurred
+        If errorOccurred = True Then
+            &#39;if prompt error not due to a phase state change then set the fail flag
+            If returnValue &lt;&gt; promptPhaseStateChangeError Then
+                DebugMessage(&quot;Setting Fail Flag - Value = 254&quot;)
+                attrName = &quot;FAIL_INDEX&quot;
+                attrValue = 254
+                returnValue = WriteAttribute(attrName, attrValue)
+            End If &#39;returnValue &lt;&gt; promptPhaseStateChangeError
+        End If &#39;errorOccurred = True
+Complete:
+    End Sub
+</pre>
+<pre class="pre">
+    Sub holding()
+        DebugMessage((&quot;Holding&quot;))
+    End Sub
+</pre>
+<pre class="pre">
+    Sub stopping()
+        DebugMessage((&quot;Stopping&quot;))
+    End Sub
+</pre>
+<pre class="pre">
+    Sub aborting()
+        DebugMessage((&quot;Aborting&quot;))
+    End Sub
+</pre>
+<pre class="pre">
+    Sub restarting()
+        DebugMessage((&quot;Restarting&quot;))
+    End Sub
+End Module
+</pre>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

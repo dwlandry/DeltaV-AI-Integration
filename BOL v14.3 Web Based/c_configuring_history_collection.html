@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Configure history collection" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="Continuous Historian subsystem, configure, Advanced Continuous Historian, OSIsoft PI Server, PI Server" name="DC.subject" /><meta content="Continuous Historian subsystem, configure, Advanced Continuous Historian, OSIsoft PI Server, PI Server" name="keywords" /><meta content="c_workstations.html" name="DC.Relation" scheme="URI" /><meta content="t_configure_history_collection.html" name="DC.Relation" scheme="URI" /><meta content="t_configure_hist_coll_for_module_in_cs.html" name="DC.Relation" scheme="URI" /><meta content="t_configure_hist_coll_for_parameter_in_cs.html" name="DC.Relation" scheme="URI" /><meta content="c_configuring_hist_coll_for_array_params.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_242" name="DC.Identifier" /><title>Configure history collection</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_uninstall_historian.html" /><link rel="next" href="t_configure_history_collection.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_242" data-relpath="c_configuring_history_collection.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_242"></a>
+
+<h1 class="topictitle1">Configure history collection</h1>
+<div> 
+	 <p>History collection is the definition of the module parameters or node
+		parameters to be monitored and stored by the Continuous Historian subsystem.
+		History tags are strings that uniquely identify a data source for which
+		historical data can be captured. In the DeltaV system, history tags are the
+		full path string that identifies a DeltaV parameter and field. There is at most
+		one history collection configuration for any DeltaV parameter/field history
+		tag. History collection can be defined using the DeltaV Explorer or Control
+		Studio. Users assign areas to the Continuous Historian subsystem in the DeltaV
+		Explorer to complete the association to the specific historical data server. 
+	 </p>
+ 
+	 <p>History collection configuration 
+		<em>belongs</em> to the module or node. If you copy a module, the new
+		module includes the history collection from the original module. Library
+		template modules also include history collection. Creating a module from a
+		library template copies the history collection configuration to the new module.
+		You can add to or modify the history collection configuration. 
+	 </p>
+ 
+	 <p>Because a DeltaV system can contain more than one
+		historian, including the DeltaV Continuous Historian, the Advanced Continuous
+		Historian, or OSIsoft PI Server, the history collection configuration for a
+		history tag can be used by more than one type of historian at the same time. 
+	 </p>
+ 
+	 <div class="important"><span class="importanttitle">Important:</span>  
+		<div class="p">When naming modules to be historized in the Advanced Continuous
+		  Historian or a PI Server enterprise historian, follow these rules: 
+		<ul> 
+		  <li><div class="li_content">The tag name must be unique. 
+		  </div></li>
+ 
+		  <li><div class="li_content">The beginning character of the tag name must be an English
+			 alphanumeric character, underscore (_), or percent sign (%). 
+		  </div></li>
+ 
+		  <li><div class="li_content">A tag name begining with a hyphen (-) or dollar sign ($) character
+			 is supported; however, DeltaV prepends the character x to the beginning of the
+			 tag name. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <p>To evaluate the comprehensive configuration for DeltaV history
+		collection, right-click the 
+		<span class="uicontrol">Continuous Historian</span> subsystem for the workstation
+		in DeltaV Explorer, and then select 
+		<span class="uicontrol">History Collection</span> from the context menu. This
+		opens the 
+		<span class="wintitle">History Collection (Read-Only)</span> window, listing all
+		historical values to be collected for the historian installed on this
+		workstation. 
+	 </p>
+ 
+	 <p>Selecting a node before clicking 
+		<span class="uicontrol">History Collection</span> provides access to node
+		parameter fields. Selecting an area or module before clicking 
+		<span class="uicontrol">History Collection</span> provides access to module
+		parameter fields. 
+	 </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="t_configure_history_collection.html">Configure history collection in DeltaV Explorer</a><br />
+</li>
+<li class="ulchildlink"><a href="t_configure_hist_coll_for_module_in_cs.html">Configure history collection for modules in Control Studio</a><br />
+</li>
+<li class="ulchildlink"><a href="t_configure_hist_coll_for_parameter_in_cs.html">Configure history collection for parameters in Control Studio</a><br />
+</li>
+<li class="ulchildlink"><a href="c_configuring_hist_coll_for_array_params.html">Configure history collection for array parameters</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

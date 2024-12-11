@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Backup/Restore" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="backup and restore, database tools, backup" name="DC.subject" /><meta content="backup and restore, database tools, backup" name="keywords" /><meta content="c_configuration_and_graphics_backup_and_recovery.html" name="DC.Relation" scheme="URI" /><meta content="c_modify_sql_services_logon.html" name="DC.Relation" scheme="URI" /><meta content="c_set_active_database.html" name="DC.Relation" scheme="URI" /><meta content="c_set_server_host.html" name="DC.Relation" scheme="URI" /><meta content="c_synchronize_nodes.html" name="DC.Relation" scheme="URI" /><meta content="c_utility_functions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_backup_restore" name="DC.Identifier" /><title>Backup/Restore</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_database_connections.html" /><link rel="next" href="c_modify_sql_services_logon.html" /></head><body class="fixed" id="c_backup_restore" data-relpath="c_backup_restore.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_backup_restore"></a>
+
+<h1 class="topictitle1">Backup/Restore</h1>
+<div><div></div>
+ 
+    <p>The Database Administrator application has a Backup and Restore tool.
+      Use this utility to make a backup of your DeltaV databases. This utility is
+      only backing up or restoring the DeltaV database files, as found in 
+      <span class="filepath">\\DeltaV\DVData\Databases\<var class="varname">DatabaseName</var></span>
+      (where 
+      <var class="varname">DatabaseName</var> is the folder name of the database you
+      are backing up or restoring). The Backup and Restore tool does not back up
+      historical data from the Continuous Historian, event data, or process graphics.
+      A backup can only be restored into the same version of the DeltaV software.
+      Only the DeltaV Controller and I/O Upgrade Utility produces a file intended for
+      import into a different version of DeltaV software. 
+    </p>
+ 
+    <p>All DeltaV applications must be closed and all locks cleared before
+      backing up. If you back up a database with locks, those locks are also backed
+      up. If you restore a database that was backed up with locks, the locks are also
+      restored. 
+    </p>
+ 
+    <div class="section" id="c_backup_restore__section_0C605CF535C0451A819DE1FF1A9B49C2"><a name="c_backup_restore__section_0C605CF535C0451A819DE1FF1A9B49C2"></a><h2 class="sectiontitle">Backup</h2> 
+       
+      <p>When you only want to back up your DeltaV databases, use the Database
+        Administrator tool Backup and Restore. 
+      </p>
+ 
+      <p>The database is stored in UNC name: 
+        <span class="filepath">\\<var class="varname">Machine Name</var>\Databases</span>. This
+        is the same as the 
+        <span class="filepath">\\DeltaV\DVData\Databases</span> folder if viewed from
+        Windows Explorer. 
+      </p>
+ 
+      <div class="important"><span class="importanttitle">Important:</span> When VCAT (Version Control) is enabled on the
+        database, the Backup utility will back up the DeltaV database as well as the
+        VCAT database. The VCAT database is a SQL database. In order to back up the
+        VCAT database to a destination drive that is not on the SQL database machine,
+        the MSSQLServer and SQLServerAgent services must be given access to
+        (permissions on) the destination machine (which must have a share where the
+        backup will be written). Therefore, the service accounts must be modified with
+        the Service Control Manager. The accounts must be changed from the default of
+        SYSTEM to a Windows account that has access to the destination machine (with
+        permissions to the share and the destination folder) and is in the
+        Administrators group on the DeltaV ProfessionalPLUS machine. An example of such
+        an account would be the DeltaVAdmin account if the destination machine were
+        running the DeltaV software or the destination machine had granted DeltaVAdmin
+        access to the resource. 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_backup_restore__section_EB0599B9A3CA4DCA9934F8D0BC4CB04A"><a name="c_backup_restore__section_EB0599B9A3CA4DCA9934F8D0BC4CB04A"></a><h2 class="sectiontitle">Restore</h2> 
+       
+      <p>Restoring the DeltaV database is done when there is a problem with the
+        database that the other Database Administrator tools (for example, Set Active
+        Database and Register Database) cannot solve. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> With the Backup and Restore tool, you can 
+        <em>only</em> restore the DeltaV database (controllers, I/O
+        configuration, and control strategy). You are 
+        <em>not</em> restoring the entire DeltaV system. 
+      </div>
+ 
+      <p>The database is normally stored in UNC name: 
+        <span class="filepath">\\Machine Name\Databases</span>. This is the same as the 
+        <span class="filepath">\\DeltaV\DVData\Databases</span> folder if viewed from
+        Windows Explorer.
+      </p>
+ 
+      <p>If you restore the database to a different machine or under a new
+        name, you need to set the server host machine, set the active database, and
+        synchronize the workstations. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_backup_restore__section_1B8ACDC1EFA544009352BDB137A17917"><a name="c_backup_restore__section_1B8ACDC1EFA544009352BDB137A17917"></a><h2 class="sectiontitle">Backing up the Objectivity Database</h2> 
+       
+      <p>The Objectivity Database contains the control configuration data that
+        defines the workstations, controllers, and modules that run in the controllers.
+        The display data consists of the operator displays. 
+      </p>
+ 
+      <a name="c_backup_restore__ol_D33D7CA7B1D14DD6BC3DAF4EBBC3D9C7"></a><ol id="c_backup_restore__ol_D33D7CA7B1D14DD6BC3DAF4EBBC3D9C7"> 
+        <li id="c_backup_restore__li_DADFA89783B44DBAB2F9550C92E41736"><div class="li_content"> Run the DeltaV Database
+          Administrator tool by clicking 
+          <span class="menucascade"><span class="uicontrol">Start</span> &gt; <span class="uicontrol">DeltaV
+              Engineering</span> &gt; <span class="uicontrol">Database
+              Administration</span></span>. 
+        </div></li>
+ 
+        <li id="c_backup_restore__li_53147F57BB6A4A0489180C94735C4ECE"><div class="li_content">Use the DeltaV Database
+          Administrator tool to back up the configuration database. For instructions on
+          how to back up this database, refer to the online help for the DeltaV Database
+          Administrator tool. The backup procedure takes several minutes. 
+        </div></li>
+ 
+        <li id="c_backup_restore__li_965074822B2642F197CF34DA40A5432D"><div class="li_content">If the previous backup is
+          no longer needed, delete it using Windows Explorer. 
+        </div></li>
+ 
+      </ol>
+ 
+      <div class="note"><span class="notetitle">Note:</span> It is required that you exit all DeltaV Engineering
+        Tools before running a backup of the active configuration database. These tools
+        access the configuration database, and the integrity of a database backup is
+        not guaranteed while any of these tools are open. An error dialog appears
+        during the backup if there are open programs. To determine which programs are
+        open, double-click 
+        <span class="uicontrol">Database Connections</span> in Database Administrator. 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_backup_restore__section_7E8BDBDF99494208A7261070541FCF32"><a name="c_backup_restore__section_7E8BDBDF99494208A7261070541FCF32"></a><h2 class="sectiontitle">Restoring the Objectivity Database</h2> 
+       
+      <div class="note"><span class="notetitle">Note:</span> Exit the DeltaV Engineering tools before restoring the
+        database. Use Database Connections if necessary. 
+      </div>
+ 
+      <a name="c_backup_restore__ol_F76E115EE6CA4126B0298CB3486FCED3"></a><ol id="c_backup_restore__ol_F76E115EE6CA4126B0298CB3486FCED3"> 
+        <li id="c_backup_restore__li_54934D27592C4554AB1ED36CBD325AA2"><div class="li_content">Use the DeltaV Database
+          Administrator tool to restore the configuration database. For instructions on
+          how to restore this database, refer to the online help for the DeltaV Database
+          Administrator tool. Also, make certain that you are restoring the appropriate
+          backup. The restore procedure takes several minutes. 
+        </div></li>
+ 
+        <li id="c_backup_restore__li_F865435170FC4AE0B66B3A98A5A29595"><div class="li_content">Click 
+          <span class="uicontrol">OK</span> in the message box that states that the
+          data has been restored. 
+        </div></li>
+ 
+        <li id="c_backup_restore__li_812E087C7C764BA19BD491E62F008BBE"><div class="li_content">Close the window and exit
+          the application. 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_configuration_and_graphics_backup_and_recovery.html">Configuration and graphics backup and recovery</a></div>
+<div><a href="c_modify_sql_services_logon.html">Modify SQL services logon</a></div>
+<div><a href="c_set_active_database.html">Set Active Database</a></div>
+<div><a href="c_set_server_host.html">Set Server Host</a></div>
+<div><a href="c_synchronize_nodes.html">Synchronize Nodes</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

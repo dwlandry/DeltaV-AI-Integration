@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Remapping secure parameters" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="c_csls_global_safety_network.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_51B674B970AF4F56901608D74F08397E_unique_104" name="DC.Identifier" /><title>Remapping secure parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_lsnb_secparam_mapping.html" /><link rel="next" href="c_lsnb_configuration.html" /></head><body class="fixed" id="task_51B674B970AF4F56901608D74F08397E_unique_104" data-relpath="t_lsnb_remap_secparams.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_51B674B970AF4F56901608D74F08397E_unique_104"></a>
+
+<h1 class="topictitle1">Remapping secure parameters</h1>
+<div><p>
+  </p>
+ 
+	 <div class="section" id="task_51B674B970AF4F56901608D74F08397E_unique_104__context_7D0F4E11E4F44922A23FE07B2E33DFB3"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__context_7D0F4E11E4F44922A23FE07B2E33DFB3"></a> 
+		<p>As a configuration evolves some secure parameters may no longer be
+		  referenced so the database automatically removes them from their assigned LSNB
+		  publisher slots without changing or affecting the mapping of the remaining
+		  secure parameters. Logic solvers that are unaffected by the removing of secure
+		  parameter references therefore do not require downloading. Any secure
+		  parameters added to the database later are placed in the empty slots. 
+		</p>
+ 
+		<p>It is also possible to manually remap secure parameters by selecting
+		  the 
+		  <span class="uicontrol">Enable remapping</span> check box. 
+		</p>
+ 
+		<div class="cautiontitle">CAUTION:</div><div class="caution"> 
+		  <p> Manual remapping of secure parameters may be required in rare
+			 circumstances and should be performed only by experienced personnel. Manual
+			 remapping affects all modules referencing the remapped secure parameters. 
+		  </p>
+ 
+		</div>
+ 
+		<div class="p">It is possible to manually move secure parameters to free slots. That
+		  is, you can reassign a currently mapped reference to an open publisher slot in
+		  the same LSNB. For example: 
+		<a name="task_51B674B970AF4F56901608D74F08397E_unique_104__ul_4491E96C5AAE41FCBB168B5A06C19D46"></a><ul id="task_51B674B970AF4F56901608D74F08397E_unique_104__ul_4491E96C5AAE41FCBB168B5A06C19D46"> 
+		  <li id="task_51B674B970AF4F56901608D74F08397E_unique_104__li_3B41ABC0291540A895DE981E4F848E7E"><div class="li_content">LSNB1 exists on an LSN
+			 which has CSLSs with several secure parameters referenced by other LSNBs on the
+			 Global Safety Network, so that LSNB1 has at least two publishers. 
+		  </div></li>
+ 
+		  <li id="task_51B674B970AF4F56901608D74F08397E_unique_104__li_F165CC002AEA405A920D481B6DBCCB8C"><div class="li_content"> One of these publishers
+			 has had secure parameters deleted from it so that it has at least one free
+			 slot. 
+		  </div></li>
+ 
+		  <li id="task_51B674B970AF4F56901608D74F08397E_unique_104__li_5A721E5F57A44A98B60A7F55772D953B"><div class="li_content"> Another publisher has a
+			 secure parameter of the same type (Boolean or non-Boolean) as the free slot, so
+			 that it can be remapped there. 
+		  </div></li>
+ 
+		  <li id="task_51B674B970AF4F56901608D74F08397E_unique_104__li_F6941B081BA849408AC00DAA6E3CF874"><div class="li_content"> The 
+			 <span class="wintitle">Secure Parameters</span> dialog for LSNB1 is open. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>To remap secure parameters manually: 
+		</p>
+ 
+	 </div>
+ 
+	 <a name="task_51B674B970AF4F56901608D74F08397E_unique_104__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_92"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_104__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_92"><li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_980B47629C8F486D8CBC8D5532223503_unique_80"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_980B47629C8F486D8CBC8D5532223503_unique_80"></a> 
+		  <span>Select the 
+			 <span class="uicontrol">Enable remapping</span> check box 
+		  </span> 
+		  <span class="step_result"> The 
+			 <span class="uicontrol">Show references to parameters</span> check box is
+			 automatically selected and then grayed out. The Secure Parameters dialog
+			 refreshes. References appear and remain visible as long as remapping is
+			 enabled. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_E07EF9F04CDF496783494E43922254A7"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_E07EF9F04CDF496783494E43922254A7"></a> 
+		  <span>Select a secure parameter to be remapped from the list. 
+		  </span> 
+		  <span class="step_result"> This makes the 
+			 <span class="uicontrol">Remap</span> button selectable. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_534CEC22E44949FA9470506236B996AA"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_534CEC22E44949FA9470506236B996AA"></a> 
+		  <span> Click the 
+			 <span class="uicontrol">Remap</span> button. 
+		  </span> 
+		  <span class="step_result"> The 
+			 <span class="wintitle">Remap Secure Parameter</span> dialog opens. 
+			 <p> The 
+				<span class="uicontrol">Remap to…</span> area lists all publishers in the
+				LSNB that the selected secure parameter can be remapped to. The first of these
+				publishers is selected. If there are no publishers that the secure parameter
+				can be remapped to, the display of the 
+				<span class="wintitle">Remap Secure Parameter</span> dialog closes and an
+				error message appears. 
+			 </p>
+ 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_12FBE391780C4A83B9370D33243C408B"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_12FBE391780C4A83B9370D33243C408B"></a> 
+		  <span>Select a different publisher to remap the secure parameter to or
+			 select Cancel to close the dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_FCCB0C667AB548039793A95E2AD6229E"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_FCCB0C667AB548039793A95E2AD6229E"></a> 
+		  <span> Click the 
+			 <span class="uicontrol">OK</span> button. 
+		  </span> 
+		  <span class="step_result"> A confirmation dialog appears that lists the SIS modules
+			 and CSLSs that contain global references to the secure parameter and explains
+			 that the remap changes their CRCs so that they will need to be revalidated and
+			 re-downloaded. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_47217D25CDE84AED978796AA7205F6FE"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_47217D25CDE84AED978796AA7205F6FE"></a> 
+		  <span>Click 
+			 <span class="uicontrol">Yes</span> to confirm the remap of the selected
+			 secure parameter. 
+		  </span> 
+		  <span class="step_result"> The 
+			 <span class="wintitle">Remap Secure Parameter</span> dialog disappears and the
+			 
+			 <span class="wintitle">Secure Parameters Dialog</span> reappears. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_073E8E4AF1ED47BB9FD983FA2A2D6D66"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_073E8E4AF1ED47BB9FD983FA2A2D6D66"></a> 
+		  <span>Remap additional secure parameters as needed. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_F90071906141457499D71A13D945173E"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_F90071906141457499D71A13D945173E"></a> 
+		  <span>Uncheck the 
+			 <span class="uicontrol">Enable remapping</span> checkbox in the 
+			 <span class="wintitle">Secure Parameters</span> dialog. 
+		  </span> 
+		  <span class="step_result"> The 
+			 <span class="uicontrol">Show references to parameters</span> checkbox becomes
+			 selectable. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_104__step_CFAED401B7CB466F81B0D46B68A5A61A"><a name="task_51B674B970AF4F56901608D74F08397E_unique_104__step_CFAED401B7CB466F81B0D46B68A5A61A"></a> 
+		  <span>Uncheck the 
+			 <span class="uicontrol">Show references to parameters</span> check box. 
+		  </span> 
+		  <span class="step_result"> The 
+			 <span class="wintitle">Secure Parameters</span> dialog no longer displays
+			 references. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

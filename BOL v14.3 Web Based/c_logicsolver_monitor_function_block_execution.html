@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Monitor function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Monitor (LSMON), Monitor (LSMON) function block" name="DC.subject" /><meta content="SIS function blocks, Monitor (LSMON), Monitor (LSMON) function block" name="keywords" /><meta content="c_ls_fblk_spec_mon.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logicsolver_monitor_function_block_execution" name="DC.Identifier" /><title>Logic Solver Monitor function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_spec_mon.html" /><link rel="next" href="c_logicsolver_monitor_function_block_status_handling.html" /></head><body class="fixed" id="c_logicsolver_monitor_function_block_execution" data-relpath="c_logicsolver_monitor_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logicsolver_monitor_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Monitor function block execution</h1>
+<div><div></div>
+ 
+	 <p>The LSMON block provides the logic for one or more safety instrumented
+		functions (SIF). 
+	 </p>
+ 
+	 <p>The block accepts as many as 32 Boolean input values and, based on a
+		user-configured matrix, generates as many as 8 Boolean output values. 
+	 </p>
+ 
+	 <p>The matrix consists of one row for each input and a column for each
+		output. Any
+		bit set in the matrix indicates that the corresponding input, when in the
+		tripped state, causes the output for that row to go to a tripped state. You can
+		use an input in multiple output masks. 
+	 </p>
+ 
+	 <p> To accommodate both positive (energize
+		to actuate) and negative (deeenergize
+		to actuate) logic, the user defines the tripped state
+		as either TRUE (positive logic) or FALSE (negative logic) using the LOGIC_TYPE
+		parameter. This enables the block to be used in both
+		ESD and F&amp;G applications.
+	 </p>
+
+	 <p>Manipulate
+		the parameter INPUT_MASK to prevent one or more causes from becoming active
+		under certain process conditions. Setting a bit in INPUT_MASK to True prevents
+		the corresponding IN_Dn from tripping any associated effects. 
+	 </p>
+ 
+	 <p>After the INPUT_MASK has been applied, the block generates a SIS event
+		record whenever an input changes to or from the tripped
+		state. The block also generates a SIS event record whenever a value of an
+		OUT_Dx parameter changes. If an OUT_Dx parameter changes to the tripped value,
+		then the event includes a list of all the active inputs that caused the trip.
+		You can suppress these events using the REPORT_OPTS parameter. 
+	 </p>
+ 
+	 <p>If you need more than eight outputs from a set of inputs, you can use
+		the RAW_INPUTS or
+		
+		MASKED_INPUTS parameter
+		wired to the
+		EXT_INPUTS input parameter
+		of another block. 
+	 </p>
+ 
+	 <p>RAW_INPUTS and MASKED_INPUTS are 32-bit parameters that represent the
+		current input values with and without the INPUT_MASK parameter being taken into
+		account. RAW_INPUTS does not take the INPUT_MASK into account. MASKED_INPUTS
+		does take the INPUT_MASK into account.
+	 </p>
+ 
+	 <p>For example, if you want to drive 11 outputs from four inputs, rather
+		than wiring the four inputs to two blocks, you can wire a RAW_INPUTS or
+		MASKED_INPUTS parameter from the first LSMON block to the EXT_INPUTS parameter
+		on the second LSMON block.
+	 </p>
+
+	 <p><img src="RAW_INPUT_config.png" />
+	 </p>
+
+	 <p>After wiring the blocks together, you would configure configure the
+		MATRIX parameter for each block, The matrix for LSMON1 contains eight outputs.
+		The matrix for LSMON2 contains three outputs. 
+	 </p>
+
+	 <p>If you use MASKED_INPUTS rather than RAW_INPUTS, any input to the first
+		block that is masked using INPUT_MASK on the the first block is also masked in
+		the second block.
+	 </p>
+
+	 <p>
+	 </p>
+ 
+	 <div class="section"><h2 class="sectiontitle">First out trap</h2> 
+		 
+		<p>The LSMON block supports first out trapping. First out trapping
+		  captures which inputs changed to tripped when no first out has been trapped.
+		  Once a first out has been saved into the FIRSTOUT_VAL parameter it remains
+		  latched until the value is cleared and the FIRSTOUT_ACT parameter is set to
+		  true. The block clears the value of FIRSTOUT_VAL based on the value of the
+		  FIRSTOUT_OPT parameter. You configure FIRSTOUT_OPT as Clear on Normal, Clear on
+		  Reset If Normal and Clear on Reset. 
+		</p>
+ 
+		<p><strong>Clear on Normal</strong> automatically clears the FIRSTOUT_VAL parameter
+		  when no inputs are tripped. In this case, if there is a condition that causes a
+		  trip that immediately clears, FIRSTOUT_VAL is only set temporarily. 
+		</p>
+ 
+		<p><strong>Clear on Reset If Normal 
+		  </strong>clears FIRSTOUT_VAL only if the FIRSTOUT_RESET parameter goes TRUE
+		  when no inputs are tripped. In this case a momentary input would be latched
+		  until the user sets the FIRSTOUT_RESET parameter. 
+		</p>
+ 
+		<p><strong>Clear on Reset 
+		  </strong>clears FIRSTOUT_VAL no matter what the current inputs are. This
+		  enables you to capture the FIRSTOUT_VAL and set the FIRSTOUT_RESET parameter on
+		  the block each scan, in effect capturing a sequence of events. This can be done
+		  by wiring the FIRSTOUT_ACT parameter (defined
+		  as an output) back to the FIRSTOUT_RESET parameter
+		  (defined as an input). If the FIRSTOUT_OPT is Clear on
+		  RESET, the block generates a SIS event record whenever the FIRSTOUT_VAL
+		  changes. The event indicates which inputs changed to the tripped state. 
+		</p>
+ 
+		<p>The block does not generate any event records when FIRSTOUT_OPT is not
+		  Clear on RESET as these would be duplicates of the events that are generated
+		  when the value of OUT_Dx changes. 
+		</p>
+ 
+		<p>If you use multiple LSMON blocks to support a strategy that requires
+		  more than 32 inputs, the software manages the first out information across the
+		  blocks in the strategy so that all values are latched when any of the inputs
+		  trip. 
+		</p>
+ 
+		<p>You can use FIRSTOUT_INH to prevent any non-zero first out value from
+		  being written. For example, if the inputs for two LSMON blocks require a first
+		  out trap, you can wire the FIRSTOUT_ACT parameters from the two blocks into an
+		  LSOR block and the output of the LSOR block to the FIRSTOUT_INH parameters on
+		  the two LSMON blocks.
+		</p>
+
+		<p><img src="FIRSTOUT_INH_config.png" />
+		</p>
+ 
+		<p>Once either or both blocks see a first out then both blocks on the
+		  next scan would be prevented from changing the FIRSTOUT_VAL until both are
+		  reset. When combining LSMON blocks this way and using either the Clear On RESET
+		  or Clear On RESET If Normal options, connect the FIRSTOUT_RESET parameters on
+		  the blocks to a single reset parameter that you have configured to generate a
+		  pulse so that the FIRSTOUT_RESET parameters are not continually written as
+		  TRUE.
+		</p>
+
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

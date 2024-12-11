@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="SPM module template configuration" name="DC.Title" /><meta content="SPM, module template configuration" name="DC.subject" /><meta content="SPM, module template configuration" name="keywords" /><meta content="r_spm_rmt_fp.html" name="DC.Relation" scheme="URI" /><meta content="r_rmt_spm_dt.html" name="DC.Relation" scheme="URI" /><meta content="c_rtm_spm_templates.html" name="DC.Relation" scheme="URI" /><meta content="c_spm_deleting_blocks.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_240" name="DC.Identifier" /><title>SPM module template configuration</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_spm_dynamic_enabling_alarms.html" /><link rel="next" href="c_spm_deleting_blocks.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_240" data-relpath="c_spm_configuration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_240"></a>
+
+<h1 class="topictitle1">SPM module template configuration</h1>
+<div> 
+    <p> To configure Statistical Process Monitoring using the DeltaV Explorer,
+      create a module from the module template RMT_SPM_FF for Fieldbus devices or
+      RMT_SPM_HART for HART devices. You can use DeltaV Explorer or Control Studio to
+      customize the module&#39;s properties and configuration parameters. There are
+      configuration tips in the function bock diagram of the module in Control
+      Studio. Begin by assigning the AI1, MEAN, and STDEV function blocks to the
+      Signal Tag for the corresponding variable from the transmitter. If available in
+      the device also assign the CV function block, and change the CV_ASSIGNED
+      parameter to TRUE. If CV is not available in the device, then leave the CV
+      function block and CV_ASSIGNED parameter unchanged, and the CALC block will
+      automatically calculate CV from the mean and standard deviation. 
+    </p>
+ 
+    <p> Next you will need to set the scaling for both the AI and/or ALM
+      function blocks as desired. The scaling limits will automatically propagate
+      into both the Operator Faceplate and the Process History View Chart. In
+      RMT_SPM_HART the OUT_SCALE parameters of the AI blocks are used for the
+      faceplate and charts. In RMT_SPM_FF the IN_SCALE parameters of the ALM blocks
+      are used for the faceplate and charts. Modify the history collection parameters
+      as desired. 
+    </p>
+ 
+    <p> Enable SPM Alarms and set alarm limits as desired. Note that all of the
+      SPM Alarms are disabled by default. It is recommended that prior to enabling
+      the user monitors the SPM data to determine how it is affected by an abnormal
+      condition. 
+    </p>
+ 
+    <p> Set the DEVICE_TAG parameter to the DeltaV tag for the device.
+      Configure the alarm management (ALARMS_ENABLED and PV_LIM_MODE) as desired. 
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_2DB67A4F16D74FD6BCBD4AF832BD15B0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_2DB67A4F16D74FD6BCBD4AF832BD15B0" rules="all" summary=""><caption><span class="tablecap">Function block in the RMT_SPM_HART template</span></caption><thead align="left"> 
+        <tr> 
+          <th class="cellrowborder" id="d1380961e42" valign="top" width="NaN%"> Function Block 
+          </th>
+ 
+          <th class="cellrowborder" id="d1380961e45" valign="top" width="NaN%"> Description 
+          </th>
+ 
+          <th class="cellrowborder" id="d1380961e48" valign="top" width="NaN%"> Default Scaling 
+          </th>
+ 
+        </tr>
+</thead>
+ 
+      <tbody> 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e42 " valign="top" width="NaN%"> AI1 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e45 " valign="top" width="NaN%"> Analog Input block for the Primary Variable -
+            usually assigned to FIELD_VAL_PCT, HART_FIELD_VAL, or HART_PV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e48 " valign="top" width="NaN%"> 
+            <p>XD_SCALE = 0.0 to 100.0 % 
+            </p>
+ 
+            <p>OUT_SCALE = 0.0 to 100.0 no units 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e42 " valign="top" width="NaN%"> MEAN 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e45 " valign="top" width="NaN%"> Analog Input block for the Mean - assigned to
+            HART_SV, HART_TV, or HART_FV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e48 " valign="top" width="NaN%"> 
+            <p>XD_SCALE = 0.0 to 100.0 inH2O 
+            </p>
+ 
+            <p>OUT_SCALE = 0.0 to 100.0 inH2O 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e42 " valign="top" width="NaN%"> STDEV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e45 " valign="top" width="NaN%"> Analog Input block for the Standard Deviation
+            - assigned to HART_SV, HART_TV, or HART_FV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e48 " valign="top" width="NaN%"> 
+            <p>XD_SCALE = 0.000 to 1.000 inH2O 
+            </p>
+ 
+            <p>OUT_SCALE = 0.000 to 1.000 inH2O 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e42 " valign="top" width="NaN%"> CV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e45 " valign="top" width="NaN%"> Analog Input block for the Coefficient of
+            Variation - may either be assigned to HART_SV, HART_TV, or HART_FV (on
+            supported devices) or calculated in DeltaV and updated via SIMULATE parameter. 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e48 " valign="top" width="NaN%"> 
+            <p>XD_SCALE = 0.000 to 1.000 % 
+            </p>
+ 
+            <p>OUT_SCALE = 0.000 to 1.000 % 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e42 " valign="top" width="NaN%"> CV_ALARM_CTRL 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e45 " valign="top" width="NaN%"> CALC block containing logic to calculate
+            Coefficient of Variation, and enable or disable alarms. 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e48 " valign="top" width="NaN%"> N/A 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+    
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_BF0E52181B0048B5A74776D22415069E"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_BF0E52181B0048B5A74776D22415069E" rules="all" summary=""><caption><span class="tablecap">Function block in the RMT_SPM_FF template</span></caption><thead align="left"> 
+        <tr> 
+          <th class="cellrowborder" id="d1380961e167" valign="top" width="NaN%"> Function Block 
+          </th>
+ 
+          <th class="cellrowborder" id="d1380961e170" valign="top" width="NaN%"> Description 
+          </th>
+ 
+          <th class="cellrowborder" id="d1380961e173" valign="top" width="NaN%"> Default Channel and/or Scaling 
+          </th>
+ 
+        </tr>
+</thead>
+ 
+      <tbody> 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> AI1 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Fieldbus Shadow Analog Input block for the
+            Primary Variable 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> 
+            <p>CHANNEL=1 
+            </p>
+ 
+            <p>XD_SCALE = 0.0 to 100.0 inH2O (68°F) 
+            </p>
+ 
+            <p>OUT_SCALE = 0.0 to 100.0 inH2O 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> MEAN 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Fieldbus Shadow Analog Input block for the
+            Mean 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> 
+            <p>CHANNEL=12 
+            </p>
+ 
+            <p>XD_SCALE = 0.0 to 100.0 inH2O (68°F) 
+            </p>
+ 
+            <p>OUT_SCALE = 0.0 to 100.0 inH2O 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> STDEV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Fieldbus Shadow Analog Input block for the
+            Standard Deviation 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> 
+            <p>CHANNEL=13 
+            </p>
+ 
+            <p>XD_SCALE = 0.000 to 1.000 inH2O (68°F) 
+            </p>
+ 
+            <p>OUT_SCALE = 0.000 to 1.000 inH2O 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> CV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Analog Input block for the Coefficient of
+            Variation - calculated in controller from MEAN and STDEV- updated via SIMULATE
+            parameter. 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> 
+            <p>XD_SCALE = 0.000 to 1.000 % 
+            </p>
+ 
+            <p>OUT_SCALE = 0.000 to 1.000 % 
+            </p>
+ 
+            <p>L_TYPE = Indirect 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> CV_ALARM_CTRL 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> CALC block containing logic to calculate
+            Coefficient of Variation, and enable/disable alarms. 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> N/A 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> ALM_AI1 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Alarm Detection block for generating alarms
+            based on Primary Variable 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> IN_SCALE = 0.0 to 100.0 inH2O 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> ALM_MEAN 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Alarm Detection block for generating alarms
+            based on Mean 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> IN_SCALE = 0.0 to 100.0 inH2O 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> ALM_STDEV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Alarm Detection block for generating alarms
+            based on Standard Deviation 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> IN_SCALE = 0.000 to 1.000 inH2O 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e167 " valign="top" width="NaN%"> ALM_CV 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e170 " valign="top" width="NaN%"> Alarm Detection block for generating alarms
+            based on Coefficient of Variation 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e173 " valign="top" width="NaN%"> IN_SCALE = 0.000 to 1.000 % 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+    
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_E0FDE45F18084F3B9848D97C69F7878C"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_240__table_E0FDE45F18084F3B9848D97C69F7878C" rules="all" summary=""><caption><span class="tablecap">SPM module template configuration parameters</span></caption><thead align="left"> 
+        <tr> 
+          <th class="cellrowborder" id="d1380961e348" valign="top" width="25%"> Parameter 
+          </th>
+ 
+          <th class="cellrowborder" id="d1380961e351" valign="top" width="75%"> Description 
+          </th>
+ 
+        </tr>
+</thead>
+ 
+      <tbody> 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> CV_ASSIGNED 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> Differentiates whether the CV value is read
+            from the transmitter or calculated in the Controller. Set to TRUE if the IO_IN
+            parameter of the CV function block is configured. 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> DEVICE_TAG 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> Specifies the DeltaV tag for the device, which
+            is used by the faceplate to launch AMS Device Manager 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> ALARMS_ENABLED 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> Enables/Disables all HI and LO alarms in the
+            Control Module. Change this parameter to an External Reference, and link it to
+            another control module containing the logic to enable and disable alarms. 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> PV_LIM_MODE 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> If set to TRUE, the STDEV and CV Alarms are
+            disabled if the MEAN or PV (as determined by FP_VAR_1) go outside of the HI or
+            LO limits. 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> FP_VAR_1 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> Configures the first variable for both the
+            Process History View and the Operator Faceplate (PV or MEAN) 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d1380961e348 " valign="top" width="25%"> FP_VAR_2 
+          </td>
+ 
+          <td class="cellrowborder" headers="d1380961e351 " valign="top" width="75%"> Configures the second variable for both the
+            Process History View and the Operator Faceplate (STDEV or CV) 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+    <p> The faceplate and detail display names are pre-defined as module
+      properties. 
+    </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_spm_deleting_blocks.html">Deleting SPM module template function blocks</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_spm_rmt_fp.html">Rosemount Statistical Process Monitoring faceplate
+	 (RMT_SPM_FP)</a></div>
+<div><a href="r_rmt_spm_dt.html">Rosemount Statistical Process Monitoring detail display
+	 (RMT_SPM_DT)</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

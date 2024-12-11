@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional (MPCPro) function block" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="MPCPro function block, Model Predictive Control Professional function block, MPCPro Function Block, schematic diagram" name="DC.subject" /><meta content="MPCPro function block, Model Predictive Control Professional function block, MPCPro Function Block, schematic diagram" name="keywords" /><meta content="c_fblk_spec_mpc.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="dynamoreference.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_diff_Pro_Plus_blocks.html" name="DC.Relation" scheme="URI" /><meta content="c_advctrlblkintro.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_mpcpro_configuration.html" name="DC.Relation" scheme="URI" /><meta content="c_mpc_pro_fblock_params_referenced_by_the_mpcpro_fblock.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_modes.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_status_handling.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_compensating_for_transport_delay.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_performance_monitoring.html" name="DC.Relation" scheme="URI" /><meta content="r_model_predictive_control_professional_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_mpc_professional_fb_directly_modifying_mpcpro_fb_params.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_application_examples.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_professional_function_block_mpcpro_sample_input_template.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_spec_mpcpro" name="DC.Identifier" /><title>Model Predictive Control Professional (MPCPro) function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_model_predictive_control_process_simulator_function_block_application_example.html" /><link rel="next" href="c_model_predictive_control_professional_function_block_execution.html" /></head><body class="fixed" id="c_fblk_spec_mpcpro" data-relpath="c_fblk_spec_mpcpro.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_spec_mpcpro"></a>
+
+<h1 class="topictitle1">Model Predictive Control Professional (MPCPro) function block</h1>
+<div><div></div>
+ 
+	 <p id="c_fblk_spec_mpcpro__ModelPredictiveControlProfessionalMPCProfunctionblock"><a name="c_fblk_spec_mpcpro__ModelPredictiveControlProfessionalMPCProfunctionblock"></a>The DeltaV
+		Model Predictive Control Professional (MPCPro) function block allows large
+		interactive processes (as large as 40×80) to be controlled within measurable
+		operating constraints while accounting for process interaction and measurable
+		disturbances. Use the MPCPro block instead of the MPC block if the application
+		size exceeds 8×8 or the application requires more optimization than Constraint
+		pushing (provided by the MPC block). An embedded optimizer is included with the
+		MPCPro block. The optimizer can be used to effectively provide maximum profit
+		or lowest cost production within the process constraints and limits on process
+		inputs. 
+	 </p>
+ 
+	 <p>The MPCPro function block can replace traditional control systems that
+		use feedforward, decoupling networks, and override for multivariable control.
+		The parameters of the MPCPro function block are configured in Control Studio.
+		When a module that contains the MPCPro block is downloaded, all inputs and
+		outputs used by the MPCPro block are automatically assigned to the Continuous
+		Historian.  
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> The history collection rate of the MPCPro function block parameters
+		  is defined as part of the block configuration.  
+		</p>
+ 
+	 </div>
+ 
+	 <p>You use the DeltaV PredictPro application to commission the MPCPro
+		block, to easily determine the process step response, and to automatically test
+		the process. Using the historical data that reflects automatic or manual
+		process testing, the PredictPro application can automatically identify the
+		process step responses. The control definition used by the MPCPro function
+		block can be generated from the model that is identified. The PredictPro
+		Simulation application can be used to verify the control before it is used in
+		your process. 
+	 </p>
+ 
+	 <p>The operator runs the control through a DeltaV Operate screen built with
+		the MPCPro dynamos. 
+	 </p>
+ 
+	 <p>The MPCPro function block supports modes and status handling. 
+	 </p>
+ 
+	 <p>The MPCPro function block is not supported in composites. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> The function blocks that provide the MPCPro inputs and outputs (AI
+		  scaler, AO, PID, Ratio, Fuzzy, Bias/Gain, Splitter, and other MPCPro function
+		  blocks) can reside in the same module as the MPCPro block or in other modules.
+		  Use the Scaler function block as the MPCPro reference when another function
+		  block that does not support scaling (such as a Calc/Logic function block) is
+		  referenced as an input to the MPCPro function block. Insert the Scaler function
+		  block after the Calc/Logic block and reference the Scaler output in the MPCPro
+		  function block. This provides the appropriate parameter (OUT_SCALE) for the
+		  input parameters reference by the MPCPro block.  The path for Controlled,
+		  Manipulated, Disturbance, and Constraint parameters must ultimately point to a
+		  reference that is resolved. For example, if the parameter path points to the
+		  OUT parameter of a Scalar block; the IN parameter of the Scalar must be wired
+		  to a parameter associated with a resolved reference. Specifically, the scalar
+		  should not be wired to a DST that contains an invalid IO reference nor wired to
+		  a dynamic reference that can become unresolved. Refer to the following figure,
+		  MPCPro Function Block, and notice that the MPCPro block has no input and output
+		  connections. The user configures the MPCPro block in DeltaV Control Studio to
+		  directly reference function block inputs or outputs. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="fignone" id="c_fblk_spec_mpcpro__fig_A040615EAB2F444D8A5BBA8BD07FCDE6"><a name="c_fblk_spec_mpcpro__fig_A040615EAB2F444D8A5BBA8BD07FCDE6"></a><div><span class="figcap">MPCPro function block</span></div> 
+		 
+		<a name="c_fblk_spec_mpcpro__image_9A2C5A64CCFF457089970C13DE52162C"></a><img id="c_fblk_spec_mpcpro__image_9A2C5A64CCFF457089970C13DE52162C" src="MPCProFB.gif" /> 
+	 </div>
+ 
+	 <div class="fignone" id="c_fblk_spec_mpcpro__fig_42A9CAC106A2407B925E384EC93985DA"><a name="c_fblk_spec_mpcpro__fig_42A9CAC106A2407B925E384EC93985DA"></a><div><span class="figcap">MPCPro function block schematic diagram</span></div> 
+		 
+		<a name="c_fblk_spec_mpcpro__image_5BF2A9C0FAA240278C7A015EA6AF9A44"></a><img id="c_fblk_spec_mpcpro__image_5BF2A9C0FAA240278C7A015EA6AF9A44" src="mpc-pro_schem.jpg" /> 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_execution.html">Model Predictive Control Professional function block execution</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_mpcpro_configuration.html">Model Predictive Control Professional function block MPCPro
+	 configuraton</a><br />
+</li>
+<li class="ulchildlink"><a href="c_mpc_pro_fblock_params_referenced_by_the_mpcpro_fblock.html">Model Predictive Control Professional function block parameters referenced by the MPCPro function block</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_modes.html">Model Predictive Control Professional function block modes</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_status_handling.html">Model Predictive Control Professional function block status
+	 handling</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_compensating_for_transport_delay.html">Model Predictive Control Professional function block compensating for transport delay</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_performance_monitoring.html">Model Predictive Control Professional function block performance monitoring</a><br />
+</li>
+<li class="ulchildlink"><a href="r_model_predictive_control_professional_function_block_parameters.html">Model Predictive Control Professional function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_mpc_professional_fb_directly_modifying_mpcpro_fb_params.html">Model Predictive Control Professional function block directly
+	 modifying MPCPro function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_application_examples.html">Model Predictive Control Professional function block application
+    examples</a><br />
+</li>
+<li class="ulchildlink"><a href="c_model_predictive_control_professional_function_block_mpcpro_sample_input_template.html">Model Predictive Control Professional function block MPCPro sample input template</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_spec_mpc.html">Model Predictive Control (MPC) function block</a></div>
+<div><a href="c_predict_pro.html">DeltaV PredictPro</a></div>
+<div><a href="dynamoreference.html">FrsModules dynamo reference</a></div>
+<div><a href="c_predict_pro_diff_Pro_Plus_blocks.html">Summary of the differences between the MPCPro and MPCPlus function
+	 blocks</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

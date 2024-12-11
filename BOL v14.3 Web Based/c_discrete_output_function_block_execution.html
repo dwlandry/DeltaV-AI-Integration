@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Discrete Output function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Discrete Output, Discrete Output, Block Execution, duty cycle control, pulse duration" name="DC.subject" /><meta content="Discrete Output, Discrete Output, Block Execution, duty cycle control, pulse duration" name="keywords" /><meta content="c_fblk_spec_discrete_output.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_discrete_output_function_block_execution" name="DC.Identifier" /><title>Discrete Output function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_discrete_output.html" /><link rel="next" href="c_discrete_output_function_block_modes.html" /></head><body class="fixed" id="c_discrete_output_function_block_execution" data-relpath="c_discrete_output_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_discrete_output_function_block_execution"></a>
+
+<h1 class="topictitle1">Discrete Output function block execution</h1>
+<div><div></div>
+
+    <p id="c_discrete_output_function_block_execution__blockexecutiondiscreteoutputfunctionblock"><a name="c_discrete_output_function_block_execution__blockexecutiondiscreteoutputfunctionblock"></a>The Discrete Output
+      function block determines its setpoint, sets the output, and, optionally,
+      checks a feedback signal from the hardware to confirm the physical output
+      operation.
+    </p>
+
+    <p><strong>Setting the output</strong>
+    </p>
+
+    <p>The block first must determine its setpoint. Normally, the block is used
+      in Cas mode and the cascade input value (CAS_IN_D) becomes the setpoint (SP_D).
+      In Automatic (Auto) or Manual (Man) mode, the block disconnects CAS_IN_D and
+      allows a manual entry to change the value of SP_D.
+    </p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> CAS_IN_D should always be a discrete value with status. When CAS_IN_D
+        is an analog value, block behavior is unpredictable.
+      </p>
+
+    </div>
+
+    <p>You can select setpoint tracking by configuring the SP_PV Track in Man
+      I/O option (IO_OPTS).
+    </p>
+
+    <p><strong>SP-PV track in man</strong>
+    </p>
+
+    <p>This option is enabled (True) as a default. SP_D becomes a copy of PV_D
+      when the block&#39;s target mode is Man. A manually entered SP_D value is
+      overwritten on the block&#39;s next execution cycle. This can prevent a state
+      change when transitioning from Man to Auto mode. You can disable this option in
+      Man or OOS mode only.
+    </p>
+
+    <div class="p">You can select setpoint inversion by configuring the Invert I/O option:
+    <a name="c_discrete_output_function_block_execution__ul_25943F01C4B44A218051581CEC142FDF"></a><ul id="c_discrete_output_function_block_execution__ul_25943F01C4B44A218051581CEC142FDF">
+      <li id="c_discrete_output_function_block_execution__li_5ED4877E59664E2195F900E67A9F21EB"><div class="li_content">
+        <p><strong>Invert</strong>
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+
+    <p>When this option is enabled (True), OUT_D becomes an inverted copy of
+      SP_D. When this option is not enabled (False), OUT_D is a straight copy of
+      SP_D.
+    </p>
+
+    <p>When you configure the Discrete Output function block, you select the
+      I/O channel associated with a discrete output by configuring the Device Signal
+      Tag (DST) of the IO_OUT parameter. You select the Device Tag and the parameter
+      the DO block accesses on that channel.
+    </p>
+
+    <div class="p">If you select Discrete Output Channel for the channel type, the only
+      selectable channel parameter is:
+    <a name="c_discrete_output_function_block_execution__ul_A419BD788C2C412BB131D4D3F035D62E"></a><ul id="c_discrete_output_function_block_execution__ul_A419BD788C2C412BB131D4D3F035D62E">
+      <li id="c_discrete_output_function_block_execution__li_8150BE9A29AC42E893A3D9AADF0956EA"><div class="li_content">
+        <p><strong>OUT_D</strong> — The current discrete value with status driven to the
+          card.
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+
+    <div class="p">If you select Momentary Output Channel for the channel type, the only
+      selectable channel parameter is:
+    <a name="c_discrete_output_function_block_execution__ul_4EA6E3408B134D6583D6A1C4D01DD43F"></a><ul id="c_discrete_output_function_block_execution__ul_4EA6E3408B134D6583D6A1C4D01DD43F">
+      <li id="c_discrete_output_function_block_execution__li_410566DB50D44FB29872BF438D982875"><div class="li_content">
+        <p><strong>OUT_D</strong> — Writing a True (1) value to this parameter causes the
+          channel to output a pulse of a fixed duration. You configure the pulse duration
+          during I/O configuration.
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+
+    <p>You configure a failure action and value for the output during I/O
+      configuration.
+    </p>
+
+    <p><strong>Simulation</strong>
+    </p>
+
+    <p>When SIMULATE_D is not enabled, and the mode is not Out of Service
+      (OOS), the value of OUT_D is sent to the hardware. When SIMULATE_D is enabled,
+      the status of OUT_D is forced to 
+      <em>Good</em> regardless of the condition of the hardware.
+    </p>
+
+    <p><strong>Getting feedback from the hardware</strong>
+    </p>
+
+    <p>You can configure the IO_READBACK parameter to determine the pair of
+      field wires that are used for confirming the hardware output of this block. To
+      select the DST, you enter the Device Tag of the desired discrete input, or you
+      can browse for it among all of the available Device Tags. There is only one
+      possible parameter of the Device Tag that can be used (FIELD_VAL_D), so it is
+      entered automatically.
+    </p>
+
+    <p>When IO_READBACK is not configured, a copy of OUT_D is used in its place
+      (with a delay of one execution time). This signal goes through the SIMULATE_D
+      switch to become READBACK_D. You can enter a value and status for READBACK_D in
+      SIMULATE_D when it is enabled. The readback value is processed through the
+      Invert I/O option to become PV_D, which normally matches SP_D in Auto or Cas
+      mode.
+    </p>
+
+    <div class="p">Usually, BKCAL_OUT_D has the value of SP_D and the status of the
+      hardware. When SIMULATE_D is enabled, the status is forced to 
+      <em>Good: Cascade.</em> You can configure the Use PV for BKCAL_OUT I/O
+      option:
+    <a name="c_discrete_output_function_block_execution__ul_A3D2C13A6FEF43D7881546F21EECA37C"></a><ul id="c_discrete_output_function_block_execution__ul_A3D2C13A6FEF43D7881546F21EECA37C">
+      <li id="c_discrete_output_function_block_execution__li_4FB8530F4F28434B9F00E2801223E4FE"><div class="li_content">
+        <p><strong>Use PV for BKCAL_OUT</strong>
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> You can set I/O options in Manual or Out of Service mode only.
+      </p>
+
+    </div>
+
+    <p><strong>Block errors</strong>
+    </p>
+
+    <div class="p">The following conditions are reported in the BLOCK_ERR parameter:
+    <a name="c_discrete_output_function_block_execution__ul_1C660D23983442719C9001EADCDBE8B2"></a><ul id="c_discrete_output_function_block_execution__ul_1C660D23983442719C9001EADCDBE8B2">
+      <li id="c_discrete_output_function_block_execution__li_51E1BE3CD4AA46048385D47B54BEF1FB"><div class="li_content">
+        <p><strong>Simulate active</strong> — SIMULATE_D is enabled; therefore, PV_D is
+          not real.
+        </p>
+
+      </div></li>
+
+      <li id="c_discrete_output_function_block_execution__li_0E98ED7156B7499AA09C1FA42BDD1D32"><div class="li_content">
+        <p><strong>Input failure/process variable has 
+            <em>Bad</em> status</strong> — The source of the block&#39;s process variable
+          is bad. For the DO block, this might indicate a hardware failure, a
+          non-existent Device Signal Tag (DST), or a Bad status on the SIMULATE_D
+          parameter.
+        </p>
+
+      </div></li>
+
+      <li id="c_discrete_output_function_block_execution__li_9D0E827C6D8E4EBA816FAC00572A01F8"><div class="li_content">
+        <p><strong>Output failure</strong> — The output hardware or the DST is bad.
+        </p>
+
+      </div></li>
+
+      <li id="c_discrete_output_function_block_execution__li_6008C3D2A3D5497AA6D770882659F302"><div class="li_content">
+        <p><strong>Readback failed</strong> — The hardware or DST providing readback is
+          bad.
+        </p>
+
+      </div></li>
+
+      <li id="c_discrete_output_function_block_execution__li_46910B02B2344AF29CE3B5CC2B9E1572"><div class="li_content">
+        <p><strong>Out of Service</strong> — The block is not being processed.
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

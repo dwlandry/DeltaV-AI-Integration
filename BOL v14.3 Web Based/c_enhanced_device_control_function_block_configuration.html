@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Enhanced Device Control function block configuration" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="c_fblk_spec_enhanced_device_control.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_212" name="DC.Identifier" /><title>Enhanced Device Control function block configuration</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_enhanced_device_control_function_block_status.html" /><link rel="next" href="r_enhanced_device_control_block_parameters.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212" data-relpath="c_enhanced_device_control_function_block_configuration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212"></a>
+
+<h1 class="topictitle1">Enhanced Device Control function block configuration</h1>
+<div><p>
+  </p>
+ 
+	 <p>There are a number of things to configure to control the behavior of an
+		EDC block. 
+	 </p>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_8A66516817DC47ADBAA00533117AC733"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_8A66516817DC47ADBAA00533117AC733"></a><h2 class="sectiontitle">Configuring the Passive state</h2> 
+		 
+		<p>To define the Passive state, configure the PASSIVE_STATE parameter
+		  (Named Set) to one of the six supported states (State 0 through State 5). The
+		  other five states are the active states. 
+		</p>
+ 
+		<p>The Passive state is configured in the PASSIVE_STATE parameter (Named
+		  Set) to one of the six supported states (State 0 through State 5), and the
+		  other states are the Active states. For example, if State 1 is the Passive
+		  state and SHUTDOWN_D is True, the device is forced to State 1. The Passive
+		  state can be configured only to an enabled state. 
+		</p>
+ 
+		<p>The SP_D and PASSIVE_STATE parameters can be one of the six following
+		  states 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__table_E5D4AD6A117E4CC0A78018A4881EB615"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__table_E5D4AD6A117E4CC0A78018A4881EB615" rules="all" summary=""><caption><span class="tablecap">SP_D and PASSIVE_STATE values</span></caption> 
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d965839e44" valign="top" width="NaN%"> Value 
+				</th>
+ 
+				<th class="cellrowborder" id="d965839e47" valign="top" width="NaN%"> State 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>2 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 2 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>3 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 3 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>4 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 4 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e44 " valign="top" width="NaN%"> 
+				  <p>5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e47 " valign="top" width="NaN%"> 
+				  <p>State 5 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>You can use the default named sets or create your own. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_8F7F8C1F6CD44E36AE3DABFC35B3E736"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_8F7F8C1F6CD44E36AE3DABFC35B3E736"></a><h2 class="sectiontitle">Inputs/Outputs</h2> 
+		 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> An italic n (<em>n</em>) following a parameter name indicates there
+			 are multiple instances of the parameter. For example IO_IN_<em>n</em> represents
+			 IO_IN_1, IO_IN_2 and so on. The number of parameters available is stated in the
+			 parameter table for the block. 
+		  </p>
+ 
+		</div>
+ 
+		<p>The EDC block allows as many as four feedback signals and four output
+		  signals associated with the discrete field device. The eight input/output
+		  signals are referenced by the EDC block through the I/O parameters. The
+		  IO_IN_<em>n</em> parameters reference the discrete feedback signals coming from
+		  the field device. The IO_OUT<em>n</em> parameters reference the discrete output
+		  signals that command the field device to a requested state. 
+		</p>
+ 
+		<p>The feedback input IO_IN_<em>n</em> discrete signal values and statuses
+		  are stored in the internal parameters F_IN_D<em>n</em> . These signal values are
+		  used for FV_D state determination. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>The F_IN_D<em>n</em> parameters can be exposed and wired to instead of
+			 the corresponding IO_IN_<em>n</em> parameters to connect module-level parameters
+			 into the PV_D of an EDC block. For a PV_D that is derived from a combination of
+			 DST signals and module parameters, we recommend using DI blocks to read the DST
+			 signals into the module and wire all signals to the F_IN_D<em>n</em> parameters
+			 of the EDC Block. If IO_IN_<em>n</em> parameters are used with F_IN_D<em>n</em>
+			 parameters, you must configure the DST signals starting at IO_IN_1, IO_IN_2,
+			 and so forth, and use the remaining inputs for the F_IN_D<em>n</em> parameters. 
+		  </p>
+ 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>An EDC block with the BAD_MASK 
+			 <em>Output Failure</em> option selected sets the BAD_ACTIVE flag on
+			 output failure only if the associated I/O channel was at one time enabled, and
+			 then disabled, and then only the I/O card is downloaded. 
+		  </p>
+ 
+		</div>
+ 
+		<p>The requested state (stored in OUT_D) is decoded to the individual
+		  IO_OUT_<em>n</em> channel outputs according to the corresponding output state
+		  mask. The value and status of the IO_OUT_<em>n</em> channels are read back and
+		  copied to the internal parameters F_OUT_D<em>n</em> to track the output channel
+		  values and to calculate the status of OUT_D. 
+		</p>
+ 
+		<p>The IO_OUT_<em>n</em> discrete output channel values are determined from
+		  the output mask that corresponds to the current state stored in OUT_D.
+		  Likewise, the block uses the IO_IN_<em>n</em> discrete input channel values to
+		  find a matching input mask to determine the state stored in FV_D and PV_D. 
+		</p>
+ 
+		<p>The STATE_MASKS parameter defines the output and input combinations of
+		  IO_OUT_<em>n</em> and IO_IN_<em>n</em> for each of the six different states that
+		  can be contained in the parameters SP_D, OUT_D, FV_D and PV_D. An Undefined
+		  state means the IO_IN_<em>n</em> references do not match any of the defined input
+		  STATE_MASKS. 
+		</p>
+ 
+		<p>Enter the expected/desired values of inputs and outputs for each of
+		  six states in the boxes in the State Masks dialog. A blank box indicates a
+		  False (0) input or output value. A box with a check mark indicates a True (1)
+		  input or output value. Gray boxes indicate inputs and outputs that are not used
+		  or do not matter. 
+		</p>
+ 
+		<p>The following figure shows a simple state masks configuration example.
+		  
+		</p>
+ 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__fig_5FF4B8D27EEB45DAA6A6AA214BF50C0A"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__fig_5FF4B8D27EEB45DAA6A6AA214BF50C0A"></a><div><span class="figcap"> EDC Block State Masks Example (With State 0-1, No State 2-5)
+			 </span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__image_1D03C7762C0A44DCB5D7946C7CE50D9D"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__image_1D03C7762C0A44DCB5D7946C7CE50D9D" src="state_masks_1.png" /></div><br />
+		  
+		</div>
+ 
+		<p>In this example, if IO_IN_1 is True (1), the FV_D parameter value is
+		  1, indicating the State 1. When the block sets OUT_D to a value of 1 to request
+		  the State 1, the State 1 output mask sets IO_OUT_1 to 0 and IO_OUT_2 to 1. 
+		</p>
+ 
+		<p>Use the dropdown box to indicate the number of states used. This
+		  determines which states are considered when matching bit patterns. By default,
+		  no optional state is selected. Only state 0 and state 1 are mandatory. 
+		</p>
+ 
+		<p>The following figure shows an example definition of the State 0, State
+		  1, and State 2 bit masks for a group of input and output I/O parameters. 
+		</p>
+ 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__fig_0F3E4F78136641B58CE9A9E1653A4161"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__fig_0F3E4F78136641B58CE9A9E1653A4161"></a><div><span class="figcap"> EDC Block State Masks Example (using State 0-2, not using State
+			 3-5) </span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__image_80189C76B8E941818E2B7CD2CDAB3B30"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__image_80189C76B8E941818E2B7CD2CDAB3B30" src="state_masks_2.png" /></div><br />
+		  
+		</div>
+ 
+		<div class="p">In this example, if IO_IN_1 is False and IO_IN_2 is True, the FV_D
+		  parameter value is 2, indicating the State 2. When the block sets OUT_D to a
+		  value of 2 to request the State 2, the outputs are set as follows: 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__ul_DD85C69F53EC491590ADE13021315A9C"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__ul_DD85C69F53EC491590ADE13021315A9C"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_367D426F81264CD39436D8A27CD2A994"><div class="li_content">IO_OUT_1 = False (0) 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_2D9C10B4E6034C57B7E830AB2BAA1C33"><div class="li_content">IO_OUT_2 = False (0) 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_FD72997906F64EFFAACBF861F65F14E3"><div class="li_content">IO_OUT_3 = True (1) 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_F14260CFE7544F3FBC192C510BFADDE6"><div class="li_content">IO_OUT_4 = Grayed out (0) 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p> The grayed out output settings are always set to False 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_3F3CB888CCA54B0BBD4424AE7C43BE1E"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__section_3F3CB888CCA54B0BBD4424AE7C43BE1E"></a><h2 class="sectiontitle">Device options</h2> 
+		 
+		<p>The device options settings affect how the EDC logic is evaluated. The
+		  following table presents the available device options and how they affect the
+		  EDC logic. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__table_5F41413D602346BDAF1D328B51F532ED"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__table_5F41413D602346BDAF1D328B51F532ED" rules="all" summary=""><caption><span class="tablecap">EDC block device options</span></caption> 
+		   
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d965839e333" valign="top" width="10.395010395010395%"> Bit 
+				</th>
+ 
+				<th class="cellrowborder" id="d965839e336" valign="top" width="26.195426195426197%"> Option 
+				</th>
+ 
+				<th class="cellrowborder" id="d965839e339" valign="top" width="63.409563409563404%"> Description 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>15 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Interlock 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>If 
+					 <em>Interlock</em> is selected, SHUTDOWN_D is False, and the
+					 INTERLOCK_D input is False, OUT_D is set to the INTERLOCK_STATE and held there
+					 until INTERLOCK_D is set back to True or SHUTDOWN_D becomes True. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>14 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>SP Track on Shutdown/Interlock 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p><em>SP Track on Shutdown/Interlock</em> causes SP_D to track
+					 OUT_D. If 
+					 <em>SP Track on Shutdown/Interlock</em> is selected and
+					 OPERATION_STATE is Shutdown or Interlocked, the SP_D value tracks the OUT_D
+					 value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>13 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Permissive 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>If 
+					 <em>Permissive</em> is set and the PERMISSIVE_D input is set
+					 true, OUT_D can transition from Passive to an active state or from one active
+					 state to another if SP_D requests it. 
+				  </p>
+
+				  <p>If 
+					 <em>Permissive</em> is not selected or the PERMISSIVE_D input is
+					 False, OUT_D can transition from Passive to active or from one active state to
+					 another if the 
+					 <em>Interlock</em> option is selected and an interlock condition
+					 to the active state active. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>12 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Reset Required 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <div class="p">If 
+					 <em>Reset Required</em> is selected and SHUTDOWN_D is False
+					 (<em>Interlock</em> is not selected or INTERLOCK_D is True), and Trip is cleared,
+					 OPERATION_STATE becomes Locked and remains so until: 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_212__ol_9F46109E5AA849F285E4A25561CB98A9"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__ol_9F46109E5AA849F285E4A25561CB98A9"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_B817750AE7154F499CCEDA656F247C76"><div class="li_content"> RESET_D is set
+						true, or 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_6BE0469E9E984475BC500F81550918D1"><div class="li_content"> 
+						<em>Lock Recovery</em> is selected, and 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_8B9597BE2C1D4DB4A12A11208B168269"><div class="li_content"> conditions
+						permit, and 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_1F0F278FA9664842920F8ACBFC9CC70A"><div class="li_content"> mode target is
+						CAS, and 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_212__li_26BA4950502F436284ACDC338D4998FF"><div class="li_content"> a new write to
+						CAS_IN_D occurs. 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>11 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Trip 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Trip</em> is selected and an active confirm is lost (after
+					 being established) for a time greater than TRIP_TIME seconds, OUT_D is set to
+					 the Passive state. The SP_D value must return to Passive to clear the tripped
+					 condition. It is recommended that 
+					 <em>SP Track on Trip</em> also be selected when using this
+					 option.
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>10 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Permissive to Any State 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Permissive to Any State</em> is selected, the PERMISSIVE_D
+					 input must be True for any state setpoint to change OUT_D to that state. When
+					 the block is in an active state, even a setpoint to the Passive state does not
+					 change OUT_D if PERMISSIVE_D is False, unless there is a shutdown or an
+					 interlock condition to the 
+					 <em>Passive</em> state active. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>9 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Passive when Confirmed 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Passive when Confirmed</em> is selected and the device is
+					 confirmed in the desired active state, OUT_D changes to the Passive state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>8 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Not used 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>7 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>SP Track on Tracking 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>The 
+					 <em>SP Track on Tracking</em> option causes SP_D to track OUT_D.
+					 If 
+					 <em>SP Track on Tracking</em> is set and TRK_IN_D is True, SP_D
+					 tracks OUT_D. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>6 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p> SP Track to Passive on Active Confirm Timeout 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>SP Track to Passive on Active Confirm Timeout</em> is
+					 selected, and the 
+					 <em>Passive on Active Timeout</em> device option is selected, and
+					 the block has failed (the current state&#39;s travel/crack time was exceeded), SP_D
+					 and CAS_IN_D are set to the Passive state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Lock Recovery 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Lock Recovery</em> is selected, the logic can clear the
+					 Locked state by sending a new cascade setpoint to the block when the target
+					 mode is CAS and the permissive conditions allow the cascade setpoint to change.
+					 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>4 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Force Setpoint in CAS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Force Setpoint in CAS</em> is selected, and the actual mode
+					 is Cascade, and FORCE_SP_D transitions from False to True, and there is no
+					 shutdown or interlock active, and the permissive conditions are satisfied, then
+					 CAS_IN_D copies the value of FORCE_SP_VAL, even if CAS_IN_D is wired
+					 externally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>3 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Force Setpoint in Auto 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Force Setpoint in Auto</em> is selected, and the actual mode
+					 is Automatic (Auto), and FORCE_SP_D transitions from False to True, and there
+					 is no shutdown or interlock active, and the permissive conditions are
+					 satisfied, then SP_D copies the value of FORCE_SP_VAL, even if SP_D is wired
+					 externally. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>2 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>CAS SP Track 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>CAS SP Track</em> is selected, and the actual mode is Auto or
+					 Local Override, and CAS_IN_D is different than SP_D, then CAS_IN_D copies the
+					 value of SP_D. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>SP Track on Trip 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>SP Track on Trip</em> is selected and the block has tripped,
+					 SP_D and CAS_IN_D are set to the Passive state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d965839e333 " valign="top" width="10.395010395010395%"> 
+				  <p>0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e336 " valign="top" width="26.195426195426197%"> 
+				  <p>Passive on Active Timeout 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d965839e339 " valign="top" width="63.409563409563404%"> 
+				  <p>When 
+					 <em>Passive on Active Timeout</em> is selected and an active
+					 state is not confirmed within the confirm time following a command to an active
+					 state, OUT_D changes to the Passive state. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

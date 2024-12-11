@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional Plus function block - directly modifying MPCPlus function block parameters" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="MPCPlus function block, directly modifying block parameters" name="DC.subject" /><meta content="MPCPlus function block, directly modifying block parameters" name="keywords" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_221" name="DC.Identifier" /><title>Model Predictive Control Professional Plus function block - directly modifying MPCPlus function block parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_model_predictive_control_plus_function_block_parameters.html" /><link rel="next" href="c_model_predictive_control_plus_function_block_application_examples.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_221" data-relpath="c_model_predictive_control_plus_function_block_dir_mod_function_block_parameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221"></a>
+
+<h1 class="topictitle1"> Model Predictive Control Professional Plus function block - directly
+	 modifying MPCPlus function block parameters</h1>
+<div> 
+	 <p> The parameters shown in the following table are direct array parameters
+		that are accessed using index 1-80 for process outputs (Controlled and
+		Constraint parameters) and 1-40 for process inputs (Manipulated and Disturbance
+		parameters). Usually, these parameters are modified with the MPC Operate Pro
+		and iFIX applications. To modify these parameters programmatically, or to trend
+		them in Process History View, first determine the index number for the
+		parameter description. To determine the index number: 
+	 </p>
+ 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_CF98ADF94CF946ABBA0FD1068F2D9F05"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_CF98ADF94CF946ABBA0FD1068F2D9F05"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_F73E0AAB2F88435B89808CCF4370E2AD"><div class="li_content"> Open the MPCPro block in
+		  Control Studio. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_14EF4C6FD21748E881465D1DD761E261"><div class="li_content">Double-click the block to
+		  open its 
+		  <span class="wintitle">Properties</span> dialog. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_F5D596E3E13640D49D946F9320267493"><div class="li_content">Click the Advanced button
+		  and look at the Name column. The number following the parameter name is the
+		  index. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p> For example, suppose Temperature is associated with PROC_OUT3. In this
+		case, 3 is the index number for the parameter PROC_OUT3. If Temperature is a
+		Constraint parameter, you would write to AV_HI_LIMIT[3] to modify the
+		constraint high limit. If Temperature is a Controlled parameter, you would
+		write to SP_HI_LIMIT[3] to modify the SP high limit. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__table_637B952C218E41DF9E05882EB86640FC"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__table_637B952C218E41DF9E05882EB86640FC" rules="all" summary=""> 
+		   
+		   
+		  <thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1187150e52" valign="top" width="32.25806451612903%"> Parameter 
+				</th>
+ 
+				<th class="cellrowborder" id="d1187150e55" valign="top" width="67.74193548387098%"> Description 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>AV_HI_LIMIT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The constraint high limit. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>AV_LO_LIMIT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The constraint low limit. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>FAIL_ACTION_OUT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_E3782B2ADD37463E8E2B80E077835680"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_E3782B2ADD37463E8E2B80E077835680"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_B14CA0CCA5D340118F46806A14926271"><div class="li_content">0=No Action 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_2E6AFFD0867048C2BA9220E90A108F0C"><div class="li_content">2=Shed downstream
+						modes 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_D77A8BF0341941C694939C73E51F043D"><div class="li_content">3=Manual 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_C66E15C594284086ACDF151D8C074D20"><div class="li_content">4=Simulate Manual 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_91CB0CF1BE064ECEA457ECC5C2B74B11"><div class="li_content">5=Simulate Shed
+						downstream modes 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>FAIL_ACTION_IN[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_6ADCDB4A0CC5496D9F7E40787F63608B"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_6ADCDB4A0CC5496D9F7E40787F63608B"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_0C304DB42D5744C1A4E3BB76CF9175DD"><div class="li_content"> 0=No Action 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_A0C4F4ED948D4442AF3F75965CF4DDC1"><div class="li_content">1=Hold last good
+						value (applies to DVs only) 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_15BA92CE05044B64BAA8A9274B6D21BC"><div class="li_content">2=Shed downstream
+						modes 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_168EDE69209641C1B56BA19021AFF55F"><div class="li_content">3=Manual 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>INPUT_DISABLED[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The 
+					 <span class="uicontrol">Disable</span> button on the DV faceplate: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_3A7569FD42B74B4092A0EF2BD5D377A3"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_3A7569FD42B74B4092A0EF2BD5D377A3"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_B74EB647CC164DD59B08000D61306C67"><div class="li_content"> 0=Not disabled 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_B4845014AB04499A97EF7C92EEECA3DE"><div class="li_content">1=Disabled 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>MASTER_SWITCH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The MPC/LOCAL switch of the block: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_3308A2FE32BC4752A9089BCC7883B02B"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_3308A2FE32BC4752A9089BCC7883B02B"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_E33B593C5B6246749A6110C10058A2FA"><div class="li_content"> 0=Local control 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_5628A08215934EFD964C62D4D46BF6F3"><div class="li_content">1=MPC control 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  <p>When written to, switches all downstream blocks
+					 simultaneously. Every write to this parameter is a write to the target mode of
+					 all downstream blocks. Note: Do not write every scan; doing so would prevent
+					 the operator from changing the downstream blocks&#39; target mode. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>MASTER_SWITCH_MV[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The MPC/LOCAL switch for each MV. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>MV_HI_LIMIT[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The maximum output value (in engineering units) that an
+					 operator can enter. An entry that is greater than this limit is truncated to
+					 the limit value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>MV_LO_LIMIT[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The minimum output value (in engineering units) that an
+					 operator can enter. An entry that is lower than this limit is truncated to the
+					 limit value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>MV_MAX_RATE[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The maximum rate (in engineering units per second) at which
+					 the MPCPro function block can change the Manipulated parameter. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_COST_IN[1…40] [1…5] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The MV cost value for optimization. [1-5] indicates the
+					 Objective Function. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_PROFIT_OUT[1…80] [1…5] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The output cost value for optimization. [1-5] indicates the
+					 Objective Function. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_PSV[1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The Preferred Settling Value. This value usually represents a
+					 valve position to which the Manipulated variable is driven if PSV is selected
+					 under Optimization and there are extra degrees of freedom after all
+					 minimize/maximize optimization targets have been achieved. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_TYPE_IN[1…5] [1…40] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The optimization type for MVs: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_6CCEEA41C61A422F816D2E423892FC93"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_6CCEEA41C61A422F816D2E423892FC93"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_506A770B95804B6CB2099D04746CC6E9"><div class="li_content"> 0=None 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_799E9BCF5FFE46769C9D395601F943EE"><div class="li_content">1=Maximize 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_3F225F3292C34BEFAB85ED7965CF4212"><div class="li_content">2=Minimize 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_3B8FDABFFFF94DC888F9A3D5FBE874F4"><div class="li_content">4=PSV 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_C4711123838F4F4C8B2D86EDAEAD38AC"><div class="li_content">5=Equalize 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  <p>[1-5] indicates the Objective Function. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_TYPE_OUT[1…5] [1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The optimization type for process outputs: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_30E9B96325A84CFBA3B8A5C6CDEE9843"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_30E9B96325A84CFBA3B8A5C6CDEE9843"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_E25D9BAA85A142AB93F92F0C93B6D320"><div class="li_content">0=None 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_1AEAE612AC324A99A44F14878D293EB7"><div class="li_content">1=Maximize 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_D922DD1FAD414E1F9248473030307886"><div class="li_content"> 2=Minimize 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_4612273AD3C9410B8AE331A1314D2244"><div class="li_content">3=Target 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_11858575C15047789C354D01AD90AECA"><div class="li_content">4=PSV 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  <p>[1-5] indicates the Objective Function. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OPT_OBJ_INDEX 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The currently selected Objective Function (values are 1-5). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>OUTPUT_DISABLED[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The Disable button the CV and AV faceplates: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_7B11A8DAE9824431B285103A3DA70A95"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_7B11A8DAE9824431B285103A3DA70A95"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_034772639BDB478DB109D34D3CC069B6"><div class="li_content">0=Not disabled 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_FE0D13B5D7A0489585B5FFB3409BDD7E"><div class="li_content">1=Disabled 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>PREDICTION[1…80][1…10] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>For each process output, an approximated trajectory is
+					 communicated by the block. (Approximated is defined as ten points (of 120)
+					 where 10 is the last point in the future prediction.) For example: 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_026A17B7AE0046F1AF253F1B06EC939C"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_026A17B7AE0046F1AF253F1B06EC939C"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_241E1953F0A2476F825344782FE6FE07"><div class="li_content">Read
+						PREDICTION[3][10] to observe the last point of the prediction of PROC_OUT[3]. 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_11AAA922A6B546A7B2EBDE6D46188534"><div class="li_content">Read
+						PREDICTION[1][5] to observe a point approximately half way into the prediction
+						horizon of PROC_OUT1. 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>ROTATION_LIMIT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The maximum accepted value of the rotation factor. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SIM_COUNTDOWN[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>Shows how long (in seconds) a particular process output is
+					 simulated before Manual mode or Shed of downstream blocks occurs. Read-only. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_HI_LIMIT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The setpoint high limit. A setpoint entry that is higher than
+					 this limit is truncated to the limit value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_LO_LIMIT[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The setpoint low limit. A setpoint entry that is lower than
+					 this limit is truncated to the limit value. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_DELTA_RANGE[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The setpoint range that is the maximum amount that the
+					 optimizer can change the setpoint used in control from the operator-specified
+					 setpoint. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_FTIME[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>The Response Trajectory is an exponential trajectory defined
+					 by its filter time constant, current process output, and future required
+					 process output (SP). Response Trajectory is used to increase stability by
+					 slowing down the controller reaction to CV error. When unmeasured disturbances
+					 are significant, Response Trajectory filter time constant values between 1 and
+					 5 times the TSS are recommended. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_HI_RANGE[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>A read-only parameter that presents the high limit that is
+					 actually used by the optimizer. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_LO_RANGE[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>A read-only parameter that presents the low limit that is
+					 actually used by the optimizer. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1187150e52 " valign="top" width="32.25806451612903%"> 
+				  <p>SP_TRACKING[1…80] 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1187150e55 " valign="top" width="67.74193548387098%"> 
+				  <p>When enabled, the SP tracks the Controlled parameter value
+					 when the MPCPro block is in a Target mode of MAN or an Actual mode of IMAN. 
+				  </p>
+ 
+				  <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_34E3DEE14C414131AD3427E01FE2B653"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__ul_34E3DEE14C414131AD3427E01FE2B653"> 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_793DC70DEB6C4802B89F758EB77D85C0"><div class="li_content">0=SP tracking
+						disabled 
+					 </div></li>
+ 
+					 <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_221__li_67A8BDBCEBDC41D8B20D37362ADB2895"><div class="li_content">1=SP tracking
+						enabled 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

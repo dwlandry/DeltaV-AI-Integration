@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Bind an SSL certificate to a workstation server port" name="DC.Title" /><meta content="c_manage_opc_ua_certs.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_assign_an_opc_ua_signal_to_fb_param_unique_1" name="DC.Identifier" /><title>Bind an SSL certificate to a workstation server port</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_import_cert_revocation_list.html" /><link rel="next" href="c_opc_ua_user_authentication.html" /></head><body class="fixed" id="t_assign_an_opc_ua_signal_to_fb_param_unique_1" data-relpath="t_bind_ssl_cert_to_port.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_assign_an_opc_ua_signal_to_fb_param_unique_1"></a>
+
+<h1 class="topictitle1">Bind an SSL certificate to a workstation server port</h1>
+<div> 
+	 <div class="section"> 
+	 </div>
+ 
+	 <ol><li class="stepexpand"> 
+		  <span>Using MMC, import the certificate. 
+		  </span> 
+		   Refer to Microsoft instructions on installing a root certificate
+			 and to the import instructions provided by the certificate provider. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span> Delete the previous certificate binding: 
+		  </span> 
+		    
+			 <p><kbd class="userinput">netsh http delete sslcert
+				  ipport=0.0.0.0:[PORT]</kbd> 
+			 </p>
+ 
+		   
+		   The port is 9408 by default. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Bind the certificate to the port: 
+		  </span> 
+		   <kbd class="userinput">netsh http add sslcert ipport=0.0.0.0:[PORT]
+				certhash=[CERTHASH] certstorename=Root appid=[APPGUID]</kbd> 
+		   
+		   The [CERTHASH] parameter specifies the thumbprint of the
+			 certificate. [APPGUID] is the GUID to identify the owning application. Follow
+			 these steps to retrieve a certificate thumbprint. 
+		   
+		  <ol type="a"> 
+			 <li class="substep" id="t_assign_an_opc_ua_signal_to_fb_param_unique_1__open_mmc"><a name="t_assign_an_opc_ua_signal_to_fb_param_unique_1__open_mmc"></a><div class="li_content"> 
+				<span>Open the Microsoft Management Console (MMC) snap-in for
+				  certificates. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>In the Console Root window&#39;s left pane, click 
+				  <span class="uicontrol">Certificates</span> (Local Computer). 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Click the 
+				  <span class="uicontrol">Trusted Root Certification Authorities</span> to
+				  expand it. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Click the<span class="uicontrol"> Certificates</span> folder to expand
+				  it. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>In the list of certificates, find the certificate you imported
+				  as part of this procedure. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Double-click the certificate. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>In the 
+				  <span class="uicontrol">Certificate</span> dialog box, click the 
+				  <span class="uicontrol">Details</span> tab. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Scroll through the list of fields and click 
+				  <span class="uicontrol">Thumbprint</span>. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Copy the hexadecimal characters from the box. Remove the
+				  spaces between the hexadecimal numbers. For example, the thumbprint 
+				  <samp class="codeph">a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a
+					 7b</samp> should be specified as 
+				  <samp class="codeph">a909502dd82ae41433e6f83886b00d4277a32a7b</samp> in
+				  code. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand"> 
+		  <span>Verify that the SSL certificate binding has been established: 
+		  </span> 
+		   <kbd class="userinput">netsh http show sslcert
+				ipport=0.0.0.0:[PORT]</kbd> 
+		   
+		  <span class="step_result"> The software displays the SSL certificate bindings. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

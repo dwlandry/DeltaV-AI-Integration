@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Integrator function block" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Integrator (INT) function block" name="DC.subject" /><meta content="Integrator (INT) function block" name="keywords" /><meta content="c_mathblkintro.html" name="DC.Relation" scheme="URI" /><meta content="c_integrator_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_integrator_function_block_modes.html" name="DC.Relation" scheme="URI" /><meta content="c_integrator_function_block_status_handling.html" name="DC.Relation" scheme="URI" /><meta content="r_integrator_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_integrator_function_block_application_information.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_spec_integrator" name="DC.Identifier" /><title>Integrator function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_divide_function_block_application_information.html" /><link rel="next" href="c_integrator_function_block_execution.html" /></head><body class="fixed" id="c_fblk_spec_integrator" data-relpath="c_fblk_spec_integrator.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_spec_integrator"></a>
+
+<h1 class="topictitle1">Integrator function block</h1>
+<div><div></div>
+ 
+	 <p id="c_fblk_spec_integrator__Integratorfunctionblock"><a name="c_fblk_spec_integrator__Integratorfunctionblock"></a>The Integrator (INT) function block
+		integrates one variable or the sum or difference between two variables over
+		time. The block compares the integrated or accumulated value to pre-trip and
+		trip limits and generates discrete output signals when the limits are reached.
+		This function block can also be used as a totalizer.
+	 </p>
+ 
+	 <p>You select one of seven integrator types that determine whether the
+		integrated value increases from 0 or decreases from the setpoint (SP). The
+		block has two inputs and can integrate positive, negative, or net flow. This
+		capability is useful to calculate volume or mass variation in vessels or as an
+		optimization tool for flow ratio control.
+	 </p>
+ 
+	 <p>The Integrator function block supports mode control, demand reset, a
+		reset counter, and signal status calculation. There are no standard alarms in
+		this function block. Custom alarms are supported.
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_integrator__fig_D76A70667F3B484EA25FD97CA7D95495"><a name="c_fblk_spec_integrator__fig_D76A70667F3B484EA25FD97CA7D95495"></a><div><span class="figcap">Integrator function block</span></div> 
+		 
+		<a name="c_fblk_spec_integrator__image_91D630D16FFD4F8490A46CA9068F7553"></a><img id="c_fblk_spec_integrator__image_91D630D16FFD4F8490A46CA9068F7553" src="fbhelp0255.gif" /> 
+	 </div>
+ 
+	 <p>IN_1 is the first input value and status. Specify the rate time base for
+		IN_1 with TIME_UNIT1.
+	 </p>
+ 
+	 <p>IN_2 is the second input value and status. Specify the rate time base
+		for IN_2 with TIME_UNIT2.
+	 </p>
+ 
+	 <p>REV_FLOW1 is the discrete input that specifies whether IN_1 is positive
+		or negative.
+	 </p>
+ 
+	 <p>REV_FLOW2 is the discrete input that specifies whether IN_2 is positive
+		or negative.
+	 </p>
+ 
+	 <p>RESET_IN is the discrete input that resets the integrator and holds
+		reset until released.
+	 </p>
+ 
+	 <p>OUT is the integration output value and status. When the integration
+		type counts up (0 to SP), OUT equals the value of the internal accumulator
+		register TOTAL. When the integration type counts down (SP to 0), OUT equals SP
+		– TOTAL .
+	 </p>
+ 
+	 <p>OUT_PTRIP is a discrete value that is set when the pre-trip limit value
+		is reached. OUT_PTRIP remains latched until OUT_TRIP latches, then OUT_PTRIP
+		unlatches.
+	 </p>
+ 
+	 <p>OUT_TRIP is a discrete value that is set when the trip target value is
+		reached. OUT_TRIP latches for five seconds or one scan (whichever is greater),
+		then unlatches.
+	 </p>
+ 
+	 <p>N_RESET is the number of times the integrator is initialized or reset.
+	 </p>
+ 
+	 <p>The following figure shows the internal components of the Integrator
+		function block:
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_integrator__fig_39238F936BFC41FFBE4AF77FBB96C630"><a name="c_fblk_spec_integrator__fig_39238F936BFC41FFBE4AF77FBB96C630"></a><div><span class="figcap">Integrator function block schematic diagram</span></div> 
+		 
+		<a name="c_fblk_spec_integrator__image_9FFCE2E772D4466E8CDD6B43302E3943"></a><img id="c_fblk_spec_integrator__image_9FFCE2E772D4466E8CDD6B43302E3943" src="int_schem.gif" /> 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_integrator_function_block_execution.html">Integrator function block execution</a><br />
+</li>
+<li class="ulchildlink"><a href="c_integrator_function_block_modes.html">Integrator function block modes</a><br />
+</li>
+<li class="ulchildlink"><a href="c_integrator_function_block_status_handling.html">Integrator function block status handling</a><br />
+</li>
+<li class="ulchildlink"><a href="r_integrator_function_block_parameters.html">Integrator function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_integrator_function_block_application_information.html">Integrator function block application information</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

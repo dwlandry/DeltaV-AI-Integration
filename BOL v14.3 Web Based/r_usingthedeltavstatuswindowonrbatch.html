@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Using the DeltaV status window on the Redundant Batch Application Stations" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="batch subsystem, redundant, connecting to redundant batch, switchover, manual, standby, loss of, redudant batch, connecting to, status window" name="DC.subject" /><meta content="batch subsystem, redundant, connecting to redundant batch, switchover, manual, standby, loss of, redudant batch, connecting to, status window" name="keywords" /><meta content="c_operationalconsiderationsforredundantbatchsubsystem.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_usingthedeltavstatuswindowonrbatch" name="DC.Identifier" /><title>Using the DeltaV status window on the Redundant Batch Application Stations</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_operationalconsiderationsforredundantbatchsubsystem.html" /><link rel="next" href="r_usingtheunattendedworkstationrebootoption.html" /></head><body class="fixed" id="r_usingthedeltavstatuswindowonrbatch" data-relpath="r_usingthedeltavstatuswindowonrbatch.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_usingthedeltavstatuswindowonrbatch"></a>
+
+<h1 class="topictitle1">Using the DeltaV status window on the Redundant Batch Application
+	 Stations</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_usingthedeltavstatuswindowonrbatch__section_5ADADAA0159A4EACB75BAF87B942012C"><a name="r_usingthedeltavstatuswindowonrbatch__section_5ADADAA0159A4EACB75BAF87B942012C"></a> 
+		<p>After configuring the Redundant Batch Application Stations, the DeltaV
+		  Status window runs in the Windows System Tray. You can use the DeltaV Status
+		  window to monitor redundancy status and for general diagnostic information
+		  while troubleshooting.
+		</p>
+ 
+		<p>To open the DeltaV Status window, click its 
+		  <span><a name="r_usingthedeltavstatuswindowonrbatch__image_14D1698E57FA41CDA985D9997FE065EE"></a><img id="r_usingthedeltavstatuswindowonrbatch__image_14D1698E57FA41CDA985D9997FE065EE" src="StatusTrayIcon.png" /></span> icon in the System Tray.
+		</p>
+ 
+		<div class="fignone" id="r_usingthedeltavstatuswindowonrbatch__fig_CA455FC3FF1B4444916B4E6F47B52D55"><a name="r_usingthedeltavstatuswindowonrbatch__fig_CA455FC3FF1B4444916B4E6F47B52D55"></a><div><span class="figcap">DeltaV Status Window</span></div> 
+		   
+		  <a name="r_usingthedeltavstatuswindowonrbatch__image_B27937B33C40433ABF992F10C78B2838"></a><img id="r_usingthedeltavstatuswindowonrbatch__image_B27937B33C40433ABF992F10C78B2838" src="StatusTray.png" /> 
+		</div>
+ 
+		<p>The DeltaV Status window has two options: 
+		  <span class="uicontrol">Always On Top</span> and 
+		  <span class="uicontrol">Auto Hide</span>. To enable or disable either option,
+		  right-click the DeltaV Status window and click the option in the shortcut menu
+		  that you want to toggle on or off.
+		</p>
+ 
+		<p>The DeltaV Status window contains the following indicators:
+		</p>
+ 
+		<a name="r_usingthedeltavstatuswindowonrbatch__ul_FBD979478D614A779A32294EEA391F23"></a><ul id="r_usingthedeltavstatuswindowonrbatch__ul_FBD979478D614A779A32294EEA391F23"> 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_671F2247E44642EB9D84C39CF9A7218E"><div class="li_content"> 
+			 <p>Power: If not illuminated, there may be a communication or setup
+				problem.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_F96F3034CB0846AFAAD46A8DAD414389"><div class="li_content"> 
+			 <p>Error: If illuminated or flashing, an error is preventing the
+				workstation from assuming active or standby status.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_46D70AFD86CC4D4A945FA600FBE4E3DD"><div class="li_content"> 
+			 <p>Active: If illuminated, the active is fully configured and
+				operational.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_07D93B09A66E4865A6ED200F6E973084"><div class="li_content"> 
+			 <p>Standby: If illuminated, the standby is fully configured. The
+				light is solid if the server is configured or flashing if unconfigured or being
+				downloaded.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_F944EB8CD5EF4EA8AEF4D7883521C97B"><div class="li_content"> 
+			 <p>Pri. CN: Flashes to indicate that the Primary DeltaV control
+				network is communicating.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_usingthedeltavstatuswindowonrbatch__li_22A7099828A04501A11D247C449A6AB1"><div class="li_content"> 
+			 <p>Sec. CN: Flashes to indicate that the Secondary DeltaV control
+				network is communicating.
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>For example, the following table illustrates how the lights are
+		  illuminated when a switchover has occurred and the unattended reboot option is 
+		  <em>not</em> selected.
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_usingthedeltavstatuswindowonrbatch__table_525288E3720540E29E9FCD7EC9E36ECE"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_usingthedeltavstatuswindowonrbatch__table_525288E3720540E29E9FCD7EC9E36ECE" rules="all" summary=""> 
+			  
+			  
+			  
+			  
+			 <thead align="left">
+				<tr> 
+				  <th class="cellrowborder" id="d3277969e157" valign="top" width="NaN%"> 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3277969e160" valign="top" width="NaN%"> 
+					 <p> 
+						<strong>Lights</strong> 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3277969e169" valign="top" width="NaN%"> 
+					 <p> 
+						<strong>Node A (current Active role)</strong> 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3277969e178" valign="top" width="NaN%"> 
+					 <p> 
+						<strong>Node B (current Standby node)</strong> 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+</thead>
+
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " rowspan="6" valign="top" width="NaN%"> 
+					 <p>Before Switchover
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Power
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>Error
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>Active
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>Standby
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>Pri. CN
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Flashing (if has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>Flashing (if has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>Sec. CN
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Flashing (if enabled &amp; has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>Flashing (if enabled &amp; has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" colspan="4" headers="d3277969e157 d3277969e160 d3277969e169 d3277969e178 " valign="top"> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+					 <p>After Switchover
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Power
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Error
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>Flashing
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Active
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>On
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Standby
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Pri. CN
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>Flashing (if has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3277969e157 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e160 " valign="top" width="NaN%"> 
+					 <p>Sec. CN
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e169 " valign="top" width="NaN%"> 
+					 <p>off
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3277969e178 " valign="top" width="NaN%"> 
+					 <p>Flashing (if enabled &amp; has traffic)
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

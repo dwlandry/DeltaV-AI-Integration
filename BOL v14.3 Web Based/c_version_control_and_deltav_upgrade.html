@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Version Control and DeltaV Upgrade" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Version Control, DeltaV upgrade, DeltaV upgrade, Version Control" name="DC.subject" /><meta content="Version Control, DeltaV upgrade, DeltaV upgrade, Version Control" name="keywords" /><meta content="c_version_control.html" name="DC.Relation" scheme="URI" /><meta content="c_detecting_changes_due_to_upgrades.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_version_control_and_deltav_upgrade" name="DC.Identifier" /><title>Version Control and DeltaV Upgrade</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_edit_documents.html" /><link rel="next" href="c_detecting_changes_due_to_upgrades.html" /></head><body class="fixed" id="c_version_control_and_deltav_upgrade" data-relpath="c_version_control_and_deltav_upgrade.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_version_control_and_deltav_upgrade"></a>
+
+<h1 class="topictitle1">Version Control and DeltaV Upgrade</h1>
+<div><div></div>
+ 
+    <p>Version Control and Audit Trail (VCAT) has features you can use to
+      determine if database object versions were incremented as a result of an
+      upgrade or because of user configuration changes. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span> To use Version Control histories and comparisons to
+      determine which version changes are due to an upgrade of DeltaV software, you
+      must have followed the upgrade instructions in the root directory of the DeltaV
+      installation disk #1. 
+    </div>
+ 
+    <p>Synchronizing the VCAT database after upgrading DeltaV software can
+      increment the VCAT version of configuration objects. Incrementing the version
+      maintains the history on changes made by the DeltaV Database Migration Utility,
+      which is run during an upgrade. Synchronizing VCAT also catalogs any new
+      elements of the configuration introduced in the latest version of the DeltaV
+      software (for example, new functionality). 
+    </p>
+ 
+    <p>These version changes are always visible in subsequent VCAT comparisons,
+      but are 
+      <em>not</em> marked as being due to an upgrade 
+      <em>unless</em> you have performed the following tasks: 
+    </p>
+ 
+    <a name="c_version_control_and_deltav_upgrade__ul_E82C0C490E2F48D68801D3548ED4B0C2"></a><ul id="c_version_control_and_deltav_upgrade__ul_E82C0C490E2F48D68801D3548ED4B0C2"> 
+      <li id="c_version_control_and_deltav_upgrade__li_C23488B181364437BB82CFA01808AB3F"><div class="li_content">Check in all items before
+        beginning the upgrade. 
+      </div></li>
+ 
+      <li id="c_version_control_and_deltav_upgrade__li_31FA0AADDE8F432EAB753D07D23947EC"><div class="li_content">Enable VCAT when prompted
+        during upgrading your DeltaV system. 
+      </div></li>
+ 
+      <li id="c_version_control_and_deltav_upgrade__li_C77CA3B8B2A14B718D2C231A12D6A389"><div class="li_content">Select 
+        <span class="uicontrol">Yes</span> to request Enhanced Version Incrementing on
+        the 
+        <span class="wintitle">Database Administration</span> dialog that appears. 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>You must perform these tasks to mark all version changes resulting from
+      the upgrade. If you do not perform these tasks some changes caused by the
+      upgrade do not appear until you check items out and back in. You will be unable
+      to easily determine if these changes are the result of configuration changes or
+      the upgrade. 
+    </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_detecting_changes_due_to_upgrades.html">Detecting changes due to upgrades</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

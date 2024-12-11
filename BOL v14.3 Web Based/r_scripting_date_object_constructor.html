@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Date object constructor" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="" name="DC.Coverage" /><meta content="objects, DeltaV Live, TypeScript-specific, Date object constructor" name="DC.subject" /><meta content="objects, DeltaV Live, TypeScript-specific, Date object constructor" name="keywords" /><meta content="r_scripting_typescript_specific_objects_values_functions.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getdate_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getday_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getfullyear_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_gethours_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getmilliseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getminutes_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getmonth_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_gettime_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_gettimezoneoffset_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcdate_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcday_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcfullyear_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutchours_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcmilliseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcminutes_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcmonth_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_getutcseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setdate_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setfullyear_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_sethours_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setmilliseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setminutes_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setmonth_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_settime_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcdate_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcfullyear_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutchours_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcmilliseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcminutes_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcmonth_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_setutcseconds_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_todatestring_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_date_tostring_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_date_totimestring_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_date_toutcstring_function.html" name="DC.Relation" scheme="URI" /><meta content="r_scripting_date_valueof_function.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_2987DF78D79448F88152D6400D3D7B19_unique_144" name="DC.Identifier" /><title>Date object constructor</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_scripting_utc_function.html" /><link rel="next" href="r_scripting_getdate_function.html" /></head><body class="fixed" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_144" data-relpath="r_scripting_date_object_constructor.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_144"></a>
+
+<h1 class="topictitle1">Date object constructor</h1>
+<div><p>
+  </p>
+ 
+	 <div class="section" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_144__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_19"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_144__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_19"></a> 
+		<p>You can also create Date objects using the Date object constructor.
+		  The Date object constructor is the %Date% intrinsic object and the initial
+		  value of the Date property of the global object. When called as a constructor,
+		  it creates and initializes a new Date object instance. 
+		</p>
+ 
+		<div class="p"> The following prototype functions, which can be used on Date object
+		  instances, are supported in DeltaV Live graphics expressions and scripting. The
+		  Graphics Studio 
+		  <span class="uicontrol">Script Assistant</span> provides help in constructing
+		  valid expressions for using these functions. 
+		
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_144__table_6BB2ADE295A94E5EA01A935F7F32944A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_144__table_6BB2ADE295A94E5EA01A935F7F32944A" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d3104426e48" valign="top" width="NaN%"> Name 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3104426e51" valign="top" width="NaN%"> Description 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d3104426e54" valign="top" width="NaN%">Syntax 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> 
+					 <strong>Get functions</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getDate() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Returns the day of the month (0–31) for
+					 the specified date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getDate() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getDay() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the day of the week (0–6) for the
+					 specified date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getDay()
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getFullYear() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the year (four digits for dates
+					 between year 1000 and 9999) for the specified date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getFullYear() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getHours() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the hour (0–23) for the specified
+					 date and time, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getHours() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getMilliseconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the milliseconds (0–999) for the
+					 specified date and time, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getMilliseconds() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getMinutes() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the minutes (0–59) for the
+					 specified date and time, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getMinutes() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getMonth() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the month (0–11) for the specified
+					 date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getMonth() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getSeconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the seconds (0–59) for the
+					 specified date and time, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getSeconds() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getTime() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the number of milliseconds between
+					 midnight of January 1, 1970, and the specified date. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getTime() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getTimezoneOffset() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the time difference between UTC
+					 time and local time, in minutes. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getTimezoneOffset()</samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCDate() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the day of the month (1–31) for the
+					 specified date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCDate() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCDay() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the day of the week (0–6) for the
+					 specified date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCDay() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCFullYear() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the year (four digits for dates
+					 between year 1000 and 9999) for the specified date, according to universal
+					 time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getUTCFullYear() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCHours() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the hour (0–23) for the specified
+					 date and time, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.getUTCHours() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCMilliseconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the milliseconds (0–999) for the
+					 specified date and time, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCMilliseconds() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCMinutes() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the minutes (0–59) for the
+					 specified date and time, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCMinutes() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCMonth() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the month (0–11) for the specified
+					 date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCMonth() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> getUTCSeconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Returns the seconds (0–59) for the
+					 specified date and time, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.getUTCSeconds() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> 
+					 <strong class="background">Set functions</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setDate() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the day of the month (0-31) for a
+					 Date object, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setDate(<var class="varname">day</var>)
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setFullYear() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Sets the full year (four digits for dates
+					 between year 1000 and 9999) for a specified date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setFullYear(<var class="varname">year</var>,
+						
+						<var class="varname">month?</var>, 
+						<var class="varname">day?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setHours() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the hours for a specified date,
+					 according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setHours(<var class="varname">hour</var>,
+						
+						<var class="varname">min?</var>, 
+						<var class="varname">sec?</var>, 
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setMilliseconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the milliseconds for a specified
+					 date, according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.setMilliseconds(<var class="varname">millisec</var>)
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setMinutes() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the minutes for a specified date,
+					 according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setMinutes(<var class="varname">min</var>,
+						
+						<var class="varname">sec?</var>, 
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setMonth() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the month for a specified date,
+					 according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setMonth(<var class="varname">month</var>,
+						
+						<var class="varname">day?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setSeconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the seconds for a specified date,
+					 according to local time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setSeconds(<var class="varname">sec</var>,
+						
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setTime() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Sets the date and time for a specified date
+					 by adding or subtracting a specified number of milliseconds to or from January
+					 1, 1970, 00:00:00 UTC. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setTime(<var class="varname">time</var>)
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setUTCDate() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the day of the month for a specified
+					 date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setUTCDate(<var class="varname">day</var>)
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setUTCFullYear() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%">Sets the full year (four digits for dates
+					 between year 1000 and 9999) for a specified date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.setUTCFullYear(<var class="varname">year</var>,
+						
+						<var class="varname">month?</var>, 
+						<var class="varname">day?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setUTCHours() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the hour for a specified date,
+					 according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setUTCHours(<var class="varname">hour</var>,
+						
+						<var class="varname">min?</var>, 
+						<var class="varname">sec?</var>, 
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setUTCMilliseconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the milliseconds for a specified
+					 date, according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setUTCMilliseconds(<var class="varname">millisec</var>)
+						
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> set UTC Minutes() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the minutes for a specified date,
+					 according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.setUTCMinutes(<var class="varname">min</var>,
+						
+						<var class="varname">sec?</var>, 
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> setUTCMonth() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the month for a specified date,
+					 according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.setUTCMonth(<var class="varname">month</var>,
+						
+						<var class="varname">day?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> set UTC Seconds() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Sets the seconds for a specified date,
+					 according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.setUTCSeconds(<var class="varname">sec</var>,
+						
+						<var class="varname">millisec?</var>) 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> 
+					 <strong>Conversion functions</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> toDateString() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Converts the &quot;date&quot; portion of a Date
+					 object into a string. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.toDateString() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> toString() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Converts a Date object into a string. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.toString() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> toTimeString() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Converts the &quot;time&quot; portion of a Date
+					 object into a string. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.toTimeString() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> toUTCString() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Converts a Date object into a string,
+					 according to universal time. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"><var class="varname">dateObj</var>.toUTCString() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d3104426e48 " valign="top" width="NaN%"> valueOf() 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e51 " valign="top" width="NaN%"> Returns the primitive value of a Date
+					 object. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d3104426e54 " valign="top" width="NaN%"><samp class="codeph"> 
+						<var class="varname">dateObj</var>.valueOf() 
+					 </samp> 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="r_scripting_getdate_function.html">getDate function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getday_function.html">getDay function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getfullyear_function.html">getFullYear function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_gethours_function.html">getHours function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getmilliseconds_function.html">getMilliseconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getminutes_function.html">getMinutes function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getmonth_function.html">getMonth function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getseconds_function.html">getSeconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_gettime_function.html">getTime function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_gettimezoneoffset_function.html">getTimezoneOffset function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcdate_function.html">getUTCDate function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcday_function.html">getUTCDay function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcfullyear_function.html">getUTCFullYear function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutchours_function.html">getUTCHours function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcmilliseconds_function.html">getUTCMilliseconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcminutes_function.html">getUTCMinutes function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcmonth_function.html">getUTCMonth function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_getutcseconds_function.html">getUTCSeconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setdate_function.html">setDate function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setfullyear_function.html">setFullYear function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_sethours_function.html">setHours function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setmilliseconds_function.html">setMilliseconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setminutes_function.html">setMinutes function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setmonth_function.html">setMonth function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setseconds_function.html">setSeconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_settime_function.html">setTime function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcdate_function.html">setUTCDate function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcfullyear_function.html">setUTCFullYear function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutchours_function.html">setUTCHours function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcmilliseconds_function.html">setUTCMilliseconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcminutes_function.html">setUTCMinutes function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcmonth_function.html">setUTCMonth function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_setutcseconds_function.html">setUTCSeconds function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_todatestring_function.html">toDateString function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_date_tostring_function.html">toString function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_date_totimestring_function.html">toTimeString function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_date_toutcstring_function.html">toUTCString function</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_scripting_date_valueof_function.html">valueOf function</a><br />
+
+  </li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

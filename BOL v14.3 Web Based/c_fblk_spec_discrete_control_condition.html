@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Discrete Control Condition (DCC) function block" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Discrete Control Condition function block" name="DC.subject" /><meta content="Discrete Control Condition function block" name="keywords" /><meta content="c_logicblkintro.html" name="DC.Relation" scheme="URI" /><meta content="c_discrete_control_condition_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_discrete_control_condition_function_block_alarms.html" name="DC.Relation" scheme="URI" /><meta content="c_discrete_control_condition_function_block_status.html" name="DC.Relation" scheme="URI" /><meta content="r_discrete_control_condition_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="EDC_module_template_copy.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_spec_analog_tracking_unique_1" name="DC.Identifier" /><title>Discrete Control Condition (DCC) function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_device_control_function_block_application_information.html" /><link rel="next" href="c_discrete_control_condition_function_block_execution.html" /></head><body class="fixed" id="c_fblk_spec_analog_tracking_unique_1" data-relpath="c_fblk_spec_discrete_control_condition.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_spec_analog_tracking_unique_1"></a>
+
+<h1 class="topictitle1">Discrete Control Condition (DCC) function block</h1>
+<div><div></div>
+ 
+	 <p> The DCC block evaluates up to 16 interlock conditions, 8 permissive
+		conditions, and 8 force setpoints. The output of an interlock or permissive
+		condition can be delayed on, delayed off, or disabled. The output of a force
+		setpoint can be delayed on or disabled. 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking_unique_1__fig_7419A7AE37FD4D03A5A85B0E9D0E73DF"><a name="c_fblk_spec_analog_tracking_unique_1__fig_7419A7AE37FD4D03A5A85B0E9D0E73DF"></a><div><span class="figcap">DCC function block</span></div> 
+		<br /><a name="c_fblk_spec_analog_tracking_unique_1__image_46DD2DE9B82045158ED98167817D7A10"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking_unique_1__image_46DD2DE9B82045158ED98167817D7A10" src="DCC_block.png" /></div><br />
+		
+	 </div>
+ 
+	 <p> The block can optionally latch one or more active interlock conditions
+		to keep the interlock discrete output False until no interlock conditions are
+		active and a reset is triggered. 
+	 </p>
+ 
+	 <p> This block generates outputs that can be used by an Enhanced Device
+		Control (EDC) function block as inputs for interlock, permissive, and force
+		setpoint functionality. The block has the ability to save the first interlock
+		condition as well. The block can be used with the DC block but support is
+		limited: The DC block does not support force setpoints and does not have a
+		parameter to wire to the interlock state. 
+	 </p>
+ 
+	 <div class="p"> For interlocks, the DCC block generates four outputs: 
+	 <a name="c_fblk_spec_analog_tracking_unique_1__ol_84EA1795F9E34CBC8C998C856C45AB1A"></a><ul id="c_fblk_spec_analog_tracking_unique_1__ol_84EA1795F9E34CBC8C998C856C45AB1A"> 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_58A1B8F8C6AF477F95AFD843B60B1504"><div class="li_content"> I_OUT_D — the interlock
+		  discrete output used as the interlock input of an EDC or DC block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_71B4F3185AC94212AAFF76344E084884"><div class="li_content"> I_OUT — the state to which
+		  to interlock an EDC block. You cannot wire I_OUT to a DC block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_7153D8F17D974E1EA6C5D8FFEBDA0B06"><div class="li_content"> I_OUT_INT — the weighted
+		  binary sum of the interlock conditions. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_C216B9CAFFCE4C78BDBFDD26EEC74041"><div class="li_content"> I_FIRST_OUT — the bit value
+		  of the highest priority condition (lowest condition number) that is currently
+		  active. If another condition that has a different interlock state
+		  (I_STATE<em>n</em>) and a higher priority becomes active, I_FIRST_OUT changes to
+		  the bit value of the newly active condition 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="p"> For permissives, the DCC block generates two outputs: 
+	 <a name="c_fblk_spec_analog_tracking_unique_1__ol_D12280F8A4004852ADEA7773D1E5FE02"></a><ul id="c_fblk_spec_analog_tracking_unique_1__ol_D12280F8A4004852ADEA7773D1E5FE02"> 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_32B9C15A2F8A4BED84BE03E9000BB5FC"><div class="li_content"> P_OUT_D — the permissive
+		  discrete output used as the permissive input of an EDC or DC block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_A25973CC631D48418A26D7209772F988"><div class="li_content">P_OUT_INT — the weighted
+		  binary sum of the interlock conditions. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> For forced setpoints, the DCC block generates three outputs: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="c_fblk_spec_analog_tracking_unique_1__ol_732B9DF3AC4B44B0B7A16683873EA73E"></a><ul id="c_fblk_spec_analog_tracking_unique_1__ol_732B9DF3AC4B44B0B7A16683873EA73E"> 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_1BDDB219F63741A6BD681FF9F0D687A1"><div class="li_content"> F_OUT_D — the force
+		  setpoint discrete output, a one-shot discrete output that triggers the force
+		  setpoint functionality of a downstream EDC block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_D090D166AB57486DB2F0E42C3F76B516"><div class="li_content"> F_OUT — the setpoint to
+		  force a downstream EDC block to. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking_unique_1__li_3F4C3CD4787E47529F2A8EC8BCE3C437"><div class="li_content"> F_OUT_INT — the weighted
+		  binary sum of the interlock conditions. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> An event chronicle entry is added when the first detection of an
+		interlock condition evaluates true or when any interlock condition becomes true
+		that changes the interlock state output or when all active interlock conditions
+		have cleared. The event contains at a minimum the number and description and
+		the interlock state value of the condition(s). 
+	 </p>
+ 
+	 <p> The block supports signal status propagation and generates a bypass
+		alarm when at least one of the interlock, permissive, or force setpoint input
+		conditions is disabled. 
+	 </p>
+ 
+	 <p>The DCC block does not support modes. 
+	 </p>
+ 
+	 <p> The following diagram shows the internal components of the Discrete
+		Control Condition function block. 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking_unique_1__fig_1015BE4414064F429A22B3950B516A13"><a name="c_fblk_spec_analog_tracking_unique_1__fig_1015BE4414064F429A22B3950B516A13"></a><div><span class="figcap">DCC function block schematic diagram</span></div> 
+		<br /><a name="c_fblk_spec_analog_tracking_unique_1__image_A37574A62239460195C9328ACD26AC1E"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking_unique_1__image_A37574A62239460195C9328ACD26AC1E" src="DCC_Schem.png" /></div><br />
+		
+	 </div>
+ 
+	 <p> The following figures show the details of the conditions of the
+		Discrete Control Condition function block. 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking_unique_1__fig_FFA57E8168B0420CBE393CCB900B4DD4"><a name="c_fblk_spec_analog_tracking_unique_1__fig_FFA57E8168B0420CBE393CCB900B4DD4"></a><div><span class="figcap">DCC function block — Detail of an interlock
+		  condition</span></div> 
+		<br /><a name="c_fblk_spec_analog_tracking_unique_1__image_6958D346BBFD43F2AAF6A5C3E7475FEF"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking_unique_1__image_6958D346BBFD43F2AAF6A5C3E7475FEF" src="DCC_Schem_detail_1.png" /></div><br />
+		
+	 </div>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking_unique_1__fig_63F21A394B3A4F6192E6006D9262D487"><a name="c_fblk_spec_analog_tracking_unique_1__fig_63F21A394B3A4F6192E6006D9262D487"></a><div><span class="figcap">DCC function block — Detail of a permissive
+		  condition</span></div> 
+		<br /><a name="c_fblk_spec_analog_tracking_unique_1__image_CBDB4B7351BB4749B2D9B8B2EDC89A39"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking_unique_1__image_CBDB4B7351BB4749B2D9B8B2EDC89A39" src="DCC_Schem_detail_2.png" /></div><br />
+		
+	 </div>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking_unique_1__fig_B3AFC4AA0655454E839F53F2B549312F"><a name="c_fblk_spec_analog_tracking_unique_1__fig_B3AFC4AA0655454E839F53F2B549312F"></a><div><span class="figcap">DCC function block — Detail of a force setpoint</span></div> 
+		<br /><a name="c_fblk_spec_analog_tracking_unique_1__image_CAD6033D19F340AF9A98EB5D08774B0F"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking_unique_1__image_CAD6033D19F340AF9A98EB5D08774B0F" src="DCC_Schem_detail_3.png" /></div><br />
+		
+	 </div>
+ 
+	 <p> 
+	 </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_discrete_control_condition_function_block_execution.html">Discrete Control Condition function block configuration and
+	 execution</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_discrete_control_condition_function_block_alarms.html">Discrete Control Condition function block alarm detection</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_discrete_control_condition_function_block_status.html">Discrete Control Condition function block status</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="r_discrete_control_condition_function_block_parameters.html">Discrete Control Condition function block parameters</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="EDC_module_template_copy.html">Enhanced Device Control module template (VLV_DCC_EDC_)</a><br />
+
+  </li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

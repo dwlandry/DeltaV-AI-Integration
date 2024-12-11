@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Example send message to an operator, indirect" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="phase, message, messages, Operator message, prompt, operator, indirect phase message" name="DC.subject" /><meta content="phase, message, messages, Operator message, prompt, operator, indirect phase message" name="keywords" /><meta content="r_phaserequestcodes.html" name="DC.Relation" scheme="URI" /><meta content="c_designingphasemessages.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_305" name="DC.Identifier" /><title>Example send message to an operator, indirect</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_examplesendmessagetoanoperator_direct.html" /><link rel="next" href="c_examplephasetophasemessage.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_305" data-relpath="c_examplesendmessagetoanoperator_indirect.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_305"></a>
+
+<h1 class="topictitle1">Example send message to an operator, indirect </h1>
+<div> 
+	 <p>In the preceding example, there is only one message, and it is always
+		the message sent to the operator when the AGITATE phase starts. You can
+		configure messages to the operator that vary depending on conditions in the
+		plant. This is called indirect messaging.
+	 </p>
+ 
+	 <p>For example, you can send a message informing the operator how fast the
+		motor in the agitation tank is going. Here you will configure four (4)
+		messages: Slow, Medium, Fast, and Very Fast. Create the messages in DeltaV
+		Explorer.
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_305__table_A5B8EC88FC0A4A48920C8FF49F5CA007"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_305__table_A5B8EC88FC0A4A48920C8FF49F5CA007" rules="all" summary=""><caption><span class="tablecap">Example Indirect Phase Message IDs </span></caption> 
+		 
+		 
+		<thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d982288e54" valign="top" width="NaN%"> 
+				<p>ID
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d982288e60" valign="top" width="NaN%"> 
+				<p>Request Type
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d982288e54 " valign="top" width="NaN%"> 
+				<p>2
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d982288e60 " valign="top" width="NaN%"> 
+				<p>Motor speed is SLOW
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d982288e54 " valign="top" width="NaN%"> 
+				<p>3
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d982288e60 " valign="top" width="NaN%"> 
+				<p>Motor speed is MEDIUM
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d982288e54 " valign="top" width="NaN%"> 
+				<p>4
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d982288e60 " valign="top" width="NaN%"> 
+				<p>Motor speed is FAST
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d982288e54 " valign="top" width="NaN%"> 
+				<p>5
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d982288e60 " valign="top" width="NaN%"> 
+				<p>Motor speed is VERY FAST
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+
+	 <p>In the AGITATE phase&#39;s logic, select the Running state. Write a
+		condition equation (MSG_SPEED) to determine the speed of the motor as either 2,
+		3, 4 or 5 (corresponding to the above table of messages).
+	 </p>
+ 
+	 <p>Write the action for the step to call a phase message ID depending on
+		the result of MSG_SPEED. The action should have a Type of Assignment and a
+		Qualifier of Pulse. The phase register is 3000, (Send Message to the Operator,
+		Indirect) and the REQDATA1 is equal to the MSG_SPEED value (2 through 5).
+	 </p>
+ 
+	 <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_305__fig_4E96218008084B54ADC3F66A49DB71D7"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_305__fig_4E96218008084B54ADC3F66A49DB71D7"></a><div><span class="figcap">Indirect Phase Message Step Action </span></div>
+		<img src="indirect_phase_msg.png" />
+	 </div>
+
+	 <p>In the transition immediately following this step, write an expression
+		that waits for the message to clear before moving to the next step.
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> It is very important that your phase waits for the Phase Request to
+		  be completed, as signified by the REQUEST register returning to 0, before
+		  issuing another request. If you fail to do this, the requests can fail. Always
+		  follow any step that writes a value to REQUEST with a transition expression
+		  that waits for &#39;REQUEST&#39; = 0. For some types of request, such as the Acquire
+		  Resource request, this could result in a lengthy wait.
+		</p>
+
+	 </div>
+ 
+	 <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_305__fig_9D0CE72878D243DCBFA76122D7E5B51A"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_305__fig_9D0CE72878D243DCBFA76122D7E5B51A"></a><div><span class="figcap">Phase Message Transition Expression</span></div>
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_305__image_2288E06359E04E4DB0516FF8E4305177"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_305__image_2288E06359E04E4DB0516FF8E4305177" src="Phase_Msg_Tran_Expr_indirect.gif" />
+	 </div>
+
+	 <p>If you need to abort an outstanding request before it has completed
+		(that is, before REQUEST has returned to 0), you can set REQUEST to 6000. This
+		is the only case where it is valid to change REQUEST without waiting for it to
+		reset to 0.
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> It is better to avoid parallel paths in the SFC that are each issuing
+		  requests because of the risk of two requests colliding.
+		</p>
+
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_phaserequestcodes.html">Phase request codes</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

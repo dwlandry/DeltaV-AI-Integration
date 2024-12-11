@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Archiving the Version Control database" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Version Control, archiving database, archiving" name="DC.subject" /><meta content="Version Control, archiving database, archiving" name="keywords" /><meta content="c_cleaning_a_version_control_database.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_user_manager_and_deltav_security.html" name="DC.Relation" scheme="URI" /><meta content="c_restoring_a_version_control_database_from_an_archive.html" name="DC.Relation" scheme="URI" /><meta content="c_version_control.html" name="DC.Relation" scheme="URI" /><meta content="c_version_control.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_archiving_the_version_control_database" name="DC.Identifier" /><title>Archiving the Version Control database</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_back_up_the_version_control_database.html" /><link rel="next" href="c_restoring_a_version_control_database_from_an_archive.html" /></head><body class="fixed" id="c_archiving_the_version_control_database" data-relpath="c_archiving_the_version_control_database.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_archiving_the_version_control_database"></a>
+
+<h1 class="topictitle1">Archiving the Version Control database</h1>
+<div><div></div>
+ 
+    <div class="p">Items in a Version Control Audit Trail database can be archived,
+      restored, and cleaned from the database by:
+    <ul>
+      <li><div class="li_content">Users with Windows Administrator privileges
+      </div></li>
+
+      <li><div class="li_content">VC_ADMINISTRATOR and ADMIN_CONFIG_DB functions (normally granted with
+        a key to the System Admin lock)
+      </div></li>
+
+    </ul>
+
+    </div>
+ 
+    <p>Archiving a Version Control database allows you to reduce the database
+      size by moving large amounts of Version Control data to an archive file.
+      Version Control databases can be archived by date and version and entire
+      databases including graphics or graphics only can be archived. Version Control
+      databases can be archived to a hard drive anywhere on the network. Archiving an
+      item removes the item&#39;s data from the Version Control database. However, the
+      archived item&#39;s history information is retained in the Version Control database
+      and can be viewed from Version Control history. Historical logs and comments
+      are not archived; only data is archived. Version Control items that have been
+      previously archived (but not removed) can be restored to the current Version
+      Control database. 
+    </p>
+ 
+    <p>More frequent archiving results in lower memory requirements and better
+      restore performance. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span> Version Control databases can be archived, restored, and cleaned from
+      the ProfessionalPLUS workstation only and only one instance of an archive,
+      restore, clean operation is allowed at one time. 
+    </div>
+ 
+    <p>Before attempting to archive a Version Control database, be sure that
+      Version Control is enabled and a populated Version Control database exists. You
+      can continue to use the DeltaV Control Studio and Explorer applications to edit
+      items that have been checked out of the Version Control database while a
+      Version Control archive operation is in progress. However, you cannot check
+      items into or out of the Version Control database while an archive operation is
+      in progress. Version Control Archive is available through the DeltaV Database
+      Administrator application. Open the DeltaV Database Administrator and
+      double-click the 
+      <span class="uicontrol">Version Control Archive Database</span> icon to open the 
+      <span class="wintitle">Version Control Archive Database</span> dialog. 
+    </p>
+ 
+    <div class="p"> 
+      <div class="fignone" id="c_archiving_the_version_control_database__fig_BA41E16063CE4EE28BB6E6726CB9633A"><a name="c_archiving_the_version_control_database__fig_BA41E16063CE4EE28BB6E6726CB9633A"></a><div><span class="figcap">Version Control Archive Database icon</span></div> 
+         
+        <a name="c_archiving_the_version_control_database__image_FDE3AA155CE84BF4BB0537300B27FD55"></a><img id="c_archiving_the_version_control_database__image_FDE3AA155CE84BF4BB0537300B27FD55" src="DBAdmin.GIF" /> 
+      </div>
+ 
+    </div>
+ 
+    <p>You have the options of archiving an entire Version Control database or
+      only the display items such as graphics in a Version Control database and you
+      can archive by date or by version. You can type in or browse to a valid
+      location on the network to store the archive file. If you are typing in a path
+      to a remote location, be sure to use the UNC path
+      (<span class="filepath">\\<var class="varname">Servername</var>\<var class="varname">Sharename</var>\<var class="varname">Directory</var>\<var class="varname">Filename</var></span>).
+      
+    </p>
+ 
+    <div class="p"> 
+      <div class="fignone" id="c_archiving_the_version_control_database__fig_7C61CFC599494112A39C54D8F9531304"><a name="c_archiving_the_version_control_database__fig_7C61CFC599494112A39C54D8F9531304"></a><div><span class="figcap">Dialog for setting archive options</span></div> 
+         
+        <a name="c_archiving_the_version_control_database__image_28F8E64C495742B092BF758B2D294CD1"></a><img id="c_archiving_the_version_control_database__image_28F8E64C495742B092BF758B2D294CD1" src="Archive.GIF" /> 
+      </div>
+ 
+    </div>
+ 
+    <div class="tip"><span class="tiptitle">Tip:</span> Be sure to keep track of the archive filename and
+      location. You will need to provide this information later if you decide to
+      restore the archive. Also, it is recommended that you backup the Version
+      Control database prior to archiving it. Depending upon the size of your Version
+      Control database, it could take several hours to create the archive. 
+    </div>
+ 
+    <div class="section" id="c_archiving_the_version_control_database__section_88A01FA2804544C7A84F7E8D35F014A5"><a name="c_archiving_the_version_control_database__section_88A01FA2804544C7A84F7E8D35F014A5"></a><h2 class="sectiontitle">Archive and remove by date</h2> 
+       
+      <p>To remove and archive by date, select the 
+        <span class="uicontrol">Archive and remove by date option</span> and use the
+        drop-down control to open a calendar from which you can select a date. When
+        this option is selected, the data for all versions of the items to be archived
+        (selected in Archive Criteria 2) up to and including the selected date are
+        removed from the Version Control database and archived to the location
+        specified. The current version of each item remains in the Version Control
+        database. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_archiving_the_version_control_database__section_49FE02588BE14E8E9343F1247EF970F1"><a name="c_archiving_the_version_control_database__section_49FE02588BE14E8E9343F1247EF970F1"></a><h2 class="sectiontitle">Archive and remove by version</h2> 
+       
+      <p>To remove and archive by version, select the 
+        <span class="uicontrol">Archive and remove by version</span> option and enter
+        the number of versions that will be kept in the Version Control database and
+        not archived. The items selected for archive are removed from the Version
+        Control database and archived to the location specified. The current version of
+        each item remains in the Version Control database. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_archiving_the_version_control_database__section_B22904A1595749B8902992B6976E4FDF"><a name="c_archiving_the_version_control_database__section_B22904A1595749B8902992B6976E4FDF"></a><h2 class="sectiontitle">Archive configuration items and display items</h2> 
+       
+      <p>This option archives and removes the entire Version Control database
+        by version or by date (selected in Archive Criteria 1). The archive is saved to
+        the specified location. The current version of each item remains in the Version
+        Control database. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_archiving_the_version_control_database__section_9C91670460EF4C128F6B36AB62822C3B"><a name="c_archiving_the_version_control_database__section_9C91670460EF4C128F6B36AB62822C3B"></a><h2 class="sectiontitle">Archive display items only</h2> 
+       
+      <p>This option archives and removes only graphics from the Version
+        Control database by version or by date (selected in Archive Criteria 1). The
+        archive is saved to the specified location. The current version of each item
+        remains in the Version Control database. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_cleaning_a_version_control_database.html">Cleaning a Version Control database</a></div>
+<div><a href="c_deltav_user_manager_and_deltav_security.html">DeltaV User Manager and DeltaV security</a></div>
+<div><a href="c_restoring_a_version_control_database_from_an_archive.html">Restoring a Version Control database from an archive</a></div>
+<div><a href="c_version_control.html">Version Control</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

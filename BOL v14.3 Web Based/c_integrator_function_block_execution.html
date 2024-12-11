@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Integrator function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_integration_options.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_integrator.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_integrator_function_block_execution" name="DC.Identifier" /><title>Integrator function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_integrator.html" /><link rel="next" href="c_integrator_function_block_modes.html" /></head><body class="fixed" id="c_integrator_function_block_execution" data-relpath="c_integrator_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_integrator_function_block_execution"></a>
+
+<h1 class="topictitle1">Integrator function block execution</h1>
+<div><div></div>
+
+    <p id="c_integrator_function_block_execution__blockexecutionintegratorfunctionblock"><a name="c_integrator_function_block_execution__blockexecutionintegratorfunctionblock"></a>The Integrator function block integrates a variable over time. The integrated or accumulated value (OUT) is compared to pre-trip and trip limits. When the limits are reached, discrete output signals are generated (OUT_PTRIP and OUT_TRIP). You choose whether the integrated value increases from 0 or decreases from the trip value (SP). The block has two inputs (IN_1 and IN_2) and can integrate positive, negative, or net flow.</p>
+
+    <p>The transfer equation used in the Integrator function block is:</p>
+
+    <p><a name="c_integrator_function_block_execution__image_E0B3027667C54D21A328224F4108DE08"></a><img id="c_integrator_function_block_execution__image_E0B3027667C54D21A328224F4108DE08" src="fbhelp0257.gif" /></p>
+<p>where</p>
+
+    <p>
+      <strong>Δ</strong>
+      <strong>t</strong> = the elapsed time since previous cycle, in seconds</p>
+
+    <p>
+      <strong>x</strong> = the converted IN_1 value (based on the options you configure)</p>
+
+    <p>
+      <strong>y</strong> = the converted IN_2 value (based on the options you configure) or 0 when you select not to use a second input</p>
+
+    <p>
+      <strong>OUT[t-1]</strong> = the value of OUT from the previous cycle.</p>
+
+    <p>You can select integration type options that define the integrate up, integrate down, and reset characteristics of the block. Refer to the Integration Types section below for information on these options. When you select the SP to 0 - auto reset or SP to 0 - demand reset integration type option, the following applies:</p>
+
+    <p>OUT = SP – TOTAL</p>
+
+    <p>For all other integration types:</p>
+
+    <p>OUT = TOTAL</p>
+
+    <div class="fignone" id="c_integrator_function_block_execution__fig_3F8697BD88E04EFEBCF5383F8836FE34"><a name="c_integrator_function_block_execution__fig_3F8697BD88E04EFEBCF5383F8836FE34"></a><div><span class="figcap">Integrator response to changing input</span></div>
+      
+      <a name="c_integrator_function_block_execution__image_BB6E96EE744145AD9B3FC85B11642A25"></a><img id="c_integrator_function_block_execution__image_BB6E96EE744145AD9B3FC85B11642A25" src="fbhelp0258.gif" />
+    </div>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> In the above graph, read PRE_TRIP as the distance below SP where OUT_PRETRIP is set.</p>
+
+    </div>
+
+    <p>You can specify how the block executes by configuring input flow and rate time variables, integration type and carryover options as well as trip and pre-trip action.</p>
+
+    <p>In the above example, IN_1 and RESET are inputs. IN_2 is not connected. Integration proceeds from 0 to SP. From <em>t</em> = 0 until <em>ta</em>, there is ramp input. For <em>t</em> &gt; <em>ta</em>, the input drops to a lower constant value.</p>
+
+    <p>Note the output produced by integrating this input pattern. The ramp input integrates into a parabolic curve between <em>t</em> =0 and <em>t</em> = <em>ta</em>. Beyond <em>ta</em>, the constant input integrates into a ramp output with a constant slope. At <em>tb</em>, OUT reaches the level SP-PRE_TRIP. OUT_PTRIP transitions from 0 to 1. It remains at 1 until <em>tc</em>, where OUT reaches SP. At this point, OUT_PTRIP returns to 0 while OUT_TRIP transitions from 0 to 1. OUT_TRIP remains at 1 for 5 seconds or for the duration of the scan rate if it is greater than 5 seconds. It then returns to 0.</p>
+
+    <p>At <em>tc</em>, when OUT reaches SP, OUT is reset to 0, and the integration resumes anew. At <em>td</em>, the RESET_IN input transitions to 1, interrupts the integration, and resets OUT to 0.</p>
+
+    <p>
+      <strong>Specifying rate time base</strong>
+    </p>
+
+    <p>The time unit parameters (TIME_UNIT1 and TIME_UNIT2) specify the rate time base of the inputs (IN_1 and IN_2, respectively). The block uses the following equations to compute the integration increment:</p>
+
+    <p><a name="c_integrator_function_block_execution__image_07596DA4846B4FC081F81A9434915238"></a><img id="c_integrator_function_block_execution__image_07596DA4846B4FC081F81A9434915238" src="fbhelp0259.gif" /></p>
+<p><a name="c_integrator_function_block_execution__image_0C67B29182BC4B91BBE02D3B243633F6"></a><img id="c_integrator_function_block_execution__image_0C67B29182BC4B91BBE02D3B243633F6" src="fbhelp0260.gif" /></p>
+<p>where</p>
+
+    <p>
+      <strong>x</strong> = the converted IN_1 value (based on the options you configure)</p>
+
+    <p>
+      <strong>y</strong> = the converted IN_2 value (based on the options you configure) or 0 when you select not to use a second input.</p>
+
+    <p>The block supports the following options for TIME_UNIT1 and TIME_UNIT2:</p>
+
+    <a name="c_integrator_function_block_execution__ul_222E3B7ED5D14C058CD9576E4FBA29FB"></a><ul id="c_integrator_function_block_execution__ul_222E3B7ED5D14C058CD9576E4FBA29FB">
+      <li id="c_integrator_function_block_execution__li_FC2603D2F10445A5AA83641AAC33BE79"><div class="li_content">
+        <p>Seconds (= 1 second)</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_88F3C3D7D4E3453BAF0622A6AB787D5E"><div class="li_content">
+        <p>Minutes (1 minute = 60 seconds)</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_7A311A9F695C4DD0B1A0CDBD81E7C325"><div class="li_content">
+        <p>Hours (1 hour = 3600 seconds)</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_3860516F8D5C46A3A4B7737B60E64DA6"><div class="li_content">
+        <p>Days (1 day = 86,400 seconds)</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>
+      <strong>Setting reverse flow at the inputs</strong>
+    </p>
+
+    <p>Reverse flow is determined by either of the following:</p>
+
+    <a name="c_integrator_function_block_execution__ul_CE9C35973C244D8F848B8BAA7F824837"></a><ul id="c_integrator_function_block_execution__ul_CE9C35973C244D8F848B8BAA7F824837">
+      <li id="c_integrator_function_block_execution__li_B474DA72D6434435AB1566B9F4516BDC"><div class="li_content">
+        <p>The sign of the value at IN_1 or IN_2</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_355FF86F114449F582F5AEE4A4247B53"><div class="li_content">
+        <p>The discrete inputs REV_FLOW1 and REV_FLOW_2</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>When the REV_FLOW input is True, the block interprets the associated IN value as negative.</p>
+
+    <p>
+      <strong>Calculating net flow</strong>
+    </p>
+
+    <p>Net flow is calculated by adding the increments calculated for each IN. When ENABLE_IN_2 is False, the increment value for IN_2 is considered 0. When ENABLE_IN_2 is True, the value of IN_2 is used in the calculation.</p>
+
+    <p>You can determine the net flow direction that is to be included in the integration by configuring the Flow Forward and Flow Reverse integration options parameter (INTEG_OPTS). When Flow Forward is True, positive increments are included. When Flow Reverse is True, negative increments are included. When both Flow Forward and Flow Reverse are True, both positive and negative increments are included.</p>
+
+    <p>
+      <strong>Integration types</strong>
+    </p>
+
+    <p>The integration type parameter (INTEG_TYPE) defines the integrate up, integrate down, and reset characteristics of the block. You can select from the following options:</p>
+
+    <a name="c_integrator_function_block_execution__ul_333B70EB086E404B964D816862137D4B"></a><ul id="c_integrator_function_block_execution__ul_333B70EB086E404B964D816862137D4B">
+      <li id="c_integrator_function_block_execution__li_C01779AB9C6F4A0497782D573025DEB6"><div class="li_content">
+        <p>0 to SP - auto reset at SP — Integrates from 0 to the setpoint (SP) and automatically resets when SP is reached.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_008E746D43504BAA96C74AFEB35CAB36"><div class="li_content">
+        <p>0 to SP - demand reset — Integrates from 0 to SP. When OUT is within PRE_TRIP of SP, OUT_PTRIP is set. When OUT reaches SP, OUT_TRIP is set and the block continues integrating beyond SP.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_0AD28D1013C5436484FA399382BCF554"><div class="li_content">
+        <p>SP to 0 - auto reset at SP — Integrates from SP to 0 and automatically resets when 0 is reached.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_00B23FFB87E14B4480C9499430970D5F"><div class="li_content">
+        <p>SP to 0 - demand reset — Integrates from SP to 0. When OUT is within PRE_TRIP of 0, then OUT_PTRIP is set. When OUT reaches SP, OUT_TRIP is set and the block continues integrating below 0.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_31056D66D48C47778BF6365B2CF38659"><div class="li_content">
+        <p>0 to ? - periodic reset — Counts upward and resets periodically. The period is set by the CLOCK_PER parameter.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_60FC39AEBD7E4955B7316C5CAAEDA3B4"><div class="li_content">
+        <p>0 to ? - demand reset — Counts upward and is reset when RESET_IN or OP_CMD_INT transitions to True.</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_0833C07CA63F47A0AC576BB7A9D9063B"><div class="li_content">
+        <p>0 to ? - periodic &amp; demand reset — Counts upward and is reset periodically or when RESET_IN or the OP_CMD_INT transitions to True.</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>The following table summarizes the trip, pre-trip and reset conditions for each of the mutually exclusive INTEG_TYPE options:</p>
+
+    
+<div class="tablenoborder"><a name="c_integrator_function_block_execution__table_29E47FE27EEF4A628CF0576EECA02FCD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_integrator_function_block_execution__table_29E47FE27EEF4A628CF0576EECA02FCD" rules="all" summary=""><caption><span class="tablecap">Summary of INTEG_TYPE conditions</span></caption>
+        
+        
+        
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1121490e322" valign="top" width="NaN%">
+              <p>INTEG_TYPE</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1121490e328" valign="top" width="NaN%">
+              <p>OUT</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1121490e334" valign="top" width="NaN%">
+              <p>Automatic
+Reset Condition</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1121490e340" valign="top" width="NaN%">
+              <p>Pre-Trip
+Condition</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1121490e346" valign="top" width="NaN%">
+              <p>RESET_IN
+Reset</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1121490e353" valign="top" width="NaN%">
+              <p>OP_CMD_INT
+Reset</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>0 to SP - auto reset</p>
+
+              <p>
+at SP</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_2A2FD7A5AE3C41EB907A0CCFC97B3599"></a><img id="c_integrator_function_block_execution__image_2A2FD7A5AE3C41EB907A0CCFC97B3599" src="fbhelp0261.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_706199705ACA488394E9971494B822D9"></a><img id="c_integrator_function_block_execution__image_706199705ACA488394E9971494B822D9" src="fbhelp0262.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>0 to SP - demand reset</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_13690256BFED478E91A68F6E273FA7E8"></a><img id="c_integrator_function_block_execution__image_13690256BFED478E91A68F6E273FA7E8" src="fbhelp0263.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>SP to 0 - auto reset</p>
+
+              <p>
+at SP</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>SP-TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_7F3E2C54B69246938A4DDF9D388424AF"></a><img id="c_integrator_function_block_execution__image_7F3E2C54B69246938A4DDF9D388424AF" src="fbhelp0264.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_C2DD8AD70CA94D2DB7D6F2E1AA896630"></a><img id="c_integrator_function_block_execution__image_C2DD8AD70CA94D2DB7D6F2E1AA896630" src="fbhelp0265.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>SP to 0 - demand</p>
+
+              <p>
+reset</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>SP-TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_96AD7A2566E74B8F80A1D2B1CBB3278D"></a><img id="c_integrator_function_block_execution__image_96AD7A2566E74B8F80A1D2B1CBB3278D" src="fbhelp0266.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>0 to ? - periodic</p>
+
+              <p>
+reset</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_4DE83785C00E44928CAB949566CBB6F0"></a><img id="c_integrator_function_block_execution__image_4DE83785C00E44928CAB949566CBB6F0" src="fbhelp0267.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>No</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>0 to ? - demand</p>
+
+              <p>
+reset</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1121490e322 " valign="top" width="NaN%">
+              <p>0 to ? - periodic &amp;</p>
+
+              <p>
+demand reset</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e328 " valign="top" width="NaN%">
+              <p>TOTAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e334 " valign="top" width="NaN%">
+              <a name="c_integrator_function_block_execution__image_56F4239F388749F39DFEC862C55A4A41"></a><img id="c_integrator_function_block_execution__image_56F4239F388749F39DFEC862C55A4A41" src="fbhelp0268.gif" />
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e340 " valign="top" width="NaN%">
+              <p>None</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e346 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1121490e353 " valign="top" width="NaN%">
+              <p>Yes</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>
+      <strong>Trip and pre-trip action</strong>
+    </p>
+
+    <p>When the integration value reaches SP – PRE_TRIP (or 0 + PRE_TRIP if the integrator runs from SP to 0), OUT_PTRIP is set. When the integration value reaches the trip target value (SP or 0), OUT_TRIP is set. OUT_PTRIP remains set until integration is reset.</p>
+
+    <p>
+      <strong>Integration carryover</strong>
+    </p>
+
+    <p>You can enable the Carry integration option (INTEG_OPTS) to carry the excess past the trip point into the next integration cycle as the initial value of the integrator when either of the following integration types is set:</p>
+
+    <a name="c_integrator_function_block_execution__ul_31D94021B380421CB7433718C3909107"></a><ul id="c_integrator_function_block_execution__ul_31D94021B380421CB7433718C3909107">
+      <li id="c_integrator_function_block_execution__li_3EAC6527132F4508A8A9567EEDD4D554"><div class="li_content">
+        <p>0 to SP - auto reset at SP</p>
+
+      </div></li>
+
+      <li id="c_integrator_function_block_execution__li_7167F7DD4D1E422589500752ED45E8E0"><div class="li_content">
+        <p>SP to 0 - auto reset at SP</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>Note that there must be at least five seconds between resets. SP must be large enough so that it takes more than five seconds for OUT to reach SP.</p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_integration_options.html">Integration options</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

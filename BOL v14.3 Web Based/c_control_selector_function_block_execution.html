@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Control Selector function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_control_select.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_control_selector_function_block_execution" name="DC.Identifier" /><title>Control Selector function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_control_select.html" /><link rel="next" href="c_control_selector_function_block_modes.html" /></head><body class="fixed" id="c_control_selector_function_block_execution" data-relpath="c_control_selector_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_control_selector_function_block_execution"></a>
+
+<h1 class="topictitle1">Control Selector function block execution</h1>
+<div><div></div>
+
+	 <p id="c_control_selector_function_block_execution__blockexecutioncontrolselectorfunctionblock"><a name="c_control_selector_function_block_execution__blockexecutioncontrolselectorfunctionblock"></a>The Control Selector
+		function block picks the high, low, or middle control signal from two or three
+		PID function block primary outputs and places it at the Control Selector
+		block&#39;s primary output. Three back calculation outputs are sent to upstream PID
+		function blocks.
+	 </p>
+
+	 <p>At the beginning of each scan period, the block calculates the actual
+		mode according to the input status, target mode, and configured parameter
+		settings. The block steps into the calculated actual mode or stays in the
+		original mode.
+	 </p>
+
+	 <p>Next, the block calculates the forward path primary output:
+	 </p>
+
+	 <a name="c_control_selector_function_block_execution__ul_AF195F6E1CA54E109E6354ACEF28ADE2"></a><ul id="c_control_selector_function_block_execution__ul_AF195F6E1CA54E109E6354ACEF28ADE2"> 
+		<li id="c_control_selector_function_block_execution__li_EC25E76EC2824F73A344276B6CB2A294"><div class="li_content">
+		  <p>In Initializing Manual (IMan) mode, the primary output is unchanged.
+			 The BKCAL_SEL1, BKCAL_SEL2, and BKCAL_SEL3 parameter values are passed to the
+			 upstream function blocks.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_control_selector_function_block_execution__li_964AD4C71BF4442DAC70DE044F3AE166"><div class="li_content">
+		  <p>In Manual (Man) mode, OUT can be set manually.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_control_selector_function_block_execution__li_93E7F91F844D469AAC17BE8E9FBAFD52"><div class="li_content">
+		  <p>In Automatic (Auto) mode, the block selects SEL_1, SEL_2, or SEL_3
+			 as the primary output based on the selection type parameter (SEL_TYPE). The
+			 output value is sent back to all the upstream blocks.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> In Auto mode, when any of the connected SEL_ , SEL_2 or SEL_3 inputs
+		  have Bad status during block execution, the block transitions its actual mode
+		  to Man. When the Bad SEL_1, SEL_2 or SEL_3 input transitions back to Good
+		  status, the block resumes Auto operation.
+		</p>
+
+	 </div>
+
+	 <p>All the output parameter status values are set to indicate the status of
+		the block and the status of the corresponding parameter.
+	 </p>
+
+	 <p><strong>Output limit scaling</strong>
+	 </p>
+
+	 <p>During download OUT_HI_LIM and OUT_LO_LIM are set to their configured
+		values. If you have not changed these values from their defaults they are set
+		as follows during the first execution of the block:
+	 </p>
+
+	 <a name="c_control_selector_function_block_execution__ul_686CD8394C8E45F0BECC967505F5599B"></a><ul id="c_control_selector_function_block_execution__ul_686CD8394C8E45F0BECC967505F5599B"> 
+		<li id="c_control_selector_function_block_execution__li_0A68FA31F7914BE4AEFB60A88C36F91B"><div class="li_content">
+		  <p>OUT_HI_LIM is set to OUT_SCALE(EU100)
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_control_selector_function_block_execution__li_3C6ABF58D69845FF900C50698FAF17A5"><div class="li_content">
+		  <p>OUT_LO_LIM is set to OUT_SCALE(EU0)
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p>During runtime the limits are restricted as follows:
+	 </p>
+
+	 <a name="c_control_selector_function_block_execution__ul_6AA13ACC4C8D4AD2B37A9E8C995150B1"></a><ul id="c_control_selector_function_block_execution__ul_6AA13ACC4C8D4AD2B37A9E8C995150B1"> 
+		<li id="c_control_selector_function_block_execution__li_EA4F0D6F4AFA4921B187E902A9E0F80E"><div class="li_content">
+		  <p>OUT_HI_LIM is restricted to OUT_SCALE(EU100) + 0.1 ×
+			 (OUT_SCALE(EU100) - OUT_SCALE(EU0)).
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_control_selector_function_block_execution__li_FA639F6827544699AB622EF37BD70F7B"><div class="li_content">
+		  <p>OUT_LO_LIM is restricted to OUT_SCALE(EU0) - 0.1 × (OUT_SCALE(EU100)
+			 - OUT_SCALE(EU0)).
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p>The OUT parameter is not changed as a result of changing the scale or
+		limits. However, if OUT violates the new limits OUT is forced within the limits
+		on the next execution of the block.
+	 </p>
+
+	 <p><strong>Output selection and limiting</strong>
+	 </p>
+
+	 <p>You can limit the output by configuring the OUT_HI_LIM and OUT_LO_LIM
+		parameters.
+	 </p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

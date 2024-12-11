@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Specifying the time interval for Process History View" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="c_customizing_the_process_history_view.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_specifying_the_time_interval" name="DC.Identifier" /><title>Specifying the time interval for Process History View</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_specifying_the_start_time.html" /><link rel="next" href="r_specifying_the_end_time.html" /></head><body class="fixed" id="r_specifying_the_time_interval" data-relpath="r_specifying_the_time_interval.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_specifying_the_time_interval"></a>
+
+<h1 class="topictitle1">Specifying the time interval for Process History
+    View</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_specifying_the_time_interval__section_AD9CFF1935D44C2F9559EC92A2B547B0"><a name="r_specifying_the_time_interval__section_AD9CFF1935D44C2F9559EC92A2B547B0"></a> 
+      <p><strong>Parameter:</strong> 
+        <samp class="codeph">/span</samp> (recommended), 
+        <samp class="codeph">/hour</samp>, or 
+        <samp class="codeph">/hours</samp> 
+      </p>
+ 
+      <p>The time interval is treated differently for Event displays than it is
+        for Charts and E+Charts. 
+      </p>
+ 
+      <p>In Event displays, specifying the time interval results in the most
+        recent specified interval of events to be displayed. The default is for no time
+        filtering. Also, do not use the time span with the 
+        <samp class="codeph">starttime</samp> parameter. By design, parameters display
+        only the most recent events, and the end time is always the current time.
+        Therefore, provide either a start time or a time interval to specify a smaller
+        time span. If you provide both a start time and a time span, the start time is
+        ignored. 
+      </p>
+ 
+      <p>For Charts and E+Charts, you must specify the time interval with the 
+        <samp class="codeph">span</samp> parameter. For any new chart, the default time
+        range is 8 hours, ending at the current time. If creating a new Chart or
+        E+Chart with the /new qualifier, use the 
+        <samp class="codeph">span</samp> parameter to modify the value from its default 8
+        hours. If opening an existing file, you can use this parameter to change the
+        configured value in the file. If using the Process History View application,
+        this is the same as clicking 
+        <span class="menucascade"><span class="uicontrol">Chart</span> &gt; <span class="uicontrol">Configure
+            Chart</span></span>, clicking the 
+        <span class="uicontrol">Time Scale</span> tab, and entering the value in the 
+        <span class="uicontrol">Span</span> field. 
+      </p>
+ 
+      <p>For Charts and E+Charts, you can use the 
+        <samp class="codeph">span</samp> parameter used with the other time specification
+        parameters, 
+        <samp class="codeph">starttime</samp> and 
+        <samp class="codeph">endtime</samp>. 
+      </p>
+ 
+      <p><strong>Type:</strong> Time span specification 
+      </p>
+ 
+      <p><strong>Applies to:</strong> Events, Chart, and E+Chart 
+      </p>
+ 
+      <div class="p"><strong>Format:</strong> 
+      <a name="r_specifying_the_time_interval__ul_1FB18965133547C8BC907058D76298E7"></a><ul id="r_specifying_the_time_interval__ul_1FB18965133547C8BC907058D76298E7"> 
+        <li id="r_specifying_the_time_interval__li_C672AD3458554E3AA17531DC1E3E096E"><div class="li_content"> If span: #days
+          #hours:#minutes 
+        </div></li>
+ 
+        <li id="r_specifying_the_time_interval__li_6878338A0C52453BAF77E5EAE71C0052"><div class="li_content"> If hour or hours: #hours 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p><strong>Value:</strong> If using the 
+        <samp class="codeph">span</samp> parameter, the day must be a positive integer (it
+        is not required for spans of less than one day). For example, specify two days
+        as &quot;2 00:00&quot; . The hour is an integer between 0 and 23. The minute is an
+        integer between 0 and 59. If just a single integer is supplied, it is
+        considered that number of hours. For example, specify five hours as either &quot;5&quot;
+        or &quot;5:00&quot;. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> The hour (and hours) parameters support previous versions but are
+          not recommended. 
+        </p>
+ 
+      </div>
+ 
+      <p><strong>Examples:</strong> 
+      </p>
+ 
+      <p>In this example, the Process History View application opens a new
+        events document that displays events that occurred four hours prior to the
+        current time. 
+      </p>
+ 
+      <p><samp class="codeph">CHS /new events /span 4</samp> 
+      </p>
+ 
+      <p>In this example, the Process History View application opens an
+        existing file, and modifies the time span to 2 hours. 
+      </p>
+ 
+      <p><samp class="codeph">CHS motor.phvc /span &quot;2:00&quot;</samp> 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

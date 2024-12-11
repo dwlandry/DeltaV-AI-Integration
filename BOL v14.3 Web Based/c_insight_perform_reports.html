@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="InSight Performance Reports" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="InSight Performance Reports, Performance reports" name="DC.subject" /><meta content="InSight Performance Reports, Performance reports" name="keywords" /><meta content="c_insight_using_dv_inspect.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_using_the_worksheet_function_dialogs.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_1E317773D9F54289BF3206907E984F76" name="DC.Identifier" /><title>InSight Performance Reports</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_application_examples.html" /><link rel="next" href="c_insight_dvtune.html" /></head><body class="fixed" id="concept_1E317773D9F54289BF3206907E984F76" data-relpath="c_insight_perform_reports.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_1E317773D9F54289BF3206907E984F76"></a>
+
+<h1 class="topictitle1">InSight Performance Reports </h1>
+<div> 
+	 <p>The InSight Performance Reports application is used to capture
+		historical control data in .xml files and to generate reports in .pdf or .xlsx,
+		the Excel file format. Three standard report templates are provided with the
+		application: overview report, area performance report, and detail control loop
+		report. In addition, users can create their own customized report templates.
+		All report types can be enabled for use with DeltaV Guardian. Reports,
+		including Guardian-enabled reports, can be generated on-demand or scheduled to
+		generate automatically on a periodic basis. 
+	 </p>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_C243DBF25C784871B8E627C59DEE00C2"><a name="concept_1E317773D9F54289BF3206907E984F76__section_C243DBF25C784871B8E627C59DEE00C2"></a><h2 class="sectiontitle">Prerequisites </h2> 
+		 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_A08444F8EA9C40ACA7CF567A93E94742"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_A08444F8EA9C40ACA7CF567A93E94742"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_69891A0092854823AB5179695B5C916F"><div class="li_content">Install Excel. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_787E8FF4491C49558DFB3A1957DD3E4C"><div class="li_content">Excel must be installed on
+			 the same computers as the Microsoft Save as PDF or XPS add-in. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_F8FAEC8B72E34B2FA2BC8DC5282ECD94"><div class="li_content">Run setup.exe (found in
+			 the 
+			 <span class="nowrap"><span class="filepath">DV_Extras\DeltaVReporter</span></span> folder
+			 on the DeltaV installation disk #1) on the workstation. (ProfessionalPLUS or
+			 Operator 
+			 <span>or Application 
+			 </span>station. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_BE931128D7CC4C7A9C4DEF60752F6451"><div class="li_content">Refresh the DeltaV
+			 Continuous Historian Add-in in Excel. This Excel add-in must be refreshed or
+			 initialized on each workstation where InSight Performance Reports are
+			 generated. Due to the use of the Excel Automation add-in, the user generating
+			 InSight Performance Reports must have a user identity that is initialized in
+			 the Registry for Excel COM to function properly. Visit the 
+			 <cite>Microsoft Help and Support</cite> website and navigate to the
+			 Considerations for server-side Automation of Office page for information. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_370D38A355774258A4D44C6C8B4D56CA"><div class="li_content">Add required parameters to
+			 history collection. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_088FD34B9DC4436FA03542A4773AF419"><div class="li_content">Assign an InSight system
+			 license to the ProfessionalPLUS workstation. Refer to the DeltaV Explorer
+			 online help for information on loading license files or contact your Emerson
+			 representative for information on obtaining an InSight system license. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>To view a PDF version of a report, Adobe Reader must be installed.
+		  This can be downloaded from the Adobe website. Be sure that the downloaded
+		  version of the Adobe Reader is compatible with the operating system that is
+		  used. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_5186321986034B13A83319FA14954B38"><a name="concept_1E317773D9F54289BF3206907E984F76__section_5186321986034B13A83319FA14954B38"></a><h2 class="sectiontitle">Adding Required History Parameters </h2> 
+		 
+		<p>The following parameters must be in history in order to generate
+		  standard performance reports: 
+		</p>
+ 
+		<p>OUT, OUT_D - Out 
+		</p>
+ 
+		<p>PV, PV_D - Process Value 
+		</p>
+ 
+		<p>SP, SP_D - Set Point 
+		</p>
+ 
+		<p>STDEV - Standard Deviation 
+		</p>
+ 
+		<p>VAR_IDX - Variability Index 
+		</p>
+ 
+		<p>ADP_TUN_IDX - Tuning Index 
+		</p>
+ 
+		<p>ADP_OSC_IDX - Oscillation Index 
+		</p>
+ 
+		<p>STATUS_INDEX - %Incorrect Mode, %Limited Control, %Uncertain Input,
+		  %High Standard Deviation, %Tuning (%Tuning&gt;20, %Tuning &gt;50,%Tuning &gt;
+		  User Limit), Oscillation, %High Valve Deadband, %High Resolution, %Device
+		  Alerts 
+		</p>
+ 
+		<p>The required history parameters are not available for all function
+		  blocks. The following table shows which function blocks support the required
+		  history parameters. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_1E317773D9F54289BF3206907E984F76__table_DE10DC6DF4F34AC8BE924BA8B1E1F61B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_1E317773D9F54289BF3206907E984F76__table_DE10DC6DF4F34AC8BE924BA8B1E1F61B" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Required History Parameters</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Function Blocks</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>STATUS_INDEX, STDEV 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>All blocks 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>VAR_IDX 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>PID, FFPID, FLC, MPC, MPCPRO, RTO, MPCPlus 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>OUT, PV, SP 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>PID, FFPID, FLC, AO, FFAO 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>OUT, PV 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>AI, FFAI, PIN, FFPIN 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>OUT 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>RTO 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>OUT_D, PV_D 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>DI, FFDI 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>OUT_D, PV_D, SP_D 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>DO, DC, FFDO 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>ADP_TUN_IDX, ADP_OSC_IDX 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>PID, FFPID with learning enabled 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>You can determine if history collection is enabled for these
+		  parameters by selecting the workstation&#39;s Continuous Historian in DeltaV
+		  Explorer and selecting 
+		  <span class="uicontrol">History Collection</span> from the context menu. If
+		  history collection is not enabled for these parameters, you can use the Easy
+		  InSight History Collection command in combination with the History Collection
+		  command on a block-by-block basis. The Easy InSight History Command adds the
+		  control performance indices (Standard Deviation, Variability Index, Tuning
+		  Index, and Oscillation Index) to the Continuous Historian&#39;s history collection
+		  for the selected block. The History Collection commands do not overwrite
+		  existing parameters in history. For large configurations with many function
+		  blocks, it is highly recommended that you use the InSight Performance Reports
+		  application to export a file with the required history parameters, import the
+		  file with DeltaV Explorer, and download the Continuous Historian. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_AAB3DC6E68AA43AEB724F22EBF768DB9"><a name="concept_1E317773D9F54289BF3206907E984F76__section_AAB3DC6E68AA43AEB724F22EBF768DB9"></a><h2 class="sectiontitle">History Collection Commands </h2> 
+		 
+		<p> 
+		  <strong>To use the Easy InSight History Collection command</strong> 
+		</p>
+ 
+		<p>Select a block in the DeltaV Explorer and select 
+		  <span class="uicontrol">Easy InSight History Collection</span> on the context
+		  menu. 
+		</p>
+ 
+		<p> 
+		  <strong>To use the History Collection command</strong> 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_D6C87120B35F4A5C962D40DCF3A13A21"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_D6C87120B35F4A5C962D40DCF3A13A21"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_B0E92A64C70E448CA7983AD8AB459C69"><div class="li_content">Select the module, and
+			 then click 
+			 <span class="uicontrol">History Collection</span> from the context menu. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_CD572333D26F418FA65C8C4B0AEBA290"><div class="li_content">Download the Continuous
+			 Historian after adding all required parameters to history. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_25600F9DE60D469C8ECD64D0A787BAE0"><a name="concept_1E317773D9F54289BF3206907E984F76__section_25600F9DE60D469C8ECD64D0A787BAE0"></a><h2 class="sectiontitle">Exporting and Importing a History File</h2> 
+		 
+		<p>For large configurations with many function blocks, the most efficient
+		  way to ensure that all history parameters are available is to export and import
+		  a history file with the required parameters. If you decide to export and import
+		  a history file, be careful that you do not overwrite parameters that are
+		  already in history collection. For example, suppose that you have PV and OUT
+		  parameters in history collection. If you export and then import a history file,
+		  it is possible that these existing parameters will be overwritten. To avoid
+		  overwriting parameters already in history deselect, either individually or by
+		  parameter type, the parameters that you want to exclude from the export. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_91614DA100404B2B86B12DDAE0F03B85"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_91614DA100404B2B86B12DDAE0F03B85"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_7707E513B3494EE4809AA80A2EEF892A"><div class="li_content">From the InSight
+			 Performance Reports application, select 
+			 <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Export Historical
+				  Data Collection</span></span>, and then select the modules and
+			 blocks that you want to add to history collection. Deselect any that you do not
+			 want to add to history. By default, historical data collection is saved in the 
+			 <span class="nowrap"><span class="filepath">DVDATA\BulkEdit</span></span>
+			 folder. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_5C18A9231A8847EBA02484A22F13D191"><div class="li_content">Open DeltaV Explorer, and
+			 then select 
+			 <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Import</span> &gt; <span class="uicontrol">User
+				  Defined Format</span></span>. The 
+			 <span class="wintitle">Format source</span> dialog opens. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_CCC236C04DA8459081A1B1EB4AD6A06D"><div class="li_content">Click the 
+			 <span class="uicontrol">Browse</span> button, open the formatted file (the
+			 default filename is HistoryDataPoint.fmt), and click 
+			 <span class="uicontrol">Next</span>. The Import data source dialog opens. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_546DBA038C034C2FBE8C7492092DFC7B"><div class="li_content">Click the 
+			 <span class="uicontrol">Browse</span> button, select the text file created
+			 with the Export History Collection command (the default filename is
+			 InSightReportHistoryDataPoint.txt), and then click 
+			 <span class="uicontrol">Next.</span> 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_F0925E14065A4F37828837CCEC56FC69"><div class="li_content">Verify the import results
+			 and click the 
+			 <span class="uicontrol">Import</span> button. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_6265411439FA4FED862ED71A1CFFA99F"><div class="li_content">Download the Continuous
+			 Historian to add the required parameters to history. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_1DAAC7B4189C40BC8F17E87E99A8AADC"><a name="concept_1E317773D9F54289BF3206907E984F76__section_1DAAC7B4189C40BC8F17E87E99A8AADC"></a><h2 class="sectiontitle"> Using the InSight Performance Reports Application</h2> 
+		 
+		<p>Before using the InSight Performance Reports application, ensure that
+		  all prerequisites are complete and that there is sufficient history data
+		  collected for reporting. 
+		</p>
+ 
+		<p>The InSight Performance Reports application can be opened from either
+		  InSight Tune or Inspect. Open InSight Inspect or Tune, apply filters if
+		  required, and select the items (modules, blocks, areas) for which you want to
+		  generate reports from the hierarchy in the left pane. 
+		</p>
+ 
+		<p>Select 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Performance
+				Reports</span></span> from InSight Tune or Inspect to open InSight
+		  Performance Reports. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_1E317773D9F54289BF3206907E984F76__image_93EC158EC21547AAA4415F0104CFB383"></a><img id="concept_1E317773D9F54289BF3206907E984F76__image_93EC158EC21547AAA4415F0104CFB383" src="Overview.png" /> 
+		</p>
+ 
+		<p>When the application opens, notice that whatever was selected and
+		  filtered in the Tune or Inspect hierarchy is selected and filtered in the 
+		  <span class="uicontrol">Performance Reports</span> hierarchy. For example, if
+		  an area is selected in the Tune or Inspect hierarchy with a priority filter of
+		  1-3, the Performance Reports hierarchy will open with the area selected and all
+		  modules and blocks with a priority of 1-3 selected. If only one block is
+		  selected in Tune or InSight, Performance Reports will open with that block
+		  selected. If reporting is disabled for a module or block in InSight, the item
+		  appears grayed in the Performance Reports hierarchy. The Performance Reports
+		  application can be opened from any tab in Inspect or Tune. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_87B66EACBBE64F92AFC9FC3796822BD1"><a name="concept_1E317773D9F54289BF3206907E984F76__section_87B66EACBBE64F92AFC9FC3796822BD1"></a><h2 class="sectiontitle">Actual Reports and Report Definitions</h2> 
+		Generating a report
+		generates the actual report itself and a report definition. A report definition
+		is an .xml version of the report that can be reopened from the InSight
+		Performance Reports application with the 
+		<span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Open</span></span>
+		command to generate another report. In addition, some report definitions
+		contain extra performance data that is not exposed in the actual report that
+		can be included in a custom report. The actual report is the report definition
+		formatted according to a standard or custom template and saved as an Excel file
+		(.xlsx), a .pdf file, or both Excel and .pdf files. 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_786525C4CCF444218AA1AC7DF26983E2"><a name="concept_1E317773D9F54289BF3206907E984F76__section_786525C4CCF444218AA1AC7DF26983E2"></a><h2 class="sectiontitle">Report Types</h2> 
+		 
+		<p>There are three standard report types or templates available with the
+		  InSight Performance Reports application: overview, area performance, and detail
+		  control loop reports. 
+		</p>
+ 
+		<p> 
+		  <strong>Overview Reports</strong> 
+		</p>
+ 
+		<p>Overview reports provide a summary of control performance indicators
+		  for selected areas or for the entire control system. These reports compare two
+		  time periods. Overview reports contain the: 
+		</p>
+ 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_B7AB1215986B481E9771EFB51462B114"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_B7AB1215986B481E9771EFB51462B114"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_207612A9BCFF40A28750FBAA25BCDEE8"><div class="li_content">Number of visible loops
+			 selected for the entire control system. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_E607847143214747AE8F0E0E99442861"><div class="li_content">Average Utilization (plus
+			 % change). Computed as 100 - sum(incorrect mode values) /number of visible
+			 loops. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_D46EE0C18B0A41549BF81207938A5018"><div class="li_content">Reporting time period. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_EAC6264F4B5D41D9949747BC48111C27"><div class="li_content">Loop names. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_4322AA81B4EC4B73AEF7972F491932A9"><div class="li_content">Area name. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_7607C74232D9455283B38A4167856884"><div class="li_content">Loop descriptions. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_DEAB4CB770E345F79FA19AECF2BD16AA"><div class="li_content">Percent abnormal time
+			 control conditions and asset alerts (plus % change). Includes: Standard
+			 deviation, Priority, % Incorrect Mode, % Limited Control, % High Standard
+			 Deviation, and % High Variability. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> 
+		  <strong> Area Performance Reports</strong> 
+		</p>
+ 
+		<p>Area performance reports provide performance information for all
+		  control loops within a selected area or unit for a specified period of time.
+		  Area performance reports include the: 
+		</p>
+ 
+		<p>% time for all abnormal control conditions including: 
+		</p>
+ 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_9C8D7E4170F245B084994F296CBE3200"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_9C8D7E4170F245B084994F296CBE3200"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_282A88A68AB347B8850646DFE6E9F556"><div class="li_content">Incorrect Mode 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_BF7098BC909647DCBAC77512C486CA2E"><div class="li_content">Limited Control 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_2957CA7407184D31A6C096546D7DAF8F"><div class="li_content">Uncertain Input 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_7F36D23120C7474A889D43EE1A389011"><div class="li_content">Large Variability 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_CA1EE4800D244D5E9DFD5EE3A901FD87"><div class="li_content">High Standard Deviation 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_C44C1D1252AB4E869C6527443D7D893E"><div class="li_content">Improved Tuning 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_58A075ABBD6F4EA7AABE5D602AB49FE2"><div class="li_content">Oscillation 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_C5F4FECB1BB849D0A4A19308CBF060D2"><div class="li_content">Device Alerts 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>Average values for all control performance indices including: 
+		</p>
+ 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_A0B2F6B9EA454C5899F7E0559B2E1DC4"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_A0B2F6B9EA454C5899F7E0559B2E1DC4"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_4F2229614C824BA5A212CF06D79B87F2"><div class="li_content">Standard deviation 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_AF896533DE444A0881E5DC1D23D5BA69"><div class="li_content">Performance Index 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_D750725EFB2845E2852F4F21234B0884"><div class="li_content">Tuning Index 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_CFD69CDDD2EE48B0B849DE358F480F39"><div class="li_content">Oscillation Index 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> 
+		  <strong>Detail Control Loop Reports</strong> 
+		</p>
+ 
+		<p>Detail control loop reports are intended for expert users or
+		  consultants. These reports are generated for only one control loop and contain
+		  all of the % abnormal control condition parameters and control performance
+		  indices reported in the area performance report plus: 
+		</p>
+ 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_CEF6EC363CE54A0FA4C574243775B943"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_CEF6EC363CE54A0FA4C574243775B943"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_A3B62F12F2074A088BBE718218914B0B"><div class="li_content">Process model parameters
+			 (if Process Learning is enabled) 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_0FCD5204C6FA4E30B436016B46F02001"><div class="li_content">Histograms 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_915FC96C0820488AA4A3645B87731256"><div class="li_content">Graphical trends for key
+			 performance variables over a specified time period. The default trends include
+			 SP, PV and Out vs. time and PV vs. Out (x-y plot). 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_46D82E8B0FD949FA9F8C560A91B08DC2"><div class="li_content">DeltaV Reporter functions 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> DeltaV Reporter function calls are used to retrieve
+		  historical data for use in Excel spreadsheets. Statistical calculations such as
+		  the Fourier transform and cross correlations can be performed by Excel add-in
+		  software such as the XLSTAT data analysis add-in. 
+		</div>
+ 
+		<p> 
+		  <strong> Custom Reports</strong> 
+		</p>
+ 
+		<p>There are two ways to create custom reports: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_F65E45443D9A46DFB4AFDC0955D0D356"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_F65E45443D9A46DFB4AFDC0955D0D356"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_39C02EE00E824616BC599F0D881E5985"><div class="li_content">Edit a default template
+			 file (.xltx) 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_E13AB9134E3442958EEF9100235B6337"><div class="li_content">Create a template from a
+			 saved report definition file (.xml) 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>To edit a default template file: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_DC81143934CB490DB169384B1B5565F7"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_DC81143934CB490DB169384B1B5565F7"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_6FED297006D044CB891E97B11E0DE8A3"><div class="li_content">Open Excel, browse to the
+			 default template directory, 
+			 <span class="nowrap"><span class="filepath">DVData\InSight\Reports\Templates</span></span>,
+			 and then open one of the default templates.xltx. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_13BE458777C2437E9E527968B99DBD70"><div class="li_content">Modify the default
+			 template, provide a filename and location, and save it as an Excel template
+			 (.xltx) in 
+			 <span class="nowrap"><span class="filepath">DVData\InSight\Reports\Templates</span></span>.
+			 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>As an example, suppose that you wanted to modify a default template by
+		  inserting a column that shows historical data on the production rates in your
+		  plant. To add this data: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_29B8C26E53C04B20BB2B7A216425C528"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_29B8C26E53C04B20BB2B7A216425C528"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_B424537EA9C5489B913C00E573D26A49"><div class="li_content">Follow steps 1 and 2 above
+			 and create a custom report template with a unique filename. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_4AEAAD46198F49FE85B2E5C7F68C5190"><div class="li_content">Select the 
+			 <span class="uicontrol">Add-Ins</span> tab in Excel, and then select 
+			 <span class="menucascade"><span class="uicontrol">DeltaV Continuous
+				  Historian</span> &gt; <span class="uicontrol">Configure Calculated Data
+				  Function</span></span> to open the 
+			 <span class="wintitle">Configure Calculated Data Function</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_E7231F91F2BD45948E1CE5F9E2C35D80"><div class="li_content">Use this dialog to add the
+			 required data to the template. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>To create a template from a saved report definition file: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_10AC3DCF39C14AB492E9FAEE11F76534"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_10AC3DCF39C14AB492E9FAEE11F76534"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_38203F3445F44F088187D2393CDAE844"><div class="li_content">Open Excel, browse to the
+			 report definitions directory, 
+			 <span class="nowrap"><span class="filepath">DVData\InSight\Reports\Definitions</span></span>,
+			 and then open a definition file (.xml). 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_7DCF3C0F01D742099621330E39516C88"><div class="li_content">Select 
+			 <span class="uicontrol">Use the XML Source task pane</span> in the 
+			 <span class="wintitle">Open XML</span> dialog, and then click 
+			 <span class="uicontrol">OK</span>. The schema for the report definition is
+			 displayed in the XML Source pane. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_C80583D6E5F248E8BF150883B7412F22"><div class="li_content">Create the mapping,
+			 formatting, and save the file as an Excel template (.xltx). Refer to the Excel
+			 online help for information on working with .xml schemas. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_401EE6CCCE8C48EF882BDE23140F9206"><a name="concept_1E317773D9F54289BF3206907E984F76__section_401EE6CCCE8C48EF882BDE23140F9206"></a><h2 class="sectiontitle">Report Time Periods</h2> 
+		 
+		<p>The data collection time periods are defined by absolute or relative
+		  time. Absolute time is expressed as a time duration in hours:minutes:seconds AM
+		  or PM and month/day/year. An example of an absolute time period is, from
+		  12:00:00 AM 5/13/1997 to 12:25:15 PM 5/13/97. Relative time is relative to the
+		  current date and expressed as: 
+		</p>
+ 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_73250D2135854FC9AFB535022B920432"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_73250D2135854FC9AFB535022B920432"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_7E52A8376325486EA7E392FB4FA31C22"><div class="li_content">Last month 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_1EFBC1CC2E294F479B22F9EB5B081DE5"><div class="li_content">Month before last month 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_348CF572E6C7436F8BAC631385153177"><div class="li_content">Last week: Sunday to
+			 Sunday 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_DF270258247144BDB4D46BA902690ABC"><div class="li_content">Week before last week:
+			 Sunday to Saturday 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_22EFD0C25C574F5DB61503F7D07DA48B"><div class="li_content">Yesterday: 12 AM yesterday
+			 to 12 AM today 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_DAF6D89AC0604603BD9B0691E1F203C5"><div class="li_content">Day before yesterday: 12
+			 AM day before yesterday to 12 AM yesterday 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_D7183E31F0E04B35843FA910C118E384"><div class="li_content">Today: 12 AM today to the
+			 current hour and minute 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_2C954A0F195E4AC3BCE19A1F3576A444"><div class="li_content">This week: Sunday to the
+			 current day of the week 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_8B12F21A843C4890ABA7DD7C26D0A1B7"><div class="li_content">This month: Day 1 of the
+			 current month to the current day 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>The time frames vary depending upon the type of report template
+		  selected. Overview reports provide a comparison between two time frames in
+		  either relative or absolute time. Relative time is shown in the following
+		  image. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_1E317773D9F54289BF3206907E984F76__image_AAFE869541934129813FD8D09CD86651"></a><img id="concept_1E317773D9F54289BF3206907E984F76__image_AAFE869541934129813FD8D09CD86651" src="OverviewTimeFrameComparison.png" /> 
+		</p>
+ 
+		<p>Custom reports provide either a two time period comparison in relative
+		  or absolute time or one time period in relative or absolute time. The Two Time
+		  Period option on the custom report setting lets you choose between one or two
+		  time periods. The following image shows the Two Time Period option selected for
+		  a custom report. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_1E317773D9F54289BF3206907E984F76__image_C48F055CDD2042DBB069F01788826F30"></a><img id="concept_1E317773D9F54289BF3206907E984F76__image_C48F055CDD2042DBB069F01788826F30" src="CustomTimeFrameComparison.png" /> 
+		</p>
+ 
+		<p>The other report types: area performance and detailed control loop
+		  provide one time period in either relative or absolute time. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_1E317773D9F54289BF3206907E984F76__image_786B581B930A41C28C10418939CC76D1"></a><img id="concept_1E317773D9F54289BF3206907E984F76__image_786B581B930A41C28C10418939CC76D1" src="OneTimePeriod.png" /> 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_21837B8D4E1C4ECF87BBDF235E6655F0"><a name="concept_1E317773D9F54289BF3206907E984F76__section_21837B8D4E1C4ECF87BBDF235E6655F0"></a><h2 class="sectiontitle">Generating Reports</h2> 
+		 
+		<p>To generate a report: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_7897B47CE05C4D5AB90D25EE7B380393"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_7897B47CE05C4D5AB90D25EE7B380393"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_9F3AB6EC5AB24B168C055A2D4916FAD1"><div class="li_content">Be sure that the correct
+			 items are selected in the InSight Performance Reports hierarchy. If the
+			 selected items are not correct for the report you want to generate, modify the
+			 hierarchy by deselecting and selecting items. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_9FE82818BB9C4DBBA634AF8119EA13E6"><div class="li_content">Select the report type
+			 from the Report Template list. For customized reports, select 
+			 <span class="uicontrol">Customized Reports</span> from the list and open a
+			 previously-created custom template. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_429BEB1C83DA41B39384100898AD4197"><div class="li_content">Set the time period for
+			 data collection. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_187E93A787014681A3259407A8CA335F"><div class="li_content">Select any applicable
+			 options for the report (<span class="uicontrol">Use current value if history is not
+				available</span>, 
+			 <span class="uicontrol">Schedule Report</span>, 
+			 <span class="uicontrol">Guardian Enabled</span>). 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_A0945A92000543B08A2C71D038AF2362"><div class="li_content">Click 
+			 <span class="uicontrol">Save Report</span> and specify the report file type
+			 (.xlsx, .pdf, or both .xlsx and .pdf) and location. The default location for
+			 reports is 
+			 <span class="nowrap"><span class="filepath">DVData\InSight\Reports</span></span>. Remember
+			 that for every saved report, a report definition is saved in .xml format in 
+			 <span class="nowrap"><span class="filepath">DVData\InSight\Reports\Definitions</span></span>.
+			 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_BA03194543A145B6B53E0363F3320F06"><a name="concept_1E317773D9F54289BF3206907E984F76__section_BA03194543A145B6B53E0363F3320F06"></a><h2 class="sectiontitle">Guardian Enabled Reports</h2> 
+		 
+		<p>The DeltaV Guardian application is used by Emerson SureService support
+		  to enable and disable monitoring of the DeltaV system when it is enrolled in
+		  the Guardian Support Plan. The Guardian Monitor or the Automated Registration
+		  Utility must be installed and the system must be enrolled in the Guardian
+		  Support Plan to use this option. When these Guardian-based utilities are
+		  running, selecting the 
+		  <span class="uicontrol">Guardian Enabled</span> option for report generation
+		  saves the report in the 
+		  <span class="nowrap"><span class="filepath">DVData\InSight\GuardianReports</span></span>
+		  folder. 
+		</p>
+ 
+		<p>Contact your Emerson representative for information on DeltaV
+		  Guardian. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_277246782A5C467BA6B60FB60234F7CE"><a name="concept_1E317773D9F54289BF3206907E984F76__section_277246782A5C467BA6B60FB60234F7CE"></a><h2 class="sectiontitle">Scheduling Reports</h2> 
+		 
+		<p>Generation of InSight performance reports, including Guardian-enabled
+		  reports, can be scheduled on a periodic or one-time basis. When an absolute
+		  time frame (from: date and time; to: date and time) is selected for data
+		  collection, report generation can be scheduled once at a specified start time
+		  and start date. When a relative time frame is selected for data collection,
+		  report generation can be scheduled: 
+		</p>
+ 
+		<p>Once at a start time and start date. 
+		</p>
+ 
+		<p>Daily at a start time and start date with options to run the report
+		  every day, weekdays only (Monday through Friday), or every certain number of
+		  days. 
+		</p>
+ 
+		<p>Weekly at a start time for selected days of the week with an option to
+		  run the report every certain number of weeks. 
+		</p>
+ 
+		<p>Monthly at a start time on a specific day of a selected month or
+		  months. 
+		</p>
+ 
+		<p>When report generation is scheduled on a periodic basis, options are
+		  provided to specify a report limit and to overwrite the oldest report when the
+		  limit has been reached. If the option to overwrite the oldest report is
+		  disabled, report generation is stopped when the limit is reached. 
+		</p>
+ 
+		<p>If the 
+		  <span class="uicontrol">Show Scheduled Task</span> option is selected, the 
+		  <span class="wintitle">Windows Scheduled Tasks</span> dialog opens showing the
+		  list of tasks scheduled on the computer. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_CFD4C08738ED41F7A233D96F3ED08484"><a name="concept_1E317773D9F54289BF3206907E984F76__section_CFD4C08738ED41F7A233D96F3ED08484"></a><h2 class="sectiontitle">Using Current Values in Place of History Data</h2> 
+		 
+		<p>The 
+		  <span class="uicontrol">Use current value if history is not available</span>
+		  option is not selected by default. When this option is not selected, generated
+		  reports will contain blank values for parameters with no history data. If this
+		  option is selected, generated reports contain the current values for parameters
+		  with no history data. History can be unavailable if a connection cannot be made
+		  to the historical data server or parameters are not configured in history. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_E496B1DF60374AC5930E58A407D0959C"><a name="concept_1E317773D9F54289BF3206907E984F76__section_E496B1DF60374AC5930E58A407D0959C"></a><h2 class="sectiontitle">Opening Report Definitions</h2> 
+		 
+		<p>Saved report definitions can be opened in the InSight Performance
+		  Reports application to create another report definition or to regenerate the
+		  actual report from the saved definition. Click 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Open</span></span>
+		  to open a report definition. When a report definition is opened, the InSight
+		  Performance Reports hierarchy is populated with the report definition&#39;s values
+		  and the report definition&#39;s name appears in the application&#39;s title. Any of the
+		  items in the Report Setting pane can be changed and items in the hierarchy can
+		  be deselected and selected to create a new report definition. 
+		</p>
+ 
+		<p>When you save the report after editing the report definition, you can
+		  retain the report name and overwrite the existing actual report (.pdf or .xlsx)
+		  and definition (.xml) or rename the actual report to create a new report and
+		  definition. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_FBBB4AE623FF4C9787E8A93E2BE64DAB"><a name="concept_1E317773D9F54289BF3206907E984F76__section_FBBB4AE623FF4C9787E8A93E2BE64DAB"></a><h2 class="sectiontitle">System Configuration Settings for Scheduled Reports</h2> 
+		 
+		<p>The user scheduling InSight Performance Reports must have access to
+		  the Scheduled Tasks folder. The default location for this folder is 
+		  <span class="nowrap"><span class="filepath">C:\Windows\Tasks</span></span>. 
+		</p>
+ 
+		<p>By default, Excel as a COM object can only be activated by the
+		  Administrator, System, or by Interactive accounts. Therefore, it is possible
+		  that a scheduled report will fail to run correctly under the following
+		  conditions: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ul_AB180F9C990540DC987EDD87B9D5EC51"></a><ul id="concept_1E317773D9F54289BF3206907E984F76__ul_AB180F9C990540DC987EDD87B9D5EC51"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_FF4CF094523F4839B55E4D4E1EFF59C9"><div class="li_content">You configure a scheduled
+			 report using a different user account than the one currently logged on. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_1C89C8C817E44DD7929606211BCA1533"><div class="li_content">You configure a scheduled
+			 report to run unattended at a time when the user specified in the Run as field
+			 of the scheduled report&#39;s 
+			 <span class="wintitle">Properties</span> dialog is not logged on. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>To prevent the possibility of a scheduled report failing to run,
+		  complete the following steps to edit the DCOM configuration settings for the
+		  Microsoft Excel Application object: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_EAD7F7678AE745B4B9F68BC9405FFFC5"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_EAD7F7678AE745B4B9F68BC9405FFFC5"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_96739AD5C7A74C839878DA1F75FEAF7A"><div class="li_content">Depending on the operating
+			 system, either use Control Panel to open Component Services in Administrative
+			 Tools; or, type comexp.msc or dcomcnfg.exe in the 
+			 <span class="wintitle">Run command</span> window. 
+			 <div class="note"><span class="notetitle">Note:</span> If the 32-bit version of Microsoft Office is installed on a
+				64-bit machine, the 32-bit version of the DCOM Configuration Manager must be
+				used to view the Microsoft Excel application. Run either of these commands: mmc
+				-32 or comexp.msc /32. 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_40E4202BFA4041CEAE4DB1AB7720FD82"><div class="li_content">In the console tree of the
+			 Component Services administrative tool, select 
+			 <span class="menucascade"><span class="uicontrol">Component
+				  Services</span> &gt; <span class="uicontrol">Computers</span> &gt; <span class="uicontrol">My
+				  Computer</span> &gt; <span class="uicontrol">DCOM Config</span></span>. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_DDC8AD870EA24D0D96A0D1D0CAAFFE41"><div class="li_content">In the list COM+ server
+			 applications, right-click Microsoft Excel Application, and then click 
+			 <span class="uicontrol">Properties</span> on the shortcut menu. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_39A41BF686D444EB84F5C4A864D47960"><div class="li_content">On the 
+			 <span class="uicontrol">Security</span> tab of the 
+			 <span class="wintitle">Microsoft Excel Application Properties 
+			 </span>dialog, select 
+			 <span class="uicontrol">Customize</span> in the Launch and Activation
+			 Permissions group, and then click 
+			 <span class="uicontrol">Edit</span>. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_823DC67046B74397B0A02455DEDE5174"><div class="li_content">In the 
+			 <span class="wintitle">Launch Permissions</span> dialog, add the InSight
+			 Performance Reports user who needs to configure scheduled reports, and then
+			 enable the Local Launch and Local Activation permissions for this user. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_013F239A879B4C2D9251BD0659AAD0ED"><div class="li_content">Return to the 
+			 <span class="uicontrol">Security</span> tab of the 
+			 <span class="wintitle">Microsoft Excel Application Properties</span> dialog,
+			 select 
+			 <span class="uicontrol">Customize</span> in the Access Permissions group, and
+			 then click 
+			 <span class="uicontrol">Edit</span>. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_1574494775A248ABA7522801CD3A2803"><div class="li_content">In the 
+			 <span class="wintitle">Access Permissions</span> dialog, add the InSight
+			 Performance Reports user who needs to configure scheduled reports, and then
+			 enable the Local Access permissions for this user. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_4CB47C2BB6584D908A3654CB533D608D"><div class="li_content">Return to the 
+			 <span class="wintitle">Microsoft Excel Application Properties 
+			 </span>dialog, select the 
+			 <span class="uicontrol">Identity</span> tab, and then enable the following
+			 option: 
+			 <span class="uicontrol">The launching user</span>. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>The InSight Performance Reports user scheduling reports must also be
+		  included in the list of users with the Log on as a batch job policy. Follow
+		  these steps to check that this user is included in the list: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_86893E3CB4B54BB7BEA189D6D3104579"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_86893E3CB4B54BB7BEA189D6D3104579"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_DCAF81B661D242DE9934CBC0727BB4F0"><div class="li_content">Click 
+			 <span class="menucascade"><span class="uicontrol">Control
+				  Panel</span> &gt; <span class="uicontrol">Administrative Tools</span> &gt; <span class="uicontrol">Local
+				  Security</span></span> to open the 
+			 <span class="wintitle">Local Security Settings</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_A477BCEF844B49C1ACFC26747F0ED0E6"><div class="li_content">Navigate to Local
+			 Policies/User Rights Assignment in the hierarchy in the left pane. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_5A84D4B07137495083D89B732FC7C5B5"><div class="li_content">Double-click 
+			 <span class="uicontrol">Log on as a batch job</span> under 
+			 <span class="uicontrol">Policy 
+			 </span>in the right pane. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_872E5B65137249609C1994C5B1E9A070"><div class="li_content">Ensure that the InSight
+			 Performance Reports user scheduling the report is included in the list of users
+			 who have this privilege. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<div class="important"><span class="importanttitle">Important:</span> For a scheduled report to run successfully on a
+		  DeltaV or non-DeltaV workstation, the user specified in the 
+		  <span class="uicontrol">Run as</span> box of the scheduled report&#39;s 
+		  <span class="wintitle">Properties</span> dialog must be logged on, either
+		  locally or remotely through a connected or disconnected session, at the time
+		  the Task Scheduler attempts to execute the scheduled report task. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_1E317773D9F54289BF3206907E984F76__section_F2DE897334EE44CBB5DC8D17B655BDBC"><a name="concept_1E317773D9F54289BF3206907E984F76__section_F2DE897334EE44CBB5DC8D17B655BDBC"></a><h2 class="sectiontitle">Refreshing the DeltaV Continuous Historian Add-in</h2> 
+		 
+		<p>Follow these steps to refresh the DeltaV Continuous Historian Add-in
+		  on each workstation where InSight Performance Reports are generated. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_1E317773D9F54289BF3206907E984F76__ol_C31BA312F22E4571910ACBB79948CE2C"></a><ol id="concept_1E317773D9F54289BF3206907E984F76__ol_C31BA312F22E4571910ACBB79948CE2C"> 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_4E4DC510A6B3493BACD21276395D00E9"><div class="li_content">Open the 
+			 <span class="uicontrol">Excel Options</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_89BC92B7AC124761AB29DC6CB69FF514"><div class="li_content">Click 
+			 <span class="uicontrol">Add-Ins</span> in the left pane, and then click the 
+			 <span class="uicontrol">Go</span> button at the bottom of the page to open
+			 the 
+			 <span class="wintitle">Add-Ins</span> dialog. You will notice that 
+			 <span class="uicontrol">DeltaV Continuous Historian Excel Add-In</span> is
+			 already selected. This is expected. Continue with the next steps to refresh or
+			 initialize this add-in for the current user. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_D9FD3EDEFC474AE7B8D972E131615F6C"><div class="li_content">Click the 
+			 <span class="uicontrol">Automation</span> button on the 
+			 <span class="wintitle">Add-Ins</span> dialog to open the 
+			 <span class="wintitle">Automation Servers</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_035F2FCDB218420C9C637B7AFAAB7F97"><div class="li_content">Find 
+			 <span class="uicontrol">DeltaV Continuous Historian Excel Add-In</span> in
+			 the list, select it, and then click 
+			 <span class="uicontrol">OK</span> in the 
+			 <span class="wintitle">Automation Servers</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_94A48AD4C6C54FB396D7AED24A3AA2D3"><div class="li_content">Click 
+			 <span class="uicontrol">Yes</span> at the prompt to replace the existing
+			 add-in. 
+		  </div></li>
+ 
+		  <li id="concept_1E317773D9F54289BF3206907E984F76__li_15BC7E25F83F4230A72F1D7384079912"><div class="li_content">Click 
+			 <span class="uicontrol">OK</span> on the 
+			 <span class="wintitle">Add-Ins</span> dialog and wait for the changes to take
+			 effect. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_using_dv_inspect.html">Using Inspect with InSight</a></div>
+<div><a href="c_insight_dvtune_using.html">Using Tune with InSight</a></div>
+<div><a href="c_using_the_worksheet_function_dialogs.html">Using the worksheet function dialogs</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

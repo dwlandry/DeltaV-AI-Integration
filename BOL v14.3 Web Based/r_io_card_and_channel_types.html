@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Channel types" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="I/O cards, CHARMs, channel types, analog input, analog output, discrete input, discrete output, RTD, ohms, Thermocouple, millivolt, mV, SOE, Isolated Input, Sequence Of Events, Multifunction, Profibus DP, H1 fieldbus, pulse input gating, ENABLE_PI_GATING" name="DC.subject" /><meta content="I/O cards, CHARMs, channel types, analog input, analog output, discrete input, discrete output, RTD, ohms, Thermocouple, millivolt, mV, SOE, Isolated Input, Sequence Of Events, Multifunction, Profibus DP, H1 fieldbus, pulse input gating, ENABLE_PI_GATING" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="c_io_card_and_channel_types" name="DC.Identifier" /><title>Channel types</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_io_config.html" /><link rel="next" href="r_card_parameters.html" /></head><body class="fixed" id="c_io_card_and_channel_types" data-relpath="r_io_card_and_channel_types.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_io_card_and_channel_types"></a>
+
+<h1 class="topictitle1">Channel types</h1>
+<div><div></div>
+ 
+	 <div class="section" id="c_io_card_and_channel_types__section_7DDC93BE881E42E7A37565F8BDD9C4EA"><a name="c_io_card_and_channel_types__section_7DDC93BE881E42E7A37565F8BDD9C4EA"></a> 
+		<p>To specify the location and type of channel associated with the field
+		  measurement, you configure the channel or port type and the Device Signal Tag
+		  (DST) of the IO_IN or IO_OUT parameter. The following channel types are
+		  available. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_io_card_and_channel_types__table_84620F91E493497ABD3BDCA220F18503"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_io_card_and_channel_types__table_84620F91E493497ABD3BDCA220F18503" rules="all" summary=""><caption><span class="tablecap">Channel types for I/O cards and CHARMs</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d2810804e86" valign="top" width="16.666666666666664%">I/O 
+				</th>
+ 
+				<th class="cellrowborder" id="d2810804e89" valign="top" width="16.666666666666664%">Channel or port types 
+				</th>
+ 
+				<th class="cellrowborder" id="d2810804e92" valign="top" width="33.33333333333333%">Description 
+				</th>
+ 
+				<th class="cellrowborder" id="d2810804e95" valign="top" width="33.33333333333333%">Function block use 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>Analog Input card and Analog Input CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Analog Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the analog value present at the channel. 
+				  </p>
+ 
+				  <p>Analog Input CHARMs configured as a 0-20 mA CHARM do not
+					 support open loop detection. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI and PID function blocks as input I/O references.
+					 Used with AO and PID function blocks as readback references to read a 4 to 20
+					 mA signal. The AI CHARM can also read a 0 to 20 mA signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>HART Analog Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the analog value present at the channel and up to four
+					 digital values from a HART field device. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI and PID function blocks as input I/O references.
+					 Used with AI and PID function blocks as readback references to read a 4 to 20
+					 mA signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Serial card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>RS232 port 
+				  </p>
+ 
+				  <p> RS422/485 half duplex port 
+				  </p>
+ 
+				  <p> RS422/485 full duplex port 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the serial value present at the port. Protocol can be
+					 RTU or ASCII. Baud rate options range from 300 to 115,200. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI and PID function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>Analog Output card and Analog Output CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Analog Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Drives the output to an analog value written by the controller
+					 and holds the output at that value. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AO and PID function blocks as output I/O references
+					 when driving a 4 to 20 mA signal. The AO CHARM can drive a 0 to 20 mA signal as
+					 well as a 4 to 20 mA signal. The 0 to 20 mA signal does not support HART. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>HART Analog Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Drives the output to an analog value written by the controller
+					 and holds the output at that value. This channel type also sends HART commands
+					 to gather as many as eight dynamic variables and four device variables from a
+					 HART field device. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with the AO function block as output I/O references. Used
+					 with AO and Alarm Detection function blocks as readback references to read
+					 dynamic and device variables. 
+				  </p>
+ 
+				  <p>The 8 dynamic variables are used in AI function blocks. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>Discrete Input card and Discrete Input CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Discrete Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the discrete value present at the channel. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with DI and Device Control function blocks as input I/O
+					 references when reading a discrete (On/Off) signal. Used with DO function
+					 blocks as a readback I/O reference for a discrete signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Pulse Count Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the number of discrete pulses detected at the channel.
+					 
+				  </p>
+ 
+				  <p>For 
+					 <strong>pre-Series 2</strong> 
+					 <strong>cards</strong>: maximum input frequency for pulses is 125 Hz. 
+				  </p>
+ 
+				  <p>For 
+					 <strong>Series 2 cards</strong>: maximum input frequency for pulses is 75
+					 Hz. 
+				  </p>
+ 
+				  <p>For 
+					 <strong>DI CHARMs:</strong> maximum input frequency for pulses is 10 kHz.
+					 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI and PID function blocks as input I/O references
+					 to read a pulse count. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="3" valign="top" width="16.666666666666664%"> 
+				  <p>Discrete Output card and  Discrete  Output CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Discrete Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Drives the output to a discrete value written by the
+					 controller and holds the output at that value. Outputs immediately reflect the
+					 output value that was received. Upon receiving a configuration that indicates a
+					 change from one type of output to another, the outputs switch to the off state.
+					 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with DO and Device Control function blocks as output I/O
+					 references when driving as discrete signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Momentary Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Produces a momentary pulse by driving the output active for a
+					 specified time period each time the controller writes a value of TRUE (1, On).
+					 Upon receiving a new pulse value, the existing pulse is allowed to terminate
+					 normally before the new value is written. Upon receiving a configuration that
+					 indicates a change from one type of output to another, the outputs switch to
+					 the off state. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with DO and Device Control function blocks as output I/O
+					 references to output a fixed-duration pulse whenever the block writes a TRUE
+					 (1) value to the channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Continuous Pulse Output Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Produces a continuous pulse by driving the channel output
+					 value ON for a percentage of the specified time period. Upon receiving a new
+					 on-time value (which is a percent of the pulse period), the output of the
+					 channel stays on for that amount of time and goes to the OFF state for the
+					 remainder of the pulse period. At that time the channel receives a new on-time
+					 value from the module. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AO and PID function blocks as output I/O references
+					 when driving an actuator requiring discrete pulse input. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="6" valign="top" width="16.666666666666664%"> 
+				  <p>Isolated Input card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Thermocouple 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the temperature of the thermocouple and is Cold
+					 Junction Compensated. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Uncharacterized thermocouple 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the absolute value of the voltage at the screw
+					 terminals, and that voltage is uncompensated for the local cold junction
+					 temperature. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>RTD, ohms 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the temperature of the RTD bulb. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Resistance 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the ohms of the measured element. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>mV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the value of the millivolts at the screw terminals. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Voltage 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the value of the voltage at the screw terminals. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="3" valign="top" width="16.666666666666664%"> 
+				  <p>RTD, ohms card and RTD / Resistance Input CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>RTD Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the temperature of the RTD bulb. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Resistance Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the ohms of the measured element. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>User 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the temperature of the RTD bulb. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>SOE card (Sequence of Events) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Discrete Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the discrete value present at the channel. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with DI and Device Control function blocks as input I/O
+					 references when reading a discrete (On/Off) signal. Used with DO function
+					 blocks as a readback I/O reference for a discrete signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>SOE Discrete Input Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the discrete value present at the channel and captures
+					 up to 32 process-upset events per card and sends the events to a specified
+					 workstation. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with DI and Device Control function blocks as input I/O
+					 references when reading a discrete (On/Off) signal. Used with DO function
+					 blocks as a readback I/O reference for a discrete signal. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>Thermocouple, mV<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> card and
+					 Thermocouple / mV Input CHARM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Thermocouple 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the temperature of the thermocouple and is cold
+					 junction compensated. This card does not support open loop detection. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Uncharacterized Thermocouple 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Reports the absolute value of the voltage at the screw
+					 terminals, and that voltage is uncompensated for temperature (for example, mV
+					 input). 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with AI function blocks as input I/O references. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " rowspan="2" valign="top" width="16.666666666666664%"> 
+				  <p>Multifunction card/Pulse Count Input card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>DI or Pulse Input (PIN) Channel 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Reports the number of discrete pulses or peaks of a sine wave
+					 detected at the channel. Maximum input frequency is 50KHz. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with the Pulse Input function block to read the FREQUENCY
+					 parameter of a DST from a pulse input channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>DI or Pulse Input (PIN) Channel for pulse input gating 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>Channel 1 can be used as an external trigger to enable or
+					 disable the capture of pulses on channels 2, 3, and 4. To enable the capture of
+					 pulses, use DeltaV Explorer to set the ENABLE_PI_GATING card-level parameter to
+					 True. Define channel 1 as DI and channels 2, 3 and 4 as PI. The card status
+					 will be Bad if ENABLE_PI_GATING is True, but the channels are not defined
+					 correctly. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Used with the Pulse Input function block to read the FREQUENCY
+					 parameter of a DST from a pulse input channel. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>AS-Interface card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>2 ports 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Each port functions as an AS-Interface master. The
+					 AS-Interface master controls communications on the network by polling the slave
+					 devices, issuing commands, and receiving and processing replies from the slave
+					 devices. Supports autosensing and auto-addressing of devices.  
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Same as Discrete Input, and Discrete Output cards. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>H1 fieldbus card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>2 ports 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Functions as the Link Active Scheduler (LAS) and manages the
+					 transmission of messages across a fieldbus segment. Each port connects to one
+					 fieldbus segment. Up to 16 devices are supported for each segment. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Supports up to 64 fieldbus function blocks. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>DeviceNet card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>one port 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Supports polled communication as the DeviceNet master and acts
+					 as the interface between the DeviceNet network and the DeltaV system. Supports
+					 up to 61 slave devices and supports the online addition of devices. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Same as Analog Input, Analog Output, Discrete Input, and
+					 Discrete Output cards. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2810804e86 " valign="top" width="16.666666666666664%"> 
+				  <p>Profibus DP card 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e89 " valign="top" width="16.666666666666664%"> 
+				  <p>one port 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e92 " valign="top" width="33.33333333333333%"> 
+				  <p>Functions as the Profibus DP master and acts as the interface
+					 between the Profibus DP network and the DeltaV system. Supports up to 64 slave
+					 devices and supports the online addition of devices. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2810804e95 " valign="top" width="33.33333333333333%"> 
+				  <p>Same as Analog Input, Analog Output, Discrete Input, and
+					 Discrete Output cards. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  When the Thermocouple, mV card is plugged
+						into a Thermocouple terminal block, it functions as a Thermocouple card. When
+						it plugs into an I/O terminal block, it functions as an mV card.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Function block modes" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="function block modes" name="DC.subject" /><meta content="function block modes" name="keywords" /><meta content="c_fblk_general.html" name="DC.Relation" scheme="URI" /><meta content="c_basic_info_about_function_block_modes.html" name="DC.Relation" scheme="URI" /><meta content="c_mode_shedding_logic.html" name="DC.Relation" scheme="URI" /><meta content="c_basic_info_about_cascades.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_modes" name="DC.Identifier" /><title>Function block modes</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_block_scan_rate_fb.html" /><link rel="next" href="c_basic_info_about_function_block_modes.html" /></head><body class="fixed" id="c_fblk_modes" data-relpath="c_fblk_modes.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_modes"></a>
+
+<h1 class="topictitle1">Function block modes</h1>
+<div><div></div>
+ 
+    <p id="c_fblk_modes__functionblockmodes"><a name="c_fblk_modes__functionblockmodes"></a>Function block modes are described below.
+      Supported modes vary with each function block. Some blocks support modes that
+      are not supported in other blocks. 
+    </p>
+ 
+    <p><strong>Out of Service</strong> (OOS): The block algorithm is not active. The
+      output is maintained at the last value or at a specified failure action value. 
+    </p>
+ 
+    <p><strong>Initializing Manual</strong> (IMan): The upstream block of a cascade pair
+      is put into this mode when its downstream partner is in a non-cascade mode.
+      This prevents the upstream block from closing the cascade. When the downstream
+      block returns to a cascade mode (Cas or RCas), the upstream block leaves IMan
+      and returns to its target mode. 
+    </p>
+ 
+    <p><strong>Local Override</strong> (LO): The block is put into this mode when
+      tracking is activated; the output is driven to a value other than that
+      generated by normal block execution. When tracking is deactivated, the block
+      returns to its target mode. 
+    </p>
+ 
+    <p><strong>Manual</strong> (Man): The block output is set directly by the operator. 
+    </p>
+ 
+    <p><strong>Automatic</strong> (Auto): In this mode, the control algorithm of the
+      block is active. An operator-entered setpoint is used in the control algorithm
+      to determine the block output. 
+    </p>
+ 
+    <p><strong>Cascade</strong> (Cas): This mode is similar to Auto except that the
+      setpoint is supplied by another function block through the CAS_IN parameter.
+      The block maintains a back calculation output value (BKCAL_OUT) to provide
+      bumpless mode transfer when the mode is changed. 
+    </p>
+ 
+    <p><strong>Remote Cascade</strong> (RCas): This mode is similar to Cas except that
+      the setpoint is supplied by an external control program through the RCAS_IN
+      parameter. The block maintains a back calculation output value (RCAS_OUT) to
+      provide bumpless transfer when the mode is changed. 
+    </p>
+ 
+    <p><strong>Remote Out</strong> (ROut): This mode is similar to Man except that the
+      OUT value is supplied by an external control program rather than directly by
+      the operator. OUT is supplied through the ROUT_IN parameter. The block
+      maintains a back calculation output value (ROUT_OUT) to provide bumpless
+      transfer when the mode is changed. 
+    </p>
+ 
+    <p>The normal mode is the desired operating mode of the block that is set
+      during configuration. Normal is meant to indicate that this is the mode in
+      which the block should be operating during normal operation. 
+    </p>
+ 
+    <p>The target mode is the mode that is set manually or by another function
+      during operation. These target modes must be listed during configuration as
+      permitted modes for the block. IMan and LO are not selectable target modes.
+      Unless you specify otherwise during configuration, the system assumes that you
+      will write mode changes to the target mode field and read them from the actual
+      mode field. 
+    </p>
+ 
+    <p>The following table lists the supported modes in specific function
+      blocks. In addition, the Books Online information on individual function blocks
+      lists the supported modes for that block. 
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_fblk_modes__table_B284F57A0353446BBC59C4EBC1A7D5FA"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_fblk_modes__table_B284F57A0353446BBC59C4EBC1A7D5FA" rules="all" summary=""><caption><span class="tablecap">Supported modes for function blocks</span></caption><thead align="left"> 
+        <tr valign="top"> 
+          <th class="cellrowborder" id="d992663e84" valign="middle" width="50%"> 
+            <p>Function block 
+            </p>
+ 
+          </th>
+ 
+          <th class="cellrowborder" id="d992663e90" valign="top" width="50%"> 
+            <p>Supported modes 
+            </p>
+ 
+          </th>
+ 
+        </tr>
+</thead>
+ 
+      <tbody> 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Analog Input Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Analog Output Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Out of Service (OOS) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (Rcas) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Arithmetic Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Bias/Gain Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (Rcas) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Control Selector Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Deadtime Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Device Control Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS)<a href="c_fblk_modes.html#c_fblk_modes__footnote1_unique_10"><sup>c_fblk_modes.html#c_fblk_modes__footnote1_unique_10</sup></a> 
+            </p>
+ 
+            <p> Local Override (LO)<a href="c_fblk_modes.html#c_fblk_modes__footnote1_unique_10"><sup>c_fblk_modes.html#c_fblk_modes__footnote1_unique_10</sup></a> 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (RCas)<a href="c_fblk_modes.html#c_fblk_modes__footnote1_unique_10"><sup>c_fblk_modes.html#c_fblk_modes__footnote1_unique_10</sup></a> 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Discrete Input Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Discrete Output Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Out of Service (OOS) 
+            </p>
+ 
+            <p> Local Override (LO)<a href="c_fblk_modes.html#c_fblk_modes__footnote1_unique_10"><sup>c_fblk_modes.html#c_fblk_modes__footnote1_unique_10</sup></a> 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (RCas)<a href="c_fblk_modes.html#c_fblk_modes__footnote1_unique_10"><sup>c_fblk_modes.html#c_fblk_modes__footnote1_unique_10</sup></a> 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Enhanced Control Selector Function Block 
+               
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Fuzzy Logic Control Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (RCas) 
+            </p>
+ 
+            <p> Remote Output (ROut) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Input Selector Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Fieldbus Input Selector Extended Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Integrator Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Lab Entry Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Lead/Lag Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Manual Loader Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Model Predictive Control (MPC) 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Model Predictive Control Professional (MPCPro) 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Cascade 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>MPC Process Simulator 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>H1 Carrier Multiple Discrete Input 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>H1 Carrier Multiple Discrete Output 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Remote Cascade (RCas) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Multiplexed Analog Input 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Neural Network 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>PID Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (RCas) 
+            </p>
+ 
+            <p> Remote Out (ROut) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Ratio Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Local Override (LO) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+            <p> Remote Cascade (RCas) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Signal Characterizer Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d992663e84 " valign="middle" width="50%"> 
+            <p>Splitter Function Block 
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d992663e90 " valign="top" width="50%"> 
+            <p>Out of Service (OOS) 
+            </p>
+ 
+            <p> Initializing Manual (IMan) 
+            </p>
+ 
+            <p> Manual (Man) 
+            </p>
+ 
+            <p> Automatic (Auto) 
+            </p>
+ 
+            <p> Cascade (Cas) 
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_basic_info_about_function_block_modes.html">Basic information about function block modes</a><br />
+</li>
+<li class="ulchildlink"><a href="c_mode_shedding_logic.html">Mode shedding logic</a><br />
+</li>
+<li class="ulchildlink"><a href="c_basic_info_about_cascades.html">Basic information about cascades</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div><div class="p"><a id="c_fblk_modes__footnote1_unique_10"><sup>1</sup></a>  These modes are only
+                visible when the function block is extended to a fieldbus device.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

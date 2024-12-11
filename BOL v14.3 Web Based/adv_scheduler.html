@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="The Scheduler" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adv_intro.html" name="DC.Relation" scheme="URI" /><meta content="adv_scheduler_basics.html" name="DC.Relation" scheme="URI" /><meta content="adv_foreground_and_background_schedules.html" name="DC.Relation" scheme="URI" /><meta content="adv_designing_schedules.html" name="DC.Relation" scheme="URI" /><meta content="adv_writing_custom_scripts_for_the_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="adv_scheduler" name="DC.Identifier" /><title>The Scheduler</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="adv_intro.html" /><link rel="next" href="adv_scheduler_basics.html" /></head><body class="fixed" id="adv_scheduler" data-relpath="adv_scheduler.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="adv_scheduler"></a>
+
+<h1 class="topictitle1">The Scheduler</h1>
+<div><div></div>
+
+    <p id="adv_scheduler__TheScheduler"><a name="adv_scheduler__TheScheduler"></a>There are certain tasks that you may want to perform at a specified time or interval, or when a change occurs in a database value or in any OPC data server value. For example, you may want to run a Visual Basic® for Applications (VBA) script that generates a report at the end of every shift or replaces the currently-displayed picture when a database point exceeds a certain value. The Scheduler allows you to create, edit, monitor, and run both types of actions as scheduled entries. In the Scheduler, you define the time or event that triggers a scheduled entry, and the action, referred to as an operation, that you want to occur.</p>
+
+    <p>DeltaV Operate supplies Script Authoring Experts for common tasks such as replacing a picture. These Experts generate scripts based on the information that you supply to the Expert. You can also write custom scripts for common tasks that do not have Script Authoring Experts. Refer to <a href="vba_intro.html">Writing Scripts</a> for detailed information on writing VBA scripts.</p>
+
+    <p>
+      <strong>Note</strong> You must copy the schedule file (*.EVS) from the ProfessionalPLUS workstation to those Operator Stations that require that schedule.</p>
+
+    <div class="section" id="adv_scheduler__Overview"><a name="adv_scheduler__Overview"></a><h2 class="sectiontitle">Overview</h2>
+      
+      <p>In the configuration environment, schedules are displayed in DeltaV Operate, allowing you to easily create, edit, and start monitoring entries while you work on your project.</p>
+
+      <div class="fignone" id="adv_scheduler__fig_E9A9B5D9B1184B5082574A06FE1FF02F"><a name="adv_scheduler__fig_E9A9B5D9B1184B5082574A06FE1FF02F"></a><div><span class="figcap">Scheduler in the Configuration Environment</span></div>
+        
+        <a name="adv_scheduler__image_8FA29958D887436CBDA6FFE89AEB2A9F"></a><img id="adv_scheduler__image_8FA29958D887436CBDA6FFE89AEB2A9F" src="advf2_1a.gif" />
+      </div>
+
+      <p>In the run-time environment, you can view the status and statistics of the entries in your schedule. You can also control your entries using the Start/Stop, Reset, and Fire Now buttons.</p>
+
+      <div class="fignone" id="adv_scheduler__749255"><a name="adv_scheduler__749255"></a><div><span class="figcap">Scheduler in the Run-time Environment</span></div>
+        
+        <a name="adv_scheduler__image_D909D350E43F404DA749A187432AC135"></a><img id="adv_scheduler__image_D909D350E43F404DA749A187432AC135" src="advf2_2a.gif" />
+      </div>
+
+      <p>The Scheduler provides the following features:</p>
+
+      <a name="adv_scheduler__ul_CA411BE2CB584B38BD04364FC045B251"></a><ul id="adv_scheduler__ul_CA411BE2CB584B38BD04364FC045B251">
+        <li id="adv_scheduler__li_BD044D2DE8FB46259B800125BD7DCB7B"><div class="li_content">
+          <p>Spreadsheet design that allows you to easily view and edit entries.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_25FF8AE78F1D4D7D9BB79C75EA2E5C9C"><div class="li_content">
+          <p>Ability to schedule as many entries as necessary and to trigger them as often as necessary.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_2AB6AD6354B540FA96F2B54B409EAE08"><div class="li_content">
+          <p>Ability to run as a service under Windows.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_FD7B1D44E981421D8EC52D99FFC1ED0F"><div class="li_content">
+          <p>Script Authoring Experts for common events.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_0165F7939080415F98EA5F749D955D82"><div class="li_content">
+          <p>Ability to easily monitor entries and view diagnostic statistics.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_83361E48AD304E4C84D3EB4F0592FC72"><div class="li_content">
+          <p>Ability to trigger scheduled scripts on demand.</p>
+
+        </div></li>
+
+        <li id="adv_scheduler__li_CE81DA5CE96847DFAB7AB906C8B1E065"><div class="li_content">
+          <p>Ability to run schedules as a foreground or background task.</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="adv_scheduler__UsingtheSchedulerwithDeltaVOperate"><a name="adv_scheduler__UsingtheSchedulerwithDeltaVOperate"></a><h2 class="sectiontitle">Using the Scheduler with DeltaV Operate</h2>
+      
+      <p>Individual schedules can be run as a foreground or the background task. When you run a schedule in the foreground, you can easily test and debug scripts in the run-time environment. When an error occurs, VBA launches the Visual Basic Editor (VBE) debugger, where you can edit and save changes to a script. You cannot run scripts in the configuration environment.</p>
+
+      <p>When you run schedules as background tasks, they run regardless of whether DeltaV Operate is in the run-time or configuration environment, and regardless of whether DeltaV Operate is running. If you modify a scheduled entry, it automatically restarts. When DeltaV Operate is in the run-time environment, you can view Scheduler statistics and diagnostic information about each entry in the schedule, including the number of times each entry has been fired and the last time it was fired.</p>
+
+      <p>You can also run the Scheduler in the background as a service under Windows. Because the Scheduler runs as a service, operators can log in and out of a Windows node without affecting scheduled entries, and entries are triggered regardless of whether or not the DeltaV Operate is running.</p>
+
+      <p>You can create multiple schedules, which allows you to organize and easily maintain entries. Each schedule can be configured individually to run as a background or foreground task. Also, as you add events to a schedule, you can choose whether or not to start monitoring them immediately, or to wait until the next time DeltaV Operate starts.</p>
+
+      <p>The Scheduler supports a powerful Find and Replace feature that allows you to quickly and easily modify information in a schedule. For additional information on using the Find and Replace feature, refer to <a href="ws_finding_and_replacing_data.html">Finding and Replacing Data</a>.</p>
+
+      <p>Read the topic <a href="adv_foreground_and_background_schedules.html">Opening Pictures from Background Schedules</a> (and subsequent topics) on running the Scheduler for detailed information.</p>
+
+    </div>
+
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="adv_scheduler_basics.html">Scheduler basics</a><br />
+</li>
+<li class="ulchildlink"><a href="adv_foreground_and_background_schedules.html">Running foreground and background schedules</a><br />
+</li>
+<li class="ulchildlink"><a href="adv_designing_schedules.html">Designing schedules</a><br />
+</li>
+<li class="ulchildlink"><a href="adv_writing_custom_scripts_for_the_scheduler.html">Writing custom scripts for the Scheduler</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

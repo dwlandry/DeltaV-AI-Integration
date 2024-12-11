@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="The Simulate algorithm" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIM_INIT parameter, SIM_FACTOR parameter, SIM_REQUEST parameter, SIM_MODE parameter" name="DC.subject" /><meta content="SIM_INIT parameter, SIM_FACTOR parameter, SIM_REQUEST parameter, SIM_MODE parameter" name="keywords" /><meta content="c_simulate_dvsim.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_62ADA72FB7794E8B828F12CC258BE828" name="DC.Identifier" /><title>The Simulate algorithm</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_simulate_dvsim_apps.html" /><link rel="next" href="c_neural_dvn_main.html" /></head><body class="fixed" id="concept_62ADA72FB7794E8B828F12CC258BE828" data-relpath="c_simulate_dvsim_algo.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_62ADA72FB7794E8B828F12CC258BE828"></a>
+
+<h1 class="topictitle1">The Simulate algorithm</h1>
+<div> 
+	 <p>When a specific node is selected in the SimulatePro interface, changes
+		requested from this interface result in the node parameters SIM_REQUEST,
+		SIM_INIT or SIM_FACTOR being written on the selected node. If the Control
+		Network is selected in the interface, the Simulate application will repeat the
+		write request on all PC nodes. Thus, a single request may impact all nodes, as
+		illustrated below. 
+	 </p>
+ 
+	 <div class="fignone" id="concept_62ADA72FB7794E8B828F12CC258BE828__fig_A9821244130B413BBC4751292B9478DC"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__fig_A9821244130B413BBC4751292B9478DC"></a><div><span class="figcap">Schematic of OPC Commands in a multinode System</span></div> 
+		 
+		<a name="concept_62ADA72FB7794E8B828F12CC258BE828__image_70B42B3814264848A73A8046BC63A7C1"></a><img id="concept_62ADA72FB7794E8B828F12CC258BE828__image_70B42B3814264848A73A8046BC63A7C1" src="multi-node.gif" /> 
+	 </div>
+ 
+	 <p>Each application node or ProfessionalPLUS node in a multinode Simulate
+		application supports the following node parameters (accessed as Workstation
+		name/CONT/Parameter name) to support requests made through the SimulatePro
+		interface or by an application. 
+	 </p>
+ 
+	 <ul> 
+		<li><div class="li_content">SIM_INIT – Command (set to 1) to execute the request made by
+		  SIM_REQUEST. This parameter is automatically reset to 0 when execution of the
+		  request is complete. 
+		</div></li>
+ 
+		<li><div class="li_content"> SIM_REQUEST – Identifies the request. Note that the application
+		  should set this parameter only if SIM_INIT is zero (the last request has been
+		  completed). 
+		  <div class="p"> 
+		  
+<div class="tablenoborder"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__sim_request_codes_table"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_62ADA72FB7794E8B828F12CC258BE828__sim_request_codes_table" rules="all" summary=""><caption><span class="tablecap">SIM_REQUEST codes</span></caption><thead align="left"> 
+		  <tr> 
+			 <th align="center" class="cellrowborder" id="d1334286e58" valign="top" width="16.666666666666664%">Code 
+			 </th>
+ 
+			 <th align="left" class="cellrowborder" id="d1334286e61" valign="top" width="83.33333333333334%">Description 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">1 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Enable SIMULATE_IN connection 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">2 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Disable SIMULATE_IN connection 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">3 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Force first-time initialization 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">4 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Set target mode to Manual (note that the IO
+				fields for the block must be entered) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">5 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Set target mode to Normal (note that the IO
+				fields for the block must be entered) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">6 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Set target mode to Auto (note that the IO
+				fields for the block must be entered) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">7 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Force appropriate blocks&#39; L_TYPE parameter to
+				Direct Independent 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">8 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Enable SIMULATE_IN and force L_TYPE to Direct
+				Independent 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">9 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Save to a file the module and block parameters
+				contained in all modules assigned to the node 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">10 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Restore, from a specified .DAT file, the module
+				and block parameters of all modules assigned to the node 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">11 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Restore from a specified .XML file the module
+				and block parameters of all modules assigned to the node (equivalent to
+				SIM_REQUEST code 15, followed by code 17) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">12 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Do not restore operating and tuning parameters 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">13 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Restore operating parameters 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">14 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Restore tuning parameters 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">15 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Restore operating and tuning parameters 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">16 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Resume selected 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td align="center" class="cellrowborder" headers="d1334286e58 " valign="top" width="16.666666666666664%">17 
+			 </td>
+ 
+			 <td align="left" class="cellrowborder" headers="d1334286e61 " valign="top" width="83.33333333333334%">Resume all 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 </div>
+ 
+	 </div></li>
+ 
+	 <li><div class="li_content">SIM_FACTOR – Factor to apply for simulation faster or slower than real
+		time. A value of 0 stops execution. Positive values are interpreted as speed-up
+		(2 is twice real time execution), negative values are interpreted as 
+		<span class="nowrap">1/SIM_FACTOR</span> slowdown (–30 is 1/30 of real
+		time execution). 
+	 </div></li>
+ 
+	 </ul>
+ 
+	 <div class="section"><h2 class="sectiontitle"> 
+		<strong>SIM_MODE parameter</strong></h2> 
+		 
+		<p> Use the SIM_MODE parameter to allow the client of an OPC DA server to
+		  read a group of tags at a scanning rate faster than the default 500
+		  milliseconds by specifying a requested update rate of 0. You must include the
+		  exact path 
+		  <var class="varname">WorkstationName</var>/SIM_MODE.CV, accessed via OPC. 
+		</p>
+ 
+		<p>Invalid use of the SIM_MODE parameter can generate one of the
+		  following error codes: 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+				<tr valign="middle"> 
+				  <th class="cellrowborder" id="d1334286e259" valign="middle" width="38.095238095238095%">Error code 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1334286e262" valign="middle" width="61.904761904761905%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr valign="middle"> 
+				  <td class="cellrowborder" headers="d1334286e259 " valign="middle" width="38.095238095238095%">DV_E_LICENSE_EXCEEDED 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1334286e262 " valign="middle" width="61.904761904761905%"> The SIM_MODE parameter is not writeable
+					 unless the workstation has a DeltaV Simulate Multinode or DeltaV Simulate
+					 Standalone license. Otherwise, using the SIM_MODE parameter generates an error
+					 message indicating that the OPC Server license limit has been exceeded. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="middle"> 
+				  <td class="cellrowborder" headers="d1334286e259 " valign="middle" width="38.095238095238095%">OPC_E_DUPLICATE_NAME 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1334286e262 " valign="middle" width="61.904761904761905%">The SIM_MODE parameter can be specified for
+					 no more than one group of tags per OPC DA server. 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_62ADA72FB7794E8B828F12CC258BE828__section_B28663E7D7804C9DA95C4CDA1C162585"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__section_B28663E7D7804C9DA95C4CDA1C162585"></a><h2 class="sectiontitle">Saving and Restoring the System State</h2> 
+		 
+		<p>This section explains how the SimulatePro application saves and
+		  restores the system state in a multinode system. 
+		</p>
+ 
+		<p>The DeltaV soft controller on each node supports saving parameter and
+		  block data in files on that node. If the save request is made through the
+		  SimulatePro application these files are collected on the ProfessionalPLUS
+		  workstation. 
+		</p>
+ 
+		<p>When SimulatePro processes the request to save or restore the system
+		  state, it stops module execution on all selected nodes. After a save request,
+		  SimulatePro copies files saved on each node to the \Simulate folder on the
+		  ProfessionalPLUS workstation. 
+		</p>
+ 
+		<p>For DeltaV v14.3 both .DAT and .XML files are saved. The .DAT is a
+		  binary file and is a similar format to that used in v13.3.1. The .XML file is
+		  an XML file which is new for v14.3. 
+		</p>
+ 
+		<p> The files are saved by SimulatePro into a directory structure on the
+		  ProfessionalPLUS workstation. The file structure is: 
+		</p>
+ 
+		<p><br />
+<span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>\<var class="varname">NODE</var>\SIM<var class="varname">mmddyyyyhhmmss</var>.dat</span></span><br />
+<span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>\<var class="varname">NODE</var>\SIM<var class="varname">mmddyyyyhhmmss</var>.check</span></span><br />
+<span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>\<var class="varname">NODE</var>\SIM<var class="varname">mmddyyyyhhmmss</var>.xml</span></span><br />
+<span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>\<var class="varname">NODE</var>\SIM<var class="varname">mmddyyyyhhmmss</var>.xmlcheck</span></span><br />
+<span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>.des</span></span></p>
+ 
+		<p>Where 
+		  <span class="filepath">.dat</span> and 
+		  <span class="filepath">.xml</span> files are the data files, 
+		  <span class="filepath">.check</span> and 
+		  <span class="filepath">.xmlcheck</span> files store configuration information,
+		  and 
+		  <span class="filepath">.des</span> files state the names of the saved nodes and
+		  the description for this time point. The 
+		  <var class="varname">NODE</var> folder indicates the actual name of the node in
+		  the simulation system. 
+		</p>
+ 
+		<div class="important"><span class="importanttitle">Important:</span>  
+		  <p>SimulatePro in releases of DeltaV prior to v14.3 created data files
+			 only with an extension of 
+			 <span class="filepath">.dat</span> instead of 
+			 <span class="filepath">.dat</span> and 
+			 <span class="filepath">.xml</span>. Training system files created in a release
+			 of DeltaV prior to v14.3 appear on the 
+			 <span class="uicontrol">Select Restore Time</span> dialog. After restoring a
+			 training system that includes a 
+			 <span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>\<var class="varname">NODE</var>\SIM<var class="varname">mmddyyyyhhmmss</var>.dat</span></span>
+			 data file, you can save it with the current version of SimulatePro to create
+			 training system files that allow you to use features compatible with this
+			 release of DeltaV. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_62ADA72FB7794E8B828F12CC258BE828__section_CF88EDD52A4D4C2F89D15C1D2F77749B"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__section_CF88EDD52A4D4C2F89D15C1D2F77749B"></a><h2 class="sectiontitle">Saving the System State </h2> 
+		 
+		<p>After you click the 
+		  <span class="uicontrol">Save</span> button, the following happens: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_62ADA72FB7794E8B828F12CC258BE828__ol_A44B134460CC43B6B1D963DC96B6F450"></a><ol id="concept_62ADA72FB7794E8B828F12CC258BE828__ol_A44B134460CC43B6B1D963DC96B6F450"> 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_94C4B75A4D1545D6BF638B00EA68BB86"><div class="li_content">SimulatePro prompts you to
+			 select the nodes to save. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_4264D0DEB48647EB98444BAB37B0FED3"><div class="li_content"> SimulatePro checks the
+			 value of SIM_INIT on each selected node. After the value of SIM_INIT is 0 on
+			 all selected nodes, the following OPC commands are sent to each node: 
+			 <p>SIM_REQUEST = 9<br />
+SIM_FILE = &quot;<span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var></span></span>&quot;<br />
+SIM_INIT = 1</p>
+ 
+			 <p>SimulatePro then creates the 
+				<span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var></span></span>
+				folder on the ProfessionalPLUS workstation. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_32AB63EF2DE24AC6A9488DE6201DA911"><div class="li_content">Each selected node detects
+			 the change of value of parameter SIM_REQUEST, execution of modules is stopped,
+			 and four temporary local files are created: 
+			 <a name="concept_62ADA72FB7794E8B828F12CC258BE828__ul_19B1908C808245B0932DB21691D85982"></a><ul id="concept_62ADA72FB7794E8B828F12CC258BE828__ul_19B1908C808245B0932DB21691D85982"> 
+				<li><div class="li_content">The SIM<var class="varname">mmddyyyyhhmmss</var>.dat file contains the
+				  modules and blocks (in binary format) 
+				</div></li>
+ 
+				<li><div class="li_content">The SIM<var class="varname">mmddyyyyhhmmss</var>.check file contains
+				  configuration information (workstation name, number of modules, and names of
+				  modules) 
+				</div></li>
+ 
+				<li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_76E166B361504A4F90AEBBCC7B95FEB2"><div class="li_content">The 
+				  <span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var>.xml</span></span>
+				  file contains the modules and blocks 
+				</div></li>
+ 
+				<li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_6139A59C72CD44848BBB132BCD53F88D"><div class="li_content">The 
+				  <span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var>.xmlcheck</span></span>
+				  file contains configuration information (workstation name, number of modules,
+				  and names of modules) 
+				</div></li>
+ 
+			 </ul>
+ 
+			 <p>The value of SIM_INIT becomes 0 after the save finishes and module
+				execution resumes. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_A67B28EF55EA49C69985A3DC1BA6D83B"><div class="li_content">SimulatePro checks each
+			 selected workstation until the value of SIM_INIT becomes 0. SimulatePro then
+			 copies the four temporary files from each workstation to the 
+			 <span class="nowrap"><span class="filepath">\DeltaV\DVData\Simulate</span></span> folder
+			 on the ProfessionalPLUS workstation. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_DF3D9ADB8D6B45088BB9EFB34D5F530B"><div class="li_content">SimulatePro creates the 
+			 <span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var>.des</span></span>
+			 file in the same folder and writes the description into the file. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_EBF5C614C517461C8BBC48154B1F92D8"><div class="li_content">SimulatePro removes the
+			 temporary 
+			 <span class="filepath">.xml, dat, check, 
+			 </span> and 
+			 <span class="filepath">.xmlcheck</span> files from each selected workstation. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>Any OPC program you write to save the system state in a multinode
+		  system should work in a similar manner. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_62ADA72FB7794E8B828F12CC258BE828__section_484F6AC80CA54266A6975C9A24B156B0"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__section_484F6AC80CA54266A6975C9A24B156B0"></a><h2 class="sectiontitle">Restoring the System State</h2> 
+		 
+		<p>Restoring the system state from saved files occurs in a similar
+		  manner. For more information about using the 
+		  <span class="wintitle">Restore</span> dialog that appears when you click the 
+		  <span class="uicontrol">Restore</span> button on the 
+		  <span class="uicontrol">Setup</span> tab, refer to the 
+		  <a href="c_restore_dialog.html#c_restore_dialog">Restore dialog</a> topic. 
+		</p>
+ 
+		<div class="p">After you click the 
+		  <span class="uicontrol">Restore</span> button: 
+		<a name="concept_62ADA72FB7794E8B828F12CC258BE828__ol_F406FEA06CD14ABAA3B5C80070EBBB53"></a><ol id="concept_62ADA72FB7794E8B828F12CC258BE828__ol_F406FEA06CD14ABAA3B5C80070EBBB53"> 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_FC03F61BDCD4494696F55E9E047743B1"><div class="li_content">SimulatePro prompts you to
+			 choose the time point to restore from a list showing all available time points.
+			 The description for every time point is also provided. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_23581FF983914E58A39F9F197FFD172E"><div class="li_content">After you choose the time
+			 point, SimulatePro prompts you to choose the nodes to restore. The list of
+			 nodes available for restoring is provided. 
+		  </div></li>
+ 
+		  <li><div class="li_content">The user can select whether to restore a Basic Restore (.DAT) or
+			 Advanced Restore (.XML). 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong>Important:</strong> If the user wishes to restore a batch simulation,
+			 then the user 
+			 <strong>must</strong> choose the Advanced Restore (.XML) and both Operating and
+			 Tuning parameters. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_33E582050F6A4DA5A7A56C170CD09498"><div class="li_content">Click the 
+			 <span class="uicontrol">OK</span> button. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_5FE7FE0E524A4CC689FB4624E0AA6A54"><div class="li_content">Depending on what type of
+			 restore was selected (XML or .DAT), for every selected workstation, Simulate
+			 copies the 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\NodeName\SIM<var class="varname">mmddyyyyhhmmss</var>.xml</span></span>
+			 (or .DAT) and 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\NodeName\SIM<var class="varname">mmddyyyyhhmmss</var>.xmlcheck</span></span>
+			 (or .check) files from the ProfessionalPLUS workstation to the 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate</span></span> folder on
+			 the selected workstations. 
+			 <div class="p">At save time, the database uses the following rules to set the
+				default category for parameters in an 
+				<span class="filepath">.xml</span> file: 
+			 <ul> 
+				<li><div class="li_content"><samp class="codeph">Operating</samp> – Parameters with a functional
+				  category of Operating, IO, Misc, and (if not writeable) Alarm 
+				</div></li>
+ 
+				<li><div class="li_content"><samp class="codeph">Tuning</samp> – Parameters with a functional category
+				  of Tuning and (if writeable) Alarm 
+				</div></li>
+ 
+				<li><div class="li_content"><samp class="codeph">Always</samp> – Module level parameters 
+				</div></li>
+ 
+			 </ul>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_028A443134FF45D985A2575C420DC107"><div class="li_content"> Simulate workstation
+			 checks the value of SIM_INIT on each selected node. After the value of SIM_INIT
+			 is 0 on all selected nodes, it terminates the execution of the nodes and sends
+			 the following parameter to each node: 
+			 <p>SIM_REQUEST = 10 (.DAT) or 11 (.XML)<br />
+SIM_FILE = &quot;<span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var></span></span>&quot;<br />
+SIM_INIT = 1</p>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_BEFD4EC3A70B44A1B9AB08296B71EB03"><div class="li_content">The selected nodes detect
+			 the SIM_REQUEST value change, and then check the configuration on the node
+			 against the information in the 
+			 <span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var>.check</span></span>
+			 (.xmlcheck for .XML) file. 
+			 <p>If they match, it restores the modules and block from the local
+				file with the name indicated by 
+				<span class="nowrap"><span class="filepath">SIM<var class="varname">mmddyyyyhhmmss</var>.xml</span></span>
+				(or .dat). The value of SIM_INIT becomes 0 after the restore finishes and
+				module execution resumes (if this option was selected). 
+			 </p>
+ 
+			 <div class="note"><span class="notetitle">Note:</span>  
+				<p>For XML file types only, to 
+				  <em>not resume</em> a module specified in a saved 
+				  <span class="filepath">.xml</span> data file after it is restored, insert
+				  double slash characters (<samp class="codeph">//</samp>) at the beginning of the line for
+				  the module’s entry in the associated 
+				  <span class="filepath">.xmlcheck</span> file. For example, only the
+				  PID_SIM01 and AI_SIM02 modules are resumed after being restored if the
+				  following 
+				  <span class="filepath">.xmlcheck</span> file (for a workstation named
+				  USA22-UST and containing four modules) is edited as shown: 
+				</p>
+ 
+				<pre class="codeblock">CheckFileRevision
+USA22-UST
+4
+//DI_SIM05
+//DC_SIM0104
+PID_SIM01
+AI_SIM02</pre>
+ 
+				<p>Modules are selectively resumed when the SIM_REQUEST value
+				  equals 16. SimulatePro does not provide a way to send a value of 16 to
+				  SIM_REQUEST. You must use the OPC interface to selectively resume modules after
+				  restoring them. For more information, refer to 
+				  <a href="c_simulate_dvsim_algo.html#concept_62ADA72FB7794E8B828F12CC258BE828__simpro_opc_interface">The SimulatePro OPC Interface </a>.
+				  Modules without 
+				  <samp class="codeph">//</samp> in the 
+				  <span class="filepath">.xmlcheck</span> file are resumed by writing
+				  SIM_REQUEST to 16. Modules with 
+				  <samp class="codeph">//</samp> can be subsequently resumed by writing
+				  SIM_REQUEST to 17. 
+				</p>
+ 
+				<div class="p">The full settings and order to selectively resume modules is: 
+				<ol type="a"> 
+				  <li><div class="li_content">SIM_FACTOR = 0 
+				  </div></li>
+ 
+				  <li><div class="li_content">SIM_FILE = 
+					 <var class="varname">check_file_name</var> (where the 
+					 <span class="filepath">.xml</span> and 
+					 <span class="filepath">.xmlcheck</span> files are in the 
+					 <span class="filepath">DVData\Simulate</span> folder) 
+				  </div></li>
+ 
+				  <li><div class="li_content">SIM_REQUEST = 16 
+				  </div></li>
+ 
+				  <li><div class="li_content">SIM_INIT = 1 (wait until it is back to 0) 
+				  </div></li>
+ 
+				  <li><div class="li_content">SIM_FACTOR = 1 
+				  </div></li>
+ 
+				</ol>
+ 
+				</div>
+ 
+				<div class="p">To finally resume all modules, the settings and order is: 
+				<ol type="a"> 
+				  <li><div class="li_content">SIM_REQUEST = 17 
+				  </div></li>
+ 
+				  <li><div class="li_content">SIM_INIT = 1 (wait until it is back to 0) 
+				  </div></li>
+ 
+				</ol>
+ 
+				</div>
+ 
+				<p>To 
+				  <em>not restore</em> a module specified in a saved 
+				  <span class="filepath">.xml</span> data file, use an XML editing
+				  application to delete the module from the 
+				  <span class="filepath">.xml</span> data file. 
+				</p>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_49F1D879E03B4C4580BBD464ED1C91F3"><div class="li_content">Each node being restored
+			 creates a 
+			 <span class="filepath">Restore.Error</span> file in the 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate</span></span> folder.
+			 This file contains the Node Name and any module names that could not be
+			 restored in a format similar to the following: 
+			 <p>Node Name<br />
+ModuleName1 Deleted<br />
+ModuleName2 Modified<br />
+ModuleName3 New</p>
+ 
+			 <p>Modules that are not restored because they exist in the current
+				download, but not in the saved state, are noted as 
+				<em>New</em>. Modules not in the download but included in the saved
+				state are noted as 
+				<em>Deleted</em>. Modules not restored because of configuration
+				changes are 
+				<em>Modified</em>. Any modules not listed were restored as expected. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_FAC077A88B2B43C2A7C95260803591A0"><div class="li_content">Simulate workstation
+			 checks the value of SIM_INIT of every selected workstation. When the value is
+			 reset to 0 SimulatePro combines the 
+			 <span class="filepath">Restore.Error</span> file results into the
+			 ProfessionalPLUS 
+			 <span class="filepath">SaveRestore.log</span> file and removes the 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\SIM<var class="varname">mmddyyyyhhmmss</var>.xml</span></span>
+			 (or .dat), 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\SIM<var class="varname">SIMmmddyyyyhhmmss</var>.xmlcheck</span></span>
+			 (or .check), and 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\Restore.Error</span></span>
+			 files from every selected workstation. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_EB3FD2840A79451D8D67A28699B8A4A6"><div class="li_content">When restore is complete,
+			 SimulatePro displays a dialog similar to the following. Click the 
+			 <span class="uicontrol">Yes</span> button to open the most recent log file
+			 listing success/failure details. 
+			 <p> 
+				<br /><div class="imageleft"><img class="imageleft" src="simprosumm2.png" /></div><br />
+				
+			 </p>
+ 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> To continue the execution on the node, enable the 
+		  <span class="uicontrol">Resume Nodes</span> option while restoring or click the
+		  
+		  <span class="uicontrol">Resume Execution</span> button after restoring. 
+		</div>
+ 
+		<p>Any OPC program you write to restore the system state in a multinode
+		  system should work in a similar manner. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_62ADA72FB7794E8B828F12CC258BE828__simpro_opc_interface"><a name="concept_62ADA72FB7794E8B828F12CC258BE828__simpro_opc_interface"></a><h2 class="sectiontitle">The SimulatePro OPC Interface </h2> 
+		 
+		<p>The actions that a user may initiate through the SimulatePro interface
+		  may also be taken by an application through OPC. This OPC interface is
+		  available for use with third-party software packages that support OPC. This
+		  section explains the interface and how SimulatePro uses it for various
+		  purposes. 
+		</p>
+ 
+		<p>Each application node or ProfessionalPLUS node supports node
+		  parameters (accessed as Workstation name/CONT/Parameter name) to support
+		  applications that need to make the same requests as are made through the
+		  SimulatePro interface. The OPC interface to these SimulatePro features is based
+		  on applications reading and writing these node parameters: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_62ADA72FB7794E8B828F12CC258BE828__ul_4A8599D2CA2F4E3C95842D8479590985"></a><ul id="concept_62ADA72FB7794E8B828F12CC258BE828__ul_4A8599D2CA2F4E3C95842D8479590985"> 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_86D0FF2F7EE247BC8F3030C698351153"><div class="li_content">SIM_INIT – Initiates the
+			 command (set to 1) to execute the request made by SIM_REQUEST. SimulatePro
+			 resets this parameter to 0 when execution of the request is complete 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_685D0C29EF1E469CB965FA269E5AC133"><div class="li_content"> SIM_REQUEST – Identifies
+			 the request. For more information about SIM_REQUEST codes, refer to 
+			 <a href="c_simulate_dvsim_algo.html#concept_62ADA72FB7794E8B828F12CC258BE828__sim_request_codes_table">SIM_REQUEST codes</a>. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_30F0137CF01A4EB6AF032965C0ED21D8"><div class="li_content">SIM_FACTOR – Defined
+			 multiplication factor for faster/slower than real time simulation. The valid
+			 range is –30 to +30. Positive numbers speed up simulation. For example, a
+			 SIM_FACTOR value of 2 causes execution twice as fast as real time. A negative
+			 number causes execution slower than real time. For example – 10 causes
+			 execution at 1/10 real time execution. A value of 0 (zero) stops execution. 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_3E4A6E64B14A4E45A95BDF52004E8D77"><div class="li_content">SIM_FILE – Defines the
+			 file name used to save the module and function block parameters assigned to the
+			 node 
+		  </div></li>
+ 
+		  <li id="concept_62ADA72FB7794E8B828F12CC258BE828__li_E6B985E785484F6B9DA28CE697CB5B7A"><div class="li_content">SIM_ERROR – integer
+			 indicating an error that occurred during a Save or Restore. Possible values
+			 are: 
+			 <div class="p"> 
+			 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+					 <tr valign="middle"> 
+						<th class="cellrowborder" id="d1334286e889" valign="middle" width="19.047619047619047%">Error code 
+						</th>
+ 
+						<th align="left" class="cellrowborder" id="d1334286e892" valign="middle" width="80.95238095238095%">Description 
+						</th>
+ 
+					 </tr>
+</thead>
+ 
+				  <tbody> 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">0 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">No error 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">1 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Failed to
+						  create file 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">2 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Failed to
+						  find or open file 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">3 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Internal
+						  error in context Save 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">4 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Internal
+						  Error in context Restore 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">5 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Configuration checksum mismatch 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">6 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Assigned
+						  license does not permit the requested operation 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">7 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">No modules
+						  assigned 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">8 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  opening 
+						  <span class="filepath">.check</span> file during Save 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">9 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  opening 
+						  <span class="filepath">.xml</span> file during Save 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">10 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Failed to
+						  create 
+						  <span class="filepath">.xml</span> file during Save 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">11 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Restore
+						  file not found 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">12 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  opening 
+						  <span class="filepath">.check</span> file during Restore 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">13 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  opening Restore file 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">14 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  opening 
+						  <span class="filepath">.xml</span> file during Restore 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">15 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Error
+						  parsing or opening 
+						  <span class="filepath">.xml</span> file during Restore 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">16 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Data file
+						  version error during Restore 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">17 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Batch
+						  Executive did not shut down 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">18 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Batch
+						  Executive did not restart 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">19 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Batch
+						  Executive not running 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">20 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Requested
+						  operation not valid 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">21 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Out of
+						  memory 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td align="center" class="cellrowborder" headers="d1334286e889 " valign="middle" width="19.047619047619047%">103 
+						</td>
+ 
+						<td align="left" class="cellrowborder" headers="d1334286e892 " valign="middle" width="80.95238095238095%">Failed to
+						  find or open file (for .DAT files) 
+						</td>
+ 
+					 </tr>
+ 
+				  </tbody>
+ 
+				</table>
+</div>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>It is the application&#39;s responsibility to check that SIM_INIT is zero
+		  before writing to SIM_REQUEST. Changing SIM_REQUEST while SIM_INIT is set to 1
+		  can result in a request not being completed. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle"> SimulatePro command-line interface to DeltaV Batch </h2> 
+		 
+		<p> To save and restore Batch simulations, use the 
+		  <span class="filepath">DvBatchSimRqstr.exe</span> command-line program in the 
+		  <span class="nowrap"><span class="filepath">DeltaV\bin</span></span> folder. 
+		</p>
+ 
+		<p><strong>Syntax</strong> 
+		</p>
+ 
+		<pre class="codeblock">DvBatchSimRqstr <span class="nowrap">/BEX <var class="varname">Batch_Executive_node</var></span> <span class="nowrap">/RQST <var class="varname">simulate_request_type</var></span> <span class="nowrap">[/SIMF <var class="varname">simulate_folder</var>]</span></pre>
+ 
+		<ul> 
+		  <li><div class="li_content"> The /BEX option is required. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> The /RQST option is required. Specify one of the following
+			 arguments for the 
+			 <var class="varname">simulate_request_type</var> parameter: 
+			 <ul> 
+				<li><div class="li_content">Save 
+				  <p> Invokes the Batch Executive simulate data save operation 
+				  </p>
+ 
+				</div></li>
+ 
+				<li><div class="li_content">Restart 
+				  <p> Invokes the Batch Executive simulate data restore operation 
+				  </p>
+ 
+				</div></li>
+ 
+				<li><div class="li_content">Shutdown 
+				  <p> Invokes the Batch Executive simulate shutdown operation 
+				  </p>
+ 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> If the 
+			 <span class="nowrap">/RQST Save</span> or 
+			 <span class="nowrap">/RQST Restart</span> option is specified, the
+			 /SIMF option is required. The 
+			 <var class="varname">simulate_folder</var> parameter specifies a subfolder of
+			 the 
+			 <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate</span></span> folder on
+			 the Batch Executive node. 
+			 <div class="note"><span class="notetitle">Note:</span>  The 
+				<var class="varname">simulate_folder</var> parameter does not support
+				folder names containing a space character. 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> Options and parameters specified for the 
+		  <span class="filepath">DvBatchSimRqstr.exe</span> program are not
+		  case-sensitive. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Return values</span></caption><thead align="left"> 
+			 <tr> 
+				<th align="center" class="cellrowborder" id="d1334286e1249" valign="top" width="15%">Value 
+				</th>
+ 
+				<th class="cellrowborder" id="d1334286e1252" valign="top" width="85%">Description 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">0 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> The operation completed successfully. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">–1 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> The operation completed with an error. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">–2 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> Missing or invalid /BEX 
+				  <var class="varname">Batch_Executive_node</var> or /SIMF 
+				  <var class="varname">simulate_folder</var> option. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">–3 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> Missing or invalid /RQST 
+				  <var class="varname">simulate_request_type</var> option. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">–4 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> The system is not licensed to run
+				  SimulatePro. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td align="center" class="cellrowborder" headers="d1334286e1249 " valign="top" width="15%">1 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1334286e1252 " valign="top" width="85%"> Program initialization failed. 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">DvBatchSimRqstr Example</h2> 
+		 
+		<p><strong>Preparation</strong> 
+		</p>
+ 
+		<p> In the following example, the name of the ProfessionalPLUS
+		  workstation is 
+		  <span class="nowrap">USA22-UST.</span> 
+		</p>
+ 
+		<div class="p">Create a display with the following datalinks, and make the datalinks
+		  writable: 
+		<ul> 
+		  <li><div class="li_content">DVSYS.USA22-UST/CONT/SIM_REQUEST.F_CV 
+		  </div></li>
+ 
+		  <li><div class="li_content">DVSYS.USA22-UST/CONT/SIM_FILE.A_CV 
+		  </div></li>
+ 
+		  <li><div class="li_content">DVSYS.USA22-UST/CONT/SIM_INIT.F_CV 
+		  </div></li>
+ 
+		  <li><div class="li_content">DVSYS.USA22-UST/CONT/SIM_ERROR.F_CV 
+		  </div></li>
+ 
+		  <li><div class="li_content">DVSYS.USA22-UST/CONT/SIM_FACTOR.F_CV 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>The following example assumes that the Batch Executive and
+			 controller modules are on the ProfessionalPLUS<span>; if controller
+				modules are also on Application Stations, they must also be saved and
+				restored</span>. 
+		  </p>
+ 
+		</div>
+ 
+		<p><strong>Save</strong> 
+		</p>
+ 
+		<div class="p"> To save the Batch Executive state from the 
+		  <span class="nowrap">USA22-UST</span> node, complete the following
+		  steps: 
+		<ol> 
+		  <li><div class="li_content">Confirm that the controller is not busy by checking 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> = 0. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set the Simulate file by writing a string
+			 (<samp class="codeph">SAVEFORBATCH</samp>, for example) to 
+			 <span class="nowrap">USA22-UST/CONT/SIM_FILE.</span> 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set the Simulate Request to the value 9 by writing to 
+			 <span class="nowrap">USA22-UST/CONT/SIM_REQUEST.</span> 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set 
+			 <span class="nowrap">USA22-UST/CONT/SIM_FACTOR</span> = 0 to pause
+			 everything before save. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Save the Batch Executive state from the 
+			 <span class="nowrap">USA22-UST</span> node to a folder
+			 (<span class="filepath">SAVEBATCH</span>, for example) on the Batch Executive node by
+			 running the following command: 
+			 <pre class="codeblock">DvBatchSimRqstr <span class="nowrap">/BEX USA22-UST</span> <span class="nowrap">/RQST Save</span> <span class="nowrap">/SIMF SAVEBATCH</span></pre>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> = 1 to start
+			 the save of the associated controller modules. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> After the controller is completed, 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> returns to 0. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> After SIM_INIT = 0, inspect 
+			 <span class="nowrap">USA22-UST/CONT/SIM_ERROR</span> for any
+			 controller save errors. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set 
+			 <span class="nowrap">USA22-UST/CONT/SIM_FACTOR</span> = 1 to run
+			 everything. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p><strong>Restore</strong> 
+		</p>
+ 
+		<div class="p"> To restore the Batch Executive state to the 
+		  <span class="nowrap">USA22-UST</span> node from the data files in the
+		  
+		  <span class="nowrap"><span class="filepath">DeltaV\DVData\Simulate\SAVEBATCH</span></span>
+		  folder on the Batch Executive node, complete the following steps: 
+		<ol> 
+		  <li><div class="li_content"> Confirm that the controller is not busy by checking 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> = 0. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set the Simulate file by writing the 
+			 <samp class="codeph">SAVEFORBATCH</samp> string to 
+			 <span class="nowrap">USA22-UST/CONT/SIM_FILE.</span> 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set the Simulate Request for restoring by writing the value 15 (to
+			 restore Operating and Tuning parameters) to 
+			 <span class="nowrap">USA22-UST/CONT/SIM_REQUEST.</span> 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set
+			 SIM FACTOR = 0.
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> = 1 to start
+			 the restore. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Remove current batches to prepare the Batch Executive for data
+			 restoration by running the following command: 
+			 <pre class="codeblock">DvBatchSimRqstr <span class="nowrap">/BEX USA22-UST</span> <span class="nowrap">/RQST Shutdown</span></pre>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content">Wait until /SIM_INIT = 0. 
+		  </div></li>
+
+		  <li><div class="li_content">Restore the Batch Executive state from the 
+			 <span class="nowrap">USA22-UST</span> node by running the following
+			 command: 
+			 <pre class="codeblock">DvBatchSimRqstr <span class="nowrap">/BEX USA22-UST</span> <span class="nowrap">/RQST Restart</span> <span class="nowrap">/SIMF SAVEBATCH</span></pre>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> After the controller is completed, 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> returns to 0. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> After SIM_INIT = 0, inspect 
+			 <span class="nowrap">USA22-UST/CONT/SIM_ERROR</span> for any
+			 controller restore errors. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set the Simulate Request by writing the value 17 (resume all) to 
+			 <span class="nowrap">USA22-UST/CONT/SIM_REQUEST.</span> 
+		  </div></li>
+ 
+		  <li><div class="li_content"> Set 
+			 <span class="nowrap">USA22-UST/CONT/SIM_INIT</span> = 1 to start
+			 the resume. 
+		  </div></li>
+ 
+		  <li><div class="li_content">Set SIM FACTOR = 1. 
+		  </div></li>
+
+		  <li><div class="li_content"> After SIM_INIT = 0, inspect 
+			 <span class="nowrap">USA22-UST/CONT/SIM_ERROR</span> for any
+			 controller restore errors. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

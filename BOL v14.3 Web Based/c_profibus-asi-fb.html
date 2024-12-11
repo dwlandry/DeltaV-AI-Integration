@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using Profibus DP, DeviceNet, AS-Interface and EIOC with DeltaV function blocks" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="XHTML" name="DC.Format" /><meta content="c_profibus-asi-fb" name="DC.Identifier" /><title>Using Profibus DP, DeviceNet, AS-Interface and EIOC with DeltaV function blocks</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_accessing_device_methods_through_operate.html" /><link rel="next" href="c_anti_aliasing_filtering.html" /></head><body class="fixed" id="c_profibus-asi-fb" data-relpath="c_profibus-asi-fb.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_profibus-asi-fb"></a>
+
+<h1 class="topictitle1">Using Profibus DP, DeviceNet, AS-Interface<span> and
+		EIOC</span> with DeltaV function blocks</h1>
+<div><div></div>
+ 
+	 <p>The following sections provide information for configuring Profibus DP,
+		DeviceNet, AS-Interface<span>, and EIOC</span> devices with AI, AO,
+		DO, PID and DC function blocks. 
+	 </p>
+ 
+	 <div class="section" id="c_profibus-asi-fb__ProfibusDPAnalogSignalScalingforAIandAOFunctionBlocks"><a name="c_profibus-asi-fb__ProfibusDPAnalogSignalScalingforAIandAOFunctionBlocks"></a><h2 class="sectiontitle">Analog signal scaling for AI and AO function blocks</h2> 
+		 
+		<p>If you check 
+		  <span class="uicontrol">Use Scaling</span> in the 
+		  <span class="wintitle">Properties</span> dialog for a Profibus and DeviceNet
+		  analog signal, the associated AI or AO function block ignores its XD_SCALE
+		  parameter during block execution and the system uses the scaling values defined
+		  for the signal. If the 
+		  <span class="uicontrol">Use Scaling</span> check box is not checked in the
+		  signal&#39;s 
+		  <span class="wintitle">Properties</span> dialog, the corresponding function
+		  block uses the scaling values defined in its XD_SCALE parameter. For an AI
+		  function block, set the L_TYPE parameter to Indirect and configure the
+		  OUT_SCALE parameter&#39;s range and units configured accordingly. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_profibus-asi-fb__section_B6281746873142BC8D351EE4D59AC5A2"><a name="c_profibus-asi-fb__section_B6281746873142BC8D351EE4D59AC5A2"></a><h2 class="sectiontitle">Special considerations for writing output signals</h2> 
+		 
+		<p>If you are writing output signals to a Profibus, DeviceNet,
+		  AS-Interface<span>, and EIOC</span> device that has been configured
+		  for faultstate action, be sure your control module is configured to track the
+		  faultstate action in the device should it occur. For example, if communication
+		  between the DeltaV system and the device is disrupted the device itself may
+		  drive its outputs to a fault state. The DeltaV system must know this has
+		  occurred and take appropriate action so that outputs are not driven to the last
+		  good state by the DeltaV system when communication with the device is restored.
+		  Configure your control module so that this happens, because the Profibus,
+		  DeviceNet, AS-Interface<span>, and EIOC</span> standards do not
+		  support readback of output values. 
+		</p>
+ 
+		<p>Profibus DP, DeviceNet, AS-Interface<span>, and EIOC</span>
+		  output signals should be written in control modules by means of an external
+		  reference parameter, which writes the value to the I/O card even when signal
+		  status is Bad. If you use a Profibus DP, DeviceNet, AS-Interface<span>, or EIOC</span> DST reference in function blocks such as AO, DO,
+		  PID, and DC the value is not written when signal status is Bad. It is important
+		  for the control module to be able to write the faultstate value to the I/O card
+		  when the Profibus DP, DeviceNet, AS-Interface<span>, or EIOC</span>
+		  device is in the fault state, to prevent a bump when the fault state has
+		  cleared. 
+		</p>
+ 
+		<div class="fignone" id="c_profibus-asi-fb__fig_CEC5E6E198E04CA0BAFFB26901DDB59E"><a name="c_profibus-asi-fb__fig_CEC5E6E198E04CA0BAFFB26901DDB59E"></a><div><span class="figcap">Using an analog output DST with the PID function block for
+			 Profibus DP, DeviceNet, and AS-Interface</span></div> 
+		   
+		  <a name="c_profibus-asi-fb__image_180ED37F419C4878B79A7113D4FFECCF"></a><img id="c_profibus-asi-fb__image_180ED37F419C4878B79A7113D4FFECCF" src="Profibus-PID.gif" /> 
+		</div>
+ 
+		<p> Similarly, if you use an EIOC DST reference in function
+		  blocks, the value is not written when signal status is Bad. It is important for
+		  the control module to be able to write the faultstate value to the I/O card
+		  when the EIOC is in the fault state to prevent a bump when the fault state has
+		  cleared. The following image shows one way to create such a control module with
+		  an analog output DST with PID, Condition, and Off-delay Timer function blocks
+		  for use with the EIOC. 
+		</p>
+ 
+		<div class="fignone"><div><span class="figcap"> Using an analog output DST with PID, Condition, and Off-delay
+			 Timer function blocks for EIOC</span></div> 
+		  <br /><div class="imageleft"><img class="imageleft" src="EIOC_PID_Cnd_OffD%20block.png" /></div><br />
+		  
+		</div>
+ 
+		<p>If your Profibus DP, DeviceNet, AS-Interface<span> or
+			 EIOC</span> device goes to a fault state due to a failure in the device or a loss
+		  of communication with the DeltaV system, the status of its DSTs in the DeltaV
+		  system is Bad. The following shows a technique for analog outputs using a
+		  DeltaV PID function block. A condition function block detects Bad status in the
+		  output DST and, after the faultstate time duration, causes the PID block output
+		  to track the faultstate value in the device. After the fault state in the
+		  device clears, the PID block initializes from the faultstate value. 
+		</p>
+ 
+		<p>The following figure shows a similar technique for a discrete output
+		  using the Device Control function block. The condition block is used in the
+		  same way as in the figure. In this case the DC block becomes interlocked to the
+		  0 (passive) state when the device goes to the fault state. When the fault state
+		  clears, SP_D and CAS_IN_D are in the passive state, and can be written to the
+		  active state at the appropriate time. 
+		</p>
+ 
+		<div class="fignone" id="c_profibus-asi-fb__fig_E507A6382AEA4839A619B7EB0B955EF3"><a name="c_profibus-asi-fb__fig_E507A6382AEA4839A619B7EB0B955EF3"></a><div><span class="figcap">Using a discrete output DST with the DC function block</span></div> 
+		   
+		  <a name="c_profibus-asi-fb__image_3D088E127C844AD182E13F23C255C419"></a><img id="c_profibus-asi-fb__image_3D088E127C844AD182E13F23C255C419" src="Profibus-ASI-DC.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="c_profibus-asi-fb__fig_DAD62B6A9734438F9C8FD98684BFD84D"><a name="c_profibus-asi-fb__fig_DAD62B6A9734438F9C8FD98684BFD84D"></a><div><span class="figcap">Using a discrete output DST with Boolean or Expression
+			 Logic</span></div> 
+		   
+		  <a name="c_profibus-asi-fb__image_167234A9C739467B8B9623A265FA907D"></a><img id="c_profibus-asi-fb__image_167234A9C739467B8B9623A265FA907D" src="Profibus-ASI-expr.gif" /> 
+		</div>
+ 
+		<p>The previous figure illustrates using the condition block when you are
+		  writing the discrete output with boolean or expression logic. Whether the
+		  output is maintained or pulsed, the idea is to be sure the output is the device
+		  faultstate value when the device is in the fault state. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

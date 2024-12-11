@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV SimulatePro" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="buttons, SimulatePro, changes, playing back, DeltaV SimulatePro, details grid, execution multiplier, functions, playback, user interface, details grid, module simulation, execution multiplier, real-time, IO References, menus, module simulation, module simulation, details grid, node group, node group, OPC interface, operator changes, Simulate, user interface, conversion utility, converting external I/O references, converting Fieldbus blocks, IO References, user interface" name="DC.subject" /><meta content="buttons, SimulatePro, changes, playing back, DeltaV SimulatePro, details grid, execution multiplier, functions, playback, user interface, details grid, module simulation, execution multiplier, real-time, IO References, menus, module simulation, module simulation, details grid, node group, node group, OPC interface, operator changes, Simulate, user interface, conversion utility, converting external I/O references, converting Fieldbus blocks, IO References, user interface" name="keywords" /><meta content="c_simulate_dvsim.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_17A72659F83D41E09251174B202BF5D4" name="DC.Identifier" /><title>DeltaV SimulatePro</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_simulate_dvsim_using.html" /><link rel="next" href="c_simulate_dvsim_apps.html" /></head><body class="fixed" id="concept_17A72659F83D41E09251174B202BF5D4" data-relpath="c_simulate_dvsim_pro.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_17A72659F83D41E09251174B202BF5D4"></a>
+
+<h1 class="topictitle1">DeltaV SimulatePro</h1>
+<div> 
+	 <p>DeltaV SimulatePro adds capability to the DeltaV Simulate environment.
+		Use DeltaV SimulatePro to coordinate the execution of modules executing in
+		PlantWeb in a PC environment with process simulation packages. From the
+		SimulatePro interface you can do several things: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_17A72659F83D41E09251174B202BF5D4__ul_E238E3C5EB9D43FEB9C326F79190CF3B"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_E238E3C5EB9D43FEB9C326F79190CF3B"> 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_FD6537905EE1489AB3C69AF006869FFE"><div class="li_content">Enable and disable
+		  simulation 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_9CE42020C0FA494E99EF3574B4A5D060"><div class="li_content">Save and restore the state
+		  of the simulation at any time 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_B7219A76F1594C1893F0E315C7AA47DA"><div class="li_content">Set the execution rate of
+		  the simulation 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_72AF02365B334C9BAAA9089393C52B11"><div class="li_content">Play back operator changes
+		  at the specified execution rate 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_8C3D42B72B1B4E3796F8A7BA65BB2B5E"><div class="li_content">Initialize dynamic blocks 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_E5981D9608EF49098D374754314014D5"><div class="li_content">Pause and resume simulation 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_E4F754741CB344198BB0E0F345E80D68"><div class="li_content">View the modules and blocks
+		  in the simulation and change values if desired 
+		</div></li>
+ 
+		<li id="concept_17A72659F83D41E09251174B202BF5D4__li_5BE987D14BB4437B9F31B242D0CA5F34"><div class="li_content">View converted external
+		  reference values and change them if desired. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>SimulatePro includes a user interface from which these actions can be
+		performed. These features can also be accessed by applications through OPC. 
+	 </p>
+ 
+	 <div class="important"><span class="importanttitle">Important:</span> Be sure that Area_A is assigned to the
+		ProfessionalPLUS workstation&#39;s Alarms and Events subsystem. If Area_A is not
+		assigned, the current state of the simulation cannot be saved to a file. 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_9E9CACBCAC7A4EB59F83A3F1D85C55CA"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_9E9CACBCAC7A4EB59F83A3F1D85C55CA"></a><h2 class="sectiontitle">DeltaV SimulatePro user interface </h2> 
+		 
+		<p>After you download the modules to a workstation, launch the
+		  SimulatePro interface from the 
+		  <span class="uicontrol">Start</span> menu by selecting 
+		  <span class="menucascade"><span class="uicontrol">DeltaV Advanced
+				Control</span> &gt; <span class="uicontrol">SimulatePro</span></span>. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> If the SimulatePro interface is already running when
+		  you download, you must close and reopen it to update the information within
+		  SimulatePro. 
+		</div>
+ 
+		<p>The following figure shows the application opened to the 
+		  <span class="uicontrol">Setup</span> tab. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_1D692B3C25754B739F957E91A8E58FAB"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_1D692B3C25754B739F957E91A8E58FAB"></a><div><span class="figcap">The DeltaV SimulatePro user interface</span></div> 
+		   
+		  <br /><a name="concept_17A72659F83D41E09251174B202BF5D4__image_5C36B6BE1235450CB577DB00BED42D86"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_5C36B6BE1235450CB577DB00BED42D86" src="SimulatePro_UI.png" /><br /> 
+		</div>
+ 
+		<p>The tree view in the left pane of the application window contains a
+		  hierarchical view of the simulation nodes in the system. The tree view does not
+		  include controllers. 
+		</p>
+ 
+		<p>In the tree view you can select the entire Control System or
+		  individual nodes. The selection in the tree view determines the node or nodes
+		  affected by actions you take in the right pane. 
+		</p>
+ 
+		<p>The right pane contains the following tabbed dialogs: 
+		  <span class="uicontrol">Setup</span>, 
+		  <span class="uicontrol">IO Blocks</span>, 
+		  <span class="uicontrol">IO References</span>, and 
+		  <span class="uicontrol">Other</span>. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_3A4268ABBDD54AB78F3129C4DA09B675"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_3A4268ABBDD54AB78F3129C4DA09B675"></a><h2 class="sectiontitle">DeltaV SimulatePro menu functions </h2> 
+		 
+		<p>The following functions are found on the SimulatePro 
+		  <span class="uicontrol">File</span> menu: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_02913DEF8FE54BC9B585CB4128B20862"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_02913DEF8FE54BC9B585CB4128B20862"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_A60D8E563B32403298C6139CE81A73EE"><div class="li_content"> 
+			 <span class="uicontrol">Print</span> – Use this command to print current
+			 control simulation information. The 
+			 <span class="wintitle">Print</span> dialog allows the selection of a Summary
+			 Report or a Detail Report. 
+			 <a name="concept_17A72659F83D41E09251174B202BF5D4__ul_75F458D0C0B74F88A44CD96118942C36"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_75F458D0C0B74F88A44CD96118942C36"> 
+				<li id="concept_17A72659F83D41E09251174B202BF5D4__li_E0FBB6232F664775A2E4B7584D8E6E5B"><div class="li_content">The Summary Report
+				  includes: a header containing a title and the time the print request was
+				  issued, as well as the simulation node name, the execution rate, the defined
+				  setup mode, whether or not the L_TYPE will be forced to Direct Independent on
+				  AI blocks and, a summary of the status of all modules in the simulation. 
+				</div></li>
+ 
+				<li id="concept_17A72659F83D41E09251174B202BF5D4__li_95978A6E85684AF2BEB8E1B515DDEE24"><div class="li_content">The Detail Report
+				  prints the block details for the selected module and includes: a header
+				  containing a title and the time the print request was issued, as well as the
+				  name of the selected module and, a summary of the status of all blocks in the
+				  selected module. 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_E8D65967B66C47EA8DA4914AE118BADF"><div class="li_content"> 
+			 <span class="uicontrol">Exit</span> – Use this command to exit the
+			 SimulatePro application. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_BCF7AF9243CB4D3689DF0FCF47A3A97C"><div class="li_content"> 
+			 <span class="uicontrol">Clear History</span> – Use this command to clear the
+			 items from the 
+			 <span class="wintitle">Playback View</span> window and to delete change event
+			 records from the SimulatePro playback database. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The following functions are found on the DeltaV SimulatePro 
+		  <span class="uicontrol">Applications</span> menu: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_B8E0B3E4DA90414D85D16CED4830F9C3"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_B8E0B3E4DA90414D85D16CED4830F9C3"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_6FBBCF1B61B849C9884FC2E042AE4881"><div class="li_content"> 
+			 <span class="uicontrol">Control Studio</span> – Launches the DeltaV Control
+			 Studio application. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_E6DECD155804462597981A4300F52083"><div class="li_content"> 
+			 <span class="uicontrol">Diagnostics</span> – Launches the DeltaV Diagnostics
+			 application. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The following functions are found on the DeltaV SimulatePro 
+		  <span class="uicontrol">Options</span> menu: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_8C8B5DEAB4AE436BA519F001761D6E77"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_8C8B5DEAB4AE436BA519F001761D6E77"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_3D120239F71240B8B9EB19CC3C78E694"><div class="li_content"> 
+			 <span class="uicontrol">Setup</span> – Use this command to define basic
+			 process definitions required for SimulatePro to effectively manage control
+			 simulation commands. Two pieces of information are defined on the 
+			 <span class="wintitle">Options</span> dialog: 
+			 <a name="concept_17A72659F83D41E09251174B202BF5D4__ul_032619CF29024B27B5CCDD0190DC880B"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_032619CF29024B27B5CCDD0190DC880B"> 
+				<li id="concept_17A72659F83D41E09251174B202BF5D4__li_53D19E8BECA94D07A5788D7878F0F04A"><div class="li_content">The setup mode, either
+				  
+				  <span class="uicontrol">MAN</span> or 
+				  <span class="uicontrol">AUTO</span>. 
+				</div></li>
+ 
+				<li id="concept_17A72659F83D41E09251174B202BF5D4__li_351DED65C9BF42E9A322B9AB0CAC9370"><div class="li_content">Whether or not the
+				  L_TYPE of the AI blocks is to be forced to Direct Independent when 
+				  <span class="uicontrol">Enable Simulate</span> is selected. 
+				  <p>These options must be defined following the installation of
+					 SimulatePro. The current value for each option is shown on the status bar. If a
+					 function is selected that requires the Enable Simulation and Setup Mode
+					 information and the options have not yet been defined, the application prompts
+					 the user to define the information. 
+				  </p>
+ 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_A18C3F239B1643DBBFEC0C99B81F2BAB"><div class="li_content"> 
+			 <span class="uicontrol">Auto Save</span> – Opens a dialog from which you can
+			 define settings to automatically save the state of the simulation at periodic
+			 intervals. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_DB195001B0E54F5CB64EC079BBB2287F"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_DB195001B0E54F5CB64EC079BBB2287F"></a><h2 class="sectiontitle">SimulatePro Setup tab</h2> 
+		 
+		<p>The 
+		  <span class="uicontrol">SimulatePro Setup</span> tab contains the following
+		  buttons and controls. 
+		</p>
+ 
+		<p>In the Setup: 
+		  <span class="uicontrol">Control Network</span> area: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_36B1FC740E3A434D93BFA60C5D2DD0D4"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_36B1FC740E3A434D93BFA60C5D2DD0D4"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_429E97E90E9541489A406BD8F3B7D179"><div class="li_content"> 
+			 <span class="uicontrol">Enable Simulate</span> – Sets the SIMULATE parameter
+			 to Enabled on all blocks with direct input reference in the currently selected
+			 node. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_3E7F20031DD14F159F4DC7B7523A0201"><div class="li_content"> 
+			 <span class="uicontrol">Disable Simulate</span> – Sets the SIMULATE parameter
+			 to Disabled on all blocks with direct input reference in the currently selected
+			 node. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_B44DF28AE2B44166845B64808342A9E8"><div class="li_content"> 
+			 <span class="uicontrol">Setup Mode</span> – Sets the target mode to the
+			 currently defined setup mode on all blocks with direct output reference in the
+			 currently selected node. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_045A646937B046EE9F52193143BA6DC2"><div class="li_content"> 
+			 <span class="uicontrol">Normal Mode</span> – Sets the target mode on all
+			 blocks with direct output reference in the currently selected node to each
+			 block&#39;s configured normal mode. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_B4183FBBF3224B9DA471A782FC1C1809"><div class="li_content"> 
+			 <span class="uicontrol">Save</span> – Saves the current state of the
+			 simulation. You are prompted for a description. The file is stamped with the
+			 date and time. 
+			 <div class="note"><span class="notetitle">Note:</span> Before restoring the simulation, download any changes made
+				after saving. 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_8AD0F469949242D19E676BB60E42B450"><div class="li_content"> 
+			 <span class="uicontrol">Restore</span> – Restores the simulation state from a
+			 saved state. This button opens the 
+			 <span class="wintitle">Select Restore Time</span> dialog from which you select
+			 a file for the time and date to restore. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_75D45A54885148708C89B845FC3D8448"><div class="li_content"> 
+			 <span class="uicontrol">Initialize Dynamic Blocks</span> – Resets all dynamic
+			 blocks (DI, DO, PIN, PID, Fuzzy, MPC, MPC-PRO, Rate Limit, Ratio, Splitter,
+			 Integrator, and Filter) in the currently selected node to their initial steady
+			 state conditions. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>In the 
+		  <span class="uicontrol">Real-Time Execution Multiplier</span> area: 
+		</p>
+ 
+		<p>The modules&#39; configured execution period and the Real-Time Execution
+		  Multiplier determine the execution rate of modules running in the workstation.
+		  Time-dependent function blocks use the actual configured execution period in
+		  their calculations. Thus, the behavior of the blocks is such that their
+		  calculations are done faster or slower than real time, depending on the
+		  Real-Time Execution Multiplier. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_75FAD01750AC4F79A12DBA8D2CD5CC14"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_75FAD01750AC4F79A12DBA8D2CD5CC14"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_D710F42CC4AD495D896C17C2D30B3A56"><div class="li_content"> 
+			 <span class="uicontrol">Real-Time Execution Multiplier Slider Bar</span> –
+			 Sets the execution rate for the simulation node. The execution multiplier may
+			 be set anywhere from 30 times slower than real-time to 30 times faster than
+			 real-time. An execution rate of 0 is defined as stopping execution. An
+			 execution rate of 1 is defined as real-time. Regardless of the execution rate,
+			 modules will not run faster than 100ms. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_EC2FEF59F09242DE91C41F2B64A61782"><div class="li_content"> 
+			 <span class="uicontrol">Pause Execution</span> – Saves the current execution
+			 rate of the simulation node and then sets the execution rate to stopped (0).
+			 The slider bar continues to show the saved rate but the execution rate status
+			 bar entry shows Paused. The 
+			 <span class="uicontrol">Pause Execution</span> button is disabled when the
+			 simulation is shown as Paused. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_A2BC01658D1040D49942F868F92EC592"><div class="li_content"> 
+			 <span class="uicontrol">Resume Execution</span> – Sets the execution rate of
+			 the simulation node to the currently saved execution rate. The currently saved
+			 execution rate can be determined from the slider bar or by placing the cursor
+			 over the slider bar, which then displays the exact rate as a tooltip. The 
+			 <span class="uicontrol">Resume Execution</span> button is only enabled when
+			 the simulation is shown as Paused. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>In the 
+		  <span class="uicontrol">Playback Operator Changes</span> area: 
+		</p>
+ 
+		<p>Operator changes can be played back after restoration from a saved
+		  file. The changes are played back at the rate specified by the 
+		  <span class="uicontrol">Real-Time Execution Multiplier</span>. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_477499E750604BABBB3ACB215C19CA80"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_477499E750604BABBB3ACB215C19CA80"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_6F38C8775B9C4F1F8E1115C34AF89345"><div class="li_content"> 
+			 <span class="uicontrol">Playback From</span> – Shows the date and time at
+			 which the selected operator changes were saved. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_354E0E21870B4681A8A6BBB50BBDFFA7"><div class="li_content"> 
+			 <span class="uicontrol">Update</span> – Opens a dialog for selecting a time
+			 frame and refreshes details in the 
+			 <span class="wintitle">Playback View</span> window with values saved in the
+			 SimulatePro playback database during the selected time frame. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_AD81288E7329487A90399140F4CB19C5"><div class="li_content"> 
+			 <span class="uicontrol">Show/Hide Detail</span> – Shows or hides the playback
+			 details. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_2F431BD237F04731B743C1131A4ED934"><div class="li_content"> 
+			 <span class="uicontrol">Playback</span> buttons – Start and cancel the
+			 playback, go to the next change event, and go to the previous and next save
+			 request points. Use the 
+			 <span class="uicontrol">Pause</span> and 
+			 <span class="uicontrol">Resume Execution</span> buttons in the 
+			 <span class="uicontrol">Real-Time Execution Multiplier</span> area for these
+			 functions. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_069012241881420BBB5B8D07F5EB2757"><div class="li_content"> 
+			 <span class="uicontrol">Progress bar</span> – Shows the progress of the
+			 playback. The red markers on the progress bar show the save request points. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_14F6908421B1442EB00D03A0CE8BCA72"><div class="li_content"> 
+			 <span class="wintitle">Playback View</span> window – Lists details about the
+			 change events to be played back. Context menu commands are available from
+			 change event records. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_7ED6CE76A4E34326B6AC23C2A4CEF40E"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_7ED6CE76A4E34326B6AC23C2A4CEF40E"></a><h2 class="sectiontitle">SimulatePro IO Blocks tab</h2> 
+		 
+		<p>The 
+		  <span class="uicontrol">IO Blocks</span> tab contains two grids: The Summary
+		  Module grid and the Summary Details grid. 
+		</p>
+ 
+		<p>The Summary Module grid shows simulation, status, and mode information
+		  for all of the modules in the currently connected simulation node. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_88764029D2D04A92A949B7D532D7E092"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_88764029D2D04A92A949B7D532D7E092"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_1BAFD31931174F16BF0B697BAAD43E64"><div class="li_content"> 
+			 <span class="uicontrol">Sim</span> column – Contains a 
+			 <img src="FrownIcon.png" />
+			 icon for modules that contain at least one relevant block that does not have
+			 simulate enabled. This column applies only to input blocks such as AI and DI or
+			 to control blocks with direct input I/O assigned. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_ECB9D55FF53A45B1BB55F76609D7CF3E"><div class="li_content"> 
+			 <span class="uicontrol">Status</span> column – Contains a 
+			 <img src="FrownIcon.png" />
+			 icon for modules that contain at least one relevant block that has a bad or
+			 uncertain simulate status. This column applies only to input blocks such as AI,
+			 DI, or to control blocks with direct input I/O assigned. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_5BC14DF990564256B65B88251754BA76"><div class="li_content"> 
+			 <span class="uicontrol">Mode</span> column – Contains a 
+			 <img src="FrownIcon.png" />
+			 icon for modules that contain at least one relevant block that is not in normal
+			 mode. This column applies only to output blocks such as AO, DO or to control
+			 blocks with direct output I/O assigned. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Click a column heading to sort the items in the column. 
+		</p>
+ 
+		<p>The Summary Details grid shows detailed information for blocks within
+		  a selected module. Choose a specific module by selecting that module in the 
+		  <span class="uicontrol">Module Summary</span> grid. For these details, the
+		  light gray background indicates fields that do not apply to that particular
+		  block&#39;s connection configuration. The red value indicates failure to go to the
+		  desired state for simulation. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_A713A88DF5DC496F87B69B9D77BC2BCE"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_A713A88DF5DC496F87B69B9D77BC2BCE"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_41AFD1528DA74CE1AF345D4212F21148"><div class="li_content"> 
+			 <span class="uicontrol">Sim</span> column – Shows Enabled or Disabled. For
+			 input blocks and relevant control blocks, when the SIMULATE parameter is not
+			 set the word Disabled is displayed in red. For blocks that are not relevant,
+			 such as output blocks, this field has a light gray background. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_ABDD5AEBA34043F09005B8FA10C0C927"><div class="li_content"> 
+			 <span class="uicontrol">Value</span> column – Shows the current value of the
+			 SIMULATE parameter for a block. For blocks that are not relevant, such as
+			 output blocks, this field has a light gray background. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_B0065E0B7DDA4231A0F60AF8654FA3ED"><div class="li_content"> 
+			 <span class="uicontrol">Status</span> column – Shows the current Status of
+			 the SIMULATE parameter&#39;s value for a block. If the status of the value&#39;s status
+			 value is Bad or uncertain, the status appears in red on input and relevant
+			 control blocks. For blocks that are not relevant, such as output blocks, this
+			 field has a light gray background. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_762FBCE9312F4F2E9812AC44BCE155F6"><div class="li_content"> 
+			 <span class="uicontrol">Mode</span> column – Shows two values separated by a
+			 forward slash for each block. The first value is the target Mode and the second
+			 value is the actual Mode for the block. For blocks that are not relevant, such
+			 as input blocks, this field has a light gray background. 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_E31D09D619AD46AFB86849D960B63AE1"><div class="li_content"> 
+			 <span class="uicontrol">Out</span> column – Shows the current OUT value for
+			 each block. For blocks that are not relevant, such as input blocks, this field
+			 has a light gray background. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Values in the Selected Module grid are changed by
+		  right-clicking the desired cell, and then selecting 
+		  <span class="uicontrol">Edit</span> from the context menu, or by
+		  double-clicking the desired value to change. 
+		</div>
+ 
+		<p>Click a column heading to sort the items in the column. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_C0B1653A63804B1D9313A3B5091B9612"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_C0B1653A63804B1D9313A3B5091B9612"></a><h2 class="sectiontitle">SimulatePro IO References tab</h2> 
+		 
+		<p>The 
+		  <span class="uicontrol">IO References</span> tab contains two grids: The Module
+		  grid and the Parameter Details grid. This tab is useful only if your
+		  configuration contains external references that have been converted using the
+		  Simulate Conversion utility. 
+		</p>
+ 
+		<p>The Module grid lists the modules that have external I/O references
+		  that have been converted. The number of parameters converted in each module is
+		  shown. 
+		</p>
+ 
+		<p>The Parameter Details grid shows the following information for each
+		  converted reference in the module selected in the summary grid: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_19A1F18A602E461197749461AA82FD10"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_19A1F18A602E461197749461AA82FD10"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_12C5DB47169B4016A8B28A35170E3F16"><div class="li_content">The selected module
+			 parameter 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_A217C5CF2C2341F190FF0DC517DC9B42"><div class="li_content">The original I/O reference
+			 path of the module selected in the Module grid 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_8A89F93EF28C46C5B580B40DC1BEEEC2"><div class="li_content">The landing module
+			 parameter 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_F1CCA5B3D1E146F2B3D4CEEF891F5B04"><div class="li_content">The parameter value 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_037C74AC236A4AB7BA5BBF06B29CE819"><div class="li_content">The parameter status 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The module parameters that are created for the converted references
+		  may be changed from this interface or through OPC. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">SimulatePro Other tab</h2> 
+		 
+		<p>The 
+		  <span class="uicontrol">Other</span> tab contains the Other Module Summary
+		  grid. 
+		</p>
+ 
+		<p>The Other Module Summary grid lists the modules that do not have
+		  external I/O references that have been converted. Some control modules and most
+		  equipment and unit modules appear on the Other Module Summary grid. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> All modules that do not appear on the 
+		  <span class="uicontrol">IO Blocks</span> tab or 
+		  <span class="uicontrol">IO References</span> tab are listed on the Other Module
+		  Summary grid. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_1FC6C003C80541BC8F98E67B3B92D9D9"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_1FC6C003C80541BC8F98E67B3B92D9D9"></a><h2 class="sectiontitle">Simulate Conversion utility</h2> 
+		 
+		<p>You must run the Simulate Conversion utility on the workstation before
+		  you run your simulation if your configuration contains: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_17A72659F83D41E09251174B202BF5D4__ul_EA1159A9518146C79CD57CE52D17FC4A"></a><ul id="concept_17A72659F83D41E09251174B202BF5D4__ul_EA1159A9518146C79CD57CE52D17FC4A"> 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_C546C63CC3A6432AACD4203774EE9625"><div class="li_content">Function Blocks that have
+			 been assigned to a fieldbus device 
+		  </div></li>
+ 
+		  <li id="concept_17A72659F83D41E09251174B202BF5D4__li_25189B06A07A4465946EBB185B5C8DA6"><div class="li_content">Parameters and function
+			 block expressions that directly reference I/O channels 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The Simulate Conversion utility converts modules in the database so
+		  that fieldbus blocks and I/O references can be simulated for operator training
+		  and control system checkout. Function blocks that have been assigned to
+		  fieldbus devices are replaced with their equivalent DeltaV blocks. The block
+		  name, parameter values, and links to other blocks are preserved. If an
+		  equivalent block does not exist, as is the case for the FFMAI block, a
+		  composite block is substituted to support off-line simulation in Operator
+		  Interface and Control Studio. Parameters and function block expressions that
+		  perform I/O references are converted to external parameter references. When the
+		  Simulate Conversion utility is run, a module named 
+		  <span class="nowrap">M_<var class="varname">nodename</var></span> is
+		  automatically created under the workstation&#39;s Assigned Modules container. 
+		  <span class="nowrap">M_<var class="varname">nodename</var></span> is
+		  populated with parameters that are referenced by the converted modules&#39;
+		  parameter and function block expressions&#39; I/O references. 
+		</p>
+ 
+		<p>Modules can be downloaded to the workstation after conversion.
+		  Converted function blocks perform just like blocks assigned to fieldbus. For
+		  example, the logical and dynamic behavior of converted blocks is the same as
+		  assigned blocks. To simulate values that would normally be supplied through the
+		  I/O, the user or process simulation application can write to the newly created
+		  external parameter references that replaced the original I/O references. 
+		</p>
+ 
+		<p>To access the Simulate Conversion utility, right-click the workstation
+		  to which modules have been assigned in DeltaV Explorer, and then select 
+		  <span class="uicontrol">Simulate Conversion</span>. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_3F14F7CD766F438C97D5598F20BD2B4B"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_3F14F7CD766F438C97D5598F20BD2B4B"></a><div><span class="figcap">Simulate Conversion utility in DeltaV Explorer</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_74DD7CE9619F4938ACE324BB9DE3FF98"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_74DD7CE9619F4938ACE324BB9DE3FF98" src="SimConvCommand.gif" /> 
+		</div>
+ 
+		<p>After the 
+		  <span class="uicontrol">Simulate Conversion</span> utility runs, Control Studio
+		  can be used to view the changes made in the module. The assigned modules must
+		  be downloaded to view the converted module operation in Operator Interface,
+		  Control Studio, or SimulatePro. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The Simulate Conversion utility modifies the modules in
+		  the simulation system database. No utility is provided to reverse this
+		  conversion. The simulation system should be created from a copy of the actual
+		  system configuration. 
+		</div>
+ 
+		<p>The following sections provide more detail on the conversions. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_5BBFF0267F9B45878D5BC411E634E090"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_5BBFF0267F9B45878D5BC411E634E090"></a><h2 class="sectiontitle">Converting blocks assigned to fieldbus devices</h2> 
+		 
+		<p>Modules that contain function blocks such as AI, PID, AO that are
+		  assigned to a fieldbus device will not execute in DeltaV SimulatePro. The
+		  Simulate Conversion utility converts these blocks to the equivalent DeltaV
+		  function block so they will execute in SimulatePro. The following example shows
+		  the impact of a conversion on blocks assigned to fieldbus devices. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_D5EC9D0E5D33421F9C63545A6235068B"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_D5EC9D0E5D33421F9C63545A6235068B"></a><div><span class="figcap">Blocks assigned to fieldbus converted to equivalent DeltaV
+			 blocks</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_40202D167306488AAE3F4551EEA248A6"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_40202D167306488AAE3F4551EEA248A6" src="BlocksToFB.GIF" /> 
+		</div>
+ 
+		<p>If a module contains fieldbus blocks for which no equivalent DeltaV
+		  block exists, the fieldbus blocks are replaced with composite blocks that
+		  support execution in a simulation environment. For example, the fieldbus
+		  function blocks FF_MAI, FFMDI, and FFMDO have no equivalent DeltaV blocks.
+		  Therefore, the Simulate Conversion utility substitutes the composite blocks
+		  MAI_SIM, MDI_SIM, and MDO_SIM for the fieldbus function blocks. Modules
+		  containing the substituted composite blocks cannot be accessed online using the
+		  SimulatePro interface. The composite blocks that support the conversion reside
+		  in the Simulation folder in the DeltaV Explorer Library/Composite Templates
+		  container. The simulation composite blocks are designed for use in a simulation
+		  environment only and are not meant for use in an online system. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_13AB56766D9B420D8E6D24C5ABE27BB2"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_13AB56766D9B420D8E6D24C5ABE27BB2"></a><div><span class="figcap">Simulation composite blocks</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_D9AF48A8CC3A4E92BC968C24AC8428B6"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_D9AF48A8CC3A4E92BC968C24AC8428B6" src="SimulateFolder.gif" /> 
+		</div>
+ 
+		<p>The converted blocks contain SIMULATE_INx parameters that can be used
+		  to set the simulated OUTx parameters. The following images shows a module
+		  containing fieldbus blocks before and after conversion. Notice the SIMULATE_INx
+		  parameters after conversion and also notice that the block names and
+		  connections between parameters are not changed by the conversion. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_CA15C19486134D2AAFD9B1D68B4E5FA7"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_CA15C19486134D2AAFD9B1D68B4E5FA7"></a><div><span class="figcap">Module before conversion</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_8D5A4F287277402DA685B9992FFA777C"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_8D5A4F287277402DA685B9992FFA777C" src="OrigBlock.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_B0ACF6E274C3464488945B8B0275F3A7"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_B0ACF6E274C3464488945B8B0275F3A7"></a><div><span class="figcap">Module after conversion</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_CBD1E11D95734B14B820000771E0FE9C"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_CBD1E11D95734B14B820000771E0FE9C" src="ConvertedBlock.gif" /> 
+		</div>
+ 
+		<p>After conversion, a process simulation tool can write to the
+		  SIMULATE_IN parameters and simulate the value and status that is normally
+		  provided by the I/O. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_84AA4097C0A043528181328D07B65625"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_84AA4097C0A043528181328D07B65625"></a><h2 class="sectiontitle">Converting parameters and expressions that reference I/O channels
+		  </h2> 
+		 
+		<p>Parameters and function block expressions such as a Calc/Logic block
+		  expression that directly references I/O channels will have Bad status when the
+		  associated module is assigned to a workstation. Also, the value and status
+		  cannot be written. The Simulate Conversion utility allows these parameters to
+		  be used for training and checkout. The conversion changes the I/O references to
+		  parameter references. A module called 
+		  <span class="nowrap">M_<var class="varname">nodename</var></span> that
+		  contains the reference parameters is automatically created on the workstation. 
+		  <var class="varname">Nodename</var> is the name of the workstation on which the
+		  Simulate Conversion utility executed. 
+		</p>
+ 
+		<p> Note that the name of the module that is created by conversion is
+		  limited in length to 16 characters. Make sure that the node names in your
+		  configuration that will be converted will result in unique module names after
+		  truncation (if the workstation name is longer than 14 characters). Also, the
+		  references must refer to valid existing I/O parameters in the database before
+		  you run the Simulate Conversion utility. 
+		</p>
+ 
+		<p>For example, if a module assigned to the node NIGHTENGALE contains the
+		  parameter MYREF1, an I/O reference to CTLR2/IO1/CH05/OVERRANGE_PCT, after
+		  conversion this I/O reference parameter is changed to an external parameter
+		  reference. For this example, the path to the reference parameter is set to
+		  M_NIGHTENGALE/C02CH05OVERRAN1. The name of the parameter referenced in
+		  M_NIGHTENGALE is automatically created from the original I/O path definition
+		  (slashes are removed and the controller, card, channel, and parameter names are
+		  combined and shortened to 16 characters and given a unique name). After the I/O
+		  reference is converted, applications can read or write the converted external
+		  reference parameter to simulate the values and status normally provided by the
+		  I/O. The referenced parameters are automatically defined in the 
+		  <var class="varname">M_NIGHTENGALE</var> module and can be accessed online
+		  using the SimulatePro interface. 
+		</p>
+ 
+		<p>The following example shows a module that contains parameter I/O
+		  references and expressions in a Calc/Logic block that also reference I/O. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_9D783BF2EB034FD6A9DCBD44FA5CF298"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_9D783BF2EB034FD6A9DCBD44FA5CF298"></a><div><span class="figcap">Module containing I/O references before conversion</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_F0DEAFE58E554DBE9744F27455B67388"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_F0DEAFE58E554DBE9744F27455B67388" src="IORefs.gif" /> 
+		</div>
+ 
+		<p>The following image shows the impact on the blocks after the Simulate
+		  Conversion utility is run on the workstation that contains this module. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_DDF7135E0ED943BDBAF1BF42E063DDFA"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_DDF7135E0ED943BDBAF1BF42E063DDFA"></a><div><span class="figcap">Module containing I/O references after conversion</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_292372AB6DEC436180BC600A1BF8C5AE"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_292372AB6DEC436180BC600A1BF8C5AE" src="IORefsConverted.gif" /> 
+		</div>
+ 
+		<p>These converted I/O references can be accessed by examining the 
+		  <span class="nowrap">M_<var class="varname">Nodename</var></span> module or
+		  by selecting the 
+		  <span class="uicontrol">IO Reference</span> tab in the SimulatePro application
+		  as shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_821CBD0D062E4C6780A0AC53CDDD54E5"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_821CBD0D062E4C6780A0AC53CDDD54E5"></a><div><span class="figcap">SimulatePro view of converted I/O references</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_B0297EAFCA794EE7A80963D29359EEE2"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_B0297EAFCA794EE7A80963D29359EEE2" src="IORefsSimulated.png" /> 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_3900CEE56EEF45CF9401821BCEAC8E8A"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_3900CEE56EEF45CF9401821BCEAC8E8A"></a><h2 class="sectiontitle">Creating a training system </h2> 
+		 
+		<p>To create a training system from a configuration with fieldbus
+		  function blocks or parameters or function block expressions that reference I/O,
+		  you must run the Simulate Conversion utility once on every node. If new modules
+		  are added to the node, the Simulate Conversion utility can be re-run and any
+		  new parameters created to replace I/O references will automatically be added to
+		  the existing 
+		  <span class="nowrap">M_<var class="varname">Nodename</var></span> module. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The conversion modifies the configuration database on
+		  the workstation. SimulatePro does not include a utility to convert training
+		  system files back. The Simulate Conversion utility performs a one way transfer
+		  in which the actual system configuration is always the master configuration.
+		  The training system configuration can always be easily and quickly created from
+		  the actual configuration using the Simulate Conversion utility. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_17A72659F83D41E09251174B202BF5D4__section_09997DE5FBF54B3D8223F95FE51C8037"><a name="concept_17A72659F83D41E09251174B202BF5D4__section_09997DE5FBF54B3D8223F95FE51C8037"></a><h2 class="sectiontitle">OPC interface development</h2> 
+		 
+		<p>You can use DeltaV Simulate to support the testing of an application
+		  program&#39;s OPC interface to the DeltaV system. Using this capability, you can
+		  verify the ability to read and write DeltaV parameters. 
+		</p>
+ 
+		<p>Full DeltaV OPC functionality is available in DeltaV Simulate.
+		  Executing modules in the computer allows an OPC interface to be checked out
+		  completely. 
+		  <span>You can use this feature to develop applications that
+			 will execute in the Application Station. 
+		  </span>The design of this OPC interface is illustrated in the following
+		  figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_17A72659F83D41E09251174B202BF5D4__fig_41516F19528D4E7A9ACAD80FA94B87C5"><a name="concept_17A72659F83D41E09251174B202BF5D4__fig_41516F19528D4E7A9ACAD80FA94B87C5"></a><div><span class="figcap">Example OPC interface developed and tested using DeltaV
+			 Simulate</span></div> 
+		   
+		  <a name="concept_17A72659F83D41E09251174B202BF5D4__image_47DE09815F324815AB5CE5EC586CE7B0"></a><img id="concept_17A72659F83D41E09251174B202BF5D4__image_47DE09815F324815AB5CE5EC586CE7B0" src="ichelp0096.gif" /> 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

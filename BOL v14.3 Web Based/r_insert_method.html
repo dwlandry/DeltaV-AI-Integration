@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Insert method (C++)" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC write interface, Insert method (C++), Insert method (C++), OPC write interface" name="DC.subject" /><meta content="OPC write interface, Insert method (C++), Insert method (C++), OPC write interface" name="keywords" /><meta content="r_createTags_method.html" name="DC.Relation" scheme="URI" /><meta content="c_dcom_setup.html" name="DC.Relation" scheme="URI" /><meta content="r_deleteAtTime_method.html" name="DC.Relation" scheme="URI" /><meta content="r_getItemHandles_method.html" name="DC.Relation" scheme="URI" /><meta content="r_error_codes_c_plus.html" name="DC.Relation" scheme="URI" /><meta content="c_sample_client_opc_write_interface.html" name="DC.Relation" scheme="URI" /><meta content="c_using_opc.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_insert_method" name="DC.Identifier" /><title>Insert method (C++)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_getItemHandles_method.html" /><link rel="next" href="r_error_codes_c_plus.html" /></head><body class="fixed" id="r_insert_method" data-relpath="r_insert_method.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_insert_method"></a>
+
+<h1 class="topictitle1">Insert method (C++)</h1>
+<div> 
+    <div class="section" id="r_insert_method__section_714FA2CACC3B446F9D7877CA3FAF7A3C_unique_3"><a name="r_insert_method__section_714FA2CACC3B446F9D7877CA3FAF7A3C_unique_3"></a> 
+      <p> To write a history sample into an existing history tag, use the
+        CreateTags method to create the history tag with a .HDE suffix. You can then
+        use the standard Insert method for the IOPCHDA_SyncUpdate interface in a C++
+        program; for additional information about the following syntax, refer to
+        section 4.4.4.2 in 
+        <cite>OPC Historical Data Access Specification Version 1.20</cite>: 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_insert_method__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_5"><a name="r_insert_method__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_5"></a> 
+      <pre class="codeblock">HRESULT Insert(
+        [in] DWORD <var class="varname">dwNumItems</var>,
+        [in, size_is(<var class="varname">dwNumItems</var>)] OPCHANDLE *<var class="varname">phServer</var>,
+        [in, size_is(<var class="varname">dwNumItems</var>)] FILETIME *<var class="varname">ftTimeStamps</var>,
+        [in, size_is(<var class="varname">dwNumItems</var>)] VARIANT *<var class="varname">vDataValues</var>,
+        [in, size_is(<var class="varname">dwNumItems</var>)] DWORD *<var class="varname">pdwQualities</var>,
+        [out, size_is(, <var class="varname">dwNumItems</var>)] HRESULT **<var class="varname">ppErrors</var>);</pre>
+ 
+      
+<div class="tablenoborder"><a name="r_insert_method__table_FAC497AFAF0E4720A0A991383E430ADE_unique_3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_insert_method__table_FAC497AFAF0E4720A0A991383E430ADE_unique_3" rules="all" summary=""><thead align="left"> 
+            <tr valign="middle"> 
+              <th class="cellrowborder" id="d2804490e82" valign="middle" width="28.57142857142857%">Parameter 
+              </th>
+ 
+              <th class="cellrowborder" id="d2804490e85" valign="middle" width="71.42857142857143%">Description 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">dwNumItems</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%"> The number of history tags
+                to be written to the DeltaV Continuous Historian database. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">phServer</var>
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%">The list of OPC HDA server
+                item handles for the items to be inserted. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">ftTimeStamps</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%">An array of the time stamps
+                for the new values. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">vDataValues</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%">An array of structures
+                which contain the new item values. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">pdwQualities</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%">An array of the Quality
+                flags of the new values. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e82 " valign="middle" width="28.57142857142857%"><var class="varname">ppErrors</var>
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e85 " valign="middle" width="71.42857142857143%"> An array of HRESULTs
+                indicating the success of the individual item. The errors correspond to the
+                handles passed in 
+                <var class="varname">phServer</var>. This indicates whether the data
+                write succeeded. 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+      <div class="important"><span class="importanttitle">Important:</span>  
+        <p>After a history sample is written to the DeltaV Continuous Historian
+          database using the Insert method, you can use the DeleteAtTime method to remove
+          an item from the history database, but the history tag created with the
+          CreateTags method cannot be deleted. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_insert_method__section_E999EB00F7D84426871125CFC2255EBC_unique_2"><a name="r_insert_method__section_E999EB00F7D84426871125CFC2255EBC_unique_2"></a><h2 class="sectiontitle">Rules and operation</h2> 
+       
+      <p> The Insert method performs a security check to verify through the
+        DeltaV runtime services that the user has the HISTORICAL_DATA_ENTRY key in
+        order to write a history samples to existing history tags. For applications
+        running locally to the OPC HDA server, the user will be the interactive Windows
+        user. For applications running remotely, a DCOM query is used to determine the
+        user that made the call. 
+      </p>
+ 
+      <p>After user security is verified, the Insert method validates that all
+        history tags passed contain the following elements as defined by OPC standards:
+        
+      </p>
+ 
+      <a name="r_insert_method__ul_F29CFBD3A7B0425CBB4D4C0611DD0C6E_unique_1"></a><ul id="r_insert_method__ul_F29CFBD3A7B0425CBB4D4C0611DD0C6E_unique_1"> 
+        <li id="r_insert_method__li_AF7E5165BDBB436A8407DFD5E14C2761"><div class="li_content">A valid FILETIME time
+          stamp that can be successfully converted to a SYSTEMTIME that is not in the
+          future at the time the call is made. 
+        </div></li>
+ 
+        <li id="r_insert_method__li_8408352F74D34D92A622364615A806B8"><div class="li_content">A valid VARIANT value must
+          be of variant data type 32-bit float (VT_R4) or string (VT_BSTR). A number that
+          exceeds 32-bit precision is truncated to a float value. Strings are limited to
+          512 characters. 
+        </div></li>
+ 
+        <li id="r_insert_method__li_155BEB0C422F4A2A94CB2933186B4D39"><div class="li_content">A valid DWORD Quality flag
+          expressed as an integer in the range of 0 to 255 inclusive. The Quality flag
+          refers to the parameter status (i.e. the .ST OPC status). For a list of valid
+          Quality flags, refer to 
+          <cite>OPC Data Access Custom Interface Standard Version 2.05A</cite>,
+          section 6.8. Any unrecognized Quality flag defaults to B010000XX
+          (Uncertain/Non-specific). 
+        </div></li>
+ 
+      </ul>
+ 
+      <p> The DeltaV Continuous Historian supports a time resolution of 250
+        milliseconds. Therefore, the time stamps of history samples written to the
+        DeltaV Continuous Historian database using the Insert method are rounded to the
+        nearest 250 ms, as indicated in the following table: 
+      </p>
+ 
+      
+<div class="tablenoborder"><a name="r_insert_method__table_7174AF6DBB1D467A9358716ACF9BBBB0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_insert_method__table_7174AF6DBB1D467A9358716ACF9BBBB0" rules="all" summary=""><thead align="left"> 
+            <tr valign="middle"> 
+              <th class="cellrowborder" id="d2804490e225" valign="middle" width="57.14285714285714%">Time range 
+              </th>
+ 
+              <th class="cellrowborder" id="d2804490e228" valign="middle" width="42.857142857142854%">Rounded value 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e225 " valign="middle" width="57.14285714285714%">0–124 ms 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e228 " valign="middle" width="42.857142857142854%">0 ms 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e225 " valign="middle" width="57.14285714285714%">125–374 ms 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e228 " valign="middle" width="42.857142857142854%">250 ms 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e225 " valign="middle" width="57.14285714285714%">375–624 ms 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e228 " valign="middle" width="42.857142857142854%">500 ms 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e225 " valign="middle" width="57.14285714285714%">625–874 ms 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e228 " valign="middle" width="42.857142857142854%">750 ms 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2804490e225 " valign="middle" width="57.14285714285714%">875–999 ms 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2804490e228 " valign="middle" width="42.857142857142854%">1,000 ms 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+      <div class="p"> 
+        <div class="note"><span class="notetitle">Note:</span> Because the Insert method must evaluate the correct location for
+          the specified time stamp, execution time increases proportionately to the
+          number of current and active data sets in the DeltaV Continuous Historian
+          database. 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_createTags_method.html">CreateTags method (C++)</a></div>
+<div><a href="c_dcom_setup.html">DCOM Setup</a></div>
+<div><a href="r_deleteAtTime_method.html">DeleteAtTime method (C++)</a></div>
+<div><a href="r_getItemHandles_method.html">GetItemHandles method (C++)</a></div>
+<div><a href="r_error_codes_c_plus.html">Return codes for C++ methods</a></div>
+<div><a href="c_sample_client_opc_write_interface.html">Sample clients for the OPC write interface</a></div>
+<div><a href="c_using_opc.html">Using OPC</a></div>
+</div>
+</div><div class="p"><sup>1</sup>  For more information about OPC
+          Remote and DCOM setup, refer to the 
+          <cite>Using OPC</cite> and 
+          <cite>DCOM Setup</cite> topics in the 
+          <cite>Integration</cite> section of 
+          <cite>DeltaV Books Online</cite>.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

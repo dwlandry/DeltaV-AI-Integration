@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Example: exporting and importing a Zone topology" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Zones, export a topology, example, import a topology" name="DC.subject" /><meta content="Zones, export a topology, example, import a topology" name="keywords" /><meta content="c_hardware_alarm_messages.html" name="DC.Relation" scheme="URI" /><meta content="c_exporting_and_importing_zone_topologies.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_example_exporting_and_importing_a_zone_topology" name="DC.Identifier" /><title>Example: exporting and importing a Zone topology</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_import_a_zone_topology.html" /><link rel="next" href="c_deltav_database_overview.html" /></head><body class="fixed" id="c_example_exporting_and_importing_a_zone_topology" data-relpath="c_example_exporting_and_importing_a_zone_topology.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_example_exporting_and_importing_a_zone_topology"></a>
+
+<h1 class="topictitle1">Example: exporting and importing a Zone topology</h1>
+<div><div></div>
+<p>For example, If three DeltaV systems (ZONE_A, ZONE_B, and ZONE_C) are connected with an Inter-Zone Control Network and you want alarms and events from at least some of the areas in each system to appear in other systems, or you want alarms to appear in alarm banners and displays, the general procedure to fully configure Local Shared Areas and Remote Zone Areas in all three systems is:</p>
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_D361202DEDB14D7EBBE105BC8542AD75"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_D361202DEDB14D7EBBE105BC8542AD75">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_0021A2F1B36942CAAC51FEDC223425EC"><div class="li_content">From ZONE_A&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_CA9D6BBD608D47A49E6DD47451AEAFB8"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_CA9D6BBD608D47A49E6DD47451AEAFB8" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_00CEF6FDE4B445ADA8C073DEE7C41477"><div class="li_content">Create ZONE_B and ZONE_C under the Inter-Zone Server</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_58B2EF01BF7C49A2B860D6E33FB68381"><div class="li_content">Share local areas in ZONE_B and ZONE_C</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_8A068EA74CE744CAA19C064AD8668CF3"><div class="li_content">Export the ZONE_A zone topology</div></li>
+
+</ol>
+</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_773E457C1DA04667BD6CB5255A718B67"><div class="li_content">From ZONE_B&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_3FD5BAFC1E1447E3A1DAAA0414C2D50B"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_3FD5BAFC1E1447E3A1DAAA0414C2D50B" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_4E8679E6A0094E35A31807D774AF45CA"><div class="li_content">Create ZONE_A and ZONE_C under the Inter-Zone Server</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_92D5B2080C324B929F5751B35D02690C"><div class="li_content">Share local areas in ZONE_A and ZONE_C</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_61DFFD1AC75A4E45A6D8D35FA9F580B3"><div class="li_content">Export the ZONE_B zone topology</div></li>
+
+</ol>
+</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_2D331EECFA434AF2AE2A50F525CFFD32"><div class="li_content">From ZONE_C&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_26751DC93A674906BACE7F0BEFCC3586"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_26751DC93A674906BACE7F0BEFCC3586" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_B2B61EB6FE7B45CA8A1C78A031C2F0FE"><div class="li_content">Create ZONE_A and ZONE_B under the Inter-Zone Server</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_1B25C7506F704E46977709C731D9C090"><div class="li_content">Share local areas in ZONE_A and ZONE_B</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_18DD6DA7C0F94271B08C82513612CF83"><div class="li_content">Export the ZONE_C zone topology</div></li>
+
+</ol>
+</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_7B0675D113E449D3AA82E779AB929AF5"><div class="li_content">From ZONE_A&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_26451C24028F46C1AD092EF841A052C0"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_26451C24028F46C1AD092EF841A052C0" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_631A0EDD374F47559A48450D5511561D"><div class="li_content">Import the zone topology exported from ZONE_B</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_FAA5217324A340E19C56B443BF2D0F16"><div class="li_content">Import the zone topology exported from ZONE_C.</div></li>
+
+</ol>
+</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_11F5B041004445AB8F153241CC0D032B"><div class="li_content">From ZONE_B&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_95B4CC6327E54D0191E63BE4A5EC8219"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_95B4CC6327E54D0191E63BE4A5EC8219" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_BF04C8D7AEC94DFBB124944D8E8E7046"><div class="li_content">Import the zone topology exported from ZONE_A.</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_96A9BE5A659E4D9EB17535A19D8C8FEA"><div class="li_content">Import the zone topology exported from ZONE_C.</div></li>
+
+</ol>
+</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_1F51DC66A3504E278150D74370F6E16C"><div class="li_content">From ZONE_C&#39;s ProfessionalPLUS workstation:
+<a name="c_example_exporting_and_importing_a_zone_topology__ol_5D7ABB2B51DF409593DD2B1CF280424A"></a><ol id="c_example_exporting_and_importing_a_zone_topology__ol_5D7ABB2B51DF409593DD2B1CF280424A" type="a">
+<li id="c_example_exporting_and_importing_a_zone_topology__li_9162A16269F74F0081112C4E4277A35B"><div class="li_content">Import the zone topology exported from ZONE_A</div></li>
+
+<li id="c_example_exporting_and_importing_a_zone_topology__li_CD7F8E62E444468C8D185985D001C537"><div class="li_content">Import the zone topology exported from ZONE_B.</div></li>
+
+</ol>
+</div></li>
+
+</ol>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_hardware_alarm_messages.html">Hardware alarm messages</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configure DeltaV Smart Switch remote logging using the switch module" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Troubleshoot" name="DC.Coverage" /><meta content="Smart Switch, module, remote logging, syslog server, syslog server, Smart Switch, switch module, remote logging" name="DC.subject" /><meta content="Smart Switch, module, remote logging, syslog server, syslog server, Smart Switch, switch module, remote logging" name="keywords" /><meta content="c_general_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_commissioning_and_monitoring_deltav_smart_switches.html" name="DC.Relation" scheme="URI" /><meta content="c_smart_switch_module_classes.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_smart_switches.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_Module_configure_smart_switch_with_syslog_server" name="DC.Identifier" /><title>Configure DeltaV Smart Switch remote logging using the switch module</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_downloading_java_software_for_use_on_a_management_station.html" /><link rel="next" href="c_smart_switch_run_time_considerations.html" /></head><body class="fixed" id="t_Module_configure_smart_switch_with_syslog_server" data-relpath="t_smart_switch_remote_logging_using_the_module.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_Module_configure_smart_switch_with_syslog_server"></a>
+
+<h1 class="topictitle1">Configure DeltaV Smart Switch remote logging using the switch
+    module</h1>
+<div> 
+    <div class="section"> 
+      <p>Switch events can be written to a standard reporting format log file
+        that is then saved to a remote server as historical data. A syslog server
+        application must be installed on the computer accepting the logging information
+        and that computer&#39;s IP address must be known and accessible to the switch. 
+      </p>
+ 
+      <p>There are many types of syslog server software packages available,
+        from no cost, open source versions to more costly private versions. If your IT
+        department does not have a syslog server preference, we suggest that you
+        install a simple syslog server, such as the free KIWI Syslog Server and use it
+        to collect and archive firewall logs for security analysis. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p>Users are responsible for acquiring the syslog daemon and must
+          install and run the syslog daemon per the manufacturer&#39;s instructions. 
+        </p>
+ 
+        <p>Emerson provides no support or warranty for any syslog daemon. The
+          KIWI Syslog Server has been tested to work with the DeltaV system and the
+          DeltaV Smart Switch. The free KIWI Syslog Server for Windows is available at 
+          <a href="http://www.kiwisyslog.com/" target="_blank">http://www.kiwisyslog.com/</a>. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <ol><li class="stepexpand"> 
+        <span>Open DeltaV Explorer. 
+        </span> 
+      </li>
+<li class="stepexpand"> 
+        <span>Select the switch module. 
+        </span> 
+          
+          <p>There are two methods to setting the SYSLOG_IP_ADDR parameter&#39;s
+            value. 
+          </p>
+ 
+         
+        <ul> 
+          <li><div class="li_content">At the class level - to do this, select the switch module
+            class (under 
+            <span class="menucascade"><span class="uicontrol">Libary</span> &gt; <span class="uicontrol">Advanced
+                Definitions</span> &gt; <span class="uicontrol">Control Module
+                Classes</span> &gt; <span class="uicontrol">Switches</span></span>. 
+          </div></li>
+ 
+          <li><div class="li_content">At the instance level - to do this, select the instance of
+            the switch module in the area. The module class must have the 
+            <span class="uicontrol">Allow instance value to be configured</span> option
+            selected. 
+          </div></li>
+ 
+        </ul>
+ 
+          
+          <div class="tip"><span class="tiptitle">Tip:</span>  
+            <p>When managing switches on multiple networks, select the 
+              <span class="uicontrol">Allow instance value to be configured</span>
+              option in the module class. This allows you to configure different IP addresses
+              for each switch, as not all switches will be able to connect to the same syslog
+              server because the subnets will be different on the switches. 
+            </p>
+ 
+          </div>
+ 
+         
+      </li>
+<li class="stepexpand"> 
+        <span>Right click the SYSLOG_IP_ADDR parameter and select properties. 
+        </span> 
+          
+          <div class="note"><span class="notetitle">Note:</span>  
+            <p>This parameter is only visible in the switch module instance if
+              the module class has the 
+              <span class="uicontrol">Allow instance value to be configured</span>
+              option selected. 
+            </p>
+ 
+          </div>
+ 
+         
+      </li>
+<li class="stepexpand"> 
+        <span>Enter the IP address of the syslog server computer in the 
+          <span class="uicontrol">Value:</span> field. 
+        </span> 
+      </li>
+<li class="stepexpand"> 
+        <span>Click OK. 
+        </span> 
+      </li>
+<li class="stepexpand"> 
+        <span>Download the switch. 
+        </span> 
+          
+          <p>If configuring the module class and no switches are commissioned
+            yet, the download during commissioning will set this address. 
+          </p>
+ 
+         
+      </li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_general_parameters.html">General parameters (Smart Switch)</a></div>
+<div><a href="c_commissioning_and_monitoring_deltav_smart_switches.html">Commissioning and monitoring DeltaV Smart Switches</a></div>
+<div><a href="c_smart_switch_module_classes.html">Smart Switch module classes</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

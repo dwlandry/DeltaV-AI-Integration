@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Understanding fieldbus block errors" name="DC.Title" /><meta content="c_fieldbus_device_general_info.html" name="DC.Relation" scheme="URI" /><meta content="c_cannot_download_module.html" name="DC.Relation" scheme="URI" /><meta content="c_troubleshoot_ff_loops.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_89" name="DC.Identifier" /><title>Understanding fieldbus block errors</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_cannot_save_fb_module.html" /><link rel="next" href="c_intermittent_fb_block_errors.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_89" data-relpath="c_do_not_understand_fb_block_errors.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89"></a>
+
+<h1 class="topictitle1">Understanding fieldbus block errors</h1>
+<div>
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__IntermittentBlockErrors"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89__IntermittentBlockErrors"></a>
+      
+      <div class="p">Function block errors show up as yellow question marks (<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89__image_86A054C36D6D46E9BD94865C40EEB0A4"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__image_86A054C36D6D46E9BD94865C40EEB0A4" src="Question2.gif" />) in Control Studio online. DeltaV function blocks, including those capable of running in fieldbus devices, report standard function block error information through the BLOCK_ERR parameter. Each block&#39;s BLOCK_ERR parameter is documented in Books Online. Function blocks that run in fieldbus devices report additional, device-specific block error information through BLOCK_ERR. You must refer to the device documentation to understand these device-specific errors. Also, more information on device block errors may be available from the device&#39;s Status/Conditions context menu item. Among the most common block errors seen with the DeltaV system are Out of Service, Input Failure/Bad PV, Configuration Error, Link Configuration Error:<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_FBF5758AB2744B9599AEBAE87D5EE3D7"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_FBF5758AB2744B9599AEBAE87D5EE3D7"><li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_8C6B682A186645BF8E8C2D93F4C1771C"><div class="li_content"><p>
+        <strong>Out of Service:</strong> One or more of the blocks (function block, Resource block, Transducer block) is in Out of Service (OOS) mode. To see the function block mode, look at its MODE parameter in Control Studio. To see the Resource and Transducer blocks&#39; mode, select the device in DeltaV Explorer, select <span class="menucascade"><span class="uicontrol">Status</span> &gt; <span class="uicontrol">Conditions</span></span>, and look for the mode information.</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_114F22B35D0D452F8D48865E37074DAF"><div class="li_content"><p>
+        <strong>Input Failure/Bad PV:</strong> Often, this is caused by an incorrect channel, incorrect choices in the XD_SCALE parameter, failures in the Transducer block, or the Transducer block is in OOS mode.</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_7CE4A80D794841C1BC4A55E4544554C0"><div class="li_content"><p>
+        <strong>Configuration Error:</strong> Most likely this is caused by an incorrect channel and/or incorrect choices in the XD_SCALE parameter.</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_8EC62DACD5964D25AAC38A6528779311"><div class="li_content"><p>
+        <strong>Link Configuration Error:</strong> This is often device-specific and could mean that the device does not accept a certain configuration or a link is improperly configured. For example, not all devices support a configuration in which two fieldbus links from one function block output running in one fieldbus device are connected to two inputs in another device. Refer to the device documentation&#39;s description for this block error.</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_1505FCCD9D1349E9867F35BC0CCF0757"><div class="li_content"><p>
+        <strong>Device-Specific Errors</strong>
+      </p>
+<p>The following errors refer to internal device errors that may be serious and may require service or device replacement. Refer to the device documentation if you encounter these errors:</p>
+<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_B73A81AA52984850B367242675C26D05"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_B73A81AA52984850B367242675C26D05"><li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_EB4C35CCDAA74B318565869E4BBCCD8B"><div class="li_content"><p>Lost NV Data</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_FC7091A851514D6CBB48303C587E38E5"><div class="li_content"><p>Lost Static Data</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_7545C0046EA54F3698BBD92A6AC7E262"><div class="li_content"><p>Memory Failure</p>
+</div></li>
+</ul>
+<p>The following errors are used by the manufacturer to alert users of a possible device problem and to alert users that the device needs maintenance now or in the near future:</p>
+<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_DBA904E10E7C4FB689E9AF020666997E"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__ul_DBA904E10E7C4FB689E9AF020666997E"><li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_036DB04DED5B4D0BBFBB502991FE16AA"><div class="li_content"><p>Device Needs Maintenance Now</p>
+</div></li>
+<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_89__li_0D996E6787D9469A8DF6FEA3FE2CB116"><div class="li_content"><p>Device Needs Maintenance Soon</p>
+</div></li>
+</ul>
+</div></li>
+</ul>
+</div>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fieldbus_device_general_info.html">Fieldbus device general Information</a></div>
+<div><a href="c_cannot_download_module.html">Cannot download a fieldbus module</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

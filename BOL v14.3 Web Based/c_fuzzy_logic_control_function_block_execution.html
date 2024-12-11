@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Fuzzy Logic Control function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="nonlinearity, membership functions, singletons, fuzzy logic, rules" name="DC.subject" /><meta content="nonlinearity, membership functions, singletons, fuzzy logic, rules" name="keywords" /><meta content="c_fuzzy_dvfuz_eval.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_fuzzy.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fuzzy_logic_control_function_block_execution" name="DC.Identifier" /><title>Fuzzy Logic Control function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_fuzzy.html" /><link rel="next" href="c_fuzzy_logic_control_function_block_modes.html" /></head><body class="fixed" id="c_fuzzy_logic_control_function_block_execution" data-relpath="c_fuzzy_logic_control_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fuzzy_logic_control_function_block_execution"></a>
+
+<h1 class="topictitle1">Fuzzy Logic Control function block execution</h1>
+<div><div></div>
+
+    <p id="c_fuzzy_logic_control_function_block_execution__blockexecutionfuzzylogiccontrolflcfunctionblock"><a name="c_fuzzy_logic_control_function_block_execution__blockexecutionfuzzylogiccontrolflcfunctionblock"></a>The nonlinearity built into the FLC function block reduces overshoot and settling time, achieving tighter control of the process loop. Specifically, the FLC function block treats small control errors differently from large control errors and penalizes large overshoots more severely. It also severely penalizes large changes in the error, helping to reduce oscillation.</p>
+
+    <p>This section describes how the Fuzzy Logic Control block functions.</p>
+
+    <p>
+      <strong>Two membership functions</strong>
+    </p>
+
+    <p>The FLC function block uses two membership functions: the input signals are error and change in error, and the output signal is the change in control action. The relations among these three variables represent a nonlinear controller. The nonlinearity results from a translation of process variables to a fuzzy set (fuzzification), rule inference, and retranslation of a fuzzy set to a continuous signal (defuzzification).</p>
+
+    <p>The two membership functions for error, change in error and change in output are <strong>negative</strong> and <strong>positive</strong>. The membership scaling (<em>S</em><sub><em>e</em></sub>and <em>S</em>Δ<em><sub>e</sub></em>) and the error value and change in error, respectively, determine the degree of membership.</p>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_452EEF4062E44D9399C6E178A4D0151B"><a name="c_fuzzy_logic_control_function_block_execution__fig_452EEF4062E44D9399C6E178A4D0151B"></a><div><span class="figcap">Error membership functions</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_D9B9FF27467347C1A282559FDDD0DFAB"></a><img id="c_fuzzy_logic_control_function_block_execution__image_D9B9FF27467347C1A282559FDDD0DFAB" src="fbhelp0143.gif" />
+    </div>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_7B08B9B23F35481D86C3F103A11F963F"><a name="c_fuzzy_logic_control_function_block_execution__fig_7B08B9B23F35481D86C3F103A11F963F"></a><div><span class="figcap">Change in error membership functions</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_4BDBA6F5567E4D409080F70D4E1D3034"></a><img id="c_fuzzy_logic_control_function_block_execution__image_4BDBA6F5567E4D409080F70D4E1D3034" src="fbhelp0144.gif" />
+    </div>
+
+    <p>The change in output membership functions are called <strong>singletons</strong>. They represent fuzzy sets whose support is a single point with a membership function of one. The membership scaling (<em>S</em>Δ<sub><em>u</em></sub>) determines the magnitude of output change for a given error and change in error.</p>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_58F9900FC8D940DDA578E0A45FEFFBC8"><a name="c_fuzzy_logic_control_function_block_execution__fig_58F9900FC8D940DDA578E0A45FEFFBC8"></a><div><span class="figcap">Change in output singleton membership functions</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_A220E298743241B1A8BD7FFEA82E1582"></a><img id="c_fuzzy_logic_control_function_block_execution__image_A220E298743241B1A8BD7FFEA82E1582" src="fbhelp0145.gif" />
+    </div>
+
+    <p>
+      <strong>Four fuzzy logic rules</strong>
+    </p>
+
+    <p>There are four fuzzy logic rules that the FLC function block uses for a reverse acting controller.</p>
+
+    
+<div class="tablenoborder"><a name="c_fuzzy_logic_control_function_block_execution__table_29FB1D41FB15474D8F8A9A83BD6EFFCB"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_fuzzy_logic_control_function_block_execution__table_29FB1D41FB15474D8F8A9A83BD6EFFCB" rules="all" summary=""><caption><span class="tablecap">DeltaV fuzzy logic rules</span></caption>
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1060981e141" valign="top" width="NaN%">
+              <p>Number</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1060981e147" valign="top" width="NaN%">
+              <p>Rule</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1060981e141 " valign="top" width="NaN%">
+              <p>Rule 1</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1060981e147 " valign="top" width="NaN%">
+              <p>If error is N and change in error is N, make change in output P.</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1060981e141 " valign="top" width="NaN%">
+              <p>Rule 2</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1060981e147 " valign="top" width="NaN%">
+              <p>If error is N and change in error is P, make change in output ZO.</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1060981e141 " valign="top" width="NaN%">
+              <p>Rule 3</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1060981e147 " valign="top" width="NaN%">
+              <p>If error is P and change in error is N, make change in output ZO.</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1060981e141 " valign="top" width="NaN%">
+              <p>Rule 4</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1060981e147 " valign="top" width="NaN%">
+              <p>If error is P and change in error is P, make change in output N.</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    
+    <p>
+      <strong>Fuzzy Logic Control nonlinear PI relationship</strong>
+    </p>
+
+    <p>The two membership functions associated with each input variable and three membership functions for the output variable makes the FLC function block nonlinear in its response.</p>
+
+    <p>For regions where the absolute error is greater than the error scaling factor or the absolute change in error is greater than the change in error scaling factor, the values for error and change in error are clipped at the error scaling factor and change in error scaling factor, respectively. The following figure shows an example FLC curve that illustrates how the change in controller gain is smooth and continuous using only two input membership functions and three output membership functions.</p>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_54921A6A8B684416A0AAEE8D3188EC9C"><a name="c_fuzzy_logic_control_function_block_execution__fig_54921A6A8B684416A0AAEE8D3188EC9C"></a><div><span class="figcap">FLC function block&#39;s nonlinear relationship</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_C953934CAEA243F9B6FF40EEDFA86B33"></a><img id="c_fuzzy_logic_control_function_block_execution__image_C953934CAEA243F9B6FF40EEDFA86B33" src="fbhelp0146.gif" />
+    </div>
+
+    <p>The dark line shows the FLC function block&#39;s nonlinear relationship when the error is equal to the change in error. The straight line through the origin shows the linear relationship of a standard PI controller. As the error and change in error increase, the change in output of a standard PI controller increases linearly. Note that the gain of the FLC function block is similar to the gain of the PI controller when the error and change in error are small. The gain of the FLC function block increases gradually as the error and change in error increase.</p>
+
+    <p>The nonlinearity built into the FLC function block reduces overshoot and settling time, achieving tighter control of the process loop. To help anticipate a rapid change in the process with the FLC function block, derivative action is provided in the feedback path of the loop, as shown in the following figure.</p>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_08EE949EE773491C9286C7D4E0FEC807"><a name="c_fuzzy_logic_control_function_block_execution__fig_08EE949EE773491C9286C7D4E0FEC807"></a><div><span class="figcap">Fuzzy Logic Control with derivative action</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_664B7215D83F49E5965CA293712BA2B8"></a><img id="c_fuzzy_logic_control_function_block_execution__image_664B7215D83F49E5965CA293712BA2B8" src="fbhelp0147.gif" />
+    </div>
+
+    <p>The FLC function block treats small control errors differently from large control errors and penalizes large overshoots more severely. It also severely penalizes large changes in the error, helping to reduce the oscillation.</p>
+
+    <div class="fignone" id="c_fuzzy_logic_control_function_block_execution__fig_7033E49572D8459B84B516FC01FE1479"><a name="c_fuzzy_logic_control_function_block_execution__fig_7033E49572D8459B84B516FC01FE1479"></a><div><span class="figcap">Process variable oscillation example</span></div>
+      
+      <a name="c_fuzzy_logic_control_function_block_execution__image_24AF8DEB351640EC9E01C1442860A407"></a><img id="c_fuzzy_logic_control_function_block_execution__image_24AF8DEB351640EC9E01C1442860A407" src="fbhelp0148.gif" />
+    </div>
+
+    <p>The above figure depicts how an FLC function block reacts to overshoot and oscillation. At points B, D, and F, where overshoot occurs, the FLC function block applies stronger control actions to bring the variable back to the setpoint. At points A, C, and E, where large changes in error occur and are dominant, the FLC function block applies stronger corrective actions to reduce oscillation.</p>
+
+    <p>This type of nonlinearity allows the FLC function block to provide better control performance than standard PID control.</p>
+
+    <p>
+      <strong>Establishing scaling factors</strong>
+    </p>
+
+    <p>Tune can be used to establish the scaling factors (<em>S<sub>e</sub></em>, <em>S</em>Δ<sub><em>e</em></sub>, and <em>S</em>Δ<sub><em>u</em></sub>). For a small control error and setpoint change less than a nominal value (Δ<em>Y<sub>sp</sub></em>), the FLC function block scaling factors are related to the proportional gain (Kp) and reset (Ti), which would be used in a PI block executing at a one (1) second scan rate (Δ<em>t</em>) to control the same process. Refer to the following equations:</p>
+
+    <p><a name="c_fuzzy_logic_control_function_block_execution__image_27FBAAFD01224BDE877867BBE6AB36D9"></a><img id="c_fuzzy_logic_control_function_block_execution__image_27FBAAFD01224BDE877867BBE6AB36D9" src="fbhelp0149.gif" /></p>
+<p><a name="c_fuzzy_logic_control_function_block_execution__image_0C3243FC888A4A32A9901E435B7C35FC"></a><img id="c_fuzzy_logic_control_function_block_execution__image_0C3243FC888A4A32A9901E435B7C35FC" src="fbhelp0150.gif" /></p>
+<p><a name="c_fuzzy_logic_control_function_block_execution__image_E4B424C856474E2681C7CF5A4378DFFE"></a><img id="c_fuzzy_logic_control_function_block_execution__image_E4B424C856474E2681C7CF5A4378DFFE" src="fbhelp0151noDT.gif" /></p>
+
+    <p>where:</p>
+
+    <p>
+      <em>S</em>Δ<em><sub>e</sub>
+      </em> = change of error scaling</p>
+
+    <p>
+      <em>S</em><em><sub>e</sub>
+      </em> = error scaling</p>
+
+    <p>
+      <em>S</em>Δ<em><sub>u</sub>
+      </em> = change of controller output scaling</p>
+
+    <p>
+      <em>S</em><em><sub>e0</sub>
+      </em> = error scaling for a one (1) second scan rate</p>
+
+    <p>Beta is a function of process deadtime (DT) and ultimate period or time constant (TC) and has values in the following range:</p>
+
+    <p><a name="c_fuzzy_logic_control_function_block_execution__image_959ED0922D774A8A8CA5C0335E6CFFF6"></a><img id="c_fuzzy_logic_control_function_block_execution__image_959ED0922D774A8A8CA5C0335E6CFFF6" src="fbbetaequation.gif" /></p>
+
+    <p>The approximate formula for calculating beta is as follows:</p>
+
+    <p><a name="c_fuzzy_logic_control_function_block_execution__image_84BC014A63DC411DAF0E2F5DB6E8A9E1"></a><img id="c_fuzzy_logic_control_function_block_execution__image_84BC014A63DC411DAF0E2F5DB6E8A9E1" src="fbbetaequation2.gif" /></p>
+
+    <p>The Fuzzy Logic Control function block accounts for the scan rate and recalculates the error scaling factor (<em>S<sub>e</sub></em>), which depends on the scan rate appropriate to the function block scan (Δ<em>t</em>).</p>
+
+    <p><a name="c_fuzzy_logic_control_function_block_execution__image_93D8DF6E834B4F1ABD366FA89F6DC2E1"></a><img id="c_fuzzy_logic_control_function_block_execution__image_93D8DF6E834B4F1ABD366FA89F6DC2E1" src="fbhelp0151.gif" /></p>
+
+    <p>The Fuzzy Logic Control function block is designed to be set up by Tune. However, if you choose to set up scaling factors manually, it is important to note that, in such a case, Tune will <strong>not</strong> set up derivative time for the FLC block, and you will <strong>not</strong> have manual access to the derivative term. In such a situation, the FLC block, effectively, becomes the PI controller. This can affect block performance significantly.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The nominal setpoint change value for Δ<em>Y<sub>sp</sub></em> is one percent.
+</p>
+
+      <p>
+When the setpoint change is greater than the nominal setpoint change (Δ<em>Y<sub>sp</sub></em>), these scaling factors are internally increased by the Fuzzy Logic Control function block. This internal scaling is changed in the ratio of actual setpoint change to the nominal setpoint change. These larger scaling factors are used while the control error (PV–SP) remains large due to the change in setpoint. When the control error has returned to a small value and remains small for a period of time, the scaling factors used by the fuzzy algorithm are once again the block scaling parameter values.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fuzzy_dvfuz_eval.html">Fuzzy Logic Evaluation</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

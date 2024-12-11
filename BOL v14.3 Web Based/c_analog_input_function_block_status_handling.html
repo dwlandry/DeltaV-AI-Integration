@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Analog Input function block status handling" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="NAMUR alarming" name="DC.subject" /><meta content="NAMUR alarming" name="keywords" /><meta content="c_hart_comm_with_deltav_system.html" name="DC.Relation" scheme="URI" /><meta content="c_status_options.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_analog_input.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_analog_input_function_block_status_handling" name="DC.Identifier" /><title>Analog Input function block status handling</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_analog_input_function_block_alarm_detection.html" /><link rel="next" href="r_analog_input_function_block_parameters.html" /></head><body class="fixed" id="c_analog_input_function_block_status_handling" data-relpath="c_analog_input_function_block_status_handling.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_analog_input_function_block_status_handling"></a>
+
+<h1 class="topictitle1">Analog Input function block status handling</h1>
+<div><div></div>
+
+	 <p id="c_analog_input_function_block_status_handling__statushandlinganaloginputfunctionblock"><a name="c_analog_input_function_block_status_handling__statushandlinganaloginputfunctionblock"></a>Normally, the status of the
+		measurement value provided by the analog input card reflects the operating
+		condition of the I/O card, and processing condition.
+	 </p>
+
+	 <p>If you configure the block to use a HART Analog Input Channel, you can
+		select which conditions associated with a HART channel impact the status of the
+		block.
+	 </p>
+
+	 <p>The channel input status to the analog input block is set high- or
+		low-limited by the input card if the channel value exceeds the overrange and
+		underrange limits and if the IO_IN parameter is selected as HART_FIELD_VAL or
+		FIELD_VAL_PCT. You may change the default overrange and underrange limits
+		independently on each input channel. 
+	 </p>
+
+	 <p>For classic I/O if the channel value is outside the range of -20.12 to
+		116.6%, the channel input status is set to BAD by the input card. 
+	 </p>
+
+	 <p>For CHARM I/O channel status depends on the configured CHARM
+		functionality: 
+	 </p>
+
+	 <a name="c_analog_input_function_block_status_handling__ul_B4FD20EF7BE14AD5809E6EC65AFE9246"></a><ul id="c_analog_input_function_block_status_handling__ul_B4FD20EF7BE14AD5809E6EC65AFE9246"> 
+		<li id="c_analog_input_function_block_status_handling__li_88BF39675877435EB25625D5FE32FAED"><div class="li_content">
+		  <p>For 4 - 20 mA CHARMs, the card sets the channel status to BAD when
+			 the channel value is greater than 131.25% (25 mA).
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_analog_input_function_block_status_handling__li_F32758AACC5E4917A47995E02298DCE0"><div class="li_content">
+		  <p>For 0 - 20 mA CHARMs, the card sets the channel status to BAD when
+			 the channel value is greater than 125% (25 mA).
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p>The STATUS_OPTS parameter allows you to choose how the PV and OUT status
+		are determined. There are three AI block status options:
+	 </p>
+
+	 <a name="c_analog_input_function_block_status_handling__ul_D70324C3342949ABBE3E6099C846324F"></a><ul id="c_analog_input_function_block_status_handling__ul_D70324C3342949ABBE3E6099C846324F"> 
+		<li id="c_analog_input_function_block_status_handling__li_F3292A4456C542D6AAD6B0522E55528F"><div class="li_content">
+		  <p>Uncertain if Man mode -- Sets the OUT status to Uncertain if the
+			 block&#39;s mode is Manual
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_analog_input_function_block_status_handling__li_FB801B77EFE84CFEB513C297ABF2AB43"><div class="li_content">
+		  <p>Bad if Limited -- Sets the PV status to Bad if the channel input
+			 status is limited.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_analog_input_function_block_status_handling__li_87A334C5A1FA4A4D9B7209BF8E6EF959"><div class="li_content">
+		  <p>Uncertain if Limited -- Sets the PV status to Uncertain if the
+			 channel input status is limited.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> You can set the status option in Out of Service mode only.
+		</p>
+
+	 </div>
+
+	 <p>The analog input block PV status normally reflects the channel input
+		status. However, if the channel status is limited, then PV status is set to
+		Uncertain limited or Bad Limited if you select the status option Uncertain if
+		Limited and Bad if limited respectively
+	 </p>
+
+	 <p>In Auto mode, OUT normally reflects the value and status quality of the
+		PV. However, if the PV status is Good but the PV value is more than -10% to
+		110% outside the span defined by PV_SCALE, then the OUT status is change to
+		Uncertain.
+	 </p>
+
+	 <p>In Man mode, the OUT status limit indication is set to constant and the
+		OUT status is Good unless you have selected the Uncertain in Man mode status
+		option.
+	 </p>
+
+	 <p>In Out of Service mode, the OUT status is set to BAD.
+	 </p>
+
+	 <p><strong>NAMUR limit detection</strong>
+	 </p>
+
+	 <p>If NAMUR limit detection is enabled for I/O channels (by setting the
+		NAMUR_ENA parameter to True when configuring the AI card) and the IO_IN type is
+		FIELD_VAL_PCT or HART_FIELD_VAL, the PV status of the input is set to 
+		<em>Bad</em> if the signal level is above 21 mA or below 3.6 mA for more
+		than four seconds. The Bad status is cleared when the signal returns within
+		these limits. You can use this feature when the transmitter is designed to flag
+		a device failure by setting its current signal outside the normal 4-20 mA
+		range.
+	 </p>
+
+	 <div class="note"><span class="notetitle">Note:</span> 
+		<p> The actual mode of a control block will automatically go to Man if
+		  the input has a Bad status. Thus, NAMUR limit detection should 
+		  <strong>not</strong> be enabled if a measurement is used in control unless this
+		  behavior (control going to manual ) is an appropriate action on limit
+		  detection.
+		</p>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_hart_comm_with_deltav_system.html">HART communication with the DeltaV system</a></div>
+<div><a href="c_status_options.html">Status options</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

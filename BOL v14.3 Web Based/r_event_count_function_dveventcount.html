@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Event Count function (DvEventCount)" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, worksheet functions, Event Count function, Event Count function, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, worksheet functions, Event Count function, Event Count function, DeltaV Reporter" name="keywords" /><meta content="r_events_function_dvevents.html" name="DC.Relation" scheme="URI" /><meta content="c_event_chronicle.html" name="DC.Relation" scheme="URI" /><meta content="c_worksheet_function_reference.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_event_count_function_dveventcount" name="DC.Identifier" /><title>Event Count function (DvEventCount)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_events_function_dvevents.html" /><link rel="next" href="c_writing_historical_data_to_a_continuous_historian_database.html" /></head><body class="fixed" id="r_event_count_function_dveventcount" data-relpath="r_event_count_function_dveventcount.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_event_count_function_dveventcount"></a>
+
+<h1 class="topictitle1">Event Count function (DvEventCount)</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_event_count_function_dveventcount__section_891A246CC286457A9657BC36DFAE80E4"><a name="r_event_count_function_dveventcount__section_891A246CC286457A9657BC36DFAE80E4"></a> This worksheet
+      function can be used to retrieve a total count of filtered events from the
+      Event Chronicle database for one or more shifts within a time period. The Event
+      Count function counts Event Chronicle events from the active and all current
+      event history data sets. To prevent duplication of events, it does not count
+      events in the active data set that have been copied to a current data set, but
+      have not yet been deleted from the active data set. 
+      <p>The Event Count function must be entered as an array formula in a
+        range that has the appropriate number of rows and columns. You can use the 
+        <span class="wintitle">Configure Event Count Function</span> dialog in DeltaV
+        Reporter to set up a call to this function. 
+      </p>
+ 
+      <div class="important"><span class="importanttitle">Important:</span> In order to execute this function, you must be
+        granted read access to the Event Chronicle SQL database (EJournal) on the Event
+        Chronicle server. Additionally, if the Event Chronicle is in a different DeltaV
+        system than the client PC (or the client PC is not in a DeltaV system at all),
+        you must have been granted the DeltaV security key associated with the
+        HISTORICAL_REMOTE_ACCESS function in DeltaV on the Event Chronicle server. 
+      </div>
+ 
+      <p><strong>Syntax</strong> 
+      </p>
+ 
+      <p>DvEventCount(chronicle_node, filters, time_mode, period_start,
+        period_end) 
+      </p>
+ 
+      <p><strong>Example Array Formula</strong> 
+      </p>
+ 
+      <p>=DvEventCount(&quot;localhost&quot;,&quot;Event
+        Type,*T*;Category,USER;Area,AREA_1|AREA_2;Unit,UNIT?1A&quot;,&quot;GMT&quot;,&quot;10/11/08
+        10:00:00 PM&quot;,&quot;10/12/08 6:00:00 AM&quot;) 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> The wildcard characters in this array formula allow it
+        to retrieve EVENT and STATUS events (that is, event types containing the letter
+        &quot;T&quot;) and events relating to areas with seven-character names that begin with
+        &quot;UNIT&quot; and end with &quot;1A&quot;. 
+      </div>
+ 
+      <p><strong>Function Arguments</strong> 
+      </p>
+ 
+      <dl> 
+         
+          <dt class="dlterm">chronicle_node 
+          </dt>
+ 
+          <dd> The node name of the Event Chronicle server. The chronicle_node
+            argument can be text, or a name or reference that refers to an Event Chronicle
+            server. 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">filters 
+          </dt>
+ 
+          <dd> A string that defines the filters to be used to restrict the
+            count of events within the time periods. Each filter definition comprises the
+            column name and one or more filter patterns relating to that specific column. 
+            <p>The list of filter patterns is separated from the column name by
+              a comma. Filter patterns within the list are separated from each other by a
+              vertical bar (|). A string used to define a filter pattern can use the
+              following wildcard characters: an asterisk (*) matches zero or more characters
+              and a question mark (?) matches exactly one character. 
+            </p>
+ 
+            <div class="p">The following columns and filters are supported: 
+            <a name="r_event_count_function_dveventcount__ul_900CFCC683B94F02A3D3B3FA7A2C2B6B"></a><ul id="r_event_count_function_dveventcount__ul_900CFCC683B94F02A3D3B3FA7A2C2B6B"> 
+              <li id="r_event_count_function_dveventcount__li_90D72115DECE4548AB6F35E7C671C02E"><div class="li_content"> Column name: Event
+                Type 
+                <a name="r_event_count_function_dveventcount__ul_20B48367CBA84EA0B2E073222CFA0967"></a><ul id="r_event_count_function_dveventcount__ul_20B48367CBA84EA0B2E073222CFA0967"> 
+                  <li id="r_event_count_function_dveventcount__li_966ADBC19BB94A2CA434163C216E8630"><div class="li_content"> Filters: ALARM,
+                    CHANGE, DOWNLOAD, EVENT, and STATUS 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_00329BAD015B445D9313FED3BA35D8A6"><div class="li_content"> Column name:
+                Category 
+                <a name="r_event_count_function_dveventcount__ul_09AB2630DC3A4A6D839D3BFDD5CF644B"></a><ul id="r_event_count_function_dveventcount__ul_09AB2630DC3A4A6D839D3BFDD5CF644B"> 
+                  <li id="r_event_count_function_dveventcount__li_5535CCCAD2F54714AF43E0D55C5DEFB4"><div class="li_content"> Filters:
+                    DEVICE, PROCESS, SYSTEM, and USER 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_834BC452B0164DF9908501043303E45A"><div class="li_content"> Column name: Area 
+                <a name="r_event_count_function_dveventcount__ul_E707EC1C6BCA4C949E525F578F791ECB"></a><ul id="r_event_count_function_dveventcount__ul_E707EC1C6BCA4C949E525F578F791ECB"> 
+                  <li id="r_event_count_function_dveventcount__li_C407889B88CC4A41998F404A7C7A8510"><div class="li_content"> Filters:
+                    Returns events relating to any area, the name of which matches the specified
+                    filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_42AD5A70B90346B69468C53F0CD10DCE"><div class="li_content"> Column name: Node 
+                <a name="r_event_count_function_dveventcount__ul_0970A5703FB349FBAC826D13889DFA3F"></a><ul id="r_event_count_function_dveventcount__ul_0970A5703FB349FBAC826D13889DFA3F"> 
+                  <li id="r_event_count_function_dveventcount__li_433B57ABFAD14245865B005AD1D95DFC"><div class="li_content"> Filters:
+                    Returns events relating to any controller, the name of which matches the
+                    specified filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_E386A2870817491E813568A32D7DDCA0"><div class="li_content"> Column name: Unit 
+                <a name="r_event_count_function_dveventcount__ul_4D79C6D632394D41BCC148C22D959C75"></a><ul id="r_event_count_function_dveventcount__ul_4D79C6D632394D41BCC148C22D959C75"> 
+                  <li id="r_event_count_function_dveventcount__li_5E975A1A3BA242A293EAA6C001BCD571"><div class="li_content"> Filters:
+                    Returns events relating to any unit, the name of which matches the specified
+                    filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_BFCE01AFA25445B3B18C13D150982843"><div class="li_content"> Column name: Module
+                
+                <a name="r_event_count_function_dveventcount__ul_A92D15482561443E8E1BEF49F45ECA91"></a><ul id="r_event_count_function_dveventcount__ul_A92D15482561443E8E1BEF49F45ECA91"> 
+                  <li id="r_event_count_function_dveventcount__li_2AC80D2046B84362BD0A24602DCD3F05"><div class="li_content"> Filters:
+                    Returns events relating to any defined module, the name of which matches the
+                    specified filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_5CEC4BAF8DD143B39053A6F035B0A011"><div class="li_content"> Column name: Module
+                Description 
+                <a name="r_event_count_function_dveventcount__ul_CD459D3B72C949E89EB1B3E103CDF628"></a><ul id="r_event_count_function_dveventcount__ul_CD459D3B72C949E89EB1B3E103CDF628"> 
+                  <li id="r_event_count_function_dveventcount__li_A8A73CCECC6744378E3765180DA0532B"><div class="li_content"> Filters:
+                    Returns events relating to any module description that matches the specified
+                    filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_F629143D35854F94896D717BB58F1983"><div class="li_content"> Column name:
+                Parameter 
+                <a name="r_event_count_function_dveventcount__ul_ACE68F465E614302BF1DAAF422A8AE89"></a><ul id="r_event_count_function_dveventcount__ul_ACE68F465E614302BF1DAAF422A8AE89"> 
+                  <li id="r_event_count_function_dveventcount__li_4A17A231B07B473ABF07B48E379209C2"><div class="li_content"> Filters:
+                    Returns events relating to any parameter, the name of which matches the
+                    specified filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_0E3E8338BA4842159116D6F3C2F103BC"><div class="li_content"> Column name: State 
+                <a name="r_event_count_function_dveventcount__ul_4EAF63C4C20143999EF214257878F460"></a><ul id="r_event_count_function_dveventcount__ul_4EAF63C4C20143999EF214257878F460"> 
+                  <li id="r_event_count_function_dveventcount__li_B32ACC5FF5D0450BA7A7811217698D56"><div class="li_content"> Filters:
+                    Returns events relating to any state that matches the specified filter patterns
+                    
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_3B3C36336C09456C9565A4B3F2B6A546"><div class="li_content"> Column name: Level 
+                <a name="r_event_count_function_dveventcount__ul_400848982CC04336A7EE4CE55E3C6263"></a><ul id="r_event_count_function_dveventcount__ul_400848982CC04336A7EE4CE55E3C6263"> 
+                  <li id="r_event_count_function_dveventcount__li_01F59558D2E44F24B48F2A9249A17E14"><div class="li_content"> Filters:
+                    Returns events relating to any level that matches the specified filter patterns
+                    
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_98EB6D1D355D4C82B1D46D524C0A7CC1"><div class="li_content"> Column name: Desc1 
+                <a name="r_event_count_function_dveventcount__ul_5A84918271D2488185E92977BF0BAE75"></a><ul id="r_event_count_function_dveventcount__ul_5A84918271D2488185E92977BF0BAE75"> 
+                  <li id="r_event_count_function_dveventcount__li_FCE35BA7F00943EFAD29D72228CA0D0A"><div class="li_content"> Filters:
+                    Returns events relating to any entry in the Desc1 field of the Event Chronicle
+                    that matches the specified filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_6A463B22AB2E4451884EF86BA1275C47"><div class="li_content"> Column name: Desc2 
+                <a name="r_event_count_function_dveventcount__ul_5CEC9A6DF776475497D66BAAE8B5DF7B"></a><ul id="r_event_count_function_dveventcount__ul_5CEC9A6DF776475497D66BAAE8B5DF7B"> 
+                  <li id="r_event_count_function_dveventcount__li_3700780262A348EEAFD6AF88BAA9717C"><div class="li_content"> Filters:
+                    Returns events relating to any entry in the Desc2 field of the Event Chronicle
+                    that matches the specified filter patterns 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div></li>
+ 
+            </ul>
+ 
+            </div>
+ 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">time_mode 
+          </dt>
+ 
+          <dd> Indicates how the period_start and period_end arguments should
+            be interpreted. The Event Chronicle database records all times in GMT; the
+            time_mode argument specifies what conversion, if any, should be applied to the
+            supplied time stamp in order to convert to GMT. 
+            <a name="r_event_count_function_dveventcount__ul_4C13B8BF61324507B83DF34C93D9FB8B"></a><ul id="r_event_count_function_dveventcount__ul_4C13B8BF61324507B83DF34C93D9FB8B"> 
+              <li id="r_event_count_function_dveventcount__li_EF30A765121A4753AD8895D5877B80A9"><div class="li_content"> Local – the time
+                stamp is treated as being in the time zone of the client PC. Conversion to GMT
+                takes into consideration whether the time stamp falls within daylight saving
+                time. 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_446D559E7CF74390ACB542BAFBCB71DE"><div class="li_content"> GMT – no conversion
+                is necessary. 
+              </div></li>
+ 
+              <li id="r_event_count_function_dveventcount__li_802610C75EE34211A992E3A574802234"><div class="li_content"> GMT ±hh:mm – the
+                time is adjusted by the specified hh:mm; daylight saving time has no effect. 
+              </div></li>
+ 
+            </ul>
+ 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">period_start 
+          </dt>
+ 
+          <dd> One or more time stamps for the start of the period(s) you want
+            to trace. You can specify multiple time stamps to gather data for more than one
+            time period (the period_end argument must contain the same number of time
+            stamps as period_start). 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">period_end 
+          </dt>
+ 
+          <dd> One or more time stamps for the end of the period(s) you want to
+            trace. You can specify multiple time stamps to gather data for more than one
+            time period (the period_start argument must contain the same number of time
+            stamps as period_end). 
+            <p>You can specify the period_start or period_end argument as a
+              cell or range reference. Each cell must contain a valid date and time in
+              standard Excel format, not exceeding millisecond precision—for example,
+              &quot;10/12/2008 21:06:40.676&quot;. If you specify the period_start and period_end
+              arguments as range references, each range must refer to the same number of
+              cells. 
+            </p>
+ 
+            <p>Alternatively, either argument could refer to a range of cells,
+              while the other refers to a list of multiple, absolute time stamps. To specify
+              multiple, absolute time stamps in a cell, separate each date and time with a
+              semi-colon (;)—for example, { &quot;08/22/2008 09:15:00&quot;; &quot;08/22/2008 09:32:25&quot;}. 
+            </p>
+ 
+            <p>If multiple time periods are specified, events from the separate
+              time periods are merged and sorted into the order appropriate for the first
+              time period. 
+            </p>
+ 
+            <div class="note"><span class="notetitle">Note:</span> If period_start is a later time than period_end,
+              events are retrieved in reverse chronological order from the (later) start time
+              toward the (earlier) end time. If multiple time periods are specified, the
+              first period_start time stamp is compared with the first period_end time stamp
+              to determine chronology. 
+            </div>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_events_function_dvevents.html">Events function (DvEvents)</a></div>
+<div><a href="c_event_chronicle.html">Collecting alarm and event records</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

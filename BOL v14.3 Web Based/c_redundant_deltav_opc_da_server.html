@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Redundant DeltaV OPC Data Access Server" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC DA Server, redundant, redundant OPC DA Server" name="DC.subject" /><meta content="OPC DA Server, redundant, redundant OPC DA Server" name="keywords" /><meta content="c_functional_overview.html" name="DC.Relation" scheme="URI" /><meta content="c_typical_deltav_opc_da_server_configuration.html" name="DC.Relation" scheme="URI" /><meta content="c_setting_up_a_pair_of_application_stations_for_deltav_opc_da_server.html" name="DC.Relation" scheme="URI" /><meta content="c_setting_up_a_partner_application_station_for_deltav_opc_da_server.html" name="DC.Relation" scheme="URI" /><meta content="c_reconfiguring_application_stations_for_redundant_deltav_opc_da_server.html" name="DC.Relation" scheme="URI" /><meta content="t_finish_configuring_application_station_redundancy.html" name="DC.Relation" scheme="URI" /><meta content="c_using_the_deltav_status_window_on_the_application_stations.html" name="DC.Relation" scheme="URI" /><meta content="c_using_the_unattended_reboot_option.html" name="DC.Relation" scheme="URI" /><meta content="c_loss_of_standby_status.html" name="DC.Relation" scheme="URI" /><meta content="c_connecting_to_the_redundant_deltav_opc_da_server.html" name="DC.Relation" scheme="URI" /><meta content="c_adding_and_removing_connections.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_diagnostics_and_redundant_deltav_opc_da_server.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_redundant_deltav_opc_da_server" name="DC.Identifier" /><title>Redundant DeltaV OPC Data Access Server</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_configuring_user_accounts_for_opc_server_and_clients.html" /><link rel="next" href="c_typical_deltav_opc_da_server_configuration.html" /></head><body class="fixed" id="c_redundant_deltav_opc_da_server" data-relpath="c_redundant_deltav_opc_da_server.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_redundant_deltav_opc_da_server"></a>
+
+<h1 class="topictitle1">Redundant DeltaV OPC Data Access Server</h1>
+<div><div></div>
+ 
+	 <p>By using a pair of Application Stations, you can set up DeltaV OPC Data
+		Access Server for redundancy. You can then configure the connection of an OPC
+		client to the active DeltaV OPC Data Access Server so that in the event of
+		problems, the application will recover by switching over to the Application
+		Station running the standby DeltaV OPC Data Access Server. Switchover events
+		include, but are not limited to: 
+	 </p>
+ 
+	 <a name="c_redundant_deltav_opc_da_server__ul_C9EE8AC193F9499B8080CCA8A08AECC7"></a><ul id="c_redundant_deltav_opc_da_server__ul_C9EE8AC193F9499B8080CCA8A08AECC7"> 
+		<li id="c_redundant_deltav_opc_da_server__li_40208532BBFD4BA394565DF21345D20A"><div class="li_content"> 
+		  <p>A loss of network connectivity such that the Application Station
+			 running the standby DeltaV OPC Data Access Server loses communications
+			 integrity with the Application Station running the active DeltaV OPC Data
+			 Access Server 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_redundant_deltav_opc_da_server__li_4DAA699BF7E346E9A3FEAAA4EC3B768B"><div class="li_content"> 
+		  <p>A planned or unplanned shutdown (or reboot) of the Application
+			 Station running the active DeltaV OPC Data Access Server 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_redundant_deltav_opc_da_server__li_9DDBA0A52BE14389921536304E448E35"><div class="li_content"> 
+		  <p>Other switchover criteria, as designed into a custom,
+			 redundant-aware OPC client 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>You can also manually initiate a switchover. You might want to do this,
+		for example, so that you can retain the functionality of your DeltaV OPC Data
+		Access Server application under the following conditions: 
+	 </p>
+ 
+	 <a name="c_redundant_deltav_opc_da_server__ul_E8998770052549E39BF160CD0544E40E"></a><ul id="c_redundant_deltav_opc_da_server__ul_E8998770052549E39BF160CD0544E40E"> 
+		<li id="c_redundant_deltav_opc_da_server__li_FEF00287C4064BB1BB00F5A3F53B8718"><div class="li_content"> 
+		  <p>To upgrade your DeltaV software or other system software 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_redundant_deltav_opc_da_server__li_79EC1D4F98AF4E91AD441F36165C5459"><div class="li_content"> 
+		  <p>To perform hardware maintenance or upgrades 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_redundant_deltav_opc_da_server__li_5BEF3630B8C24A8CB18CC4260FBA840D"><div class="li_content"> 
+		  <p>To respond to an unstable or hung process on the Application Station
+			 where the active DeltaV OPC Data Access Server is running 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="section" id="c_redundant_deltav_opc_da_server__section_721BD5767ACC4A058A3D03A5219DCF1E"><a name="c_redundant_deltav_opc_da_server__section_721BD5767ACC4A058A3D03A5219DCF1E"></a><h2 class="sectiontitle">Application Station restrictions and redundancy</h2> 
+		 
+		<p>After setting up a pair of Application Station pair with the redundant
+		  DeltaV OPC Data Access Server feature enabled, you cannot also enable
+		  additional subsystems for these Application Stations, because they are not
+		  supported for redundant switchovers. Only assigned modules in a virtual
+		  controller, OPC Data Access Server, OPC Mirror, and Redundant DeltaV Connect
+		  can be configured to run redundantly. If you attempt to enable one of the
+		  following subsystems, a message advises that the subsystem is incompatible with
+		  redundancy: 
+		</p>
+ 
+		<a name="c_redundant_deltav_opc_da_server__ul_69A7B34C104149058C543CA1937A857B"></a><ul id="c_redundant_deltav_opc_da_server__ul_69A7B34C104149058C543CA1937A857B"> 
+		  <li id="c_redundant_deltav_opc_da_server__li_A50B9ABFD1CA465B92464B2BBE2B220F"><div class="li_content"> 
+			 <p>Alarms And Events, including the Event Chronicle 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_85C9949F1A4F40289723C7204D8FF5E4"><div class="li_content"> 
+			 <p>Batch Historian 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_12A33DDF215C431A93EEE097BA060865"><div class="li_content"> 
+			 <p>Batch Executive 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_58A68F7F85164079B631D25752408835"><div class="li_content"> 
+			 <p>Campaign Manager 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_406E897840674BD487DECE1E58513AC5"><div class="li_content"> 
+			 <p>Continuous Historian 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_05EFBE6537E14FFD8ACDFFA99496C33D"><div class="li_content"> 
+			 <p>Remote Network, including Remote Access Services (RAS) servers 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>It is strongly recommended that you not run the following DeltaV
+		  applications, because they are not supported for redundant operation – even if
+		  they appear in the 
+		  <span class="uicontrol">Start</span> menu options for DeltaV of either partner
+		  in an Application Station pair with the redundant DeltaV OPC Data Access Server
+		  feature enabled: 
+		</p>
+ 
+		<a name="c_redundant_deltav_opc_da_server__ul_AA15E9C46B644A47BF5FEB5E3607C3DF"></a><ul id="c_redundant_deltav_opc_da_server__ul_AA15E9C46B644A47BF5FEB5E3607C3DF"> 
+		  <li id="c_redundant_deltav_opc_da_server__li_0A36F111599F4F8FAA5DAE9579D26E0A"><div class="li_content"> 
+			 <p>Auto-Update Service 
+			 </p>
+ 
+			 <div class="note"><span class="notetitle">Note:</span> To enable on the Application Station pair being used for
+				redundant DeltaV OPC Data Access Server, run the Auto-Update Service on any
+				other DeltaV workstation – a Professional<em>PLUS</em> workstationstation or
+				Operator Station, for example. 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_DE4AECE428FA460BB4153E031ADF59B8"><div class="li_content"> 
+			 <p>Batch Application Manager 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_40BC564E72604F2BB9FA30A81D6D1F61"><div class="li_content"> 
+			 <p>Batch History View 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_9636532EFA59480089582830536C2574"><div class="li_content"> 
+			 <p>Batch OI Configuration 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_43C58610A00341F0B5782CC9574A835E"><div class="li_content"> 
+			 <p>Batch Operator Interface 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_B684E16792E2408F90EBC4A5DFA5F50D"><div class="li_content"> 
+			 <p>Continuous Historian Administration 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_256F4D15D4CF4FE2A078C5A9F79D1017"><div class="li_content"> 
+			 <p>DeltaV Diagnostics 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_B56E766D5F9D43E9B498796C89A4DC4F"><div class="li_content"> 
+			 <p>DeltaV Excel Add-in 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_0594106599D7464ABAB82CA8D9839673"><div class="li_content"> 
+			 <p>Event Chronicle Administration 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_CCBA927BE12D4BA093E8CA6164603397"><div class="li_content"> 
+			 <p>Inspect With InSight 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_457DC087259A401A81F6DB54CE36A0CF"><div class="li_content"> 
+			 <p>Process History View 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_7B1898B207954AC5811625A390586EA4"><div class="li_content"> 
+			 <p>Recipe Simulator 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_DE0ACC6D59184140AE4E3C0EA75DB782"><div class="li_content"> 
+			 <p>Remote Clients 
+				 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_791E450B446541E296DC41D9E2E0D5CF"><div class="li_content"> 
+			 <p>SimulatePro 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_8A848976B4614148BEE6514EF0181FB5"><div class="li_content"> 
+			 <p>User Manager 
+			 </p>
+ 
+			 <div class="note"><span class="notetitle">Note:</span>  
+				<p>You may need to run User Manager in a Workgroup environment;
+				  however, redundancy is not supported. 
+				</p>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>Although you can start any these applications on an Application
+		  Station with the redundant DeltaV OPC Data Access Server feature enabled,
+		  inconsistent and/or erroneous data may result after a switchover. Also, running
+		  these applications may affect the stability of an Application Station where
+		  redundant DeltaV OPC Data Access Server is running. 
+		</p>
+ 
+		<p>It is strongly recommended that you not install other applications on
+		  the Application Stations where you have enabled the redundant DeltaV OPC Data
+		  Access Server feature, as these applications will not run redundantly and their
+		  operation may not be reliable following a switchover. Also, running other
+		  applications may affect the stability of an Application Station where redundant
+		  DeltaV OPC Data Access Server is running. 
+		</p>
+ 
+		<p> In particular, you should not install or use any of the following
+		  DeltaV applications on the Application Station pair: 
+		</p>
+ 
+		<a name="c_redundant_deltav_opc_da_server__ul_36E40EB3EC014B749A0D7FFBFEE6AD16"></a><ul id="c_redundant_deltav_opc_da_server__ul_36E40EB3EC014B749A0D7FFBFEE6AD16"> 
+		  <li id="c_redundant_deltav_opc_da_server__li_E8968CC5DBC74AC093E073EF42C5CEA7"><div class="li_content"> 
+			 <p>AMS Device Manager Audit Trail 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_56452EC86DA647C9B7461EB7842A3C80"><div class="li_content"> 
+			 <p>Campaign Manager Operator Interface 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_7BA866365ED94EFC99DA646CB343899A"><div class="li_content"> 
+			 <p>OPC Alarms and Events Server 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_AE5F3B8FD1AC47139A440D4959C22932"><div class="li_content"> 
+			 <p>DeltaV History Analysis 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_redundant_deltav_opc_da_server__li_04D51E33D0B441BB8FBF3318241E3A3A"><div class="li_content"> 
+			 <p>DeltaV OPC Mirror (unless installed as a redundant subsystem) 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_typical_deltav_opc_da_server_configuration.html">Typical redundant DeltaV OPC Data Access Server configuration</a><br />
+</li>
+<li class="ulchildlink"><a href="c_setting_up_a_pair_of_application_stations_for_deltav_opc_da_server.html">Setting up a pair of Application Stations for redundant DeltaV OPC Data Access Server</a><br />
+</li>
+<li class="ulchildlink"><a href="c_setting_up_a_partner_application_station_for_deltav_opc_da_server.html">Setting up a partner Application Station for redundant DeltaV OPC DA Server</a><br />
+</li>
+<li class="ulchildlink"><a href="c_reconfiguring_application_stations_for_redundant_deltav_opc_da_server.html">Reconfiguring Application Stations for redundant DeltaV OPC DA
+    Server</a><br />
+</li>
+<li class="ulchildlink"><a href="t_finish_configuring_application_station_redundancy.html">Finish configuring Application Station redundancy</a><br />
+</li>
+<li class="ulchildlink"><a href="c_using_the_deltav_status_window_on_the_application_stations.html">Using the DeltaV Status Window on the Application Stations</a><br />
+</li>
+<li class="ulchildlink"><a href="c_using_the_unattended_reboot_option.html">Using the unattended reboot option</a><br />
+</li>
+<li class="ulchildlink"><a href="c_loss_of_standby_status.html">Loss of standby status</a><br />
+</li>
+<li class="ulchildlink"><a href="c_connecting_to_the_redundant_deltav_opc_da_server.html">Connecting to the redundant DeltaV OPC Data Access Server</a><br />
+</li>
+<li class="ulchildlink"><a href="c_adding_and_removing_connections.html">Adding and removing connections</a><br />
+</li>
+<li class="ulchildlink"><a href="c_deltav_diagnostics_and_redundant_deltav_opc_da_server.html">DeltaV Diagnostics and redundant DeltaV OPC DA Server</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

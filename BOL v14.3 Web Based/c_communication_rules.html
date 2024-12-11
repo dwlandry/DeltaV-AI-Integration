@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Understanding communications rules" name="DC.Title" /><meta content="communication rules" name="DC.subject" /><meta content="communication rules" name="keywords" /><meta content="c_configuration_proc.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_327" name="DC.Identifier" /><title>Understanding communications rules</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_configuration_proc.html" /><link rel="next" href="t_basic_firewall_setup.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_327" data-relpath="c_communication_rules.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_327"></a>
+
+<h1 class="topictitle1"> Understanding communications rules</h1>
+<div> 
+	 <p>Understanding how the firewall creates and manages communications is
+		helpful when setting up the rules. This topic presents an overview of how the
+		rules work and helps you to understand how a firewall uses these rules as it
+		manages the communications. 
+	 </p>
+ 
+	 <p>The main function of the firewall is to manage network communications
+		between applications that are running on either side of the firewall to ensure
+		that only specific applications (as defined by the ports and protocol
+		parameters in the firewall rules) are allowed access to the computers on the
+		internal side of the firewall - also called the 
+		<em>trusted side</em> of the firewall. The firewall also manages network
+		communications from internal computers to external computers. Managing external
+		communications is important to ensure users cannot make connections to
+		unauthorized computers or make unauthorized internet connections that can lead
+		to serious security breaches. 
+	 </p>
+ 
+	 <p>An 
+		<em>inbound rule</em> allows internal access to applications that
+		instantiate or initiate communications from applications located on external
+		computers. Most of the applications used with the DeltaV system initiate
+		communications from external applications. This is indicated by the longer list
+		of incoming applications in the firewall. 
+	 </p>
+ 
+	 <p>An 
+		<em>outbound rule</em> allows external access to applications that
+		instantiate or initiate communications from applications located on the DeltaV
+		workstations. Making an internet connection from a web browser is an example of
+		an outgoing communications application. 
+	 </p>
+ 
+	 <p>Some applications can have both an inbound and outbound rule as they can
+		initiate communications in either direction. For example ICMP Pings can
+		originate from either inside or outside of the firewall depending upon which
+		computer starts the pinging process. Rules for both directions can exist at the
+		same time. 
+	 </p>
+ 
+	 <p>The firewall is capable of tracking the communications and allowing
+		two-way communications to be created with a single rule. This means that when
+		communications is initiated from one direction the application on the other end
+		can reply without a corresponding rule. One rule allows the complete
+		bi-directional communications to be initiated. 
+	 </p>
+ 
+	 <p>An exception occurs when an application requests that data is sent in a
+		separate communication such as when an OPC data subscription is created. In
+		this case, a rule must be created to allow the subscribed data to be sent to
+		the workstation that requested it. An inbound rule allows the subscription to
+		be created and an outbound rule allows the DeltaV workstation to send the data.
+		
+	 </p>
+ 
+	 <p> 
+		<strong> How does the firewall manage communications</strong> 
+	 </p>
+ 
+	 <p>A rule gives the firewall permission to allow communications to be
+		created between applications. The firewall checks the communications packets
+		and if the source, destination, port and protocol information match the rule,
+		the communication is allowed and a conversation is created between the
+		applications. The first time a valid packet is received, a conversation is
+		added to the table of watched conversations called a 
+		<em>state table</em> and the state of each conversation is monitored. These
+		conversations are called 
+		<em>sessions</em>. 
+	 </p>
+ 
+	 <p>The firewall uses the state table information to validate the source,
+		destination, and port and protocol information in each message coming to the
+		firewall and rejects any communication packets that do not match all of the
+		parameters in the state table. Once the session is started, the firewall uses
+		the information in the table to validate the packets. It does not use the rule
+		for validation at this point as there can be several concurrent sessions
+		flowing based on the same rule. Each conversation is handled independently as
+		the ports used in the sessions are assigned dynamically by the applications as
+		they create the session. The firewall discovers these dynamic ports and uses
+		them to monitor the packets in the session. 
+	 </p>
+ 
+	 <p>Once the session ends, the information is removed from the state table.
+		The next time communications is initiated, the rules are applied to validate
+		the communications and a new session is created. Sessions can be very short or
+		very long depending upon the way the applications communicate. 
+	 </p>
+ 
+	 <p>The rule does not create the path for the communications it simply
+		allows the communications to be created. Each independent session is the path
+		for the communications. One rule can allow many simultaneous communications to
+		be created between the applications as necessary for the applications to
+		function. 
+	 </p>
+ 
+	 <p>This information is important to know for several reasons: 
+	 </p>
+ 
+	 <ol> 
+		<li><div class="li_content">As you create the rules you do not have to be concerned with knowing
+		  how the application works as it creates communications; the firewall only needs
+		  the rule(s) that allow the application to communicate. 
+		</div></li>
+ 
+		<li><div class="li_content">You do not have to create matching inbound and outbound rules for the
+		  same session. The firewall manages the communications and allows the session to
+		  work correctly. 
+		</div></li>
+ 
+		<li><div class="li_content">When you modify, delete or disable a rule or a time based rule
+		  expires any current communications do not stop immediately. Removing the rule
+		  prevents future communications from being allowed and created. When you remove
+		  a rule (as you might do during some setup or troubleshooting activity) you also
+		  need to disconnect any existing communications through the firewall. 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> The applications listed in the firewall&#39;s Application List are not
+			 rules. These applications simply provide the parameters required to create a
+			 communications rule. Think of them as templates that are used to create a rule.
+			 In DeltaV terms these are similar to control modules you select and then fill
+			 in with the specific data required to create the module. When you create and
+			 apply the rule you are filling in the module information and instantiating the
+			 rule into the firewall to allow communications. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

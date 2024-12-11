@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Configuring user-defined RTD input channels" name="DC.Title" /><meta content="concept" name="DC.Coverage" /><meta content="c_best_practices_classic_io.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_configuring_user-defined_RTD_input_channels" name="DC.Identifier" /><title>Configuring user-defined RTD input channels</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_controller_redundancy_config_considerations.html" /><link rel="next" href="c_configuring_a_sequence_of_events_card.html" /></head><body class="fixed" id="c_configuring_user-defined_RTD_input_channels" data-relpath="c_configuring_user-defined_RTD_input_channels.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_configuring_user-defined_RTD_input_channels"></a>
+
+<h1 class="topictitle1">Configuring user-defined RTD input channels</h1>
+<div><div></div>
+ 
+	 <p>RTD cards include several channel types for use with a variety of
+		standard RTD transmitters. The User-Defined type enables users to use a
+		calibrated platinum RTD and define its coefficients in the RTD card&#39;s
+		User-Defined channel for maximum accuracy. 
+	 </p>
+ 
+	 <p>The channel uses the Callendar-Van Dusen linearization equation.
+		Typically, this provides high accuracy above 0° C. If temperatures are below 0°
+		C, some error is introduced. It is up to the customer to determine if this
+		level of accuracy is appropriate. The equation is: 
+	 </p>
+<a name="c_configuring_user-defined_RTD_input_channels__image_1EB7C20EF12F404F912B68914EC79779"></a><img id="c_configuring_user-defined_RTD_input_channels__image_1EB7C20EF12F404F912B68914EC79779" src="RTD_eq.GIF" /> 
+	 <p>Where: 
+	 </p>
+ 
+	 <p>A = Alpha × (1 + Delta/100)) 
+	 </p>
+ 
+	 <p>B = -Alpha × Delta × 10<sup>-4</sup> 
+	 </p>
+ 
+	 <p>R = Resistance at temperature 
+	 </p>
+ 
+	 <p>R0 = Resistance at 0° C 
+	 </p>
+ 
+	 <p>Alpha = a Callendar-Van Dusen constant configurable as a channel
+		parameter value 
+	 </p>
+ 
+	 <p>Delta = a Callendar-Van Dusen constant configurable as a channel
+		parameter value 
+	 </p>
+ 
+	 <p>The following example shows the channel parameter values for an
+		application using a Pt 100 RTD at a maximum temperature of 
+		<span class="nowrap">850° C</span>, a 100 ohm resistance at 
+		<span class="nowrap">0° C</span>, and the calibrated RTD coefficients
+		for ALPHA and DELTA. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_configuring_user-defined_RTD_input_channels__table_F1CFDF79A6694AB0827A30F673427E76"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_configuring_user-defined_RTD_input_channels__table_F1CFDF79A6694AB0827A30F673427E76" rules="all" summary="" width="100%"><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d867085e67" valign="top" width="21%"> 
+				  <p><strong>Channel Parameter</strong> 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d867085e75" valign="top" width="22%"> 
+				  <p><strong>Value</strong> 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d867085e83" valign="top" width="56.99999999999999%"> 
+				  <p><strong>Description</strong> 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d867085e67 " valign="top" width="21%"> 
+				  <p>FULLSCALE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e75 " valign="top" width="22%"> 
+				  <p>850 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e83 " valign="top" width="56.99999999999999%"> 
+				  <p>Maximum temperature. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d867085e67 " valign="top" width="21%"> 
+				  <p>ZERO 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e75 " valign="top" width="22%"> 
+				  <p>100 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e83 " valign="top" width="56.99999999999999%"> 
+				  <p>RTD resistance in ohms at 0 degrees Celsius 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d867085e67 " valign="top" width="21%"> 
+				  <p>Pt 100 and Pt 200 ALPHA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e75 " valign="top" width="22%"> 
+				  <p>.00385 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e83 " valign="top" width="56.99999999999999%"> 
+				  <p>RTD sensor alpha coefficient. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d867085e67 " valign="top" width="21%"> 
+				  <p>DELTA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e75 " valign="top" width="22%"> 
+				  <p>1.50701 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d867085e83 " valign="top" width="56.99999999999999%"> 
+				  <p>RTD sensor delta coefficient. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

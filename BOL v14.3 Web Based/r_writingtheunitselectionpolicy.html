@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Writing the unit selection policy" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="dynamic unit allocation, unit selection policy, programmatic unit allocation, expressions" name="DC.subject" /><meta content="dynamic unit allocation, unit selection policy, programmatic unit allocation, expressions" name="keywords" /><meta content="c_dynamic_unit_allocation.html" name="DC.Relation" scheme="URI" /><meta content="r_dua_unitclassrelativeparameters.html" name="DC.Relation" scheme="URI" /><meta content="r_dua_batchruntimeparameters.html" name="DC.Relation" scheme="URI" /><meta content="r_dua_prioritychoiceintheunitselectionpolicy.html" name="DC.Relation" scheme="URI" /><meta content="r_dua_defaultunitselectionpolicies.html" name="DC.Relation" scheme="URI" /><meta content="r_dua_exampleunitselectionpolicyexpressions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_writingtheunitselectionpolicy" name="DC.Identifier" /><title>Writing the unit selection policy</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_importantequipmentconfigurationnotesfordynamicunitallocation.html" /><link rel="next" href="r_dua_unitclassrelativeparameters.html" /></head><body class="fixed" id="r_writingtheunitselectionpolicy" data-relpath="r_writingtheunitselectionpolicy.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_writingtheunitselectionpolicy"></a>
+
+<h1 class="topictitle1">Writing the unit selection policy</h1>
+<div><div></div>
+<div class="section" id="r_writingtheunitselectionpolicy__section_3285DB3FD8E74F2A83129D317A5E102E"><a name="r_writingtheunitselectionpolicy__section_3285DB3FD8E74F2A83129D317A5E102E"></a><p>The unit selection policy is an expression that evaluates as part of the auto-selection algorithm for From_Policy unit aliases. The unit selection policy discards units for which the expression does not evaluate to true.  Any unit alias in the equipment train can be configured to use a specific unit selection policy. The unit selection policy is evaluated by the system when a procedure starts executing a step that is using an auto-selected unit alias (unit alias selection mode = From_Policy). Unit selection policies are not alias-specific and can be shared between different aliases on the same or different equipment train classes, and between different recipes.</p>
+<p>The following references can be used within the unit selection policy expression:</p>
+<a name="r_writingtheunitselectionpolicy__ul_2AA61EB5446E4099A76BFF6E6F464B09"></a><ul id="r_writingtheunitselectionpolicy__ul_2AA61EB5446E4099A76BFF6E6F464B09">
+<li id="r_writingtheunitselectionpolicy__li_5694204054674E4199262FD6FF55DA38"><div class="li_content"><p>User-defined procedure-level recipe parameters</p>
+</div></li>
+
+<li id="r_writingtheunitselectionpolicy__li_1E12678217E148CB8FEAF042C69C3E32"><div class="li_content"><p>Unit module and unit class parameters that you can browse to from the <span class="wintitle">Selection Expression Assistant</span> dialog (NUM_PHASES, $AVAILABLE, and so on)</p>
+</div></li>
+
+<li id="r_writingtheunitselectionpolicy__li_E49958A780A94883AC16FDD466932602"><div class="li_content"><p>Unit class relative parameters (&#39;^/&#39;)</p>
+</div></li>
+
+<li id="r_writingtheunitselectionpolicy__li_644565C69DC24C49A2D3A771C50ACEA7"><div class="li_content"><p>Batch run-time parameters (BATCH_ID, BATCH_FORMULA, and BATCH_SCALE)</p>
+</div></li>
+
+</ul>
+<p>The unit selection policy is evaluated once and is only repeated if the selection algorithm is repeated (which occurs after a 10 second time out for acquiring a unit). Because a unit selection policy is evaluated only once, a frequently changing parameter is not recommended in the unit selection policy expression. The unit selection policy&#39;s expression length is limited to 2000 characters.</p>
+<p>The unit selection policy expression times out after a period of 5 seconds if any of the following circumstances exists.</p>
+<a name="r_writingtheunitselectionpolicy__ul_1742C108B12B4378978E4FB9BB8F8FFD"></a><ul id="r_writingtheunitselectionpolicy__ul_1742C108B12B4378978E4FB9BB8F8FFD">
+<li id="r_writingtheunitselectionpolicy__li_34CD79E6E20D4785BC32B8937485F83A"><div class="li_content"><p>A unit under evaluation is unassigned.</p>
+</div></li>
+
+<li id="r_writingtheunitselectionpolicy__li_84E6D240A4E24A38AAA1194F90772393"><div class="li_content"><p>The expression contains a lot of conditions.</p>
+</div></li>
+
+<li id="r_writingtheunitselectionpolicy__li_47071436C4C2425785F18DC3B96115EE"><div class="li_content"><p>Connection to controller is lost.</p>
+</div></li>
+
+</ul>
+<p>Any parameters used in a unit selection policy must be defined (uploaded, assigned, and so on) when the expression evaluates or the expression will evaluate to FALSE. For example, if a parameter used in the unit selection policy does not have a value referred up to it or is trying to assign an alias before a phase is loaded the expression evaluates to FALSE. If this evaluation results in all units being filtered out from the valid unit list, the operator is prompted to select a unit from the list of all units in the equipment train.</p>
+<div class="note"><span class="notetitle">Note:</span> <p>Phase logic modules and external phases do not affect the unit&#39;s $IDLE_TIME parameter because they do not increment the NUMPHASES parameter on the unit. Therefore, if you use a unit selection policy in this case, the auto-selection disregards the usage of phase logic modules and external phases while sorting for Least Recently Used.</p>
+</div>
+</div>
+</div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="r_dua_unitclassrelativeparameters.html">Unit class relative parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="r_dua_batchruntimeparameters.html">Batch run-time parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="r_dua_prioritychoiceintheunitselectionpolicy.html">Priority choice in the unit selection policy</a><br />
+</li>
+<li class="ulchildlink"><a href="r_dua_defaultunitselectionpolicies.html">Default unit selection policies</a><br />
+</li>
+<li class="ulchildlink"><a href="r_dua_exampleunitselectionpolicyexpressions.html">Example unit selection policy expressions</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

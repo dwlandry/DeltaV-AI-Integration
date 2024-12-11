@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using alarm descriptions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="alarm descriptions" name="DC.subject" /><meta content="alarm descriptions" name="keywords" /><meta content="c_sis_module_faceplate_wide.html" name="DC.Relation" scheme="URI" /><meta content="c_alarm_configuration.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_134" name="DC.Identifier" /><title>Using alarm descriptions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_modifying_alarms.html" /><link rel="next" href="c_configuring_device_alarms.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134" data-relpath="c_using_alarm_descriptions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134"></a>
+
+<h1 class="topictitle1">Using alarm descriptions</h1>
+<div> 
+	 <p> An alarm description can be configured for process alarms in control
+		modules, equipment modules, class-based equipment module instances and SIS
+		modules. Alarm descriptions are particularly useful for SIS modules. Unlike
+		most process control modules, SIS modules typically reference multiple process
+		variables and the module description alone may not convey enough information
+		for SIS operators to quickly locate the source of an individual alarm within
+		the module. The alarm description replaces the module description in the Alarm
+		List and the Event Chronicle&#39;s alarm entries and is appended to the module
+		description in the Alarm Banner&#39;s information line and in the Alarm Help
+		window. If the alarm description is empty, the module description is presented
+		for the alarm. If the module description is empty, only the alarm description
+		is presented for the alarm. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  Alarm descriptions are optional and introduce changes to the runtime
+		environment. It is recommended that you carefully consider the impact of their
+		use on SIS operators. 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_9AA0A53DFAC34A3DA5B47E8B43E28666"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_9AA0A53DFAC34A3DA5B47E8B43E28666"></a><h2 class="sectiontitle"> Configuring alarm descriptions</h2> 
+		 
+		<p> Alarm descriptions are configured on the Advanced tab of the Alarm
+		  Properties dialog in Control Studio, DeltaV Explorer, and the System Alarm
+		  Management application.<br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_9BC6F85BE0CC4AD4878019694CAFAF7C"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_9BC6F85BE0CC4AD4878019694CAFAF7C" src="AlarmDescription.png" /></div><br />
+		  
+		</p>
+ 
+		<p> An alarm description cannot exceed 254 UNICODE characters. Alarm
+		  descriptions may be truncated in some DeltaV Operate displays such as the Alarm
+		  Banner. Alarm descriptions can be configured for alarms in the following alarm
+		  containers: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_64BA20EB9D7E47B585422DF616166FA1"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_64BA20EB9D7E47B585422DF616166FA1"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_615BE33B0E4C41CB800007A33674F1C0"><div class="li_content"> SIS control modules 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_2DD092F63A25476497DA4DC256D411BB"><div class="li_content"> Non-SIS control modules 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_D3F0AC5A3B594EE9A5C66CB4E4C835F5"><div class="li_content"> Non-SIS class-based
+			 control module instances 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_B1F2B8A1B88F4A1A99A120F4203ADC33"><div class="li_content">Process alarms in the
+			 following alarm containers: 
+			 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_2511B4D7B5BA4BF2BC9C4C3C3B2409C8"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_2511B4D7B5BA4BF2BC9C4C3C3B2409C8"> 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_7D17C7ED938C42D0AF96937E37436C12"><div class="li_content"> Equipment modules 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_75288BCB32D34281801FC8411E668E6D"><div class="li_content"> Class-based equipment
+				  module instances 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> Alarm descriptions cannot be configured for alarms in the following
+		  alarm containers: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_F7724924F1C443C8879DB0DEBDAEBDD8"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_F7724924F1C443C8879DB0DEBDAEBDD8"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_71ED04FFCA6B458FBF31F238C4DD48C6"><div class="li_content"> Fieldbus device alarms 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_B720F9D12F2D45B2A645C60F061D434C"><div class="li_content"> HART device alarms 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_908C165DFA3440FDB408B955764A555C"><div class="li_content"> HART device templates 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_8E1CC438F8164BD19CB94EA3318FA6E3"><div class="li_content"> External
+			 asset device alarms 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_0E035DE3FF3E4629931CA5D6BBAAFFAB"><div class="li_content"> DeltaV hardware alarms 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_1D12D139471E4D1CA34CC131105705FE"><div class="li_content"> Process alarms in the
+			 following alarm containers: 
+			 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_203097BA9F2149C4BDA41410A868F053"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_203097BA9F2149C4BDA41410A868F053"> 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_DE273786CD6B42C58133B616EF917040"><div class="li_content"> Phase alarms in
+				  class-based unit module instances 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_061B9871E0F2413197AABAE0875DA2BE"><div class="li_content"> Equipment module
+				  classes 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_7CAE78021C14435AAC0678E8835A5A83"><div class="li_content"> Equipment module
+				  templates 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_9C0563EB6F5B4972BC76DC11FE1F2145"><div class="li_content"> Control module
+				  classes 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_423D96FA9BD34EACA8B83F3AE0EF330C"><div class="li_content"> Control module
+				  templates 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_089A7DDA27114674AAD091A4D11D3600"><div class="li_content"> SIS control module
+				  templates 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> Alarm descriptions are exported as part of the containing module&#39;s
+		  configuration or using the Module_Alarm object type. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_1DFD474441304243BED7592C84F1C33F"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_1DFD474441304243BED7592C84F1C33F"></a><h2 class="sectiontitle"> Where are alarm description visible at runtime?</h2> 
+		 
+		<div class="p"> The alarm description replaces the module description in the Alarm
+		  List and the Event Chronicle&#39;s alarm entries: 
+		  <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_76BD91BD1C844689A4FE5EB364250D1B"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_76BD91BD1C844689A4FE5EB364250D1B"></a><div><span class="figcap">Alarm description replaces the module description in the Alarm
+				List</span></div> 
+			 <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_7D28A0B0AD29475E8D3536251A82C19F"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_7D28A0B0AD29475E8D3536251A82C19F" src="AlarmList.png" /></div><br />
+			 
+		  </div>
+ 
+		  <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_3A7226BC403B4B209AD875A91B27263D"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_3A7226BC403B4B209AD875A91B27263D"></a><div><span class="figcap">Alarm description replaces the module description in Event
+				Chronicle alarm entries</span></div> 
+			 <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_C45476E4581D4796B6B86180E8EB7CEC"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_C45476E4581D4796B6B86180E8EB7CEC" src="Event_record.png" /></div><br />
+			 
+		  </div>
+ 
+		</div>
+ 
+		<div class="p"> The alarm description is appended to the module description in the
+		  Alarm Banner&#39;s information line and in the Alarm Help window. In the following
+		  figures, the module description is &quot;Level indicator for tank 101&quot; and the alarm
+		  description is &quot;Level indicator state change&quot;. Notice that the alarm
+		  description is truncated in the following image showing the Alarm Banner&#39;s
+		  information line. 
+		  <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_428A428CA2B049BD8338FCACC0568C19"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_428A428CA2B049BD8338FCACC0568C19"></a><div><span class="figcap">Alarm description is appended to the module description in the
+				Alarm Banner&#39;s information line </span></div> 
+			 <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_588CF0D09EFA45D38367B2CB720F7A7D"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_588CF0D09EFA45D38367B2CB720F7A7D" src="AlarmBanner.png" /></div><br />
+			 
+		  </div>
+ 
+		  <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_510499E4B3474AE5905AB3867E183A45"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__fig_510499E4B3474AE5905AB3867E183A45"></a><div><span class="figcap"> Alarm description is appended to the module description in
+				the Alarm Help window </span></div> 
+			 <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_BF4875815C504F66AED7CDE9E949DCF7"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_BF4875815C504F66AED7CDE9E949DCF7" src="AlarmHelp1.png" /></div><br />
+			 
+		  </div>
+ 
+		</div>
+ 
+		<p> Alarm descriptions do not appear in the alarm list in the System
+		  Alarm Management application however, alarm descriptions are included in the
+		  printed document when the 
+		  <span class="uicontrol">Print To XML</span> option is selected in System Alarm
+		  Management. If an alarm description is configured for an alarm in a module with
+		  no module description, only the alarm description is presented at runtime. If a
+		  module description is configured and an alarm description is not configured,
+		  only the module description appears at runtime. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_E1B89B744F8641099278C913604BAD8C"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_E1B89B744F8641099278C913604BAD8C"></a><h2 class="sectiontitle"> Downloading alarm descriptions</h2> 
+		 
+		<p> For modules assigned to a node, modifying or adding an alarm
+		  description does not require a module or node download. The download required
+		  blue triangle (<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_8F1BA673FC224E5D849B0CA0039EF9DE"></a><img id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_8F1BA673FC224E5D849B0CA0039EF9DE" src="BlueTriangle1.png" />)
+		  does not appear on either the module or node when an alarm description is added
+		  to or modified for an assigned module. Alarm descriptions are downloaded
+		  through the Alarm Help subsystem in the DeltaV Explorer. The download options
+		  from the Alarm Help subsystem are Total Alarm Help and Changed Alarm Help for
+		  process models and Total SIS Alarm Help and Changed SIS Alarm Help for SIS
+		  modules.<br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_06E5814BB4E94F8A872D35DDBAAAE08F"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__image_06E5814BB4E94F8A872D35DDBAAAE08F" src="AlarmDescriptionDownload.png" /></div><br />
+		  
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_0E88402437F64047A57B1A4804C911A5"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_0E88402437F64047A57B1A4804C911A5"></a><h2 class="sectiontitle"> SIS Module Wide Faceplate</h2> 
+		 
+		<p> A SIS faceplate (SIS_MODE_WIDE_fp) shows the alarm description in its
+		  active and suppressed alarm lists. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_F97E7F52C92C465AB3919FE76A14A0A5"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__section_F97E7F52C92C465AB3919FE76A14A0A5"></a><h2 class="sectiontitle">Bulk editing alarm descriptions</h2> 
+		 
+		<p> Bulk editing alarm descriptions is no different from bulk editing
+		  other types of alarm information. The following format specification files that
+		  are included in the DeltaV installation include an alarm_description data field
+		  for each alarm in a module: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_762A6F48ACFD434584E42CEB42214998"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_762A6F48ACFD434584E42CEB42214998"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_4854EDFC89144F6091BC7BC25290F242"><div class="li_content"> AnalogMonitor_Module.fmt 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_17AB4C24B33B4435BFB932BA1D3A4826"><div class="li_content">
+			 DiscreteMonitor_Module.fmt 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_A1D5E16D36A44C84A091397F40171C65"><div class="li_content">Module_Alarm.fmt 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_B4C4CC07D5374AFF8878870F1CCD08A8"><div class="li_content"> Module_AlmHlp.fmt 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_58158180A86A438FAFD7492C84514ACD"><div class="li_content"> Motor_Valve_Modules.fmt 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_FB9C6224C81A4F5FBBAFC946E7C0F9ED"><div class="li_content"> SIS_Module_AlmHlp.fm 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> You can also create your own format specification file. 
+		</p>
+ 
+		<p> The general procedure to bulk edit alarm descriptions is: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_D007747BA2604DFFBB8AC1BE102C86F9"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__ul_D007747BA2604DFFBB8AC1BE102C86F9"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_29F4A0640D644C4FB07FC326F4F52AE5"><div class="li_content"> Export the alarm
+			 containers using an appropriate format file. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_0894D79BB8BC4EC2A01903989235B8A5"><div class="li_content"> Open the file in Excel. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_67B3E170F48D4256ADB19256B8E9CDB7"><div class="li_content"> Edit the file as
+			 required. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_134__li_3BB78505B2C24919917ACAA971B3E630"><div class="li_content"> Import the edited file. 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_sis_module_faceplate_wide.html">SIS module wide faceplate</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

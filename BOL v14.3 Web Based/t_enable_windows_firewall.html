@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configure Windows firewall profiles on a DeltaV workstation" name="DC.Title" /><meta content="firewall, rules, Windows, profiles, domain, private, public" name="DC.subject" /><meta content="firewall, rules, Windows, profiles, domain, private, public" name="keywords" /><meta content="c_windows_firewall_in_DeltaV.html" name="DC.Relation" scheme="URI" /><meta content="c_windows_firewall_in_DeltaV.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_51B674B970AF4F56901608D74F08397E_unique_86" name="DC.Identifier" /><title>Configure Windows firewall profiles on a DeltaV workstation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_windows_firewall_in_DeltaV.html" /><link rel="next" href="c_dsa_firewall_rules.html" /></head><body class="fixed" id="task_51B674B970AF4F56901608D74F08397E_unique_86" data-relpath="t_enable_windows_firewall.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_51B674B970AF4F56901608D74F08397E_unique_86"></a>
+
+<h1 class="topictitle1">Configure Windows firewall profiles on a DeltaV workstation</h1>
+<div> 
+	 <div class="section"> 
+		<div class="important" id="task_51B674B970AF4F56901608D74F08397E_unique_86__important_no_firewall_on_ACN"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__important_no_firewall_on_ACN"></a><span class="importanttitle">Important:</span>  
+		<p id="task_51B674B970AF4F56901608D74F08397E_unique_86__p_no_firewall_on_ACN"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__p_no_firewall_on_ACN"></a><span id="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_no_firewall_on_ACN_unique_1"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_no_firewall_on_ACN_unique_1"></a> Do not
+			 enable the Windows firewall profiles for any dedicated DeltaV networks; for
+			 example, the DeltaV Primary and Secondary ACNs<span>, DLINK for
+				Redundant Batch, and the Thin Client Primary and Secondary networks</span>. Doing
+			 so could disrupt communications between DeltaV nodes.</span> 
+		</p>
+ 
+	 </div>
+ 
+	 </div>
+ 
+	 <a name="task_51B674B970AF4F56901608D74F08397E_unique_86__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_75"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_86__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_75"><li class="stepexpand"> 
+		  <span>Login to the Windows desktop as an administrator. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>With the Windows firewall service started on the DeltaV
+			 workstation, open the Windows firewall utility. 
+		  </span> 
+		    
+			 <div class="note"><span class="notetitle">Note:</span>  
+				<p>These are the only supported paths for accessing the Windows
+				  firewall. This ensures that the Windows firewall is configured for the correct
+				  store. Do not access the Windows firewall in any other manner. 
+				</p>
+ 
+				<p><span class="menucascade"><span class="uicontrol">Start</span> &gt; <span class="uicontrol">Windows
+						Administrative Tools</span> &gt; <span class="uicontrol">Windows Firewall with Advanced
+						Security</span></span> 
+				</p>
+ 
+			 </div>
+ 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Click the 
+			 <span class="uicontrol">Windows Firewall Properties</span> link. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <div class="important"><span class="importanttitle">Important:</span>  
+			 <p>Determining which profile you need to enable requires an
+				understanding of each profile&#39;s definition, of what the network interface card
+				is used for, and of how the DeltaV computer is using that card. It requires
+				knowledge of what networks connect to that card, and what types of
+				communication by what applications must be permitted on that card (so that the
+				appropriate application rules allowing communication can be applied). 
+			 </p>
+ 
+		  </div>
+ 
+		  <span> Turn on the firewall for each profile as needed. 
+		  </span> 
+		    
+			 <p> In this procedure you must also select which network interface
+				card to apply the enabled profile. Do not apply a profile to any of the
+				dedicated DeltaV networks. 
+			 </p>
+ 
+		   
+		  <ol type="a"> 
+			 <li class="substep"><div class="li_content"> 
+				<span> Select a profile tab (Domain, Private, Public). 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span> Select 
+				  <span class="uicontrol">On (recommended)</span> for the 
+				  <span class="uicontrol">Firewall state:</span> option. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span> For 
+				  <span class="uicontrol">Inbound connections</span>, select 
+				  <span class="uicontrol">Block (default)</span>. 
+				</span> 
+				  
+				  <div class="note"><span class="notetitle">Note:</span>  
+					 <p> This allows the inbound rules to apply. 
+						<strong>Do not</strong> select 
+						<span class="uicontrol">Block all connections</span> as it will not
+						apply the inbound rules you enable. 
+					 </p>
+ 
+				  </div>
+ 
+				 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span> For 
+				  <span class="uicontrol">Outbound connections</span>, select 
+				  <span class="uicontrol">Allow &lt;Default&gt;</span>. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span> Click the 
+				  <span class="uicontrol">Protected network connections</span> 
+				  <span class="uicontrol">Customize…</span> button. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span> 
+				  <strong>Deselect all dedicated DeltaV network connections</strong>; for
+				  example, 
+				</span><br /> 
+				  
+				  <ul> 
+					 <li><div class="li_content">DeltaV Primary 
+					 </div></li>
+ 
+					 <li><div class="li_content">DeltaV Secondary 
+					 </div></li>
+ 
+					 <li><div class="li_content">DLink 
+					 </div></li>
+ 
+					 <li><div class="li_content">Thin Client Primary 
+					 </div></li>
+ 
+					 <li><div class="li_content">Thin Client Secondary 
+					 </div></li>
+ 
+				  </ul>
+ 
+				 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<div class="note"><span class="notetitle">Note:</span>  
+				  <p id="task_51B674B970AF4F56901608D74F08397E_unique_86__p_evaluate_non-DV_networks_for_firewall"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__p_evaluate_non-DV_networks_for_firewall"></a><span id="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_evaluate_non-DV_networks_for_firewall_unique_1"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_evaluate_non-DV_networks_for_firewall_unique_1"></a>Networks used to connect to the
+		  DeltaV system that are outside of the DeltaV network need to be evaluated for
+		  the Windows firewall. If any non-DeltaV traffic is allowed on the network
+		  connecting to DeltaV, then enable the Windows firewall on that NIC and use 
+		  <span id="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_product_name_DSA_unique_2"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_product_name_DSA_unique_2"></a>DeltaV Security
+		  Administration</span>
+		  to select the correct rule to open the necessary ports. 
+		</span> 
+	 </p>
+ 
+				</div>
+ 
+				<span> Select any non-DeltaV network connections where you need to
+				  regulate the external traffic coming into the DeltaV system. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>On the 
+				  <span class="wintitle">Windows Firewall with Advanced Security</span>
+				  dialog, in the 
+				  <span class="uicontrol">Settings</span> section, click the 
+				  <span class="uicontrol">Customize</span> button. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>On the 
+				  <span class="wintitle">Customize Settings</span> dialog, configure the
+				  settings as follows: 
+				</span> 
+				  
+				  
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Windows Server</span></caption><thead align="left"> 
+						<tr> 
+						  <th class="cellrowborder" id="d3473115e267" valign="top" width="NaN%">Profile 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3473115e270" valign="top" width="NaN%">Display Notification 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3473115e273" valign="top" width="NaN%">Allow Unicast Response 
+						  </th>
+ 
+						</tr>
+</thead>
+ 
+					 <tbody> 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e267 " valign="top" width="NaN%">Domain 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e270 " valign="top" width="NaN%">Yes 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e273 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e267 " valign="top" width="NaN%">Private 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e270 " valign="top" width="NaN%">Yes 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e273 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e267 " valign="top" width="NaN%">Public 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e270 " valign="top" width="NaN%">Yes 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e273 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+					 </tbody>
+ 
+				  </table>
+</div>
+ 
+				  
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Windows Workstation</span></caption><thead align="left"> 
+						<tr> 
+						  <th class="cellrowborder" id="d3473115e331" valign="top" width="NaN%">Profile 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3473115e334" valign="top" width="NaN%">Display Notification 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3473115e337" valign="top" width="NaN%">Allow Unicast Response 
+						  </th>
+ 
+						</tr>
+</thead>
+ 
+					 <tbody> 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e331 " valign="top" width="NaN%">Domain 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e334 " valign="top" width="NaN%">Yes 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e337 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e331 " valign="top" width="NaN%">Private 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e334 " valign="top" width="NaN%">Yes 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e337 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3473115e331 " valign="top" width="NaN%">Public 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e334 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3473115e337 " valign="top" width="NaN%">No 
+						  </td>
+ 
+						</tr>
+ 
+					 </tbody>
+ 
+				  </table>
+</div>
+ 
+				 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Click 
+				  <span class="uicontrol">OK</span>. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand"> 
+		  <span> Click 
+			 <span class="uicontrol">Apply</span> and continue to another profile. When
+			 done with all the profiles, click 
+			 <span class="uicontrol">OK</span>. 
+		  </span> 
+		  <span class="step_result">  
+			 <p id="task_51B674B970AF4F56901608D74F08397E_unique_86__p_default_firewall_rules_applied"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__p_default_firewall_rules_applied"></a> 
+		<span id="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_default_firewall_rules_applied"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_default_firewall_rules_applied"></a>With the Windows firewall
+		  enabled, all default Windows firewall rules are applied. The DeltaV rules are
+		  in addition to the default Windows firewall rules.</span> 
+	 </p>
+ 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> When complete, close the 
+			 <span class="wintitle">Windows Firewall with Advanced Security</span> window. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Open 
+			 <span id="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_product_name_DSA_unique_2"><a name="task_51B674B970AF4F56901608D74F08397E_unique_86__ph_product_name_DSA_unique_2"></a>DeltaV Security
+		  Administration</span>
+			 to apply the appropriate DeltaV firewall rules to allow necessary communication
+			 through the Windows firewall. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Perform this entire task on all DeltaV workstations. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_windows_firewall_in_DeltaV.html">The Windows firewall and a DeltaV workstation</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

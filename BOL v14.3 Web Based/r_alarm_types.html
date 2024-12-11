@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Alarm types" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Control Studio, Explorer, Event Chronicle, alarms, types, alarm types" name="DC.subject" /><meta content="Control Studio, Explorer, Event Chronicle, alarms, types, alarm types" name="keywords" /><meta content="c_customalarmcalculation.html" name="DC.Relation" scheme="URI" /><meta content="r_alarm_states.html" name="DC.Relation" scheme="URI" /><meta content="c_system_alarm_management.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_alarm_types" name="DC.Identifier" /><title>Alarm types</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_alarm_states.html" /><link rel="next" href="c_alarm_importance.html" /></head><body class="fixed" id="r_alarm_types" data-relpath="r_alarm_types.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_alarm_types"></a>
+
+<h1 class="topictitle1">Alarm types</h1>
+<div><div></div>
+
+	 <div class="section" id="r_alarm_types__section_732AFA14B15D470A90D7991B8BB69377"><a name="r_alarm_types__section_732AFA14B15D470A90D7991B8BB69377"></a>
+		<p>An alarm type defines a set of characteristics that determine how
+		  alarms appear on displays and in the Event Chronicle. Each standard alarm is
+		  associated with one of these alarm types. If you create a custom alarm, you
+		  select or create the alarm type associated with it. Device alarms do not
+		  require alarm types. The alarm words are defined by the device&#39;s definition
+		  data, and the information communicated from the device is automatically
+		  converted into device alarm messages.
+		</p>
+
+		<p>Note that the alarm type does not define a custom alarm calculation
+		  for the alarm, you must define the alarm calculation for custom alarms. A
+		  single alarm type can be assigned to several alarms to give them the same
+		  display characteristics.
+		</p>
+
+		<p>There are 19 predefined alarm types. You can use these alarm types as
+		  they are, modify them, or create additional ones. Alarm type names are case
+		  sensitive.
+		</p>
+
+		
+<div class="tablenoborder"><a name="r_alarm_types__table_B07CCACF758748AB9A47CDCAA6977CD2"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_alarm_types__table_B07CCACF758748AB9A47CDCAA6977CD2" rules="all" summary=""><caption><span class="tablecap">Alarm Type properties</span></caption><thead align="left">
+			 <tr valign="top">
+				<th class="cellrowborder" id="d2225168e55" valign="top" width="20.757180156657963%">Alarm type name
+				</th>
+
+				<th class="cellrowborder" id="d2225168e58" valign="top" width="10.313315926892951%">Alarm word
+				</th>
+
+				<th class="cellrowborder" id="d2225168e61" valign="top" width="16.971279373368144%">Category
+				</th>
+
+				<th class="cellrowborder" id="d2225168e64" valign="top" width="51.958224543080945%">Alarm message
+				</th>
+
+			 </tr>
+</thead>
+
+		  <tbody>
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Adapt Alarm Active
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>ADAPT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Adapt Alarm Active %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top">
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Advanced Alarming
+				  </p>
+
+				</td>
+
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>ALARM
+				  </p>
+
+				</td>
+
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Any Alarm Value %P1
+				  </p>
+
+				</td>
+
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Any Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>ANY
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>SYSTEM
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Any Alarm Value %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Change From Normal
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>CFN
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Change From Normal Value %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Change of State
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>COS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Change of State
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Communication Error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>COMM
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Communication Error
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Deviation Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>DEV
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Deviation Alarm Target %P1 Actual %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Discrete Device
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>FAILED
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>%P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Floating Point Error
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>FLT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>SYSTEM
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Floating Point Error
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>General I/O Failure
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>IOF
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>General I/O Failure
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>High Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>HIGH
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>High Alarm Value %P1 Limit %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>High High Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>HIHI
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>High High Alarm Value %P1 Limit %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Inspect Limit Active
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>INSPECT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Inspect Limit Active %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Low Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>LOW
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Low Alarm Value %P1 Limit %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Low Low Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>LOLO
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Low Low Alarm Value %P1 Limit %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>New Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>NEW
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>SYSTEM
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>New Alarm Value %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Open Circuit Detected
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>OCD
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Open Circuit Detected
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Overrange
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>OVER
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Overrange Value %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Rate of Change
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>RATE
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>PROCESS
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Rate of Change Rate %P1 Limit %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Statistical Alarm
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>ERROR
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>SYSTEM
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Statistical Alarm Type %P1 Value %P2
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d2225168e55 " valign="top" width="20.757180156657963%">
+				  <p>Underrange
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e58 " valign="top" width="10.313315926892951%">
+				  <p>UNDER
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e61 " valign="top" width="16.971279373368144%">
+				  <p>INSTRUMENT
+				  </p>
+
+				</td>
+ 
+				<td class="cellrowborder" headers="d2225168e64 " valign="top" width="51.958224543080945%">
+				  <p>Underrange Value %P1
+				  </p>
+
+				</td>
+ 
+			 </tr>
+
+		  </tbody>
+
+		</table>
+</div>
+
+		<div class="note"><span class="notetitle">Note:</span> 
+		  <p> %P1 and %P2 represent the values of user-defined parameters. When
+			 configuring an alarm with Control Studio, check to see if the alarm message
+			 expects any user-defined parameters. If so, configure which parameter in that
+			 module should be read at the time of alarm detection to replace the %P1 (and
+			 %P2) in the alarm message. User-defined parameters typically capture the value
+			 that caused the alarm, the limit value that was in effect at the time the alarm
+			 was detected, and so on.
+		  </p>
+
+		</div>
+
+		<p>When the custom alarm requires a message that is different from the
+		  available Alarm Types messages, you must create a new alarm type. Before trying
+		  to use the alarm type in assigning an alarm to a module, you must create the
+		  new alarm type.
+		</p>
+
+		<p>The following figure shows the dialog in the Explorer for an alarm
+		  type.
+		</p>
+
+		<p>An alarm type defines the following:
+		</p>
+
+		<dl>
+		  
+			 <dt class="dlterm">Alarm word
+			 </dt>
+
+			 <dd>
+				<p> Appears in DeltaV Operate when the alarm is active or
+				  unacknowledged. The alarm word can appear in the Alarm Banner, the Alarm List
+				  picture, and in the detail and faceplate displays for the standard DeltaV
+				  modules. When you create a custom display or an Alarm List, you have the option
+				  to make the alarm word or the alarm name appear in the display.
+				</p>
+
+				<p>Although device and hardware alarms do not have an alarm type,
+				  they do have one of the following alarm words: COMM, FAILED, MAINT, ADVISE, and
+				  ABNORM (device alarm only).
+				</p>
+
+			 </dd>
+
+		  
+		  
+			 <dt class="dlterm">Alarm category
+			 </dt>
+
+			 <dd>
+				<p> Appears in the Event Chronicle for every alarm state change.
+				  You can use the category for sorting and filtering alarm data inside Event
+				  Chronicle.
+				</p>
+
+			 </dd>
+
+		  
+		  
+			 <dt class="dlterm">Alarm message
+			 </dt>
+
+			 <dd>
+				<p> Appears in the standard Alarm List picture. The alarm message
+				  is defined as the 
+				  <span class="uicontrol">Description</span> field. The message is also
+				  logged in the Event Chronicle.
+				</p>
+
+				<p>For process alarms, the alarm message is a combination of text
+				  strings and variables that you supply in the following form:
+				</p>
+
+				<p><samp class="codeph">text string %P1 text string %P2</samp>
+				</p>
+
+				<p>where %P1 and %P2 represent parameter values. You define the
+				  parameters in the Optional Alarm Message Parameters section of the 
+				  <span class="wintitle">Alarm Type Properties</span> dialog through the
+				  Explorer.
+				</p>
+
+				<p>For example, if you want the operator to see a message like the
+				  following for an alarm:
+				</p>
+
+				<p>High Alarm 80 Alarm Limit 72
+				</p>
+
+				<p>you would type the following in the alarm message box:
+				</p>
+
+				<p>High Alarm %P1 Alarm Limit %P2
+				</p>
+
+				<p>and use the following parameters for %P1 and %P2:
+				</p>
+
+				<p>Parameter 1: PV
+				</p>
+
+				<p>Parameter 2: HI_LIM
+				</p>
+
+				<p>For process alarms, the alarm message affects all the alarms
+				  associated with the alarm type unless you override both the message and message
+				  parameters for a specific alarm in Control Studio.
+				</p>
+
+				<p>For device alarms, the alarm message is determined by the
+				  information available from the device for the most recent condition that caused
+				  the alarm. A device can report multiple alarms (for example, Failed,
+				  Maintenance and Advisory). Fieldbus devices that support PlantWeb alerts and
+				  the reannunciation feature report subsequent condition changes associated with
+				  the same alarm (Failed, Maintenance, or Advisory). This results in an
+				  unacknowledged alarm state. All other fieldbus devices do not report a second
+				  condition until the first condition clears.
+				</p>
+
+				<p>Device alerts are resynchronized when you download the device or
+				  when communication with the device is disrupted and then restored. When
+				  resynchronization occurs, the alert condition reported may not be the most
+				  recent because the reporting order is not available in the device.
+				</p>
+
+			 </dd>
+
+		  
+		</dl>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_customalarmcalculation.html">Custom alarm calculation</a></div>
+<div><a href="r_alarm_states.html">Alarm states</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Defining formulas" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="formulas, defining, recipes" name="DC.subject" /><meta content="formulas, defining, recipes" name="keywords" /><meta content="c_deferring_parameters.html" name="DC.Relation" scheme="URI" /><meta content="t_create_a_formula_for_prc_paint.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_defining_formulas" name="DC.Identifier" /><title>Defining formulas</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_Create_parameters_at_unit_procedure_and_procedure_levels.html" /><link rel="next" href="t_create_a_formula_for_prc_paint.html" /></head><body class="fixed" id="r_defining_formulas" data-relpath="r_defining_formulas.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_defining_formulas"></a>
+
+<h1 class="topictitle1">Defining formulas</h1>
+<div><div></div>
+<div class="section" id="r_defining_formulas__section_66BA29DA3D01424CA93AB4654F3CDCEE"><a name="r_defining_formulas__section_66BA29DA3D01424CA93AB4654F3CDCEE"></a><p>Typically, when you have a number of process input parameters for which you want to be able to specify values in a particular batch, you set up a recipe formula. For instance, if you want to have different values for small, medium, and large batches, you would set up three recipe formulas that specify the typical parameter values for each batch size. Then, when you create the batch, you simply pick the basic formula that you want to use and, if necessary, modify any or all parameter values. You can create a formula at any recipe level that gets assigned to a Batch Executive.</p>
+<p>As a simple example, we will create three formulas for the procedure PRC_PAINT. The formulas will specify the parameter values for light, medium, and dark shades of paint. The light shades are most popular and are usually produced in larger batches. The formulas, parameters, and values are shown in the following table. (Values enclosed in angle brackets are the default values originally established for the batch input parameters.)</p>
+
+<div class="tablenoborder"><a name="r_defining_formulas__table_E558818B1A6545AAA40782861EE29EDA"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_defining_formulas__table_E558818B1A6545AAA40782861EE29EDA" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d2483242e36" valign="top" width="NaN%">Parameter</th>
+
+<th class="cellrowborder" id="d2483242e39" valign="top" width="NaN%">Light</th>
+
+<th class="cellrowborder" id="d2483242e42" valign="top" width="NaN%">Medium</th>
+
+<th class="cellrowborder" id="d2483242e45" valign="top" width="NaN%">Dark</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d2483242e36 " valign="top" width="NaN%">PRC_BASE_AMT</td>
+
+<td class="cellrowborder" headers="d2483242e39 " valign="top" width="NaN%">180</td>
+
+<td class="cellrowborder" headers="d2483242e42 " valign="top" width="NaN%">&lt;150&gt;</td>
+
+<td class="cellrowborder" headers="d2483242e45 " valign="top" width="NaN%">130</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2483242e36 " valign="top" width="NaN%">PRC_COLOR_AMT</td>
+
+<td class="cellrowborder" headers="d2483242e39 " valign="top" width="NaN%">&lt;15&gt;</td>
+
+<td class="cellrowborder" headers="d2483242e42 " valign="top" width="NaN%">&lt;15&gt;</td>
+
+<td class="cellrowborder" headers="d2483242e45 " valign="top" width="NaN%">20</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2483242e36 " valign="top" width="NaN%">AGITATE_TIME</td>
+
+<td class="cellrowborder" headers="d2483242e39 " valign="top" width="NaN%">50</td>
+
+<td class="cellrowborder" headers="d2483242e42 " valign="top" width="NaN%">&lt;30&gt;</td>
+
+<td class="cellrowborder" headers="d2483242e45 " valign="top" width="NaN%">40</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="t_create_a_formula_for_prc_paint.html">Create a formula for PRC_PAINT</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Two-state motor module templates" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="module templates, two-state motor, two-state motor module templates" name="DC.subject" /><meta content="module templates, two-state motor, two-state motor module templates" name="keywords" /><meta content="c_module_template_library.html" name="DC.Relation" scheme="URI" /><meta content="c_device_specific_two_state_motor_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_two_state_motor_module_templates" name="DC.Identifier" /><title>Two-state motor module templates</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_tagdo_monitor_module_template.html" /><link rel="next" href="c_device_specific_two_state_motor_module_templates.html" /></head><body class="fixed" id="c_two_state_motor_module_templates" data-relpath="c_two_state_motor_module_templates.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_two_state_motor_module_templates"></a>
+
+<h1 class="topictitle1">Two-state motor module templates</h1>
+<div><div></div>
+<p>This category provides templates with STOP/START motor control capabilities for field devices such as pumps and agitators. Some motors require a single latching discrete output, and others require two outputs, a momentary start, and a latching permit. For each type of motor, there is a template with interlock conditions and one without interlock conditions. Another template is used when the motor has a field HAND/OFF/AUTO (HOA) or LOCAL/REMOTE switch.</p>
+<p>The motor templates are designed around the Device Control function block. This function block has several named set parameters (SP_D, PV_D, FV_D, DC_STATE, and FAIL) that have default named sets associated with them. In the motor module templates, the default named sets for these parameters have been replaced with appropriate named sets for the application. Therefore, these parameters are not in the Quick Config view and do not need editing. You can, however, edit the named sets or associate different named sets when the text strings that are displayed on the motor faceplate do not fit your particular application. When you edit the named set associated with SP_D, be sure that the state names are 10 characters or shorter.</p>
+<p>Because the STATE_MASKS parameter in the Device Control function block has been customized for the particular motor module template, it does not need editing.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Two-state motor module Quick Config parameters for the Device Control function block</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1416051e35" valign="top" width="NaN%"><p>Parameter</p>
+</th>
+
+<th class="cellrowborder" id="d1416051e39" valign="top" width="NaN%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>IO_IN_1</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>An I/O Reference parameter that configures the DST for the Stop/Start status from the motor starter.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>IO_OUT_1</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>An I/O Reference parameter that configures the DST for the latching output to the motor starter (or the latching permit output if the module has a momentary START output).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>IO_OUT_2</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>An I/O Reference parameter that configures the DST for the momentary START output to the motor starter (not applicable when the module has a single latching output).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>CFM_ACT1_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>The amount of time in seconds for the motor to confirm that it has started following a command to start. If the motor does not start within this time, a fail condition occurs. The default is 5 seconds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>CFM_PASS_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>The amount of time in seconds for the motor to confirm that it has stopped following a command to Stop. If the motor does not stop within this time, a fail condition occurs. The default is 5 seconds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416051e35 " valign="top" width="NaN%"><p>DEVICE_OPTS</p>
+</td>
+
+<td class="cellrowborder" headers="d1416051e39 " valign="top" width="NaN%"><p>Configuration options for the Device Control block. The option that defaults to enabled for modules <em>without</em> interlock conditions is SP Track. The options that default to enabled for modules <em>with</em> interlock conditions are SP Track, Permissive, and Interlock. Passive on Active Timeout is enabled for modules with one latching output. Device options that are not enabled as a default, but are applicable to two-state motors, include Trip and Reset Required.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>The two-state motor module templates include an alarm parameter, FAIL_ALM. Keep this alarm enabled at all times. The priority of FAIL_ALM, initially Medium, can be changed as necessary.</p>
+<p>MTR-11_ILOCK and MTR-21_ILOCK include function blocks that configure interlock logic for the motor and perform a first-out trap on the interlock conditions. There are several variations of the Motor and Valve Module detail display (DL_DTx), the difference between them being the number of rows appearing in the Interlocks section of each display. DL_DT0.DET does not have an Interlocks section. DL_DT1.DET through DL_DT8.DET contain a corresponding number of interlock conditions.</p>
+<p>In the function block diagram for MTR-11_ILOCK interlock conditions are configured using expressions in the Condition function blocks. Write interlock expressions so that the result is True when a shutdown state is required. Typically, interlock conditions should be written in separate Condition function block expressions so that the text description appears on the detail display. It is recommended that you write interlock conditions that are ANDed in a single expression since the logical OR of the Condition block outputs is calculated by the Boolean Fan In (BFI) block. You can access the expression editor by selecting and right-clicking the Condition block in the function block diagram, and then selecting <span class="uicontrol">Expression</span>.</p>
+<p>Each condition block has a DESC parameter to enter the text description for the interlock condition. This text string must be no longer than 20 characters in order to fit on the detail display. Each condition block has a TIME_DURATION parameter that can be configured so the expression must evaluate True for the time period in order to set OUT_D to True.</p>
+<p>If fewer than eight interlock conditions are used, remove the unused Condition blocks to reduce the load on the controller. Next, open the <span class="wintitle">Module Properties</span> dialog and change the name of the detail display to correspond to the number of interlock conditions used. For example, if you have three interlock conditions, change the detail display name from DL_DT8 to DL_DT3.</p>
+<p>The motor modules with interlock conditions have a provision for configuring permissive conditions. Generally, conditions that should allow a motor to start (permissive conditions) will shut down the motor in the opposite state. However, there are cases when a condition must be present for a motor to start, but a shutdown (interlock) should not occur when the condition is no longer present. When you have permissive conditions that are not also interlock conditions, add additional logic to the function block diagram. Wire the result of this logic into IN_D1 of the AND1 function block. Next, click <span class="uicontrol">Auto Calc Execution Order</span> from the <span class="uicontrol">Diagram</span> menu or toolbar icon to insert the new blocks correctly into the execution order.</p>
+<p>When PERMISSIVE_D of the Device Control (DC1) block is True, a change of SP_D from Stop to Start is allowed. Therefore, permissive conditions should be True to allow the motor to start, and multiple permissive conditions should be ANDed together. Remember that interlock conditions should be True to cause a shutdown of the motor, even though a shutdown occurs when INTERLOCK_D of the Device Control block is False. The logical OR of the interlock conditions is inverted prior to the Device Control block. In summary, permissive conditions should evaluate True for a permit and interlock conditions should evaluate True to shutdown.</p>
+<p>There are module templates in this category that are intended to be used when the motor can also be started in the field:</p>
+<ul>
+<li><div class="li_content"><p>MTR-11_HOA is a template used when there is a HAND/OFF/AUTO (HOA) or LOCAL/REMOTE switch wired to a DeltaV discrete input card. The module expects a single discrete input channel to be wired, the AUTO input (1=AUTO) or the LOCAL/REMOTE input (1=REMOTE). When the motor is operated in the field, the TRK_IN_D input of the Device Control block is True, causing OUT_D to track FV_D (that is, the DeltaV output tracks the actual state of the motor and confirm failure alarms do not occur). When the field switch selects DeltaV control, the module functions like a module created from MTR-11. MTR-11_HOA has an additional Quick Config parameter in the discrete input function block (DI_AUTO). IO_IN in this block is used to configure the Device Signal Tag for the AUTO or REMOTE input from the field switch.</p>
+<div class="cautiontitle">CAUTION:</div><div class="caution"><p> If interlock conditions are added to a module created from this template, they are only effective when the field switch is in the Auto (or Remote) position. The Device Control function block does not drive outputs based on interlock conditions when TRK_IN_D is True.</p>
+</div>
+</div></li>
+
+
+<li><div class="li_content"><p>MTR-21 has optional logic included when there are field stop/start pushbuttons. The module expects two discrete inputs wired to DeltaV input channels: one for the stop pushbutton and one for the start pushbutton. The primary benefit of using this logic is to avoid alarms when the motor is operated in the field. If confirm failure alarms are wanted in this case, do not use this template. When the module detects that a stop or start pushbutton has been pressed, SP_D in the device control block is pulsed by an edge trigger and action block so that confirm failure alarms do not occur. If interlocking in the DeltaV system is required, you can copy this logic into a module created from MTR-21_ILOCK. If field stop/start pushbuttons are not wired to the DeltaV system, remove this logic from the module that was created from MTR-21. When the logic is used, there are two additional Quick Config parameters, DI_START/IO_IN and DI_STOP/IO_IN, that configure the Device Signal Tags for the pushbutton inputs. Make sure that the module execution rate is no slower than 500 msec when field stop/start pushbuttons are used.</p>
+</div></li>
+
+</ul>
+</div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_device_specific_two_state_motor_module_templates.html">Device-specific two-state motor module templates</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="SIS Controller Modbus port write support" name="DC.Title" /><meta content="c_sis_ctrlr_modbus_port.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_411" name="DC.Identifier" /><title>SIS Controller Modbus port write support</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_sis_ctrlr_modbus_port.html" /><link rel="next" href="c_csls_standalone.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411" data-relpath="c_csls_modbus_write.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411"></a>
+
+<h1 class="topictitle1">SIS Controller Modbus port write support</h1>
+<div> 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411__section_2459879CDAA94E2C97ECED022F715276"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411__section_2459879CDAA94E2C97ECED022F715276"></a> 
+		<p>The only supported writeable register type is a coil. Coils are
+		  limited to Boolean parameters. To write to a parameter in an SIS module use a
+		  non-secure parameter. The main usages for Boolean writes into the safety system
+		  from a third-party interface are for LSCEM resets and input bypasses. 
+		</p>
+ 
+		<p>For example, to reset an LSCEM block, configure a non-secure parameter
+		  reference wired to a PDET block and then to an exposed reset parameter of the
+		  LSCEM block of an SIS module as shown in the figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411__fig_51058892DADC47519C447CE9BBC7607A"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411__fig_51058892DADC47519C447CE9BBC7607A"></a><div><span class="figcap"> Non-Secure Parameter Reference</span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411__image_552F3F3407CC401B8AB0F793D47DB6EA"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411__image_552F3F3407CC401B8AB0F793D47DB6EA" src="modbus_write.png" /></div><br />
+		  
+		</div>
+ 
+		<p>To manipulate the non-secure parameter reference from Modbus requires
+		  a control module running in the SIS Controller that contains the non-secure
+		  parameter source as shown in the figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411__fig_556C95C194C04B4FAD91AAF4BAC7C023"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411__fig_556C95C194C04B4FAD91AAF4BAC7C023"></a><div><span class="figcap">Non-secure Parameter source</span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_411__image_119FDB3A72114FDB85DFEA929BABE53F"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_411__image_119FDB3A72114FDB85DFEA929BABE53F" src="cem_reset.png" /></div><br />
+		  
+		</div>
+ 
+		<p>The example&#39;s Modbus register mapping would be to the non-secure
+		  parameter source in the control module - DMS_NSM1/CEM_RESET.CV mapped to coil
+		  R100. 
+		</p>
+ 
+		<p>The non-secure parameter reference type is limited to Boolean, float,
+		  and integer. Normally when the reset parameter of an LSCEM block is written to
+		  the reset action is taken and then the reset parameter is cleared. To
+		  accommodate for this the Positive Directional Edge Trigger (PDET) block is
+		  required before the RESET. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

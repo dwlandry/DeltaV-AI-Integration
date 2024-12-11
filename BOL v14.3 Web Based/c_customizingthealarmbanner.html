@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Customizing the alarm banner" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="r_changing_the_alarm_icons.html" name="DC.Relation" scheme="URI" /><meta content="c_sounding_the_horn_with_alarms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_customizingthealarmbanner" name="DC.Identifier" /><title>Customizing the alarm banner</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_alarmbanner.html" /><link rel="next" href="r_changing_the_alarm_icons.html" /></head><body class="fixed" id="c_customizingthealarmbanner" data-relpath="c_customizingthealarmbanner.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_customizingthealarmbanner"></a>
+
+<h1 class="topictitle1">Customizing the alarm banner</h1>
+<div><div></div>
+<p>The DeltaV system allows you to manage how alarms are presented to your operator. The alarm banner in particular enables you to present alarm information to operators concisely and intuitively while minimizing nuisance alarms</p>
+<p>The alarm banner provides an overview of the operator&#39;s highest priority alarms. The alarms shown are based on the areas for which the operator is responsible and are assigned to that operator&#39;s workstation. The alarm banner also provides the ability to select an alarm and go immediately to an associated display.</p>
+<p>The DeltaV system supports 12 different alarm priorities. Each priority includes a number of user-defined characteristics. You define alarm priorities in the DeltaV Explorer under <span class="filepath">Setup/Alarm Preferences</span>. Once the alarm priorities have been defined, all alarms in your DeltaV system of that priority will behave the same (for example, they have the same color, sound, and acknowledge characteristics). Each priority has an alarm banner option of <span class="uicontrol">Not Hidden</span>, <span class="uicontrol">Module</span> or <span class="uicontrol">Unit</span>. This option is set in the <span class="wintitle">Alarm Priority Properties</span> dialog. <span class="uicontrol">Not Hidden</span> specifies that active alarms of this priority are always shown in the alarm banner. The <span class="uicontrol">Unit</span> and <span class="uicontrol">Module</span> selections specify that alarms of this priority are displayed in the alarm banner only if they are the most important alarm for the associated Unit or Module. The default selection is <span class="uicontrol">Not Hidden</span>.</p>
+<p>Since there is no one right approach for alarm presentation, the DeltaV system offers you the flexibility to easily define system-wide alarm presentation. The following table shows six typical alarm presentation methods. Select the method that best matches your plant operating philosophy. You can use combinations of the alarm presentation methods. Any combination of methods should follow a general philosophy. As you develop an alarm presentation philosophy, consider whether lower priority alarms should be treated differently than higher priority alarms or, consider the changes that should be made in alarm behavior as the alarm priority increases. Another approach is to think of the 12 priorities as three groups of four, where the characteristics are determined by the priority&#39;s placement within the group.</p>
+<p>Changing the default alarm presentation or a presentation method that you selected is quick and easy. Simply change each alarm priority in the DeltaV Explorer and download the Changed Setup Data to each workstation. Alarm priority changes are immediately seen on the workstations.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d895538e62" valign="top" width="NaN%"><p>Alarm Presentation Methods</p>
+</th>
+
+<th class="cellrowborder" id="d895538e66" valign="top" width="NaN%"><p>Alarm Banner Behavior</p>
+</th>
+
+<th class="cellrowborder" id="d895538e70" valign="top" width="NaN%"><p>Typical Use</p>
+</th>
+
+<th class="cellrowborder" id="d895538e74" valign="top" width="NaN%"><p>Alarm Philosophy</p>
+</th>
+
+<th class="cellrowborder" id="d895538e78" valign="top" width="NaN%"><p>What if a module has one alarm that is critical and another alarm that is not? What do I see in the alarm banner?</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>1. Show all alarms (All alarm priorities configured to Not Hidden. This is the default.)</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p>The alarm banner shows all alarms in priority order.
+</p>
+<p>
+When multiple alarms are active on the same module, multiple alarms are shown in the alarm banner for that module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a smaller number of alarms per operator.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>It is important for operators to see each individual alarm.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>The module is shown twice displaying the critical alarm and the other alarm in priority order.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>2. Show alarms by module (All alarm priorities configured to Module.)</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p>The alarm banner shows alarms in priority order, by module.
+</p>
+<p>
+When multiple alarms are active on the same module, only the highest priority alarm is shown in the alarm banner for that module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a medium number of alarms per operator.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>Showing every alarm adds too much clutter to the alarm banner. Operators need to see which modules have alarm activity. Showing only the highest priority alarm per module is the most productive approach.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>The module is shown once displaying the critical alarm.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>3. Show alarms by unit (All alarm priorities configured to Unit.)</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p>The alarm banner shows alarms in priority order, by unit.
+</p>
+<p>
+When multiple alarms are active within the same unit, only the highest priority alarm is shown in the alarm banner for that unit.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a larger number of alarms per operator.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>Operators need an overview of the plant from the alarm banner. Showing only the highest priority alarm per unit is the most productive approach.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>The unit is shown once displaying the critical (highest priority) alarm.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>4. Show critical (high priority) alarms always, other (lower priority) alarms by module</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p><strong>Critical Alarms</strong>
+</p>
+<p>
+The alarm banner shows all critical alarms in priority order.
+</p>
+<p>
+When multiple critical alarms are active on the same module, multiple alarms are shown in the alarm banner for that module.
+</p>
+<p>
+<strong>All Other Alarms</strong>
+</p>
+<p>
+The alarm banner shows alarms in priority order, by module.
+</p>
+<p>
+When multiple alarms are active on the same module, only the highest priority alarm is shown in the alarm banner for that module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a medium number of alarms per operator, with some very critical alarms.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>There are some alarms that must always be presented to the operator. However, the majority of the other alarms are best presented by module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>Both alarms are active and unacknowledged - the module is shown once displaying the critical alarm.
+</p>
+<p>
+Both alarms are active and <strong>only the critical alarm is unacknowledged</strong> - the module is shown once displaying the critical alarm.
+</p>
+<p>
+Both alarms are active and only the <strong>non-critical alarm is unacknowledged</strong> - the module is shown twice displaying both the critical alarm and other alarm.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>5. Show critical (high priority) alarms always, other (lower priority) alarms by unit</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p><strong>Critical Alarms</strong>
+</p>
+<p>
+The alarm banner shows all critical alarms in priority order.
+</p>
+<p>
+When multiple critical alarms are active on the same module, multiple alarms are shown in the alarm banner for that module.
+</p>
+<p>
+<strong>All Other Alarms</strong>
+</p>
+<p>
+The alarm banner shows alarms in priority order, by unit.
+</p>
+<p>
+When multiple alarms are active on the same unit, only the highest priority alarm within that unit is shown in the alarm banner for that module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a larger number of alarms per operator, with some very critical alarms.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>There are some alarms that must always be presented to the operator. However, the majority of the other alarms are best presented by unit.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>The module and the critical alarm show once. The unit and the other alarm show once.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d895538e62 " valign="top" width="NaN%"><p><strong>6. Show critical (high priority) alarms by module, other (lower priority) alarms by unit</strong></p>
+</td>
+
+<td class="cellrowborder" headers="d895538e66 " valign="top" width="NaN%"><p><strong>Critical Alarms</strong>
+</p>
+<p>
+The alarm banner shows alarms in priority order, by module.
+</p>
+<p>
+When multiple critical alarms are active on the same module, only the highest priority alarm is shown in the alarm banner for that module.
+</p>
+<p>
+<strong>All Other Alarms</strong>
+</p>
+<p>
+The alarm banner shows alarms in priority order, by unit.
+</p>
+<p>
+When multiple alarms are active on the same unit, only the highest priority alarm within that unit is shown in the alarm banner for that module.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e70 " valign="top" width="NaN%"><p>Systems with a larger number of alarms per operator, with multiple critical alarms on modules.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e74 " valign="top" width="NaN%"><p>There are a number of critical alarms. Often there is more than one critical alarm on the same module. However, operators only need to know if a module has any critical alarm active. The majority of other alarms are best presented by unit.</p>
+</td>
+
+<td class="cellrowborder" headers="d895538e78 " valign="top" width="NaN%"><p>The module and the critical alarm show once. The unit and the other alarm show once.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="r_changing_the_alarm_icons.html">Changing the alarm icons</a><br />
+</li>
+<li class="ulchildlink"><a href="c_sounding_the_horn_with_alarms.html">Sounding the horn with alarms</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configure an ALM_STATISTICS module for gathering and computing alarm statistics" name="DC.Title" /><meta content="ALM_STATISTICS module template, module template, ALM_STATISTICS, operator statistic module template, alarm modules" name="DC.subject" /><meta content="ALM_STATISTICS module template, module template, ALM_STATISTICS, operator statistic module template, alarm modules" name="keywords" /><meta content="c_operator_statistic_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_51B674B970AF4F56901608D74F08397E_unique_30" name="DC.Identifier" /><title>Configure an ALM_STATISTICS module for gathering and computing alarm statistics</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_asset_alarm_requirements.html" /><link rel="next" href="t_configure_module_for_custom_alarmroll-up.html" /></head><body class="fixed" id="task_51B674B970AF4F56901608D74F08397E_unique_30" data-relpath="configure_alm_statistics_module.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_51B674B970AF4F56901608D74F08397E_unique_30"></a>
+
+<h1 class="topictitle1">Configure an ALM_STATISTICS module for gathering and computing alarm
+	 statistics</h1>
+<div> 
+	 <div class="section" id="task_51B674B970AF4F56901608D74F08397E_unique_30__context_07EC7B9818C94B65AAD1E36DF43C17AE"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__context_07EC7B9818C94B65AAD1E36DF43C17AE"></a> 
+		<p> The ALM_STATISTICS module requires some additional configuration in
+		  order to set it up; it is intended that this module will be configured by an
+		  experienced DeltaV control engineer familiar with Visual Basic and DeltaV
+		  Operate (Configure) schedules. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="task_51B674B970AF4F56901608D74F08397E_unique_30__context_A297FEE3B4544399BF84987ED017C8F7"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__context_A297FEE3B4544399BF84987ED017C8F7"></a> 
+		<p>When creating a new module instance from the ALM_STATISTICS module
+		  template, the scheduler needs to be modified in order to tie the corresponding
+		  module to it. Sometimes you may want to have a separate module instance for
+		  each Operator station while having the scheduler running on only the
+		  Professional Plus. Or you may want to have a separate module instance for each
+		  Operator station while having a scheduler running on each Operator station. 
+		</p>
+ 
+		<div class="p">The following procedure outlines how to configure a single
+		  ALM_STATISTICS module instance for gathering and computing alarm statistics.
+		  This procedure presumes the scheduled iFix task to collect alarm statistics
+		  (ALM_STATS_CALC.evs) is deployed on the workstation for which alarm statistics
+		  are being collected. For other deployment scenarios, a well-qualified DeltaV
+		  configuration engineer will need to examine the script and edit as required. 
+		  <div class="note"><span class="notetitle">Note:</span> For more detailed information on how to modify the ALM_
+			 STATS_CALC.evs in the Scheduler, see the commented instructions in the ALM_
+			 STATS_CALC.evs script. 
+		  </div>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <a name="task_51B674B970AF4F56901608D74F08397E_unique_30__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_28"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_30__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_28"><li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_980B47629C8F486D8CBC8D5532223503_unique_26"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_980B47629C8F486D8CBC8D5532223503_unique_26"></a> 
+		  <span> Create an instance of the Operator Statistics Module
+			 (ALM_STATISTICS) in DeltaV Explorer. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_9A1A01AAE7E5414F9D17D7388615975A"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_9A1A01AAE7E5414F9D17D7388615975A"></a> 
+		  <span>Assign it to a node and download the module. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_DAE077A91C6B4F1EB332C25CB73AE949"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_DAE077A91C6B4F1EB332C25CB73AE949"></a> 
+		  <span> Open DeltaV Operate in Configure mode. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_57F679D058E94EC68EA9BD38A995004E"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_57F679D058E94EC68EA9BD38A995004E"></a> 
+		  <span>Under<span class="uicontrol"> Schedules</span>, double-click on ALM_
+			 STATS_CALC to open it in the Scheduler. 
+		  </span> 
+		    
+			 <div class="note"><span class="notetitle">Note:</span>  You may need to click on the 
+				<span class="uicontrol">Event Based Entries</span> tab in the Scheduler to
+				see ALM_STATS. 
+			 </div>
+ 
+		   
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_EFCED08E4529458487CA41BB79707D5F"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_EFCED08E4529458487CA41BB79707D5F"></a> 
+		  <span>Double click the expression to open the 
+			 <span class="wintitle">Data Source</span> dialog. 
+		  </span> 
+		  <a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_AC0C02E2586143B2808D00029C3D0E1D"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_AC0C02E2586143B2808D00029C3D0E1D" type="a"> 
+			 <li class="substep" id="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_C8C0237982484437ACA0DB858E909A49"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_C8C0237982484437ACA0DB858E909A49"></a><div class="li_content"> 
+				<span>Replace 
+				  <samp class="codeph">ALM_STATIST_1</samp> with the name of the module
+				  instance created in step 1. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_3AA5AF20CF9A415E9B3EDBBE230CE67C"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_3AA5AF20CF9A415E9B3EDBBE230CE67C"></a> 
+		  <span>Expand ALM_STATS_CALC in the system tree. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_A22743743352422893F334228833FA45"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_A22743743352422893F334228833FA45"></a> 
+		  <span> Right-click ALM_STATS in the system tree and select 
+			 <span class="uicontrol">Edit Script…</span> from the context menu. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_08B79F3BAD0542C5AD281CE7903B260C"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_08B79F3BAD0542C5AD281CE7903B260C"></a> 
+		  <span>On the lines marked with 
+			 <samp class="codeph">@@@</samp>, change all instances of 
+			 <samp class="codeph">ALM_STATIST_1</samp> to match the name of the module
+			 instance created in step 1. 
+		  </span> 
+		    If the default module name was not modified when instantiated,
+			 leave ALM_STATIST_1 as is. 
+		   
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_157267BEE57E4680857C3DFDFAA96EEA"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_157267BEE57E4680857C3DFDFAA96EEA"></a> 
+		  <span> Save the edited ALM_STATS_CALC schedule template as a new
+			 schedule (for example, OP1_OSM.evs). 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_53C14135E6024EE488B68EB863E9CE7E"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_53C14135E6024EE488B68EB863E9CE7E"></a> 
+		  <span> Close the Visual Basic editor. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_752468218BBC4A0EAA83A56DA3E1AFF2"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_752468218BBC4A0EAA83A56DA3E1AFF2"></a> 
+		  <span> In DeltaV Operate Configure, add the schedule to the background
+			 task startup list using the 
+			 <span class="wintitle">User Preferences 
+			 </span>dialog box &gt; Background Startup tab. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_5BC8DC51BE2247A096C8E1C9DBD334C0"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_5BC8DC51BE2247A096C8E1C9DBD334C0"></a> 
+		  <span> In the UserSettings script, locate the 
+			 <samp class="codeph">ADD YOUR INITIALIZATION HERE</samp> comment. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_CFB08C0791DE4B07B27448C002F40327"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_CFB08C0791DE4B07B27448C002F40327"></a> 
+		  <span> Add the line 
+			 <samp class="codeph">Shell &quot;fixbackgroundserver.exe /SERVICE&quot;</samp> just after 
+			 <samp class="codeph">&quot;ADD YOUR INITIALIZATION HERE&quot;</samp>. 
+		  </span> 
+		  <span class="step_result">  This enables the fixbackgroundserver to be launched when
+			 starting iFix. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_96F6878267F04B73AD2CC7CFD7902AC2"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_96F6878267F04B73AD2CC7CFD7902AC2"></a> 
+		  <span> In the 
+			 <samp class="codeph">Opening Scheduler</samp> section (just below the<samp class="codeph">
+				&#39;ADD YOUR INITIALIZATION</samp> section), locate the line 
+			 <samp class="codeph">frsOpenUserSchedule &quot;<kbd class="userinput">&lt;Your
+				  Scheduler&gt;</kbd>.evs&quot;</samp>. 
+		  </span> 
+		  <a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_461BC1C3B63C48E8BF907EB3D3BF7018"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_461BC1C3B63C48E8BF907EB3D3BF7018" type="a"> 
+			 <li class="substep" id="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_F9DD826DBFFE4A8186CFF48B2D708C14"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_F9DD826DBFFE4A8186CFF48B2D708C14"></a><div class="li_content"> 
+				<span>Uncomment this line. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep" id="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_FC060F77233A4D63ADA2762DEF5AA9AA"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_FC060F77233A4D63ADA2762DEF5AA9AA"></a><div class="li_content"> 
+				<span> Replace 
+				  <kbd class="userinput">&lt;YourScheduler&gt;</kbd> with the name you
+				  gave your schedule in Step 8. 
+				</span> 
+				 Example: 
+				  <samp class="codeph">frsOpenUserSchedule
+					 &quot;<kbd class="userinput">OP1_OSM</kbd>.evs&quot;</samp> 
+				 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_92A454F71BFA46BAB0B8A8E20D5A286A"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_92A454F71BFA46BAB0B8A8E20D5A286A"></a> 
+		  <span>Save and close the Visual Basic Editor. 
+		  </span> 
+		    
+			 <div class="note"><span class="notetitle">Note:</span>  If you are editing the User_ref picture, be sure to save this
+				as UserSettings. 
+			 </div>
+ 
+		   
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_47D54C8D5F4E410085C2EBE75A56650E"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_47D54C8D5F4E410085C2EBE75A56650E"></a> 
+		  <span>Close DeltaV Operate and re-open the Scheduler in Configure mode. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_2890C7CC8E1D40FF9CC1E7D8E21D5168"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_2890C7CC8E1D40FF9CC1E7D8E21D5168"></a> 
+		  <span>Switch to Run mode to initialize the FixBackgroundServer. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_30EBEFC6D2B1452194C76683A4836401"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_30EBEFC6D2B1452194C76683A4836401"></a> 
+		  <span>Verify that the FixBackgroundServer has been initialized by doing
+			 the following: 
+		  </span> 
+		  <a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_8ED83CE0984E498EA72C8CEB4E00BC4D"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_30__substeps_8ED83CE0984E498EA72C8CEB4E00BC4D" type="a"> 
+			 <li class="substep" id="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_9539894010954E3592C9AE3C952964D2"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_9539894010954E3592C9AE3C952964D2"></a><div class="li_content"> 
+				<span>Switch to Configure mode and verify that the status of the
+				  ALM_STATS entry is 
+				  <span class="uicontrol">Active</span>. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep" id="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_BF4AF65921214E87A1681E6805CD9D1A"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__substep_BF4AF65921214E87A1681E6805CD9D1A"></a><div class="li_content"> 
+				<span>Open Windows Task Manager and verify that 
+				  <span class="uicontrol">FixBackgroundServer.evs</span> is now running in
+				  Processes. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_30__step_58595ECE401C4246981A65D8938D253F"><a name="task_51B674B970AF4F56901608D74F08397E_unique_30__step_58595ECE401C4246981A65D8938D253F"></a> 
+		  <span> Switch to Run mode and open the module faceplate. 
+		  </span> 
+		  <span class="step_result">  The values displayed on the faceplate should coincide with
+			 the module&#39;s values when it is opened in Control Studio on-line. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_operator_statistic_module_templates.html">Operator Statistic module template</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

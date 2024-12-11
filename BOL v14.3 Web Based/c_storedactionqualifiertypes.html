@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Stored Action Qualifier types" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_actions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_storedactionqualifiertypes" name="DC.Identifier" /><title>Stored Action Qualifier types</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_nonstoredactionqualifiertypes.html" /><link rel="next" href="c_overridingresetrqualifierforresettingstoredactions.html" /></head><body class="fixed" id="c_storedactionqualifiertypes" data-relpath="c_storedactionqualifiertypes.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_storedactionqualifiertypes"></a>
+
+<h1 class="topictitle1">Stored Action Qualifier types</h1>
+<div><div></div>
+
+    <div class="section" id="c_storedactionqualifiertypes__section_D5EBC3ECD4E749438C50F8BC97A9FCC5"><a name="c_storedactionqualifiertypes__section_D5EBC3ECD4E749438C50F8BC97A9FCC5"></a><h2 class="sectiontitle">Set (Stored) Action Qualifier (S)</h2>
+      
+      <p>A set (stored) action goes active when the step becomes active and stays active until reset. While the action is active, the action text is evaluated on every scan through the step actions. Refer to the reset action qualifier description to see how a reset can be done for each action type.</p>
+
+      <dl><dt class="dlterm">Assignment Action</dt>
+<dd><p>The assignment statement is evaluated (and the assignment made) on each scan through the SFC actions. The action remains active until a reset action is evaluated for this set action. Refer to the reset action qualifier description to see how a reset can be done for an assignment action.</p>
+</dd>
+<dt class="dlterm">Boolean Action</dt>
+<dd><p>The Boolean destination referenced is written to TRUE for each scan of the step actions while the set action remains active. The action remains active until a reset action is evaluated for that same Boolean destination. Refer to the reset action qualifier description to see how a reset can be done for a Boolean action.</p>
+</dd>
+<dt class="dlterm">Non-Boolean</dt>
+<dd><p>The function block is evaluated on each scan through the step actions. The action remains active until a reset action is evaluated for that same function block. Refer to the reset action qualifier description to see how a reset can be done for a non-Boolean action.</p>
+</dd>
+</dl>
+
+      
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> When the SFC stops, all actions stop.</p>
+
+      </div>
+
+      <p>Because when the SFC stops all actions stop, you cannot have a stored action reset a sequence when the sequence stops.</p>
+
+    </div>
+
+    <div class="section" id="c_storedactionqualifiertypes__section_9C593FF15E804E829DCB5395DCF38267"><a name="c_storedactionqualifiertypes__section_9C593FF15E804E829DCB5395DCF38267"></a><h2 class="sectiontitle">Stored and Time Delayed Action Qualifier (SD)</h2>
+      
+      <p>A stored and time delayed (SD) action is similar to a stored action except that you can specify a delay time before the action goes active. If the step goes inactive <strong>before</strong> the time delay is satisfied, the action still goes active as a result of this action once the time delay <strong>is</strong> satisfied.</p>
+
+      <p>When you create an assignment action with a Stored and Time Delayed (SD) qualifier and you have the SFC connected so that it loops back and continues to restart, the action <strong>will</strong> delay every time through the sequence, if it was reset.</p>
+
+      <p>For example, S1 in the following figure contains a stored delay action, A1. Suppose A1 is a assignment action with the text </p>
+
+      <pre class="codeblock">&#39;/PARAM1&#39; := &#39;/PARAM1&#39; + 1;</pre>
+
+      <p> and a delay of 30 seconds. When S1 becomes active, A1 becomes active. A1 waits 30 seconds and then increments PARAM1. S3 contains an action that resets A1. Because it has been reset, A1 will delay every time S1 becomes active.</p>
+
+      <a name="c_storedactionqualifiertypes__image_4FADF3F3946840FFB53E1D54E27CFFB1"></a><img id="c_storedactionqualifiertypes__image_4FADF3F3946840FFB53E1D54E27CFFB1" src="GCHELP0402.gif" />
+      <p>If A1 was not reset, it would stay active and keep the same output. (The delay would not recur.) So, if you did <strong>not</strong> want the delay to occur every time through the sequence, you would not reset the action every time. The same is true for a Time Delayed and Stored (DS) qualifier.</p>
+
+      <p>The only difference between the Stored and Time Delayed (SD) and the Time Delayed and Stored (DS) qualifier occurs when the step goes inactive <strong>before</strong> the delay is finished. If this happens before the delay is complete in an SD action, the action is stored, but in a DS action if the step goes inactive before the delay is complete, the action is <strong>not</strong> stored because the delay did not complete.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> When the SFC stops, all actions stop.</p>
+
+      </div>
+
+      <p>Also note that when the SFC stops, all actions stop. Therefore, you cannot have a stored action reset the sequence when the sequence stops.</p>
+
+      <dl><dt class="dlterm">Assignment Action</dt>
+<dd><p>The assignment statement is evaluated (and the assignment made) on each scan through the step actions, once the time delay specified as part of the action configuration is met. The action actually goes active (and can be reset) when the step initially goes active. The action then stays active until a reset action is evaluated for this assignment statement. Refer to the reset action qualifier (R) description to see how a reset can be done for an assignment action.</p>
+</dd>
+<dt class="dlterm">Boolean Action</dt>
+<dd><p>The Boolean destination referenced is written to TRUE for each scan through the step actions, once the time delay specified as part of the Action configuration is met. The action actually goes active (and can be reset) when the step initially goes active. The action then stays active until a reset action is evaluated for that same Boolean destination. Refer to the reset action qualifier (R) description to see how a reset can be done for a Boolean action.</p>
+</dd>
+<dt class="dlterm">Non-Boolean Action</dt>
+<dd><p>The function block usage referenced is evaluated for each scan through the step actions once the time delay specified as part of the action configuration is met. The action actually goes active (and can be reset) when the step initially goes active. The action then stays active until a reset action is evaluated for that function block usage. Refer to the reset action qualifier description to see how a reset can be done for a non-Boolean action.</p>
+</dd>
+</dl>
+
+      
+    </div>
+
+    <div class="section" id="c_storedactionqualifiertypes__section_2C6F1565059D480D89077F4351700CD8"><a name="c_storedactionqualifiertypes__section_2C6F1565059D480D89077F4351700CD8"></a><h2 class="sectiontitle">Time Delayed and Stored Action Qualifier (DS)</h2>
+      
+      <p>A time delayed and stored action is similar to a stored action except that you can specify a delay time before that action goes active. If the step goes inactive before the time delay is satisfied, the action does not go active as a result of this action, and a reset is not required.</p>
+
+      <dl><dt class="dlterm">Assignment Action</dt>
+<dd><p>The assignment statement is evaluated (and the assignment made) on each scan through the step actions once the time delay specified as part of the action configuration is met. The action actually goes active when the time delay is reached and stays active until a reset action is evaluated for this assignment statement. Refer to the reset action qualifier description to see how a reset can be done for an assignment action.</p>
+</dd>
+<dt class="dlterm">Boolean Action</dt>
+<dd><p>The Boolean destination referenced is written to TRUE for each scan through the step actions once the time delay specified as part of the action configuration is met. The action actually goes active when the time delay is reached and stays active until a reset action is evaluated for that same Boolean destination. Refer to the reset action qualifier description to see how a reset can be done for a Boolean action.</p>
+</dd>
+<dt class="dlterm">Non-Boolean Action</dt>
+<dd><p>The function block referenced is evaluated for each scan through the step actions once the time delay specified as part of the action configuration is met. The action actually goes active when the time delay is reached and stays active until a reset action is evaluated for that function block. Refer to the reset action qualifier description to see how a reset can be done for a non-Boolean action.</p>
+</dd>
+</dl>
+
+      
+    </div>
+
+    <div class="section" id="c_storedactionqualifiertypes__section_C739D55A1CF24C4693096CDF91430953"><a name="c_storedactionqualifiertypes__section_C739D55A1CF24C4693096CDF91430953"></a><h2 class="sectiontitle">Stored and Time Limited Action Qualifier (SL)</h2>
+      
+      <p>A stored and time limited action is similar to a stored action except that you are allowed to specify a maximum amount of time for this action to be active. The action goes active when the step goes active and then remains active until the configured time has elapsed or a reset is evaluated. If the configured time limit is reached, a reset is not required.</p>
+
+      <dl><dt class="dlterm">Assignment Action</dt>
+<dd><p>The assignment statement is evaluated (and the assignment made) on each scan through the step actions once the step goes active. The action stays active until the time limit specified as part of the action configuration is met or a reset action is evaluated for this assignment statement. Refer to the reset action qualifier description to see how a reset can be done for an assignment action.</p>
+</dd>
+<dt class="dlterm">Boolean Action</dt>
+<dd><p>The Boolean destination referenced is written to TRUE for each scan through the step actions starting when the step goes active. The action stays active until the time limit specified as part of the action configuration is met or a reset action is evaluated for that same Boolean destination. Refer to the reset action qualifier description to see how a reset can be done for a Boolean action.</p>
+</dd>
+<dt class="dlterm">Non-Boolean Action</dt>
+<dd><p>The function block referenced is evaluated for each scan through the step actions starting when the step goes active. The action stays active until the time limit specified as part of the action configuration is met or a reset action is evaluated for that function block. Refer to the reset action qualifier description to see how a reset can be done for a non-Boolean action.</p>
+</dd>
+</dl>
+
+      
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

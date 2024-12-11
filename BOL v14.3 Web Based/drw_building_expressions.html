@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Building expressions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="display parameters, workstation parameters, thisuser, U$, datalink modifiers" name="DC.subject" /><meta content="display parameters, workstation parameters, thisuser, U$, datalink modifiers" name="keywords" /><meta content="drw_introduction.html" name="DC.Relation" scheme="URI" /><meta content="drw_specifying_tolerance_deadband_and_refresh_rate.html" name="DC.Relation" scheme="URI" /><meta content="drw_expression_builder_syntax.html" name="DC.Relation" scheme="URI" /><meta content="drw_modifying_expressions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="drw_building_expressions" name="DC.Identifier" /><title>Building expressions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="drw-calculating-egu.html" /><link rel="next" href="drw_specifying_tolerance_deadband_and_refresh_rate.html" /></head><body class="fixed" id="drw_building_expressions" data-relpath="drw_building_expressions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="drw_building_expressions"></a>
+
+<h1 class="topictitle1">Building expressions</h1>
+<div><div></div>
+
+    <p id="drw_building_expressions__BuildingExpressions"><a name="drw_building_expressions__BuildingExpressions"></a>As described earlier, there are many data sources you can use to animate the properties of an object. Another valuable option is to use an <em>expression</em>. An expression is a data value or multiple data values connected with one or more operators. Using the Expression Builder, you can create specific expressions that access data from unique sources. This gives you more flexibility when assigning dynamic object properties.</p>
+
+    <p>You can use the following data values in an expression:</p>
+
+    <a name="drw_building_expressions__ul_F4556B0C05EA4F32A08335479D716A24"></a><ul id="drw_building_expressions__ul_F4556B0C05EA4F32A08335479D716A24">
+      <li id="drw_building_expressions__li_365AF6B24ECE4D65842A047E883AF5C9"><div class="li_content">
+        <p>Numeric constants.</p>
+
+      </div></li>
+
+      <li id="drw_building_expressions__li_66F24C8E5CFA4AE881138ED7C1B0A406"><div class="li_content">
+        <p>Strings enclosed in quotation marks (&quot; &quot;).</p>
+
+      </div></li>
+
+      <li id="drw_building_expressions__li_F2B6B364B65442EEAD2573ADE04A5D2C"><div class="li_content">
+        <p>DeltaV Operate tags.</p>
+
+      </div></li>
+
+      <li id="drw_building_expressions__li_6558690573EB4BBF8E954C7D3E0AF8AD"><div class="li_content">
+        <p>OPC server I/O addresses.</p>
+
+      </div></li>
+
+      <li id="drw_building_expressions__li_64C01AFAB5A6408EB4080FB41A4C33D9"><div class="li_content">
+        <p>Picture properties.</p>
+
+      </div></li>
+
+      <li id="drw_building_expressions__li_B161DC9B68534B5C8C3ACA05506A4253"><div class="li_content">
+        <p>Object properties.</p>
+
+      </div></li>
+
+    </ul>
+
+    <div class="section" id="drw_building_expressions__TheExpressionBuilderDialogBox"><a name="drw_building_expressions__TheExpressionBuilderDialogBox"></a><h2 class="sectiontitle">The Expression Builder Dialog Box</h2>
+      
+      <p>The Expression Builder dialog box is a tool for creating expressions. This dialog box lets you select the data source you want to use or create expressions by combining two or more data sources together. To open the Expression Builder, click the ellipsis button next to the Data Source field on the Animations dialog box or any other dialog box that requires entry of a data source. The Expression Builder dialog box is shown below:</p>
+
+      
+        <p><a name="drw_building_expressions__image_F4CCCA0898FB45F0AD9FF1D16D2CC00B"></a><img id="drw_building_expressions__image_F4CCCA0898FB45F0AD9FF1D16D2CC00B" src="ExpressionBuilder.gif" />
+      </p>
+
+      <p>The Expression Builder dialog box is divided into multiple tabs, which are described in the following table.</p>
+
+      
+<div class="tablenoborder"><a name="drw_building_expressions__table_2A3EFC75D4B34E2EAF63D2D224347711"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_building_expressions__table_2A3EFC75D4B34E2EAF63D2D224347711" rules="all" summary=""><caption><span class="tablecap">Expression Builder Tabs</span></caption>
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1489644e118" valign="top">
+                <p id="drw_building_expressions__577816"><a name="drw_building_expressions__577816"></a>The tab...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1489644e124" valign="top">
+                <p id="drw_building_expressions__577818"><a name="drw_building_expressions__577818"></a>Displays...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+FIX Database
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>
+Any servers to which your computer is communicating. Use a data server as a data source when you want to animate an object or a tag. The tabbed page includes Node Names, Tag Names, and Field Names windows to help you specify your selections.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+Pictures
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>
+The pictures residing on your computer. An Objects window displays each object in the picture. Use one of these objects as a data source when you want to animate an object with a picture or object property value. A Properties window displays the properties for the selected object so that you can select a specific property.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+Globals
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>
+Global data sources. The tabbed page includes Objects and Properties windows to help you specify your selections.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+Data Servers
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>
+Third party OPC servers. Data source connections to data servers fire at run-time only.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+Alarm Counters
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>
+Alarm areas and alarm counters. This page displays a list of alarm areas on the selected server. Also displays the alarm counter (ALARMCOUNTERS) tag.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e118 " valign="top">
+                <p>
+DeltaV
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e124 " valign="top">
+                <p>DeltaV system parameters. Provides access to DeltaV control system parameters and operator display parameters. For more information about these parameters, click the Help button on the parameter browse dialog in DeltaV Operate configure mode.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>When you select a data source, it appears in the field at the bottom of the dialog box. You can add strings by typing them into the field. You can also add operators and numeric constants by typing them into the field, or by clicking the operator buttons on the right side of the dialog box while the cursor is in the field. To display the operator buttons, click the Mathematical Functions button.</p>
+
+      <p>The Filter fields and buttons allow you to filter data sources. For more information, refer to Filtering Data Sources in the topic <a href="drw_defining_data_sources.html">Defining Data Sources</a>. Additionally, you can specify a tolerance, deadband, and refresh rate in the appropriate fields. These functions are described later in this section.</p>
+
+      <p>For more information on selecting data sources from the Expression Builder dialog box, including examples, refer to Selecting Data Sources from a List in the topic <a href="drw_defining_data_sources.html">Defining Data Sources</a>.</p>
+
+    </div>
+
+    <div class="section" id="drw_building_expressions__CustomizingtheExpressionBuilderDialogBox"><a name="drw_building_expressions__CustomizingtheExpressionBuilderDialogBox"></a><h2 class="sectiontitle">Customizing the Expression Builder Dialog Box</h2>
+      
+      <p>You can customize the Expression Builder by showing or hiding specific tabs. To do this, you modify properties in VBA. Refer to the following table.</p>
+
+      
+<div class="tablenoborder"><a name="drw_building_expressions__table_2F2F7D6A9BF247909375184CB8F717A0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_building_expressions__table_2F2F7D6A9BF247909375184CB8F717A0" rules="all" summary=""><caption><span class="tablecap">Showing or Hiding Tabs in the Expression Builder</span></caption>
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1489644e268" valign="top">
+                <p id="drw_building_expressions__577864"><a name="drw_building_expressions__577864"></a>To show or hide the tab...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1489644e274" valign="top">
+                <p id="drw_building_expressions__577866"><a name="drw_building_expressions__577866"></a>Set this property to TRUE or FALSE, respectively...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1489644e268 " valign="top">
+                <p>
+FIX Database
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e274 " valign="top">
+                <p>
+ShowDatabaseTab
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e268 " valign="top">
+                <p>
+Pictures
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e274 " valign="top">
+                <p>
+ShowPicturesTab
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e268 " valign="top">
+                <p>
+Globals
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e274 " valign="top">
+                <p>
+ShowGlobalsTab
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1489644e268 " valign="top">
+                <p>
+Data Servers
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1489644e274 " valign="top">
+                <p>
+ShowDataServersTab
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>For more information on modifying VBA scripts, refer to <a href="vba_intro.html">Writing Scripts</a>.</p>
+
+    </div>
+
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="drw_specifying_tolerance_deadband_and_refresh_rate.html">Specifying tolerance, deadband, and refresh rate</a><br />
+</li>
+<li class="ulchildlink"><a href="drw_expression_builder_syntax.html">Expression Builder syntax</a><br />
+</li>
+<li class="ulchildlink"><a href="drw_modifying_expressions.html">Modifying expressions</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

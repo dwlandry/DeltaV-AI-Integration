@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Syntax Rules in Logic Solver Expressions" name="DC.Title" /><meta content="c_SIS_expressions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_2987DF78D79448F88152D6400D3D7B19_unique_426" name="DC.Identifier" /><title>Syntax Rules in Logic Solver Expressions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_SIS_expressions.html" /><link rel="next" href="r_SIS_expressions_variables.html" /></head><body class="fixed" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426" data-relpath="r_SIS_expressions_syntax.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426"></a>
+
+<h1 class="topictitle1">Syntax Rules in Logic Solver Expressions</h1>
+<div>
+	 <div class="section" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__syntaxrulesls"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__syntaxrulesls"></a>
+      
+      <p>
+         An expression is made up of operands, constants, operators, functions,
+         comments.
+      </p>
+
+      <p>
+         Each expression must follow a specific syntax to be valid. The Expression
+         Editor validates the expression when parsing.
+      </p>
+
+      <p>
+         The Option Explicit behavior is enforced even if the statement is not present
+         in the expression, requiring declaration of temporary variables. 
+      </p>
+
+      <p>
+        <strong>References (Inputs, Outputs, and Other Module Parameters)</strong>
+      </p>
+
+      <p>
+         The Logic Solver subset of expressions supports only references to the inputs
+         and outputs of the Logic Solver Calc/Logic block and to other module/block
+         parameters within the same module. External and dynamic references are not
+         supported.
+      </p>
+
+      <p>If you do not specify the field, CV is assumed.</p>
+
+      <p>
+        <strong>Relative Notation</strong>
+      </p>
+
+      <p>
+         The notation rules for referencing parameters within and outside of the
+         LSCALC block are shown in the following table.
+      </p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p>
+           IN<em>n</em> and OUT<em>n</em> parameters do not require
+         the quotes.
+      </p>
+
+      </div>
+
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_10ED16C6F8B84A0583732D21F87E19D3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_10ED16C6F8B84A0583732D21F87E19D3" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d2127978e66" valign="top" width="30.508474576271187%">
+                <p>Notation</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d2127978e72" valign="top" width="69.49152542372882%">
+                <p>Used to</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e66 " valign="top" width="30.508474576271187%">
+                <p>
+                  <samp class="codeph">&#39;PARAM.FIELD&#39;</samp>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e72 " valign="top" width="69.49152542372882%">
+                <p>Reference a parameter in this LSCALC block</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d2127978e66 " valign="top" width="30.508474576271187%">
+                <p>
+                  <samp class="codeph">&#39;^/PARAM.FIELD&#39;</samp>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e72 " valign="top" width="69.49152542372882%">
+                <p>Reference a module-level parameter</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e66 " valign="top" width="30.508474576271187%">
+                <p>
+                  <samp class="codeph">&#39;^/BLOCK/PARAM.FIELD&#39;</samp>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e72 " valign="top" width="69.49152542372882%">
+                <p>
+               Reference a parameter in another block. This block must be
+               in the same module as the LSCALC block.
+            </p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p>
+          If you do not specify the field, CV is
+         assumed.
+      </p>
+
+      </div>
+
+      <p>
+          <strong>Statements for Expressions in the Logic Solver</strong></p>
+
+      <p>
+         The following statement types are allowed in Logic Solver Calc/Logic
+         expressions. Statements are separated by semicolons.
+      </p>
+
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_FACAAE578E5A4C2A8DA00F99BD616FA5"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_FACAAE578E5A4C2A8DA00F99BD616FA5" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d2127978e166" valign="top" width="NaN%">
+                <p>Statement Type</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d2127978e172" valign="top" width="NaN%">
+                <p>Examples</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e166 " valign="top" width="NaN%">
+                <p>Assignment</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e172 " valign="top" width="NaN%">
+                <div class="p"><pre class="codeblock">OUT1 := ABS(IN1);
+&#39;OUT2&#39; := &#39;^/BLOCK1/PARAM1&#39;;</pre>
+
+                  
+                </div>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e166 " valign="top" width="NaN%">
+                <p>If Then Else</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e172 " valign="top" width="NaN%">
+                <div class="p">
+                  <pre class="codeblock">IF IN1 = 1 THEN
+   OUT1 := 1;
+ELSE
+   OUT1 := 0;
+ENDIF;</pre>
+</div>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e166 " valign="top" width="NaN%">
+                <p>Explicit declaration of temporary variables using VAR...END_VAR</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e172 " valign="top" width="NaN%">
+                <div class="p">
+                  <pre class="codeblock">Option Explicit; (* optional *)
+VAR
+   TEMP1;
+   TEMP2;
+END_VAR;</pre>
+
+                </div>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e166 " valign="top" width="NaN%">
+                <p>Comment (*  *)</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e172 " valign="top" width="NaN%">
+                <p>
+                  <samp class="codeph">(* some comment *)</samp>
+                </p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d2127978e166 " valign="top" width="NaN%">
+                <p>Comment (REM)</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d2127978e172 " valign="top" width="NaN%">
+                <p>
+                  <samp class="codeph">REM some comment</samp>
+                </p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>
+        <strong>Assignment Statements</strong>
+      </p>
+
+      <p>
+         The assignment (<strong>:=</strong>) statement allows the assignment of an expression
+         to a reference, a temporary variable or an output to locations inside and
+         outside of the current block.
+      </p>
+
+      <p>Syntax</p>
+
+      <p>
+         &#39;reference&#39; <strong>:=</strong> expression; (* <em>only references to &#39;OUTx&#39; and local module parameters are possible</em>
+         *)</p>
+<p><em>
+            or
+         </em></p>
+
+      <p>
+         tempvar<strong> :=</strong> expression;</p>
+
+      <p>
+        <em>or</em>
+      </p>
+
+      <p>
+         OUTn <strong>:=</strong> expression;
+      </p>
+
+      <p>
+         The assignment (<strong>:=</strong>) statement syntax has these parts:
+      </p>
+
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_8324F2FD705649A88B7BC7CBFCEE0CA8"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_8324F2FD705649A88B7BC7CBFCEE0CA8" rules="all" summary="">
+          
+          
+          <tbody>
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>
+                  <strong>Part</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>
+                  <strong>Description</strong>
+                </p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>
+               Reference</p>
+
+                <p>
+                  <em>or</em>
+                </p>
+
+                <p>
+               tempvar</p>
+
+                <p>
+                  <em>or</em>
+                </p>
+
+                <p>
+               output
+            </p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Required one of either reference, tempvar or output.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Expression</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Required. Any valid expression.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>
+        <strong>If...Then...Else...End_If</strong>
+      </p>
+
+      <p>
+         The IF-THEN-ELSE-END_IF structure allows you to execute conditional code in
+         expressions. When a block tests a condition that evaluates to TRUE, it executes
+         the set of statements after THEN. If the condition evaluates to FALSE, it
+         executes the set of statements after ELSE.  If the condition evaluates to
+         FALSE, and there is no ELSE, then the IF-THEN-ELSE-END_IF structure takes no
+         action.
+      </p>
+
+      <p>Syntax</p>
+<pre class="codeblock">If condition Then [statements]
+  [Else [elsestatements]]
+End_If
+
+</pre>
+
+      
+      <p>
+         The IF-THEN-ELSE-END_IF statement syntax has the following parts:
+      </p>
+
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_53E4770C3F004DD3ABDE76F930CDF418"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_426__table_53E4770C3F004DD3ABDE76F930CDF418" rules="all" summary="">
+          
+          
+          <tbody>
+            <tr>
+              <td class="cellrowborder" valign="top">
+                <p>
+                  <strong>Part</strong>
+                </p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top">
+                <p>
+                  <strong>Description</strong>
+                </p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top">
+                <p>Condition</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top">
+                <p>Required. An expression that evaluates to True or False.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top">
+                <p>Statements</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top">
+                <p>
+               Required. One or more statements separated by semi-colons; executed if
+               condition is True.
+            </p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top">
+                <p>Elsestatements</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top">
+                <p>
+               Optional - but required if keyword ELSE is used. One or more statements
+               separated by semi-colons; executed if condition is False.
+            </p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p>
+          Although the Structured Text Language requires the
+         use of END_IF (with underscore). However, for your convenience, the DeltaV
+         software allows you to use either END_IF or ENDIF.
+      </p>
+
+      </div>
+
+    </div>
+ 
+	  
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

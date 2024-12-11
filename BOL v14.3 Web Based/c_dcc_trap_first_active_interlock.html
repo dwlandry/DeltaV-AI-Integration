@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Trap the first active interlock condition" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="c_discrete_control_condition_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_201" name="DC.Identifier" /><title>Trap the first active interlock condition</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_dcc_select_force_setpoint_output.html" /><link rel="next" href="c_dcc_reset_first_active_interlock.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_201" data-relpath="c_dcc_trap_first_active_interlock.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_201"></a>
+
+<h1 class="topictitle1">Trap the first active interlock condition</h1>
+<div><p>
+  </p>
+ 
+	 <p> Trapping and resetting the first active interlock condition are
+		applicable only to interlock conditions. 
+	 </p>
+ 
+	 <div class="p"> The DCC block traps the active interlock condition when all the
+		following conditions are True: 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_201__ol_4336A1E0823E4379B4F6D427CB683596"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_201__ol_4336A1E0823E4379B4F6D427CB683596"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_201__li_D0951551A6394ADFA1C029A8DBDA98EA"><div class="li_content"> I_OUT_INT is non-zero
+		  (there is at least one condition active or latched); 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_201__li_9B3DE3B9D0C8475A97C5F17132208217"><div class="li_content"> ARM_TRAP is True (the trap
+		  mechanism is armed); 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_201__li_A0BFED95609E4A149BC0A559822260A3"><div class="li_content"> CMD_IN_D is not equal to
+		  I_OUT when I_OUT is not equal to 255 or CMD_IN_D is less than 10 when I_OUT=255
+		  (the device to interlock is in a different state CMD_IN_D than the DCC block
+		  interlock state calculated I_OUT). 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> When CMD_IN_D status is bad, the I_FIRST_OUT trap occurs immediately
+		  when the first two conditions are satisfied. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> If the trap mechanism is required only when the EDC block is in a
+		  state different than the interlock state calculated by the DCC block, connect
+		  CMD_IN_D to the CMD_D parameter of the downstream EDC block. CMD_IN_D
+		  corresponds to the command provided by the EDC block. When CMD_IN_D is greater
+		  or equal to 10, the state is passive. 
+		</p>
+ 
+	 </div>
+ 
+	 
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_201__table_2342900DA81C4EEE9904BE4A3E036F5B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_201__table_2342900DA81C4EEE9904BE4A3E036F5B" rules="all" summary=""><caption><span class="tablecap">CMD_IN_D values</span></caption> 
+		 
+		 
+		<thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" id="d900962e57" valign="top" width="NaN%"> Value 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d900962e60" valign="top" width="NaN%"> Named State 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 0 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 0 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 1 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 1 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 2 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 2 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 3 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 3 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 4 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 4 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 5 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 5 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 10 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 0 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 11 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 1 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 12 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 2 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 13 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 3 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 14 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 4 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d900962e57 " valign="top" width="NaN%"> 
+				<p> 15 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d900962e60 " valign="top" width="NaN%"> 
+				<p> State 5 Passive 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p> When the trap occurs, I_FIRST_OUT is the bit value of the highest
+		priority condition (lowest condition number) that is currently active. 
+	 </p>
+ 
+	 <p> I_FIRST_OUT retains its value until I_FIRST_OUT resets or another
+		condition that has a different interlock state (I_STATE<em>n</em>) and a higher
+		priority becomes active. I_FIRST_OUT changes to the bit value of the newly
+		active condition. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> To prevent updating the first out after the first trap that occurred
+		  since the last reset, even if CMD_IN_D is not equal to I_OUT, configure the
+		  expression of a CND block to 
+		  <em>DCC/I_FIRST_OUT = 0</em> and wire the OUT_D of the CND block to the
+		  input ARM_TRAP of the DCC block. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

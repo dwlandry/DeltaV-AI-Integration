@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Additional pen functions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_manipulating_charts.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_additional_pen_functions" name="DC.Identifier" /><title>Additional pen functions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_environment_specific_pen_properties_and_methods.html" /><link rel="next" href="vba_additional_chart_functions.html" /></head><body class="fixed" id="vba_additional_pen_functions" data-relpath="vba_additional_pen_functions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_additional_pen_functions"></a>
+
+<h1 class="topictitle1">Additional pen functions</h1>
+<div><div></div>
+<div class="section" id="vba_additional_pen_functions__SettingthePropertiesofMultiplePenswithOneCall"><a name="vba_additional_pen_functions__SettingthePropertiesofMultiplePenswithOneCall"></a><h2 class="sectiontitle">Setting the Properties of Multiple Pens with One Call</h2><p>Some Pen properties are also exposed at the Chart level, which allows you to set the properties of all Pens within a Chart with one call. In some cases, the Chart property will reflect the value of the CurrentPen. Keep in mind that if you have customized the properties of one of the Pens, setting one of these properties through the Chart will overwrite any previous changes.</p>
+<p>The following Pen properties can be set through the Chart:</p>
+<a name="vba_additional_pen_functions__simpletable_054C4CD29B584EDCB97888E784389A66"></a><table border="1" cellpadding="4" cellspacing="0" class="simpletableborder" id="vba_additional_pen_functions__simpletable_054C4CD29B584EDCB97888E784389A66" summary=""><tr><td valign="top"><p>AutoScaleDisplayLimits</p>
+</td>
+<td valign="top"><p>DaysBeforeNow</p>
+</td>
+</tr>
+<tr><td valign="top"><p>Duration</p>
+</td>
+<td valign="top"><p>EndTime</p>
+</td>
+</tr>
+<tr><td valign="top"><p>FixedDate</p>
+</td>
+<td valign="top"><p>FixedTime</p>
+</td>
+</tr>
+<tr><td valign="top"><p>GetDuration</p>
+</td>
+<td valign="top"><p>GetInterval</p>
+</td>
+</tr>
+<tr><td valign="top"><p>GetTimeBeforeNow</p>
+</td>
+<td valign="top"><p>HorizontalGridColor</p>
+</td>
+</tr>
+<tr><td valign="top"><p>HorizontalGridStyle</p>
+</td>
+<td valign="top"><p>Interval</p>
+</td>
+</tr>
+<tr><td valign="top"><p>NumberofHorizontalGridLines</p>
+</td>
+<td valign="top"><p>NumberofVerticalGridLines</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ScrollBack</p>
+</td>
+<td valign="top"><p>ScrollForward</p>
+</td>
+</tr>
+<tr><td valign="top"><p>SetDuration</p>
+</td>
+<td valign="top"><p>SetInterval</p>
+</td>
+</tr>
+<tr><td valign="top"><p>SetTimeBeforeNow</p>
+</td>
+<td valign="top"><p>ShowDate</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ShowHorizontalGrid</p>
+</td>
+<td valign="top"><p>ShowVerticalGrid</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ShowLegend</p>
+</td>
+<td valign="top"><p>ShowTimeAxis</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ShowTimeAxisTitle</p>
+</td>
+<td valign="top"><p>ShowValueAxis</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ShowValueAxisTitle</p>
+</td>
+<td valign="top"><p>StartDateMode</p>
+</td>
+</tr>
+<tr><td valign="top"><p>StartTime</p>
+</td>
+<td valign="top"><p>StartTimeMode</p>
+</td>
+</tr>
+<tr><td valign="top"><p>TimeAxisNumLabels</p>
+</td>
+<td valign="top"><p>TimeAxisNumTicks</p>
+</td>
+</tr>
+<tr><td valign="top"><p>TimeAxisTitle</p>
+</td>
+<td valign="top"><p>ValueAxisNumLabels</p>
+</td>
+</tr>
+<tr><td valign="top"><p>ValueAxisNumTicks</p>
+</td>
+<td valign="top"><p>ValueAxisTitle</p>
+</td>
+</tr>
+<tr><td valign="top"><p>VerticalGridColor</p>
+</td>
+<td valign="top"><p>VerticalGridStyle</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="section" id="vba_additional_pen_functions__AddingaPen"><a name="vba_additional_pen_functions__AddingaPen"></a><h2 class="sectiontitle">Adding a Pen</h2><p>To add a new pen to a chart, use the following syntax:</p>
+
+<pre class="pre">
+    Chart.AddPen(&quot;Fix32.NODE.TAG.F_CV&quot;)
+</pre>
+<p>In the configuration environment, adding a pen will expand the chart by the height of the legend line. At run-time, the chart does not expand. Instead, the plot area shrinks.</p>
+</div>
+<div class="section" id="vba_additional_pen_functions__DeletingaPen"><a name="vba_additional_pen_functions__DeletingaPen"></a><h2 class="sectiontitle">Deleting a Pen</h2><p>Deleting a pen is easy. For example, if you have a chart with three pens and you want to delete the second, use the following syntax:</p>
+
+<pre class="pre">
+Chart1.DeletePen(2)
+</pre>
+<p>The deletion will not work if there is a script referencing the name of the pen you are trying to delete.</p>
+<p>For example:</p>
+
+<pre class="pre">
+Pen2.PenLineColor = 255
+Chart1.DeletePen(2)
+</pre>
+<p>This deletion will fail because there is a script explicitly using Pen2. Instead, use the following script sequence:</p>
+
+<pre class="pre">
+Private Sub Rect2_Click()
+    Dim pPen As Object
+    Set pPen = Chart1.Pens.Item(2)
+    pPen.PenLineColor = 255
+    Chart1.DeletePen (2)
+End Sub
+</pre>
+<p>If you delete all your pens, you will create a blank chart. To add the pen back into the chart, open the Chart Configuration dialog box, or use the AddPen method in VBA.</p>
+<div class="note"><span class="notetitle">Note:</span> <p> If you are deleting a single pen, and you want to add another, change the pen source via Pen.Source = &quot;Fix32.Node.Tag.f_cv&quot;. This will give your chart better performance.</p>
+</div>
+</div>
+<div class="section" id="vba_additional_pen_functions__ChangingDataSourcesinaPen"><a name="vba_additional_pen_functions__ChangingDataSourcesinaPen"></a><h2 class="sectiontitle">Changing Data Sources in a Pen</h2><p>The following example shows you how to change data sources in a pen.</p>
+<p>Suppose you have a process variable, PumpTemp1 (AI) which is also the input tag for PumpTemp1-History (ETR storing an hour of data), and you are collecting historical data from PumpTemp1. To view the different data associated with PumpTemp1, create three buttons to view the different data, using the script sequence that follows:</p>
+
+<pre class="pre">
+Private Sub Rect2_Click()
+    Pen1.Source = &quot;Fix32.Area1.PumpTemp1.F_CV&quot;
+End Sub
+
+Private Sub Rect3_Click()
+    Pen1.Source = &quot;Fix32.Area1.PumpTemp1-History.T_DATA&quot;
+End Sub
+
+Private Sub Rect4_Click()
+    Pen1.Source = &quot;Hist.Area1.PumpTemp1.F_CV&quot;
+    <strong>&#39;Now set the start time and fetch
+</strong>    Pen1.StartTime = #10/31/98 11:30:00 AM#
+    Chart1.RefreshChartData
+End Sub
+</pre>
+<p>The previous example allows you to easily switch between different types of data. This next example changes the data source of a pen by editing an object&#39;s Click event.</p>
+<a name="vba_additional_pen_functions__ol_33497E2EBACC4FB98BD69992B7F40A2E"></a><ol id="vba_additional_pen_functions__ol_33497E2EBACC4FB98BD69992B7F40A2E">
+<li id="vba_additional_pen_functions__li_CA33A9472B1C4FAB99C83DD676AA27AB"><div class="li_content"><p>Create an AI block and a DO block in the database.</p>
+</div></li>
+
+<li id="vba_additional_pen_functions__li_1100AE35D46841658B9156F8B2EE1691"><div class="li_content"><p>Create a chart and add a pen with DO as the data source.</p>
+</div></li>
+
+<li id="vba_additional_pen_functions__li_EB1D9568B1B940A3AD6F9327E331BD70"><div class="li_content"><p>Add a rectangle. Right-click the rectangle and select Edit Script from the pop-up menu.</p>
+</div></li>
+
+<li id="vba_additional_pen_functions__li_C767BB0648C041A6B53B2CE8614E881A"><div class="li_content"><p>Enter the following code in the rectangle&#39;s Click event:
+</p>
+<pre class="pre">
+Dim Obj As Object
+Dim ChartObj As Object
+Dim Count As Integer
+Dim ChartCount As Integer
+
+Set Obj = 
+Application.ActiveDocument.Page.ContainedObjects
+Count = Obj.Count
+While Count &gt; 0
+    If Obj.Item(Count).ClassName = &quot;Chart&quot; Then
+        ChartCount = 
+Obj.Item(Count).ContainedObjects.Count
+            While ChartCount &gt; 0
+                Set ChartObj = _ 
+                Obj.Item(Count).ContainedObjects._
+                Item(ChartCount)
+                If ChartObj.ClassName = &quot;Pen&quot; Then
+                    ChartObj.Source = 
+&quot;dvsys.AI.F_CV&quot;
+                End If
+                ChartCount = ChartCount - 1
+            Wend
+    End If
+    Count = Count - 1
+Wend
+</pre>
+</div></li>
+
+<li id="vba_additional_pen_functions__li_D10ADA176A0E4EDCBBFF7F6C57C3146F"><div class="li_content"><p>Switch to the run-time environment and click the rectangle.
+</p>
+<p>In the Chart, the Pen&#39;s Source will change from DO to AI.</p>
+
+</div></li>
+
+</ol>
+</div>
+<div class="section" id="vba_additional_pen_functions__PassinginExternalDatatoaPen"><a name="vba_additional_pen_functions__PassinginExternalDatatoaPen"></a><h2 class="sectiontitle">Passing in External Data to a Pen</h2><p>If you have a real-time pen defined, and attempt to pass external (SQL) data to the pen using the SetPenDataArray method, the time and legend values keeps updating with the real-time value.</p>
+<p>To avoid this problem, disconnect from the real-time data source before calling the SetPenDataArray method, as show in the following sample code:</p>
+
+<pre class="pre">
+Pen2.SetSource &quot;ChartData&quot;, True
+res=Pen2.SetPenDataArray (count, vtVal, vtDate, vtQual)
+</pre>
+<p>where <var class="varname">ChartData</var> can be any string.</p>
+<p>The SetPenDataArray Method takes arrays of parameters. One of these parameters is quality. This parameter holds the OPC Quality of the data as a numeric constant. When creating your own data in a relational database, you need to specify a value of 192 for this field in order for your data to plot on the chart object.</p>
+<p>Keep in mind that the data you pass to a pen does not have to be from a SQL query - it can consist of any external data. To bring this data into a pen, use the call Pen.SetPenDataArray. You can also use GetPenDataArray to extract the data from the pen. Refer to the following example:</p>
+</div>
+<div class="section" id="vba_additional_pen_functions__section_A8C09AEE3797451BAF0F26C4ECC4FD5D"><a name="vba_additional_pen_functions__section_A8C09AEE3797451BAF0F26C4ECC4FD5D"></a><h2 class="sectiontitle">Example: Using GetPenDataArray to Extract Data from Pen</h2>
+<pre class="pre">
+Private Sub Rect2_Click()
+Dim wrkSpace As Workspace
+Dim db_var_name As Database
+Dim record_var As Recordset
+
+<strong>&#39;Open up the database and the named query
+</strong>Set wrkSpace = CreateWorkspace(&quot;&quot;, &quot;admin&quot;, &quot;&quot;, dbUseJet)
+Set db_var_name = wrkSpace.OpenDatabase_
+(&quot;c:\windows\ChartData.mdb&quot;)
+Set record_var = db_var_name.OpenRecordset(&quot;Data Query&quot;,_
+dbOpenDynaset)
+
+<strong>&#39;Get the number of records in the set
+</strong>Dim count As Long
+record_var.MoveLast
+count = record_var.RecordCount
+record_var.MoveFirst
+
+Dim row As Integer
+Dim col As Integer
+Dim value(500) As Double
+Dim times(500) As Date
+Dim quality(500) As Long
+Dim i As Integer
+
+<strong>&#39;Loop through and get the data from the record
+</strong>For i = 0 To count - 1
+    value(i) = record_var.Fields(&quot;Value&quot;).value
+    times(i) = record_var.Fields(&quot;Time&quot;).value
+    quality(i) = record_var.Fields(&quot;Quality&quot;).value
+    record_var.MoveNext
+Next i
+db_var_name.Close
+
+Dim vtVal As Variant
+Dim vtDate As Variant
+Dim vtQual As Variant
+Dim res As Integer
+
+<strong>&#39;Set up correct array types
+</strong>vtVal = value
+vtDate = times
+vtQual = quality
+<strong>&#39;Call the pen with the data arrays
+</strong>res = Pen2.SetPenDataArray(count, vtVal, vtDate, vtQual)
+End Sub
+
+</pre>
+<p>The following is sample code for the SetPenDdataArray method with hardcoded values. You can use this code to test or show the functionality of this method.</p>
+</div>
+<div class="section" id="vba_additional_pen_functions__UsingthePensCollection"><a name="vba_additional_pen_functions__UsingthePensCollection"></a><h2 class="sectiontitle">Example: SetPenDataArray Method with Hardcoded Values</h2>
+<pre class="pre">
+Private Sub Rect2_Click()
+
+Dim objPen As Object
+Dim lngNumPoints As Long
+Dim dblValue() As Double, dblValuePass As Variant
+Dim dteDate() As Date, dteDatePass As Variant
+Dim lngQuality() As Long, lngQualityPass As Variant
+Dim intResults As Integer, intCounter As Integer
+
+&#39;<strong>Set the number of datapoints we are using and
+</strong><strong>&#39;rediminsion our arrays to match
+</strong>lngNumPoints = 5
+ReDim dblValue(lngNumPoints - 1)
+ReDim dteDate(lngNumPoints - 1)
+ReDim lngQuality(lngNumPoints - 1)
+
+<strong>&#39;Set our array values
+</strong>dblValue(0) = 10
+dblValue(1) = 30
+dblValue(2) = 50
+dblValue(3) = 20
+dblValue(4) = 5
+
+dteDate(0) = #12/13/99 12:30:00 PM#
+dteDate(1) = #12/13/99 12:35:00 PM#
+dteDate(2) = #12/13/99 12:40:00 PM#
+dteDate(3) = #12/13/99 12:45:00 PM#
+dteDate(4) = #12/13/99 12:50:00 PM#
+
+For intCounter = 0 To (lngNumPoints - 1)
+    lngQuality(intCounter) = 192
+Next intCounter
+
+<strong>&#39;Pass our array variable to Variant holding Variables
+</strong>dblValuePass = dblValue()
+dteDatePass = dteDate()
+lngQualityPass = lngQuality()
+
+Set objPen = Chart1.Pens.Item(1)
+
+intResults = objPen.SetPenDataArray(lngNumPoints, 
+dblValuePass, dteDatePass, lngQualityPass)
+
+Set objPen = Nothing
+
+<strong>&#39;Set the chart endtime and refresh the data
+</strong>Chart1.EndTime = #12/13/99 12:50:00 PM#
+Chart1.RefreshChartData
+
+End Sub
+</pre>
+</div>
+<div class="section" id="vba_additional_pen_functions__section_B413BF1EEED447688C798CCC6B12AC6D"><a name="vba_additional_pen_functions__section_B413BF1EEED447688C798CCC6B12AC6D"></a><h2 class="sectiontitle">Using the Pens Collection</h2><p>The pens contained in a chart are exposed in a collection called <strong>Pens</strong>. If you are constantly adding and deleting pens, writing specific scripts which operate on those pens may become cumbersome. Another way to write your scripts is to access Chart.Pens.Item(3) rather than access Pen3, for example. The order of the pens in this collection is the order that they appear in the Pen list in the Chart Configuration dialog box and in the legend.</p>
+<p>Using the collection will also allow you to avoid any problems deleting pens that have scripts explicitly referencing them. Because of these advantages, we recommend you use the collection when you work with pens often.</p>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

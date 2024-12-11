@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="VBA sample program for writing historical data" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, VBA" name="DC.subject" /><meta content="DeltaV Reporter, VBA" name="keywords" /><meta content="c_vba_support_for_historical_data.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_vba_sample_program_for_writing_historical_data" name="DC.Identifier" /><title>VBA sample program for writing historical data</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_vba_support_for_historical_data.html" /><link rel="next" href="c_generating_scheduled_reports.html" /></head><body class="fixed" id="c_vba_sample_program_for_writing_historical_data" data-relpath="c_vba_sample_program_for_writing_historical_data.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_vba_sample_program_for_writing_historical_data"></a>
+
+<h1 class="topictitle1">VBA sample program for writing historical data</h1>
+<div><div></div>
+ 
+    <p>The following topic describes how to write a custom VBA program that
+      accesses historical data read from the DeltaV Continuous Historian database
+      using DeltaV Reporter. 
+    </p>
+ 
+    <div class="section" id="c_vba_sample_program_for_writing_historical_data__section_AF0D36356B6B478790643CE945BCD236"><a name="c_vba_sample_program_for_writing_historical_data__section_AF0D36356B6B478790643CE945BCD236"></a><h2 class="sectiontitle">Application scenario</h2> 
+       
+      <p>Every 30 minutes during a shift, the operator is required to check a
+        simple pressure gauge on the side of an aging vessel. The indicator on the
+        gauge displays green when pressure is at a safe level, amber when pressure is
+        approaching dangerous levels, or red when the pressure has exceeded a safe
+        level. To simplify this process and reduce the likelihood of error, you can
+        create a VBA program in which the times of the checks are predefined and the
+        operator is forced to choose a valid state for the gauge. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_sample_program_for_writing_historical_data__section_2D7A0DF6FF21452B8B0D2BBEA87613DC"><a name="c_vba_sample_program_for_writing_historical_data__section_2D7A0DF6FF21452B8B0D2BBEA87613DC"></a><h2 class="sectiontitle">Set up an Excel workbook template to collect data with DeltaV
+        Reporter</h2> 
+       
+      <p>To set up DeltaV Reporter to collect data for the pressure gauge,
+        start Microsoft Excel, and then complete the following steps: 
+      </p>
+ 
+      <a name="c_vba_sample_program_for_writing_historical_data__ol_E36B58FAFB924FABB7B1C09F224D93B3"></a><ol id="c_vba_sample_program_for_writing_historical_data__ol_E36B58FAFB924FABB7B1C09F224D93B3"> 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_DA47C0CE2A6340A8B601A8FE2B66C133"><div class="li_content"> In cell A1, enter the
+          formula =TODAY(). 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_9D7AD03CD41A41A09EA3E6A4C5AD2ECF"><div class="li_content"> Select cells A3 thru A18.
+          Open the 
+          <span class="wintitle">Format Cells</span> dialog, and then set dd mmm yyyy
+          hh:mm as a Custom Number format for the cells. 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_2741096BE7EC4CC5BE13235F6FA38AEB"><div class="li_content"> Enter the following cell
+          values and formulas: 
+          
+<div class="tablenoborder"><a name="c_vba_sample_program_for_writing_historical_data__table_1C4A6AFD581C44738BFD07C0295ABA86"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_vba_sample_program_for_writing_historical_data__table_1C4A6AFD581C44738BFD07C0295ABA86" rules="all" summary=""> 
+               
+               
+              <thead align="left"> 
+                <tr valign="top"> 
+                  <th class="cellrowborder" id="d1434271e82" valign="top" width="25%"> 
+                    <p>Cells 
+                    </p>
+ 
+                  </th>
+ 
+                  <th class="cellrowborder" id="d1434271e88" valign="top" width="75%"> 
+                    <p>Value or formula 
+                    </p>
+ 
+                  </th>
+ 
+                </tr>
+ 
+              </thead>
+ 
+              <tbody> 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>A3 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>= A1 + &quot;08:15&quot; 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>A4 
+                    </p>
+ 
+                    <p> A5 thru A18 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>= A3 + &quot;00:30&quot; 
+                    </p>
+ 
+                    <p> Copy the formula from cell A4 into cells A5 thru A18. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>B3 thru B18 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>Vessel1.PressureGauge.HDE 
+                    </p>
+ 
+                    <p> 
+                      <strong>Note</strong> The .HDE suffix is required. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>D3 thru D18 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>128 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>E3 thru E18 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>TRUE 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e82 " valign="top" width="25%"> 
+                    <p>G1 
+                    </p>
+ 
+                    <p> G2 
+                    </p>
+ 
+                    <p> G3 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e88 " valign="top" width="75%"> 
+                    <p>green 
+                    </p>
+ 
+                    <p> amber 
+                    </p>
+ 
+                    <p> red 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+              </tbody>
+ 
+            </table>
+</div>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_554D5247109B4222B63E6DEB10C20A45"><div class="li_content"> Select cells G1 thru G3,
+          and then specify GaugeValues as their range name. 
+          <p><br /><a name="c_vba_sample_program_for_writing_historical_data__image_1DAACB40C64D49C5AB0F8AE3E1CD47CC"></a><div class="imagecenter"><img class="imagecenter" id="c_vba_sample_program_for_writing_historical_data__image_1DAACB40C64D49C5AB0F8AE3E1CD47CC" src="range_name.png" /></div><br /> 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_2382F2B500E745CABEEC88AEB8340DBB"><div class="li_content"> Select cells C3 thru C18,
+          open the 
+          <span class="wintitle">Data Validation</span> dialog, and then specify the
+          following 
+          <span class="uicontrol">Validation criteria</span> settings: 
+          
+<div class="tablenoborder"><a name="c_vba_sample_program_for_writing_historical_data__table_26C4F7F0F317407BA8ADD9E0E99F06C0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_vba_sample_program_for_writing_historical_data__table_26C4F7F0F317407BA8ADD9E0E99F06C0" rules="all" summary=""> 
+               
+               
+              <thead align="left"> 
+                <tr valign="top"> 
+                  <th class="cellrowborder" id="d1434271e244" valign="top" width="25%"> 
+                    <p>Setting 
+                    </p>
+ 
+                  </th>
+ 
+                  <th class="cellrowborder" id="d1434271e250" valign="top" width="75%"> 
+                    <p>Value 
+                    </p>
+ 
+                  </th>
+ 
+                </tr>
+ 
+              </thead>
+ 
+              <tbody> 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e244 " valign="top" width="25%"> 
+                    <p> 
+                      <span class="uicontrol">Allow</span> 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e250 " valign="top" width="75%"> 
+                    <p>List 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e244 " valign="top" width="25%"> 
+                    <p> 
+                      <span class="uicontrol">Source</span> 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e250 " valign="top" width="75%"> 
+                    <p>= GaugeValues 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+              </tbody>
+ 
+            </table>
+</div>
+ 
+          <p><br /><a name="c_vba_sample_program_for_writing_historical_data__image_C8F49D82443B4B7FA3C7761627497EA2"></a><div class="imagecenter"><img class="imagecenter" id="c_vba_sample_program_for_writing_historical_data__image_C8F49D82443B4B7FA3C7761627497EA2" src="DataValidation.png" /></div><br /> 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_C8ECEEA0D86347E5BF428430460BCE32"><div class="li_content"> Save the Excel workbook
+          as PressureGauge.xltm, an Excel Macro-Enabled Template. 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_sample_program_for_writing_historical_data__section_886D222C972647A6ABB7FEB6943A55A6"><a name="c_vba_sample_program_for_writing_historical_data__section_886D222C972647A6ABB7FEB6943A55A6"></a><h2 class="sectiontitle">Customize the Excel template with VBA</h2> 
+       
+      <p>To extend the functionality of the PressureGauge.xltm template by
+        customizing it with VBA, complete the following steps: 
+      </p>
+ 
+      <a name="c_vba_sample_program_for_writing_historical_data__ol_7E6458249B8A46129EE6A60E26DB079D"></a><ol id="c_vba_sample_program_for_writing_historical_data__ol_7E6458249B8A46129EE6A60E26DB079D"> 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_89411545F67B44918CFDE598C66D44EC"><div class="li_content"> On the 
+          <span class="uicontrol">Developer</span> tab, in the 
+          <span class="uicontrol">Code</span> group, click 
+          <span class="uicontrol">Visual Basic</span> to start the Visual Basic editor,
+          and then click 
+          <span class="uicontrol">Sheet1</span> in the 
+          <span class="wintitle">Project - VBAProject</span> window. 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_0509B9F544FE43FEBEDE1024E690F274"><div class="li_content"> Enter the following Sub
+          procedures to the PressureGauge.xltm - Sheet1 (Code) window. 
+          <pre class="codeblock">
+Sub WriteData()
+        MsgBox &quot;Data Written&quot;
+End Sub
+</pre>
+ 
+          <pre class="codeblock">
+Sub ClearForm()
+        MsgBox &quot;Form Cleared&quot;
+End Sub
+</pre>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_8BCE08A7962A49C9AF14D56226217A8E"><div class="li_content"> To return to the
+          worksheet, click 
+          <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Close and Return
+              to Microsoft Excel</span></span>. 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_6EEEA3C674724CF897E2D4D3520BDC92"><div class="li_content"> To add macro buttons
+          (named Clear Form and Write Data, for example) for each of the Sub procedures,
+          open the 
+          <span class="wintitle">Customize</span> window in 
+          <span class="uicontrol">Excel Options</span>, and then select 
+          <span class="uicontrol">Macros</span> from the 
+          <span class="uicontrol">Choose commands from</span> list. 
+          <p><br /><a name="c_vba_sample_program_for_writing_historical_data__image_9C44795017004E6782F3BF616FB65962"></a><div class="imagecenter"><img class="imagecenter" id="c_vba_sample_program_for_writing_historical_data__image_9C44795017004E6782F3BF616FB65962" src="MacroButtons.png" /></div><br /> 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_589F9E732ECF4AFC93F36BEB50821D5B"><div class="li_content"> Start the Visual Basic
+          editor again and add code to the WriteData and ClearForm Sub procedures to
+          perform the following tasks: 
+          
+<div class="tablenoborder"><a name="c_vba_sample_program_for_writing_historical_data__table_E3EE4B613A084E41A45C82B9EBA4283B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_vba_sample_program_for_writing_historical_data__table_E3EE4B613A084E41A45C82B9EBA4283B" rules="all" summary=""> 
+               
+               
+              <thead align="left"> 
+                <tr valign="top"> 
+                  <th class="cellrowborder" id="d1434271e389" valign="top" width="20%"> 
+                    <p>Macro Sub procedure 
+                    </p>
+ 
+                  </th>
+ 
+                  <th class="cellrowborder" id="d1434271e395" valign="top" width="80%"> 
+                    <p>Task 
+                    </p>
+ 
+                  </th>
+ 
+                </tr>
+ 
+              </thead>
+ 
+              <tbody> 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " rowspan="6" valign="top" width="20%"> 
+                    <p>WriteData 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e395 " valign="top" width="80%"> 
+                    <p>Check that the time is after 15:45. (If the time is any
+                      earlier, the table cannot be completely filled out.) 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Access the Vessel1.PressureGauge.HDE object. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Connect to the DeltaV Continuous Historian server. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Use the WriteSamples method on the Connection object to
+                      write the data to the cells in the range A3 thru E18. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Check for success. 
+                    </p>
+ 
+                    <p>For example, if the WriteSamples method succeeds, it
+                      will return 16 to indicate that 16 samples were written. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Iterate over any errors and display their descriptions. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " rowspan="4" valign="top" width="20%"> 
+                    <p>ClearForm 
+                    </p>
+ 
+                  </td>
+ 
+                  <td class="cellrowborder" headers="d1434271e395 " valign="top" width="80%"> 
+                    <p>Prompt for confirmation, so the operator does not
+                      inadvertently lose any data entered manually. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Clear the contents of each cell in the range C3 thru
+                      C18. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Set the value of each cell in the range D3 thru D18 to
+                      128. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+                <tr valign="top"> 
+                  <td class="cellrowborder" headers="d1434271e389 " valign="top" width="20%"> 
+                    <p>Set the value of each cell in the range E3 thru E18 to
+                      TRUE. 
+                    </p>
+ 
+                  </td>
+ 
+                </tr>
+ 
+              </tbody>
+ 
+            </table>
+</div>
+ 
+        </div></li>
+ 
+        <li id="c_vba_sample_program_for_writing_historical_data__li_F3871368EA604628B50F4C97E405EAC3"><div class="li_content"> Save the
+          PressureGauge.xltm macro-enabled Excel template. 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_sample_program_for_writing_historical_data__section_1CFEACA1C2F841E285070878C718FC03"><a name="c_vba_sample_program_for_writing_historical_data__section_1CFEACA1C2F841E285070878C718FC03"></a><h2 class="sectiontitle">Using the customized Excel template</h2> 
+       
+      <p>An operator can use the PressureGauge.xltm macro-enabled Excel
+        template to procedurally enforce choosing a valid state for the gauge. At the
+        start of a shift, the operator would first create a new Excel workbook based on
+        the PressureGauge.xltm Excel template. As the shift progresses, the operator
+        periodically enters samples into the worksheet. At the end of the shift, the
+        operator clicks the 
+        <span class="uicontrol">Write Data</span> button to store the data in the
+        DeltaV Continuous Historian database. 
+      </p>
+ 
+      <p>If the operator clicks the 
+        <span class="uicontrol">Write Data</span> button before the end of the shift,
+        the macro prevents any action or data storage from occurring. After the
+        operator clicks the 
+        <span class="uicontrol">Write Data</span> button once, clicking it again fails,
+        because any attempt to write duplicate samples with an identical time stamp for
+        the same tag are prevented. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_vba_support_for_historical_data.html">VBA support for historical data</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

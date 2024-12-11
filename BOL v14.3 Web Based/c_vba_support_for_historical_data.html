@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="VBA support for historical data" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, VBA, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, VBA, DeltaV Reporter" name="keywords" /><meta content="c_vba_sample_program_for_writing_historical_data.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_vba_support_for_historical_data" name="DC.Identifier" /><title>VBA support for historical data</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_writing_historical_data_to_a_continuous_historian_database.html" /><link rel="next" href="c_vba_sample_program_for_writing_historical_data.html" /></head><body class="fixed" id="c_vba_support_for_historical_data" data-relpath="c_vba_support_for_historical_data.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_vba_support_for_historical_data"></a>
+
+<h1 class="topictitle1">VBA support for historical data</h1>
+<div><div></div>
+ 
+    <p>The Excel add-in for DeltaV Reporter includes support for writing a
+      custom VBA program that accesses historical data read from the DeltaV
+      Continuous Historian or Event Chronicle database using DeltaV Reporter. This
+      topic describes the VBA objects, methods, and properties provided for using a
+      custom VBA program with DeltaV Reporter. The DeltaV software includes a sample
+      VBA program for writing historical data. 
+    </p>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_32A5A589EC1E443ABB9758D9E6A4AAAA"><a name="c_vba_support_for_historical_data__section_32A5A589EC1E443ABB9758D9E6A4AAAA"></a><h2 class="sectiontitle">DeltaVCHAddin object</h2> 
+       
+      <p>VBA access to DeltaV Reporter is achieved by connecting to a DeltaV
+        Continuous Historian server with the Connect method of the built-in
+        DeltaVCHAddIn object. 
+      </p>
+ 
+      <p>To use the DeltaVCHAddIn object, you first must establish a reference
+        in VBA to the DeltaV.Historian.Excel.AddIn.tlb type library file, as described
+        in the following steps: 
+      </p>
+ 
+      <a name="c_vba_support_for_historical_data__ol_0FF0A079460F4CB380082E622E3427F0"></a><ol id="c_vba_support_for_historical_data__ol_0FF0A079460F4CB380082E622E3427F0"> 
+        <li id="c_vba_support_for_historical_data__li_C5B7AD6101D74E2E93956B98AC245E58"><div class="li_content"> Start Microsoft Excel. 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_074D2DA8EF0E44B29A2DC627FB9E5893"><div class="li_content"> On the 
+          <span class="uicontrol">Developer</span> tab, in the 
+          <span class="uicontrol">Code</span> group click 
+          <span class="uicontrol">Visual Basic</span>. (To enable the 
+          <span class="uicontrol">Developer</span> tab, click 
+          <span class="uicontrol">File</span>, click 
+          <span class="uicontrol">Options</span>, 
+          <span class="uicontrol">Customize Ribbon</span>, and then check the 
+          <span class="uicontrol">Developer</span> check box under 
+          <span class="uicontrol">Main Tabs</span>.) 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_66A9D38935374E2AB41DA2EF0E928B83"><div class="li_content"> In the Visual Basic
+          window, click 
+          <span class="menucascade"><span class="uicontrol">Tools</span> &gt; <span class="uicontrol">References</span></span>.
+          
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_FDB71554FC4A478FB3CC4BDFFE1EB7AB"><div class="li_content"> In the list of 
+          <span class="uicontrol">Available References</span> in the 
+          <span class="wintitle">References - VBAProject</span> dialog, select the 
+          <span class="uicontrol">DeltaV_Historian_Excel_AddIn</span> check box, and
+          then click 
+          <span class="uicontrol">OK</span>. 
+        </div></li>
+ 
+      </ol>
+ 
+      <div class="note"><span class="notetitle">Note:</span> If the 
+        <span class="uicontrol">Available References</span> list in the 
+        <span class="wintitle">References - VBAProject</span> dialog does not include a
+        check box for 
+        <span class="uicontrol">DeltaV_Historian_Excel_AddIn</span>, click 
+        <span class="uicontrol">Browse</span>, navigate to the 
+        <span class="filepath">C:DeltaV\bin</span> folder, and then open the
+        DeltaV.Historian.Excel.AddIn.tlb type library file. 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_AB32731A93954DF0A537B32F16A2E48C"><a name="c_vba_support_for_historical_data__section_AB32731A93954DF0A537B32F16A2E48C"></a><h2 class="sectiontitle">Methods</h2> 
+       
+      <p>Connect method 
+      </p>
+ 
+      <p>The Connect method connects to the specified DeltaV Continuous
+        Historian server in order to write data samples. It returns a
+        DeltaV_Historian_HDE_XLA.Connection object. 
+      </p>
+ 
+      <p><em>expression</em>.Connect(<em>connection</em>) 
+      </p>
+ 
+      <p><em>expression</em> — A required expression that returns a
+        DeltaV_Historian_HDE_XLA.Connection object. 
+      </p>
+ 
+      <p><em>connection</em> — A required string, containing the name of the
+        DeltaV Continuous Historian server to connect to. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_8F34AB5062E04CC7ACE1D70717A86D3E"><a name="c_vba_support_for_historical_data__section_8F34AB5062E04CC7ACE1D70717A86D3E"></a><h2 class="sectiontitle">Properties</h2> 
+       
+      <p>None. 
+      </p>
+ 
+      <p><strong>Example</strong> 
+      </p>
+ 
+      <p>The following sample code illustrates how to access the DeltaVCHAddIn
+        object after establishing a reference in VBA to the
+        DeltaV.Historian.Excel.AddIn.tlb type library file: 
+      </p>
+ 
+      <pre class="codeblock">
+Dim HDE As DeltaV_Historian_Excel_AddIn.DeltaVCHAddIn
+Set HDE = Application.COMAddIns.Item(&quot;DeltaV.ContinuousHistorian&quot;).Object
+</pre>
+ 
+      <p>The following sample code illustrates how to connect to the DeltaV
+        Continuous Historian server by using the Connect method after accessing the
+        DeltaVCHAddIn object: 
+      </p>
+ 
+      <pre class="codeblock">
+Dim cnn As DeltaV_Historian_Excel_AddIn.Connection
+Set cnn = HDE.Connect(&quot;localhost&quot;)
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_12ACC903B8E945F6B725CEA9AB13815A"><a name="c_vba_support_for_historical_data__section_12ACC903B8E945F6B725CEA9AB13815A"></a><h2 class="sectiontitle">Connection object</h2> 
+       
+      <p>The Connection object provides a method through which it is possible
+        to write a number of manually gathered data samples to the server. Writing
+        samples in this way is treated as an atomic operation, meaning that it will
+        either be 100% successful; or it will fail completely without any data being
+        recorded in the DeltaV Continuous Historian database. The Connection object
+        provides a property through which a collection of errors relating to the most
+        recent write operation can be accessed. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_CE9B4EF09BC24BA0BF5545F57E207C93"><a name="c_vba_support_for_historical_data__section_CE9B4EF09BC24BA0BF5545F57E207C93"></a><h2 class="sectiontitle">Methods</h2> 
+       
+      <p>WriteSamples method 
+      </p>
+ 
+      <p>The WriteSamples method writes data samples to a DeltaV Continuous
+        Historian server. It returns the number of samples written. No data are stored
+        in the server unless all of the data samples can be written without error. 
+      </p>
+ 
+      <p><em>expression</em>.WriteSamples(<em>timeMode</em>, 
+        <em>range</em>) 
+      </p>
+ 
+      <p><em>expression</em> — A required expression that returns a
+        DeltaV_Historian_HDE_XLA.Connection object. 
+      </p>
+ 
+      <p><em>timeMode</em> — A required string that specifies how time stamps are
+        interpreted. Valid values are: 
+      </p>
+ 
+      <p>Local — Time stamps are treated as being in the time zone of the
+        client PC. They are converted to GMT for storage in the DeltaV Continuous
+        Historian database. Conversion to GMT takes into consideration whether the time
+        stamp falls within daylight savings time. 
+      </p>
+ 
+      <p>GMT — No conversion is necessary since all samples are stored by the
+        DeltaV Continuous Historian with GMT time stamps. 
+      </p>
+ 
+      <p>GMT±&quot;hh:mm&quot; — The time stamp is adjusted accordingly. Daylight savings
+        time has no effect. For example, if GMT–&quot;04:00&quot; is specified, the times in the
+        spreadsheet relate to a region that is four hours behind GMT. Therefore, four
+        hours is added to each time stamp as the samples are stored in the database. 
+      </p>
+ 
+      <p><em>range</em> — A required rectangular range of cells where each row
+        contains data for a single data sample to be written. Cells in each row must be
+        interpretable in order as: 
+      </p>
+ 
+      <a name="c_vba_support_for_historical_data__ol_BB7274CE9E3D4166B30C0FBC405CBEC0"></a><ol id="c_vba_support_for_historical_data__ol_BB7274CE9E3D4166B30C0FBC405CBEC0"> 
+        <li id="c_vba_support_for_historical_data__li_0C30D59CFAF1459C9D5A00E86836BC28"><div class="li_content"> A tag of the form 
+          <em>DeltaVStyleTag</em>.HDE, where 
+          <em>DeltaVStyleTag</em> is a tag name conforming to DeltaV rules. 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_4368050C295047B2B09CDC492B885621"><div class="li_content"> A time stamp. 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_9D17EF93A3B84804BE03F35506CA4B36"><div class="li_content"> A value (float or
+          string). 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_20A0AA33AC0944D7B992B68E920CDD71"><div class="li_content"> An optional column
+          containing a parameter status as an integer value between 0 and 255, inclusive
+          (also known as FfStatus or DeltaV Status). If this column is omitted from the
+          range, 128 (i.e. Good or GoodNonCascade NonSpecific NotLimited) is assumed for
+          every row in the range. 
+        </div></li>
+ 
+        <li id="c_vba_support_for_historical_data__li_6565B60E59C849CDB606DEA4914D0500"><div class="li_content"> An optional column. A
+          Boolean indicating whether the History Data Is Valid. If this column is omitted
+          from the range, TRUE (i.e. the History Data is Valid) is assumed for every row
+          in the range. 
+        </div></li>
+ 
+      </ol>
+ 
+      <p>Entirely blank rows are ignored and cells are considered blank if they
+        are empty (i.e. ISBLANK = TRUE) or if they contain only spaces. If the range
+        includes the optional fourth or fifth columns, all cells in those columns must
+        contain explicit values. 
+      </p>
+ 
+      <p>If the operation fails, the VBA Err object contains the error number
+        for the first object in the Errors collection. The values of the Number and
+        Description properties of the first Error object in the Errors collection will
+        match the values of the Number and Description properties of the VBA Err
+        object. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> If there is no valid Connection object, the VBA Err
+        object is the only source for information about DeltaV Reporter errors. 
+      </div>
+ 
+      <p><strong>Example</strong> 
+      </p>
+ 
+      <pre class="codeblock">
+Sub WriteSamplesExample(dvch As DeltaVCHAddIn, _
+    connectionString As String, timeModeString As String, _
+    dataRange As Range)
+
+    On Error GoTo ERR_HANDLER
+    
+    Dim cnn As Connection
+    Set cnn = dvch.Connect(connectionString)
+    
+    Dim nSamples As Integer    
+    nSamples = cnn.WriteSamples(timeModeString, dataRange)
+    
+    MsgBox &quot;Done. &quot; &amp; nSamples &amp; &quot; written by &quot; &amp; cnn.DeltaVUsername
+    
+    Exit Sub
+           
+ERR_HANDLER:
+    If cnn Is Nothing Then
+
+        &#39;&#39;&#39; No Connection object, so no Errors collection.
+        &#39;&#39;&#39; The standard VBA Err object has details of the error.
+        MsgBox &quot;Err = 0x&quot; &amp; Hex(Err.Number) &amp; &quot; &quot; &amp; Err.Description
+
+    Else
+
+        &#39;&#39;&#39; We have a Connection object, so we can get the Errors 
+        &#39;&#39;&#39; collection. The standard VBA Err object also has the
+        &#39;&#39;&#39; Number and Description of the first Error in the
+        &#39;&#39;&#39; collection.
+
+        MsgBox &quot;Number of errors = &quot; &amp; cnn.Errors.Count &amp; &quot;.&quot; &amp; _
+               &quot;VBA Err = 0x&quot; &amp; Hex(Err.Number) &amp; &quot; &quot; &amp; _
+               Err.Description
+    End If 
+End Sub
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_A36923FC940E491C910623702E82010F"><a name="c_vba_support_for_historical_data__section_A36923FC940E491C910623702E82010F"></a><h2 class="sectiontitle">Properties</h2> 
+       
+      <p>Errors property — Returns a DeltaV_Historian_HDE_XLA.Errors object
+        that allows you to examine errors relating to the previous WriteSamples
+        operation. 
+      </p>
+ 
+      <p>DeltaVUserName property — Returns the name of the currently logged in
+        DeltaV user on the node previously used to obtain a connection. If no user is
+        logged onto DeltaV on that node, an empty string is returned. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_FEF8FED876214E859F623781954F3921"><a name="c_vba_support_for_historical_data__section_FEF8FED876214E859F623781954F3921"></a><h2 class="sectiontitle">Errors object</h2> 
+       
+      <p>A collection of Error objects that represents all the errors relating
+        to the previous WriteSamples operation performed with the Connection object. 
+      </p>
+ 
+      <p>In addition to its Clear method, the Errors collection also includes
+        standard methods and properties relating to collections, supporting use of the
+        collection in VBA looping constructs such as For Each… Next. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_A2C63F2A83244281BB43196CCDDB7A78"><a name="c_vba_support_for_historical_data__section_A2C63F2A83244281BB43196CCDDB7A78"></a><h2 class="sectiontitle">Methods</h2> 
+       
+      <p>Clear method 
+      </p>
+ 
+      <p>The Clear method removes all the Error objects from the Errors
+        collection. When an error occurs (during a WriteSamples operation, for
+        example), the Errors collection is cleared, then filled with Error objects
+        based on the new error. 
+      </p>
+ 
+      <p>Clear() 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_A436CE4E4BD54684BB127394029AED0F"><a name="c_vba_support_for_historical_data__section_A436CE4E4BD54684BB127394029AED0F"></a><h2 class="sectiontitle">Properties</h2> 
+       
+      <p><strong>Example</strong> 
+      </p>
+ 
+      <pre class="codeblock">
+Dim errors As DeltaV_Historian_Excel_AddIn.Errors 
+Set errors = cnn.Errors
+
+If errors.Count &gt; 0 Then
+
+    MsgBox errors.Count &amp; &quot; errors occurred.&quot;
+
+End If
+
+Dim error As DeltaV_Historian_Excel_AddIn.Error
+For Each error In errors
+
+    MsgBox error.Description
+
+Next
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_8BC8FA6E0DF045258F47FBBA1694D3D5"><a name="c_vba_support_for_historical_data__section_8BC8FA6E0DF045258F47FBBA1694D3D5"></a><h2 class="sectiontitle">Error object</h2> 
+       
+      <p>The Error object provides properties relating to an error that
+        occurred during a WriteSamples operation. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_84DC8B18298543A48BFF98CF281A9BAF"><a name="c_vba_support_for_historical_data__section_84DC8B18298543A48BFF98CF281A9BAF"></a><h2 class="sectiontitle">Methods</h2> 
+       
+      <p>None. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_vba_support_for_historical_data__section_23CACF0BC95F4BDBBE9165EA727FAB7D"><a name="c_vba_support_for_historical_data__section_23CACF0BC95F4BDBBE9165EA727FAB7D"></a><h2 class="sectiontitle">Properties</h2> 
+       
+      <p>Number property — Returns a Long value that identifies the error. Use
+        the Number property to determine which error occurred. 
+      </p>
+ 
+      <p>Description property — Returns a String value that contains a
+        description of an Error object. Use the Description property to obtain a short
+        description of the error that you can display to alert the user. 
+      </p>
+ 
+      <p>RowNumber property — Returns a Long value to indicate the number of
+        the row associated with the error. A return value of 1 indicates the first row
+        in a range. A return value of 0 indicates that the error relates to the
+        operation as a whole. 
+      </p>
+ 
+      <p><strong>Example</strong> 
+      </p>
+ 
+      <pre class="codeblock">
+Sub RowNumberExample(ByVal cnn As Connection, _
+    ByVal connectionString As String, _
+    ByVal timeModeString As String, _
+    ByVal dataRange As Range)
+
+    On Error GoTo ERR_HANDLER
+
+    Dim nSamples As Integer
+    nSamples = cnn.WriteSamples(timeModeString, dataRange)
+    MsgBox(&quot;Done. &quot; &amp; nSamples &amp; &quot; written&quot;)
+    Exit Sub
+
+ERR_HANDLER:
+    Dim errors As DeltaV_Historian_Excel_AddIn.Errors
+    errors = cnn.Errors
+
+    If errors(0).Row &gt; 0 Then
+        MsgBox(&quot;Error caused by sample at &quot; &amp; _
+               dataRange.Cells(errors(0).RowNumber, 1).Value &amp; _
+               &quot; (&quot; &amp; timeModeString &amp; &quot;)&quot;)
+    End If
+End Sub
+</pre>
+ 
+      <p>ColumnNumber property — Returns a Long value to indicate the number of
+        the column associated with the error. A return value of 1 indicates the first
+        column in a range. A return value of 0 indicates that the error relates to the
+        operation as a whole. You can use the ColumnNumber property in conjunction with
+        the RowNumber property to determine the precise cell within the data range that
+        relates to the error. 
+      </p>
+ 
+      <p><strong>Example</strong> 
+      </p>
+ 
+      <pre class="codeblock">
+Sub ColumnNumberExample(ByVal cnn As Connection, _
+    ByVal connectionString As String, _
+    ByVal timeModeString As String, ByVal dataRange As Range)
+
+    On Error GoTo ERR_HANDLER
+
+    Dim nSamples As Integer
+    nSamples = cnn.WriteSamples(timeModeString, dataRange)
+    MsgBox(&quot;Done. &quot; &amp; nSamples &amp; &quot; written&quot;)
+    Exit Sub
+
+ERR_HANDLER:
+    Dim errors As DeltaV_Historian_Excel_AddIn.Errors
+    errors = cnn.Errors
+
+    Dim E As DeltaV_Historian_Excel_AddIn.Error
+    For Each E In cnn.Errors
+        If (E.RowNumber &gt; 0 And E.ColumnNumber &gt; 0) Then
+            &#39;&#39;&#39; This error relates to a single cell in the
+            &#39;&#39;&#39; dataRange.
+            Dim badCell As range
+            badCell = dataRange.Cells(E.RowNumber, E.ColumnNumber)
+
+            &#39;&#39;&#39; Color the offending cell red...
+            badCell.Interior.ColorIndex = 3
+        End If
+    Next
+End Sub
+</pre>
+ 
+      <p>Source property — Returns a String value that contains a description
+        of the error and the name of the object or application that originally
+        generated the error. 
+      </p>
+ 
+      <p>HelpFile property — Returns a String value that evaluates to a fully
+        resolved path to a help file associated with an Error object. If there is no
+        specified help file, the HelpFile property returns a zero-length string. 
+      </p>
+ 
+      <p>HelpContext property — Returns a Long value that identifies the
+        context ID for a topic in a help file. If a help file is specified in the
+        HelpFile property, you can use the HelpContext property to display the topic
+        associated with an Error object. Otherwise, the HelpContext property returns 0.
+        
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_vba_sample_program_for_writing_historical_data.html">VBA sample program for writing historical data</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

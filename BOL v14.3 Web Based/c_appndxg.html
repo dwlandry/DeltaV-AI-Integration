@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Appendix G - The Recipe Exchange Control" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Recipe Exchange, importing, recipes, exporting recipes, exporting" name="DC.subject" /><meta content="Recipe Exchange, importing, recipes, exporting recipes, exporting" name="keywords" /><meta content="r_recipeexchange2object.html" name="DC.Relation" scheme="URI" /><meta content="r_irecipeexchangeinterfacemethods.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_appndxg" name="DC.Identifier" /><title>Appendix G - The Recipe Exchange Control</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_dvbcmconfiguredaction.html" /><link rel="next" href="r_recipeexchange2object.html" /></head><body class="fixed" id="c_appndxg" data-relpath="c_appndxg.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_appndxg"></a>
+
+<h1 class="topictitle1">Appendix G - The Recipe Exchange Control</h1>
+<div><div></div>
+ 
+	 <p>The DeltaV Recipe Exchange control (DLL) allows a recipe (operation,
+		unit procedure and procedure) and any associated formulas to be imported to or
+		exported from a DeltaV system. Recipe Exchange exports a recipe from a DeltaV
+		system by converting FHX files into XML format. To import recipes created
+		outside of the DeltaV system, third party applications can be used to create
+		the XML files. Recipe Exchange converts the XML files to FHX format and imports
+		them into the DeltaV system. 
+	 </p>
+ 
+	 <p>You can build an application using the Recipe Exchange control using
+		Visual Basic. To run a recipe exchange client built using Visual Basic .NET on
+		a DeltaV node that does not have Visual Basic .NET installed, two extra .DLL
+		files are required. Those files are Interop.RECIPEEXCHANGE2lib.dll and
+		Microsoft.VisualBasic.Compatibility.dll. 
+	 </p>
+ 
+	 <p>Recipe Exchange runs on ProfessionalPLUS workstation 
+		<span>or Application Stations 
+		</span>and it can: 
+	 </p>
+ 
+	 <a name="c_appndxg__ul_0C87B6B4E27447AE8E3C3A8B5618B93A"></a><ul id="c_appndxg__ul_0C87B6B4E27447AE8E3C3A8B5618B93A"> 
+		<li id="c_appndxg__li_1C99CBA08CA34B62A4821238ED82B1E4"><div class="li_content"> 
+		  <p>Import or export recipes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_DE5C9CCF6E854F4987399B0B20D32AED"><div class="li_content"> 
+		  <p>Assign recipes to a Batch Executive and get a list of the node names
+			 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_A94ABA14BECC409497CE3C67FE8F9FB4"><div class="li_content"> 
+		  <p>Verify recipes and formulas 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_8DF2334071CD4DE0BB0449C3B17C0E08"><div class="li_content"> 
+		  <p>Download recipes to the Batch Executive 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_9E0F36D639564AC8AAB124DEDD6C94B3"><div class="li_content"> 
+		  <p>Download a Batch Executive subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_F674911E9A49441EA6C497D7411704B2"><div class="li_content"> 
+		  <p>Download a specified recipe to all the Batch Executive nodes to
+			 which it is assigned 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p><a name="c_appndxg__image_228834A5C6064D1A87B799B67292B388"></a><img id="c_appndxg__image_228834A5C6064D1A87B799B67292B388" src="REX1.gif" /> 
+	 </p>
+ 
+	 <p><a name="c_appndxg__image_14BAD172650B4D2EA5B73AAE51FFC21B"></a><img id="c_appndxg__image_14BAD172650B4D2EA5B73AAE51FFC21B" src="REX2.gif" /> 
+	 </p>
+ 
+	 <p>The Recipe Exchange control is installed as part of the DeltaV
+		installation and uses a component of the current Internet Explorer also
+		included with the DeltaV installation. 
+	 </p>
+ 
+	 <p> 
+		<strong>Export</strong> 
+	 </p>
+ 
+	 <p> The Export method exports the specified recipe to the specified file in
+		XML format. The recipes can be imported into other applications that support
+		XML imports. Recipe Exchange supports exporting the following Recipes and
+		Equipment items: 
+	 </p>
+ 
+	 <a name="c_appndxg__ul_C1D719B5D73949BFA0AD484A74892DD5"></a><ul id="c_appndxg__ul_C1D719B5D73949BFA0AD484A74892DD5"> 
+		<li id="c_appndxg__li_CDD2FE792AE1498FA58D4BA46C5631BF"><div class="li_content"> 
+		  <p>Operation 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_6CF7650E4A6D4D20BB887BAA8EF04B84"><div class="li_content"> 
+		  <p>Operations subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_BCA7D4AC71DB40CDB60382A8F897087B"><div class="li_content"> 
+		  <p>Procedure 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_0C938A588475428D95B3BA16C2D0A722"><div class="li_content"> 
+		  <p>Procedures subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_A8E85D86E19D4DE0AE8E04C11CBCEAF1"><div class="li_content"> 
+		  <p>Unit procedure 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_BFD56E96D2D14E26B770F8D63B9FB238"><div class="li_content"> 
+		  <p>Unit procedures subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_CBE176C0232F4823B4838A73898E2168"><div class="li_content"> 
+		  <p>Formula 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_5C83EEAAB42A401F82944716C3FB7BE1"><div class="li_content"> 
+		  <p>Control module class 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_DFD64CD42F2241769B7886964678F27D"><div class="li_content"> 
+		  <p>(All) Control module classes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_102E9CC7914F4353A1C6B4874252BB28"><div class="li_content"> 
+		  <p>Unit class 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_A5FF9A8077F245A286D0D73C06485D31"><div class="li_content"> 
+		  <p>Unit classes subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_A055E23D21B54677B08186B458FD9C82"><div class="li_content"> 
+		  <p>Unit module 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_80CCD2ACADE842C98A52A5CB98997A51"><div class="li_content"> 
+		  <p>Phase class 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_DAE2ADC8930D4B95AD8F0F68CB35933C"><div class="li_content"> 
+		  <p>Phase classes subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_66088AC870E84AC28FF44B290B1469BF"><div class="li_content"> 
+		  <p>Process cell class 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_A815C7B5C5E44B2A8EDC3B725786BEB5"><div class="li_content"> 
+		  <p>Process cell classes subsystem 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_966AA4F6C1834C67BEB7903AAC58FABF"><div class="li_content"> 
+		  <p>Equipment train class 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_F850182F6DEC4BCC91C131E54ABE5652"><div class="li_content"> 
+		  <p>(All) Equipment train classes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_8DE42A364CEC4D758C6191F472E5AD96"><div class="li_content"> 
+		  <p>Unit selection policy 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_382BDDBE676E4C65B917C52258D1F581"><div class="li_content"> 
+		  <p>(All) Unit selection policies 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_1F5B97C9E5FD4514888D706E76222F79"><div class="li_content"> 
+		  <p>Engineering units 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_1D851E93BF0141A895D65AC448044F6E"><div class="li_content"> 
+		  <p>(All) Areas 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_E3DA01DCBB1945F59FE106579BAAC4D0"><div class="li_content"> 
+		  <p>Area 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_29D77807EF8C45BAB9825EC887E529C9"><div class="li_content"> 
+		  <p>Process Cell 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_3FB10094AA9C4B90A9A1BC9D42E22A53"><div class="li_content"> 
+		  <p>(All) Nodes 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_1FA4C091EB66422CAE1B6DDF9B2C9399"><div class="li_content"> 
+		  <p>Node 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_DC109C62BF05430DB484373C30BD067B"><div class="li_content"> 
+		  <p>Named Sets 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_362B33C5BFC04886B6E008F9871EDACA"><div class="li_content"> 
+		  <p>System 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>Note that not all information will be exported. 
+	 </p>
+ 
+	 <div class="cautiontitle">CAUTION:</div><div class="caution"> 
+		<p> Exporting an XML file into a directory that contains an FHX file of
+		  the same object will delete the existing FHX export file. XML exports should
+		  not be sent to the same location as FHX files of the same object. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>The information exported includes: 
+	 </p>
+ 
+	 <a name="c_appndxg__ul_06DC4EE5E75F49C28253381BA5CFF081"></a><ul id="c_appndxg__ul_06DC4EE5E75F49C28253381BA5CFF081"> 
+		<li id="c_appndxg__li_446677A57FCC453AA65CB6B18BB2921E"><div class="li_content"> 
+		  <p> 
+			 <em>Export Process Cell Class</em>: Category, process cell class and
+			 its property. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_BE208EE99E7F474AAD4741E78D95D075"><div class="li_content"> 
+		  <p> 
+			 <em>Export Unit Class</em>: Unit class name, description, phase class
+			 associations, unit parameter definition names, types and its property
+			 (excluding period, primary control display, instrument area display, detail
+			 display, type and sub-type). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_E7297A10DAF44C478E1F23FEC3218052"><div class="li_content"> 
+		  <p> 
+			 <em>Export Phase Class</em>: Phase class and properties (description
+			 and phase partners only), phase input parameters (including limits and
+			 engineering units), and report parameters (including engineering units). The
+			 information does not include the phase class logic. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_B25305EE69064230A8D209F0003A2314"><div class="li_content"> 
+		  <p> 
+			 <em>Export Area</em>: Information about the area, process cell, process
+			 cell class, unit module, unit class and unit phase, phase class. All
+			 information about continuous control modules in that area is not included. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_9666F141D246493884548C01BB60C50D"><div class="li_content"> 
+		  <p> 
+			 <em>Export Process Cell</em>: Area, process cell and its arbitration,
+			 process cell class, unit modules, unit classes, unit phases, phase classes. The
+			 information does not include equipment ID, max owner, and MMI picture. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_E7721BFF406643FE9093276CC9050F05"><div class="li_content"> 
+		  <p>Export Equipment Train: This information is not filtered. All
+			 information associated with the equipment train (unit classes, unit modules,
+			 phases, phase classes, phase algorithms, and so on) and all details for every
+			 item (including period, primary control display, instrument area display,
+			 detail display, type and sub-type and so on) are exported. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_85E0508C6A024D5593A3CA83B359164D"><div class="li_content"> 
+		  <p>Export Unit Selection Policy: expression, priority choice selection.
+			 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_0B011D82929149808D814FB8BB4F0CE0"><div class="li_content"> 
+		  <p> 
+			 <em>Export Unit Module</em>: Area, process cell, process cell class,
+			 unit module name, description, associated unit class (from which unit parameter
+			 names and types can be obtained), all phase classes the unit class uses, phase
+			 input parameters (including limits and engineering units), and report
+			 parameters (including engineering units). For unit module properties, all are
+			 filtered out except description and equipment needed list. Unit phase
+			 properties are all filtered out except description. Soft Phases are not
+			 exported but phase classes of External Phases are (with no phase logic) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_92B1881F6A29483D8051B284F050C7BF"><div class="li_content"> 
+		  <p> 
+			 <em>Export Operation</em>: Operation, phase class in its step,
+			 equipment, formulas, link, property. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_22F83D84951F4586AABDDC981C89F8C4"><div class="li_content"> 
+		  <p> 
+			 <em>Export Unit Procedure</em>: Unit procedure, operation (and its
+			 parameters), equipment, formulas, link, and property. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_868951A8F9164B40A07A5DD250D049CD"><div class="li_content"> 
+		  <p> 
+			 <em>Export Procedure</em>: Procedure, Unit procedure, equipment,
+			 formulas, link, and property. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_80FE0201C21048609C46C4BB11B8578E"><div class="li_content"> 
+		  <div class="p"> 
+			 <em>Export Batch Executive Node</em>: Export of Batch Executive in the
+			 local node.     The information includes: 
+		  <a name="c_appndxg__ul_A6B30017C2BE4E0FB628B0B4C4A05CC3"></a><ul id="c_appndxg__ul_A6B30017C2BE4E0FB628B0B4C4A05CC3"> 
+			 <li id="c_appndxg__li_B789A3F47A49438EA9D38D06DD1E8BA4"><div class="li_content"> 
+				<div class="p">All associated recipes assigned to the node and all recipes
+				  invoked by them, directly or indirectly. (Directly is called a user assignment
+				  in DeltaV Explorer and indirectly is called a system assignment.)  Each with 
+				<a name="c_appndxg__ul_8C95BDC5366044A59C666D1D7497AE71"></a><ul id="c_appndxg__ul_8C95BDC5366044A59C666D1D7497AE71"> 
+				  <li id="c_appndxg__li_D00497CC6943493EB335D5D6363EA6DE"><div class="li_content">any associated
+					 formulas. 
+				  </div></li>
+ 
+				</ul>
+ 
+				</div>
+ 
+			 </div></li>
+ 
+			 <li id="c_appndxg__li_3F380B667E5F41279B745A99113C14A8"><div class="li_content"> 
+				<div class="p">All plant areas assigned to the node, each with 
+				<a name="c_appndxg__ul_CFEAB09CE8194250923149D5AD8C4BA7"></a><ul id="c_appndxg__ul_CFEAB09CE8194250923149D5AD8C4BA7"> 
+				  <li id="c_appndxg__li_FBA884632CFB4BD78185867D5AF5D30B"><div class="li_content">All contained
+					 class-based process cells, each with 
+					 <a name="c_appndxg__ul_DE1218E9C2C54593B5C1CC76D7DED275"></a><ul id="c_appndxg__ul_DE1218E9C2C54593B5C1CC76D7DED275"> 
+						<li id="c_appndxg__li_3F2B5392BAB94CD3925EC1F471E803BC"><div class="li_content">process cell
+						  class. 
+						</div></li>
+ 
+					 </ul>
+ 
+				  </div></li>
+ 
+				</ul>
+ 
+				</div>
+ 
+			 </div></li>
+ 
+			 <li id="c_appndxg__li_EB5BD627CDB243EBB24D0B33F73205F4"><div class="li_content"> 
+				<div class="p">All contained class-based unit modules, each with 
+				<a name="c_appndxg__ul_7547078BDCC1461687369BBAC3B550A4"></a><ul id="c_appndxg__ul_7547078BDCC1461687369BBAC3B550A4"> 
+				  <li id="c_appndxg__li_030A0B825E104CA3A2579198EB1A35CC"><div class="li_content">unit class 
+				  </div></li>
+ 
+				  <li id="c_appndxg__li_8F3D04D3B31740D2B412CBAC4F254964"><div class="li_content">all phase classes it
+					 uses 
+				  </div></li>
+ 
+				</ul>
+ 
+				</div>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<div class="p"> The following items are to be ignored during conversion to a node XML
+		  file: 
+		<a name="c_appndxg__ul_9232B42717624F559D034587C6192DEB"></a><ul id="c_appndxg__ul_9232B42717624F559D034587C6192DEB"> 
+		  <li id="c_appndxg__li_3A134170017A40E487D902261B979859"><div class="li_content"> 
+			 <p>Device index 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_32AE3056E96849ED98B2F23B6CC28AC3"><div class="li_content"> 
+			 <p>Redundant and area control network 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_4B44CDD6EC764B9CBCF796A75BF980EC"><div class="li_content"> 
+			 <p>Batch Executive subsystem enabled status 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_9A483FC0B5694DDAA6DDC4441CD0934A"><div class="li_content"> 
+			 <p>Revision 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_1CE8750EE5264F68836AC00DAF5CA3F2"><div class="li_content"> 
+			 <p>Event file age 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_7A1E8E2F78F54983A5E246E5312096AB"><div class="li_content"> 
+			 <p>Hold propagation limit 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_appndxg__li_0464005052824F5F8A0CB0284398D1CE"><div class="li_content"> 
+			 <p>Restart behavior and all other subsystems 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Import</strong> 
+	 </p>
+ 
+	 <p> Recipe Exchange can import recipes that are in the defined DeltaV XML
+		Standard format. These will be verified by Recipe Exchange during import and if
+		there is a problem, you will be informed as to what it is. Recipe Exchange 
+		imports only the recipe. It does not import equipment, areas, process cells,
+		phases or any other component of a batch. Those items must be created in DeltaV
+		Explorer before importing the recipe. Also, you must already have made all of
+		the assignments necessary before importing a recipe (such as phase class to
+		unit class, and so on). 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> You can verify your recipe against the DeltaV XML recipe import
+		  schema found on the DeltaV installation disk #1 in the 
+		  <span class="filepath">_Support\Recipe Exchange</span> folder. The XML schema
+		  file is named DeltaV_XX_RecipeExchange_Import.xsd (where XX is the DeltaV
+		  version number). Additionally, the DeltaV_XX_RecipeExchange_Common.xsd is  a
+		  common file used by both the import and export schema files. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>If you are importing an existing recipe to replace one that is already
+		in the DeltaV system, the two recipe names must be identical or the import will
+		make a new recipe on import. 
+	 </p>
+ 
+	 <p>Depending on what you have changed or created the import order is very
+		important. Follow the sequence below: 
+	 </p>
+ 
+	 <a name="c_appndxg__ol_735B103C5A544BF696F32C5CAF5F897B"></a><ol id="c_appndxg__ol_735B103C5A544BF696F32C5CAF5F897B"> 
+		<li id="c_appndxg__li_B6677E79F3184D9183000B5565B6CAD5"><div class="li_content"> 
+		  <p>Operation scripts 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_3891F8D990D64925B09C5EB742298DC8"><div class="li_content"> 
+		  <p>Unit procedure scripts 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_3BBAD83560A34E9C97133E920A03F0EE"><div class="li_content"> 
+		  <p>Procedure scripts 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_EDC91BEB814C4F629D4FF431595DB991"><div class="li_content"> 
+		  <p>Formula scripts 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>Not all scripts need to be imported every time. You can export a single
+		formula and import just that formula. Keep track of what you have changed in
+		the formula and import appropriately. 
+	 </p>
+ 
+	 <p>If you want to overwrite an existing item, imports should be executed as
+		&quot;Yes to all&quot;. Otherwise choose &quot;No to all&quot; and items already existing in the
+		DeltaV database will not be overwritten by the import file items. After
+		importing a recipe, you will need to assign the recipe to a Batch Executive and
+		download the Batch Executive. 
+	 </p>
+ 
+	 <p> 
+		<strong>Security</strong> 
+	 </p>
+ 
+	 <p> To run Recipe Exchange, the logged in user must be a member of the
+		DeltaV Administrator group. 
+	 </p>
+ 
+	 <p>Recipe Exchange verifies the user when it first starts but not again. It
+		is extremely important that you do not leave Recipe Exchange running while the
+		machine is unattended. Always log off the machine before stepping away. 
+	 </p>
+ 
+	 <p> 
+		<strong>Licensing</strong> 
+	 </p>
+ 
+	 <p>The license type needed to run Recipe Exchange is the Professional Batch
+		license. This release supports simultaneous use by up to four clients. 
+	 </p>
+ 
+	 <p> 
+		<strong>Version Control</strong> 
+	 </p>
+ 
+	 <p> Version Control will track changes on import if the Version Control
+		option is set to auto checkout. An import causes Version Control to check out
+		the recipe then overwrite the checked out version with the imported version. 
+	 </p>
+ 
+	 <p> 
+		<strong>Recipe Exchange Sample</strong> 
+	 </p>
+ 
+	 <p>A Recipe Exchange sample is located at 
+		<span class="filepath">\DeltaV\samples\RecipeExchange\REClient</span> (or 
+		<span class="filepath">\DeltaV\samples\RecipeExchange\REClient60</span> for VB
+		6.0) directory. 
+	 </p>
+ 
+	 <p>To use the sample application, follow these steps: 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> The Recipe Exchange sample is a 32-bit application. Therefore, build
+		the Recipe Exchange sample as 32-bit only, not AnyCPU on the 64-bit machine as
+		this will create a 64-bit application. 
+	 </div>
+ 
+	 <a name="c_appndxg__ol_EF1063F4A15F46849F239633045EE572"></a><ol id="c_appndxg__ol_EF1063F4A15F46849F239633045EE572"> 
+		<li id="c_appndxg__li_66F72C782DFE4FAFA1640D9F35AC5F34"><div class="li_content"> 
+		  <p>Include the RecipeExchange2.1.0 Type Library 
+		  </p>
+ 
+		  <p><a name="c_appndxg__image_CB834633BE084126BB2AE63CE20E00D5"></a><img id="c_appndxg__image_CB834633BE084126BB2AE63CE20E00D5" src="REX3.gif" /> 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_ABC29C644CAA4B9B8A5C30B2DE558C3F"><div class="li_content"> 
+		  <p>Compile and create RecipeExchange.exe. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_E65174C6D8104C6BB6687DD07DE1F805"><div class="li_content"> 
+		  <p>Launch RecipeExchange.exe. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_appndxg__li_1DAB67206BA048A1978675ECEBEB7B0B"><div class="li_content"> 
+		  <p>Connect first before calling other methods 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p>The buttons on the sample dialog call the methods listed below. 
+	 </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="r_recipeexchange2object.html">Recipeexchange2 object</a><br />
+</li>
+<li class="ulchildlink"><a href="r_irecipeexchangeinterfacemethods.html">IRecipeExchange interface methods</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

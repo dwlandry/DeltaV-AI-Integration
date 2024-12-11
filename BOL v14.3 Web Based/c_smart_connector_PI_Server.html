@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV Smart Connector for OSIsoft PI Server" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Maintain" name="DC.Coverage" /><meta content="OSIsoft PI Server, DeltaV Smart Connector, Smart Connector, OSIsoft PI Server, PI Server, PI Server" name="DC.subject" /><meta content="OSIsoft PI Server, DeltaV Smart Connector, Smart Connector, OSIsoft PI Server, PI Server, PI Server" name="keywords" /><meta content="t_configure_security_enterprise_pi_server.html" name="DC.Relation" scheme="URI" /><meta content="t_setup_enterprise_pi_server_new_deltav_system.html" name="DC.Relation" scheme="URI" /><meta content="c_enterprise_pi_server_setup.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_the_embedded_enterprise_pi_historian_unique_2" name="DC.Identifier" /><title>DeltaV Smart Connector for OSIsoft PI Server</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_install_pi_af_client1.html" /><link rel="next" href="t_export_equipment_hierarchy.html" /></head><body class="fixed" id="c_the_embedded_enterprise_pi_historian_unique_2" data-relpath="c_smart_connector_PI_Server.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_the_embedded_enterprise_pi_historian_unique_2"></a>
+
+<h1 class="topictitle1">DeltaV Smart Connector for OSIsoft PI Server</h1>
+<div><div></div>
+ 
+    <p> The DeltaV Smart Connector is used to collect configuration and process
+      data from the DeltaV system and populate this data in the OSIsoft PI Server.
+      The DeltaV Asset Connector is a component of the DeltaV Smart Connector and is
+      used specifically for transferring DeltaV parameter configuration data to PI
+      Server. The DeltaV Asset Connector automatically creates and configures
+      attributes on the configured parameters based on the data contained in the PI
+      Server configuration file. The following table lists the DeltaV parameter
+      attributes and the source of their property values from the historian
+      configuration file. 
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_the_embedded_enterprise_pi_historian_unique_2__table_9AA7E2236F1B47B591C0384FA5D93FFD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_the_embedded_enterprise_pi_historian_unique_2__table_9AA7E2236F1B47B591C0384FA5D93FFD" rules="all" summary=""><thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d1354235e54" valign="top" width="23.809523809523807%">PI Point Attributes 
+            </th>
+ 
+            <th class="cellrowborder" id="d1354235e57" valign="top" width="76.19047619047619%">Source of Values 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">Tag Name 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;PATH&gt;Tag name &lt;/PATH&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">Scan 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;ENAB&gt; Enabled &lt;/ENAB&gt; (Value of
+              1 or 0) 
+              <p> The Scan attribute of a parameter may also be set to 0 if a
+                tag that was previously in the historian configuration file is removed from
+                history collection. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">CompDev/Compressing 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;CDEV&gt; Compression Deviation
+              &lt;/CDEV&gt; 
+              <p> If CDEV is set to –1, the Compressing parameter attribute is
+                set to 0. 
+              </p>
+ 
+              <p> If CDEV is not set to –1, the Compressing attribute is set to
+                1 and the CompDev attribute will be set to the value of CDEV. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">Step 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;STEP&gt; Step &lt;/STEP&gt; 
+              <p> If the DeltaV STEP value is 0, the Step attribute is set to
+                1. 
+              </p>
+ 
+              <p> If the DeltaV STEP value is 1, the Step attribute is set to
+                0. 
+              </p>
+ 
+              <p> If the DeltaV STEP value is 2 and the parameter type is
+                Integer, the Step attribute is set to 1. 
+              </p>
+ 
+              <p> If the DeltaV STEP value is 2 and the parameter type is
+                Float, the Step attribute is set to 0. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">InstrumentTag 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;PATH&gt; Tag name &lt;/PATH&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> Pointtype 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> 
+              <div class="p">&lt;PTYPE&gt; Point type &lt;/PTYPE&gt; 
+              
+<div class="tablenoborder"><a name="c_the_embedded_enterprise_pi_historian_unique_2__table_45DD0E95BA6A47D285A68A6004CB81BE"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_the_embedded_enterprise_pi_historian_unique_2__table_45DD0E95BA6A47D285A68A6004CB81BE" rules="all" summary=""><thead align="left"> 
+                    <tr> 
+                      <th class="cellrowborder" id="d1354235e149" valign="top" width="37.5%"> Source DeltaV Parameter Type 
+                      </th>
+ 
+                      <th align="center" class="cellrowborder" id="d1354235e152" valign="top" width="25%"> XML File PTYPE Value 
+                      </th>
+ 
+                      <th class="cellrowborder" id="d1354235e155" valign="top" width="37.5%"> Destination DeltaV Parameter Type 
+                      </th>
+ 
+                    </tr>
+</thead>
+ 
+                  <tbody> 
+                    <tr> 
+                      <td class="cellrowborder" headers="d1354235e149 " valign="top" width="37.5%">INT32 
+                      </td>
+ 
+                      <td align="center" class="cellrowborder" headers="d1354235e152 " valign="top" width="25%">1 
+                      </td>
+ 
+                      <td class="cellrowborder" headers="d1354235e155 " valign="top" width="37.5%">Int32 
+                      </td>
+ 
+                    </tr>
+ 
+                    <tr> 
+                      <td class="cellrowborder" headers="d1354235e149 " valign="top" width="37.5%">UINT32 
+                      </td>
+ 
+                      <td align="center" class="cellrowborder" headers="d1354235e152 " valign="top" width="25%">2 
+                      </td>
+ 
+                      <td class="cellrowborder" headers="d1354235e155 " valign="top" width="37.5%">Float64 
+                      </td>
+ 
+                    </tr>
+ 
+                    <tr> 
+                      <td class="cellrowborder" headers="d1354235e149 " valign="top" width="37.5%">FLOAT32 
+                      </td>
+ 
+                      <td align="center" class="cellrowborder" headers="d1354235e152 " valign="top" width="25%">3 
+                      </td>
+ 
+                      <td class="cellrowborder" headers="d1354235e155 " valign="top" width="37.5%">Float32 
+                      </td>
+ 
+                    </tr>
+ 
+                    <tr> 
+                      <td class="cellrowborder" headers="d1354235e149 " valign="top" width="37.5%">NAMED SET 
+                      </td>
+ 
+                      <td align="center" class="cellrowborder" headers="d1354235e152 " valign="top" width="25%">4 
+                      </td>
+ 
+                      <td class="cellrowborder" headers="d1354235e155 " valign="top" width="37.5%">Digital/String 
+                      </td>
+ 
+                    </tr>
+ 
+                    <tr> 
+                      <td class="cellrowborder" headers="d1354235e149 " valign="top" width="37.5%">UNICODE STRING 
+                      </td>
+ 
+                      <td align="center" class="cellrowborder" headers="d1354235e152 " valign="top" width="25%">5 
+                      </td>
+ 
+                      <td class="cellrowborder" headers="d1354235e155 " valign="top" width="37.5%">String 
+                      </td>
+ 
+                    </tr>
+ 
+                  </tbody>
+ 
+                </table>
+</div>
+ 
+              <div class="note"><span class="notetitle">Note:</span>  
+                <p> If the DeltaV Asset Connector receives an invalid point
+                  type value in the historian configuration file, it log an error and do the
+                  following: 
+                </p>
+ 
+                <a name="c_the_embedded_enterprise_pi_historian_unique_2__ul_1013D5B2BCC34676864CC52AA5087A43"></a><ul id="c_the_embedded_enterprise_pi_historian_unique_2__ul_1013D5B2BCC34676864CC52AA5087A43"> 
+                  <li id="c_the_embedded_enterprise_pi_historian_unique_2__li_5AF17C61CD654E74A4D9862DEFE18431"><div class="li_content"> If the
+                    corresponding point does not already exist, an error will be logged and the
+                    historical parameter will not be created. 
+                  </div></li>
+ 
+                  <li id="c_the_embedded_enterprise_pi_historian_unique_2__li_EDE2FE1956D94DE498F6DBC4FD26DE9F"><div class="li_content"> If the
+                    corresponding point already exists, the DeltaV Asset Connector does not edit
+                    its configuration and only outputs an error message to the log file. 
+                  </div></li>
+ 
+                </ul>
+ 
+              </div>
+ Additionally, all attributes of a point with an invalid
+              point type listed in the historian configuration file will be written to an
+              Error Tag.csv file so that the one or more parameter configurations can be
+              reviewed and/or corrected at a later time. 
+              </div>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%">CompMax 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;MAX&gt; Compression Max &lt;/MAX&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> Zero 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;EU0&gt; EngUnits 0 &lt;/EU0&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> Location4 
+              <p> (Scan Class) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;RATE&gt; Scan Rate in seconds
+              &lt;/RATE&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> Span 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;EU100&gt; EngUnits 100 &lt;/EU100&gt; 
+              <p> EU100 is the maximum value, so the Span point attribute is
+                set to EU100–EU0. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> Descriptor 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;DESC&gt; Module description
+              &lt;/DESC&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> EngUnits 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;UNITS&gt; Engineering units
+              &lt;/UNITS&gt; 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d1354235e54 " valign="top" width="23.809523809523807%"> DigitalSet 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1354235e57 " valign="top" width="76.19047619047619%"> &lt;NAMEDSET&gt; Digital State set
+              &lt;/NAMEDSET&gt; 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_configure_security_enterprise_pi_server.html">Configure security options for OSIsoft PI Server</a></div>
+<div><a href="t_setup_enterprise_pi_server_new_deltav_system.html">Set up OSIsoft PI Server with a new DeltaV system</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

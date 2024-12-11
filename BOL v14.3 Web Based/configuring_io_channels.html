@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Configuring I/O channels" name="DC.Title" /><meta content="configuration" name="DC.Coverage" /><meta content="I/O, configuring, configuration, I/O channels, channels, cards, configuring channels" name="DC.subject" /><meta content="I/O, configuring, configuration, I/O channels, channels, cards, configuring channels" name="keywords" /><meta content="t_add_io_card_or_placeholder.html" name="DC.Relation" scheme="URI" /><meta content="t_config_1st_channel_on_1st_io_card.html" name="DC.Relation" scheme="URI" /><meta content="t_config_remaining_cards_channels.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="configuring_io_channels" name="DC.Identifier" /><title>Configuring I/O channels</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_locate_config_connected_controller.html" /><link rel="next" href="t_add_io_card_or_placeholder.html" /></head><body class="fixed" id="configuring_io_channels" data-relpath="configuring_io_channels.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="configuring_io_channels"></a>
+
+<h1 class="topictitle1">Configuring I/O channels</h1>
+<div><div></div>
+ 
+	 <p id="configuring_io_channels__1018441_unique_1"><a name="configuring_io_channels__1018441_unique_1"></a>The next task is to configure your I/O channels. There are
+		several steps. First, you either auto-sense physically connected cards or add
+		I/O card placeholders using DeltaV Explorer. Then you enable the channels on
+		the cards and define the Device Tag for each channel. The Device Tags are the
+		names the DeltaV software uses in the control modules to identify the input and
+		output instruments and hardware devices like transmitters, valves, and so on. 
+	 </p>
+ 
+	 <p id="configuring_io_channels__1018443_unique_1"><a name="configuring_io_channels__1018443_unique_1"></a>In the tank example used in the tutorial, there are four
+		I/O cards installed in the following order: Analog In, Analog Out, Discrete In,
+		and Discrete Out. If you have a real system set up, your I/O cards may not have
+		been installed in this order. You may not even have some of these card types.
+		Therefore, to be able to do the tutorial I/O configuration procedures, you will
+		need to configure a controller placeholder, as described in the previous
+		section. You can learn the general I/O card configuration steps by reading this
+		section. 
+	 </p>
+ 
+	 <p id="configuring_io_channels__1018444_unique_1"><a name="configuring_io_channels__1018444_unique_1"></a>Each I/O card has eight channels, not all of which will
+		necessarily be used. The following table lists the Device Tags for the tank
+		process examples. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="configuring_io_channels__table_26424B2E7ED74E12966821B8B251CE20"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="configuring_io_channels__table_26424B2E7ED74E12966821B8B251CE20" rules="all" summary=""><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1459406e56" valign="top"> 
+				  <p>I/O Card 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1459406e62" valign="top"> 
+				  <p>I/O Card Type 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1459406e68" valign="top"> 
+				  <p>Channel 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1459406e74" valign="top"> 
+				  <p>Channel Type 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1459406e80" valign="top"> 
+				  <p>Device Tag 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1459406e87" valign="top"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				  <p id="configuring_io_channels__1018471"><a name="configuring_io_channels__1018471"></a> C01 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				  <p id="configuring_io_channels__1018473"><a name="configuring_io_channels__1018473"></a> Analog In, 8 Ch, 4-20 mA, HART 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018475"><a name="configuring_io_channels__1018475"></a> CH01 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018477"><a name="configuring_io_channels__1018477"></a> Analog In 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018479"><a name="configuring_io_channels__1018479"></a> LT-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018481"><a name="configuring_io_channels__1018481"></a> Level transmitter 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018487"><a name="configuring_io_channels__1018487"></a> CH02 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018489"><a name="configuring_io_channels__1018489"></a> Analog In 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018491"><a name="configuring_io_channels__1018491"></a> FT-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018493_unique_1"><a name="configuring_io_channels__1018493_unique_1"></a> Flow transmitter 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				  <p id="configuring_io_channels__1018495_unique_2"><a name="configuring_io_channels__1018495_unique_2"></a> C02 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				  <p id="configuring_io_channels__1018497_unique_2"><a name="configuring_io_channels__1018497_unique_2"></a> Analog Out, 8 Ch, 4-20 mA 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018499_unique_1"><a name="configuring_io_channels__1018499_unique_1"></a> CH02 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018501"><a name="configuring_io_channels__1018501"></a> Analog Out 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018503_unique_1"><a name="configuring_io_channels__1018503_unique_1"></a> FY-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018505_unique_1"><a name="configuring_io_channels__1018505_unique_1"></a> Regulatory valve 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				  <p id="configuring_io_channels__1018507"><a name="configuring_io_channels__1018507"></a> C03 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				  <p id="configuring_io_channels__1018509_unique_1"><a name="configuring_io_channels__1018509_unique_1"></a> Discrete In, 8 Ch, 24 VDC, Isolated 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018511"><a name="configuring_io_channels__1018511"></a> CH01 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018513_unique_2"><a name="configuring_io_channels__1018513_unique_2"></a> Discrete In 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018515_unique_1"><a name="configuring_io_channels__1018515_unique_1"></a> XI-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018517_unique_1"><a name="configuring_io_channels__1018517_unique_1"></a> Confirm motor contact 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018523_unique_1"><a name="configuring_io_channels__1018523_unique_1"></a> CH02 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018525_unique_1"><a name="configuring_io_channels__1018525_unique_1"></a> Discrete In 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018527_unique_1"><a name="configuring_io_channels__1018527_unique_1"></a> LSC-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018529"><a name="configuring_io_channels__1018529"></a> Limit switch-closed 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				  <p id="configuring_io_channels__1018531"><a name="configuring_io_channels__1018531"></a> C04 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				  <p id="configuring_io_channels__1018533"><a name="configuring_io_channels__1018533"></a> Discrete Out, 8 Ch, 24 VDC, High Side 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018535_unique_1"><a name="configuring_io_channels__1018535_unique_1"></a> CH01 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018537_unique_1"><a name="configuring_io_channels__1018537_unique_1"></a> Discrete Out 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018539"><a name="configuring_io_channels__1018539"></a> XV-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018541"><a name="configuring_io_channels__1018541"></a> Block valve 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1459406e56 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e62 " valign="top"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e68 " valign="top"> 
+				  <p id="configuring_io_channels__1018547"><a name="configuring_io_channels__1018547"></a> CH02 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e74 " valign="top"> 
+				  <p id="configuring_io_channels__1018549"><a name="configuring_io_channels__1018549"></a> Discrete Out 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e80 " valign="top"> 
+				  <p id="configuring_io_channels__1018551_unique_1"><a name="configuring_io_channels__1018551_unique_1"></a> ZX-1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1459406e87 " valign="top"> 
+				  <p id="configuring_io_channels__1018553_unique_1"><a name="configuring_io_channels__1018553_unique_1"></a> Motor start contact 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 <p id="configuring_io_channels__1018554"><a name="configuring_io_channels__1018554"></a>Usually, the I/O cards are already downloaded and
+		auto-sensed when you define the controller node, and you can go directly to the
+		procedure for configuring the first channel on the first I/O card. However, if
+		you need to add a card or a placeholder, go to the procedure for adding a card
+		or placeholder. 
+	 </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="t_add_io_card_or_placeholder.html">Add an I/O card or placeholder</a><br />
+</li>
+<li class="ulchildlink"><a href="t_config_1st_channel_on_1st_io_card.html">Configure the first channel on the first I/O card</a><br />
+</li>
+<li class="ulchildlink"><a href="t_config_remaining_cards_channels.html">Configure the remaining cards and channels</a><br />
+</li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

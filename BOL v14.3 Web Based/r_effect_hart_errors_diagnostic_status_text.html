@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Effect of HART error conditions on diagnostic status text (Classic I/O)" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_hart_error_conditions_classic.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_effect_hart_errors_diagnostic_status_text" name="DC.Identifier" /><title>Effect of HART error conditions on diagnostic status text (Classic I/O)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_effect_hart_errors_diagnostic_params.html" /><link rel="next" href="c_effect_hart_errors_channel_integ_param.html" /></head><body class="fixed" id="r_effect_hart_errors_diagnostic_status_text" data-relpath="r_effect_hart_errors_diagnostic_status_text.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_effect_hart_errors_diagnostic_status_text"></a>
+
+<h1 class="topictitle1">Effect of HART error conditions on diagnostic status text (Classic
+    I/O)</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_effect_hart_errors_diagnostic_status_text__section_4BE8644E1F3F442CA0E199331450CD61"><a name="r_effect_hart_errors_diagnostic_status_text__section_4BE8644E1F3F442CA0E199331450CD61"></a> 
+      <p>Error conditions trigger status information in DeltaV Diagnostics to
+        help you troubleshoot problems The following table lists the error conditions
+        and the diagnostic status information that results from the error. 
+      </p>
+ 
+      
+<div class="tablenoborder"><a name="r_effect_hart_errors_diagnostic_status_text__table_27402DEE27ED419786AC8A1624459756"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_diagnostic_status_text__table_27402DEE27ED419786AC8A1624459756" rules="all" summary=""><caption><span class="tablecap">Diagnostic Status Information Resulting from HART Error Conditions
+        (Classic I/O)</span></caption><thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d2575369e34" valign="top"> 
+              <p>HART Error 
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d2575369e40" valign="top"> 
+              <p>Diagnostics Status Information 
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d2575369e46" valign="top"> 
+              <p>Description 
+              </p>
+ 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>PIO Channel Status - Config Error, Config Not Usable, Config
+                Not Current 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Bad - Configuration Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The channel encountered an error while configuring the
+                channel. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>PIO Channel Status - Config Error, Config Not Usable, Config
+                Not Current 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>A/D Converter Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel detected an error in its A/D converter (AI
+                only). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AI Low Alarm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Open Loop Detected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel has detected an open loop. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AO Open Loop 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Open Loop Detected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel has detected an open loop. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AI High Alarm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Short Circuit Detected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel has detected a short circuit. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AI Low Low Alarm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Namur Low Limit Detected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AI High High Alarm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Namur High Limit Detected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - AO Diagnostics in Progress 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Diagnostics in Progress 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel is performing Valve Diagnostics (Valve
+                Stimulus Testing) on a Fisher Controls valve (AOUT only). 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Channel Status - HART No Comm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Not Communicating With Device 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel is unable to digitally communicate with the
+                attached HART instrument. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Channel Status - HART No Comm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Unable To Identify Device - Unsupported HART Revision 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Device ID Not Valid &amp;&amp; Command 0 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Unable To Identify Device - Device Is Busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Device ID Not Valid &amp;&amp; Command 0 Command Status is ACCESS
+                RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Unable To Identify Device - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Device ID Not Valid &amp;&amp; Command 0 Command Status is DEVICE
+                SPECIFIC ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Unable To Identify Device - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Device ID Not Valid &amp;&amp; Command 0 Command Status is not NO
+                ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Unable To Identify Device 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 15 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Configuration Cannot Be Read - Device Is Busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to read the analog output scale
+                information of the attached HART instrument, and the instrument reported a
+                problem. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 15 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Configuration Cannot Be Read - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to write the analog output scale
+                information to the attached HART instrument, and the instrument reported that
+                it has restricted access. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 15 Command Status is DEVICE SPECIFIC ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Configuration Cannot Be Read - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 15 Command Status is !NO ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Configuration Cannot Be Read 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to read the analog output scale
+                information of the attached HART instrument, and the instrument reported a
+                problem. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is INVALID SELECTION 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is UPPER RANGE TOO HIGH 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Upper Value Too High 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to configure the analog output
+                scale information of the attached HART instrument, and the instrument reported
+                that upper range value was too high. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is UPPER RANGE TOO LOW 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Upper Value Too Low 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to configure the analog output
+                scale information of the attached HART instrument, and the instrument reported
+                that the upper range value was too low. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is LOWER RANGE TOO HIGH 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Lower Value Too High 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to configure the analog output
+                scale information of the attached HART instrument, and the instrument reported
+                that the lower range value was too high. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is LOWER RANGE TOO LOW 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Lower Value Too Low 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to configure the analog output
+                scale information of the attached HART instrument, and the instrument reported
+                that the lower range value was too low. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is BOTH RANGE ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Values Out Of Limits 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel attempted to configure the analog output
+                scale information of the attached HART instrument, and the instrument reported
+                that upper range value was too high. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Device Is Busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is WRITE PROTECTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Write Protected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is INCORRECT_INSTRUMENT_MODE 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is INVALID_UNITS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Units Invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is INVALID_SPAN 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Span Invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is TOO FEW DATA BYTES IN REQ 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is DEVICE SPECIFIC ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is COMMAND NOT SUPPOERED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed - Command Not Supported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 35 Command Status is !SET_TO_NEAREST_VALUE &amp;&amp;
+                !SPAN_TOO_SMALL &amp;&amp; !NO_ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Cannot Be Changed 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is INVALID SELECTION 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Cannot Be Changed - Device Is Busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 4 Command Status is WRITE PROTECTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Cannot Be Changed - Write Protected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Cannot Be Changed - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is TOO FEW DATA BYTES IN REQ 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Invalid 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is DEVICE SPECIFIC ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Cannot Be Changed - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 44 Command Status is COMMAND NOT SUPPORTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Units Cannot Be Changed - Command Not Supported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag - Device Is busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is WRITE_PROTECTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag - Write Protected 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is DEVICE SPECIFIC ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is COMMAND NOT SUPPORTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag - Command Not Supported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress
+                &amp;&amp; Command 38 Command Status is !NO ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Clear Device Change Flag 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Scale Not Valid &amp;&amp; Scaling Not in Progress 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Configuration Scale Does Not Match Device 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Field Device Malfunction (and not
+                overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Malfunction 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART instrument detected a problem with itself or with one
+                of its associated sensors. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Loop Current Fixed (and not overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Loop Current Fixed 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Loop Current Saturated (and not
+                overridden 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Loop Current is Saturated 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Primary Variable Out of Limits (and not
+                overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Primary Variable Out of Limits 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART instrument is reporting that the primary measurement
+                is outside the sensor limits. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - HART No Comm 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Not Communicating With Device 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART channel is unable to digitally communicate with the
+                attached HART instrument. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Primary Variable not reported 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Primary Variable Not Reported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device Variable configured but not reported 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Variable Configured But Not Reported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Non-Primary Variable Out of Limits (and
+                not overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Non-Primary Variable Out of Limits 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>The HART instrument is reporting that one of the non-primary
+                measurements is outside the associated sensor limits. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>PIO Channel Status - Stale Data 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Stale Data 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>HART Data Poll Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Stale HART Data 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>HART Data Poll Command Status is UPDATE FAILURE 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Stale HART Data 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts - Device Is busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is DEVICE ERROR 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts - Device Error 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is UPDATE IN PROGRESS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts - Update In Progress 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is COMMAND NOT SUPPORTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts - Command Not Supported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 48 Command Status is not NO ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Alerts 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Alerts Enabled &amp;&amp; !Valid 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Alerts Not Reported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is BUSY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Diagnostics Data - Device Is busy 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is ACCESS RESTRICTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Diagnostics Data - Access Restricted 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is DATA NOT AVAILABLE 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Diagnostics Data - Data Not Available 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is DATA NOT READY 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Diagnostics Data - Data Not Ready 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is COMMAND NOT SUPPORTED 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read device Diagnostics Data - Command Not Supported 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 132 Command Status is not NO ERRORS 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Cannot Read Device Diagnostics Data 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Channel Status - HART 5% Comm Error 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>5% Comm Error Rate with Device 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Field Device Malfunction (and
+                overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Malfunction 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Cold Start 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device has been Reset 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Loop Current Fixed (and overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Loop Current Fixed 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Loop Current Saturated (and overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Loop Current is Saturated 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Primary Variable Out of Limits (and
+                overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Primary Variable Out of Limits 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - Non-Primary Variable Out of Limits (and
+                overridden) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Non-Primary Variable Out of Limits 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Field Device Status - More Status Available 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Alert 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 35 Command Status is SPAN TOO SMALL 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Span Too Small 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>Device - Command 35 Command Status is SET TO NEAREST VALUE 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Device Range Set to Nearest Possible Value 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d2575369e34 " valign="top"> 
+              <p>No Error 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d2575369e40 " valign="top"> 
+              <p>Good 
+              </p>
+ 
+            </td>
+ 
+            <td align="left" class="cellrowborder" headers="d2575369e46 " valign="top"> 
+              <p>— 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

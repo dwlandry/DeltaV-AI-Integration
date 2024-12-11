@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Algorithm parameters" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="algorithm parameters, parameters, algorithm" name="DC.subject" /><meta content="algorithm parameters, parameters, algorithm" name="keywords" /><meta content="c_state_driven_algorithms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_algorithm_parameters" name="DC.Identifier" /><title>Algorithm parameters</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_standard_composite_blocks.html" /><link rel="next" href="c_state_composite_block_parameters.html" /></head><body class="fixed" id="c_algorithm_parameters" data-relpath="c_algorithm_parameters.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_algorithm_parameters"></a>
+
+<h1 class="topictitle1">Algorithm parameters</h1>
+<div><div></div>
+<p>State-driven modules contain the following module-level parameters.</p>
+<p><strong>A_ABT_ON_NEW_CMD —</strong> determines how the module responds to a change in A_COMMAND while executing the previous value of A_COMMAND. If TRUE then the module immediately aborts the current command and begins the new one. The default value is FALSE which means that the algorithm finishes the current command before executing the new one.</p>
+<p><strong>A_CMD_CHANGED</strong> <strong>—</strong> Indicates a different A_COMMAND has been issued or that A_RESTART has been set before the current A_COMMAND completed.</p>
+<p><strong>A_COMMAND —</strong> used to select which state should run. This is a named set parameter type. It accepts command names as defined in the named associated with the state-driven module.</p>
+<p><strong>A_CUR_SEQ_NO</strong> <strong>—</strong> Shows the sequence number that is currently being executed. The value of this parameter is -1 when no sequence is being executed.</p>
+<p><strong>A_ERROR —</strong> indicates errors related to the active state. This parameter is set to True if an ERROR or RERROR occurs in the underlying SFC, or if the state timed out. (that is, A_MAX_TIME_EXPD has been set).</p>
+<p><strong>A_MAX_TIME_EXPD —</strong> indicates that the maximum amount of time that the active state should take to complete has been exceeded . This is based on the CFM_MAX_TIME parameter described below. If this condition occurs, the A_STATE is set to Idle and A_ERROR is set to TRUE.</p>
+<p><strong>A_MIN_TIME_EXPD —</strong> indicates that the minimum amount of time that the active state should take to complete has been reached. This is based on the CFM_MIN_TIME parameter described below.</p>
+<p><strong>A_PV —</strong> indicates the current PV of the module. A value other than Undefined (or whatever the 255 word is in the named set) indicates that the state was achieved without error. (A_ERROR=False)</p>
+<p><strong>A_RESTART —</strong> If set TRUE aborts the command which is currently executing and reruns the command from the start.</p>
+<p><strong>A_RESTART_SEQ —</strong> If set TRUE then redrives the outputs defined for the current sequence.</p>
+<p><strong>A_STATE —</strong> indicates the runtime status of the algorithm. The states are derived from the $phase_state named set (for example: Idle, Running, and so on.).</p>
+<p><strong>A_TARGET —</strong> an internal parameter that indicates the value of the currently executing state (a copy of A_COMMAND)</p>
+<p><strong>A_TIME —</strong> indicates the amount of time in seconds that a particular state has been running active.</p>
+<p>The following table shows the progression of the algorithm parameter values at various points of state operation.</p>
+
+<div class="tablenoborder"><a name="c_algorithm_parameters__table_2B42078A67604D1596CC66DF2F66A31D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_algorithm_parameters__table_2B42078A67604D1596CC66DF2F66A31D" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d773899e96" valign="top" width="NaN%"><p>Algorithm parameter</p>
+</th>
+
+<th class="cellrowborder" id="d773899e100" valign="top" width="NaN%"><p>Initial state</p>
+</th>
+
+<th class="cellrowborder" id="d773899e104" valign="top" width="NaN%"><p>State change started</p>
+</th>
+
+<th class="cellrowborder" id="d773899e108" valign="top" width="NaN%"><p>State changing</p>
+</th>
+
+<th class="cellrowborder" id="d773899e112" valign="top" width="NaN%"><p>State change complete</p>
+</th>
+
+<th class="cellrowborder" id="d773899e117" valign="top" width="NaN%"><p>State change complete with errors</p>
+</th>
+
+<th class="cellrowborder" id="d773899e121" valign="top" width="NaN%"><p>State disabled</p>
+</th>
+
+<th class="cellrowborder" id="d773899e125" valign="top" width="NaN%"><p>State change timed out</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_ABT_ON_NEW_CMD</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>&lt;configured&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_CMD_CHANGED</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>See Note 1</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>&lt;unchanged&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;unchanged&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>&lt;unchanged&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;unchanged&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>
+A_COMMAND
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>
+255
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>
+255
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_CUR_SEQ_NO</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>-1</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>0</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>&lt;0..n&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>&lt;n&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;0..n&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>-1</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;0..n&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_ERROR</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_MAX_TIME_EXPD</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_MIN_TIME_EXPD</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>False/True</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>False/True</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>
+A_PV
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>
+255
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>Last State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>
+255
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_RESTART</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_RESTART_SEQ</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>&lt;user_value&gt;/False</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>False/&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;user_value&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>
+A_STATE
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>
+Idle
+</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>Running</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>Running</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>Complete</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>Idle</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>Idle</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>
+Idle
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_TARGET</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>255</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>State Name</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d773899e96 " valign="top" width="NaN%"><p>A_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e100 " valign="top" width="NaN%"><p>0</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e104 " valign="top" width="NaN%"><p>0</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e108 " valign="top" width="NaN%"><p>&lt;time&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e112 " valign="top" width="NaN%"><p>&lt;complete_time&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e117 " valign="top" width="NaN%"><p>&lt;error_time&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e121 " valign="top" width="NaN%"><p>0</p>
+</td>
+
+<td class="cellrowborder" headers="d773899e125 " valign="top" width="NaN%"><p>&lt;timeout_time&gt;</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" colspan="8" headers="d773899e96 d773899e100 d773899e104 d773899e108 d773899e112 d773899e117 d773899e121 d773899e125 " valign="top"><p>Note 1: Set to True if A_COMMAND is changed or A_RESTART is set.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note these additional state changes:</p>
+<a name="c_algorithm_parameters__ul_1C9464978A064189AF4BB4D7D9C3656B"></a><ul id="c_algorithm_parameters__ul_1C9464978A064189AF4BB4D7D9C3656B">
+<li id="c_algorithm_parameters__li_C4CE8499226741A18644F38B7EE570F2"><div class="li_content"><p>The state goes to Complete when all the readback values match the values that you have set.</p>
+</div></li>
+
+<li id="c_algorithm_parameters__li_C7891ABA0F304B1886F3B32FCD7641D9"><div class="li_content"><p>The state goes to Idle if you set A_COMMAND to a disabled state.</p>
+</div></li>
+
+<li id="c_algorithm_parameters__li_17830EDBD9EF44FFAA9220DF3D6BA84E"><div class="li_content"><p>The state goes to Aborted if you set A_COMMAND to 255 before the previous state change has occurred.</p>
+</div></li>
+
+<li id="c_algorithm_parameters__li_45CE87ECA97F42D9820BDD4C0BA64B97"><div class="li_content"><p>The state goes to Aborted if you set A_COMMAND to any different state before the previous state change has occurred and A_ABT_ON_NEW_CMD is set True.</p>
+</div></li>
+
+</ul>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

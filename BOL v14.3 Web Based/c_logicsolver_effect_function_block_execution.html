@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Effect function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Effect (LSEFFECT), Effect (LSEFFECT) function block" name="DC.subject" /><meta content="SIS function blocks, Effect (LSEFFECT), Effect (LSEFFECT) function block" name="keywords" /><meta content="c_ls_fblk_spec_effect.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logicsolver_effect_function_block_execution" name="DC.Identifier" /><title>Logic Solver Effect function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_spec_effect.html" /><link rel="next" href="c_logicsolver_effect_function_block_alarm_detection.html" /></head><body class="fixed" id="c_logicsolver_effect_function_block_execution" data-relpath="c_logicsolver_effect_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logicsolver_effect_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Effect function block execution</h1>
+<div><div></div>
+ 
+	 <p> 
+	 </p>
+ 
+	 <p>The Effect (LSEFFECT) block drives the output to the Normal or Tripped
+		state based on the values of as many as four inputs. LSMON blocks, LSAVTR
+		(analog voter) voter blocks or input blocks provide the inputs to the LSEFFECT
+		block&#39;s OUT_D parameter. Wire the OUT_D parameter to DO or DVC blocks to drive
+		field devices through CHARMs. 
+	 </p>
+ 
+	 <p>Each input has an enable and a delay timer that controls when an input
+		can cause the block to trip. 
+	 </p>
+ 
+	 <p>The RESET_A, RESET_B and RESET_OPTS parameters control when the block
+		output changes from Tripped to Normal after the inputs are no longer tripped. 
+	 </p>
+ 
+	 <div class="p">Block execution has three main parts: 
+	 <ul> 
+		<li><div class="li_content"> Input handling 
+		</div></li>
+ 
+		<li><div class="li_content"> Force handling 
+		</div></li>
+ 
+		<li><div class="li_content">Effect state machine 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Input handling</h2> 
+		 
+		<p>The LSEFFECT block supports one to four inputs. These inputs determine
+		  whether the block should be in the Normal or Tripped state. Each input (IN_Dn)
+		  has an ENABLEn parameter and a DELAY_TIMEn parameter. 
+		</p>
+ 
+		<p>An input is in the Disabled state if the IN_D<em>n</em> parameter has a
+		  status of BadNotConnected or if ENABLE<em>n</em> is FALSE. An input is Normal
+		  when IN_D<em>n</em> is in the normal state and is either Delayed or Tripped if
+		  IN_D<em>n</em> is in the tripped state (depending on whether the
+		  DELAY_TIME<em>n</em> parameter is configured). The block sets DELAY_TIMER<em>n</em>
+		  to DELAY_TIME<em>n</em> when IN_D<em>n</em> transitions to the Tripped state and
+		  counts down each time the block runs . 
+		</p>
+ 
+		<p>You can configure the block so that any or all inputs must be Tripped
+		  for the block to go to the Tripped state, through the INPUT_OPT parameter. 
+		</p>
+ 
+		<p>Input handling logic generates a single value that it sends to the
+		  effect state machine. This value is True if the input handling determines that
+		  the block should be tripped. Otherwise the value is False. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Force handling</h2> 
+		 
+		<div class="p">You can override the input handling and the effect state machine by
+		  forcing the state directly to Normal or Tripped using the FORCE_EFFECT
+		  parameter. The FORCE_EFFECT parameter has three values: 
+		<ul> 
+		  <li><div class="li_content">Do Not Force 
+		  </div></li>
+ 
+		  <li><div class="li_content">Force Normal 
+		  </div></li>
+ 
+		  <li><div class="li_content">Force Tripped 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="p">FORCE_PERMIT and FORCE_OPTS determine whether the block allows force
+		  handling. The FORCE_OPTS parameter has four bitstring options: 
+		<ul> 
+		  <li><div class="li_content">Force permit not required to force to tripped 
+		  </div></li>
+ 
+		  <li><div class="li_content">No timeout when forced to normal 
+		  </div></li>
+ 
+		  <li><div class="li_content">Timeout on force to normal for indication only 
+		  </div></li>
+ 
+		  <li><div class="li_content">Force permit control should be visible in operator interface 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>If you do not select 
+		  <strong>Force permit not required to force to tripped</strong>, FORCE_PERMIT must
+		  be True to enable the block to be forced to tripped. 
+		</p>
+ 
+		<p> The block sets the reminder bit in EFFECT_ALERTS whenever FORCE_TIMER
+		  is less than REMINDER_TIME. The OVERRIDES parameter shows when the block is
+		  forced to normal or tripped. The FORCE_OPTS controls whether the force is
+		  removed automatically when FORCE_TIMER reaches 0. 
+		</p>
+ 
+		<p>The force handling logic generates a single value that it sends to the
+		  effect state machine to indicate No Force, Force Normal or Force Tripped. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Effect state machine</h2> 
+		 
+		<p>The output of the effect block, OUT_D, is either Normal or Tripped.
+		  The actual value (TRUE or FALSE) depends on the value of the LOGIC_TYPE
+		  parameter. The effect state machine can be in one of five states as indicated
+		  by the STATE parameter. The following figure shows the five states and the
+		  possible transitions between the states. The state transitions are controlled
+		  by the value coming from the input handling, the force handling and the resets
+		  based on the value of RESET_OPTS. 
+		</p>
+ 
+		<div class="fignone"><div><span class="figcap">State Transition Diagram for the STATE Parameter</span></div> 
+		  <br /><div class="imagecenter"><img class="imagecenter" src="LSEFFECT_state_diag.png" /></div><br />
+		  
+		</div>
+ 
+		<p>If the value of RESET_OPTS is None then the block only be in the
+		  Normal or Tripped states. Unless the effect is being forced, the state is based
+		  purely on the value received from the input handling. This value is a Boolean
+		  that is set to True if the input handling determines the output should be
+		  tripped, otherwise it is False. If the value of FORCE_EFFECT is Force Normal or
+		  Force Tripped, and FORCE_PERMIT is true, then the state of the block is set to
+		  the corresponding state no matter what the input handling determines the state
+		  should be. 
+		</p>
+ 
+		<div class="p">If the value of RESET_OPTS is not None, then the block can be in one
+		  of the other three states depending on how the parameter is configured.
+		  RESET_OPTS has five possible values, described below. If the state machine is
+		  in the Tripped state and the input handling indicate the block should go to
+		  normal the following state transitions occur based on the configuration of the
+		  RESET_OPTS parameter: 
+		<ul> 
+		  <li><div class="li_content"><strong>A only: 
+			 </strong>the state machine transitions to Waiting For Reset A, then when
+			 RESET_A goes to TRUE, the state machine transitions to Normal. If a trip
+			 condition occurs before RESET_A is set, the state machine returns to the
+			 Tripped state. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong>A or B: 
+			 </strong>the state machine transitions to Waiting For Any Reset, then,
+			 when either reset parameter goes to True, the state machine transitions to
+			 Normal. If a trip condition occurs before either reset is set, the state
+			 machine returns to the Tripped state. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong>A and B:</strong> the state machine transitions to Waiting For Any
+			 Reset, then, when either of the resets goes True the state machine transitions
+			 to Waiting For Reset A or Waiting For Reset B, depending on which reset goes to
+			 True. Then, when the other reset goes to True, the state machine transitions to
+			 Normal. If the first reset goes back to false before the second reset goes
+			 True, the state machine transitions back to Waiting For Any Reset. If a trip
+			 condition occurs before both resets are set, the state machine returns to the
+			 Tripped state. 
+		  </div></li>
+ 
+		  <li><div class="li_content"><strong>A then B:</strong> the state machine transitions to Waiting For Reset
+			 A, then, when RESET_A goes to True, the state machine transitions to Waiting
+			 For Reset B. When RESET_B goes to True, the state transitions to Normal. If a
+			 trip condition occurs before the RESET_B parameter is set, the state machine
+			 returns to the Tripped state. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The block resets RESET_A and RESET_B to False at the end of each
+		  module execution unless the parameters are wired to use other logic. This is
+		  true of all reset options except for the A and B options as this would require
+		  both RESET_A and RESET_B to be True during the same execution. To handle cases
+		  when the value of RESET_OPT is A and B, and the block is in one of the waiting
+		  states, the logic latches RESET_A or RESET_B in the TRUE state for the time
+		  specified in RST_LATCH_TIME. The RST_LATCH_TIME parameter determines how long
+		  the reset is latched. After the time has expired, the value returns to False.
+		  The RST_LATCH_TIMER parameter shows how much of the latch period remains. The
+		  RST_LATCH_TIME and RST_LATCH_TIMER parameters have no effect when the RESET_OPT
+		  is anything other than A and B. 
+		</p>
+ 
+		<p>If FORCE_EFFECT is enabled and the FORCE_PERMIT (if required) is True,
+		  the state machine can be forced into either Normal or Tripped no matter what
+		  the value of the inputs or resets are. 
+		</p>
+ 
+		<p>The following sections describe the states in detail. 
+		</p>
+
+		<p><strong>STATE: Normal</strong>
+		</p>
+ 
+		<p>In this state, the logic drives OUT_D to the Normal state. The Normal
+		  state is False if LOGIC_TYPE is Positive and True if LOGIC_TYPE is Negative. 
+		</p>
+ 
+		<p>The block can enter this state from the Tripped state when the trip
+		  condition is no longer active and no reset behavior is configured or from any
+		  of the Waiting for Reset states when the relevant reset parameter is True. It
+		  can also be entered if the effect is forced to the Normal state. 
+		</p>
+ 
+		<p>The block generates an event whenever the block enters the Normal
+		  state. 
+		</p>
+
+		<p><strong>STATE: Tripped</strong>
+		</p>
+ 
+		<p>In this state the logic drives OUT_D to the Tripped state. The Tripped
+		  stat is True if LOGIC_TYPE is Positive and False if LOGIC_TYPE is Negative. 
+		</p>
+ 
+		<p>The block can enter this state from any of the other state if the trip
+		  condition becomes active or if the effect is forced to the tripped state. 
+		</p>
+ 
+		<p>The software generates an event whenever the block enters this state
+		  from the normal state. If the state changes from Tripped to one of the reset
+		  waiting states and back to Tripped the software does not generate an event. 
+		</p>
+ 
+		<p><strong>STATE: Waiting For Any Reset</strong>
+		</p>
+ 
+		<p>In this state, OUT_D remains in the Tripped state which is True if
+		  LOGIC_TYPE is Positive and False if LOGIC_TYPE is Negative. 
+		</p>
+ 
+		<p>The block can enter this state from the Tripped state if the trip
+		  condition is no longer active and the value of RESET_OPT is A or B or A and B.
+		  The block can also enter this state from the Waiting For RESET A or Waiting For
+		  RESET B states if the value of RESET_OPT is A and B and the True reset goes
+		  back to False. 
+		</p>
+
+		<p><strong>STATE: Waiting For Reset A</strong>
+		</p>
+ 
+		<p>In this state OUT_D remains in the Tripped state which is True if
+		  LOGIC_TYPE Positive and False if LOGIC_TYPE is Negative. 
+		</p>
+ 
+		<p>The block can enter this state from the Tripped state if the trip
+		  condition is no longer active and RESET_OPT is A then B or A Only. The block
+		  can enter this state from the Waiting For Any Reset state if RESET_OPT A and B
+		  and RESET_B goes to true. 
+		</p>
+ 
+		<strong>STATE: Waiting For Reset B</strong> 
+		<p>In this state OUT_D remains in the Tripped state which is True if
+		  LOGIC_TYPE Positive and FALSE if LOGIC_TYPE is Negative. 
+		</p>
+ 
+		<p>The block can enter this state from the Waiting For Reset state if
+		  RESET_OPT is A and B, and RESET_A goes to True. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

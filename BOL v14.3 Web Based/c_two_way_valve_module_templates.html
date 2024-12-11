@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Two-way valve module templates" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="module templates, two-way valve, two-way valve module templates" name="DC.subject" /><meta content="module templates, two-way valve, two-way valve module templates" name="keywords" /><meta content="c_two_state_motor_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="c_module_template_library.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_two_way_valve_module_templates" name="DC.Identifier" /><title>Two-way valve module templates</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_three_state_motor_module_templates.html" /><link rel="next" href="c_simulation_module_templates.html" /></head><body class="fixed" id="c_two_way_valve_module_templates" data-relpath="c_two_way_valve_module_templates.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_two_way_valve_module_templates"></a>
+
+<h1 class="topictitle1">Two-way valve module templates</h1>
+<div><div></div>
+<p>There are two categories of module templates for two-way valve control, one for normally closed valves (fail closed) and one for normally open (fail open) valves. In each category there are variations for valves with one or two limit switches and valves with or without interlock conditions. The valve module templates are similar to the motor module templates. If you are not familiar with the motor module templates in the Library, read Two-state motor module templates before proceeding.</p>
+<p>A normally closed valve is closed in the passive state. An interlock condition causes the valve to close. A normally opened valve is open in the passive state, and an interlock condition causes it to open. The two-way valve modules have one or two discrete inputs, depending on the number of limit switches. There is a single latching discrete output to drive the valve open or closed. The STATE_MASKS parameter of the Device Control block is a Quick Config parameter in the valve module templates, which enables the inputs and output to be inverted when necessary. For valves with interlocks, you can optionally configure the valve to automatically return to the active state when the interlock conditions clear. For example, a normally closed valve would be driven closed on an interlock, but could be configured to open when the interlock clears if the previously commanded state was Open. This is done by disabling the SP Track option in DEVICE_OPTS of the Device Control block.</p>
+
+<div class="tablenoborder"><a name="c_two_way_valve_module_templates__table_573F49C0B768462780D635DABE993ECA"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_two_way_valve_module_templates__table_573F49C0B768462780D635DABE993ECA" rules="all" summary=""><caption><span class="tablecap">Quick Config parameters for the Two-Way Valve module templates</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1416621e33" valign="top" width="26%"><p>Parameter</p>
+</th>
+
+<th class="cellrowborder" id="d1416621e37" valign="top" width="74%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>IO_IN_1</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>An I/O Reference parameter that configures the DST for the Open/Close status (1=CLOSED, normally closed valve with one limit switch), Open/Close status (1=OPEN, normally open valve with one limit switch), Close status (1=CLOSED, normally closed valve with two limit switches).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>IO_IN_2</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>An I/O Reference parameter that configures the DST for the Open status of the valve (1=OPEN) (two limit switches) (not a Quick Config parameter for valve modules with one limit switch)</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>IO_OUT_1</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>An I/O Reference parameter that configures the DST for the latching output to the valve (1=OPEN for normally closed valves, 1=CLOSE for normally open valves).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>CFM_ACT1_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>The amount of time in seconds for the valve to confirm that it is in the active state (Open for a normally closed valve, Closed for a normally open valve) following a command to that state. If the valve does not confirm within this time, a fail condition occurs. The default is 15 seconds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>CFM_PASS_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>The amount of time in seconds for the valve to confirm that it is in the passive state (Closed for a normally closed valve, Open for a normally open valve) following a command to that state. If the valve does not confirm within this time, a fail condition occurs. The default is 15 seconds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>CRACK_TIME</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>The amount of time in seconds for the valve to begin movement to a new state following a command to the new state. The crack time should be less than the confirm times so that a fail condition can occur more quickly when a valve with a long travel time has not cleared the old confirm. The default is 5 seconds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>DEVICE_OPTS</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>Configuration options for the Device Control block. The option that defaults to enabled for modules without interlock conditions is SP Track. The options that default to enabled for modules with interlock conditions are SP Track, Permissive, and Interlock.  </p>
+<div class="note"><span class="notetitle">Note:</span> When you want the valve to return to the previously commanded active state when an interlock condition clears, clear the SP Track check box. Reset required is a device option that is not enabled as a default, but is applicable to two-way valves.</div>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1416621e33 " valign="top" width="26%"><p>STATE_MASKS</p>
+</td>
+
+<td class="cellrowborder" headers="d1416621e37 " valign="top" width="74%"><p>A Quick Config parameter that enables the output to the valve (or feedback from the valve) to be inverted when necessary.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_two_state_motor_module_templates.html">Two-state motor module templates</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

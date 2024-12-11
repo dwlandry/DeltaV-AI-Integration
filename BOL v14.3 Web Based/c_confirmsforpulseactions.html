@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Confirms for Pulse Actions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="action, confirm" name="DC.subject" /><meta content="action, confirm" name="keywords" /><meta content="c_intercontrollercommunications.html" name="DC.Relation" scheme="URI" /><meta content="c_actions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_confirmsforpulseactions" name="DC.Identifier" /><title>Confirms for Pulse Actions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_overridingresetrqualifierforresettingstoredactions.html" /><link rel="next" href="c_alarms_events_general.html" /></head><body class="fixed" id="c_confirmsforpulseactions" data-relpath="c_confirmsforpulseactions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_confirmsforpulseactions"></a>
+
+<h1 class="topictitle1">Confirms for Pulse Actions</h1>
+<div><div></div>
+ 
+	 <p>You can add a confirm expression to an action that has a pulse
+		qualifier. To confirm an action, the action must be defined as a Pulse
+		qualifier (which is configured on the 
+		<span class="wintitle">Action Properties</span> dialog). Select the 
+		<span class="uicontrol">Confirm action for pulse qualifier</span> check box for
+		that action. Write the confirmation expression and assign a timeout value. When
+		the SFC step containing this action becomes active, the action is initiated. If
+		confirmation is enabled, the confirmation expression is run. If confirmation
+		does not occur within the timeout value, the action fails. 
+	 </p>
+ 
+	 <p>For example, suppose you want to confirm that the motor is running
+		before moving to the next action in the step. In this example, the action is to
+		start the motor (Pulse qualifier with the action, SP:MOTOR=RUN, and a failure
+		timeout set to 20 seconds). The Confirm expression for the Start motor step is
+		PV:MOTOR = RUNNING with a possible confirm timeout value of 20 seconds. 
+	 </p>
+ 
+	 <p>If there are no pending confirms and no failed confirms, the step action
+		or actions have completed successfully. If the expression evaluates to TRUE,
+		the SFC will proceed to the next step. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>When configuring confirm and retry on an action, the confirm
+		  expression should check that either the destination parameter has changed as
+		  expected or that a related parameter changed because of the remote parameter
+		  value&#39;s change. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>A confirm requires either a Timeout value or a Timeout expression. You
+		could set the Confirm Timeout to a Time value of 5, meaning that if the motor
+		does not start running within 5 seconds the confirm times out. A timeout value
+		of 0 means there is no time limit on the confirm timeout. 
+	 </p>
+ 
+	 <p>When a step becomes active, the PENDING_CONFIRMS parameter for the step
+		is set to equal the number of actions with confirms in the step. In our
+		example, we have one action with one confirm. So, PENDING_CONFIRMS is set to 1.
+		When a confirm either completes or times out, the PENDING_CONFIRMS is decreased
+		by one. When all confirm actions within the step have either completed or timed
+		out, PENDING_CONFIRMS is set to 0. 
+	 </p>
+ 
+	 <p>If a confirm condition times out (the Confirm Timeout time expires or
+		the Confirm Timeout expression becomes TRUE before the Confirm expression
+		becomes TRUE), the FAILED_CONFIRMS parameter is incremented by 1 and the
+		CONFIRM_FAIL parameter is set to TRUE. 
+	 </p>
+ 
+	 <p>The CONFIRM_FAIL parameter is available at the action level, the step
+		level, and in the SFC. It can be used to send an alarm so that the operator can
+		take appropriate action. 
+	 </p>
+ 
+	 <p>It is left to the user to configure the transition (following the action
+		with a confirm) to allow confirmation to occur. This can be achieved by the
+		transition expression being: 
+	 </p>
+ 
+	 <pre class="codeblock">&#39;S2/PENDING_CONFIRMS.CV&#39; = 0 AND &#39;S2/CONFIRM_FAIL.CV&#39; = False</pre>
+ 
+	 <p>An action with a pulse qualifier can have a built-in delay. This is
+		useful when one or more pulse actions in a step do not occur immediately after
+		the step becomes active. For example, delays can be used to achieve sequencing
+		within a step. In this case, each action in the step (except the first one) has
+		a delay configured. The second action is delayed until the first is completed.
+		The third is delayed until the second is completed, and so on. This technique
+		offers several advantages. Using a single step can help simplify complex
+		diagrams. If a sequence must occur very quickly, doing the sequence in a single
+		step can avoid the one-scan delay required by each transition expression. 
+	 </p>
+ 
+	 <p>A delay uses either a delay time value or a delay expression. To add a
+		delay time or expression, select the action on the 
+		<span class="wintitle">Action Properties</span> dialog. As a default, there is no
+		delay time on an action with a pulse qualifier. If you want an action to be
+		delayed until the previous action has completed, select 
+		<span class="uicontrol">Expression</span> and enter a delay expression.
+		Typically, the previous action will already have a confirm expression
+		configured. The delay expression can check the previous action&#39;s state to see
+		when it is complete. The previous action&#39;s state will be complete when its
+		confirm expression evaluates to true. Then, the delay expression will evaluate
+		to true, causing its pulse action to occur. 
+	 </p>
+ 
+	 <p>The delay expression checks the STATE parameter of the previous action.
+		The path is StepName/ActionName/STATE. The following example delay expression
+		checks to see if the value of the STATE parameter in action A1 of step S1 is
+		complete. 
+	 </p>
+ 
+	 <pre class="codeblock">&#39;S1/A1/STATE.CV&#39; = &#39;$sfc_action_states:Complete&#39;</pre>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_intercontrollercommunications.html">Inter-Controller communication guidelines</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

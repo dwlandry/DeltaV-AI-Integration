@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Edit the campaign&#39;s recipe object" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Campaign Manager control, recipe object, Campaign Manager, API example, API Campaign Manager example, example Campaign Manager API, control" name="DC.subject" /><meta content="Campaign Manager control, recipe object, Campaign Manager, API example, API Campaign Manager example, example Campaign Manager API, control" name="keywords" /><meta content="c_createandaddacampaignexample.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_editthecampaignsrecipeobject" name="DC.Identifier" /><title>Edit the campaign&#39;s recipe object</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_creatinganewcampaign.html" /><link rel="next" href="c_addingbatches.html" /></head><body class="fixed" id="c_editthecampaignsrecipeobject" data-relpath="c_editthecampaignsrecipeobject.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_editthecampaignsrecipeobject"></a>
+
+<h1 class="topictitle1">Edit the campaign&#39;s recipe object</h1>
+<div><div></div>
+<p>In order to set up a campaign or batch recipe edit object, the user must be presented with recipe information so that selections can be made. For example, if a recipe has multiple steps that require unit binding selections, the user needs to make those selections. All of the recipe information to be presented to the user can be accessed from the DeltaV software using the DVBCMExecRecipeInfo object. This object exposes many properties and methods that return various pieces of information consistent with how the recipe has been configured in Recipe Studio.</p>
+<p>To retrieve the DVBCMExecRecipeInfo object, first get the list of recipes available. The DVBCMExecInfo object keeps this list. The following code shows an example.</p>
+<pre class="pre">
+Private Sub GetBaseRecipe()
+    Dim objExecOnfo As DVBCMExecInfo
+    Dim objExecRecipeInfo As DVBCMExecRecipeInfo
+    Dim strExecNode As String
+    <span class="#008000">&#39; Get the executive node name</span>
+    strExecNode = DVBCMClient.ExecutiveNode
+    <span class="#008000">&#39;Set the Executive info object</span>
+    Set objExecInfo = DVBCMClient.ExecutiveInfo(strExecNode)
+    Call UseExecInfo(objExecInfo)
+End Sub
+</pre>
+<p>Once an executive recipe object is retrieved, a list of all recipes on the executive can be retrieved for the user to select the new campaign&#39;s base recipe and to obtain an executive recipe information object.</p>
+<pre class="pre">
+Private Sub UseExecInfo(objExecInfo)
+    Dim vRecipes() As String
+    Dim strRecipeName As String
+    Dim objExecRecipeInfo As DVBCMExecRecipeInfo
+    <span class="#008000">&#39; Get list of recipes</span>
+    vRecipe = objExecInfo.ExecutiveRecipeList
+    <span class="#008000">&#39; User Selects base recipe from list of recipes</span>
+    Call UserSelectsRecipe(vRecipes, strRecipeName)
+    <span class="#008000">&#39; Retrieve executive recipe object</span>
+    objExecRecipeInfo = objExecInfo.ExecutiveRecipeInfo(strRecipeName)
+    Call UseExecRecipeInfo(objExecRecipeInfo, objExecInfo)
+End Sub
+</pre>
+<p>As the recipe is selected, specific information about that recipe such as formulas and bound units, can be retrieved from the DVBCMExecRecipeInfo and DVBCMExecParamInfo objects. As the formula and bound unit information is retrieved from the executive, it can be presented to the user for selection.</p>
+<pre class="pre">
+Private Sub UseExecRecipeInfo(objExecRecipeInfo, objExecInfo)
+    Dim vFormulas() As String
+    Dim vStepNames() As String
+    Dim vUnitClasses() As String
+    Dim vUnitNames() As String
+    Dim vIsClassBased() As Boolean
+    Dim lUnitIDs() As Long
+    Dim vAreaNames() As String
+    Dim lAreaIDs() As Long
+    <span class="#008000">&#39; Get a list of each recipe step along with its associated unit class</span>
+    Call objExecRecipeInfo.GetStepsAndBoundUnits(vStepNames, _
+        vUnitClasses, vIsClassBased)
+    <span class="#008000">&#39; Get the bound units for each step</span>
+    Call SetBoundUnits(vStepNAmes, vUnitClasses, vIsClassBased, _
+        vUnitNames, lUnitIDs, vAreaNames, lAreaIDs, objExecInfo)
+    <span class="#008000">&#39;Get a list of formulas for this recipe</span>
+    vFormulas = objExecRecipeInfo.FormulaList
+    Call SetFormulaAndParameters(vFormulas)
+End Sub
+</pre>
+<p>A bound unit must be selected for each step of the recipe. A list of units for each unit class can be retrieved from a DVBCMExecInfo object using the GetExecutiveUnitInfo method. The user must be presented with a list of possible units for each step. As the list of unit names is being presented, a list of unit IDs, area names and area IDs is also retrieved and presented for selection. If the recipe is not unit class based and the GetExecutiveUnitInfo method is passed a unit name instead of a unit class name, the method will just return the unit passed in. To determine if a step is associated with an individual unit or a unit class, check the vIsClassBased parameter passed to GetStepsAndBoundUnits above. Each entry in this array will be true if the corresponding step is based off a unit class.</p>
+<pre class="pre">
+Private SetBoundUnits(vStepNames, vUnitClasses, vIsClassBased,
+    vUnitNames, lUnitIDs, vAreaNames, lAreaIDs, objExecInfo)
+    Dim strBoundUnit As String
+    Dim iSteps As Long
+    Dim iCount As Long
+    iSteps = Ubound(vStepNames)
+    for iCount = 1 to iSteps
+        if vIsClassBased(iCount) then
+            Call ObjExecInfo.GetExecutiveUnitInfo(strBoundUnit, _
+                vUnitNames, 1UnitIDs, vAreaNames, 1AreaIDs)
+            Call PromptUserForBoundUnit(strBoundUnit, vUnitNames)
+        Else
+            strBoundUnit = vUnitClasses(iCount)
+        End if
+    next iCount
+End Sub
+</pre>
+<p>Once a list of formulas is retrieved the user can be prompted for a formula name. With the formula name the GetFormulaInfo method can be called from DVBCMExecRecipeInfo object to retrieve the description, version, parameter names and parameter values of the formula. These can all be used to display information to the user about the formula or to allow the user to enter a custom formula with custom parameter values. With a specific parameter name, a DVBCMExecParamInfo object can be retrieved to display information about a parameter such as default value, high scale and low scale, as well as to tell if it can be edited or scaled. If custom parameter values are entered, the user must provide a unique formula name to be added to the server. If no formula is selected for the new campaign, the default values of all the parameters will be used.</p>
+<div class="note"><span class="notetitle">Note:</span> <p> When calling one custom formula to replace another custom formula, the first custom formula must assign <strong>all</strong> recipe parameters. Any unassigned recipe parameters will be reset to the default parameter value before the new custom formula is loaded.</p>
+</div>
+<pre class="pre">
+Private Sub SetFormulaAndParameters(vFormulas)
+    Dim strFormulaName As String
+    Call PromptUserForFormula(vFormulas, strFormulaName)
+End Sub
+</pre>
+<p>Once all the recipe information has been selected and maintained in variables, a recipe edit object can be retrieved to set all the properties of the campaign&#39;s recipe edit object. The only other property the user needs to enter is the recipe&#39;s scale.</p>
+<pre class="pre">
+Private Sub SetCampaignRecipeObject(ByRef objCampaignEdit As _
+    IDVBCMCampaignEdit4, vStepNames As Variant, vUnitNames As Variant, _
+    lUnitIDs As Variant, vParameterNames As Variant, vParameterValues As _
+    Variant, strFormula As String, strExecNode As String)
+    Dim fScale As float
+    Dim objRecipeEdit As DVBCMRecipeEdit
+    <span class="#008000">&#39; Prompt user for recipe&#39;s scale</span>
+    Call GetScaleFromUSer(fScale)
+    <span class="#008000">&#39; Get the campaign&#39;s recipe edit object</span>
+    objRecipeEdit = objCampaignEdit.RecipeEdit
+    Call objRecipeEdit.SetScale(fScale)
+    objRecipeEdit.Formula = strFormula
+    Call objRecipeEdit.SetUnitBindings(vStepNames, vUnitNames, _
+        lUnitIDs)
+    Call objRecipeEdit.SetParameters(vParameterNames, _
+        vParameterValues)
+End Sub
+</pre>
+<p>SetUnitBindings must be sent a valid list of step names along with a list of valid bound units for each step. If either list is incorrect, then when DVBCMCampaignEdit.SetupComplete is called for the campaign, the call will fail due to invalid unit selections for the base recipe of the campaign. The function SetUnitBinding can be used in instead to set one unit at a time but this is mainly used to change bound units after the campaign has been created. For the initial setup of a campaign all unit bindings are usually set.</p>
+<p>SetParameters must be sent a valid list of parameter names and valid parameter types or, as with the unit bindings, the DVBCMCampaignEdit.SetupComplete call will fail. The function SetParameter can be used to set one parameter at a time but SetParameters is used at the initial setup of the campaign to set all parameters at once.</p>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

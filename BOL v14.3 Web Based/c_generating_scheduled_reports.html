@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Generate scheduled reports" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, scheduled report, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, scheduled report, DeltaV Reporter" name="keywords" /><meta content="c_worksheet_function_reference.html" name="DC.Relation" scheme="URI" /><meta content="c_system_configuration_settings_for_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_generating_scheduled_reports" name="DC.Identifier" /><title>Generate scheduled reports</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_vba_sample_program_for_writing_historical_data.html" /><link rel="next" href="c_stats_in_process_history_view.html" /></head><body class="fixed" id="c_generating_scheduled_reports" data-relpath="c_generating_scheduled_reports.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_generating_scheduled_reports"></a>
+
+<h1 class="topictitle1">Generate scheduled reports</h1>
+<div><div></div>
+ 
+    <p>After creating a report definition file with DeltaV Reporter, you can
+      configure a scheduled report that will be automatically generated at the
+      frequency you specify. A report definition file is a Microsoft Excel workbook
+      containing DeltaV Reporter worksheet functions. 
+    </p>
+ 
+    <div class="section" id="c_generating_scheduled_reports__section_C0CB109683B44289A8858C470F4E7D3A"><a name="c_generating_scheduled_reports__section_C0CB109683B44289A8858C470F4E7D3A"></a><h2 class="sectiontitle">Report definition files</h2> 
+       
+      <p>The DeltaV Reporter setup program creates 
+        <span class="filepath">C:\DeltaV Reporter\Definitions</span> as the default
+        folder for report definition files. The setup program also copies some
+        important sample Excel workbook files into the 
+        <span class="filepath">C:\DeltaV Reporter\Definitions</span> folder. You can use
+        these as examples of using the DeltaV Reporter worksheet functions and as
+        templates to create report definition files for automatically generating
+        scheduled reports from the Event Chronicle database. Depending on which version
+        of Excel you are using, report definition files can be saved in .xls, .xlsx,
+        .xlsm, or .xlsb format. There are important system configuration settings
+        required to automatically generate scheduled reports. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span> Storing all of your report definition files in a single
+        folder is generally recommended. This practice reduces the potential for a cell
+        reference to mistakenly refer to an external Excel workbook other than the
+        expected or intended one. 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_generating_scheduled_reports__section_97D9B78843B34E5B84267F07FDD9E268"><a name="c_generating_scheduled_reports__section_97D9B78843B34E5B84267F07FDD9E268"></a><h2 class="sectiontitle">Scheduled report files</h2> 
+       
+      <p>Depending on the file format of the report definition file, a
+        scheduled report is saved as an Excel workbook .xlsx file or as a Portable
+        Document Format (PDF) file that can be viewed in Adobe Acrobat Reader. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_generating_scheduled_reports__section_D19550EE6C264C22BD39212883B8EAD7"><a name="c_generating_scheduled_reports__section_D19550EE6C264C22BD39212883B8EAD7"></a><h2 class="sectiontitle">Scheduling a report</h2> 
+       
+      <p>To configure an automatically generated scheduled report, perform the
+        following steps: 
+      </p>
+ 
+      <a name="c_generating_scheduled_reports__ol_4B8C55ED66A74B51AABA2830A6A38922"></a><ol id="c_generating_scheduled_reports__ol_4B8C55ED66A74B51AABA2830A6A38922"> 
+        <li id="c_generating_scheduled_reports__li_5424C11200D84E0D9D995CCDD950D6A4"><div class="li_content"> Start Microsoft Excel. 
+        </div></li>
+ 
+        <li id="c_generating_scheduled_reports__li_9638F1BC14A646B1A1D9F84EA5B70AF1"><div class="li_content"> On the 
+          <span class="uicontrol">Add-Ins</span> tab, in the 
+          <span class="uicontrol">DeltaV</span> group, click 
+          <span class="uicontrol">Scheduled Reports</span>. This opens the 
+          <span class="wintitle">DeltaV Scheduled Reports</span> dialog. 
+        </div></li>
+ 
+        <li id="c_generating_scheduled_reports__li_22830F58B1EA413087E5699654721A89"><div class="li_content"> Open the 
+          <span class="wintitle">Scheduled Report Settings</span> dialog by clicking 
+          <span class="uicontrol">Settings</span>. 
+          <p>In the 
+            <span class="wintitle">Scheduled Report Settings</span> dialog, enter or use
+            the 
+            <span class="uicontrol">Browse</span> button to specify the full path to
+            the folder where you want to save automatically generated scheduled reports.
+            The default folder for saving scheduled reports is 
+            <span class="filepath">C:\DeltaV Reporter\Reports</span>. All scheduled
+            reports are stored in subfolders of 
+            <span class="filepath">C:\DeltaV Reporter\Reports</span> or in subfolders of
+            the folder you specify. Subfolder names are based on the name of the report
+            definition file for the scheduled report. 
+          </p>
+ 
+          <div class="note"><span class="notetitle">Note:</span> If you change the folder in which to save
+            automatically generated scheduled reports, the change applies to all scheduled
+            reports that you configure. However, after changing the folder, any scheduled
+            report already generated is not moved. 
+          </div>
+ 
+          <p>You can also specify the maximum number of scheduled reports to
+            save before deleting older files. The default is 100 for each scheduled report
+            generated from an individual report definition file. For example, if you
+            configure three separate scheduled reports, each automatically generated once a
+            week from a different report definition file, and specify 52 in the Maximum
+            number of each Report Type field, a year&#39;s worth of each scheduled report is
+            saved before the oldest file is deleted. However, if two of the scheduled
+            reports are generated from the same report definition file, only six month&#39;s
+            worth of each of these two scheduled reports is saved before the oldest file is
+            deleted. It is not possible to specify a different maximum number of scheduled
+            reports to save on a report-by-report basis. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_generating_scheduled_reports__li_7A563B93951C4E1094915BE075B94B75"><div class="li_content"> Open the 
+          <span class="wintitle">Scheduled Report Properties</span> dialog by clicking 
+          <span class="uicontrol">Add Task</span>. 
+          <p><br /><a name="c_generating_scheduled_reports__image_2005F063855F4CF1B2663474CBE3B628"></a><div class="imagecenter"><img class="imagecenter" id="c_generating_scheduled_reports__image_2005F063855F4CF1B2663474CBE3B628" src="SchedReportProps_TaskTab.png" /></div><br />
+            
+          </p>
+ 
+          <div class="p">On the 
+            <span class="uicontrol">Task</span> tab of the 
+            <span class="wintitle">Scheduled Report Properties</span> dialog, you can
+            specify the following: 
+          <a name="c_generating_scheduled_reports__ul_8A71A9B90AA14B8FAB446AA703CCC762"></a><ul id="c_generating_scheduled_reports__ul_8A71A9B90AA14B8FAB446AA703CCC762"> 
+            <li id="c_generating_scheduled_reports__li_C8E39E79B9F141839064CAEF74715EAD"><div class="li_content"> 
+              <span class="uicontrol">Scheduled Report Definition</span> – Enter or use
+              the 
+              <span class="uicontrol">Browse</span> button to specify the path and name
+              of a report definition file. The default folder for report definition files is 
+              <span class="filepath">C:\DeltaV Reporter\Definitions</span>. 
+            </div></li>
+ 
+            <li id="c_generating_scheduled_reports__li_2C36ED3BED8B4DE8A8986989F022D8ED"><div class="li_content"> Enter a descriptive
+              name for your scheduled report. 
+            </div></li>
+ 
+            <li id="c_generating_scheduled_reports__li_4CD44552D7154D9E8030600FA4247BC2"><div class="li_content"> Enable or disable the
+              
+              <span class="uicontrol">Output as PDF</span> option, if available. 
+            </div></li>
+ 
+            <li id="c_generating_scheduled_reports__li_962C59E0CD914BBCA19C87259B10DB15"><div class="li_content"> Enter User Validation
+              credentials with which to run the task to automatically generate the scheduled
+              report. 
+            </div></li>
+ 
+            <li id="c_generating_scheduled_reports__li_F976BC2CE8B84042B30DCFDCBD8CF0A0"><div class="li_content"> Check or clear the 
+              <span class="uicontrol">Task Status</span> check box. If you suspend
+              automatically generating a scheduled report by clearing this check box, you can
+              re-enable it at a later time either here, in the 
+              <span class="wintitle">Scheduled Report Properties</span> dialog, or in
+              the Windows Task Scheduler application. 
+            </div></li>
+ 
+          </ul>
+ 
+          </div>
+ 
+          <p>Note that the generated name of the scheduled report appears in
+            the Full Report Path File Name area. The default folder for scheduled reports
+            is 
+            <span class="filepath">C:\DeltaV Reporter\Reports</span>. Scheduled reports
+            are stored in a subfolder with the same name as the base name of the report
+            definition file. Individual generated file names are based on the descriptive
+            name you specify, followed by a time-date string of the form YYYY-MM-DD
+            HH-MM-SS, followed by the appropriate file format extension, .xls, .xlsx, or
+            .pdf. 
+          </p>
+ 
+          <div class="tip"><span class="tiptitle">Tip:</span>  
+            <p> If the scheduled report file name appears truncated on the 
+              <span class="wintitle">Scheduled Report Properties</span> dialog, you can
+              click the file name and then scroll to the end using the RIGHT ARROW key. 
+            </p>
+ 
+          </div>
+ 
+        </div></li>
+ 
+        <li id="c_generating_scheduled_reports__li_62A89B66212442E3A6978BCB41F0F661"><div class="li_content"> To set up the frequency
+          with which to automatically generate the scheduled report, click the 
+          <span class="uicontrol">Schedule</span> tab on the 
+          <span class="wintitle">Scheduled Report Properties</span> dialog. On the 
+          <span class="uicontrol">Schedule</span> tab, you can specify how often and at
+          what time of the day to generate the scheduled report on a one-time, daily,
+          weekly, or monthly basis. 
+        </div></li>
+ 
+      </ol>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_worksheet_function_reference.html">Worksheet function reference for DeltaV Reporter</a></div>
+<div><a href="c_system_configuration_settings_for_deltav_reporter.html">System configuration settings for DeltaV Reporter</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

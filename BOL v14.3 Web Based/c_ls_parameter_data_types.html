@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Parameter data types" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, parameters, SIS function blocks, characteristics, preserved on download, SIS function blocks, restored on restart, initializing output status, SIS function block parameters, status, output, SIS function blocks, data types" name="DC.subject" /><meta content="SIS function blocks, parameters, SIS function blocks, characteristics, preserved on download, SIS function blocks, restored on restart, initializing output status, SIS function block parameters, status, output, SIS function blocks, data types" name="keywords" /><meta content="c_ls_fblk_params.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_parameter_data_types_unique_1" name="DC.Identifier" /><title>Parameter data types</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_parameter_characteristics.html" /><link rel="next" href="c_ls_status_handling.html" /></head><body class="fixed" id="c_parameter_data_types_unique_1" data-relpath="c_ls_parameter_data_types.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_parameter_data_types_unique_1"></a>
+
+<h1 class="topictitle1">Parameter data types</h1>
+<div><div></div>
+
+	 <p>Outputs from one function block can be brought into another function
+		block as parameters for calculation or logic functions and sent to other
+		function blocks.
+	 </p>
+
+	 <p>There are a number of data types that SIS function block parameter can
+		have:
+	 </p>
+
+	 <a name="c_parameter_data_types_unique_1__ul_318A9673CBAE4E48A73033DA8366C185"></a><ul id="c_parameter_data_types_unique_1__ul_318A9673CBAE4E48A73033DA8366C185"> 
+		<li id="c_parameter_data_types_unique_1__li_1A23515BCA6B496D8FD5894124B7894E"><div class="li_content">
+		  <p><strong>Option Bitstring</strong> — an unsigned 16-bit integer that contains
+			 bit-encoded information that specifies control strategy options, I/O value
+			 processing, status handling and processing, or the type of control logic used
+			 in the block.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_F7CAF25667994C4E84AE4B4435030218"><div class="li_content">
+		  <p><strong>I/O Reference</strong> — a value that assigns channel names in an I/O
+			 device.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_BAFAFBCEBBD14C6BA31ECF640E365E48"><div class="li_content">
+		  <p><strong>Discrete with Status</strong> — an unsigned 8-bit integer value with a
+			 status indicator. A value of 0 (zero) means False. A value between 1 and 255
+			 means True.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_7FEDC82A286D4E6C9D359B8D244827CD"><div class="li_content">
+		  <p><strong>Simulate Discrete</strong> — a discrete value that enables/disables
+			 simulation and a simulated discrete value and status.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_A6115B04E2E444B2B6ACB3AA613F00B9"><div class="li_content">
+		  <p><strong>Floating Point</strong> — a number whose decimal point location is not
+			 fixed. This allows the calculation to consider significant digits information.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_2949FFDD41C2460584577952F87B2196"><div class="li_content">
+		  <p><strong>Scaling</strong> — a number that is used to convert a floating point
+			 value to the required engineering units.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_A4A6F7925065409184019B512264D822"><div class="li_content">
+		  <p><strong>Simulate Floating Point</strong> — a discrete value that
+			 enables/disables simulation and a simulated floating point value and status.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_87C78E751AB34D089085499B5C5C1E1A"><div class="li_content">
+		  <p><strong>8-bit Unsigned integer</strong> — a whole number without a positive or
+			 negative sign associated with it. 
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_1AE0C2FD79BF4D308DBD1FCE641E3004"><div class="li_content">
+		  <p><strong>Boolean</strong> — a True or False value
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_683AFFE7A507412681C0C639E70BE137"><div class="li_content">
+		  <p><strong>String</strong> — as many as 255 characters
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_18110166C166455DB9B5627927A29D1A"><div class="li_content">
+		  <p><strong>32-bit Unsigned Integer</strong> — a whole number without a positive
+			 or negative sign associated with it.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_parameter_data_types_unique_1__li_B5BFA9E527474215B564090599A01738"><div class="li_content">
+		  <p><strong>Alarm</strong> — a value of 0 or 1 (inactive or active) indicating the
+			 state of an alarm.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p>Because data of different types can be transmitted between function
+		blocks, there are rules that govern data compatibility and conversions. The
+		data conversions are performed automatically by the DeltaV software.
+	 </p>
+
+	 <p>The following table lists parameter data type compatibility information:
+	 </p>
+
+	 
+<div class="tablenoborder"><a name="c_parameter_data_types_unique_1__table_A41A623F5BAF4BF79D079A02F0975D11"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_parameter_data_types_unique_1__table_A41A623F5BAF4BF79D079A02F0975D11" rules="all" summary=""><caption><span class="tablecap">Function Block Parameter Compatibility</span></caption><thead align="left">
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d1167853e195" valign="top" width="NaN%">
+				<p>Source Data Type
+				</p>
+
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1167853e201" valign="top" width="NaN%">
+				<p>Destination Data Type
+				</p>
+
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1167853e207" valign="top" width="NaN%">
+				<p>Comments
+				</p>
+
+			 </th>
+ 
+		  </tr>
+</thead>
+
+		<tbody>
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>8-bit Unsigned Integer</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with Status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>16-bit Unsigned Integer</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>32-bit Unsigned Integer</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; precision loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; precision loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>32-bit Unsigned Integer with status</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; precision loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; precision loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Boolean</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Boolean with status</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Floating Point</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Floating Point with status</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>From 0 to 255, the current value is converted to integer. If the
+				  current value becomes greater than 255, the converted value remains at its
+				  previous value.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p><strong>Simulate Float</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>None
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>---
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Discrete with status</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p><strong>Simulate Discrete</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>None
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>---
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Option Bitstring</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>From 0 to 255, the current value is converted to integer. If the
+				  current value becomes greater than 255, the converted value remains at its
+				  previous value.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; clamped to extremes of destination
+				  type.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p><strong>Scaling</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Scaling
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Bit copy full parameter.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p><strong>I/O Reference</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>None
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>---
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " rowspan="11" valign="top" width="NaN%">
+				<p><strong>Named Set</strong>
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>8-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e207 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>16-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>32-bit Unsigned Integer with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Floating Point with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Discrete with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Boolean with status
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Option Bitstring
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Current value converted; no data loss.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1167853e195 " valign="top" width="NaN%">
+				<p>Named Set
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1167853e201 " valign="top" width="NaN%">
+				<p>Bit copy plus pointer duplication.
+				</p>
+
+				<p> Set strings must match.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		</tbody>
+
+	 </table>
+</div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

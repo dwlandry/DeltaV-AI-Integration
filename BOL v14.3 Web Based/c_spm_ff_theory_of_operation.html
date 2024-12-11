@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Theory of operation — Foundation Fieldbus only" name="DC.Title" /><meta content="SPM, Foundation Fieldbus theory of operation" name="DC.subject" /><meta content="SPM, Foundation Fieldbus theory of operation" name="keywords" /><meta content="c_spm_theory_of_operation.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_236" name="DC.Identifier" /><title>Theory of operation — Foundation Fieldbus only</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_spm_alarm_limits_and_management.html" /><link rel="next" href="c_spm_oper_fp_launch_AMS_dev_mgr.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_236" data-relpath="c_spm_ff_theory_of_operation.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_236"></a>
+
+<h1 class="topictitle1">Theory of operation — Foundation Fieldbus only</h1>
+<div> 
+	 <p>The RMT_SPM_FF module template, designed for Foundation Fieldbus SPM
+		devices, operates with a few differences from the HART modules. The AI Blocks
+		(AI1, MEAN, and STDEV) are configured as Fieldbus shadow function blocks. These
+		blocks are pre-configured to CHANNEL values of 1, 12, and 13 respectively,
+		which correspond to the PV, Mean, and Standard Deviation in the 3051S FF Rev
+		23. The CV AI Block is not a Fieldbus shadow block. 
+	 </p>
+ 
+	 <p>Each AI block has a corresponding Alarm Detection (ALM) block. The CALC
+		block copies the value and status of the OUT parameter of each AI block to the
+		IN parameter of the corresponding ALM block. The ALM block is used to generate
+		the alarms rather than the AI block, because the Alarms are dynamically enabled
+		and disabled. Writing directly to the HI_ENAB or LO_ENAB parameters of a
+		Fieldbus function block would require writing to Non-Volatile parameters of a
+		Field Device, and result a warning message if the control module is downloaded.
+		Instead, by using ALM blocks for alarms, the dynamic enabling and disabling of
+		alarms is processed in the Controller.
+	 </p>
+
+	 <p>The value and status from the AI blocks are copied to the ALM blocks
+		using code in the CALC block, rather than using links. This allows the SPM data
+		to be brought into the controller during Unscheduled Fieldbus communication
+		time, rather than during scheduled communication. This reduced the load on the
+		Fieldbus segment and gives the minimum effect on the segment macro-cycle. 
+	 </p>
+<br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_236__image_CE6AAB9E96FB471AB07CED8114B90421"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_236__image_CE6AAB9E96FB471AB07CED8114B90421" src="rtm_spm_7.png" /></div><br />
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Configuring a Sequence of Events (SOE) Card" name="DC.Title" /><meta content="concept" name="DC.Coverage" /><meta content="c_system_time.html" name="DC.Relation" scheme="URI" /><meta content="c_best_practices_classic_io.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_configuring_a_sequence_of_events_card" name="DC.Identifier" /><title>Configuring a Sequence of Events (SOE) Card</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_configuring_user-defined_RTD_input_channels.html" /><link rel="next" href="c_best_practices_batch.html" /></head><body class="fixed" id="c_configuring_a_sequence_of_events_card" data-relpath="c_configuring_a_sequence_of_events_card.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_configuring_a_sequence_of_events_card"></a>
+
+<h1 class="topictitle1">Configuring a Sequence of Events (SOE) Card</h1>
+<div><div></div>
+
+	 <p>Sequence of Events (SOE) Card captures events from devices in the field.
+		Events captured by an SOE card are time-stamped using 0.25 millisecond
+		resolution. The card is capable of buffering a maximum of 32 events per second.
+		These events are communicated to the controller where the timestamp is resolved
+		using the network time server to ensure accuracy. The controller then passes
+		each time stamped event to the workstation where it is logged into the Event
+		Chronicle.
+	 </p>
+
+	 <p>The card&#39;s SOE discrete input channel works with DI and Device Control
+		function blocks as input I/O references when reading a discrete (On/Off)
+		signal.
+	 </p>
+
+	 <p>Configuring the card for operation requires the following:
+	 </p>
+
+	 <a name="c_configuring_a_sequence_of_events_card__ul_E2F785A90BD449C3AAE4A77852C7BB14"></a><ul id="c_configuring_a_sequence_of_events_card__ul_E2F785A90BD449C3AAE4A77852C7BB14"> 
+		<li id="c_configuring_a_sequence_of_events_card__li_2DE2D313E77B492196B265374142D1F6"><div class="li_content">
+		  <p>In DeltaV Explorer, define a named set that defines the states for
+			 the associated discrete device.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_configuring_a_sequence_of_events_card__li_81230B7BED354959A2EFC14AAA3CDDFC"><div class="li_content">
+		  <p>In DeltaV Explorer, set the channel&#39;s properties: make sure the
+			 channel type is set to SOE Discrete Input Channel, that it is enabled and that
+			 the named set is defined.
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_configuring_a_sequence_of_events_card__li_78EA20CA803D4D8EA362C2CDCD3DED6E"><div class="li_content">
+		  <p>Systems that include the SOE card must have a network time server. 
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_configuring_a_sequence_of_events_card__li_01319286C62A4D6C8E056AADA96A1EFD"><div class="li_content">
+		  <p>Define one of the workstations as the SOE data collector. By
+			 default, the events will be collected by the ProfessionalPLUS workstation.
+			 Refer to DeltaV Explorer help for information on how to select a different
+			 workstation.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_system_time.html">System time</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

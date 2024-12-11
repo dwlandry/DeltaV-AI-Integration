@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Device Control function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_param_funct_security.html" name="DC.Relation" scheme="URI" /><meta content="c_device_options.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_device_control.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_device_control_function_block_execution" name="DC.Identifier" /><title>Device Control function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_device_control.html" /><link rel="next" href="c_device_control_function_block_modes.html" /></head><body class="fixed" id="c_device_control_function_block_execution" data-relpath="c_device_control_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_device_control_function_block_execution"></a>
+
+<h1 class="topictitle1">Device Control function block execution</h1>
+<div><div></div>
+ 
+    <p id="c_device_control_function_block_execution__blockexecutiondevicecontrolfunctionblock"><a name="c_device_control_function_block_execution__blockexecutiondevicecontrolfunctionblock"></a>The Device Control
+      function block acquires the setpoint (requested state) and determines whether a
+      transition to a new state is required. Next, the block reads the state of the
+      physical device (feedback state) and compares it to the setpoint. The state of
+      the device controller (DC_STATE) is determined from this comparison, and a
+      failure is generated when the DC_STATE does not match the setpoint. Finally,
+      the output state is calculated and written.
+    </p>
+ 
+    <p>You assign inputs and outputs that correspond to your discrete hardware
+      connections, and you configure state masks that define the expected or desired
+      input/output values for different states. You can assign as many as four
+      feedback signals to monitor field device operation.
+    </p>
+ 
+    <p>You can select setpoint tracking, simulation, and/or control logic
+      options to customize the block for your particular device, such as a pneumatic
+      valve, motorized valve, or other motor.
+    </p>
+ 
+    <p> 
+      <strong>Determining the command setpoint (requested state)</strong> 
+    </p>
+ 
+    <p>The block must first calculate its setpoint (SP_D) based on the
+      following logic:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_732002E7D6504A2CA43FB5815F4FC1A1"></a><ul id="c_device_control_function_block_execution__ul_732002E7D6504A2CA43FB5815F4FC1A1"> 
+      <li id="c_device_control_function_block_execution__li_D1658834C329407C8030D2268800BB1F"><div class="li_content"> 
+        <p>When the mode is Cascade (Cas), the setpoint is copied from
+          CAS_IN_D.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_B12F518EAC504BAE818DA1D38465931C"><div class="li_content"> 
+        <p>When the mode is Automatic (Auto), the setpoint remains where it was
+          left at the last execution of the block or at the last operator entry. Next, if
+          the tracking parameter (TRK_IN_D) is True, the actual mode is changed to Local
+          Override (LO) and the output (OUT_D) is copied from the field confirm value
+          (FV_D) when it is in a valid state (not Undefined). If the 
+          <span class="uicontrol">SP Track</span> device option is True in this case,
+          the setpoint is copied from the output (OUT_D).
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_9D2DED22FCC74F3B85B5EABBE82AE245"><div class="li_content"> 
+        <p>When the 
+          <span class="uicontrol">SP Track</span> device option is True and the actual
+          mode is LO due to an interlock or shutdown condition, the setpoint is copied
+          from the output (OUT_D).
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>You can select the 
+      <span class="uicontrol">Passive on Active Timeout</span> device option to cause
+      the OUT_D output to be changed to the Passive state during the execution of the
+      block when the Active confirm timer parameter times out.
+    </p>
+ 
+    <p>In addition, you can select the 
+      <span class="uicontrol">Trip</span> device option. When the 
+      <span class="uicontrol">Trip</span> device option is True and an active confirm
+      is lost for a time greater than the trip time parameter (TRIP_TIME), OUT_D is
+      set to the Passive state. The SP_D value must be changed to Passive to clear
+      the tripped condition.
+    </p>
+ 
+    <p> 
+      <strong>Determining if a transition is required</strong> 
+    </p>
+ 
+    <p>The setpoint is used next by the logic that determines the device
+      controller state (DC_STATE) to see whether or not a transition to another state
+      is required. A Passive state setpoint always causes the output to be Passive.
+      An Active state setpoint does not necessarily cause the output to go to the
+      desired state.
+    </p>
+ 
+    <p>You can select the 
+      <span class="uicontrol">Permissive</span> device option if you want a permissive
+      to be required before the state changes. When the 
+      <span class="uicontrol">Permissive</span> device option is True, the PERMISSIVE_D
+      input must be True for an Active state setpoint to change the DC_STATE to that
+      Active state. However, PERMISSIVE_D does not have to be True before SP_D can be
+      changed to an Active state.
+    </p>
+ 
+    <p>PERMISSIVE_D has no further effect once DC_STATE is in an Active state.
+      When DC_STATE changes away from the Active state, PERMISSIVE_D must be True to
+      return to that state, even if SP_D has not changed.
+    </p>
+ 
+    <p> 
+      <strong>Delaying setpoint changes</strong> 
+    </p>
+ 
+    <p>When the value of DELAY_TIME is not zero, a change in setpoint from the
+      Confirmed Passive state to an Active state is delayed for DELAY_TIME seconds
+      (using the DELAY_TIMER) before it is sent to the logic that determines
+      DC_STATE. This allows a common external setpoint to cause a sequenced start of
+      a group of motors.
+    </p>
+ 
+    <p> When the value of RESTART_TIME is not zero, a change in setpoint when
+      the Device Control block is not in the Confirmed Passive state is delayed for
+      the time specified in the RESTART_TIME parameter (using DELAY_TIMER). The value
+      of OUT_D is held at the Passive state while DELAY_TIMER is active. This allows
+      time for a motor to stop before reversing direction, or for a compressor to
+      unload before restarting.
+    </p>
+ 
+    <p>DELAY_TIMER is set to the delay or restart time at the beginning of the
+      interval and decreases to zero. You can see the time remaining for the delay or
+      restart to be complete in the DELAY_TIMER parameter value.
+    </p>
+ 
+    <p> 
+      <strong>Determining the physical device state (feedback state)</strong> 
+    </p>
+ 
+    <p>The state of the physical device must be reported back to the device
+      controller so that it can be compared to the setpoint. This feedback state is
+      shown in the FV_D parameter. The use of binary discrete inputs to determine
+      FV_D is described in the Assigning I/O section below.
+    </p>
+ 
+    <p>It is possible for the state to be Undefined when the device is moving
+      between steady states. You can specify the maximum amount of time that the
+      state can be Undefined before declaring the move to be a failure by configuring
+      the following parameters:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_39E3882B15E844AE90804FAC501449E4"></a><ul id="c_device_control_function_block_execution__ul_39E3882B15E844AE90804FAC501449E4"> 
+      <li id="c_device_control_function_block_execution__li_95C2E94286A6486ABEAC4565D250E152"><div class="li_content"> 
+        <p>CFM_ACT1_TIME is the maximum time allowed to transition to the
+          Active 1 state.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_AB8BA1044DFB4A67A22FE765E32BA685"><div class="li_content"> 
+        <p>CFM_ACT2_TIME is the maximum time allowed to transition to the
+          Active 2 state.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_4C66557D5C6545C59F6C974842636F3F"><div class="li_content"> 
+        <p>CFM_PASS_TIME is the maximum time allowed to transition to the
+          Passive state.
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>Timing takes place in the TRAVEL_TIMER (Travel is the term used to
+      describe the movement of a valve from one end of its stroke to the other.).
+      This timer is reset to zero at the start of the transition and increases in
+      value until the device is confirmed or the confirm time has expired. The travel
+      time is left in the timer until the next transition occurs so you can gather
+      statistics for a preventive maintenance program.
+    </p>
+ 
+    <p>Some valves take a long time to travel. When a valve begins to open, it
+      is said to 
+      <strong>crack</strong>. You set CRACK_TIME to the longest time it should take to
+      lose the confirm signal for the previous state. This is much shorter than the
+      travel time, so it gives the operator an early warning that the valve is not
+      moving. This time appears in CRACK_TIMER, which increases in value and holds
+      the time until the next transition.
+    </p>
+ 
+    <p>Generally, a device takes a finite amount of time to arrive at a newly
+      commanded state. The Device Control function block supports and tracks these
+      transitions with the DC_STATE parameter. DC_STATE represents the current state
+      of the device. The following table lists the index values for DC_STATE.
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_device_control_function_block_execution__table_39E15EEB488941169D11D2F71E4A2AA1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_device_control_function_block_execution__table_39E15EEB488941169D11D2F71E4A2AA1" rules="all" summary=""><caption><span class="tablecap">Device Control function block DC_STATE parameter values</span></caption> 
+       
+       
+       
+      <thead align="left"> 
+        <tr valign="top"> 
+          <th class="cellrowborder" id="d922702e182" valign="top" width="29.314420803782504%"> 
+            <p>Type of State
+            </p>
+ 
+          </th>
+ 
+          <th class="cellrowborder" id="d922702e188" valign="top" width="36.64302600472813%"> 
+            <p>DC_STATE Index
+            </p>
+ 
+          </th>
+ 
+          <th class="cellrowborder" id="d922702e194" valign="top" width="34.04255319148936%"> 
+            <p>Meaning
+            </p>
+ 
+          </th>
+ 
+        </tr>
+ 
+      </thead>
+ 
+      <tbody> 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e182 " rowspan="3" valign="top" width="29.314420803782504%"> 
+            <p>Steady States
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>0
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e194 " valign="top" width="34.04255319148936%"> 
+            <p>Confirmed Passive
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>1
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Confirmed Active 1
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>2
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Confirmed Active 2
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e182 " rowspan="3" valign="top" width="29.314420803782504%"> 
+            <p>Transient States
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>3
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e194 " valign="top" width="34.04255319148936%"> 
+            <p>Going to Passive
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>4
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Going to Active 1
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>5
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Going to Active 2
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e182 " rowspan="3" valign="top" width="29.314420803782504%"> 
+            <p>Failure States
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>6
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e194 " valign="top" width="34.04255319148936%"> 
+            <p>Failed Passive
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>7
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Failed Active 1
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>8
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Failed Active 2
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e182 " rowspan="3" valign="top" width="29.314420803782504%"> 
+            <p>Special States
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>9
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e194 " valign="top" width="34.04255319148936%"> 
+            <p>Tripped
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>10
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Shutdown/Interlocked
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>11
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e188 " valign="top" width="36.64302600472813%"> 
+            <p>Locked
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+    <p>The PV_D value is used to determine DC_STATE. PV_D is normally a copy of
+      FV_D. However, sometimes the hardware that confirms the device state fails. In
+      this case, the operator can confirm the state of the field device visually.
+      When the field device is in the correct state, the operator can turn on the
+      accept switch (ACCEPT_D = True).
+    </p>
+ 
+    <p>When ACCEPT_D transitions from False to True, PV_D is copied from OUT_D
+      and is held there until OUT_D changes state. You can configure graphic displays
+      and process control logic to use PV_D as the confirm state even when a confirm
+      switch fails. The operator can turn off the visual confirmation by changing
+      SP_D or by manually setting ACCEPT_D to False.
+    </p>
+ 
+    <p> 
+      <strong>Determining the Device Controller state (DC_STATE)</strong> 
+    </p>
+ 
+    <p>In general, the effect of a change in setpoint is to change the state of
+      the device controller (shown by DC_STATE) to one of the three normal steady
+      states: Passive, Active 1, or Active 2. However, there are other possible
+      states.
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_8AA8FC56F04D44ACB731DF78E8CCA3AF"></a><ul id="c_device_control_function_block_execution__ul_8AA8FC56F04D44ACB731DF78E8CCA3AF"> 
+      <li id="c_device_control_function_block_execution__li_9C37AC0CAAE449F88A9C8DF60C54A6B6"><div class="li_content"> 
+        <p>Three transient states corresponding to the transitions between
+          steady states
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_7A23F6AA8DE04B3B9B51800B60FCF282"><div class="li_content"> 
+        <p>Three failure states corresponding to loss of confirm for a steady
+          state or to failure to complete a transition to that state within the time
+          allowed
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_6047B073106A4AF897B60ACA1C71FE17"><div class="li_content"> 
+        <p>Three special states
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>You can select the 
+      <span class="uicontrol">Interlock</span> device option. When the 
+      <span class="uicontrol">Interlock</span> device option is True, the INTERLOCK_D
+      input must be True for DC_STATE to remain in an Active state. When INTERLOCK_D
+      transitions to False:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_67B83114C6CF4C8A890D837D684B400D"></a><ul id="c_device_control_function_block_execution__ul_67B83114C6CF4C8A890D837D684B400D"> 
+      <li id="c_device_control_function_block_execution__li_2229738B9DD44762BC9D14992312CD56"><div class="li_content"> 
+        <p>The actual mode is changed to LO
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_69452EEAE3964586A702C4ABEAA2A76B"><div class="li_content"> 
+        <p>DC_STATE is changed to Shutdown/Interlocked
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_C6F5329CED354FB7810BD680C3D53E37"><div class="li_content"> 
+        <p>OUT_D is set to the Passive state
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>When INTERLOCK_D becomes True again, DC_STATE might return to its former
+      state if the 
+      <span class="uicontrol">SP Track</span> device option is False. There is no delay
+      on the return.
+    </p>
+ 
+    <p>When the SHUTDOWN_D input becomes True, the same thing happens as
+      described above for loss of the interlock input. This is not optional.
+    </p>
+ 
+    <p>When you have motor starters with overload protection that must be reset
+      manually, you might want to ensure that resetting the overload does not start
+      the motor until the operator is ready to start it. When the 
+      <span class="uicontrol">Trip</span> device option is True and an Active state
+      confirm is lost for more than TRIP_TIME seconds, DC_STATE changes to Tripped
+      and OUT_D is set to Passive. The operator (or block logic in Cas mode) must
+      write the SP_D to Passive to leave the Tripped state before writing the SP_D to
+      the former active state to resume that state.
+    </p>
+ 
+    <p>You can select the 
+      <span class="uicontrol">Reset Required</span> device option. This device option
+      works with shutdown, interlock, and trip. If the 
+      <span class="uicontrol">Reset Required</span> device option is True, DC_STATE
+      changes to Locked when you clear a device state of shutdown, interlocked, or
+      tripped.
+    </p>
+ 
+    <p>The following is an example of how this device option works with
+      shutdown.
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_device_control_function_block_execution__table_9DEA03E76CDB48A1950F6FB7C4512C92"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_device_control_function_block_execution__table_9DEA03E76CDB48A1950F6FB7C4512C92" rules="all" summary=""> 
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d922702e522" valign="top" width="33%"> 
+              <p>Condition
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d922702e528" valign="top" width="33%"> 
+              <p>DC_STATE
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d922702e534" valign="top" width="34%"> 
+              <p>FAIL 
+              </p>
+ 
+            </th>
+ 
+          </tr>
+ 
+        </thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d922702e522 " valign="top" width="33%"> 
+              <p>SP_D = 1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e528 " valign="top" width="33%"> 
+              <p>Confirmed Active 1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e534 " valign="top" width="34%"> 
+              <p>Clear
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d922702e522 " valign="top" width="33%"> 
+              <p>SHUTDOWN_D = 1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e528 " valign="top" width="33%"> 
+              <p>Shutdown/Interlocked
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e534 " valign="top" width="34%"> 
+              <p>Passive Confirm Time
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d922702e522 " valign="top" width="33%"> 
+              <p>SHUTDOWN_D = 0
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e528 " valign="top" width="33%"> 
+              <p>Locked
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e534 " valign="top" width="34%"> 
+              <p>Passive Confirm Time
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d922702e522 " valign="top" width="33%"> 
+              <p>RESET_D = 1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e528 " valign="top" width="33%"> 
+              <p>Confirmed Active 1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e534 " valign="top" width="34%"> 
+              <p>Clear
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    <p>A motor trip goes to the Tripped state, but requires reset and a
+      manually entered Passive setpoint value. The RESET_D parameter must be turned
+      on to clear the Locked state and go to Passive. A Locked state due to shutdown
+      or interlock does not require a manually entered Passive setpoint input to
+      resume the Active state. When the shutdown or interlock condition clears and
+      RESET_D is set True, the previous Active state resumes.
+    </p>
+ 
+    <p>By default, RESET_D has the Control lock assignment and this allows an
+      operator to change it. If your application requires a supervisor to reset the
+      device controller when something abnormal happens, you can change the lock
+      assignment (parameter security) on RESET_D. 
+    </p>
+ 
+    <p> 
+      <strong>Determining the failure code</strong> 
+    </p>
+ 
+    <p>When the state of the device controller in DC_STATE does not match the
+      setpoint, a failure code is generated. This code is stored in the FAIL
+      parameter. The FAIL_ACTIVE parameter is set True when the value of FAIL is not
+      zero. The following failures are possible.
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_device_control_function_block_execution__table_B4C804545EE1474183F9685938FAAE74"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_device_control_function_block_execution__table_B4C804545EE1474183F9685938FAAE74" rules="all" summary=""><caption><span class="tablecap">Device Control function block FAIL parameter codes</span></caption> 
+       
+       
+       
+      <thead align="left"> 
+        <tr valign="top"> 
+          <th class="cellrowborder" id="d922702e664" valign="top" width="20%"> 
+            <p>FAIL Parameter Code
+            </p>
+ 
+          </th>
+ 
+          <th class="cellrowborder" id="d922702e670" valign="top" width="20%"> 
+            <p>Meaning
+            </p>
+ 
+          </th>
+ 
+          <th class="cellrowborder" id="d922702e676" valign="top" width="60%"> 
+            <p>Cause
+            </p>
+ 
+          </th>
+ 
+        </tr>
+ 
+      </thead>
+ 
+      <tbody> 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>0
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Clear
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%">
+            <p>na
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>1
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Passive Confirm Time
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when OUT_D is set Passive and FV_D does not change to
+              Passive in the required time duration or if FV_D does not change state before
+              CRACK_TIMER times out.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>2
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Active 1 Confirm Time
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when SP_D sets OUT_D to Active 1 and FV_D does not change to
+              Active 1 in the required time duration or FV_D does not change state before
+              CRACK_TIMER times out.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>3
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Active 2 Confirm Time
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when SP_D sets OUT_D to Active 2 and FV_D does not change to
+              Active 2 in the required time duration or FV_D does not change state before
+              CRACK_TIMER times out.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>4
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Passive Confirm Lost
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when OUT_D and FV_D are Passive and FV_D changes to another
+              state.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>5
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Active 1 Confirm Lost
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when OUT_D and FV_D are Active 1 and FV_D changes to another
+              state.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>6
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Active 2 Confirm Lost
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when OUT_D and FV_D are Active 2 and FV_D changes to another
+              state.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>7
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Tripped
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when DC_STATE is set to Tripped.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+        <tr valign="top"> 
+          <td class="cellrowborder" headers="d922702e664 " valign="top" width="20%"> 
+            <p>8
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e670 " valign="top" width="20%"> 
+            <p>Shutdown/Interlock
+            </p>
+ 
+          </td>
+ 
+          <td class="cellrowborder" headers="d922702e676 " valign="top" width="60%"> 
+            <p>Set when DC_STATE is set to Shutdown/Interlock.
+            </p>
+ 
+          </td>
+ 
+        </tr>
+ 
+      </tbody>
+ 
+    </table>
+</div>
+ 
+    <p> 
+      <strong>Determining the output state</strong> 
+    </p>
+ 
+    <p>The state of OUT_D is the same as DC_STATE for the steady, transient,
+      and failure states. For example, when the setpoint causes DC_STATE to change to
+      Active 1, DC_STATE becomes Going to Active 1. OUT_D becomes Active 1 and stays
+      there when DC_STATE changes to Confirmed Active 1 or Failed Active 1. This
+      behavior is required when the device is a pneumatic valve.
+    </p>
+ 
+    <p>When the 
+      <span class="uicontrol">Trip</span> or 
+      <span class="uicontrol">Reset Required</span> device option is True, the failed
+      state is not entered and OUT_D returns to the Passive state. This behavior is
+      required when the device is a motor.
+    </p>
+ 
+    <p>The three special states all set OUT_D to Passive.
+    </p>
+ 
+    <p>When the 
+      <span class="uicontrol">Passive when Confirmed</span> device option is True, the
+      state of OUT_D is Passive in either of the Active states of DC_STATE or in the
+      failed states. This allows a motorized valve to be energized only during the
+      transition time; the motor must not run when travel is complete.
+    </p>
+ 
+    <p> 
+      <strong>Assigning I/O</strong> 
+    </p>
+ 
+    <p>The Device Control function block allows as many as four feedback
+      signals and four output signals to be associated with the discrete field
+      device. The eight input/output signals are referenced by the Device Control
+      block through the I/O parameters. The IOREF_IN[1-4] parameters reference the
+      discrete feedback signals coming from the field device. The IO_OUT[1-4]
+      parameters reference the discrete output signals that command the field device
+      to a requested state.
+    </p>
+ 
+    <p>The feedback input IOREF_IN[1-4] discrete signal values and statuses are
+      stored in the internal parameters F_IN_D[1-4]. These signal values are used for
+      FV_D state determination.
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> The F_IN_D parameters can be exposed and wired to instead of the
+        corresponding IO_IN parameters to connect module-level parameters into the PV
+        of a DC block. For a PV that is derived from a combination of DST signals and
+        module parameters, we recommend using DI blocks to read the DST signals into
+        the module and wire all signals to the F_IN_D parameters of the DC Block. If
+        IO_IN is used in conjunction with F_IN_D parameters, the user must configure
+        the DST signals starting at IO_IN1, IO_IN2, and so forth, and use the remaining
+        inputs for the F_IN_D parameters.
+      </p>
+ 
+    </div>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> A DC block with the 
+        <span class="uicontrol">Output Failure</span> value selected in the BAD_MASK
+        parameter, only sets the BAD_ACTIVE flag on output failure if the associated
+        I/O channel was at one time enabled, then disabled, and then the I/O card 
+        <em>only</em> is downloaded.
+      </p>
+ 
+    </div>
+ 
+    <p>The requested state (stored in OUT_D) is decoded to the individual
+      IO_OUT[1-4] channel outputs according to the corresponding output state mask.
+      The value and status of the IOREF_OUT[1-4] channels are read back and copied to
+      the internal parameters F_OUT_D[1-4] to track the output channel values and to
+      calculate the status of OUT_D.
+    </p>
+ 
+    <p>The IO_OUT[1-4] discrete output channel values are determined from the
+      output mask that corresponds to the current state stored in OUT_D. Likewise,
+      the IO_IN[1-4] discrete input channel values are used to find a matching input
+      mask to determine the state to be stored in FV_D and PV_D.
+    </p>
+ 
+    <p>The STATE_MASKS parameter is used to define the output and input
+      combinations of IO_OUT[1-4] and IO_IN[1-4] for each of the three different
+      states that can be contained in the parameters SP_D, OUT_D, FV_D and PV_D.
+    </p>
+ 
+    <p>The SP_D and OUT_D parameters can be one of the three following states.
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_device_control_function_block_execution__table_771C84898D1148449FE6FFD211399B3B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_device_control_function_block_execution__table_771C84898D1148449FE6FFD211399B3B" rules="all" summary=""> 
+         
+         
+        <thead align="left"> 
+          <tr valign="top"> 
+            <th class="cellrowborder" id="d922702e962" valign="top" width="NaN%"> 
+              <p>Value
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d922702e968" valign="top" width="NaN%"> 
+              <p>State
+              </p>
+ 
+            </th>
+ 
+          </tr>
+ 
+        </thead>
+ 
+        <tbody> 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e962 " valign="top" width="NaN%"> 
+              <p>0
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e968 " valign="top" width="NaN%"> 
+              <p>Passive
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e962 " valign="top" width="NaN%"> 
+              <p>1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e968 " valign="top" width="NaN%"> 
+              <p>Active 1
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e962 " valign="top" width="NaN%"> 
+              <p>2
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e968 " valign="top" width="NaN%"> 
+              <p>Active 2
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    <p>The FV_D and PV_D parameters can be one of the four following states.
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_device_control_function_block_execution__table_D15B09D2FEFD4EA18D302D491EFB3D53"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_device_control_function_block_execution__table_D15B09D2FEFD4EA18D302D491EFB3D53" rules="all" summary=""> 
+         
+         
+        <thead align="left"> 
+          <tr valign="top"> 
+            <th class="cellrowborder" id="d922702e1041" valign="top" width="NaN%"> 
+              <p>Value
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d922702e1047" valign="top" width="NaN%"> 
+              <p>State
+              </p>
+ 
+            </th>
+ 
+          </tr>
+ 
+        </thead>
+ 
+        <tbody> 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e1041 " valign="top" width="NaN%"> 
+              <p>255
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e1047 " valign="top" width="NaN%"> 
+              <p>Undefined
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e1041 " valign="top" width="NaN%"> 
+              <p>0
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e1047 " valign="top" width="NaN%"> 
+              <p>Passive
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e1041 " valign="top" width="NaN%"> 
+              <p>1
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e1047 " valign="top" width="NaN%"> 
+              <p>Active 1
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d922702e1041 " valign="top" width="NaN%"> 
+              <p>2
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d922702e1047 " valign="top" width="NaN%"> 
+              <p>Active 2
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    <p>The Undefined state means the IO_IN[1-4] references do not match any of
+      the defined input STATE_MASKS.
+    </p>
+ 
+    <p> 
+      <strong>Configuring state masks</strong> 
+    </p>
+ 
+    <p>You enter the expected/desired values of inputs and outputs for each of
+      three states in the check boxes in the 
+      <span class="wintitle">State Masks</span> dialog. A blank check box indicates a
+      False (0) input or output value. A check box with a check mark indicates a True
+      (1) input or output value. Gray check boxes indicate inputs and outputs that
+      are not used or do not matter.
+    </p>
+ 
+    <p>The following figure shows a simple state mask example.
+    </p>
+ 
+    <div class="fignone" id="c_device_control_function_block_execution__fig_27EABE0737B041B28F9DCE8EBC376EC6"><a name="c_device_control_function_block_execution__fig_27EABE0737B041B28F9DCE8EBC376EC6"></a><div><span class="figcap">Device Control function block state mask example (No Active 2
+        State)</span></div> 
+       
+      <a name="c_device_control_function_block_execution__image_9E13A9420F9B4ADC85FE6FADDC256624"></a><img id="c_device_control_function_block_execution__image_9E13A9420F9B4ADC85FE6FADDC256624" src="fbhelp0315.gif" /> 
+    </div>
+ 
+    <p>In this example, if IO_IN_1 is True (1), the FV_D parameter value is 1,
+      indicating the Active 1 state. When the block sets OUT_D to a value of 1 to
+      request the Active 1 state, the Active 1 output mask is used to set IO_OUT_1 to
+      0 and IO_OUT_2 to 1.
+    </p>
+ 
+    <p>You mark the 
+      <span class="uicontrol">Use active 2</span> check box to indicate the Active 2
+      state is to be used. This is used only to determine whether the Active 2 state
+      is considered when matching bit patterns.
+    </p>
+ 
+    <p>The following figure shows an example definition of the Passive, Active
+      1, and Active 2-bit masks for a group of input and output I/O parameters.
+    </p>
+ 
+    <div class="fignone" id="c_device_control_function_block_execution__fig_3B3B3F0E219449DD8FE01CB764BE3498"><a name="c_device_control_function_block_execution__fig_3B3B3F0E219449DD8FE01CB764BE3498"></a><div><span class="figcap">Device Control function block state mask example (with Active 2
+        State)</span></div> 
+       
+      <a name="c_device_control_function_block_execution__image_087AAF837D5B4860A2AA9B5BECDA7133"></a><img id="c_device_control_function_block_execution__image_087AAF837D5B4860A2AA9B5BECDA7133" src="fbhelp0316.gif" /> 
+    </div>
+ 
+    <p>In this example, if IO_IN_1 is False and IO_IN_2 is True, the FV_D
+      parameter value is 2, indicating the Active 2 state. When the block sets OUT_D
+      to a value of 2 to request the Active 2 state, the outputs are set as follows:
+    </p>
+ 
+    <p>IO_OUT_1 = False (0)
+    </p>
+ 
+    <p>IO_OUT_2 = False (0)
+    </p>
+ 
+    <p>IO_OUT_3 = True (1)
+    </p>
+ 
+    <p>IO_OUT_4 = Grayed out (0)
+    </p>
+ 
+    <p>The grayed out output settings are always set to False.
+    </p>
+ 
+    <p> 
+      <strong>Simulation</strong> 
+    </p>
+ 
+    <p>To support testing, you can enable simulation. This allows the
+      measurement value and status to be supplied manually or from another block.
+    </p>
+ 
+    <p>During configuration, decide whether you want the simulated value/status
+      to be entered manually during operation or you will use a value/status from
+      another block for the simulated value/status.
+    </p>
+ 
+    <p>When the value is entered manually:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_F6522DD0F90B4D7BA3949428D531AAD7"></a><ul id="c_device_control_function_block_execution__ul_F6522DD0F90B4D7BA3949428D531AAD7"> 
+      <li id="c_device_control_function_block_execution__li_4A8588815DD84449ACCCFCE22A73AD36"><div class="li_content"> 
+        <p>The operator first enables simulation by selecting the SIMULATE_D
+          parameter and setting the 
+          <span class="uicontrol">Simulate Enabled</span> check box in the 
+          <span class="uicontrol">Simulate Enabled/Disabled</span> field.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_8896984F84DF459FB1FC3EB3E332A6D1"><div class="li_content"> 
+        <p>If SIMULATE_IN_D is not connected (status = Bad: NotConnected), the
+          operator enters the value to be used in the SIMULATE_D parameter 
+          <span class="uicontrol">Simulate Value</span> field. In online operation, the
+          operator can enter a simulated status value in the 
+          <span class="uicontrol">Simulate Status</span> field.
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> Make sure SIMULATE_IN_D is not connected if you want to enter the
+        value or status manually. When SIMULATE_IN_D is connected, the value from the
+        SIMULATE_IN_D Value field is used as the simulated value.
+      </p>
+ 
+    </div>
+ 
+    <p>When the value/status from another block is used:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_7689C95FEE1744DD81AD26B18BC09BBA"></a><ul id="c_device_control_function_block_execution__ul_7689C95FEE1744DD81AD26B18BC09BBA"> 
+      <li id="c_device_control_function_block_execution__li_D3E70FEAD9CB47CCB5FB2D08C89111B4"><div class="li_content"> 
+        <p>During configuration, connect SIMULATE_IN_D to the desired block
+          output or parameter. Do not enter a value in the 
+          <span class="uicontrol">Simulate Value</span> field of the SIMULATE_IN_D
+          input; the block uses the connected value automatically.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_13E7ABFC2E674A5C9E8091D621477CB1"><div class="li_content"> 
+        <p>During operation, the operator enables simulation by selecting the
+          SIMULATE_D parameter and setting the 
+          <span class="uicontrol">Simulate Enabled</span> check box in the 
+          <span class="uicontrol">Simulate Enabled/Disabled</span> field.
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> Do not enter a value for the SIMULATE_IN_D parameter. When you do and
+        the status of SIMULATE_IN_D is not Bad: NotConnected, the manually entered
+        value for SIMULATE_IN_D overrides any value you enter in SIMULATE_D.
+      </p>
+ 
+    </div>
+ 
+    <p> 
+      <strong>Tracking</strong> 
+    </p>
+ 
+    <p>The TRK_IN_D input is used to force the OUT_D to track FV_D. When
+      TRK_IN_D is True, OUT_D is set equal to FV_D when it is in Passive, Active 1,
+      or Active 2 state. The actual mode of the block is Local Override (LO). If the 
+      <span class="uicontrol">SP Track</span> device option is True, SP_D is copied
+      from OUT_D.
+    </p>
+ 
+    <p>The value of PV_D usually is set to the value of FV_D. However, when the
+      ACCEPT_D parameter is True, PV_D is set to the value of OUT_D. Whenever OUT_D
+      changes from its previous value, the block automatically sets ACCEPT_D to
+      False.
+    </p>
+ 
+    <p> 
+      <strong>Device options</strong> 
+    </p>
+ 
+    <p>The device options (DEVICE_OPTS) parameter allows you to select the
+      optional control logic used in the block. You select one or more of the device
+      options by selecting that option in the DEVICE_OPTS 
+      <span class="wintitle">Parameter Properties</span> dialog. The following device
+      options are available:
+    </p>
+ 
+    <a name="c_device_control_function_block_execution__ul_E7AD846F4E494A548735773351FB5F9B"></a><ul id="c_device_control_function_block_execution__ul_E7AD846F4E494A548735773351FB5F9B"> 
+      <li id="c_device_control_function_block_execution__li_649A24A9C8C543D2B528E137FA7AC92B"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Passive on Active Timeout</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_EE02FC8793394723B549343202EE7B5C"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Passive when Confirmed</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_3D236E240922423787BCF634D17AE74E"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Trip</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_24BDD72AA48D4C04911CDC36B8F2C71D"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Reset Required</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_99B5908E524C4095BD9A860FDBB4F5F0"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Permissive</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_D7378E1BF54B48ED967B1AE6DC638431"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">SP Track</span> 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_device_control_function_block_execution__li_C26FD63C5C02482799B1889624BB046A"><div class="li_content"> 
+        <p> 
+          <span class="uicontrol">Interlock</span> 
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>With the 
+      <span class="uicontrol">Passive on Active Timeout</span> device option, a confirm
+      time-out alarm is generated and the DC_STATE is changed to the failed Active
+      state. In Auto mode, SP_D must be manually entered to attempt the Active state
+      again. In Cas mode, SP_D must be changed to Passive and then back to the Active
+      state to attempt the Active state again.
+    </p>
+ 
+    <p>The 
+      <span class="uicontrol">Passive when Confirmed</span> device option is used for
+      devices, such as a motor operated valve, that require the drive signal to the
+      device to stop when the requested state is reached.
+    </p>
+ 
+    <p>With the 
+      <span class="uicontrol">Permissive</span> device option, an OUT_D change from
+      Active to Passive is never blocked.
+    </p>
+ 
+    <p> 
+      <strong>Block errors</strong> 
+    </p>
+ 
+    <div class="p">The following conditions are reported in the BLOCK_ERR parameter:
+    <a name="c_device_control_function_block_execution__ul_2E7E6980BB904CA7A10EF3FD7979678A"></a><ul id="c_device_control_function_block_execution__ul_2E7E6980BB904CA7A10EF3FD7979678A">
+      <li id="c_device_control_function_block_execution__li_5AC1CDC903404301857001ED874442CB"><div class="li_content">
+        <p> 
+          <strong>Simulate active</strong> — Simulation is enabled and the block is using
+          a simulated value in its execution.
+        </p>
+
+      </div></li>
+
+      <li id="c_device_control_function_block_execution__li_E364F08BE1864AD4840D8EF81DFDA1BA"><div class="li_content">
+        <p> 
+          <strong>Input failure/process variable has Bad status</strong> — The hardware
+          is bad.
+        </p>
+
+      </div></li>
+
+      <li id="c_device_control_function_block_execution__li_0E33BDF32E344559A485066269B4CC48"><div class="li_content">
+        <p> 
+          <strong>Local override</strong> — The block is in Local Override (LO) mode.
+        </p>
+
+      </div></li>
+
+      <li id="c_device_control_function_block_execution__li_1B0CC1940F834B0DBB09A5B5ACBE1ADF"><div class="li_content">
+        <p> 
+          <strong>Output failure</strong> — The output is not valid.
+        </p>
+
+      </div></li>
+
+      <li id="c_device_control_function_block_execution__li_313A3D1825224A099496CAD9BED61A08"><div class="li_content">
+        <p> 
+          <strong>Readback failed</strong> — The I/O readback failed.
+        </p>
+
+      </div></li>
+
+    </ul>
+
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_param_funct_security.html">Parameter, field, and function security</a></div>
+<div><a href="c_device_options.html">Device options</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

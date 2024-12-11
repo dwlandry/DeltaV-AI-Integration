@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Write historical data to a DeltaV Continuous Historian database" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, worksheet functions, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, worksheet functions, DeltaV Reporter" name="keywords" /><meta content="c_vba_support_for_historical_data.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_status.html" name="DC.Relation" scheme="URI" /><meta content="c_worksheet_function_reference.html" name="DC.Relation" scheme="URI" /><meta content="c_view_the_data.html" name="DC.Relation" scheme="URI" /><meta content="c_customizing_the_process_history_view.html" name="DC.Relation" scheme="URI" /><meta content="embeddedtrendobject.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_writing_historical_data_to_a_continuous_historian_database" name="DC.Identifier" /><title>Write historical data to a DeltaV Continuous Historian database</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_event_count_function_dveventcount.html" /><link rel="next" href="c_vba_support_for_historical_data.html" /></head><body class="fixed" id="c_writing_historical_data_to_a_continuous_historian_database" data-relpath="c_writing_historical_data_to_a_continuous_historian_database.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_writing_historical_data_to_a_continuous_historian_database"></a>
+
+<h1 class="topictitle1">Write historical data to a DeltaV Continuous Historian
+    database</h1>
+<div><div></div>
+ 
+    <p>The following example illustrates how to write data to a DeltaV
+      Continuous Historian database using the standard data format. You can also
+      create custom VBA programs to write data. 
+    </p>
+ 
+    <div class="important"><span class="importanttitle">Important:</span> To write data to a DeltaV Continuous Historian
+      database, you must have the DeltaV security key for the HISTORICAL_DATA_ENTRY
+      function. 
+    </div>
+ 
+    <p>In this scenario, plant personnel are required to record any changes
+      they make to a manually-operated valve. An Excel worksheet is used to record
+      the changes. At the end of each shift, this information must be stored in a
+      DeltaV Continuous Historian database. 
+    </p>
+ 
+    <p>The 
+      <span class="uicontrol">Write Historical Data</span> command in DeltaV Reporter
+      can be used to write this manually recorded data to the database. This command
+      is only supported from DeltaV workstations on the local control network. 
+    </p>
+ 
+    <p>For DeltaV Reporter to accept this data, it must be entered into an
+      Excel worksheet in three to five columns containing the values described in the
+      following table. Columns one through three are required; columns four and five
+      are optional. 
+    </p>
+ 
+    
+<div class="tablenoborder"><a name="c_writing_historical_data_to_a_continuous_historian_database__table_8D3EB069ABE14432960CF04FA03283B3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_writing_historical_data_to_a_continuous_historian_database__table_8D3EB069ABE14432960CF04FA03283B3" rules="all" summary=""> 
+         
+         
+         
+         
+         
+         
+        <thead align="left"> 
+          <tr valign="top"> 
+            <th class="cellrowborder" id="d1453808e75" valign="top" width="13.461538461538462%">Column Number: 
+            </th>
+ 
+            <th class="cellrowborder" id="d1453808e78" valign="top" width="19.230769230769234%">1 (required) 
+            </th>
+ 
+            <th class="cellrowborder" id="d1453808e81" valign="top" width="19.230769230769234%">2 (required) 
+            </th>
+ 
+            <th class="cellrowborder" id="d1453808e84" valign="top" width="19.230769230769234%">3 (required) 
+            </th>
+ 
+            <th class="cellrowborder" id="d1453808e87" valign="top" width="15.384615384615385%">4 (optional) 
+            </th>
+ 
+            <th class="cellrowborder" id="d1453808e91" valign="top" width="13.461538461538462%">5 (optional) 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d1453808e75 " valign="top" width="13.461538461538462%"> 
+              <p> 
+                <strong>Description</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e78 " valign="top" width="19.230769230769234%"> 
+              <p>tag name 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e81 " valign="top" width="19.230769230769234%"> 
+              <p>time stamp 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e84 " valign="top" width="19.230769230769234%"> 
+              <p>value 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e87 " valign="top" width="15.384615384615385%"> 
+              <p>parameter status value 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e91 " valign="top" width="13.461538461538462%"> 
+              <p>validity 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d1453808e75 " valign="top" width="13.461538461538462%"> 
+              <p> 
+                <strong>Data type (restrictions)</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e78 " valign="top" width="19.230769230769234%"> 
+              <p>string (upper case with .HDE extension) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e81 " valign="top" width="19.230769230769234%"> 
+              <p>Excel time and date formats separated by a space. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e84 " valign="top" width="19.230769230769234%"> 
+              <p>Floating point, string, or blank. Excel interprets the
+                contents of the cell according to standard Excel rules. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e87 " valign="top" width="15.384615384615385%"> 
+              <p>Integer (0-255)<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e91 " valign="top" width="13.461538461538462%"> 
+              <p>128 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" headers="d1453808e75 " valign="top" width="13.461538461538462%"> 
+              <p> 
+                <strong>Example</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e78 " valign="top" width="19.230769230769234%"> 
+              <p>FIC-779.HDE 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e81 " valign="top" width="19.230769230769234%"> 
+              <p>7/26/06 12:42PM 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e84 " valign="top" width="19.230769230769234%"> 
+              <p>OPEN 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e87 " valign="top" width="15.384615384615385%"> 
+              <p>Boolean (accepts TRUE or FALSE) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d1453808e91 " valign="top" width="13.461538461538462%"> 
+              <p>TRUE 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr valign="top"> 
+            <td class="cellrowborder" colspan="6" headers="d1453808e75 d1453808e78 d1453808e81 d1453808e84 d1453808e87 d1453808e91 " valign="top"> 
+              <div class="note"><span class="notetitle">Note:</span>  
+                <p> A blank cell is written as a zero-length string. 
+                </p>
+ 
+              </div>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    <p> 
+      <strong>Excel Example</strong> 
+    </p>
+ 
+    <p>The following illustration shows the set of data that occurred during
+      the shift for the manually-operated valve: 
+    </p>
+ 
+    <p><br /><a name="c_writing_historical_data_to_a_continuous_historian_database__image_B34E67E0A1EC42E88A4213C4F85E20FA"></a><div class="imagecenter"><img class="imagecenter" id="c_writing_historical_data_to_a_continuous_historian_database__image_B34E67E0A1EC42E88A4213C4F85E20FA" src="CH_Excel_write_example.gif" /></div><br /> 
+    </p>
+ 
+    <p>To write these data values to the DeltaV Continuous Historian database,
+      complete the following steps: 
+    </p>
+ 
+    <a name="c_writing_historical_data_to_a_continuous_historian_database__ol_FCE20F3C7C484DDA9297FEE6CACA6FBE"></a><ol id="c_writing_historical_data_to_a_continuous_historian_database__ol_FCE20F3C7C484DDA9297FEE6CACA6FBE"> 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_B938C295DA7E4AB49A4E0A2701B8BB15"><div class="li_content"> In DeltaV Explorer, select
+        the Continuous Historian subsystem for the workstation, open the 
+        <span class="wintitle">Continuous Historian Properties</span> dialog, and
+        confirm that the 
+        <span class="uicontrol">Enabled</span> check box is selected. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_A972A94F31FC4E6185C6F1EEF9D56C7D"><div class="li_content">Click the 
+        <span class="uicontrol">Advanced</span> tab and then click the 
+        <span class="uicontrol">Enable historical data entry</span> check box. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_12D489AD2A79425AB70F5C6F0AAA1CFA"><div class="li_content">Stop the DeltaV service. Use
+        Task Manager to verify that DvcHScan.exe, DvHistorianServerHost.exe and
+        DvHistorianServerHost_2.exe have stopped before restarting the service. This
+        ensures that enabling/disabling of CH and HDE took effect. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_84BC4268089C4E8BBBF81295B54CCEC1"><div class="li_content">Restart the DeltaV service. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_48BF1300019747A8B9E2E18B33B2803E"><div class="li_content">Start Microsoft Excel. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_223BDBA71E3241B59608AAED200E9648"><div class="li_content">On the 
+        <span class="uicontrol">Add-Ins</span> tab, in the 
+        <span class="uicontrol">DeltaV</span> group, click 
+        <span class="menucascade"><span class="uicontrol">Continuous
+            Historian</span> &gt; <span class="uicontrol">Write Historical
+            Data</span></span>. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_6A835B3F759447219E7DF0E9ECB8EE73"><div class="li_content">In the 
+        <span class="wintitle">Write Historical Data</span> dialog, specify or browse to
+        the historical data server to which you want to write data. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_15D2B08EC9F94FAD8CB1EB2241F80EE5"><div class="li_content">Specify the range of cells
+        containing the data or click 
+        <a name="c_writing_historical_data_to_a_continuous_historian_database__image_4B989A8D6B7947BE801DD26206BF87FD"></a><img id="c_writing_historical_data_to_a_continuous_historian_database__image_4B989A8D6B7947BE801DD26206BF87FD" src="selectRange.png" /> to select the range of cells in
+        the Excel worksheet. To specify all of the data values in the example
+        illustrated above, select cells A2 through E5. 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_4D000196ADB44657A5168B4B89E403B5"><div class="li_content">Select 
+        <span class="uicontrol">Local Time</span> or 
+        <span class="uicontrol">GMT</span> in the 
+        <span class="uicontrol">Worksheet Time Mode</span> box. If you select GMT, you
+        can also specify an offset in hours and minutes. (The DeltaV Continuous
+        Historian database records all times in GMT.) 
+      </div></li>
+ 
+      <li id="c_writing_historical_data_to_a_continuous_historian_database__li_7AB1302D837841758AA9733E49845F0F"><div class="li_content">Click 
+        <span class="uicontrol">Write Data</span>. 
+      </div></li>
+ 
+    </ol>
+ 
+    <div class="note"><span class="notetitle">Note:</span> After a historical data value exists for a specific tag
+      and time stamp, it cannot be overwritten. 
+    </div>
+ 
+    <p> 
+      <strong>Reviewing the data written to the DeltaV Continuous Historian
+        database</strong> 
+    </p>
+ 
+    <p>After writing data to the DeltaV Continuous Historian database, you can
+      retrieve the data using DeltaV Reporter worksheet functions. 
+    </p>
+ 
+    <p>You can also use the Process History View application to view the data
+      written to the DeltaV Continuous Historian database. Note that Process History
+      View cannot trend alphanumeric values that are entered through the 
+      <span class="uicontrol">Write Historical Data</span> command in DeltaV Reporter.
+      Also note that you must enter .HDE tags manually in Process History View; they
+      are not browsable. 
+    </p>
+ 
+    <p>In the DeltaV Operate run-time environment, you can display a trend
+      chart of historical data that includes values written to the DeltaV Continuous
+      Historian database by the 
+      <span class="uicontrol">Write Historical Data</span> command in DeltaV Reporter
+      by using an Embedded Trend object. 
+    </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_vba_support_for_historical_data.html">VBA support for historical data</a></div>
+<div><a href="c_fblk_status.html">Function block status information</a></div>
+<div><a href="c_worksheet_function_reference.html">Worksheet function reference for DeltaV Reporter</a></div>
+<div><a href="c_view_the_data.html">Viewing history data</a></div>
+<div><a href="c_customizing_the_process_history_view.html">Customizing the Process History View</a></div>
+<div><a href="embeddedtrendobject.html">The Embedded Trend object</a></div>
+</div>
+</div><div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  Use function block status values.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

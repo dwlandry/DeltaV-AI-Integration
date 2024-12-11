@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Signal Characterizer function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_signal_char.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_signal_characterizer_function_block_execution" name="DC.Identifier" /><title>Signal Characterizer function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_signal_char.html" /><link rel="next" href="c_signal_characterizer_function_block_modes.html" /></head><body class="fixed" id="c_signal_characterizer_function_block_execution" data-relpath="c_signal_characterizer_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_signal_characterizer_function_block_execution"></a>
+
+<h1 class="topictitle1">Signal Characterizer function block execution</h1>
+<div><div></div>
+
+    <p id="c_signal_characterizer_function_block_execution__blockexecutionsignalcharacterizerfunctionblock"><a name="c_signal_characterizer_function_block_execution__blockexecutionsignalcharacterizerfunctionblock"></a>For any given input value, the Signal Characterizer function block determines where the input lies in CURVE_X and calculates the slope of that segment using the point-slope method:</p>
+
+    <p><a name="c_signal_characterizer_function_block_execution__image_07E9E37FAE8E462EAE52B45FD6C25826"></a><img id="c_signal_characterizer_function_block_execution__image_07E9E37FAE8E462EAE52B45FD6C25826" src="fbhelp0222.gif" /></p>
+
+    <p>where</p>
+
+    <p>
+      <strong>m</strong> = slope of the line</p>
+
+    <p>
+      <strong>b</strong> = y-intercept of the line.</p>
+
+    <p>Using this formula, the block derives an output value that corresponds to the input. When the input lies beyond the range configured in CURVE_X, the output is clamped to the corresponding limit in the CURVE_Y array.</p>
+
+    <p>
+      <strong>CURVE_X</strong>
+    </p>
+
+    <p>The CURVE_X values must be defined in ascending order. The X1 element must be the smallest value, and each following X value must be greater than the previous X value. When the X values are not configured in ascending order, a block configuration error is set and the last X value that is greater than or equal to the previous one is used as the curve endpoint.</p>
+
+    <p>The following diagram shows an example of a valid X value configuration:</p>
+
+    <div class="fignone" id="c_signal_characterizer_function_block_execution__fig_652209FA7BA44FC382A4D3E726175E0E"><a name="c_signal_characterizer_function_block_execution__fig_652209FA7BA44FC382A4D3E726175E0E"></a><div><span class="figcap">Signal Characterizer Function Block Valid CURVE_X Values Example</span></div>
+      
+      <a name="c_signal_characterizer_function_block_execution__image_D2D87F3771B2418CB20D86B4D4397B7C"></a><img id="c_signal_characterizer_function_block_execution__image_D2D87F3771B2418CB20D86B4D4397B7C" src="fbhelp0223.gif" />
+    </div>
+
+    <p>The following diagram shows an example of an invalid X value configuration:</p>
+
+    <div class="fignone" id="c_signal_characterizer_function_block_execution__fig_9625135ECE0F499590B0FAD2DFCE25DA"><a name="c_signal_characterizer_function_block_execution__fig_9625135ECE0F499590B0FAD2DFCE25DA"></a><div><span class="figcap">Signal Characterizer Function Block Invalid CURVE_X Values Example</span></div>
+      
+      <a name="c_signal_characterizer_function_block_execution__image_E1B836F8D64B44B5ADE0F055EC08D812"></a><img id="c_signal_characterizer_function_block_execution__image_E1B836F8D64B44B5ADE0F055EC08D812" src="fbhelp0224.gif" />
+    </div>
+
+    <p>This curve has an invalid definition because X3 is greater than X4. Between these points, the Y value is undefined because it can be any value from Y3 to Y4. In this configuration, the X3,Y3 pair becomes the endpoint for the curve definition. To use the X4,Y4 pair, you must designate X4 to be greater than or equal to X3.</p>
+
+    <p>
+      <strong>SWAP_2</strong>
+    </p>
+
+    <p>SWAP_2 has two possible values:</p>
+
+    <a name="c_signal_characterizer_function_block_execution__ul_51D41B38E2584946ADF92D6074B3410C"></a><ul id="c_signal_characterizer_function_block_execution__ul_51D41B38E2584946ADF92D6074B3410C">
+      <li id="c_signal_characterizer_function_block_execution__li_7BC8BFAFC17044EE998D10DFEA96E272"><div class="li_content">
+        <p>Normal</p>
+
+      </div></li>
+
+      <li id="c_signal_characterizer_function_block_execution__li_BFE2C46FF75F4751BD3B0D99C13C70E6"><div class="li_content">
+        <p>Change X by Y axis on IN_2</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>When SWAP_2 is Normal, IN_1 and IN_2 reference CURVE_X values and OUT_1 and OUT_2 reference CURVE_Y values.   </p>
+
+    <p>When SWAP_2 is Change X by Y axis on IN_2, IN_2 references the CURVE_Y values and OUT_2 references the CURVE_X values (the X and Y axes are swapped for IN_2 and OUT_2). In addition, the IN_2 units change to Y units and the OUT_2 units change to X units. If the configured CURVE_Y values do not increase from value to value, the block sets a configuration error. </p>
+
+    <p>The following example shows an example configuration of CURVE_X and CURVE_Y:</p>
+
+    <div class="fignone" id="c_signal_characterizer_function_block_execution__fig_C0E43BC414744C5E80AF3A482D3E0FA5"><a name="c_signal_characterizer_function_block_execution__fig_C0E43BC414744C5E80AF3A482D3E0FA5"></a><div><span class="figcap">Signal Characterizer function block SWAP_2 configuration error example</span></div>
+      
+      <a name="c_signal_characterizer_function_block_execution__image_F855C036C5144ABEAE114769C13F0691"></a><img id="c_signal_characterizer_function_block_execution__image_F855C036C5144ABEAE114769C13F0691" src="fbhelp0225.gif" />
+    </div>
+
+    <p>When SWAP_2 is Change X by Y axis on IN_2, the curve an invalid definition and a configuration error results because Y3 is less than Y2. The X2,Y2 pair becomes the endpoint for the swapped curve definition when processing IN_2. Note that the X4,Y4 pair is the valid endpoint when processing IN_1.</p>
+
+    <p>
+      <strong>Block Errors</strong>
+    </p>
+
+    <div class="p">The following conditions are reported in the BLOCK_ERR parameter:<a name="c_signal_characterizer_function_block_execution__ul_9A3ABDC288064DC5AB88E63D41A48FAB"></a><ul id="c_signal_characterizer_function_block_execution__ul_9A3ABDC288064DC5AB88E63D41A48FAB"><li id="c_signal_characterizer_function_block_execution__li_7817D88B1E2E4AD8BAF3BD1FBC3AB582"><div class="li_content"><p>
+      <strong>Out of Service</strong> — The block is in Out of Service (OOS) mode.</p>
+</div></li>
+<li id="c_signal_characterizer_function_block_execution__li_005DEA334B8B4A998138800F365D26FB"><div class="li_content"><p>
+      <strong>Block configuration error</strong> — Set if an invalid definition occurs in less than the first 21 points and the X value of the X,Y pairs beyond the valid definition are non-zero.</p>
+</div></li>
+</ul>
+</div>
+
+    
+    
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

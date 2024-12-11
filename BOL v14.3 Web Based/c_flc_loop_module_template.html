@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="FLC_LOOP module template" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="FLC_LOOP module template, module template, FLC_LOOP" name="DC.subject" /><meta content="FLC_LOOP module template, module template, FLC_LOOP" name="keywords" /><meta content="c_analog_control_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_flc_loop_module_template" name="DC.Identifier" /><title>FLC_LOOP module template</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_pid_loop_module_template.html" /><link rel="next" href="c_ff_pid_loop_module_template.html" /></head><body class="fixed" id="c_flc_loop_module_template" data-relpath="c_flc_loop_module_template.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_flc_loop_module_template"></a>
+
+<h1 class="topictitle1">FLC_LOOP module template</h1>
+<div><div></div>
+<p>FLC_LOOP is a module template that consists of an FLC (Fuzzy Logic Control) function block and seven alarm parameters for HighHigh, High, Low, LowLow, DeviationHigh, DeviationLow, and PV Bad alarms. Initially, only the PV Bad alarm is enabled in FLC_LOOP. Others can be enabled as needed.</p>
+<p>The FLC_LOOP module template has a single FLC function block. The FLC block has IO Reference parameters for the process variable input and control output. In most cases, you do not need to add additional function blocks to the module for a simple FLC loop. But if, for example, your process variable is calculated or selected from several analog inputs, you can add this logic to the module after it is created from the template. You might need to add function blocks for feedforward control or tracking. The control output variable, IO_OUT, is typically a Device Signal Tag that specifies a Device Tag on an analog output channel and parameter.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Quick Config parameters for the FLC_LOOP module template</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1022391e33" valign="top" width="NaN%"><p>Parameter</p>
+</th>
+
+<th class="cellrowborder" id="d1022391e37" valign="top" width="NaN%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>CONTROL_OPTS</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>SP-PV Track in Man is the only control option enabled as a default. Use this parameter to set the control action to Direct when necessary. Other control options to consider are SP-PV Track in LO or IMan, Track Enable, and Track in Manual.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>HI_LIM</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The high alarm limit value in engineering units. This is a Quick Config parameter because the HI_ALM alarm parameter is initially disabled.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>IO_IN</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>An I/O Reference parameter for configuring the Device Signal Tag for the process variable input.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>IO_OPTS</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>None of the I/O options are initially disabled. In the FLC block, IO_OPTS is used to select the <span class="uicontrol">Increase to Close</span> option for the control output (for example, for a fail open valve), or to enable the low cut-off function for the process variable input.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>IO_OUT</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>An I/O Reference parameter for configuring the Device Signal Tag for the control output.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>L_TYPE</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>Linearization type. The default is Indirect. This might be changed to Ind Sqr Root, for example, when flow is being determined from differential pressure.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>LO_LIM</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The low alarm limit value in engineering units. This is a Quick Config parameter because the LO_ALM alarm parameter is initially disabled.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>PV_SCALE</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>This parameter is used to set the engineering unit value at 0 percent and 100 percent of scale for the process variable. The engineering unit descriptor can be selected from a list and the number of decimal places to be displayed can be set. Note that the number of decimal places to be displayed is applicable only for the faceplate and detail displays. The valid values for these displays are 0 to 3 decimal places.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SF_DELTERR</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The change-in-error scaling factor. A tuning parameter that converts the change in error (from previous scan) to a normalized value used by the fuzzy logic algorithm.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SF_ERROR</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The error scaling factor. A tuning parameter that converts the error (PV-SP) to a normalized value used by the fuzzy logic algorithm.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SF_OUTPUT</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The change-in-output scaling factor. A tuning parameter that converts the normalized output of the fuzzy logic algorithm to an increment of change for OUT.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SP_FACTOR</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The minimum setpoint change between scans required to initiate scaling factor adaptation.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SP_HI_LIM</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The high limit for the setpoint. Typically, this value should be changed when the EU 100 percent value is changed from the default in PV_SCALE.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1022391e33 " valign="top" width="NaN%"><p>SP_LO_LIM</p>
+</td>
+
+<td class="cellrowborder" headers="d1022391e37 " valign="top" width="NaN%"><p>The low limit for the setpoint. Typically, this value should be changed when the EU 0 percent value is changed from the default in PV_SCALE.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that MODE is not a Quick Config parameter. The initial target mode for the FLC function block is Manual. There might be other parameters that you need to configure that are not in the Quick Confg view. If so, set the parameter filtering to Common Configuration (or Common Configuration and Advanced Configuration) to review or change other parameter values.</p>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

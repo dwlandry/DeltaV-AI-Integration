@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Datatype checking and the VBA compiler" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_datatype_checking_and_the_vba_compiler" name="DC.Identifier" /><title>Datatype checking and the VBA compiler</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_configuring_vba_options.html" /><link rel="next" href="deltav-specific-vba-functions.html" /></head><body class="fixed" id="vba_datatype_checking_and_the_vba_compiler" data-relpath="vba_datatype_checking_and_the_vba_compiler.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_datatype_checking_and_the_vba_compiler"></a>
+
+<h1 class="topictitle1">Datatype checking and the VBA compiler</h1>
+<div><div></div>
+<p id="vba_datatype_checking_and_the_vba_compiler__DatatypeCheckingandtheVBACompiler"><a name="vba_datatype_checking_and_the_vba_compiler__DatatypeCheckingandtheVBACompiler"></a>The VBA 6.0 compiler uses stricter type checking than the VBA 5.0 compiler. You must use the exact datatypes that are defined in the function or subroutine declaration. The way variables are converted when being passed has changed. You may get this error when executing code that meets the following conditions:</p>
+
+<pre class="pre">
+Compile Error; ByRef argument type mismatch
+</pre>
+<ol>
+<li><div class="li_content"><p>One subroutine or function has a variable which is declared as type Variant. If you do not explicitly assign a type, it is Variant.</p>
+</div></li>
+
+<li><div class="li_content"><p>This variable is passed to a second subroutine or function.</p>
+</div></li>
+
+<li><div class="li_content"><p>The second subroutine or function is set up to accept a value from the first subroutine or function, but of a type other than Variant (Integer, long, or object, for example).</p>
+</div></li>
+
+</ol>
+<p>The following example shows two subroutines: the first subroutine gets a rectangle&#39;s downstream animation object, which is connected to the rectangle&#39;s VerticalFill Percentage. The second subroutine gets the animation object&#39;s classtype. Since the second subroutine is defined as an object, and the first is passed in as a Variant/ObjectArrayItem, the VBA 6.0 compiler displays the ByRef argument mismatch error.</p>
+
+<pre class="pre">
+
+Private Sub CommandButton1_Click()
+    Dim sSource As String
+    Dim sFullQualSource As String
+    Dim vSourceObjs As Variant
+    Dim vTolerance As Variant
+    Dim vDeadBand As Variant
+    Dim vUpdateRate As Variant
+    
+    Rect1.GetConnectionInformation 1, &quot;VerticalFillPercentage&quot;, _
+    sSource, sFullQualSource, vSourceObjs, vTolerance, vDeadBand, _
+    vUpdateRate
+    
+    CheckSourceObject vSourceObjs(0)
+
+End Sub
+
+<strong>&#39;display the classname of the source object
+</strong>Public Sub CheckSourceObject(objSrcObj As Object)
+    MsgBox objSrcObj.ClassName
+End Sub
+
+</pre>
+<p>This scenario is acceptable in a VBA 5.0 environment, but a ByRef Argument mismatch error is generated when running or compiling in VBA 6.0.</p>
+<div class="section" id="vba_datatype_checking_and_the_vba_compiler__Workarounds"><a name="vba_datatype_checking_and_the_vba_compiler__Workarounds"></a><h2 class="sectiontitle">Workarounds</h2><p>Either the calling routine or called routine has to change. The following scripts are workarounds that will satisfy the compiler and provide the exact same functionality.</p>
+<p><strong>Workaround 1</strong> –This script changes the called routine and is the easier correction. Referring to the previous example, if you change the CheckSourceObject routine to specify that the argument is passed in by value, this will pass the compiler check. Since the parameter passed is not being modified, it is safe to pass by value.</p>
+
+<pre class="pre">
+<strong>&#39;display the classname of the source object
+</strong>Public Sub CheckSourceObject(ByVal objSrcObj As Object)
+    MsgBox objSrcObj.ClassName
+End Sub
+</pre>
+<p><strong>Workaround 2</strong> – This script changes the calling routine so that the coercion is performed before the call.</p>
+
+<pre class="pre">
+Private Sub CommandButton1_Click()
+    Dim sSource As String
+    Dim sFullQualSource As String
+    Dim vSourceObjs As Variant
+    Dim vTolerance As Variant
+    Dim vDeadBand As Variant
+    Dim vUpdateRate As Variant
+    Dim objSourceObject As Object
+    Rect1.GetConnectionInformation 1, &quot;VerticalFillPercentage&quot;, _
+    sSource, sFullQualSource, vSourceObjs, vTolerance, vDeadBand, _
+    vUpdateRate
+
+    Set objSourceObject = vSourceObjs(0)    
+    CheckSourceObject objSourceObject
+    Set objSourceObject = Nothing
+End Sub
+</pre>
+<p>In this corrected call, there is an additional declaration for objSourceObject. The following line is also added:</p>
+
+<pre class="pre">
+    Set objSourceObject = vSourceObjs(0)
+    Set objSourceObject = Nothing
+
+</pre>
+<p>This line assigns a declared Object to the first element of the variant array. Next, we pass in the objSourceObject, which is an Object instead of the Variant/ObjectArrayItem. This passes the compiler check .</p>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

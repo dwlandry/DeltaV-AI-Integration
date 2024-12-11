@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional function block MPCPro configuraton" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_predict_pro_using_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="dynamoreference.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpcpro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_model_predictive_control_professional_function_block_mpcpro_configuration" name="DC.Identifier" /><title>Model Predictive Control Professional function block MPCPro configuraton</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_model_predictive_control_professional_function_block_execution.html" /><link rel="next" href="c_mpc_pro_fblock_params_referenced_by_the_mpcpro_fblock.html" /></head><body class="fixed" id="c_model_predictive_control_professional_function_block_mpcpro_configuration" data-relpath="c_model_predictive_control_professional_function_block_mpcpro_configuration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration"></a>
+
+<h1 class="topictitle1">Model Predictive Control Professional function block MPCPro
+	 configuraton</h1>
+<div><div></div>
+ 
+	 <div class="note" id="c_model_predictive_control_professional_function_block_mpcpro_configuration__MPCProConfiguration"><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__MPCProConfiguration"></a><span class="notetitle">Note:</span>  
+		<p> Any change in the block configuration requires that you download the
+		  block and reconnect to the block from the PredictPro application for the change
+		  to be reflected in the block&#39;s behavior. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>Since the number of inputs and outputs associated with an MPCPro
+		application can vary, the MPCPro block is designed to support a total of forty
+		(40) Disturbance and Manipulated inputs and a total of eighty (80) Controlled
+		and Constraint parameters. The number of controlled parameters must be less
+		than or equal to the number of manipulated parameters. Use the Control Studio
+		application to configure the MPCPro block. To enter configuration information,
+		right-click the MPCPro function block and select 
+		<span class="uicontrol">Properties</span> to open the 
+		<span class="wintitle">Properties</span> dialog. Use this dialog to add 
+		<span class="uicontrol">Control</span>, 
+		<span class="uicontrol">Manipulate</span>, 
+		<span class="uicontrol">Constraint</span>, or 
+		<span class="uicontrol">Disturbance</span> parameters and enter configuration
+		information. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> Refer to the PredictPro application documentation for information on
+		  setting the parameters for your process&#39;s TSS. Set the History sample rate only
+		  from the 
+		  <span class="wintitle">Properties</span> dialog of the MPCPro function block. Do
+		  
+		  <strong>not</strong> use the 
+		  <span class="wintitle">History Collection</span> dialog. 
+		</p>
+ 
+	 </div>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_564B13FD41D54A1FBF5B3B8E87B1F504"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_564B13FD41D54A1FBF5B3B8E87B1F504" src="FB_PIC2.jpg" /> 
+	 </p>
+ 
+	 <p>Select the 
+		<span class="uicontrol">Controlled</span>, 
+		<span class="uicontrol">Manipulated</span>, 
+		<span class="uicontrol">Disturbance</span>, or 
+		<span class="uicontrol">Constraint</span> tab on this dialog, and then click the 
+		<span class="uicontrol">Add</span> button to add a new entry. The 
+		<span class="uicontrol">Controlled</span> tab is selected in the following image.
+		
+	 </p>
+ 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_C77CFF52358A4F3CBB7106554B78754C"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_C77CFF52358A4F3CBB7106554B78754C" src="FB_PIC3.jpg" /> 
+	 <p>Once you have added parameters to the MPCPro block, you can modify them
+		from this dialog by selecting a parameter and clicking 
+		<span class="uicontrol">Modify</span>. A dialog for defining the associated
+		parameters opens. 
+	 </p>
+ 
+	 <p> 
+		<strong>Configuring controlled parameters</strong> 
+	 </p>
+ 
+	 <p> For a Controlled parameter, the following dialog opens. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_7B465B0ED971418DB466C64B6F871E38"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_7B465B0ED971418DB466C64B6F871E38" src="FB_PIC4.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_F3076B9BEFB24F5AB2E8A0890F25E025"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_F3076B9BEFB24F5AB2E8A0890F25E025"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_F16F75530BF1480683B14095E9C442E9"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Description</span> — The parameter name that you want
+			 to appear in the PredictPro application and the MPC Operate Pro view. (MPC
+			 Operate Pro is built with MPCPro dynamos. The default description name is the
+			 input instance number for example, Out 1. It is recommended that you create a
+			 new description that contains 14 or fewer characters. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_8C445BC9EA614E63AE2227D7720E89B6"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Response Trajectory</span> — The Response Trajectory
+			 is an exponential trajectory defined by its filter time constant, current
+			 process output, and future required process output (SP). Response Trajectory is
+			 used to increase stability by slowing down the controller reaction to CV error.
+			 When unmeasured disturbances are significant, Response Trajectory filter time
+			 constant values between 1 and 5 times the TSS are recommended. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_A77AB223B80547F494C2DB1F73C052CF"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">SP Low Limit</span> — The minimum SP value (in
+			 engineering units) that an operator can enter. A setpoint entry that is lower
+			 than this limit is truncated to the limit value. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_EABCB199A882413F8DC82694A3CDF881"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">SP High Limit</span> — The maximum SP value (in
+			 engineering units) that an operator can enter. A setpoint entry that is greater
+			 than this limit is truncated to the limit value. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_D6F64AC12F6747FF825D9DF8C92DA3DA"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Track SP</span> — If enabled, the SP tracks the
+			 Controlled parameter value when the MPCPro block is in a Target mode of MAN.
+			 This option is enabled by default. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_32AF1E28724C4735A1FF16130D0A143B"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Parameter path</span> — The reference to the block
+			 output that will provide the Control parameter value. If the block providing
+			 this value is contained in the same module as the MPCPro block, select the 
+			 <span class="uicontrol">Browse Internal</span> button to define the parameter
+			 path. Otherwise, select the 
+			 <span class="uicontrol">Browse External</span> button to define the parameter
+			 path. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When the 
+		<span class="uicontrol">Advanced</span> button is selected in the 
+		<span class="wintitle">Properties</span> dialog, additional information appears at
+		the bottom of the 
+		<span class="wintitle">Control parameter</span> dialog as shown below. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_368A72F7B21644D0A4A612B9832A70A2"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_368A72F7B21644D0A4A612B9832A70A2" src="FB_PIC5.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_2938EE98312E4562B19BC5783852A894"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_2938EE98312E4562B19BC5783852A894"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_2F7AF68EAB49415794A8553EAACABC96"><div class="li_content"> 
+		  <div class="p"><span class="uicontrol">Fail Action</span> - The action to be taken when the
+			 input status indicates a BAD input. The actions that can be taken are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_54A0D9EDF7B3415FB72AEE07772FD3CB"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_54A0D9EDF7B3415FB72AEE07772FD3CB"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_FED6533E69EF4F8AA098A428A85486B6"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">No Action</span> — Take no control action on the
+				  measurement value. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_18A49F126CEC466FADE93014642B3382"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Shed Local Modes</span> 
+				  </strong> — Change the downstream blocks associated with the
+				  Manipulated parameters to their local mode — as defined by Local Shed mode
+				  selection of the Manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_C3D17C3AEDC745ED9F5B0114826178DF"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Manual</span> — Change the actual mode of the
+				  MPCPro block to Manual until the condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_5497326EBE724D4FB999001F3E00932A"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Simulate Fail Manual</span> — Simulate the
+				  measurement input. If the time of simulation exceeds the maximum allowed (based
+				  on Time to Steady State), then the MPC actual mode will change to Man until
+				  this condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_BFB108576A4A4B038591DAEEBA841D10"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Simulate Fail Shed Local</span> — Simulate the
+				  measurement input. If the time of simulation exceed the maximum allowed (based
+				  on Time to Steady State), then the downstream blocks associated with the
+				  Manipulated parameters will be forced to their local mode — as defined by Local
+				  Shed mode selection of the Manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_9CA7A82BC2C84917A5A476CF9FEA39D3"><div class="li_content"> 
+		  <div class="p"> 
+			 <span class="uicontrol">Optimization</span> —The impact of the Control
+			 parameter on plant cost or profit. The selections are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_B974BC9567CA4207A9D0944DA8738DD2"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_B974BC9567CA4207A9D0944DA8738DD2"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_9D30884C779949A7A60000D9DD6C1234"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">None</span> — Not considered in the objective
+				  function. There is no cost or profit associated with this parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_51F571090AB14677A6E094965BD8BBAF"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Maximize</span> — Indicates that this parameter
+				  is associated with profit. Control action is taken to push the parameter up
+				  towards its associated setpoint without going above this limit. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_A22DA7BC8C814F29946040789C86B7ED"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Minimize</span> — Indicates that this parameter
+				  is associated with cost. Control action is taken to push the parameter down
+				  towards its associated setpoint without going below this limit. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_D9A1BE2EB43B4940946A20BCFB2C3A8E"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Target</span> — Indicates that control action is
+				  taken to minimize the deviation of this parameter above and below its setpoint.
+				  
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_47E41DF1929941A6B68C4BDE864F0FEA"><div class="li_content"> 
+		  <p> 
+			 <strong> 
+				<span class="uicontrol">SP range</span> 
+			 </strong> —The maximum amount that the optimizer can change the working
+			 setpoint used in control from the operator specified setpoint. This value is
+			 the SP_DELTA_RANGE parameter, that can also be changed from the MPCPro
+			 Controlled Variable Detail Display after download. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_AC5950DA784C414BB767639EFBACDA9F"><div class="li_content"> 
+		  <p> 
+			 <strong> 
+				<span class="uicontrol">Priority</span> —</strong>Numeric value that can be
+			 assigned to Control and Constraint parameters to indicate relative importance
+			 where the smaller number indicates greater importance/priority. If it is not
+			 possible for the optimizer to find a solution that satisfies all operating
+			 constraint limits within the specified control ranges, then a solution will be
+			 found that best satisfies the control ranges and constraint limits that have
+			 the highest priority. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_66B2923F39CA49188436D705B3EBF8D7"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Remote SP</span> —The setpoint of the Control
+			 parameter will be set by another application or function block that is writing
+			 to the associated RCAS_IN(xx) parameter. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Configuring manipulated parameters</strong> 
+	 </p>
+ 
+	 <p> For a Manipulated parameter, the following dialog opens. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_BC974FF0AB574CF496E1FC51DE1FB62C"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_BC974FF0AB574CF496E1FC51DE1FB62C" src="FB_PIC6.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_7CCD6DA0407F46A6A01681D759426BDA"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_7CCD6DA0407F46A6A01681D759426BDA"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_B6DB36A66AE64A3FABF6785DFD3B9C53"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Description</span> — The parameter name that you want
+			 to appear in the PredictPro application and the MPC Operate Pro view. (MPC
+			 Operate Pro is built with MPCPro dynamos.) The default description name is the
+			 input instance number for example, In 1. It is recommended that you create a
+			 new  description that contains 14 or fewer characters. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_318698F8EC3F4745994BFB189888AA86"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Maximum MV Rate</span> — The maximum rate (in
+			 engineering units per second) at which the MPCPro function block can change the
+			 Manipulated parameter. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_D7425B67E7454361997919AE560E65EA"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Low Limit</span> — The minimum manipulated parameter
+			 value (in engineering units) that an operator can enter. An entry that is lower
+			 than this limit is truncated to the limit value. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_550048CA9DAB4D499736A38AD4068348"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">High Limit</span> — The maximum manipulated parameter
+			 value (in engineering units) that an operator can enter. An entry that is
+			 greater than this limit is truncated to the limit value. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_04AFCB3CC599415F92741184B5852915"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Parameter Path</span> — The reference to the block
+			 input that is written to the manipulate value. Based on this path, the MPCPro
+			 block automatically accesses the mode and back calculation output of the
+			 downstream block. If the block providing this value is contained in the same
+			 module as the MPCPro block, select the 
+			 <span class="uicontrol">Browse Internal</span> button to define the parameter
+			 path. Otherwise, select the 
+			 <span class="uicontrol">Browse External</span> button to define the parameter
+			 path. Emerson does not recommend cascading the MPC-PRO block to the Bias/Gain
+			 or Splitter blocks. These blocks do not have a PV_SCALE parameter so the
+			 identified gain has no meaning. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When the 
+		<span class="uicontrol">Advanced</span> button is selected in the 
+		<span class="wintitle">Properties</span> dialog, the additional information
+		appears at the bottom of the 
+		<span class="wintitle">Manipulate parameter</span> dialog as shown in the
+		following figure. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_8E511EF482584267A0EE2928D3065291"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_8E511EF482584267A0EE2928D3065291" src="ConfigManParams.JPG" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_CC1A82569507409D83DA289B3BC8BF69"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_CC1A82569507409D83DA289B3BC8BF69"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_C59C81197D234130A246615318F288EF"><div class="li_content"> 
+		  <div class="p"> 
+			 <strong> 
+				<span class="uicontrol">Fail Action</span> —</strong> The action to be taken
+			 when the feedback from the downstream block contains a status of BAD or Not
+			 Invited: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_BC05F9906BA74212A9CF1AA0D1AC518A"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_BC05F9906BA74212A9CF1AA0D1AC518A"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_E32D70553FAB475FB69DD6C63AE82002"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">No Action</span> — Maintain the manipulate
+				  parameter at its current value with no impact on MPCPro mode. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_E7DE3E224CEC4C4F97F21E0E35F57A10"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Shed Local Modes</span> 
+				  </strong> — Change the downstream blocks associated with the
+				  Manipulated parameters to their local mode — as defined by Local Shed mode
+				  selection of the Manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_CD9E82CBF1B640F7A8B0B64435283905"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Manual</span> — Change the actual mode of the
+				  MPCPro block to MAN until the condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_DA6818308D224F2AAA4AC33C834ED254"><div class="li_content"> 
+		  <div class="p"> 
+			 <strong> 
+				<span class="uicontrol">Optimization</span> —</strong> The impact of the
+			 manipulate parameter on plant cost or profit. The selections are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E60CF07F1B147609D0F711F7E78E579"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E60CF07F1B147609D0F711F7E78E579"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_469BEE008F6F4F43B25C35997A06990F"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">None</span> — Not considered in the objective
+				  function. There is no cost or profit associated with this parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_711D62B1D7D0419FA73ADAAD3B5F9235"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Maximize</span> — Indicates that this parameter
+				  is associated with profit. Control action is taken to push the manipulated
+				  parameter towards its associated high output limit. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_DBE14294C1FE46FF8612A88BB45EEE8C"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Minimize</span> — Indicates that this parameter
+				  is associated with cost. Control action is taken to push the manipulated
+				  parameter towards its associated low output limit. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_AB375BB01C3C416CB60DE0C54AB5245B"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">PSV</span> — Control action is taken to maintain
+				  the manipulated parameter at the configured Preferred Settling Value (PSV)
+				  within the degree of freedom allowed by the objective function. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_09FD1FA7915B4A21B666775A5B22791E"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Equalize</span> — Control action is taken to
+				  maintain multiple manipulated parameters at the same value (in percent of
+				  scale) within the degrees of freedom allowed by the objective function. Note
+				  that two or more manipulated parameters must be configured for Equalize if this
+				  option is selected. All manipulated variables with Equalize enabled must have
+				  the same EU scale. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_1EDB1C4FBFC6498F90E21160B4795D9C"><div class="li_content"> 
+		  <div class="p"> 
+			 <span class="uicontrol">Local Shed Mode</span> — The target mode that the
+			 downstream block will be forced to when a input or output failure is detected
+			 and the Failure action is defined as Shed Local. The selections are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_C00F79BABB3A4475BDAAA3FE1C108E2A"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_C00F79BABB3A4475BDAAA3FE1C108E2A"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_05CD5320621447639BD7C2CB72F577E8"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Next Lower</span> —</strong>The mode will be written
+				  to the next lower permitted mode of the downstream block. The selection order
+				  is: 
+				</p>
+ 
+				<p>=&gt;Rout  =&gt;Rcas  =&gt;Cas  &gt;=&gt;Auto  =&gt;Man 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_ABC31FB7933449C48451ADE2E8F5A29D"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Last Local</span> 
+				  <strong>—</strong> The mode is written to the previous target mode (before
+				  switching to MPC control). 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_C93B0C394C7C448F86A9819592874E6C"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">ROUT</span> 
+				  <strong>—</strong> The mode is written to ROUT. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_4894042A877A474BAD6048E757C1B89C"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">RCAS</span> 
+				  <strong>—</strong> The mode is written to RCAS. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_FDF041CDE4D0457D9E1ED4F1E3B94F77"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">CAS</span> 
+				  <strong>—</strong> The mode is written to CAS. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_B23C76D50EB04AD1A088017D255ECC64"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">AUTO</span> 
+				  <strong>—</strong> The mode is written to AUTO. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_B26AECC71D044A138178E923014760A1"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">MAN</span> 
+				  <strong>—</strong> The mode is written to MAN. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_22E0D20089A24A719906DB9C92FB8CEA"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Preferred Settling Value</span> — The manipulated
+			 parameter value that the control tries to achieve if the optimization selection
+			 is PSV. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Configuring disturbance parameters</strong> 
+	 </p>
+ 
+	 <p> For a Disturbance parameter, the following configuration dialog
+		appears. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_87974E560215433FB4265F178CC3BB2C"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_87974E560215433FB4265F178CC3BB2C" src="FB_PIC8.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_9EF0A2899E8247B2834C9A81DA0BFEC1"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_9EF0A2899E8247B2834C9A81DA0BFEC1"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_50015C353B3647D4BC46BFC0CD407BCA"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Description</span> — The parameter name that you want
+			 to appear in the PredictPro application and the MPC Operate Pro view (MPC
+			 Operate Pro is built with MPCPro dynamos.)  The default description name is the
+			 input instance number for example, In2. It is recommended that you create a
+			 new  description that contains 14 or fewer characters. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_366B9F1699974571918AEB2C7BAF3F0D"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Parameter path</span> — The reference to the block
+			 output that provides the Disturbance input value. If the block providing this
+			 value is contained in the same module as the MPCPro block, select the 
+			 <span class="uicontrol">Browse Internal</span> button to define the parameter
+			 path. Otherwise, select the 
+			 <span class="uicontrol">Browse External</span> button to define the parameter
+			 path. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When the 
+		<span class="uicontrol">Advanced</span> button is selected in the 
+		<span class="wintitle">Properties</span> dialog, the additional information
+		appears at the bottom of the 
+		<span class="wintitle">Disturbance parameter</span> dialog as shown in the
+		following figure. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_299D344053B741538309825415CED39C"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_299D344053B741538309825415CED39C" src="FB_PIC9.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_117747EB9E844C3D8FBDAE0037F96792"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_117747EB9E844C3D8FBDAE0037F96792"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_CAE0A51A90804C8D92C93BDDF5002EAB"><div class="li_content"> 
+		  <div class="p"> 
+			 <strong> 
+				<span class="uicontrol">Fail action</span> —</strong> the action that should be
+			 taken when the Disturbance input has a BAD status. One of the following actions
+			 can be selected: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E0C684BE01040A69DF631752302DFA2"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E0C684BE01040A69DF631752302DFA2"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_262D48B3B39C4BCE99A47177EDFE1886"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Hold Last Good</span> — Maintain the last value
+				  of the Disturbance input that had a status of Good. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_8200F57191BE448A8B6E98268AF84616"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Shed Local Modes</span> — Change the downstream
+				  blocks associated with the Manipulated parameters to their local mode as
+				  defined by the Local Shed Mode selection of the manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_31E19A54910641C1AD9869EB6B73754F"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Manual</span> 
+				  </strong> — Change the actual mode of the MPCPro block to manual until
+				  the condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Configuring constraint parameters</strong> 
+	 </p>
+ 
+	 <p> For a Constraint parameter, the following configuration dialog appears.
+		
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_B34DA9F5360A47F5A4A909B71159AA50"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_B34DA9F5360A47F5A4A909B71159AA50" src="FB_PIC10.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_BC7C7BCBFFC147AEAE1D67665D1450E6"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_BC7C7BCBFFC147AEAE1D67665D1450E6"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_39D07D0090474D569732FACC41FDD03B"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Description</span> — The parameter name that you want
+			 to appear in the PredictPro application and the MPC Operate Pro view (MPC
+			 Operate Pro is built with MPCPro dynamos.) The default description name is the
+			 input instance number, for example, 2<sup>nd</sup> output. You can create a
+			 new  description; however, it is recommended that the parameter description
+			 contain 14 or fewer characters. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_EC459F4C14604EF8BB669C6C6CD3DE13"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Low Limit</span> — The minimum Constraint target (in
+			 engineering units). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_9B58C629F4444C748D6983A81B9DBEB5"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">High Limit</span> — The maximum Constraint target (in
+			 engineering units). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_193663C641824120A3370CE1F8478344"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Parameter path</span> — The reference to the block
+			 output that provides the Constraint input value. If the block providing this
+			 value is contained in the same module as the MPCPro block, select the 
+			 <span class="uicontrol">Browse Internal</span> button to define the parameter
+			 path. Otherwise, select the 
+			 <span class="uicontrol">Browse External</span> button to define the parameter
+			 path. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>When the 
+		<span class="uicontrol">Advanced</span> button is selected in the 
+		<span class="wintitle">Properties</span> dialog, the additional information
+		appears at the bottom of the 
+		<span class="wintitle">Constraint parameter</span> dialog as shown in the
+		following figure. 
+	 </p>
+ 
+	 <p><a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_ED5C381C6F914657A7889989B3989F67"></a><img id="c_model_predictive_control_professional_function_block_mpcpro_configuration__image_ED5C381C6F914657A7889989B3989F67" src="FB_PIC11.jpg" /> 
+	 </p>
+ 
+	 <div class="p">Provide the following configuration information: 
+	 <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_A4165D2444FD429E80C6A804D69AFA1E"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_A4165D2444FD429E80C6A804D69AFA1E"> 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_AF225A4394F247C0B21DB1EFBC62428D"><div class="li_content"> 
+		  <div class="p"> 
+			 <span class="uicontrol">Fail action</span> — The action to be taken when the
+			 input status indicates a BAD input. The actions that can be taken are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E68A0B56FFC411EB87D590F7502B4F9"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_6E68A0B56FFC411EB87D590F7502B4F9"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_1F3EC82F34B04BA783ADFABCD14309CE"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">No Action</span> 
+				  </strong> — Take no control action on the measurement value. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_4BC11AD8FEF447809CCF0F4B632FA6DA"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Shed Local Modes</span> 
+				  </strong> — Change the downstream blocks associated with the
+				  Manipulated parameters to their local mode — as defined by Local Shed mode
+				  selection of the Manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_4779278B83614ED199F8702A5E8856F1"><div class="li_content"> 
+				<p> 
+				  <strong> 
+					 <span class="uicontrol">Manual</span> 
+				  </strong> — Change the actual mode of the MPCPro block to Manual until
+				  the condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_B3EAD86823744824B6B1BA1E91E673DF"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Simulate Fail Manual</span> — Simulate the
+				  measurement input.  If the time of simulation exceeds the maximum allowed
+				  (based on Time to Steady State), then the MPC actual mode will change to Man
+				  until this condition clears. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_4C160CE0848D46508BF6C0A990F85942"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Simulate Fail Shed Local</span> — Simulate the
+				  measurement input.  If the time of simulation exceed the maximum allowed (based
+				  on Time to Steady State), then the downstream blocks associated with the
+				  Manipulated parameters will be forced to their local mode — as defined by Local
+				  Shed mode selection of the Manipulate parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_5CBC9267A9874F1FB051A4D3108D881D"><div class="li_content"> 
+		  <div class="p"> 
+			 <strong> 
+				<span class="uicontrol">Optimization</span> —</strong> The impact of the Control
+			 parameter on plant cost or profit. The selections are: 
+		  <a name="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_821861467D3742FC818A16D8FD2DE54C"></a><ul id="c_model_predictive_control_professional_function_block_mpcpro_configuration__ul_821861467D3742FC818A16D8FD2DE54C"> 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_978F900431DF4B0D8E141FACE89A7F86"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">None</span> — The parameter is not included in
+				  the objective function. There is no cost or profit associated with the
+				  parameter. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_2D2EF14362EA42699DB3EEE72FF547E0"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Maximize</span> — Indicates that this parameter
+				  is associated with profit. 
+				</p>
+ 
+			 </div></li>
+ 
+			 <li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_9870B995A99E4E88843CE67F37B755D9"><div class="li_content"> 
+				<p> 
+				  <span class="uicontrol">Minimize</span> — Indicates that this parameter
+				  is associated with cost. 
+				</p>
+ 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_model_predictive_control_professional_function_block_mpcpro_configuration__li_F164C9D99BC34695AE64308868F359C3"><div class="li_content"> 
+		  <p> 
+			 <span class="uicontrol">Priority</span> — Numeric value that can be assigned
+			 to Control and Constraint parameters to indicate relative importance where the
+			 smaller number indicates greater importance/priority. If it is not possible for
+			 the optimizer to find a solution that satisfies all operating constraint limits
+			 within the specified control ranges, then a solution will be found that best
+			 satisfies the control ranges and constraint limits that have the highest
+			 priority. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_predict_pro_using_predict_pro.html">Using DeltaV PredictPro</a></div>
+<div><a href="dynamoreference.html">FrsModules dynamo reference</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

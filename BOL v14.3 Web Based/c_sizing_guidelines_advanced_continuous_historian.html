@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Archive sizing guidelines" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Maintain" name="DC.Coverage" /><meta content="Advanced Continuous Historian, sizing guidelines" name="DC.subject" /><meta content="Advanced Continuous Historian, sizing guidelines" name="keywords" /><meta content="c_advanced_continuous_historian.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_the_continuous_historian_unique_4" name="DC.Identifier" /><title>Archive sizing guidelines</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_create_trust_view_historical_data_remote_system.html" /><link rel="next" href="t_set_change_system_time_ACH.html" /></head><body class="fixed" id="c_the_continuous_historian_unique_4" data-relpath="c_sizing_guidelines_advanced_continuous_historian.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_the_continuous_historian_unique_4"></a>
+
+<h1 class="topictitle1">Archive sizing guidelines</h1>
+<div><div></div>
+ 
+    <p>This topic describes an approach to sizing the Advanced Continuous
+      Historian archive files to meet the data recording needs of a specific
+      implementation. Archives are the files that the Advanced Continuous Historian
+      uses to store historical data. Each archive file contains events for a time
+      period specified by the archive start time and end time. Since the Advanced
+      Continuous Historian uses compression algorithms to reduce the amount of data
+      storage, the information presented here will not provide exact results.
+      However, information to estimate initial archive sizing and a methodology to
+      view the actual data storage rate and adjust accordingly are provided. 
+    </p>
+ 
+    <p> The Advanced Continuous Historian system stores data into archive
+      files. You can have multiple archive files of various sizes. The archive files
+      range in size from 2 MB to 2 TB. The default installation configures one file
+      of 256 MB. It is recommended that you create no fewer than three archive files.
+      The maximum number of archives is limited by the operating system and the
+      maximum file handles available, as well as by the available memory in the
+      computer. The theoretical limit is tens of thousands of archive files, although
+      the actual number is typically between 30 to 100 archive files on medium to
+      large systems. 
+    </p>
+ 
+    <p>Consider the following when determining archive file size and count: 
+    </p>
+ 
+    <a name="c_the_continuous_historian_unique_4__ul_AFCE0C13E01544F68D27CA61E7724920_unique_1"></a><ul id="c_the_continuous_historian_unique_4__ul_AFCE0C13E01544F68D27CA61E7724920_unique_1"> 
+      <li id="c_the_continuous_historian_unique_4__li_95F429AAAC3F404BACB31DCF79951537_unique_1"><div class="li_content"> The total archive volume,
+        the size of a single archive file times the number of archive files, affects
+        the length of time that files store data before being overwritten. 
+      </div></li>
+ 
+      <li id="c_the_continuous_historian_unique_4__li_A1C026E06B2E483EBE41189DFD75CB51"><div class="li_content"> The individual archive
+        volume, the size of a single archive file, affects how often an archive shift
+        occurs. The Advanced Continuous Historian performs an archive shift to switch
+        archiving from the active file to the file that contains the oldest data. 
+      </div></li>
+ 
+      <li id="c_the_continuous_historian_unique_4__li_56790EC693E74F05A5365E11EC406AEE"><div class="li_content"> The individual archive
+        volume also affects how much available data is discarded when an archive shift
+        occurs. For example, if each archive stored approximately one month of data and
+        there were three archives, there would be a maximum of three months data online
+        just prior to the shift and a maximum of two months data online after the
+        archive shift. 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>Take the following items into consideration before setting the archive
+      files: 
+    </p>
+ 
+    <a name="c_the_continuous_historian_unique_4__ul_D97711AF68494AF09A661728F547626B_unique_1"></a><ul id="c_the_continuous_historian_unique_4__ul_D97711AF68494AF09A661728F547626B_unique_1"> 
+      <li id="c_the_continuous_historian_unique_4__li_A8BE366FD5DF404FA66976F8FC223F12_unique_1"><div class="li_content"> Consider future expansion.
+        Estimate the point count for the next year or two and size archive files
+        accordingly. 
+      </div></li>
+ 
+      <li id="c_the_continuous_historian_unique_4__li_2389B74A81B6485B9129B5C477E97745_unique_1"><div class="li_content">Data storage rate increases
+        with an increase in scan rate and decreases with an increase in compression
+        deviation. The default compression values are Compression=ON with a Compression
+        Deviation of 0. If this is left unchanged, every change in data values will be
+        stored to disk, possibly consuming the archives much faster than expected. 
+      </div></li>
+ 
+      <li id="c_the_continuous_historian_unique_4__li_55B5BBD3EE7A4BE2A4C31313F962D937_unique_1"><div class="li_content"> Each point stored requires
+        a minimum of 2 KB of storage for the archive system to work correctly. However,
+        archive storage is more efficient if 5 KB per point are used. 
+      </div></li>
+ 
+      <li id="c_the_continuous_historian_unique_4__li_03E881854BC54D69BCA91281169A2D80"><div class="li_content">An archive file can be any
+        size, as long as it meets the minimum storage requirements, but it is
+        recommended that all archives be the same size to facilitate system
+        administration. Once created, the size of a fixed archive cannot be changed. It
+        must be deleted and then recreated at the larger size. Therefore, it is much
+        easier to add archives than to change archive sizes. Be generous in archive
+        file sizing to meet the point count estimates and use the archive count to
+        adjust for total archive duration. 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="section" id="c_the_continuous_historian_unique_4__section_96F50C02E3C84C5FACEA9DC6F262BB11"><a name="c_the_continuous_historian_unique_4__section_96F50C02E3C84C5FACEA9DC6F262BB11"></a><h2 class="sectiontitle">General guidelines</h2> 
+       
+      <p>Follow the general guidelines below to decide how to provision and
+        size the archive files for the Advanced Continuous Historian. For specific
+        questions or requirements, contact Emerson Technical Support. 
+      </p>
+ 
+      <a name="c_the_continuous_historian_unique_4__ul_3B350BF50FD94BEF8B15CE1F6307A51F"></a><ul id="c_the_continuous_historian_unique_4__ul_3B350BF50FD94BEF8B15CE1F6307A51F"> 
+        <li id="c_the_continuous_historian_unique_4__li_0FB38D3522EF4FD3915FFAB734A5AB1B"><div class="li_content">Archive creation 
+          <a name="c_the_continuous_historian_unique_4__ul_186AA988B2CB48E29B53769A449B8BE3"></a><ul id="c_the_continuous_historian_unique_4__ul_186AA988B2CB48E29B53769A449B8BE3"> 
+            <li id="c_the_continuous_historian_unique_4__li_32E660F159D249B89819462C094F8C74"><div class="li_content">Turn on 
+              <span class="uicontrol">Automatic Archive Creation</span>. This feature
+              is enabled by default for new installations of the Advanced Continuous
+              Historian. The Advanced Continuous Historian will create new archive files as
+              needed, which means that you will only need to monitor available disk space.
+              For more information, refer to 
+              <cite>How PI 3.4 Automatic Archive Creation Feature Works</cite>
+              (OSIsoft KB 3122OSI8). 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_BCE6A88C0E4B451299DD1E38993B049C"><div class="li_content">Alternatively, you can
+              create enough archive files to cover a given time range. Once all files are
+              used and contain data, the Advanced Continuous Historian automatically
+              overrides the archive file containing the oldest data. You can take this
+              archive offline, turn its shift flag off, or mark it read-only if you don’t
+              want data to be overwritten. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_9091088CAE7049E4962B752B2DD6BD89"><div class="li_content">Archive type 
+          <a name="c_the_continuous_historian_unique_4__ul_A5C44B4998E442EAAE8A8E2DDD554E38"></a><ul id="c_the_continuous_historian_unique_4__ul_A5C44B4998E442EAAE8A8E2DDD554E38"> 
+            <li id="c_the_continuous_historian_unique_4__li_DABE28CBE2A8411D929759E102A8CCE5"><div class="li_content">Always use fixed-size
+              archive files for the Primary storage area and all other archives receiving
+              online data. The Advanced Continuous Historian automatically grows fixed-size
+              archives if they become full. Such archives will be identified with the
+              “auto-dynamic” type. 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_141DDBB6C75E48B5AE371A85E44F1E76"><div class="li_content">Dynamic archives can
+              be used for older systems or for offline operations such as combining two or
+              more small archives. For details about fixed size versus dynamic archives,
+              refer to 
+              <cite>Advantages of using Fixed archives vs. Dynamic
+                archives</cite> (OSIsoft KB 2998OSI8 ) and 
+              <cite>PI Server Reference Guide</cite>. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_17BE69DE029841D5B6A3BBCD865A0E13"><div class="li_content">Recommended size 
+          <a name="c_the_continuous_historian_unique_4__ul_1D37E85037E7421D9FDA207CA370F2FF"></a><ul id="c_the_continuous_historian_unique_4__ul_1D37E85037E7421D9FDA207CA370F2FF"> 
+            <li id="c_the_continuous_historian_unique_4__li_2D3D0D878AFB4FFC8F7C7CC2F7D8B1D1"><div class="li_content"> The default archive
+              size is 256 MB. It is recommended that you use the default size. 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_646AACDD748342ECA31985E58AC8499F"><div class="li_content"> Otherwise, archive
+              file size should be kept between five and 10 times the expected point count,
+              expressed in kilobytes (KB). For instance, a system with 30,000 points should
+              function well with archive files between 150 MB and 300 MB. 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_6EC1BB5829BF4742B9846FC152078FAB"><div class="li_content"> The minimum archive
+              size is 2,048 times the point count in bytes, which yields approximately 2 MB
+              with 1,000 points. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_2D3B022ED55244AA8ABE6745386016F4"><div class="li_content">Maximum size 
+          <a name="c_the_continuous_historian_unique_4__ul_9F22C67AEF07450C88235F3B74E8F1D3"></a><ul id="c_the_continuous_historian_unique_4__ul_9F22C67AEF07450C88235F3B74E8F1D3"> 
+            <li id="c_the_continuous_historian_unique_4__li_A706284B6F674C2ABCCD807332DB036B"><div class="li_content"> The recommended
+              maximum size of an archive is one-third of installed random access memory (RAM)
+              on Windows Server. If point count and archive sizing needs exceed recommended
+              maximum size, you should consider installing more memory. 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+    </div>
+ 
+    <div class="section" id="c_the_continuous_historian_unique_4__section_99684F19D07A4396BA7C3C90ACE96688"><a name="c_the_continuous_historian_unique_4__section_99684F19D07A4396BA7C3C90ACE96688"></a><h2 class="sectiontitle">Additional considerations</h2> 
+       
+      <p>Consider the items below when deciding on archive size: 
+      </p>
+ 
+      <a name="c_the_continuous_historian_unique_4__ul_F206690348614EAB8356172D8754C069"></a><ul id="c_the_continuous_historian_unique_4__ul_F206690348614EAB8356172D8754C069"> 
+        <li id="c_the_continuous_historian_unique_4__li_D1F1B965FF254A54B02480775C49C286"><div class="li_content">Data rates 
+          <p> Archive size should provide a balance between data rates, storage
+            consumed per unit of time, and shift frequency, number of files per unit of
+            time. Increasing shift frequency is usually better than increasing archive size
+            beyond the recommended range. 
+          </p>
+ 
+          <p> You can find data rate information for your archives by using the
+            Archives plugin in the PI System Management Tools (PI SMT), or by running the 
+            <samp class="codeph">piartool -al</samp> command. Each registered archive
+            shows the Add Rate/Hour which is the average rate of records in kilobytes used
+            per hour to the archive, showing how quickly the archive files are filling up. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_F79E61DFF97F477FB68E4019B6C3281B"><div class="li_content">Compression settings 
+          <p> Although disk space is usually inexpensive, disk access – in
+            bytes and/or I/O per second – remains expensive. Be sure to apply the
+            appropriate compression settings for tags on large systems as this will reduce
+            disk space used and increase disk access performance. For more information
+            about recommended exception and compression settings, refer to 
+            <cite>What are recommended Exception and Compression
+              settings</cite> (OSIsoft KB 3226OSI8). 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_C89031FBFAD9404C8C76AD4A15F8B70D"><div class="li_content">Windows file system cache 
+          <p> Archive throughput will improve when the archive size is
+            significantly smaller than the Windows File System Cache (FSC) so that the most
+            commonly requested data resides in memory. For more information, refer to 
+            <cite>File Cache Performance and Tuning</cite> at the Microsoft
+            TechNet web site. No limit for maximum FSC size exists for Windows Server
+            operating systems. 
+          </p>
+ 
+          <p> You can monitor cache and disk performance by looking at the
+            Windows Performance Counters: Cache\Copy Read Hits % and Physical
+            Disk(&lt;Volume&gt;)\% Idle Time. Values significantly above 90% for both of
+            these counters usually indicate a healthy system. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_81DFE78CE65C42B09B89E37B25E8EBC5"><div class="li_content">System backups 
+          <p> Since the most recent archive files are usually backed up in
+            every system backup, do not create archives that exceed the limits of your
+            physical backup media. Smaller files will also speed up the verification phase
+            of the Advanced Continuous Historical backups. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      <p> For specific details about the Advanced Continuous Historian archive
+        sizing and storage space utilization, refer to the 
+        <cite>Hardware System Sizing Recommendations</cite> spreadsheet
+        accompanying the Advanced Continuous Historian documentation. 
+        
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_the_continuous_historian_unique_4__section_C8DE4B00A20E4292ABC877F63BE46233"><a name="c_the_continuous_historian_unique_4__section_C8DE4B00A20E4292ABC877F63BE46233"></a><h2 class="sectiontitle">Additional resources</h2> 
+       
+      <a name="c_the_continuous_historian_unique_4__ul_E5D1BA0CC4044680813347D55B7A848B"></a><ul id="c_the_continuous_historian_unique_4__ul_E5D1BA0CC4044680813347D55B7A848B"> 
+        <li id="c_the_continuous_historian_unique_4__li_E6BAD93EF1C44A7D9E65B270CDFF96B9"><div class="li_content"> 
+          <cite>How to calculate archive and disk space consumption for a PI 3
+            Server</cite> (OSIsoft KB 2362OSI8 ) 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_96D696B9330B44548376F60BA0D575FB"><div class="li_content"><cite>Advantages of using
+            Fixed archives vs. Dynamic archives</cite> (OSIsoft KB 2998OSI8 ) 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_1393D6642AEA40198285B3B96E26ECA0"><div class="li_content"> 
+          <cite>How PI 3.4 Automatic Archive Creation Feature Works</cite>
+          (OSIsoft KB 3122OSI8) 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_EB1B747A6F804C4BB15B2851ED7C9023"><div class="li_content"><cite>PI Server Reference
+            Guide</cite> 
+          <a name="c_the_continuous_historian_unique_4__ul_CF40B647CDB649F695D6097D2087F4DE"></a><ul id="c_the_continuous_historian_unique_4__ul_CF40B647CDB649F695D6097D2087F4DE"> 
+            <li id="c_the_continuous_historian_unique_4__li_24A2DC1D616848D89D03BE108DC4F036"><div class="li_content"><em>Creating
+                Archives</em> 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_C773CDB4BDDC45A19A907EBDFF6B65EF"><div class="li_content"><em>Editing and
+                Creating an Archive</em> 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_53F49D88A8F5440EB6E72C35CA8EE580"><div class="li_content"><em>Combine and Divide
+                Archives</em> 
+            </div></li>
+ 
+            <li id="c_the_continuous_historian_unique_4__li_23DC1F2F38004219994FB813BE3BFE2A"><div class="li_content"><em>Manage Archives of
+                an Offline PI Server (piarchss) with piartool 
+              </em> 
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+        <li id="c_the_continuous_historian_unique_4__li_F32FC9A168EB42FCA21F92B74E83F5D2"><div class="li_content">Online help for the PI SMT
+          Archives plugin 
+        </div></li>
+ 
+      </ul>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

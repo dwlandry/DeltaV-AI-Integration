@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Designing schedules" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adv_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="adv_designing_schedules" name="DC.Identifier" /><title>Designing schedules</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="adv_foreground_and_background_schedules.html" /><link rel="next" href="adv_writing_custom_scripts_for_the_scheduler.html" /></head><body class="fixed" id="adv_designing_schedules" data-relpath="adv_designing_schedules.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="adv_designing_schedules"></a>
+
+<h1 class="topictitle1">Designing schedules</h1>
+<div><div></div>
+
+    <p id="adv_designing_schedules__Designing_Schedules"><a name="adv_designing_schedules__Designing_Schedules"></a>This topic explains the issues you need to consider while you are designing schedules. When creating schedules, there are two types of entries that you can select: event-based entries and time-based entries. This section describes both types of entries and the triggers that can be used by each.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> You must copy the schedule file (*.EVS) from the ProfessionalPLUS workstation to those Operator Stations that require that schedule.</p>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__Event-BasedEntries"><a name="adv_designing_schedules__Event-BasedEntries"></a><h2 class="sectiontitle">Event-Based Entries</h2>
+      
+      <p>Event-based entries are created using the Add Event Entry dialog box. Event-based entries can use any data source available to the system to trigger an action. To select a data source, you can either enter the data source in the Data Source field or click the Browse button to access the Expression Builder.</p>
+
+      <p>Five event types are available to trigger an action based on the value of a data source. For example, you may want to have a certain action occur when an alarm equals HIHI. By tying the value of the alarm field to the OnTrue event type, you can trigger an action when the value of this field becomes equal to HIHI.</p>
+
+      <p>The following table lists the event types that are available and when they trigger:
+</p>
+
+      
+<div class="tablenoborder"><a name="adv_designing_schedules__table_93AB12F3EE4147079DF53346107B5F6A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="adv_designing_schedules__table_93AB12F3EE4147079DF53346107B5F6A" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d688002e58" valign="top">
+                <p>The event type...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d688002e64" valign="top">
+                <p>Triggers...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d688002e58 " valign="top">
+                <p>
+OnDataChange
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e64 " valign="top">
+                <p>
+When the expression changes.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e58 " valign="top">
+                <p>
+OnTrue
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e64 " valign="top">
+                <p>
+When the expression resolves to a non-zero value.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e58 " valign="top">
+                <p>
+OnFalse
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e64 " valign="top">
+                <p>
+When the expression resolves to zero.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e58 " valign="top">
+                <p>
+WhileTrue
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e64 " valign="top">
+                <p>
+At the specified interval as long as the expression evaluates to a non-zero value.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e58 " valign="top">
+                <p>
+WhileFalse
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e64 " valign="top">
+                <p>
+At the specified interval as long as the expression evaluates to zero.
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__Time-Based_Entries"><a name="adv_designing_schedules__Time-Based_Entries"></a><h2 class="sectiontitle">Time-Based Entries</h2>
+      
+      <p>Time-based entries are created using the Add Timer Entry dialog box. Time-based entries trigger at a scheduled time and are not tied to a data source. The following table lists the time triggers that are available and when they trigger:
+</p>
+
+      
+<div class="tablenoborder"><a name="adv_designing_schedules__table_61A8D74FCE04480FA18A98A701E99117"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="adv_designing_schedules__table_61A8D74FCE04480FA18A98A701E99117" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d688002e173" valign="top">
+                <p>The time type...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d688002e179" valign="top">
+                <p>Triggers...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d688002e173 " valign="top">
+                <p>
+One Shot
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e179 " valign="top">
+                <p>
+Once at the specified date and time. For example, you can schedule an entry to trigger at 5:00 p.m. on 7/4/98.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e173 " valign="top">
+                <p>
+Continuous
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e179 " valign="top">
+                <p>
+Continuously at the specified interval, starting at the specified time. For example, you can schedule an entry to trigger every eight hours.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e173 " valign="top">
+                <p>
+Daily
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e179 " valign="top">
+                <p>
+On the scheduled days of the week at a particular time. Optionally, you can specify an end time and interval. For example, you can schedule an entry to trigger Monday through Friday, at noon, or every hour from noon until 6:00 p.m.
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e173 " valign="top">
+                <p>
+Monthly
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e179 " valign="top">
+                <p>
+On the scheduled days of the month at a particular time. Optionally, you can specify an end time and interval. For example, you can schedule an event for the 15th of the month, at 9:00 a.m., or every hour from 9:00 a.m. until 5:00 p.m. You can also schedule an event for the end of the month at a particular time. This setting determines the last day of the month for you.
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>All time-based entries run the script tied to the OnTimeOut event procedure.</p>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__ScriptAuthoringExperts"><a name="adv_designing_schedules__ScriptAuthoringExperts"></a><h2 class="sectiontitle">Script Authoring Experts</h2>
+      
+      <p>When you select an action in the Operation field of either the Add Timer Entry or Add Event Entry dialog box, DeltaV Operate asks you whether or not you want to run the Script Authoring Expert now. If you select Yes, it automatically runs the Script Authoring Expert associated with that action. If you want to run the Script Authoring Expert at a later time, you can modify the entry and click the Run Expert button. After you have provided the Expert with the required information, the Expert generates a VBA script tied to the appropriate event.</p>
+
+      <p>For example, the Replace Picture Script Authoring Expert asks which picture you want to display and, once you have provided it with a picture name, generates a script to replace the picture. Once the script is generated, you can edit it by re-entering the Expert or by accessing it directly using the VBE.</p>
+
+      <p>In addition to the Script Authoring Experts provided in DeltaV Operate, you can write your own custom scripts for frequently-performed tasks. Refer to <a href="adv_writing_custom_scripts_for_the_scheduler.html">Writing Custom Scripts for the Scheduler</a> for information on how to create your own custom scripts for the Scheduler.</p>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__CreatingandEditingSchedulesandEntries"><a name="adv_designing_schedules__CreatingandEditingSchedulesandEntries"></a><h2 class="sectiontitle">Creating and Editing Schedules and Entries</h2>
+      
+      <p>The Scheduler allows you to create multiple schedules which help you to easily organize and maintain events. When you create a new schedule, you can control it&#39;s properties from the Scheduler Properties dialog box.</p>
+
+      <p>The following table lists the tabs on the Scheduler Properties dialog box and the properties that can be controlled from each:
+</p>
+
+      
+<div class="tablenoborder"><a name="adv_designing_schedules__table_6E2027CD0834491CA4749754B6F584BD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="adv_designing_schedules__table_6E2027CD0834491CA4749754B6F584BD" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d688002e298" valign="top">
+                <p>Tabs</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d688002e304" valign="top">
+                <p>Properties</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d688002e298 " valign="top">
+                <p>
+Run Time State
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e304 " valign="top">
+                <p>Run in Foreground</p>
+
+                <p>Run in Background</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e298 " valign="top">
+                <p>
+Window Properties
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e304 " valign="top">
+                <p>Window Height</p>
+
+                <p>Window Width</p>
+
+                <p>Window Styles</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e298 " valign="top">
+                <p>
+Stats Refresh
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e304 " valign="top">
+                <p>Timer Statistics Refresh Rate (in seconds)</p>
+
+                <p>Event Statistics Refresh Rate (in seconds)</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d688002e298 " valign="top">
+                <p>
+Background Files
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d688002e304 " valign="top">
+                <p>
+Lists all schedules running in the background. No changes can be made from this tab.
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>You can create new schedules when DeltaV Operate is in the configuration environment.</p>
+
+      <p>Once you have created a schedule, the schedule and all its entries appear in the Schedules folder of the system tree. You can open a schedule and view or edit it&#39;s properties at any time by double-clicking the schedule name in the system tree.</p>
+
+      <p>Once you have created a schedule, you can add new entries to it using the Script Authoring Experts in the Scheduler category or by writing your own custom scripts. You can edit an existing entry by selecting the entire entry or a particular cell within the entry. Once created, entries can be easily copied or moved from one schedule to another.</p>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__ViewingandControllingEntryDiagnostics"><a name="adv_designing_schedules__ViewingandControllingEntryDiagnostics"></a><h2 class="sectiontitle">Sorting the Spreadsheet</h2>
+      
+      <p>You can sort Scheduler entries in ascending or descending order by clicking the heading of the column you want to sort. For example, if you want to sort entries alphabetically by name, click the Name column&#39;s heading. The entries will appear in ascending order. To sort them in descending order, click the Name column&#39;s heading again.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Sorting is only available in the configuration environment. In the run-time environment, entries appear in the order they were added to the schedule.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="adv_designing_schedules__section_41DF4A423E594E9C9F4D8235FD1D42A6"><a name="adv_designing_schedules__section_41DF4A423E594E9C9F4D8235FD1D42A6"></a><h2 class="sectiontitle">Viewing and Controlling Entry Diagnostics</h2>
+      
+      <p>The Scheduler allows you to view and control entry diagnostics in the run-time environment. If you open a schedule in the run-time environment, you can view the status of entries, the number of times they have been fired, and the time when they were last fired. You can also:</p>
+
+      <a name="adv_designing_schedules__ul_439E616DFC2244559D3304F3AE94145F"></a><ul id="adv_designing_schedules__ul_439E616DFC2244559D3304F3AE94145F">
+        <li id="adv_designing_schedules__li_EAA48DA82F754B0281595BE0C88D975C"><div class="li_content">
+          <p>Start or stop an entry from executing.</p>
+
+        </div></li>
+
+        <li id="adv_designing_schedules__li_ADC5524F908E42DEBA2B9289142C31E6"><div class="li_content">
+          <p>Reset the statistics (number of times it has been fired and time when it was last fired) of the entry.</p>
+
+        </div></li>
+
+        <li id="adv_designing_schedules__li_F0A59547F7EE4901AAF761F77319EC48"><div class="li_content">
+          <p>Trigger an entry to fire on demand.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>If you have loaded a schedule, but the scripts are not firing, you need to determine whether the problem is caused by the firing mechanism or by the script itself.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

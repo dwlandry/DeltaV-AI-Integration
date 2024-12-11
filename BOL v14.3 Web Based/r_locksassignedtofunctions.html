@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Locks assigned to functions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_batchoperationssecurity.html" name="DC.Relation" scheme="URI" /><meta content="r_campaignmanagersecurity.html" name="DC.Relation" scheme="URI" /><meta content="c_historical_data_set_security.html" name="DC.Relation" scheme="URI" /><meta content="r_eventchroniclesecurityfunctions.html" name="DC.Relation" scheme="URI" /><meta content="c_param_funct_security.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_locksassignedtofunctions" name="DC.Identifier" /><title>Locks assigned to functions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_locks_assigned_to_fb_params.html" /><link rel="next" href="r_lock_examples.html" /></head><body class="fixed" id="r_locksassignedtofunctions" data-relpath="r_locksassignedtofunctions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_locksassignedtofunctions"></a>
+
+<h1 class="topictitle1">Locks assigned to functions</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_locksassignedtofunctions__section_07B8B84DB79A425C9542EA42661957E0"><a name="r_locksassignedtofunctions__section_07B8B84DB79A425C9542EA42661957E0"></a> 
+		<p>Locks are assigned to various user functions, such as downloading,
+		  uploading, changing the configuration database, and so on. Functions are
+		  assigned to default locks initially. Use the DeltaV Explorer to change the lock
+		  associated with a function. Batch functions, Campaign Manager, Continuous
+		  Historian, and Event History have their own locks. 
+		</p>
+ 
+		<p> Refer to the following table for a list of the function locks, the
+		  default function to which each lock is assigned, and descriptions of the tasks
+		  that users with a key to the lock can perform: 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_locksassignedtofunctions__table_DCA39E2BC4B4424AA8C966A88739AB9A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_locksassignedtofunctions__table_DCA39E2BC4B4424AA8C966A88739AB9A" rules="all" summary="" width="100%"><caption><span class="tablecap">Locks and associated functions</span></caption><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d2847756e38" valign="top" width="27.173913043478258%">Function 
+				</th>
+ 
+				<th class="cellrowborder" id="d2847756e41" valign="top" width="18.478260869565215%">Default associated lock 
+				</th>
+ 
+				<th class="cellrowborder" id="d2847756e44" valign="top" width="32.608695652173914%">Operation function 
+				</th>
+ 
+				<th class="cellrowborder" id="d2847756e47" valign="top" width="21.73913043478261%">Can apply to specific area or node? 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ACTION_VERIFY 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Restricted Control 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Verify an action in Control Studio online and DeltaV Operate
+					 which requires a verifier&#39;s Electronic Signature. (Usually supervisors are
+					 granted the key to the lock associated with this operation.) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ADMIN_CONFIG_DB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Use the database administrator tools to create, copy, and
+					 rename databases. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_DOWNLOAD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Download 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Download non-SIS alarm help to the DeltaV run-time system from
+					 the Alarm Help View and Edit application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_EDIT_COI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify the Consequence of Inaction field in the Alarm Help
+					 View and Edit application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_EDIT_TEXT1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify the upper text box in the Alarm Help View and Edit
+					 application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_EDIT_TEXT2 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify the middle text box in the Alarm Help View and Edit
+					 application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_EDIT_TEXT3 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify the lower text box in the Alarm Help View and Edit
+					 application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>ALARM_HELP_EDIT_TTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify the Time to Respond field in the Alarm Help View and
+					 Edit application. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>CHANGE_CONFIG_DB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Make changes to the configuration database, access a module in
+					 debug mode. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>CHANGE_DEVICE_DB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Calibrate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Use AMS Device Manager device configuration and calibration
+					 features. An appropriate AMS Device Manager license is required to access
+					 calibration. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>CHART_SAVE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Save Process History View configuration. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>DIAGNOSTIC_DATA_CLEAR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Diagnostic 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Reset all communication, port, and device statistics; clear
+					 integrity history. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>DIAGNOSTIC_SWITCHOVER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Diagnostic 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Initiate a manual switchover of a redundant controller<span> or an Application Station running redundant subsystems (such as,
+						DeltaV OPC Data Access Server (with or without OPC Mirror), DeltaV Connect, or
+						Batch (including Campaign Manager)</span>. 
+				  </p>
+ 
+				  <p> 
+					 <strong>Note:</strong> Users must have the key to the Control lock to
+					 perform a manual switchover. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>DOWNLOAD_CONFIG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Download 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Download configuration and setup data to system nodes. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>EDIT_DOWNLOAD_MODULES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Edit 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <div class="p"> Permits the following actions for modules assigned to the
+					 nodes that have the Can Edit lock: 
+				  <ul> 
+					 <li><div class="li_content"> Edit modules 
+					 </div></li>
+ 
+					 <li><div class="li_content">Download the modules 
+					 </div></li>
+ 
+					 <li><div class="li_content">Upload changes to the modules 
+					 </div></li>
+ 
+					 <li><div class="li_content">VCAT for module checkout/checkin 
+					 </div></li>
+ 
+					 <li><div class="li_content"> VCAT for download of checked out module 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  </div>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>NODE 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> EDIT_IO_AND_SETUP_DEVICES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> Can Setup Devices 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <div class="p"> Permits the following actions for modules assigned to the
+					 nodes that have the Can Setup Devices lock: 
+				  <ul> 
+					 <li><div class="li_content"> Edit IO properties, channel and CHARM 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Autosense CHARMs if the node is CIOC 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Assign CHARM to controller (if there is currently no
+						assignment) 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Autosense devices 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Reconcile device 
+					 </div></li>
+ 
+					 <li><div class="li_content">AMS Device Manager 
+						<ul> 
+						  <li><div class="li_content"> Change the AMS Device Manager database 
+						  </div></li>
+ 
+						  <li><div class="li_content"> Send reconciled data to the device 
+						  </div></li>
+ 
+						  <li><div class="li_content"> Send the command to start bulk transfer 
+						  </div></li>
+ 
+						  <li><div class="li_content"> Open the device in AMS Device Manager and editing
+							 device information 
+						  </div></li>
+ 
+						</ul>
+ 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Lock/unlock Hart 7 devices using Hart Command 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Replace fieldbus devices 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Decommission/Commission fieldbus devices 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Download fieldbus device and port 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Modify fieldbus resource and transducer blocks 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Modify fieldbus device properties 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Change device database for fieldbus 
+					 </div></li>
+ 
+					 <li><div class="li_content"> List/sense wireless devices 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Commission wireless devices 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Edit device placeholder properties on CIOC, CSLS, and WIOC
+						
+					 </div></li>
+ 
+					 <li><div class="li_content"> Download card 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Download CHARM 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Lock or unlock a node 
+					 </div></li>
+ 
+					 <li><div class="li_content"> Download the CIOC 
+					 </div></li>
+ 
+					 <li><div class="li_content"> VCAT for checkout/checkin device 
+					 </div></li>
+ 
+					 <li><div class="li_content"> 
+						<p> VCAT for download if device is checked out 
+						</p>
+ 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  </div>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>NODE 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_CONFIG_GRAPHICS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Modify objects in the Graphics Studio Graphics Explorer
+					 (Layouts, Displays, Contextual Displays, Display Sets). 
+				  </p>
+ 
+				  <p> Import objects in the Graphic Studio Graphics Explorer. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_CONFIG_LIBRARIES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Create, modify, or delete configuration libraries or their
+					 contents, languages or themes. 
+				  </p>
+ 
+				  <p> Import configuration libraries (or objects contained in the
+					 libraries), languages or themes. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_CONFIG_PUBLISH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Publish, re-republish or remove publishable objects from
+					 online. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_CONFIG_WORKSTATION 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Modify the DeltaV Live&#39;s workstation configuration. Import a
+					 DeltaV Live workstation configuration. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_DATABASE_ADMIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p> SystemAdmin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <div class="p"> Permits the following functions: 
+				  <ul> 
+					 <li><div class="li_content">Copy Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Create Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Delete Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Export Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Import Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Rename Database 
+					 </div></li>
+ 
+					 <li><div class="li_content">Switch Database 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  </div>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_OP_SWITCH_DISPLAYSET 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Restricted Control 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Switch the current Display Set in use 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_OP_SWITCH_LANGUAGE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Restricted Control 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Switch the current application&#39;s and/or database&#39;s (content)
+					 language. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_OP_SWITCH_THEME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Restricted Control 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Switch the current theme. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p> HMI_OP_WINDOW_MODE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Restricted Control 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p> Permits the user to leave the full desktop display mode 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>INSPECT_TUNE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Tuning 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Within Inspect: change the Enabled/Disable flag for a areas,
+					 modules and blocks. Change the alarming flag for a block. To set items, click 
+					 <span class="menucascade"><span class="uicontrol">View</span> &gt; <span class="uicontrol">Options</span></span>.
+					 Set the limits. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>AREA 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>LOCK_UNLOCK_DEVICE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Calibrate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Lock and unlock HART devices from Diagnostics. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>REPLACE_DEVICE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Calibrate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <div class="p">Make changes to the fieldbus device in the configuration
+					 database. This key allows the user to: 
+				  <a name="r_locksassignedtofunctions__ul_AF12D7D6A301431AA739139C5E8D97BB"></a><ul id="r_locksassignedtofunctions__ul_AF12D7D6A301431AA739139C5E8D97BB"> 
+					 <li id="r_locksassignedtofunctions__li_95009918E4254F5C88D004135EF120FB"><div class="li_content">Replace FF device 
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_E93D56086C45470EA59C2C141EC6C4A0"><div class="li_content">Decommission FF
+						device 
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_C56692FE2D444802AF9FAC1960F0CDC1"><div class="li_content">Commission FF
+						device 
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_D895EFC848FD4B1C9B052BC066A005E0"><div class="li_content">Download FF device
+						
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_2B8492CEB346473A9252FD10A9BD5435"><div class="li_content">Download FF port 
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_73FE1573B1F4452DAEB2025AB040ADDE"><div class="li_content">Modify resource
+						and transducer blocks 
+					 </div></li>
+ 
+					 <li id="r_locksassignedtofunctions__li_C7C4A8B82F6B453D9284D1193F7EF4DE"><div class="li_content">Modify device
+						properties 
+					 </div></li>
+ 
+				  </ul>
+ 
+				  </div>
+ 
+				  <p>This key is not needed if the user already can
+					 CHANGE_CONFIG_DB. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>UPDATE_FIRMWARE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Use the DeltaV Controller and I/O Upgrade Utility to upgrade
+					 firmware for controllers, I/O cards, and other devices. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>UPLOAD_CONFIG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Upload configuration, setup data to system nodes. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>USER_SECURITY_ATTACH_LOCKS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Attach functions to locks in DeltaV Explorer. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>USER_SECURITY_USERMANAGER 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Make changes in the User Manager. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_ADMINISTRATOR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Undo the check out of items checked out by other users. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_CHECKOUT_CHECKIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Check items in and out of a version control database. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_DEVICE_CHECKOUT_CHECKIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Calibrate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Check fieldbus device in and out of a version control
+					 database. Not needed if the user already has VC_CHECKOUT_CHECKIN. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_DOWNLOAD_CHECKEDOUT 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Download items that have been checked out of the version
+					 control database. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_DOWNLOAD_UNAUTHORIZED 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Download recipes that are not authorized. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_PURGE_RECOVER_ITEMS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Use the DeltaV Explorer to purge and recover items from the
+					 version control database. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_ROLLBACK_ITEMS 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>System Admin 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Use the DeltaV Explorer to rollback to a previous version. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>VC_SET_LABEL 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Can Configure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Label items in the version control database. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No  
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d2847756e38 " valign="top" width="27.173913043478258%"> 
+				  <p>WIRELESS_PROVISIONING 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e41 " valign="top" width="18.478260869565215%"> 
+				  <p>Wireless Provisioning 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e44 " valign="top" width="32.608695652173914%"> 
+				  <p>Make changes to a Wireless HART I/O card (WIOC) in the
+					 configuration database. This key allows the user to: 
+				  </p>
+ 
+				  <ul> 
+					 <li><div class="li_content">Enable Active Advertising 
+					 </div></li>
+ 
+					 <li><div class="li_content">Rotate the Network Key Now 
+					 </div></li>
+ 
+					 <li><div class="li_content">Create or import a new WIOC into DeltaV Explorer 
+					 </div></li>
+ 
+					 <li><div class="li_content">View or modify the WIOC&#39;s Join Key 
+					 </div></li>
+ 
+					 <li><div class="li_content">Modify the WIOC&#39;s network ID 
+					 </div></li>
+ 
+				  </ul>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d2847756e47 " valign="top" width="21.73913043478261%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_batchoperationssecurity.html">Batch functions security</a></div>
+<div><a href="r_campaignmanagersecurity.html">Campaign Manager security</a></div>
+<div><a href="c_historical_data_set_security.html">Historical data set security</a></div>
+<div><a href="r_eventchroniclesecurityfunctions.html">Event Chronicle security functions</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

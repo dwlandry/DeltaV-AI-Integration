@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Simulating CHARM I/O by setting the CIOC in simulate mode" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_simulating_charm_io.html" name="DC.Relation" scheme="URI" /><meta content="c_what_happens_in_cioc_simulate_mode.html" name="DC.Relation" scheme="URI" /><meta content="t_put_cioc_in_simulate_mode.html" name="DC.Relation" scheme="URI" /><meta content="t_use_charms_simulate_application.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_simulate_charm_io_by_cioc_mode" name="DC.Identifier" /><title>Simulating CHARM I/O by setting the CIOC in simulate mode</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_simulating_charm_io.html" /><link rel="next" href="c_what_happens_in_cioc_simulate_mode.html" /></head><body class="fixed" id="c_simulate_charm_io_by_cioc_mode" data-relpath="c_simulate_charm_io_by_cioc_mode.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_simulate_charm_io_by_cioc_mode"></a>
+
+<h1 class="topictitle1">Simulating CHARM I/O by setting the CIOC in simulate mode</h1>
+<div><div></div>
+ 
+	 <p>Before you can use the CHARMs Simulate application, you must put the
+		CIOCs that you want to simulate in simulate mode and then download the CIOC
+		setup data. The CIOC that you want to simulate should have one or more defined
+		CHARMs. In DeltaV Explorer and Diagnostics, it is easy to see that a CIOC is in
+		simulate mode because after the download, the CIOC&#39;s icon changes to 
+		<span><a name="c_simulate_charm_io_by_cioc_mode__image_D619CA73B50B4623B8BB70CADA92FA74"></a><img id="c_simulate_charm_io_by_cioc_mode__image_D619CA73B50B4623B8BB70CADA92FA74" src="CIOCOverlay.png" /></span>. When a CIOC is in simulate
+		mode, it simulates field values from its CHARMs, reports changes to the values,
+		and makes these values available for simulation using standard sawtooth or
+		square waveform patterns. The CIOC does not simulate HART values. The
+		advantages to simulating CHARM I/O by putting the CIOC in simulate mode are:
+	 </p>
+ 
+	 <a name="c_simulate_charm_io_by_cioc_mode__ul_1CA0B17ACE5F4452B31A5D565BD89795"></a><ul id="c_simulate_charm_io_by_cioc_mode__ul_1CA0B17ACE5F4452B31A5D565BD89795"> 
+		<li id="c_simulate_charm_io_by_cioc_mode__li_594C257BCCC54C12B85A9768F9104344"><div class="li_content"> 
+		  <p>Third party software is not required
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_simulate_charm_io_by_cioc_mode__li_526BE5E12EA14AAF803741CE3719614B"><div class="li_content"> 
+		  <p>Existing hardware is used
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_simulate_charm_io_by_cioc_mode__li_E6B85970AD014A5BB5F55E77952E50A1"><div class="li_content"> 
+		  <p>It is easy to visually identify a CIOC in simulate mode
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_simulate_charm_io_by_cioc_mode__li_5F13D912AB874C82BD4B4A7408068D89"><div class="li_content"> 
+		  <p>CIOC simulation requires no additional wiring or engineering of the
+			 system
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_simulate_charm_io_by_cioc_mode__li_37BB8CA26F844682A7C738A6C18E4511"><div class="li_content"> 
+		  <p>Once the simulated configuration has been checked out, the simulated
+			 CIOC can be easily changed to its normal operating mode.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_what_happens_in_cioc_simulate_mode.html">What happens in CIOC simulate mode?</a><br />
+</li>
+<li class="ulchildlink"><a href="t_put_cioc_in_simulate_mode.html">Put a CIOC in simulate mode</a><br />
+</li>
+<li class="ulchildlink"><a href="t_use_charms_simulate_application.html">Use the CHARMs Simulate application</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

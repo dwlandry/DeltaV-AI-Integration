@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="SIS function block parameter characteristics" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, parameters, SIS function blocks, characteristics, preserved on download, SIS function blocks, restored on restart, initializing output status, SIS function block parameters, status, output, SIS function blocks, data types" name="DC.subject" /><meta content="SIS function blocks, parameters, SIS function blocks, characteristics, preserved on download, SIS function blocks, restored on restart, initializing output status, SIS function block parameters, status, output, SIS function blocks, data types" name="keywords" /><meta content="c_ls_fblk_params.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_parameter_characteristics" name="DC.Identifier" /><title>SIS function block parameter characteristics</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_params.html" /><link rel="next" href="c_ls_parameter_data_types.html" /></head><body class="fixed" id="c_parameter_characteristics" data-relpath="c_parameter_characteristics.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_parameter_characteristics"></a>
+
+<h1 class="topictitle1">SIS function block parameter characteristics</h1>
+<div><div></div>
+ 
+	 <div class="section"> 
+		<p>SIS function block parameters have characteristics that determine
+		  access and Non-Volatile Memory (NVM) behavior. Characteristics depend on the
+		  CSLS revision. Access characteristics determine how and when the parameter
+		  values can be written. NVM characteristics determine how the values are
+		  restored after a download or power failure. The characteristics of a block are
+		  not configurable. The parameter table for each function block lists the
+		  characteristics of each parameter. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Access characteristics</h2> 
+		 
+		<div class="p"> 
+		  <div class="note"><span class="notetitle">Note:</span> For CSLS major revision 2, you must select the 
+			 <span class="uicontrol">Enhanced access control for function block
+				parameters</span> check box on the 
+			 <span class="uicontrol">CSLS Properties (Security tab)</span> dialog to
+			 obtain certain characteristics. If you clear the check box, the CSLS only
+			 supports characteristics listed for CSLS major revision 1. 
+		  </div>
+ 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>Configurable — These parameters can be given values during
+				configuration. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Tuning — These parameters can be changed by an operator online. If
+				enhanced access control functionality is enabled, these parameters can only be
+				changed online when the logic solver is Unlocked. These parameters are not
+				writeable from an LSCALC regardless of the state of the logic solver. Only CSLS
+				major revision 2 supports enhanced access control functionality.
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Operating — These parameters are writeable at all times,
+				regardless of the state of the logic solver.
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_parameter_characteristics__section_D0821DBECEC44B50B5C0E6746E672E93"><a name="c_parameter_characteristics__section_D0821DBECEC44B50B5C0E6746E672E93"></a><h2 class="sectiontitle">NVM characteristics</h2> 
+		 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>Preserved on Download — The Logic Solver supports total downloads
+				only. When a Logic Solver is downloaded these parameters are copied from the
+				existing block into the newly downloaded block to provide matching, rather than
+				initializing, behavior following a download. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Restored on Restart — The current parameter value is stored in
+				non-volatile memory (NVM). After a restart, the values for these parameters are
+				restored from non-volatile memory. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <div class="p"><strong>Restart</strong> in this context is the resumption of processing after
+			 power is restored to a Logic Solver (CSLS or SLS 1508) following a power loss
+			 or after the Logic Solver is reset. The table describes logic solver behavior
+			 under various scenarios: 
+		  
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+				  <tr> 
+					 <th class="cellrowborder" id="d1232896e149" valign="top" width="NaN%"> 
+						<p>Logic Solver Type 
+						</p>
+ 
+					 </th>
+ 
+					 <th class="cellrowborder" id="d1232896e155" valign="top" width="NaN%"> 
+						<p>Scenario 
+						</p>
+ 
+					 </th>
+ 
+					 <th class="cellrowborder" id="d1232896e161" valign="top" width="NaN%"> 
+						<p>Behavior 
+						</p>
+ 
+					 </th>
+ 
+				  </tr>
+</thead>
+ 
+				<tbody> 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>CSLS 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is removed and installed in a different
+						  carrier. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>Restored on Restart behavior does not occur. The
+						  configuration must be downloaded to the logic solver to continue processing. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>CSLS 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is removed and installed in the same
+						  carrier. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>The Restored on Restart behavior does occur. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>CSLS 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is powered off. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>The logic solver resumes processing after power is
+						  restored whether or not the associated SZ controller has been downloaded.
+						  However, to establish communication with the CSLS, the SIS controller must be
+						  downloaded either manually or through the cold restart function. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>SLS 1508 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is removed and then installed in a
+						  different slot. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>Restored on Restart behavior does not occur. The
+						  configuration must be downloaded to the logic solver to continue processing. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>SLS 1508 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is powered off and is removed and then
+						  installed in the same slot. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>The logic solver resumes processing after power is
+						  restored provided that the associated DeltaV controller remains configured and
+						  powered up. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>SLS 1508 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver remains powered on and is removed and
+						  then installed in the same slot. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>The Restored on Restart behavior does not occur. The
+						  configuration must be downloaded to the logic solver to continue processing. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				  <tr> 
+					 <td class="cellrowborder" headers="d1232896e149 " valign="top" width="NaN%"> 
+						<p>SLS 1508 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e155 " valign="top" width="NaN%"> 
+						<p>The logic solver is powered off. 
+						</p>
+ 
+					 </td>
+ 
+					 <td class="cellrowborder" headers="d1232896e161 " valign="top" width="NaN%"> 
+						<p>The logic solver resumes processing after power is
+						  restored provided that the associated DeltaV controller is downloaded either
+						  manually or through the cold restart function. 
+						</p>
+ 
+					 </td>
+ 
+				  </tr>
+ 
+				</tbody>
+ 
+			 </table>
+</div>
+ 
+		  </div>
+ 
+		</div>
+ 
+		<p>Restored on Restart parameters are 
+		  <strong><em>not</em></strong> restored if they are wired to (written to). 
+		</p>
+ 
+		<p>SIS function block parameters are similar to DeltaV function block
+		  parameters in several ways. Refer to the DeltaV function block parameter
+		  documentation for information on the following topics: 
+		</p>
+ 
+		<a name="c_parameter_characteristics__ul_F2A36B94BDC148088299922E897976F0"></a><ul id="c_parameter_characteristics__ul_F2A36B94BDC148088299922E897976F0"> 
+		  <li id="c_parameter_characteristics__li_6380A89F059F4965962132DC26130E76"><div class="li_content"> 
+			 <p>Creating Custom Engineering Unit Descriptions 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_parameter_characteristics__li_282CD7442BC64AF5B54C50AFA7191511"><div class="li_content"> 
+			 <p>Parameter Filtering 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

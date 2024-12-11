@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="CASCADE_MASTER module template" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="CASCADE_MASTER module template, module template, CASCADE_MASTER" name="DC.subject" /><meta content="CASCADE_MASTER module template, module template, CASCADE_MASTER" name="keywords" /><meta content="c_analog_control_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_cascade_master_module_template_unique_1" name="DC.Identifier" /><title>CASCADE_MASTER module template</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_analog_control_module_templates.html" /><link rel="next" href="c_cascade_slave_module_template.html" /></head><body class="fixed" id="c_cascade_master_module_template_unique_1" data-relpath="c_cascade_master_module_template.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_cascade_master_module_template_unique_1"></a>
+
+<h1 class="topictitle1">CASCADE_MASTER module template</h1>
+<div><div></div>
+
+	 <p>The CASCADE_MASTER template has a PID function block and seven alarm
+		parameters (only PV Bad is enabled by default). It also includes a module block
+		representing the module created from the CASCADE_SLAVE module template.
+	 </p>
+
+	 <p>The CASCADE_SLAVE module template is part of the CASCADE_MASTER
+		template. To configure the slave loop from the CASCADE_SLAVE template, expand
+		the CASCADE_MASTER template and drag and drop the CASCADE_SLAVE template to the
+		target area.
+	 </p>
+
+	 <p>After the slave loop module has been edited, create the master loop
+		module from CASCADE_MASTER. The procedure for customizing the master loop
+		module is similar to that of the slave loop with one added step: the module
+		block on the master loop&#39;s function block diagram must be converted to point to
+		the actual slave loop module rather than to the CASCADE_SLAVE library template.
+		To convert the module, follow these steps:
+	 </p>
+
+	 <ol> 
+		<li><div class="li_content">
+		  <p>Select and right-click the module block.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>Click 
+			 <span class="uicontrol">Convert to Existing Object</span> from the context
+			 menu.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>Browse for the slave loop module you created from CASCADE_SLAVE. You
+			 might want to rename the module block to match the tag of the slave loop
+			 module, but this is optional.
+		  </p>
+
+		</div></li>
+ 
+	 </ol>
+
+	 <p>The execution rate for the module created from CASCADE_MASTER is 2
+		seconds by default, and the slave module created from CASCADE_SLAVE defaults to
+		0.5 seconds.
+	 </p>
+
+	 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Quick Config parameters for the CASCADE_MASTER module
+		template</span></caption><thead align="left">
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d842902e71" valign="top" width="NaN%">
+				<p>Parameter
+				</p>
+
+			 </th>
+ 
+			 <th class="cellrowborder" id="d842902e77" valign="top" width="NaN%">
+				<p>Description
+				</p>
+
+			 </th>
+ 
+		  </tr>
+</thead>
+
+		<tbody>
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>CONTROL_OPTS
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The only control option enabled as a default is SP-PV Track in
+				  Man. Use this parameter to set the control action to Direct, when necessary.
+				  You might want to enable the option SP-PV Track in LO or IMan.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>GAIN
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>Proportional gain tuning parameter. The default is 0.5. You
+				  might want to set a better default based on the actual loop type prior to
+				  tuning.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>HI_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The high alarm limit value in engineering units. This is a Quick
+				  Config parameter because the HI_ALM alarm parameter is initially disabled.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>IO_IN
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>An I/O Reference parameter for configuring the DST for the
+				  process variable input.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>LO_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The low alarm limit value in engineering units. This is a Quick
+				  Config parameter because the LO_ALM alarm parameter is initially disabled.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>PV_SCALE
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>This parameter is used to set the engineering unit value at 0
+				  percent and 100 percent of scale for the process variable. The engineering unit
+				  descriptor can be selected from a list and the number of decimal places to be
+				  displayed can be set. Note that the number of decimal places to be displayed is
+				  applicable only for the faceplate and detail displays. The valid values for
+				  these displays are 0 to 3 decimal places.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>OUT_SCALE
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>This parameter is used to set the engineering unit value at 0
+				  percent and 100 percent of scale for the control output. Make sure that
+				  OUT_SCALE in the cascade master loop matches PV_SCALE in the cascade slave
+				  loop.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>OUT_HI_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The high limit for the control output. Typically, this value
+				  should be changed when the EU 100 percent value is changed from the default in
+				  OUT_SCALE.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>OUT_LO_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The low limit for the control output. Typically, this value
+				  should be changed when the EU 0 percent value is changed from the default in
+				  OUT_SCALE.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>RESET
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The integral time constant tuning parameter in seconds (seconds
+				  per repeat). The default is 10 seconds. You might want to set a better default
+				  based on the actual loop type prior to tuning.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>SP_HI_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The high limit for the setpoint. Typically, this value should be
+				  changed when the EU 100 percent value is changed from the default in PV_SCALE.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d842902e71 " valign="top" width="NaN%">
+				<p>SP_LO_LIM
+				</p>
+
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d842902e77 " valign="top" width="NaN%">
+				<p>The low limit for the setpoint. Typically, this value should be
+				  changed when the EU 0 percent value is changed from the default in PV_SCALE.
+				</p>
+
+			 </td>
+ 
+		  </tr>
+
+		</tbody>
+
+	 </table>
+</div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

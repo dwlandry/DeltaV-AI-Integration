@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="GetItemHandles method (C++)" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC write interface, GetItemHandles method, GetItemHandles method, OPC write interface" name="DC.subject" /><meta content="OPC write interface, GetItemHandles method, GetItemHandles method, OPC write interface" name="keywords" /><meta content="r_createTags_method.html" name="DC.Relation" scheme="URI" /><meta content="r_insert_method.html" name="DC.Relation" scheme="URI" /><meta content="r_error_codes_c_plus.html" name="DC.Relation" scheme="URI" /><meta content="c_sample_client_opc_write_interface.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_getItemHandles_method" name="DC.Identifier" /><title>GetItemHandles method (C++)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_deleteAtTime_method.html" /><link rel="next" href="r_insert_method.html" /></head><body class="fixed" id="r_getItemHandles_method" data-relpath="r_getItemHandles_method.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_getItemHandles_method"></a>
+
+<h1 class="topictitle1">GetItemHandles method (C++)</h1>
+<div> 
+    <div class="section" id="r_getItemHandles_method__section_714FA2CACC3B446F9D7877CA3FAF7A3C_unique_2"><a name="r_getItemHandles_method__section_714FA2CACC3B446F9D7877CA3FAF7A3C_unique_2"></a> 
+      <p> To retrieve server item handles for history tags created with the
+        CreateTags method, use the standard GetItemHandles method for the
+        IOPCHDA_Server interface. The server item handles can then be passed to the
+        Insert method along with a time stamp, data value, and OPC quality value to
+        write a history sample into the specified history tag. For additional
+        information about the following syntax, refer to section 4.4.1.4 in 
+        <cite>OPC Historical Data Access Specification Version 1.20</cite>: 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_getItemHandles_method__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_4"><a name="r_getItemHandles_method__refsyn_A5CC737EB6D14B9DAC42384E6CB71B15_unique_4"></a> 
+      <pre class="codeblock">HRESULT GetItemHandles(
+        [in] DWORD <var class="varname">dwCount</var>,
+        [in, size_is(<var class="varname">dwCount</var>)] LPWSTR *<var class="varname">pszItemID</var>,
+        [in, size_is(<var class="varname">dwCount</var>)] OPCHANDLE *<var class="varname">phClient</var>,
+        [out, size_is(, <var class="varname">dwCount</var>)] OPCHANDLE **<var class="varname">pphServer</var>,
+        [out, size_is(, <var class="varname">dwCount</var>)] HRESULT **<var class="varname">ppErrors</var>);</pre>
+ 
+      
+<div class="tablenoborder"><a name="r_getItemHandles_method__table_FAC497AFAF0E4720A0A991383E430ADE_unique_2"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_getItemHandles_method__table_FAC497AFAF0E4720A0A991383E430ADE_unique_2" rules="all" summary=""><thead align="left"> 
+            <tr valign="middle"> 
+              <th class="cellrowborder" id="d2634241e76" valign="middle" width="28.57142857142857%">Parameter 
+              </th>
+ 
+              <th class="cellrowborder" id="d2634241e79" valign="middle" width="71.42857142857143%">Description 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2634241e76 " valign="middle" width="28.57142857142857%"><var class="varname">dwCount</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2634241e79 " valign="middle" width="71.42857142857143%">The number of item handles
+                being requested. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2634241e76 " valign="middle" width="28.57142857142857%"><var class="varname">pszItemID</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2634241e79 " valign="middle" width="71.42857142857143%"> A pointer to an array of
+                history tag names. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2634241e76 " valign="middle" width="28.57142857142857%"><var class="varname">phClient</var>
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d2634241e79 " valign="middle" width="71.42857142857143%">The handle of the client to
+                be associated with the item. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2634241e76 " valign="middle" width="28.57142857142857%"><var class="varname">pphServer</var> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d2634241e79 " valign="middle" width="71.42857142857143%">The returned list of server
+                item handles for each item. 
+              </td>
+ 
+            </tr>
+ 
+            <tr valign="middle"> 
+              <td class="cellrowborder" headers="d2634241e76 " valign="middle" width="28.57142857142857%"><var class="varname">ppErrors</var>
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d2634241e79 " valign="middle" width="71.42857142857143%"> The status of association
+                of the client to the server. 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+    </div>
+ 
+    <div class="section" id="r_getItemHandles_method__section_E999EB00F7D84426871125CFC2255EBC_unique_1"><a name="r_getItemHandles_method__section_E999EB00F7D84426871125CFC2255EBC_unique_1"></a> 
+      <div class="p"> 
+        <div class="note"><span class="notetitle">Note:</span>  
+        </div>
+ The GetItemHandles method converts any history tag name to
+        uppercase before searching for its item handle in the OPC HDA server. 
+      </div>
+ 
+    </div>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_createTags_method.html">CreateTags method (C++)</a></div>
+<div><a href="r_insert_method.html">Insert method (C++)</a></div>
+<div><a href="r_error_codes_c_plus.html">Return codes for C++ methods</a></div>
+<div><a href="c_sample_client_opc_write_interface.html">Sample clients for the OPC write interface</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

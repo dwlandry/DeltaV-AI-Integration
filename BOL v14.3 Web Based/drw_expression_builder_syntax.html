@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Expression Builder syntax" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="drw_building_expressions.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="drw_expression_builder_syntax" name="DC.Identifier" /><title>Expression Builder syntax</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="drw_specifying_tolerance_deadband_and_refresh_rate.html" /><link rel="next" href="drw_modifying_expressions.html" /></head><body class="fixed" id="drw_expression_builder_syntax" data-relpath="drw_expression_builder_syntax.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="drw_expression_builder_syntax"></a>
+
+<h1 class="topictitle1">Expression Builder syntax</h1>
+<div><div></div>
+<div class="section" id="drw_expression_builder_syntax__section_18B4AF0EC2084C0995344A3CE3ED3690"><a name="drw_expression_builder_syntax__section_18B4AF0EC2084C0995344A3CE3ED3690"></a><p id="drw_expression_builder_syntax__ExpressionBuilderSyntax"><a name="drw_expression_builder_syntax__ExpressionBuilderSyntax"></a>Since the Expression Builder relies on specific data values input by users, the manner in which the data is presented is crucial. This is why it is important for you to know the proper syntax of your expressions. One of the most common errors in building expressions is that the expression has been entered incorrectly. Throughout this chapter, the correct syntax for specific entries is described with specific examples.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__SyntaxRequiredFormatforExpressions"><a name="drw_expression_builder_syntax__SyntaxRequiredFormatforExpressions"></a><h2 class="sectiontitle">Syntax: Required Format for Expressions</h2><p>Expressions require the following syntax:</p>
+
+<pre class="pre">
+<var class="varname">value</var> 
+<var class="varname">value operator value</var> 
+</pre>
+<p>where <strong>value</strong> is a constant or a data source and <strong>operator</strong> is a mathematical, relational, or Boolean symbol.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__OperatorsinExpressions"><a name="drw_expression_builder_syntax__OperatorsinExpressions"></a><h2 class="sectiontitle">Operators in Expressions</h2><p>The operators in expressions are symbols that not only let you connect data values together but also determine how the values work together to convert the data source. The following types of operators are permitted in your expressions:</p>
+<a name="drw_expression_builder_syntax__ul_AB1743BB29CE461EB345A58B981169BF"></a><ul id="drw_expression_builder_syntax__ul_AB1743BB29CE461EB345A58B981169BF">
+<li id="drw_expression_builder_syntax__li_6AD5B0C1E2094676BC23BE801F0E266F"><div class="li_content"><p>Mathematical operators</p>
+</div></li>
+
+<li id="drw_expression_builder_syntax__li_C93C6C221FF7406E8BCC8016224C1B7D"><div class="li_content"><p>Relational operators</p>
+</div></li>
+
+<li id="drw_expression_builder_syntax__li_DD2438B99518419A8C7D9CADEF909358"><div class="li_content"><p>Boolean operators</p>
+</div></li>
+
+</ul>
+<p>To access these operators, click the Mathematical Functions button on the Expression Builder dialog box and select them from the expanded operator keypad. You can also add numerals to your expressions by clicking the appropriate numeral in the Numeric area.</p>
+<p>In addition to these operators, the Expression Builder allows you to select a set of functions. These functions are not shown on the expanded operator keypad and must be entered manually. The following table summarizes the available functions and their syntax. All trigonometric functions require values entered in radians.</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_B9A052724A4C401E978D527705854561"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_B9A052724A4C401E978D527705854561" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e72" valign="top"><p id="drw_expression_builder_syntax__578002"><a name="drw_expression_builder_syntax__578002"></a>When you select the function...</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e76" valign="top"><p id="drw_expression_builder_syntax__578004"><a name="drw_expression_builder_syntax__578004"></a>The expression calculates the...</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e80" valign="top"><p id="drw_expression_builder_syntax__578006"><a name="drw_expression_builder_syntax__578006"></a>Syntax</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+ABS
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Absolute value of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+ABS (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+ACOS
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Arccosine of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+ACOS (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+ASIN
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Arcsine of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+ASIN (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+ATAN
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Arctangent of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+ATAN (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+COS
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Cosine of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+COS (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+EXP
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Anti-log of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+EXP (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+INT
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Integer value of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+INT (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+LOG
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Natural log of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+LOG (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+LOG10
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Base 10 log of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+LOG10 (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+SIN
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Sine of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+SIN (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+SQRT
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Square root of the <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+SQRT (<em>number</em>)
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e72 " valign="top"><p>
+TAN
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e76 " valign="top"><p>
+Tangent of <em>number</em>.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e80 " valign="top"><p>
+TAN (<em>number</em>)
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>The operators and their associated syntax are described in the following sections with examples of each.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__MathematicalOperators"><a name="drw_expression_builder_syntax__MathematicalOperators"></a><h2 class="sectiontitle">Mathematical Operators</h2><p>Mathematical operators let you add, subtract, multiply, and divide two or more values. Using these operators, you can create a mathematical expression. You can also change the operator&#39;s order of precedence in the mathematical expression by using parentheses.</p>
+<p>Mathematical expressions are evaluated by determining the data value on each side of the mathematical operator and then performing the mathematical operation. For example, consider the following expression:</p>
+
+<pre class="pre">
+5+DVSYS.AI1.F_CV
+</pre>
+<p>When this expression is evaluated, the current value of the tag AI1 is determined and then it is added to 5. If the value is 50, for example, the expression evaluates to 55.</p>
+<p>Because of the way the expressions are evaluated, the values on both sides of an operator must both be either a numeric value or a string, but not one of each. You <strong>cannot</strong>, for example, add the descriptive string &quot;Pump1 for Main Water Supply&quot; to the data source DVSYS.AI1.F_CV. However, you <strong>can</strong> add that same string to the data source DVSYS.AI1.A_DESC.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_C913A7C5B0BA4985B0DEB5D0CB77284D"><a name="drw_expression_builder_syntax__section_C913A7C5B0BA4985B0DEB5D0CB77284D"></a><h2 class="sectiontitle">Syntax: Mathematical Operators</h2><p>The syntax for each mathematical operator in provided in the following table:</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_DB31127D5B984B8E9CC9B5AD75599684"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_DB31127D5B984B8E9CC9B5AD75599684" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e360" valign="top"><p id="drw_expression_builder_syntax__578048"><a name="drw_expression_builder_syntax__578048"></a>Operator</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e364" valign="top"><p id="drw_expression_builder_syntax__578050"><a name="drw_expression_builder_syntax__578050"></a>Syntax</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
++ (addition)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+<em>value</em> + <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
+- (subtraction)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+<em>value</em> -<em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
+* (multiplication)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+<em>value</em> * <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
+/ (division)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+<em>value</em> / <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
+( (left parenthesis)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+(value + value) * value
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e360 " valign="top"><p>
+) (right parenthesis)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e364 " valign="top"><p>
+(value + value) * value
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="drw_expression_builder_syntax__RelationalOperators"><a name="drw_expression_builder_syntax__RelationalOperators"></a><h2 class="sectiontitle">Example: Mathematical Operators</h2><p>Consider the following expressions:</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_4360A22CAA2C44A29E948BD7E6775EF3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_4360A22CAA2C44A29E948BD7E6775EF3" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e465" valign="top"><p id="drw_expression_builder_syntax__578070"><a name="drw_expression_builder_syntax__578070"></a>Expression</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e469" valign="top"><p id="drw_expression_builder_syntax__578072"><a name="drw_expression_builder_syntax__578072"></a>Value</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+5+DVSYS.AI1.F_CV
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The current value of AI1 plus 5. If AI5 is 100, the expression evaluates to 105.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+&quot;5&quot;+DVSYS.AI1.A_CV
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The current value of AI1 and the string &quot;5&quot; concatenated together. If AI1 is 100, the expression evaluates to 1005.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+DVSYS.AI5.F_CV*OPC1.N35
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The product of the tag AI1 and the I/O address N35. If the tag&#39;s value is 100, and the I/O point&#39;s value is 50, the expression evaluates to 5000.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+Alarms.Rect1.Width/Alarms.Rect1.Height
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The quotient of Rect1&#39;s width divided by its height. If both properties are equal, the expression evaluates to 1.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+Alarms.Pump5.HorizontalFillPercentage + DVSYS.AI1.F_CV
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The value of Pump5&#39;s HorizontalFillPercentage property plus the current value of the tag AI1. If the HorizontalFillPercentage property&#39;s value is 50 and AI1&#39;s value is 100, the expression evaluates to 150.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e465 " valign="top"><p>
+Alarms.Prompt.Caption+&quot;Enter tagname&quot;
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e469 " valign="top"><p>
+The value of Prompt&#39;s Caption property and the string &quot;Enter tagname&quot; concatenated together. If the Caption property value is null, then the string evaluates to &quot;Enter tagname&quot;.
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_8B15C4AF7DF548DB81AC896F378BF778"><a name="drw_expression_builder_syntax__section_8B15C4AF7DF548DB81AC896F378BF778"></a><h2 class="sectiontitle">Relational Operators</h2><p>Relational operators let you compare two values to determine how they relate to each other.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_1000431D64D44BC88E573B40AFBE3152"><a name="drw_expression_builder_syntax__section_1000431D64D44BC88E573B40AFBE3152"></a><h2 class="sectiontitle">Syntax: Relational Operators</h2><p>The syntax for relational operators is shown in the following table.</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_B889D435FB974E9B9BD65577738E20BF"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_B889D435FB974E9B9BD65577738E20BF" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e551" valign="top"><p id="drw_expression_builder_syntax__578094"><a name="drw_expression_builder_syntax__578094"></a>Operator</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e555" valign="top"><p id="drw_expression_builder_syntax__578096"><a name="drw_expression_builder_syntax__578096"></a>Syntax</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+= (equal to)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> = <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+&lt;&gt; (not equal to)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> &lt;&gt; <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+&gt; (greater than)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> &gt; <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+&lt; (less than)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> &lt; <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+&gt;= (greater than or equal to)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> &gt;= <em>value</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e551 " valign="top"><p>
+&lt;= (less than or equal to)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e555 " valign="top"><p>
+<em>value</em> &lt;= <em>value</em>
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="drw_expression_builder_syntax__BooleanOperators"><a name="drw_expression_builder_syntax__BooleanOperators"></a><h2 class="sectiontitle">Example: Relational Operators</h2><p>Relational operators are commonly used in boolean conditions to determine if part or all of an expression is true or false. An example:</p>
+
+<pre class="pre">
+DVSYS.AI1.F_CV = 50
+</pre>
+<p>When this expression is evaluated, the value of the left side of the operator is compared to the right side. If the two values match, the condition is true. Otherwise, it is false.</p>
+<p>You can compare any data value to any other data value. For example, consider the following boolean conditions:</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_727889CCE1694CB3AD82220114585685"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_727889CCE1694CB3AD82220114585685" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e675" valign="top"><p id="drw_expression_builder_syntax__578127"><a name="drw_expression_builder_syntax__578127"></a>Condition</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e679" valign="top"><p id="drw_expression_builder_syntax__578135"><a name="drw_expression_builder_syntax__578135"></a>Value</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+3&gt;1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+TRUE
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+5 = &quot;Enter tagname&quot;
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+FALSE
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+DVSYS.AI1.F_CV = 100
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+TRUE, if the current value of AI1 is 100.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+DVSYS.AI1.F_CV &gt;= OPC1.N35
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+TRUE, if the current value of AI1 is greater than OPC1.N35.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+Alarms.Rect1.Width = Alarms.Rect1.Height
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+TRUE, if Rect1 is a square.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e675 " valign="top"><p>
+Alarms.Prompt.Caption =&quot;Enter tagname&quot;
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e679 " valign="top"><p>
+TRUE, if the value of Prompt&#39;s Caption property is &quot;Enter tagname&quot;.
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_90160EE088604EF280653BBD0054072E"><a name="drw_expression_builder_syntax__section_90160EE088604EF280653BBD0054072E"></a><h2 class="sectiontitle">Boolean Operators</h2><p>Boolean operators let you connect two or more boolean conditions.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_166FAAE886E64A0E9662E3000892E65C"><a name="drw_expression_builder_syntax__section_166FAAE886E64A0E9662E3000892E65C"></a><h2 class="sectiontitle">Syntax: Boolean Operators</h2><p>The syntax for each operator is listed in the following table.</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_745CE60F99D2400A8A93AFC2D8C71F81"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_745CE60F99D2400A8A93AFC2D8C71F81" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e761" valign="top"><p id="drw_expression_builder_syntax__578149"><a name="drw_expression_builder_syntax__578149"></a>Operator</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e765" valign="top"><p id="drw_expression_builder_syntax__578151"><a name="drw_expression_builder_syntax__578151"></a>Syntax</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e761 " valign="top"><p>
+AND
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e765 " valign="top"><p>
+<em>condition</em> AND <em>condition</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e761 " valign="top"><p>
+OR
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e765 " valign="top"><p>
+<em>condition</em> OR <em>condition</em>
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e761 " valign="top"><p>
+NOT
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e765 " valign="top"><p>
+NOT <em>condition</em>
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_9C08EE306E48485FBB3E239C8310DDFB"><a name="drw_expression_builder_syntax__section_9C08EE306E48485FBB3E239C8310DDFB"></a><h2 class="sectiontitle">Example: AND Operator</h2><p>The AND operator is used when both parts of the expression must be true. For example, suppose that in a factory, several ingredients need to be mixed together for up to 5 minutes while the mixture is being heated to 200 degrees. When both of these conditions (5 minutes and 200 degrees) are true, you want to create an expression to display the following text:</p>
+
+<pre class="pre">
+Mixing...
+</pre>
+<p>To accomplish these tasks, a rectangle object, MixTime, has been set up as a progress bar to show the time elapsed as a percentage. A text object, Temperature, has also been animated to show the current temperature.</p>
+<p>Next, a text object needs to be created for the Mixing message. This object needs its Visible property animated with the following expression:</p>
+
+<pre class="pre">
+Mixing.MixTime.VerticalFillPercentage &lt; 100 AND 
+Mixing.Temperature.AnimatedCaption.InputValue &lt; 200
+</pre>
+<p>This expression is true only when the mixing time is less than 5 minutes and the temperature is less than 200 degrees. When either condition is no longer true, the mixer stops and the message is no longer visible.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_72296674C6D04C76984B7553A4224E9E"><a name="drw_expression_builder_syntax__section_72296674C6D04C76984B7553A4224E9E"></a><h2 class="sectiontitle">Example: OR Operator</h2><p>Now suppose you want to display instructions to the operator about the next stage of the process when mixing stops. To do this, you can create another text object and animate its Visible property with the following expression:</p>
+
+<pre class="pre">
+Mixing.MixTime.VerticalFillPercentage &gt;= 100 OR 
+Mixing.Temperature.AnimatedCaption.InputValue &gt;= 200
+</pre>
+</div>
+<div class="section" id="drw_expression_builder_syntax__ChangingtheOrderofPrecedence"><a name="drw_expression_builder_syntax__ChangingtheOrderofPrecedence"></a><h2 class="sectiontitle">Example: NOT Operator</h2><p>Unlike AND or OR, the NOT operator does <em>not</em> connect two boolean conditions. Instead, it inverts the value of a condition. For example, if the following condition is true:</p>
+
+<pre class="pre">
+Alarms.Tank3.HorizontalFillPercentage&gt;80
+</pre>
+<p>then the following condition is false:</p>
+
+<pre class="pre">
+NOT Alarms.Tank3.HorizontalFillPercentage&gt;80
+</pre>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_3660B4BF19FB433AAF736CF1FD5FC3D4"><a name="drw_expression_builder_syntax__section_3660B4BF19FB433AAF736CF1FD5FC3D4"></a><h2 class="sectiontitle">Changing the Order of Precedence</h2><p>When evaluating an expression, DeltaV Operate defines an order of precedence for each operator. The order of precedence determines which operators (and the values on each side of the operator) are evaluated first. The following table lists each operator from highest to lowest precedence.</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_B5A3E9A360CE425DB02C4BD179EB929C"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_B5A3E9A360CE425DB02C4BD179EB929C" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e869" valign="top"><p id="drw_expression_builder_syntax__578217"><a name="drw_expression_builder_syntax__578217"></a>Operator</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e873" valign="top"><p id="drw_expression_builder_syntax__578219"><a name="drw_expression_builder_syntax__578219"></a>Precedence</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e869 " valign="top"><p>
+( ), NOT, - (unary minus)
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e873 " valign="top"><p>
+1
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e869 " valign="top"><p>
+*, /, AND
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e873 " valign="top"><p>
+2
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e869 " valign="top"><p>
++, - (subtraction), OR
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e873 " valign="top"><p>
+3
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e869 " valign="top"><p>
+&lt;, &lt;=, &gt;, &gt;=
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e873 " valign="top"><p>
+4
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e869 " valign="top"><p>
+=, &lt;&gt;
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e873 " valign="top"><p>
+5
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can change the order of precedence by enclosing an expression in parentheses. Parentheses are regarded with the highest priority; thus all expressions within the parentheses are evaluated first. Operators with the same precedence are evaluated in the order they appear from left to right.</p>
+</div>
+<div class="section" id="drw_expression_builder_syntax__section_13CAF8CEDCEA4EBBBA81B54BFD3C87BA"><a name="drw_expression_builder_syntax__section_13CAF8CEDCEA4EBBBA81B54BFD3C87BA"></a><h2 class="sectiontitle">Example: Changing the Order of Precedence</h2><p>For example, consider the following expressions:</p>
+
+<div class="tablenoborder"><a name="drw_expression_builder_syntax__table_2558F17B92B548A4B630F26DAF7A0A25"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_expression_builder_syntax__table_2558F17B92B548A4B630F26DAF7A0A25" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1500091e942" valign="top"><p id="drw_expression_builder_syntax__578237"><a name="drw_expression_builder_syntax__578237"></a>Expression</p>
+</th>
+
+<th class="cellrowborder" id="d1500091e946" valign="top"><p id="drw_expression_builder_syntax__578239"><a name="drw_expression_builder_syntax__578239"></a>Value</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1500091e942 " valign="top"><p>
+6+4/2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e946 " valign="top"><p>
+8
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1500091e942 " valign="top"><p>
+(6+4)/2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1500091e946 " valign="top"><p>
+5
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

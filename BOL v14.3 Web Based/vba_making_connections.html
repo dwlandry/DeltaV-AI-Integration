@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Making connections" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_working_with_ifix_objects.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_making_connections" name="DC.Identifier" /><title>Making connections</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_working_with_ifix_objects.html" /><link rel="next" href="vba_animation_properties_and_methods.html" /></head><body class="fixed" id="vba_making_connections" data-relpath="vba_making_connections.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_making_connections"></a>
+
+<h1 class="topictitle1">Making connections</h1>
+<div><div></div>
+
+    <p id="vba_making_connections__MakingConnections"><a name="vba_making_connections__MakingConnections"></a>A very important element of connecting objects to data sources is the way in which they are connected. You can connect to the data source:</p>
+
+    <a name="vba_making_connections__ul_8AE73857120646A4AD00B9DF434BC2A0"></a><ul id="vba_making_connections__ul_8AE73857120646A4AD00B9DF434BC2A0">
+      <li id="vba_making_connections__li_B496675647FD428F8603DF6DD147ED18"><div class="li_content">
+        <p>From an object&#39;s property directly to the data source.</p>
+
+      </div></li>
+
+      <li id="vba_making_connections__li_C939682B126445B4A057CAB07F16F21D"><div class="li_content">
+        <p>From an object&#39;s property to an animation object and then from the animation object to the data source.</p>
+
+      </div></li>
+
+    </ul>
+
+    <div class="section" id="vba_making_connections__DirectlyConnectingtoaDataSource"><a name="vba_making_connections__DirectlyConnectingtoaDataSource"></a><h2 class="sectiontitle">Directly Connecting to a Data Source</h2>
+      
+      <p>There are times when you may want to establish a direct connection to a data source, such as when you want to connect objects to some third-party controls. </p>
+
+      <p>The following figure illustrates the concept of a direct connection.</p>
+
+      <div class="fignone" id="vba_making_connections__1001933"><a name="vba_making_connections__1001933"></a><div><span class="figcap">Direct Connection Example</span></div>
+        
+        <a name="vba_making_connections__image_B51E948BDBB44E56A776ED9C7887D0C0"></a><img id="vba_making_connections__image_B51E948BDBB44E56A776ED9C7887D0C0" src="direct2a.gif" />
+      </div>
+
+      
+      <p>You can form a direct connection either by using the Animations dialog box or by writing a script. Both methods are described below.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> You cannot perform a Find and Replace on an object when that object has a direct connection to another object.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_1BEB5BF23010446DB73DB5C68974C67B"><a name="vba_making_connections__section_1BEB5BF23010446DB73DB5C68974C67B"></a><h2 class="sectiontitle">Making a Direct Connection Using the Animations dialog box</h2>
+      
+      <p>To make a direct connection using the Animations dialog box:</p>
+
+      <a name="vba_making_connections__ol_C5206CDA42E444089DC6C7526C6FB85B"></a><ol id="vba_making_connections__ol_C5206CDA42E444089DC6C7526C6FB85B">
+        <li id="vba_making_connections__li_E76FD70A8AE649D6802CDB0D2B9FD9DD"><div class="li_content">
+          <p>Open the object&#39;s Animation dialog box.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_53536BE6C34B4EE5A9327097447A6E08"><div class="li_content">
+          <p>Click the Size tab, and then click the height check box.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_FD4D3EDDABF34DD5B5E4217372A0DAE4"><div class="li_content">
+          <p>Enter a data source to animate the object&#39;s property.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_53741AD5F82B4E5E9E01481967751693"><div class="li_content">
+          <p>In the Data Conversion area, select Object.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__MakingConnectionsthroughAnimations"><a name="vba_making_connections__MakingConnectionsthroughAnimations"></a><h2 class="sectiontitle">Making a Direct Connection by Writing a Script</h2>
+      
+      <p>To make a direct connection using a script, you need to call the Connect method. The following procedure shows you how to make a direct animation from an object to a data source on the Click event of a toolbar button in the configuration environment.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> For OPC data sources you need to remove any character, such as single quotes, that is not part of the valid server address syntax. For example: &quot;ServerName.&#39;Device:MyAddress&#39;&quot; should change to &quot;ServerName.Device:MyAddress&quot; after you remove the single quotes.</p>
+
+      </div>
+
+      <a name="vba_making_connections__ol_979F38A322EA4F0B9FDD7B1C4A20C74D"></a><ol id="vba_making_connections__ol_979F38A322EA4F0B9FDD7B1C4A20C74D">
+        <li id="vba_making_connections__li_DACC1F876B0A47D1A81D509D10191BC5"><div class="li_content">
+          <p>Insert a rectangle into a picture and name it <var class="varname">MyRect</var>. Right-click the rectangle and select Edit Script to make MyRect available to the Visual Basic Editor.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_FF24E6C354BB4603BF2E902CE4D00ECF"><div class="li_content">
+          <p>Create a new toolbar and add a button named DirectConnect. See <a href="ws_creating_toolbars.html">Creating Toolbars</a> for more information on creating toolbars and adding toolbar buttons.Add the following code to the toolbar button&#39;s Click event:</p>
+
+          <pre class="pre">
+Private Sub DirectConnect_Click( )
+    Dim lStatus as Long
+    MyRect.Connect(&quot;Horizontal Position&quot;, _
+    &quot;FIX32.NODE.AI1.F_CV&quot;, lStatus)
+End Sub
+</pre>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_769EE5D0E18E4841A3099E8E3DF8167D"><div class="li_content">
+          <p>Close the Visual Basic Editor.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_CC4F8D7F24CA4A8C8BA3BAD24AD5A1D5"><div class="li_content">
+          <p>Click the DirectConnect button and switch to the run-time environment. The horizontal position of MyRect is now driven by the tag FIX32.NODE.AI1.F_CV.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_3FB521DBA7504D5FA2BACF67AF5B0376"><a name="vba_making_connections__section_3FB521DBA7504D5FA2BACF67AF5B0376"></a><h2 class="sectiontitle">Making Connections through Animations</h2>
+      
+      <p>Usually, you will make connections using Animation objects. Animation objects perform the data conversion between data source and connected object. The figure below illustrates the concept of Animation connections.</p>
+
+      <div class="fignone" id="vba_making_connections__1001964"><a name="vba_making_connections__1001964"></a><div><span class="figcap">Animation Connections Example</span></div>
+        
+        <a name="vba_making_connections__image_115A7990AD6D4998BC88563D4A0706E0"></a><img id="vba_making_connections__image_115A7990AD6D4998BC88563D4A0706E0" src="direct3a.gif" />
+      </div>
+
+      
+    </div>
+
+    <div class="section" id="vba_making_connections__section_A677F65613FE4BBE874C0C168E005DF7"><a name="vba_making_connections__section_A677F65613FE4BBE874C0C168E005DF7"></a><h2 class="sectiontitle">Making an Animation Connection Using the Animations Dialog Box</h2>
+      
+      <p>To make a linear animation connection using the Animations dialog box:</p>
+
+      <a name="vba_making_connections__ol_19A8ED66EAA9413781EDD9DDD0E5B143"></a><ol id="vba_making_connections__ol_19A8ED66EAA9413781EDD9DDD0E5B143">
+        <li id="vba_making_connections__li_CD6B9001D7234A2A8328BC881FD22A72"><div class="li_content">
+          <p>Double-click a rectangle. The Animations dialog box appears.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_B80E2D8C21FD428E8B5ED43C44069D34"><div class="li_content">
+          <p>Select the Size tab and click the Height button. The Animations dialog box expands.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_471F42D92D874492A99E20C637301146"><div class="li_content">
+          <p>Enter a data source to animate the rectangle&#39;s height.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_7815E766EE5946B7BFCF065F95452077"><div class="li_content">
+          <p>Select Range from the Data Conversion list box. This will allow the rectangle&#39;s height to change within a specific range based on the value of the data source.</p>
+
+        </div></li>
+
+        <li id="vba_making_connections__li_F26588EC3B1945C390D9C8DEFFE45E84"><div class="li_content">
+          <p>Click OK. Note that the rectangle now has a linear animation object associated with it that transforms the data source value to scale the rectangle&#39;s height.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_67A9979FC5DD41429492E3A3845214B1"><a name="vba_making_connections__section_67A9979FC5DD41429492E3A3845214B1"></a><h2 class="sectiontitle">Making an Animation Connection through a Script</h2>
+      
+      <p>The following script uses the Linear Animation object to form the connection from a rectangle&#39;s Vertical Position property to a data source. This script is entered in the Click event of a toolbar named btnDirectConn. In this example, Animations is the picture name. For more information on the methods and properties used in the script, namely <strong>SetSource</strong>, <strong>Connect</strong>, <strong>DoesPropertyHaveTargets</strong>, and <strong>GetPropertyTargets</strong>, see the Automation Interfaces help.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__ConnectingorDisconnectinganObjectsPropertytoaDataSource"><a name="vba_making_connections__ConnectingorDisconnectinganObjectsPropertytoaDataSource"></a><h2 class="sectiontitle">Example: Building an Animation Connection through a Script</h2>
+      
+      <pre class="pre">
+Private Sub btnDirectConn_Click()
+    Dim iRect As Object
+    Dim iOval As Object
+    Dim LinearObject As Object
+    Dim strFullname As String
+    Dim blnHasTargets As Boolean
+    Dim lngStatus As Long
+    Dim lngNumTargets As Long
+    Dim lngIndex As Long
+    Dim strPropertyName As String
+    Dim strSource As String
+    Dim vtTargets()
+
+    <strong>&#39;Create a rectangle and an oval
+</strong>    Set iRect = Animations.BuildObject(&quot;rect&quot;)
+    Set iOval = Animations.BuildObject(&quot;oval&quot;)
+
+    <strong>&#39;Set some positioning and size attributes on 
+</strong><strong>    &#39;the rectangle
+</strong>    iRect.HorizontalPosition = 80
+    iRect.VerticalPosition = 45
+    iRect.Height = 5
+    iRect.Width = 10
+    iOval.HorizontalPosition = 60
+    iOval.VerticalPosition = 35
+    iOval.Height = 5
+    iOval.Width = 10
+    iRect.Commit
+    iOval.Commit
+
+    <strong>&#39;Create a Linear animation object for the rectangle
+</strong>    Set LinearObject = iRect.BuildObject(&quot;linear&quot;)
+
+    <strong>&#39;Set the source of the Linear animation object
+</strong>    LinearObject.SetSource &quot;AI1.F_CV&quot;, True
+
+    <strong>&#39;Specify the Linear animation object&#39;s minimum and
+</strong>    <strong>&#39;maximum Input and Output values
+</strong>    LinearObject.LoInValue = 0
+    LinearObject.LoOutValue = 0
+    LinearObject.HiInValue = 100
+    LinearObject.HiOutValue = 50
+
+    <strong>&#39;Set UseDelta to True to ensure that the base position
+</strong>    <strong>&#39;of the object will be added to the output value when</strong> 
+    <strong>&#39;the Linear object evaluates.  If UseDelta is set to
+</strong>    <strong>&#39;False, the output value would be absolute when the
+</strong>    <strong>&#39;Linear object evaluates
+</strong>    LinearObject.UseDelta = True
+
+    <strong>&#39;Connect the rectangle&#39;s VerticalPosition property to</strong> 
+    <strong>&#39;the output value of the Linear animation object 
+</strong>    strFullname = LinearObject.FullyQualifiedName &amp; _
+    &quot;.OutputValue&quot;
+    iRect.Connect &quot;VerticalPosition&quot;, strFullname, lngStatus
+
+    <strong>&#39;Create a string containing the fully qualified data 
+</strong>    <strong>&#39;source for the rectangle&#39;s VerticalPosition property 
+</strong>    strSource = &quot;Animations.&quot; + iRect.Name + _
+    &quot;.VerticalPosition&quot;
+
+    <strong>&#39;Connect the oval&#39;s HorizontalFillPercentage property 
+</strong>    <strong>&#39;to the rectangle&#39;s VerticalPosition property by using 
+</strong>    <strong>&#39;the string created above as a data source 
+</strong>    iOval.Connect &quot;HorizontalFillPercentage&quot;, strSource, _
+    lngStatus
+
+<strong>    </strong><strong>&#39;Once connected, you can verify that the Rectangle&#39;s
+</strong><strong>    &#39;Vertical Position is being used as a data source for the
+</strong><strong>    &#39;Oval&#39;s Horizontal Fill Percentage using the Target methods.
+</strong>
+    <strong>&#39;Now that there is a direct connection to the rectangle&#39;s</strong> 
+    <strong>&#39;VerticalPosition property, retrieve information about</strong> 
+    <strong>&#39;the objects that are using the VerticalPosition property</strong> 
+    <strong>&#39;as a data source. This call will return if the property</strong> 
+    <strong>&#39;is being used as a data source, how many objects are</strong> 
+    <strong>&#39;using it as a data source, the status of the objects, 
+</strong>    <strong>&#39;and the index of the object be passed to the</strong> 
+    <strong>&#39;GetPropertyTargets method.</strong> 
+
+    <strong>&#39;NOTE: If you only want to determine the number of</strong> 
+    <strong>&#39;objects using the property as a data source, you can use 
+</strong>    <strong>&#39;the NumberOfTargets property instead.</strong> 
+
+    iRect.DoesPropertyHaveTargets &quot;VerticalPosition&quot;, _
+    blnHasTargets, lngNumTargets, lngStatus, lngIndex
+
+    <strong>&#39;Use the lngIndex value from the DoesPropertyHaveTargets
+</strong>    <strong>&#39;call to determine which property of the rectangle has
+</strong>    <strong>&#39;targets and to obtain a list of object names that have
+</strong>    <strong>&#39;built connections to this property.
+</strong>
+    iRect.GetPropertyTargets lngIndex, strPropertyName, _
+    vtTargets
+
+End Sub
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__RetrievingConnectionInformationfromaPropertysDataSource"><a name="vba_making_connections__RetrievingConnectionInformationfromaPropertysDataSource"></a><h2 class="sectiontitle">Connecting or Disconnecting an Object&#39;s Property to a Data Source</h2>
+      
+      <p>The methods in this section connect or disconnect an object&#39;s property to a data source.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Entries within brackets ([ ]) are optional.</p>
+
+      </div>
+
+      <p>The <strong>Connect</strong> method shown below connects an object&#39;s property to a data source:</p>
+
+      <pre class="pre">
+Object.Connect(PropertyName As String, Source As String, _
+(Returned) Status As Long, [Tolerance], [Flags], _
+[DeadBand], [UpdateRate])
+</pre>
+
+      <p>This call connects the property (defined in the PropertyName parameter), to a source (defined in the source parameter.) For example, if you want to connect a rectangle&#39;s height property directly to tag AI, you would enter the following:</p>
+
+      <pre class="pre">
+Dim 1status as Long
+Rect1.Connect(&quot;Height&quot;, &quot;FIX32.NODE.AI.F_CV&quot;, 1status)
+</pre>
+
+      <p>The <strong>Disconnect</strong> method disconnects the object&#39;s property from a data source:</p>
+
+      <pre class="pre">
+Sub Disconnect(PropertyName As String)
+</pre>
+
+      <p>The <strong>SetSource</strong> method sets the connection properties for an animation object. Use the <strong>SetSource</strong> method instead of directly setting the animation object&#39;s source property if additional properties have to be specified for the connection. You do not need to specify the data source.</p>
+
+      <pre class="pre">
+Object.SetSource bstrExpression, [bUseAnyway], _ 
+[vaUpdateRate], [vaDeadband], [vaTolerance], _ 
+[vaConnectionFlags]
+</pre>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> If you are performing run-time source substitutions, and you want to preserve the tolerance, deadband, and the update rate for the tag, use the SetSource command instead of the Source property. If you use the Source property, the tolerance, deadband, and update rate settings are reinitialized to 0. The SetSource command provides the appropriate parameters to effectively set these attributes. You can only use the SetSource method for animation objects.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_F85E26AB175E4450981C673D0C89D060"><a name="vba_making_connections__section_F85E26AB175E4450981C673D0C89D060"></a><h2 class="sectiontitle">Retrieving Connection Information from a Property&#39;s Data Source</h2>
+      
+      <p>The methods described in this section let you retrieve and manipulate a data source that is connected to a specified object&#39;s property. For more information on these methods, refer to the Visual Basic for Applications Help file.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_3C1734286A2A436CB49A866B6F755DB4"><a name="vba_making_connections__section_3C1734286A2A436CB49A866B6F755DB4"></a><h2 class="sectiontitle">Determining if an Object Is Connected to a Data Source</h2>
+      
+      <p>The <strong>IsConnected</strong> method determines whether an object&#39;s property is connected to a data source:</p>
+
+      <pre class="pre">
+Object.IsConnected(PropertyName As String, (Returned) _ 
+HasConnection As Boolean (Returned) Index As Long, _
+(Returned) Status As Long)
+</pre>
+
+      <p>This method is typically used in conjunction with the <strong>GetConnectionInformation</strong> method, which is described later in this section. For more information on the parameters for the IsConnected method, see the IsConnected Method topic in the Automation Interfaces help.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_D85868214A874098946844C09C473005"><a name="vba_making_connections__section_D85868214A874098946844C09C473005"></a><h2 class="sectiontitle">Determining if the Connection Is Valid</h2>
+      
+      <p>The <strong>ParseConnectionSource</strong> method parses the Data Source name to determine if a connection to an object&#39;s property exists. If a connection does exist, it returns the object that is connected to the property, as well as its fully qualified name. It accepts complex expressions and returns individual data sources for a complex expression:</p>
+
+      <pre class="pre">
+Object.ParseConnectionSource(PropertyName As String, _
+Source As String, (Returned) Status As Long, _
+Returned Array) ValidObjects, (Returned Array) _
+UndefinedObjects, (Returned) FullyQualifiedSource As String)
+
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_3C3A35668185496A8692DE411BCB7FEB"><a name="vba_making_connections__section_3C3A35668185496A8692DE411BCB7FEB"></a><h2 class="sectiontitle">Example: Script Using ParseConnectionSource Method</h2>
+      
+      <p>The following example parses the AI1.F_CV source to the VerticalFillPercentage property of Oval Oval1 to determine the validity of the data source.</p>
+
+      <pre class="pre">
+
+Dim iStatus As Long
+Dim validObjs As Variant
+Dim UndObjs As Variant
+Dim FQSource As String
+
+Oval1.ParseConnectionSource &quot;VerticalFillPercentage&quot;, 
+&quot;AI1.F_CV&quot;, iStatus, validObjs, UndObjs, FQSource
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_EEA2EE477DF2453AB1EC56340A647B68"><a name="vba_making_connections__section_EEA2EE477DF2453AB1EC56340A647B68"></a><h2 class="sectiontitle">Determining the Number of Properties that are Connected to a Data Source</h2>
+      
+      <p>The <strong>ConnectedPropertyCount</strong> method returns the number of the object&#39;s properties that are connected to a data source.</p>
+
+      <pre class="pre">
+Object.ConnectedPropertyCount (1connectedPropertyCount _
+As Long)
+</pre>
+
+      <p>The following example lets you find out how many properties in the object Rect1 are connected to data sources, and then converts that number into an integer.</p>
+
+      <pre class="pre">
+Dim 1ConnectedCount as Long
+Dim iNumProperties as Integer
+
+Rect1.ConnectedPropertyCount 1ConnectedCount
+iNumProperties = Cint (1ConnectedCount)
+</pre>
+
+      <p>In the above example, the number 4 might be returned, which indicates that four of Rect1&#39;s properties are connected to data sources. You could use this number to retrieve the connections with the <strong>GetConnectionInformation</strong> method described in the following section, &quot;Retrieving Other Connection Information.&quot;</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_1111594EF5B94AA2A56CF53B2EF46597"><a name="vba_making_connections__section_1111594EF5B94AA2A56CF53B2EF46597"></a><h2 class="sectiontitle">Retrieving Other Connection Information</h2>
+      
+      <p>The <strong>GetConnectionInformation</strong> method retrieves information from an object, such as the property that object is connected to, the full name of the data source, and all the source objects:</p>
+
+      <pre class="pre">
+Object.GetConnectionInformation(Index As Long, (Returned) _ 
+PropertyName as Sting (Returned) Source As String, _
+(Returned) FullyQualifiedSource As String, (Returned) _
+SourceObjects, [Tolerance], [Deadband], [UpdateRate])
+</pre>
+
+      <p>This method is typically used in conjunction with the <strong>IsConnected</strong> method described earlier. In this example, notice the addition of the index parameter. You can get the index number with the IsConnected method or the <strong>ConnectedPropertyCount</strong> method. See the Automation Interfaces Help file for more information on these methods.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__DeterminingifanObjectsPropertyisBeingUsedasaDataSource"><a name="vba_making_connections__DeterminingifanObjectsPropertyisBeingUsedasaDataSource"></a><h2 class="sectiontitle">Example: Script Using GetConnectionInformation Method with IsConnected Method</h2>
+      
+      <pre class="pre">
+Dim blnHasConnection As Boolean
+Dim lngStatus As Long
+Dim lngIndex As Long
+Dim strExpression As String
+Dim strFullyQualifiedExpression As String
+Dim vtSourceObjects
+Dim Tolerance
+Dim DeadBand
+Dim UpdateRate
+
+HorizontalObj.IsConnected &quot;InputValue&quot;, blnHasConnection, 
+lngIndex, lngStatus
+
+If blnHasConnection Then
+HorizontalObj.GetConnectionInformation lngIndex, &quot;InputValue&quot;, 
+strExpression, strFullyQualifiedExpression, vtSourceObjects, 
+Tolerance, DeadBand, UpdateRate
+End If
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__RetrievingGeneralConnectionInformation"><a name="vba_making_connections__RetrievingGeneralConnectionInformation"></a><h2 class="sectiontitle">Determining if an Object&#39;s Property is Being Used as a Data Source</h2>
+      
+      <p>The <strong>NumberOfTargets</strong> method returns the number of the object&#39;s properties that contain targets, that is, objects that use that object&#39;s property as their data source:</p>
+
+      <pre class="pre">
+Object.NumberOfTargets(NumberOfTargets As Long)
+</pre>
+
+      <p>The <strong>DoesPropertyHaveTargets</strong> method determines if the object&#39;s property (as defined by the PropertyName parameter) is being used as a data source and what object is using it:</p>
+
+      <pre class="pre">
+Object.DoesPropertyHaveTargets(PropertyName As String, _ 
+(Returned) HasTrargets As Boolean, (Returned) _
+NumberOfTargets As Long, (Returned) Status As Long, _
+Index As Long)
+</pre>
+
+      <p>The <strong>GetPropertyTargets</strong> method retrieves the target object(s) and the property that the target(s) is connected to for the object&#39;s specified index number:</p>
+
+      <pre class="pre">
+Object.GetPropertyTargets(Index As Long, (Returned) _
+PropertyName As String, (Returned) Targets)
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_E16B578984EF42168B9D6E1B090F5F22"><a name="vba_making_connections__section_E16B578984EF42168B9D6E1B090F5F22"></a><h2 class="sectiontitle">Retrieving General Connection Information</h2>
+      
+      <p>This section describes additional connection methods for retrieving connection information and making connections. These methods include <strong>CanConstruct, Construct, GetPropertyAttributes, and ValidateSource</strong>.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_4D4F65FE786842519583C9E244ABB29E"><a name="vba_making_connections__section_4D4F65FE786842519583C9E244ABB29E"></a><h2 class="sectiontitle">GetPropertyAttributes Method</h2>
+      
+      <p>The <strong>GetPropertyAttributes</strong> method retrieves a list of property attributes for the specified Data Item object. For a tag reference, these are properties such as new alarm status and property range information (EGU limits, list of strings alarm strings (HIHI, LOLO, etc)). Each property queried may have a different set of attributes. For more information on this method, refer to the Automation Interfaces help.</p>
+
+      <pre class="pre">
+Object.GetPropertyAttributes(FullyQualifiedName As String, _
+Attribute As Long, (Returned) Results, (Returned) _
+AttributeNames, (Returned) Status As Long)
+
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_732240BD7C544B1383C4A12B25FDEB58"><a name="vba_making_connections__section_732240BD7C544B1383C4A12B25FDEB58"></a><h2 class="sectiontitle">Example: Script Using the GetPropertyAttributes Method</h2>
+      
+      <p>The following example fetches the attribute information for the HighEGU attribute of the AI1 block on node NODE1.</p>
+
+      <pre class="pre">
+
+Dim vtResults
+Dim vtAttributes
+Dim lStatus As Long
+Dim strLoEGU as String
+Dim LoEGUval
+
+Oval1.GetPropertyAttributes &quot;FIX32.NODE1.AI1.F_CV&quot;, 3, 
+vtResults, vtAttributes, lStatus
+strLoEGU = vtAttributes(0)
+LoEGUval = vtResults(0)
+
+</pre>
+
+      <p>In the above example, the variable strLoEGU will now hold the string &quot;FIX32.NODE1.AI1.A_ELO&quot; and the variable LoEGUval will hold tag AI1&#39;s low EGU value.</p>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_A02F538EFCB64EC993EE4C0F612EF3D0"><a name="vba_making_connections__section_A02F538EFCB64EC993EE4C0F612EF3D0"></a><h2 class="sectiontitle">CanContruct Method</h2>
+      
+      <p>The <strong>CanConstruct</strong> method checks a data source reference for valid syntax. The CanConstruct method must have the default data system defined as part of the object name. For example, the object name <strong>AI</strong> would not work correctly.</p>
+
+      <pre class="pre">
+Object.CanConstruct(ObjectName As String, (Returned)_
+CanConstruct As Boolean)
+
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_44B6A2A8D29B40CC8AE7FA69B37ED8B8"><a name="vba_making_connections__section_44B6A2A8D29B40CC8AE7FA69B37ED8B8"></a><h2 class="sectiontitle">Example: Script Using CanConstruct Method</h2>
+      
+      <p>The following example determines whether the datasource AI1 for NODE1 has valid syntax for the Picture TestPicture.</p>
+
+      <pre class="pre">
+Dim bCanConstruct As Boolean
+
+TestPicture.CanConstruct &quot;FIX32.NODE1.AI1&quot;, bCanConstruct
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_6D228B4073C848B38F0ACCB65F727048"><a name="vba_making_connections__section_6D228B4073C848B38F0ACCB65F727048"></a><h2 class="sectiontitle">Construct Method</h2>
+      
+      <p>The <strong>Construct</strong> method launches the Quick Add user interface and prompts you for information needed to create the tag. If Status returns 0, then the tag has been created:</p>
+
+      <pre class="pre">
+Object.Construct(ObjectName As String, (Returned) Status _
+As Long)
+
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_B8B36EE48B2A4B7C9BE0452F7735AA84"><a name="vba_making_connections__section_B8B36EE48B2A4B7C9BE0452F7735AA84"></a><h2 class="sectiontitle">Example: Script Using Construct Method</h2>
+      
+      <p>The following example displays the QuickAdd user interface that prompts the user for the information needed to create the tag NewAI1 for the Oval object Oval1 on node NODE1.</p>
+
+      <pre class="pre">
+
+Dim lStatus As Long
+
+Oval1.Construct &quot;FIX32.NODE1.NEWAI&quot;, lStatus
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_C0A01843595A41FFA072CB5836DAC862"><a name="vba_making_connections__section_C0A01843595A41FFA072CB5836DAC862"></a><h2 class="sectiontitle">ValidateSource Method</h2>
+      
+      <p>The <strong>ValidateSource</strong> method determines if a data source exists:</p>
+
+      <pre class="pre">
+Object.ValidateSource(Object As String, (Returned) Status _
+As Long, (Returned) Object As Object, (Returned) _
+PropertyName As String)
+
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_making_connections__section_3FCC279213844ADB8E31C554886B0E8A"><a name="vba_making_connections__section_3FCC279213844ADB8E31C554886B0E8A"></a><h2 class="sectiontitle">Example: Script Using ValidateSource Method</h2>
+      
+      <p>The following example validates the AI1 source for the Oval Oval1.</p>
+
+      <pre class="pre">
+
+Dim iStatus As Long
+Dim iObj As Object
+Dim sPropName As String
+
+Oval2.ValidateSource &quot;AI1&quot;, iStatus, iObj, sPropName
+</pre>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

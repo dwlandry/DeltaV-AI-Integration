@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional Plus function block - parameters referenced by the MPCPlus function block" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="MPCPlus function block, parameters referenced by the block" name="DC.subject" /><meta content="MPCPlus function block, parameters referenced by the block" name="keywords" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_216" name="DC.Identifier" /><title>Model Predictive Control Professional Plus function block - parameters referenced by the MPCPlus function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_model_predictive_control_plus_function_block_configuration.html" /><link rel="next" href="c_model_predictive_control_plus_function_block_modes.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_216" data-relpath="c_mpc_plus_fb_params_referenced_by_the_mpcplus_fb.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216"></a>
+
+<h1 class="topictitle1"> Model Predictive Control Professional Plus function block -
+	 parameters referenced by the MPCPlus function block</h1>
+<div> 
+	 <p> The MPCPlus function block can reference input and output blocks
+		assigned to traditional or HART transmitters and valves. It can also reference
+		blocks assigned to fieldbus devices. All function blocks referenced by the
+		MPCPro function block must contain a 
+		<strong>scaling parameter</strong>. During MPCPlus execution, this scaling
+		information is automatically read by the MPCPlus block and used in input-output
+		scaling within the block. If an MPCPlus block&#39;s input references a block that
+		does not contain a scaling parameter such as a math block, a Scaler function
+		block is required. Wire the Scaler function block directly to the upstream
+		function blocks and reference the OUT parameter such that the MPCPlus block can
+		access the scaling information. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  The engineering unit span configured for measurements associated
+		with control, constraints, or disturbances, directly impact the step response
+		model gain. If this gain is less than 0.1, then it is assumed that the gain is
+		zero and a flat line response will be shown. The assumed maximum gain is 20.
+		Thus, if the measurement operating range is small compared to the engineering
+		unit span of the AI block or Scaler block used for the measurement calculation,
+		use the expert options for range suppression in the Test Setup of PredictPro
+		when commissioning the MPCPlus block. For example, if a temperature measurement
+		has an engineering unit span of 1000 degF but the normal operating range is
+		520-540, a range suppression multiplier of 10X or 100X can be selected to get a
+		higher step response gain. Similarly, if small changes in a manipulate
+		parameter have a large impact on Control or Constraint parameters, then specify
+		manipulated parameter range suppression in Test Setup. 
+	 </div>
+ 
+	 <p> The function blocks that are referenced by the MPCPlus block should be
+		in a different module. The Manipulated outputs must reference the CAS_IN,
+		RCAS_IN, or ROUT_IN inputs of the downstream function blocks. For many
+		applications, the output of the MPCPlus function block can reference the
+		cascade input or remote cascade input of the following function blocks that
+		provides the process input: 
+	 </p>
+ 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_E0C0D114A1614425A0191354658534BC"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_E0C0D114A1614425A0191354658534BC"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_3549FACF75224678882FF88CC629CAAA"><div class="li_content"> AO 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_7D2516D3ED9B4CD2B9C3C8B2468F0140"><div class="li_content">PID 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_D475C2452C714BCCBB6D04BF88D5302F"><div class="li_content">FLC 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_76DC51D66C5E4BF39C6917C952F32518"><div class="li_content">Scaler (SCLR) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_978D11AB2FDC499296632695105B625D"><div class="li_content">Ratio (RTO) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_8AE672DE6A14454297F9B6A511486DD8"><div class="li_content">Bias/Gain (BG) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_2CA3A555D2894BE7AF78E426AD641583"><div class="li_content">Splitter (SPLTR) 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_063E606A2E4149B494F8DCEE3F2DC788"><div class="li_content"> MPCPlus, MPCPro 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__section_C2AC27B9AAB3445CB22F5851505D56DD"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216__section_C2AC27B9AAB3445CB22F5851505D56DD"></a><h2 class="sectiontitle"> 
+		<strong>Valid parameters and related scales</strong> </h2> 
+		 
+		<p>An MPCPlus block can reference the following parameters: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_4512D8FEECD1418D88D1FDC319294270"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_4512D8FEECD1418D88D1FDC319294270"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_803A5B1FED49444FABCBF6CAF80929DE"><div class="li_content">MV parameters - float plus
+			 status parameters and CAS_IN or RCAS_IN or ROUT_IN 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_581E2E14A9454A31BD6DC4019C31BAA9"><div class="li_content">CV, AV, and DV parameters
+			 (Output scale)- float plus status parameters and the following parameters
+			 associated with Output scale (OUT_SCALE is required): 
+			 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_AE48D2FF03F0440BB351FB8D76775F1D"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_AE48D2FF03F0440BB351FB8D76775F1D"> 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_229CC97239A74FE999174605BECBCAA9"><div class="li_content">OUT 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_AF32339F6E104B0C9A7FD488F10A4EAC"><div class="li_content">BKCAL_IN 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_13753E739A05428789A59E5D01BC1D61"><div class="li_content">ROUT_IN 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_841163DCF81740CC9294F1470A405D73"><div class="li_content">ROUT_OUT 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_E307AC2449BD43BF8BCC09B583064A32"><div class="li_content">CV, AV, and DV parameters
+			 (Input scale) - float plus status parameters and the following parameters
+			 associated with Input scale (PV_SCALE or IN_SCALE are required; if both exist,
+			 the system chooses PV_SCALE): 
+			 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_03DC2D500A144D1085BA7EF9D1E88B66"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__ul_03DC2D500A144D1085BA7EF9D1E88B66"> 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_7E5411F973C84E04983515EE404BFFE0"><div class="li_content">IN 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_78E347E0B5134AD5A8035241E4481DE9"><div class="li_content">SP 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_5E784B10F5614A3DBDAB6E71554EF672"><div class="li_content">SP_WRK 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_474B2598DE3E448883402D26EF4A1021"><div class="li_content">CAS_IN 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_64C24C6650C34147AE36DE7E50733E44"><div class="li_content">RCAS_IN 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_26B409A8003746229BCE094B1F63973D"><div class="li_content">RCAS_OUT 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_216__li_4FA943885E714058AC0C5F1A0B1D5DF7"><div class="li_content">BKCAL_IN 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p> The MPCPlus function block treats the downstream process setpoint as
+		  the Manipulated process input. As such, the MPCPlus function block&#39;s
+		  Manipulated output is referenced to the CAS_IN of this function block. The
+		  BKCAL_OUT and MODE of the downstream block referenced by the MPCPro Manipulated
+		  output is automatically read, displayed, and modified if the master switch is
+		  toggled between Local and MPC by the MPCPlus block based on the path definition
+		  for the manipulated parameter. 
+		</p>
+ 
+		<p>In some cases, the MPCPlus function block replaces an existing control
+		  strategy that uses the CAS_IN of the downstream block. You can layer the
+		  MPCPlus function block on the existing strategy to allow the MPCPlus control to
+		  be implemented with the old strategy as a backup. You can achieve this by
+		  referencing the RCAS_IN and RCAS_OUT (or the ROUT_IN and ROUT_OUT unless
+		  referencing an AO block) of the downstream block. The MPCPlus function block
+		  can reference these parameters in much the same way that it references the
+		  CAS_IN of a block. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

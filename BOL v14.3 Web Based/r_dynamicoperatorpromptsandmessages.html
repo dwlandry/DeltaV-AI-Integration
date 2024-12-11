@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Dynamic operator prompts and messages" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="prompts, operator, dynamic, dynamic prompts, operator prompts, dynamic operator prompts" name="DC.subject" /><meta content="prompts, operator, dynamic, dynamic prompts, operator prompts, dynamic operator prompts" name="keywords" /><meta content="r_phaserequestcodes.html" name="DC.Relation" scheme="URI" /><meta content="c_controlstudio.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_dynamicoperatorpromptsandmessages" name="DC.Identifier" /><title>Dynamic operator prompts and messages</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_phaserequestcodes.html" /><link rel="next" href="c_designingphasemessages.html" /></head><body class="fixed" id="r_dynamicoperatorpromptsandmessages" data-relpath="r_dynamicoperatorpromptsandmessages.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_dynamicoperatorpromptsandmessages"></a>
+
+<h1 class="topictitle1">Dynamic operator prompts and messages</h1>
+<div><div></div>
+
+    <div class="section" id="r_dynamicoperatorpromptsandmessages__section_C8F23199B3FB4E108C2357B245B52B33"><a name="r_dynamicoperatorpromptsandmessages__section_C8F23199B3FB4E108C2357B245B52B33"></a>
+      <p>Dynamic operator prompts and messages read data from the issuing phase and completes the operator message or prompt with that data. The data is read at the time the prompt or message is issued.</p>
+
+      <p>To configure a dynamic operator prompt or message, create a message in DeltaV Explorer for the phase class. In the text of the message, include the parameter that will be resolved to a value when the prompt or message is issued. Write an action in a step of the phase to issue the message using the appropriate phase request code, for example, REQUEST.CV = 3401, where the phase issues the Boolean operator prompt (34nn) using message 1 (01) and message 1 contains a parameter that is resolved at runtime with dynamic data.</p>
+
+      <p>Dynamic operator prompts are issued using 32nn, 33nn, 34nn, and 35nn requests. Dynamic operator messages are issued with 30nn request codes.</p>
+
+      <p>The following are required when configuring dynamic operator prompts:</p>
+
+      <a name="r_dynamicoperatorpromptsandmessages__ul_5D2E5AD8C8234E6E9727A7768ED163E0"></a><ul id="r_dynamicoperatorpromptsandmessages__ul_5D2E5AD8C8234E6E9727A7768ED163E0">
+        <li id="r_dynamicoperatorpromptsandmessages__li_6C2791E0841D498D863F332A940519C5"><div class="li_content">
+          <p>The parameter that is dynamically resolved is set off by single quotes in the message string.
+</p>
+
+          <div class="note"><span class="notetitle">Note:</span> 
+            <p> If the parameter referenced contains a string with single quotes, this string will be evaluated and will return an error if it cannot be resolved to a value.</p>
+
+          </div>
+
+          <pre class="pre">
+OK to charge &#39;MATL_QUANTITY&#39; LB of catalyst?
+</pre>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_3C52910B058841B6866E87B3898DBA0B"><div class="li_content">
+          <p>The parameter must exist in the phase that is issuing the prompt.
+</p>
+
+          <pre class="pre">
+OK to charge &#39;MATL_QUANTITY&#39; LB of catalyst? 
+</pre>
+
+          <p>
+where the parameter referenced (MATL_QUANTITY) exists in the phase issuing the prompt.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_309D5EDCBD8D48AA85A91B49715B4365"><div class="li_content">
+          <p>The dynamically resolved parameter used in dynamic operator prompts and messages can be a batch input parameter, a batch report parameter, a phase algorithm parameter, or an external reference parameter.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_C1F58B1676784276BFC109831B0C7D3E"><div class="li_content">
+          <p>The external reference parameter can be used in a phase to reference a unit parameter on a unit module. The dynamic prompt or message contains the external reference parameter and displays the resolution of the external reference parameter to the operator.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_F98F61CB9D8C4E87A3FE1F1E76A1E4CE"><div class="li_content">
+          <p>The number of decimal places to be displayed as an integer or real is configured using: <strong>, x</strong> (where the comma (<strong>,</strong>) separates the fields and <strong>x</strong> is the number of decimal places to be displayed with a maximum of 6 places). Zeros are forced if the result does not have the number of decimal places specified. The last decimal place is rounded if number of actual decimal places exceeds the number of places being displayed (or the maximum of 6 places).
+</p>
+
+          <pre class="pre">
+OK to charge &#39;MATL_QUANTITY, 3&#39; LB of catalyst? (three decimal places are displayed)
+</pre>
+
+          <p>
+might resolve to
+</p>
+
+          <pre class="pre">
+OK to charge 3.100 LB of catalyst? 
+</pre>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_FACE1E60F45A455683EA5BF62C17A521"><div class="li_content">
+          <p>The reference is to the current phase, therefore you do not have to include the unit module/phase name. For example, when referencing the BSTATUS parameter  in the Fill phase running on the REACTOR2 unit, the Batch Executive completes the path in the dynamic operator prompt of &#39;BSTATUS&#39; as REACTOR2/FILL/BSTATUS.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_4485B23C330A4C8E9E63C6AFDB54A7B2"><div class="li_content">
+          <p>A parameter in a phase&#39;s composite can be referenced by including the composite name and parameter. Do not use any leading slashes (/).
+</p>
+
+          <pre class="pre">
+Running for &#39;RUN_LOGIC/TIME&#39; seconds.
+</pre>
+
+          <p>
+The unit module and phase is filled in by the Batch Executive as the phase issuing the prompt, for example, &#39;REACTOR2/FILL/RUN_LOGIC/TIME&#39;.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_1495DAF3A2364245A063B375CE056870"><div class="li_content">
+          <p>The parameter&#39;s default field is being referenced. In many cases, this is .CV. To reference a field other than the default field, include the field in your string.
+</p>
+
+          <pre class="pre">
+The status is &#39;BSTATUS.ST&#39;. (this string displays the value of the ST field for the BSTATUS parameter.)
+</pre>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_AA5855270665405C9DA159398693F18F"><div class="li_content">
+          <p>A Boolean value is represented as 0 or 1 in the resolved string. To display the word associated with the Boolean value (Yes/No, True/False), create a named set that uses the words to be displayed for the Boolean values. That is, the named set will have True = 1 and False = 0. Create a phase parameter based on the named set. Create a dynamic phase message that references the phase parameter.
+</p>
+
+          <pre class="pre">
+UserNamedSet          True = 1; False = 0
+UserPhaseParameter    Type = Named Set; Based on UserNamedSet
+Message01             Display the value of &#39;UserPhaseParameter&#39;
+</pre>
+
+          <p>
+If Message01 resolves to 0, False is displayed to the operator. If Message01 resolves to 1, True is displayed.
+</p>
+
+          <div class="note"><span class="notetitle">Note:</span> 
+            <p> This technique can be used for any controller parameter where the value is numeric and you want the operator to see a word.</p>
+
+          </div>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_F9856ADBF3D543FD8772A9CFC49CF706"><div class="li_content">
+          <p>The dynamic operator prompt or message can reference a parameter that contains a reference to another parameter. For example, you reference the parameter STR_PARM in your message. In the phase, STR_PARM contains the name of the MATL_QUANTITY parameter. When the dynamic operator prompt (or message) resolves, it will use the value of MATL_QUANTITY to display to the operator. However, nested parameters are not supported. Therefore, you cannot have MATL_QUANTITY contain the name of another parameter. MATL_QUANTITY must resolve to a value.
+</p>
+
+          <pre class="pre">
+Msg1= &#39;STR_PARM&#39;
+
+STR_PARM = &#39;MATL_QUANTITY&#39; LB
+
+MATL_QUANTITY.CV = 50
+</pre>
+
+          <p>
+The operator sees 50 LBs in the prompt or message.</p>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_FFB8C603EDCB480AB8AA683DCF7C3783"><div class="li_content">
+          <p>The dynamic operator prompt or message can have multiple references to parameters in a series. The operator prompt or message is limited to the number of characters supported (80 characters for phase messages).
+</p>
+
+          <pre class="pre">
+Charging &#39;MATL_QUANTITY&#39; of &#39;COLOR&#39; at &#39;TIME&#39; seconds
+</pre>
+
+        </div></li>
+
+        <li id="r_dynamicoperatorpromptsandmessages__li_9A91DC1392B34DEDB56E1C1CF2BA7214"><div class="li_content">
+          <p>The resolution of a batch alias can be displayed using the dynamic operator prompt or message. The following shows an example of what can be included as actions in a step in the run logic to make the resolved alias available to display to the operator.
+</p>
+
+          <pre class="pre">
+A1= &#39;^/ALIAS_STRING.CV&#39; := &#39;/ALIAS1.REF&#39;
+</pre>
+
+          <pre class="pre">
+A2= &#39;PARAM1&#39;:=&#39;//#ALIAS1#/PID1/GAIN.CV&#39;;
+</pre>
+
+          <pre class="pre">
+A3= &#39;^/STRING_WITHALIAS.CV&#39; := &quot;Gain value of &#39;ALIAS_STRING&#39; is: &#39;RUN_LOGIC/PARAM1&#39; &quot;
+</pre>
+
+          <pre class="pre">
+A4= &#39;^/REQUEST.CV&#39; := 3348;
+</pre>
+
+          <p>
+Create the phase parameters STRING_WITHALIAS and ALIAS_STRING as type string. Create the phase message containing the parameter &#39;STRING_WITHALIAS&#39;. When the phase message is resolved, it will display the name of the resolved alias.</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_phaserequestcodes.html">Phase request codes</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

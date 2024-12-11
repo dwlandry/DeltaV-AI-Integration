@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Managing event history data sets" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_event_chronicle.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_managingeventhistorydatasets" name="DC.Identifier" /><title>Managing event history data sets</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_settingupaneventchronicle.html" /><link rel="next" href="c_deltavreporterexceladdin.html" /></head><body class="fixed" id="c_managingeventhistorydatasets" data-relpath="c_managingeventhistorydatasets.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_managingeventhistorydatasets"></a>
+
+<h1 class="topictitle1">Managing event history data sets</h1>
+<div><div></div>
+
+    <p>An Event Chronicle stores events in event history data sets. You define
+      how the system manages the data sets using the 
+      <span class="uicontrol">Advanced</span> tab of the 
+      <span class="wintitle">Alarms and Events Properties</span> dialog in DeltaV
+      Explorer. Refer to the online help for a detailed description of the fields.
+      You can also manually manage data sets using the Event Chronicle Administration
+      tool. There are several types of event history data sets:
+    </p>
+
+    <p><strong>Active data set</strong> - contains the most recent event records for the
+      associated Event Chronicle. There is one active event history data set in each
+      enabled Event Chronicle. The system allocates a user-specified disk space for
+      the active data set. When the active data set reaches the target size, the
+      system copies the oldest event records to the current data set, and then
+      deletes them from the active data set. You can configure the Alarms and Events
+      properties so that events of a certain age are copied to the current data set
+      before the active data set reaches its target size by completing the following
+      steps:
+    </p>
+
+    <a name="c_managingeventhistorydatasets__ol_45CF395FCAA24B829FF66BA0FA6773C6"></a><ol id="c_managingeventhistorydatasets__ol_45CF395FCAA24B829FF66BA0FA6773C6"> 
+      <li id="c_managingeventhistorydatasets__li_1086AF528EA7430183A3D859CEE472F6"><div class="li_content">
+        <p>In the Age for Copying Events to Current History Data Set field,
+          specify a number of hours after which events are copied from the active data
+          set to the current history data set.
+        </p>
+
+      </div></li>
+ 
+      <li id="c_managingeventhistorydatasets__li_07797AFF305B48F8B82F2DE25285CE2C"><div class="li_content">
+        <p>Specify a value between 100 MB and 4,000 MB in the Current Event
+          History Data Set Total Storage Target field.
+        </p>
+
+        <p>This causes the system to create current history data sets as
+          needed.
+        </p>
+
+      </div></li>
+ 
+      <li id="c_managingeventhistorydatasets__li_6EA27D8043E44D8CAE20DC804605699D"><div class="li_content">
+        <p>Download the workstation.
+        </p>
+
+      </div></li>
+ 
+    </ol>
+
+    <p>After you complete these steps, events are copied from the active data
+      set to the current data set when they reach the target age, but are not deleted
+      from the active data set until it reaches its target size. This creates some
+      replication between the active and current data sets, but minimizes any risk of
+      losing event records. The online help for the 
+      <span class="wintitle">Alarms and Events Properties</span> dialog provides more
+      reference information about the fields.
+    </p>
+
+    <p>By default, Process History View connects to the active event history
+      data set for a particular Event Chronicle. When connected to the active data
+      set, Process History View includes event records that have been copied to a
+      current data set, but have not yet been deleted from the active data set.
+    </p>
+
+    <p><strong>Current data sets</strong> - contain events that the system has copied
+      from the active data set. Current data sets enable you to organize event
+      records into manageable chunks for storage on off-line media. You define the
+      rules that the system uses to creates data sets. Specifically you can set a
+      target size and a calendar period for creating a new data set. For example, you
+      might configure a data set to be approximately the size of a CD for convenient
+      optical storage. Or, you might configure the system to create a data set at the
+      end of each week. The system deletes the oldest data sets when the data sets
+      reach a total target size. You can configure the system to export the data set
+      to another directory or workstation for archival before it is deleted.
+    </p>
+
+    <p><strong>Extended data sets</strong> - have been created from exported event
+      history data sets. You create an extended data set using the Event Chronicle
+      Administration tool. Refer to the administration tool help for details.
+    </p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The default time zone reference for an event history data set is UTC,
+        which is the same as Greenwich Mean Time (GMT).
+      </p>
+
+    </div>
+
+    <p>Process History View and the Batch Historian can view event history data
+      sets.
+    </p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

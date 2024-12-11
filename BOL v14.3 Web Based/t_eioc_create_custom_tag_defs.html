@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configuring custom or array PLC tag definitions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="VIMNet, EIOC" name="DC.subject" /><meta content="VIMNet, EIOC" name="keywords" /><meta content="c_eioc_control_tag.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_configure_port_for_vim" name="DC.Identifier" /><title>Configuring custom or array PLC tag definitions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_eioc_control_tag_config_devices.html" /><link rel="next" href="c_eioc_function_blocks.html" /></head><body class="fixed" id="t_configure_port_for_vim" data-relpath="t_eioc_create_custom_tag_defs.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_configure_port_for_vim"></a>
+
+<h1 class="topictitle1">Configuring custom or array PLC tag definitions</h1>
+<div><div></div>
+ 
+	 <div class="p"> 
+		<div class="p">Prerequisites: 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p id="t_configure_port_for_vim__p_control_tag_preferences_unique_1"><a name="t_configure_port_for_vim__p_control_tag_preferences_unique_1"></a>In the System Preferences application
+		  under 
+		  <span class="uicontrol">Networking</span>, select 
+		  <span class="uicontrol">Ethernet I/P Integration with Tags</span>. 
+		</p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p id="t_configure_port_for_vim__p_control_tag_export_unique_1"><a name="t_configure_port_for_vim__p_control_tag_export_unique_1"></a>Export control tag definitions from the PLC.
+		  For Rockwell devices, this is a .L5X file. 
+		</p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p id="t_configure_port_for_vim__p_control_tag_copy_definitions_unique_1"><a name="t_configure_port_for_vim__p_control_tag_copy_definitions_unique_1"></a>Copy the file you exported from
+		  the PLC to the ProfessionalPLUS. You can place the file anywhere on the
+		  workstation. When you configure the physical device later in the configuration
+		  process, the software copies it to the 
+		  <span class="filepath">DeltaV\DVData\ControlTags</span> folder. 
+		</p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <ol><li class="stepexpand"> 
+		  <span>In DeltaV Explorer, navigate to 
+			 <span class="menucascade"><span class="uicontrol">DeltaV_System</span> &gt; <span class="uicontrol">Library</span> &gt; <span class="uicontrol">PLC
+				  Tag Definitions</span></span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Right-click 
+			 <span class="uicontrol">Rockwell Logix</span>, then click 
+			 <strong>New PLC Tag Definition</strong>. 
+		  </span> 
+		  <span class="step_result"> The software displays the 
+			 <span class="uicontrol">New Control Tag Definition</span> dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select the 
+			 <strong>Tag Type</strong> (Custom or Array). 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">Browse for file</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select a PLC definition file, then click 
+			 <span class="uicontrol">Open</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">Browse for definition</span>. 
+		  </span> 
+		  <span class="step_result"> The software displays the Add-on instruction definitions
+			 available in this file. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select a definition from the top selection box. 
+		  </span> 
+		  <span class="step_result"> The software displays the parameters for the selected
+			 definition in the bottom selection box. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select as many as 10 parameters (for a custom-type definition).
+			 Select one parameter for an array-type tag. Array tags can have one parameter
+			 with 2 to 64 elements (non-string data types) or 10 elements (string data
+			 type). 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span> on the selection dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span> on the 
+			 <span class="uicontrol">New Control Tag Definition</span> dialog. 
+		  </span> 
+		    
+			 <div class="tip"><span class="tiptitle">Tip:</span> The New Control Tag Definition dialog also supports
+				a manual Add button. This enables you to add a specific parameter if do not
+				have a PLC definition file at this time but you know the valid parameter names.
+				
+			 </div>
+ 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Browse to or create an EIOC. 
+		  </span> 
+		   Make sure the EIOC port protocol is set to Control Tag Access and
+			 a physical and logical device are present. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Right-click the EIOC&#39;s logical device, then click 
+			 <span class="uicontrol">New Ethernet I/O Control Tag</span>. 
+		  </span> 
+		  <span class="step_result"> The software displays the 
+			 <span class="uicontrol">New Control Tag</span> dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>From the 
+			 <span class="uicontrol">Tag Definition</span> list, click the custom tag
+			 definition you created in this procedure. 
+		  </span> 
+		  <span class="step_result"> The software creates the definition tags, tag signals and
+			 device tags under the logical device. You can reference the device tags in your
+			 control logic. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>If you configured an L5X file, click the 
+			 <span class="uicontrol">Browse</span> button next to the 
+			 <span class="uicontrol">Tag Name</span> field to select a name. 
+		  </span> 
+		  <span class="step_result"> The software displays the tags of the selected type (if any
+			 exist in the file). 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Connect the PLC to the EIOC port. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Download the EIOC card. 
+		  </span> 
+		  <span class="step_result"> 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

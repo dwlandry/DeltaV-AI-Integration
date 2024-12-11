@@ -1,0 +1,5226 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Campaign Manager data contracts" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Configure" name="DC.Coverage" /><meta content="c_soa_cm_api.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_cm_data_contracts" name="DC.Identifier" /><title>Campaign Manager data contracts</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_cm_sample_client.html" /><link rel="next" href="r_cm_errors.html" /></head><body class="fixed" id="r_cm_data_contracts" data-relpath="r_cm_data_contracts.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_cm_data_contracts"></a>
+
+<h1 class="topictitle1">Campaign Manager data contracts</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_92816A9B65EE47F78CB0FD0C6957A59A"><a name="r_cm_data_contracts__section_92816A9B65EE47F78CB0FD0C6957A59A"></a> 
+		<p>Data contracts define complex data that can be exchanged with the
+		  service. Data contracts contain information required by the service to process
+		  the method invoked by the client. 
+		</p>
+ 
+		<p>DataMembers for which the Valid Input field is specified as NA are
+		  read only. Campaign Manager Web Service includes the following data contracts. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_5F5C9211410841DDA691C366E7B6A173"><a name="r_cm_data_contracts__section_5F5C9211410841DDA691C366E7B6A173"></a><h2 class="sectiontitle">CampaignInfo</h2> 
+		 
+		<p>This data contract is used when creating or updating a campaign. This
+		  is also the data contract returned when requesting for the campaign status. 
+		</p>
+ 
+		<p>Some of the data members contained are read-only and will be populated
+		  only during a status request. If the data member is defined during an update or
+		  creation of a new campaign, the value is ignored. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_414E4C546B074BDBBDF5C7FB56CC71D2"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_414E4C546B074BDBBDF5C7FB56CC71D2" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e51" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e57" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e63" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e69" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e75" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> AutoRemoveInManual 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Auto remove completed batches in manual mode. Default is
+						False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> AutoRemoveInAutoRelease 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Auto remove completed batches in auto-release mode. This
+						option is disabled during a continuous iteration campaign. Default is False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> AutoRemoveinAutoStart 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Auto remove completed batches in auto-start mode. This
+						option is disabled during a continuous iteration campaign. Default is False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> MinRemoveDelay 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Minimum delay for auto remove. Default is 60 minutes 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> BatchCompleteCount 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Completed batches 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> BatchCount 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Total batches 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> BatchExecutionMode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Batch execution mode. Default is Manual. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Enumeration 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Enumeration value 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> BatchList 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Batches contained in the campaign. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>BatchInfo[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> ContinuousIteration 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Default is False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> CreatedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>User who created the campaign. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> CreatedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Date the campaign was created. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> Description 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Campaign description 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Any string 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> ID 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Unique campaign identifier 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> InProcessBatches 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Number of batches currently released to the executive. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> IsLocked 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Checks if campaign is locked. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> LockCount 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Number of times the current lock owner has locked the
+						campaign 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> LockOwner 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>User who currently has the campaign locked. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> MaximumActiveBatches 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Maximum active batches in the campaign. Default is 1. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> ModifiedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>User who last modified the campaign 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> ModifiedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Date the campaign was last modified. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> Prefix 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Prefix for the batch ID. Default is the campaign ID. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> RecipeInfo 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Base recipe information 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>RecipeInfo 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p> 
+						<a href="r_cm_data_contracts.html#r_cm_data_contracts__RecipeInfo">RecipeInfo</a> instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> StartSequence 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Start sequence number. Default is 1 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> State 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Current campaign state. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>CampaignState 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> Suffix 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>Suffix for the batch ID. Default is the base recipe ID. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e51 " valign="top"> 
+					 <p> UserComments 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e57 " valign="top"> 
+					 <p>User comments. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e63 " valign="top"> 
+					 <p>String[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e69 " valign="top"> 
+					 <p>String array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e75 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__BatchInfo"><a name="r_cm_data_contracts__BatchInfo"></a><h2 class="sectiontitle">BatchInfo</h2> 
+		 
+		<p>This data contract is used when adding or updating a batch within a
+		  campaign. This is also the data contract returned when requesting for the batch
+		  status. 
+		</p>
+ 
+		<p>Some of the data members contained are read-only and will be populated
+		  only during a status request. If the data member is defined during an update or
+		  creation of a new campaign, the value is ignored. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_D1635F973F514D6E86D891CA1837FF26"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_D1635F973F514D6E86D891CA1837FF26" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e973" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e979" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e985" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e991" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e997" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>Cleanup 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Indicates if the batch is a cleanup batch. Default is False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p> CreatedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who created the batch. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p> CreatedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Date the batch was created. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p> ID 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Unique batch identifier 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>Index 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Batch index 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>IsBasedOnBaseRecipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Indicates if the batch is based on the base recipe.  Must be
+						set to false when adding a batch with different recipe settings from the
+						campaign base recipe.  
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>IsLockedForEdit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Checks whether the batch is currently locked for editing 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>LockEditOwner 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who locked the batch for edit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>string 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>EditLockCount 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Number of times the edit owner has locked the batch for
+						edit. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>IsLockedForControl 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Checks whether the batch is currently locked for control. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>LockControlOwner 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who locked the batch for control. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>ControlLockCount 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Number of times the control owner has locked the batch for
+						control. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>ModifiedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who last modified the batch. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>ModifiedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Date the batch was last modified. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>RecipeInfo 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Recipe on which batch was based. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>RecipeInfo 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p> 
+						<a href="r_cm_data_contracts.html#r_cm_data_contracts__RecipeInfo">RecipeInfo</a> instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>ReleasedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who released the batch. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>ReleasedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Date batch was released. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>RemovedFromExecutiveBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who removed batch from Batch Executive 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>RemovedFromExecutiveDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Date batch was removed from the Batch Executive 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>Setup 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Indicates if batch is a setup batch. Default is False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>True or False 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>StartedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>User who started the batch. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>StartedDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Date batch was started 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e973 " valign="top"> 
+					 <p>State 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e979 " valign="top"> 
+					 <p>Current batch state 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e985 " valign="top"> 
+					 <p>BatchState 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e991 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e997 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__RecipeInfo"><a name="r_cm_data_contracts__RecipeInfo"></a><h2 class="sectiontitle">RecipeInfo</h2> 
+		 
+		<p>This data contract contains the recipe information in the campaign or
+		  batch. No method directly uses this data contract since it should be defined
+		  within the CampaignInfo and BatchInfo data contracts. 
+		</p>
+ 
+		<p>Some of the data members contained are read-only and will be populated
+		  only during a status request. If the data member is defined during an update or
+		  creation of a new campaign, the value is ignored. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_5D3C2140D31B45239BD5BE87E5B03A76"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_5D3C2140D31B45239BD5BE87E5B03A76" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e1795" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e1801" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e1807" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e1813" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e1819" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Recipe name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>Executive 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Name of the Batch Executive 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>EquipmentTrain 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Equipment train associated with the recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>EquipmentTrain 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>EquipmentTrain instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>Formula 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Formula for the recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>Formula 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>Formula instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p> EnforceFormulaSelection 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p> Flag that requires the user to select a formula when
+						assigning a recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>Scale 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Scale percentage 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>Numeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>ScaleUnits 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Scale units 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>Any string 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>UnitBindings 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Settings for steps and bound units or aliases 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>UnitBinding[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>UnitBinding array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e1795 " valign="top"> 
+					 <p>UnitAliasing 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1801 " valign="top"> 
+					 <p>Settings for aliases and their assigned units 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1807 " valign="top"> 
+					 <p>UnitAlias[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1813 " valign="top"> 
+					 <p>UnitAlias array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e1819 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__UserInfo"><a name="r_cm_data_contracts__UserInfo"></a><h2 class="sectiontitle">UserInfo</h2> 
+		 
+		<p>This data contract contains the user information required to perform a
+		  service method. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_88C64B7DFBDF48A485332E1921B45DC6"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_88C64B7DFBDF48A485332E1921B45DC6" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e2150" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2156" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2162" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2168" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2174" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2150 " valign="top"> 
+					 <p>ConfirmerUsername 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2156 " valign="top"> 
+					 <p>The DeltaV user account that has access to the Campaign
+						Manager 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2162 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2168 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2174 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2150 " valign="top"> 
+					 <p>ConfirmerPassword 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2156 " valign="top"> 
+					 <p>Password of the user account 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2162 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2168 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2174 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2150 " valign="top"> 
+					 <p>VerifierUsername 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2156 " valign="top"> 
+					 <p>The DeltaV user account of the verifier 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2162 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2168 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2174 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2150 " valign="top"> 
+					 <p>VerifierPassword 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2156 " valign="top"> 
+					 <p>Verifier password 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2162 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2168 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2174 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_A886BB877A694B0ABA2CECC904D78F76"><a name="r_cm_data_contracts__section_A886BB877A694B0ABA2CECC904D78F76"></a><h2 class="sectiontitle">ExecRecipeInfo</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_0D3A632662894BBE810770A02F3E0269"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_0D3A632662894BBE810770A02F3E0269" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e2339" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2345" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2351" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2357" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e2363" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Name of the recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Abstract 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Area 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>The plant area associated with a recipe (instance based Unit
+						Procedures or Operations only) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Whether the recipe is a Operation, Unit Procedure or
+						Procedure 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ClassOrInstance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Whether the Recipe runs on a single unit or any unit in a
+						unit class (Unit Procedures or Operations only) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>BatchRunLength 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>BatchSizeDefault 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Default size of the created recipe (used for parameter
+						scaling) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>BatchSizeMin 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Minimum size of the created recipe (used for parameter
+						scaling) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>BatchSizeMax 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Maximum size (see Max Scale Enforced) of the created recipe
+						(used for parameter scaling) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>DefaultFormula 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>The default formula for enforced formula section 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p> EnforceFormulaSelection 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p> Flag that requires the user to select a formula when
+						assigning a recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>FileName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe download script file name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>MaxScaleEnforced 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Whether the scale for an instance of this recipe may exceed
+						100% or not 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ProductCode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ProductName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ProductVersion 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Released 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Whether this recipe can be loaded by the operator or not 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Bool 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>VersionNumber 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Current version of the recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>VersionDate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Current modified date of the recipe 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>DateTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ValidatedAgainst 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ValidationTime 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Author 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>ApprovedBy 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>Recipe property 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>FormulaList 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>List of formulas 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Parameters 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>List of formula parameters 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>Parameter[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>EquipmentTrains 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>List of equipment train instances 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Aliases 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>List of aliases 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e2339 " valign="top"> 
+					 <p>Steps 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2345 " valign="top"> 
+					 <p>List of steps 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2351 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2357 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e2363 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" colspan="5" headers="d2412085e2339 d2412085e2345 d2412085e2351 d2412085e2357 d2412085e2363 " valign="top"> 
+					 <p><strong>Note</strong>: Recipe property indicates that the DataMember
+						is just information that you can associate with the recipe. These members are
+						optional and do not affect recipe execution. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_70BA6D04E0A34922A670201371E4FBE2"><a name="r_cm_data_contracts__section_70BA6D04E0A34922A670201371E4FBE2"></a><h2 class="sectiontitle">EquipmentTrain</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_E51450AE31354BA087F01E62A1CC74E3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_E51450AE31354BA087F01E62A1CC74E3" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e3363" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3369" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3375" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3381" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3387" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3363 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3369 " valign="top"> 
+					 <p>Name of the recipe&#39;s selected equipment train 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3375 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3381 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3387 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3363 " valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3369 " valign="top"> 
+					 <p>The description for the selected equipment train. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3375 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3381 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3387 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_750E2E6E4E684998BB83099A7FA74C5F"><a name="r_cm_data_contracts__section_750E2E6E4E684998BB83099A7FA74C5F"></a><h2 class="sectiontitle">Formula</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_D8518ECD926E49669CCB2D45AD0C519E"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_D8518ECD926E49669CCB2D45AD0C519E" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e3480" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3486" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3492" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3498" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3504" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3480 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3486 " valign="top"> 
+					 <p>Formula for the recipe. The default is Default. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3492 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3498 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3504 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3480 " valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3486 " valign="top"> 
+					 <p>Formula description. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3492 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3498 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3504 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3480 " valign="top"> 
+					 <p>IsCustomFormula 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3486 " valign="top"> 
+					 <p>States if the formula is a standard or custom formula. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3492 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3498 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3504 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3480 " valign="top"> 
+					 <p>Parameters 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3486 " valign="top"> 
+					 <p>The selected equipment train&#39;s base class 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3492 " valign="top"> 
+					 <p>Parameter[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3498 " valign="top"> 
+					 <p>Parameter array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3504 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_B06004C6039E45ABBFAFD36FD29AF460"><a name="r_cm_data_contracts__section_B06004C6039E45ABBFAFD36FD29AF460"></a><h2 class="sectiontitle">Parameter</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_B57569E47DB145E290D55EFAC996AE81"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_B57569E47DB145E290D55EFAC996AE81" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e3663" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3669" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3675" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3681" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3687" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Parameter name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Min 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Minimum limit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Value 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>The value of the parameter 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Max 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Maximum limit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>Floating point 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>EU 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Engineering unit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>ParamType 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Parameter type 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>RecipeParamType 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Scalable 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p>Indicates if the parameter can be scaled 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3663 " valign="top"> 
+					 <p>Locked 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3669 " valign="top"> 
+					 <p> Indicates if the parameter is locked in the recipe. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3675 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3681 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3687 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_76AE7D8FFF6341D7962852307C554C75"><a name="r_cm_data_contracts__section_76AE7D8FFF6341D7962852307C554C75"></a><h2 class="sectiontitle">UnitBinding</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_71FD04B5A8584260832914E38ED71AE7"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_71FD04B5A8584260832914E38ED71AE7" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e3979" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3985" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3991" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e3997" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4003" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3979 " valign="top"> 
+					 <p>StepName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3985 " valign="top"> 
+					 <p>Recipe step 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3991 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3997 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4003 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3979 " valign="top"> 
+					 <p>UnitName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3985 " valign="top"> 
+					 <p>Bound unit or alias 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3991 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3997 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4003 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e3979 " valign="top"> 
+					 <p>Area 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3985 " valign="top"> 
+					 <p>Name of area containing the bound unit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3991 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e3997 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4003 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__UnitAlias"><a name="r_cm_data_contracts__UnitAlias"></a><h2 class="sectiontitle">UnitAlias</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_4A5AFE343BE144C8897D2D25A0BA4032"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_4A5AFE343BE144C8897D2D25A0BA4032" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e4129" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4135" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4141" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4147" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4153" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4129 " valign="top"> 
+					 <p>AliasName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4135 " valign="top"> 
+					 <p>Alias name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4141 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4147 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4153 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4129 " valign="top"> 
+					 <p>UnitName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4135 " valign="top"> 
+					 <p>Unit instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4141 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4147 " valign="top"> 
+					 <p>Alphanumeric 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4153 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4129 " valign="top"> 
+					 <p>SelectionMode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4135 " valign="top"> 
+					 <p>Selection Mode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4141 " valign="top"> 
+					 <p>Enumeration 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4147 " valign="top"> 
+					 <p> 
+						<a href="r_cm_data_contracts.html#r_cm_data_contracts__SelectionMode">SelectionMode</a> instance 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4153 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__UnitOrAlias"><a name="r_cm_data_contracts__UnitOrAlias"></a><h2 class="sectiontitle">UnitOrAlias</h2> 
+		 
+		<p>UnitOrAlias is the base class for the Unit and Alias data contracts.
+		  The method GetRecipeUnits return type is UnitOrAlias. The data returned from
+		  the method conforms to the Unit or Alias data contract depending on the context
+		  of the method&#39;s use. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__Unit"><a name="r_cm_data_contracts__Unit"></a><h2 class="sectiontitle">Unit</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_B96EBBCF29984E47A78A4D1956DA670A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_B96EBBCF29984E47A78A4D1956DA670A" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e4292" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4298" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4304" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4310" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4316" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4292 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4298 " valign="top"> 
+					 <p>Name of the unit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4304 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4310 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4316 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4292 " valign="top"> 
+					 <p>Class 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4298 " valign="top"> 
+					 <p>Unit class 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4304 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4310 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4316 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4292 " valign="top"> 
+					 <p>ProcessCell 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4298 " valign="top"> 
+					 <p>Process cell associated with the unit class 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4304 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4310 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4316 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4292 " valign="top"> 
+					 <p>MaxOwners 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4298 " valign="top"> 
+					 <p>Maximum number of owners 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4304 " valign="top"> 
+					 <p>Integer 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4310 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4316 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4292 " valign="top"> 
+					 <p>DownstreamUnits 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4298 " valign="top"> 
+					 <p>List of downstream units 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4304 " valign="top"> 
+					 <p>String[ ] 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4310 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4316 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__Alias"><a name="r_cm_data_contracts__Alias"></a><h2 class="sectiontitle">Alias</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_7BF1A1E282B44C5CB640D5DA17608C5D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_7BF1A1E282B44C5CB640D5DA17608C5D" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e4508" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4514" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4520" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4526" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4532" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4508 " valign="top"> 
+					 <p>Name 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4514 " valign="top"> 
+					 <p>Name of the unit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4520 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4526 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4532 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4508 " valign="top"> 
+					 <p>UnitClass 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4514 " valign="top"> 
+					 <p>Unit class 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4520 " valign="top"> 
+					 <p>String 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4526 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4532 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4508 " valign="top"> 
+					 <p>SelectionMode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4514 " valign="top"> 
+					 <p>Unit selection mode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4520 " valign="top"> 
+					 <p>SelectionMode 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4526 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4532 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4508 " valign="top"> 
+					 <p>DownstreamAliases 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4514 " valign="top"> 
+					 <p>List of downstream aliases 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4520 " valign="top"> 
+					 <p>String array 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4526 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4532 " valign="top"> 
+					 <p>No 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_EAB7EBA8183C4E19B07AFF2A37C11309"><a name="r_cm_data_contracts__section_EAB7EBA8183C4E19B07AFF2A37C11309"></a><h2 class="sectiontitle">ConfiguredActionInfo</h2> 
+		 
+		
+<div class="tablenoborder"><a name="r_cm_data_contracts__table_25D19EB111BA463AB67C2E5FFCC183FC"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_cm_data_contracts__table_25D19EB111BA463AB67C2E5FFCC183FC" rules="all" summary=""> 
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2412085e4691" valign="top"> 
+					 <p>DataMembers 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4697" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4703" valign="top"> 
+					 <p>Type 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4709" valign="top"> 
+					 <p>Valid Input 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2412085e4715" valign="top"> 
+					 <p>Required 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4691 " valign="top"> 
+					 <p>ConfiguredAction 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4697 " valign="top"> 
+					 <p>The action to check for confirmer and/or verifier accounts 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4703 " valign="top"> 
+					 <p>ConfiguredAction enumeration 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4709 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4715 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4691 " valign="top"> 
+					 <p>IsConfirmerRequired 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4697 " valign="top"> 
+					 <p>States if a confirmer account is required for the specified
+						action 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4703 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4709 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4715 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2412085e4691 " valign="top"> 
+					 <p>IsVerifierRequired 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4697 " valign="top"> 
+					 <p>States if a verifier account is required for the specified
+						action 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4703 " valign="top"> 
+					 <p>Boolean 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4709 " valign="top"> 
+					 <p>NA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2412085e4715 " valign="top"> 
+					 <p>Yes 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_EA7651CCA5064239B372C4B84E934B0F"><a name="r_cm_data_contracts__section_EA7651CCA5064239B372C4B84E934B0F"></a><h2 class="sectiontitle">CampaignStatus</h2> 
+		 
+		<p>CampaignStatus is an enumeration: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_09E4B025C0534809AAEBE005D32965DD"></a><ul id="r_cm_data_contracts__ul_09E4B025C0534809AAEBE005D32965DD"> 
+		  <li id="r_cm_data_contracts__li_1A5435B44DB4438191BD640E7FEFBD5A"><div class="li_content"> 
+			 <p>Defining 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_F7BA9CFA336A4E559E4304AF06C97CC1"><div class="li_content"> 
+			 <p>Defined 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_4A7D757B223148D7B33BA40A22429DF6"><div class="li_content"> 
+			 <p>Active 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_5841DBD327D04E55BE2535F98A381297"><div class="li_content"> 
+			 <p>Complete 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_4B628BA9B7DA4DB99D85EA7DE67DB207"><div class="li_content"> 
+			 <p>Terminated 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_2CF0CF076F3C4F48BB3568271727A15C"><div class="li_content"> 
+			 <p>Closed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_73CC58E8E47945D0A5E32E1CDFF2FDC0"><div class="li_content"> 
+			 <p>Unknown 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_760D6A6A9FA243C9852FED7B730B7446"><a name="r_cm_data_contracts__section_760D6A6A9FA243C9852FED7B730B7446"></a><h2 class="sectiontitle">BatchStatus</h2> 
+		 
+		<p>BatchStatus is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_70DA9DBD8FF940C39D7CBD7BBB4A3C7F"></a><ul id="r_cm_data_contracts__ul_70DA9DBD8FF940C39D7CBD7BBB4A3C7F"> 
+		  <li id="r_cm_data_contracts__li_AF03D379194F4E859DBEDB98052F0E89"><div class="li_content"> 
+			 <p>Defining 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_AEB783426C254034A8FD0F3AE8D59CEF"><div class="li_content"> 
+			 <p>Defined 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_CF739F34C43D40AEA502C4E8A8DCF62F"><div class="li_content"> 
+			 <p>Released 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_89D44CB6793D442EA050F9809B0787E7"><div class="li_content"> 
+			 <p>ActiveReady 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_55A736C388224F8BB6F3144020CC598F"><div class="li_content"> 
+			 <p>ActiveAborting 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_F16C6E79845848AC9EAF0CFB0F964423"><div class="li_content"> 
+			 <p>ActiveAborted 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_8D00AA568A5B43019F4C559037378EE0"><div class="li_content"> 
+			 <p>ActiveHolding 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_261FF2DFB5C9485FBEEFF1390840EDF4"><div class="li_content"> 
+			 <p>ActiveHeld 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_51B4F1B7F958496C9B79022A1AE4EE09"><div class="li_content"> 
+			 <p>ActiveStopping 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_24C793BD051A4B519694DDD408AAEC27"><div class="li_content"> 
+			 <p>ActiveStopped 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_FCBF227258264C47B26F84C28E5AF065"><div class="li_content"> 
+			 <p>ActiveIdle 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_D8AF372CB2DB4296A6648201E4720BE2"><div class="li_content"> 
+			 <p>ActiveStarting 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_69076705AC5441C2AEC7434F23BCBDA3"><div class="li_content"> 
+			 <p>ActiveRestarting 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_5B92D9A6EC6E41B48B40BF38C5EC5ECD"><div class="li_content"> 
+			 <p>ActiveRunning 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_50A3E2C832204ED1B0494B8C9C900C94"><div class="li_content"> 
+			 <p>ActiveComplete 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_2FD1DFD6FAD846C299EE44E4D3EDE58B"><div class="li_content"> 
+			 <p>CompleteNoError 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_A610CD69A884444EA48D87FD884367C9"><div class="li_content"> 
+			 <p>ReleasedFailed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_57450D5DDF3F4FA5B2C1B2CB31F6DFF0"><div class="li_content"> 
+			 <p>Closed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_52BFB3A11A46447C9FD7C191CB179927"><div class="li_content"> 
+			 <p>LoadFailed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_DB361096C6E4441CB9A1A8DED77D8C1B"><div class="li_content"> 
+			 <p>Recovering 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_5C85071882C949A3A2B9F97EEC546DC5"><div class="li_content"> 
+			 <p>RecoverFailed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_1027C15D6C454E73BC666F3D6E947F80"><div class="li_content"> 
+			 <p>Lost 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_0F1C7E9E93A34FA4AE0D7E796F57F7A0"><div class="li_content"> 
+			 <p>Unknown 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_184A08AE6EC04410B87D0F69EDAE5316"><div class="li_content"> 
+			 <p>Releasing 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_E82A900B4F1545C7B9C98F1DBDFEDACD"><div class="li_content"> 
+			 <p>Starting 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_50F17C0455644874B9F4958D02A9BE36"><div class="li_content"> 
+			 <p>Removing 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_D1361061779D439FA875CFCFAFB8DC90"><div class="li_content"> 
+			 <p>CompleteWithError 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_25C867E5F0814DD399F4F6CA39B2D341"><div class="li_content"> 
+			 <p>CompleteNotStarted 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_676ABBE203C440558EF6FC37C6239511"><a name="r_cm_data_contracts__section_676ABBE203C440558EF6FC37C6239511"></a><h2 class="sectiontitle">BatchExecutionMode</h2> 
+		 
+		<p>BatchExecutionMode is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_37949EEA9CD44C40A8AA0E7ADF655EC9"></a><ul id="r_cm_data_contracts__ul_37949EEA9CD44C40A8AA0E7ADF655EC9"> 
+		  <li id="r_cm_data_contracts__li_5D30DB46D61340D1BF4BFABEFA44181C"><div class="li_content"> 
+			 <p>Manual 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_08F5E2BAA12242B0B599FD0513CED2AE"><div class="li_content"> 
+			 <p>AutoRelease 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_B32FFE1F6AF444C587D8CBA64F06A3C5"><div class="li_content"> 
+			 <p>AutoStart 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_5807A47F721942C381525FF443AA70CB"><a name="r_cm_data_contracts__section_5807A47F721942C381525FF443AA70CB"></a><h2 class="sectiontitle">ConfiguredAction</h2> 
+		 
+		<p>ConfiguredAction is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_A637D7D61F684BF3992066C402202694"></a><ul id="r_cm_data_contracts__ul_A637D7D61F684BF3992066C402202694"> 
+		  <li id="r_cm_data_contracts__li_82955F57605E428F9E66F136122E2242"><div class="li_content"> 
+			 <p>ReleaseBatch 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_490CEF107B5346B3A92DBA6F12D2E81D"><div class="li_content"> 
+			 <p>AddCampaign 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_0BE88239757E4194BB7FB10E84E08ECC"><div class="li_content"> 
+			 <p>ConfiguredClient 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_93103D8E6FC543F39317C197A3CF2651"><div class="li_content"> 
+			 <p>RemoveCampaign 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_A68DC1FA56A64243A4015E824CC128E7"><div class="li_content"> 
+			 <p>ModifyBatch 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_09AF050CACBC48F7939A04D544F91EC7"><div class="li_content"> 
+			 <p>ModifyCampaign 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_64A702D0BA8F4B8C97BA6373DE3E6E72"><div class="li_content"> 
+			 <p>RemoveBatch 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_80B2EDCE75AB4013AE948FF9581B1589"><div class="li_content"> 
+			 <p>StartBatch 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_BB68F45168CA451F90EB3B85569B86C8"><div class="li_content"> 
+			 <p>StartClient 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_0279C60D8E78451CA6114E7D75928E9B"><div class="li_content"> 
+			 <p>StopClient 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_9ED782AEFE9D46AE9D940D485A4CF662"><div class="li_content"> 
+			 <p>UnlockCampaign 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_DBA17BE5EE324BB9A00B1380FD89AFA0"><div class="li_content"> 
+			 <p>UserComment 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_93F2E67B4D40459BB3CD5E80BB511AFE"><a name="r_cm_data_contracts__section_93F2E67B4D40459BB3CD5E80BB511AFE"></a><h2 class="sectiontitle">LockAction</h2> 
+		 
+		<p>LockAction is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_4FC9DCBD63834E7A928BC26AFECFB5FF"></a><ul id="r_cm_data_contracts__ul_4FC9DCBD63834E7A928BC26AFECFB5FF"> 
+		  <li id="r_cm_data_contracts__li_CD18CD0751AC4100AB62035BE9B49B91"><div class="li_content"> 
+			 <p>Lock 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_7FB4455C9D784F99883BBB2DA2354828"><div class="li_content"> 
+			 <p>Unlock 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__section_51CF0637A1834872B3B8746A11AC354E"><a name="r_cm_data_contracts__section_51CF0637A1834872B3B8746A11AC354E"></a><h2 class="sectiontitle">RecipeParamType</h2> 
+		 
+		<p>RecipeParamType is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_2F7E4783D8B44F4692DA3EF41D719FE2"></a><ul id="r_cm_data_contracts__ul_2F7E4783D8B44F4692DA3EF41D719FE2"> 
+		  <li id="r_cm_data_contracts__li_3C2FE43F14F64BC6ADB4925A33E26247"><div class="li_content"> 
+			 <p>Integer 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_7C87925F62AF4D5BB970267C5A0ADCC4"><div class="li_content"> 
+			 <p>NamedSet 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_7BCC078E245C4B76B759569CAE6B4C06"><div class="li_content"> 
+			 <p>Real 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_91255A0F8878467685575BD0011D8833"><div class="li_content"> 
+			 <p>String 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_7268C00CB9444D29A2E252DD3AD77D05"><div class="li_content"> 
+			 <p>Unknown 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="r_cm_data_contracts__SelectionMode"><a name="r_cm_data_contracts__SelectionMode"></a><h2 class="sectiontitle">SelectionMode</h2> 
+		 
+		<p>SelectionMode is an enumeration set: 
+		</p>
+ 
+		<a name="r_cm_data_contracts__ul_B5070A0C323743B787B4994FF456ABDC"></a><ul id="r_cm_data_contracts__ul_B5070A0C323743B787B4994FF456ABDC"> 
+		  <li id="r_cm_data_contracts__li_F476FE9EF2E44DF281697F6F3C5992BD"><div class="li_content"> 
+			 <p>Defer 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_3859BDD38A834A0C8CD28E64B8DD02D7"><div class="li_content"> 
+			 <p>FromPolicy 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_cm_data_contracts__li_52D4D1CB3B0A4ABAA7043A95EC823475"><div class="li_content"> 
+			 <p>DeferAndHasPolicy 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> 
+			 <strong>Note</strong>  Use the SelectionMode DeferAndHasPolicy if an alias in a
+			 recipe uses a selection policy and you want to use Defer as the binding. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div><div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  If the Scale of a batch recipe is null, Scale is set
+						  to the scale value of the campaign base recipe. This applies even if the batch
+						  recipe is different from the campaign base recipe. Client applications must
+						  explicitly set a scale value if other behavior is required. </div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

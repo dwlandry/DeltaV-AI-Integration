@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="The ALARMS parameter" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="XHTML" name="DC.Format" /><meta content="r_thealarmsparameter" name="DC.Identifier" /><title>The ALARMS parameter</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_definingthealarmdetection.html" /><link rel="next" href="r_alarmfields.html" /></head><body class="fixed" id="r_thealarmsparameter" data-relpath="r_thealarmsparameter.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_thealarmsparameter"></a>
+
+<h1 class="topictitle1">The ALARMS parameter</h1>
+<div><div></div>
+ 
+	 <div class="section" id="r_thealarmsparameter__section_5D066C23B7C04F5E9AE19CB698191B30"><a name="r_thealarmsparameter__section_5D066C23B7C04F5E9AE19CB698191B30"></a> 
+		<p>A module, area, or user can have many active alarms. The ALARMS
+		  parameter helps you to view and manage the five most important active alarms
+		  associated with a module, area, or user. The ALARMS parameter is an array
+		  parameter with values of 1 through 250. For this reason, the parameter is
+		  sometimes referred to as ALARMS[1-250]. The most important alarm is ALARMS[1].
+		  The controller automatically creates an ALARMS parameter for each downloaded
+		  module. 
+		</p>
+ 
+		<p>Each workstation keeps a list of active alarms that the current user
+		  should see and makes the five most important alarms accessible for display
+		  through an ALARMS parameter for each plant area and for THISUSER. 
+		</p>
+ 
+		<p>The DeltaV system uses the ALARMS parameter associated with the
+		  current user to generate the data in the alarm banner. The Alarm Presentation
+		  topic describes the alarm banner in more detail. The system uses the ALARMS
+		  parameter associated with a module to generate the data in the defined
+		  faceplate and in the detail pictures for the module. 
+		</p>
+ 
+		<p>The system determines the importance of an alarm by the following
+		  criteria: 
+		</p>
+ 
+		<a name="r_thealarmsparameter__ul_04AA43726B4C489584242CAE5F31F851"></a><ul id="r_thealarmsparameter__ul_04AA43726B4C489584242CAE5F31F851"> 
+		  <li id="r_thealarmsparameter__li_6ACF6D7AB7544791B5B360A80A3F78F0"><div class="li_content"> 
+			 <p>unacknowledged alarms are more important than acknowledged alarms.
+				
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_thealarmsparameter__li_C7DEC08F37194F6DAC7D3A3E9A29C0C7"><div class="li_content"> 
+			 <p>for alarms with equal acknowledgment status, the priority
+				(CRITICAL, WARNING, ADVISORY) determines the importance. CRITICAL is the most
+				important priority. ADVISORY is the least important priority. Alarms can also
+				be assigned the LOG priority. When this happens, all alarm annunciation
+				behavior is suppressed (for example, the alarm no longer appears in the alarm
+				banner, it does not sound the horn, and so on). 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_thealarmsparameter__li_98B158844DDC478A9926221EE146FA97"><div class="li_content"> 
+			 <p>for alarms with equal acknowledgment status and equal priorities,
+				the controller uses the timestamp. The most recent alarms are the most
+				important. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>The following examples show paths to the ASCII value of the priority
+		  for ALARMS parameters associated with the current user, an area, and a module: 
+		</p>
+ 
+		<a name="r_thealarmsparameter__ul_716DB92CD2484FB395FD47D44F1C40BB"></a><ul id="r_thealarmsparameter__ul_716DB92CD2484FB395FD47D44F1C40BB"> 
+		  <li id="r_thealarmsparameter__li_BBB24F3FDD6C4009A667EE9168C98451"><div class="li_content"> 
+			 <p>THISUSER/ALARMS[1].A_PRI 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_thealarmsparameter__li_01C09987721549589A3891A302A3A8EA"><div class="li_content"> 
+			 <p>AREA_A/ALARMS[1].A_PRI 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="r_thealarmsparameter__li_50613A17AC86477BBEB65FB5802C1E85"><div class="li_content"> 
+			 <p>FIC101/ALARMS[1].A_PRI 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> The alarm field CUALM (current alarm) can be either zero or
+			 non-zero (the non-zero value is determined by the alarm type ). When CUALM is
+			 zero, the alarm is not active. When CUALM is non-zero, the alarm is active. 
+		  </p>
+ 
+		  <p> The alarm field NALM (new - unacknowledged - alarm) can be either
+			 zero (0) or one (1). When NALM is zero, there is no new alarm. When NALM is
+			 one, the alarm is new and unacknowledged. When the alarm is acknowledged, the
+			 NALM value returns to zero. 
+		  </p>
+ 
+		  <p> The LAALM (latched alarm) field can be either zero or non-zero (the
+			 non-zero value is determined by the alarm type). LAALM is a combination of the
+			 CUALM and NALM and remains set as long as the alarm condition is active, or the
+			 alarm is unacknowledged. 
+		  </p>
+ 
+		  <p> The CV (Current Value) field can be either zero or non-zero and
+			 follows the same behavior as LAALM. 
+		  </p>
+ 
+		</div>
+ 
+		<p>The following tables define all the ALARMS parameter fields for
+		  modules, areas and users. The Use Example column assumes a Module named FIC101.
+		  
+		</p>
+ 
+		<p>The floating point value of module, area, THISUSER, and hardware
+		  ALARMS parameter fields CUALM, LAALM, and CV (when it returns a value) is
+		  either 0 (zero) or non-zero. Non-zero values are used internally in the DeltaV
+		  software and should not be used in configurations. Configurations should
+		  evaluate these fields only for zero and non-zero values. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_thealarmsparameter__table_CC5B1CCFF2CE41E7AE4222FECF13FED7"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thealarmsparameter__table_CC5B1CCFF2CE41E7AE4222FECF13FED7" rules="all" summary=""><caption><span class="tablecap">Module ALARMS parameter fields</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d3248497e113" valign="top" width="6.853582554517133%"> 
+				  <p>Field 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e119" valign="top" width="26.323987538940806%"> 
+				  <p>Use Example 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e125" valign="top" width="16.355140186915886%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e131" valign="top" width="10.2803738317757%"> 
+				  <p>Read/Write 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e137" valign="top" width="16.822429906542055%"> 
+				  <p>A_ (ASCII) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e144" valign="top" width="23.364485981308412%"> 
+				  <p>F_ (FLOATING) 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" colspan="6" headers="d3248497e113 d3248497e119 d3248497e125 d3248497e131 d3248497e137 d3248497e144 " valign="top"> 
+				  <p><strong>Fields that apply to individual alarms</strong> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ ALARMS[1].A_ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>alarm parameter name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>HI_ALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ALARMS[1].F_CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>Current alarm state 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>OK/HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ALARMS[1].F_LAALM<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>latched alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>OK/HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ALARMS[1].F_NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>new alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>NO/YES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0/1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ALARMS[1].F_PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>priority 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>CRITICAL, WARNING, ADVISORY, LOG<a href="#fntarg_2" name="fnsrc_2"><sup>2</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15<a href="#fntarg_3" name="fnsrc_3"><sup>3</sup></a> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ ALARMS[1].A_TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>timestamp when it went into alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>Mon Jun 17, 1997 21:04:05:22 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" colspan="6" headers="d3248497e113 d3248497e119 d3248497e125 d3248497e131 d3248497e137 d3248497e144 " valign="top"> 
+				  <p><strong>Fields that apply to all alarms</strong> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>ENAB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ALARMS.F_ENAB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>enables or disables all alarms in the module 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R/W 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0 (NO) causes all alarm parameters ENAB to be overridden and
+					 evaluated as NO. Causes all alarms to be disabled. 
+				  </p>
+ 
+				  <p>1 (YES) is the initial value after download. Writing a 1 after
+					 writing a 0 restores the effect of the individual alarm parameter&#39;s ENAB
+					 setting. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>MACK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ ALARMS.F_MACK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>acknowledges all the alarms in the module 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>W 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0 (NO) is the initial value after download. 
+				  </p>
+ 
+				  <p>1 (YES) acknowledges all alarm parameters in the next
+					 execution cycle and resets to 0. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e113 " valign="top" width="6.853582554517133%"> 
+				  <p>PRIAD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e119 " valign="top" width="26.323987538940806%"> 
+				  <p>FIC101/ ALARMS.F_PRIAD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e125 " valign="top" width="16.355140186915886%"> 
+				  <p>adjusts the priority of all the alarms in the module 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e131 " valign="top" width="10.2803738317757%"> 
+				  <p>R/W 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e137 " valign="top" width="16.822429906542055%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e144 " valign="top" width="23.364485981308412%"> 
+				  <p>0 - alarm priorities as configured. 
+				  </p>
+ 
+				  <p> 1 - lowers all alarms by 1 priority. 
+				  </p>
+ 
+				  <p>  For example, if an alarm is configured as a priority 15, a
+					 PRIAD value of 2 would reduce its priority to 13. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>The following table lists the plant area level ALARMS parameter fields
+		  (used to show the top 5 active alarms in current user&#39;s operating plant area).
+		  The Use Example column assumes a plant area named AREA_A. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_thealarmsparameter__table_884D5949A8F54012B9F819B5051D9879"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thealarmsparameter__table_884D5949A8F54012B9F819B5051D9879" rules="all" summary=""><caption><span class="tablecap">Area ALARMS parameter fields</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d3248497e579" valign="top" width="12%"> 
+				  <p>Field 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e585" valign="top" width="34%"> 
+				  <p>Use Example 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e591" valign="top" width="18%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e597" valign="top" width="15%"> 
+				  <p>A_ (ASCII) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e603" valign="top" width="21%"> 
+				  <p>F_ (FLOATING) 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].F_CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>current alarm state 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>OK/HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>MODULE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].A_MODULE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>module name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>FIC101 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].F_LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>latched alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>OK or HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>CV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].A_CV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>module name (same as the MODULE field) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>.../FIC101 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].F_NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>new (unacknowledged) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>NO or YES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>0 or 1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].F_PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>priority 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>CRITICAL, WARNING, ADVISORY, or LOG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15<sup>3</sup> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].A_ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>mod/param name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>FIC101/HI_ALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e579 " valign="top" width="12%"> 
+				  <p>TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e585 " valign="top" width="34%"> 
+				  <p>AREA_A/ALARMS[1].A_TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e591 " valign="top" width="18%"> 
+				  <p>time into alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e597 " valign="top" width="15%"> 
+				  <p>Mon Jun 17, 1997 21:04:05:22 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e603 " valign="top" width="21%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>The following table lists the THISUSER level ALARMS parameter fields
+		  (used to show the top 5 active alarms in all of the current user&#39;s system-wide
+		  operating plant areas): 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="r_thealarmsparameter__table_CECC7E2C88744F7BABD065312E1C8A3F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thealarmsparameter__table_CECC7E2C88744F7BABD065312E1C8A3F" rules="all" summary=""><caption><span class="tablecap">THISUSER ALARMS parameter fields</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d3248497e901" valign="top" width="11%"> 
+				  <p>Field 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e907" valign="top" width="35%"> 
+				  <p>Use Example 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e913" valign="top" width="17%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e919" valign="top" width="17%"> 
+				  <p>A_ (ASCII) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e925" valign="top" width="20%"> 
+				  <p>F_ (FLOATING) 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>MODULE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].A_MODULE 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>module name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>FIC101 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].F_CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>current alarm state 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>OK/HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].F_LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>latched alarm state 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>OK or HIGH 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>CV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].A_CV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>module name (same as the MODULE field) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>FIC101 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].F_NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>new (unacknowledged) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>NO or YES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>0 or 1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].F_PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>priority 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>CRITICAL, WARNING, ADVISORY, or LOG 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15<sup>3</sup> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].A_ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>mod/param name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>FIC101/HI_ALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d3248497e901 " valign="top" width="11%"> 
+				  <p>TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e907 " valign="top" width="35%"> 
+				  <p>THISUSER/ALARMS[1].A_TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e913 " valign="top" width="17%"> 
+				  <p>time into alarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e919 " valign="top" width="17%"> 
+				  <p>Mon Jun 17, 1997 21:04:05:22 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e925 " valign="top" width="20%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		<p>The following table lists the ALARMS parameter fields for hardware
+		  alarms. The Use Example column assumes a node (controller) named Cntr_1. 
+		</p>
+ 
+		<p>Hardware alarms are alarms from DeltaV nodes (workstation, I/O,
+		  controller and Logic Solver). Hardware alarms are alarms of type ADVISE_ALM,
+		  MAINT_ALM, FAILED_ALM, and COMM_ALM. These hardware alarms support ALARMS[1]
+		  through ALARMS[5] parameters.  
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p> The ALARMS parameter does not concern any other alarms (for
+			 example, device alarms) being reported through the node. It is only affecting
+			 (displaying or adjusting) the hardware alarm for the node specified. 
+		  </p>
+ 
+		</div>
+ 
+		
+<div class="tablenoborder"><a name="r_thealarmsparameter__table_187CA106B04E40C1B064E048118DC09E"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_thealarmsparameter__table_187CA106B04E40C1B064E048118DC09E" rules="all" summary=""><caption><span class="tablecap">Hardware ALARMS parameter fields</span></caption><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d3248497e1233" valign="top" width="9.800362976406534%"> 
+				  <p>Field 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e1239" valign="top" width="32.30490018148821%"> 
+				  <p>Use Example 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e1245" valign="top" width="22.686025408348456%"> 
+				  <p>Description 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e1251" valign="top" width="16.152450090744104%"> 
+				  <p>A_ (ASCII) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d3248497e1257" valign="top" width="19.056261343012704%"> 
+				  <p>F_ (FLOATING) 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ ALARMS[1].A_ATTR 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Hardware alarm parameter name 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>LO_LO_ALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ALARMS[1].F_CUALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Displays the current hardware alarm word. CUALM is non-zero
+					 and displays &lt;alarm word&gt; when the hardware alarm is active. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>OK or 
+				  </p>
+ 
+				  <p> &lt;alarm word&gt; 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ALARMS[1].F_LAALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Displays the latched hardware alarm word. LAALM is non-zero
+					 and displays &lt;alarm word&gt; when the hardware alarm is active or
+					 unacknowledged. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>OK or 
+				  </p>
+ 
+				  <p> &lt;alarm word&gt; 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>0 (zero) or non-zero 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ALARMS[1].F_NALM 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Displays the new hardware alarm (Yes = unacknowledged). Use to
+					 cause blinking on unacknowledged alarms. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>NO or YES 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>0/1 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ALARMS[1].F_PRI 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Displays the priority of the hardware alarm. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>WARNING (for example) or empty string if not in alarm. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>4...15, 255 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ ALARMS[1].A_TIN 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Displays the time/date of the hardware alarm. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>Wed Jun 16, 1999 14:30:15.60 (for example). Display varies by
+					 locale. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" colspan="5" headers="d3248497e1233 d3248497e1239 d3248497e1245 d3248497e1251 d3248497e1257 " valign="top"> 
+				  <p><strong>Fields that apply to all hardware alarms, EXCEPT
+						COMM_ALM</strong> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>MACK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ ALARMS.F_MACK 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Acknowledges all of the specific node’s hardware alarms
+					 (except COMM_ALM). 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>0 (NO) is the initial value after download. 
+				  </p>
+ 
+				  <p> 1 (YES) acknowledges the hardware alarms. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>ENAB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ALARMS.F_ENAB 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Enables or disables all of the specific node’s hardware alarms
+					 (except COMM_ALM). 
+				  </p>
+ 
+				  <p> 0 (NO) - alarms disabled. 
+				  </p>
+ 
+				  <p> 1 (YES) writing a 1 after writing a 0 enables the hardware
+					 alarms. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>1 (YES) is the initial value after download. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d3248497e1233 " valign="top" width="9.800362976406534%"> 
+				  <p>PRIAD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1239 " valign="top" width="32.30490018148821%"> 
+				  <p>Cntr_1/ ALARMS.F_PRIAD 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1245 " valign="top" width="22.686025408348456%"> 
+				  <p>Adjusts the priority of all of the specific node’s hardware
+					 alarms (except COMM_ALM). 
+				  </p>
+ 
+				  <p> 0 - alarm priorities as configured. 
+				  </p>
+ 
+				  <p> 1 - lowers alarms by 1 priority.  For example, if an alarm is
+					 configured as a priority 15, a PRIAD value of 2 would reduce its priority to
+					 13. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1251 " valign="top" width="16.152450090744104%"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d3248497e1257 " valign="top" width="19.056261343012704%"> 
+				  <p>0, 1,...12 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>   Information about the five most
+						important alarms in a module is accessed through ALARMS [1-5].</div><div class="p"><a href="#fnsrc_2" name="fntarg_2"><sup>2</sup></a>  These are default priority
+						names.</div><div class="p"><a href="#fnsrc_3" name="fntarg_3"><sup>3</sup></a>  Active alarms
+						that have been suppressed (OPSUP or OOS is 1 (&quot;YES&quot;)) also appear in the
+						module&#39;s ALARMS parameter, but their priority value is forced to the value 3
+						(&quot;LOG&quot;) so that they will appear only after unsuppressed active alarms.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

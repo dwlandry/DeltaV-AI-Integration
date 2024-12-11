@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Batch Executive architecture" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="batch executive, architecture, batch runners" name="DC.subject" /><meta content="batch executive, architecture, batch runners" name="keywords" /><meta content="c_restartingindivbatches.html" name="DC.Relation" scheme="URI" /><meta content="c_executive.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_bearchitecture" name="DC.Identifier" /><title>Batch Executive architecture</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_executive.html" /><link rel="next" href="c_startingthebatchexec.html" /></head><body class="fixed" id="c_bearchitecture" data-relpath="c_bearchitecture.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_bearchitecture"></a>
+
+<h1 class="topictitle1">Batch Executive architecture</h1>
+<div><div></div>
+ 
+	 <p>The Batch Executive architecture splits batch control into multiple
+		processes: a single Batch Manager process, a Batch Runtime Server, and
+		individual batch runner applications. The Batch Manager is responsible for
+		coordinating and monitoring the lifetime of all batch runner processes and also
+		takes care of sending information from the runners to clients that require
+		run-time data. This management responsibility includes launching the processes,
+		collecting and distributing their runtime information, sending and responding
+		to requests to and from the runners, and making sure the processes exit when
+		they are complete. There is one instance of a batch runner for every active
+		batch. Each runner is responsible for taking the batch through all of its
+		states and communicates to the Batch Manager for equipment arbitration and any
+		other inter-runner or client-based communications. These batch runners all run
+		independently of one another, so if one has a problem or stops working, it does
+		not affect any of the other runners. 
+	 </p>
+ 
+	 <p>When a client application makes a request to create a batch, the Batch
+		Manager launches a new batch runner process. The runner loads all the expected
+		information about the area model and recipe and enters the &quot;Ready&quot; state, which
+		tells the operator that it can be started. If for any reason the runner
+		encounters an error while loading, it will enter the &quot;Load Failed&quot; state
+		instead of the &quot;Ready&quot; state. When a batch Remove request is sent from a
+		client, the Batch Manager marks the runner as being removed and forwards the
+		request to the runner, which begins the shutdown process, including
+		disconnecting and unloading any controller phases it may have loaded,
+		disconnecting from the Batch Manager, and exiting.
+	 </p>
+ 
+	 <p>If the Batch Manager detects that a runner application has exited
+		without first having been sent a Remove request, the Batch Manager will place
+		the batch representing that runner into the &quot;Lost&quot; state. If the Batch Manager
+		stops functioning, the individual batches keep running, but will appear as
+		&quot;Lost&quot; in the Batch List of the Batch Operator Interface. Lost batches can be
+		removed or can be restarted. 
+	 </p>
+ 
+	 <p>The architecture of the Batch Executive enables a download of equipment
+		model changes without having to restart the Batch Executive. Below is a
+		graphical representation of the Batch Client-Server Architecture.  
+	 </p>
+ 
+	 <p><a name="c_bearchitecture__image_AC08ACE065164652902486FA610BE430"></a><img id="c_bearchitecture__image_AC08ACE065164652902486FA610BE430" src="BE_architecture.gif" /> 
+	 </p>
+ 
+	 <p>Each Batch Executive node has one Batch Manager service, one DeltaV
+		Batch Runtime Server, and any number of batch runner services running at a
+		given time. The DeltaV Batch Runtime Server provides various DeltaV runtime
+		interfacing and download services to all batch applications. For example, the
+		Batch Runtime Server provides information such as security, equipment
+		hierarchy, recipe information, and other DeltaV system information. The Batch
+		Runtime Server allows for partial downloads of equipment model changes, and
+		coordination between Batch Executive nodes regarding equipment arbitration. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_restartingindivbatches.html">Restarting individual batches</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

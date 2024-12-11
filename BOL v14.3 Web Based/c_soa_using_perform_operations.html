@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using PerformOperations" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Configure" name="DC.Coverage" /><meta content="XHTML" name="DC.Format" /><meta content="c_soa_using_perform_operations" name="DC.Identifier" /><title>Using PerformOperations</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_soa_using_perform_operations.html" /><link rel="next" href="c_soa_using_perform_operations.html" /></head><body class="fixed" id="c_soa_using_perform_operations" data-relpath="c_soa_using_perform_operations.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_soa_using_perform_operations"></a>
+
+<h1 class="topictitle1">Using PerformOperations</h1>
+<div><div></div>
+
+    <p>This topic includes general information for using the PerformOperations method to access any SOA web service.</p>
+
+    <div class="section" id="c_soa_using_perform_operations__One"><a name="c_soa_using_perform_operations__One"></a><h2 class="sectiontitle">General Usage Information</h2>
+      
+      <a name="c_soa_using_perform_operations__ul_38ACE3DDFFBC46908DC2604CA63706DE"></a><ul id="c_soa_using_perform_operations__ul_38ACE3DDFFBC46908DC2604CA63706DE">
+        <li id="c_soa_using_perform_operations__li_86E675A231984EB58551E962F2E0492B"><div class="li_content">
+          <p>The XML passed to the PerformOperations method must be well-formed XML.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_02C143A17D6F4DD888D8F1625262A335"><div class="li_content">
+          <p>Declare the required namespaces in the root (PerformOperations) node: </p>
+
+          <p>For example, to use the Campaign Manager PerformOperations method the namespace declarations would be similar to: </p>
+
+          <pre class="codeblock">&lt;PerformOperations
+   xmlns=&quot;http://EmersonProcess.WebServices/PerformOperations&quot;
+   xmlns:dc=&quot;http://EmersonProcess.WebServices/CampaignManager/DataContracts&quot;
+   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+</pre>
+
+          <div class="note"><span class="notetitle">Note:</span> 
+            <p>Always set the namespace </p>
+<samp class="codeph">xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;.</samp></div>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="c_soa_using_perform_operations__two"><a name="c_soa_using_perform_operations__two"></a><h2 class="sectiontitle">Customizing PerformOperations</h2>
+      
+      <p>You can add XML nodes that are not defined by the web service schema. To use this feature, you must supply a stylesheet (XSL file) to transform the custom XML node/data to web service-compliant XML. You can optionally provide a schema to validate the custom XML node:</p>
+
+      <a name="c_soa_using_perform_operations__ul_EA0B4E68F92C4135990265520D3E9282"></a><ul id="c_soa_using_perform_operations__ul_EA0B4E68F92C4135990265520D3E9282">
+        <li id="c_soa_using_perform_operations__li_29244A522CE8431F9248613058381D2C"><div class="li_content">
+          <p>You can add custom schemas and stylesheets by setting the customSchema, customXslt attributes and/or CustomSchema, CustomXslt node. Add these attributes and nodes under the PerformOperations node or Operation node.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_B2C9F544E8E440D2BE34E50E421C0FE0"><div class="li_content">
+          <p>When using a custom schema and/or stylesheet, set the useCustom attribute of the Operation node to be transformed to True.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_4BAAC1F2B6144D06AF064DED19BFF58E"><div class="li_content">
+          <p>CustomSchema and CustomXslt elements must contain the schema or stylesheet inside a CDATA node. Set the customSchema and customXslt attributes to the path of the schema or stylesheet. Combinations of attribute and node are allowed. For example: </p>
+
+          <a name="c_soa_using_perform_operations__ul_3A4ECC87141044BB893C00CDD1AC3397"></a><ul id="c_soa_using_perform_operations__ul_3A4ECC87141044BB893C00CDD1AC3397">
+            <li id="c_soa_using_perform_operations__li_445306344F7244E5AAFD332A02DA9AFF"><div class="li_content">
+              <p>CustomSchema and CustomXslt nodes </p>
+<pre class="codeblock">&lt;CustomSchema&gt;
+   &lt;![CDATA[
+      ...insert schema here...
+   ]]&gt;
+&lt;/CustomSchema&gt;
+&lt;CustomXslt&gt;
+   &lt;![CDATA[
+      ...insert stylesheet here...
+   ]]&gt;
+&lt;/CustomXslt&gt;
+</pre>
+
+              
+            </div></li>
+
+            <li id="c_soa_using_perform_operations__li_2015ABAA3BD04261A4A96AED9C27DB4A"><div class="li_content">
+              <p>CustomSchema and CustomXslt attributes</p>
+<pre class="codeblock">&lt;Operation
+   xsi:type=&quot;GetListOfAssignedBatchExecutives&quot;
+   customSchema=&quot;\\soa12\xsd\CustomRecipeinfo.xsd&quot;
+   customXslt=&quot;D:\xsl\CustomRecipeinfo.xslt&quot;
+   useCustomXslt=&quot;true&quot; &gt;
+</pre>
+
+              
+            </div></li>
+
+            <li id="c_soa_using_perform_operations__li_2B988906F32F4B25B3537C4622939823"><div class="li_content">
+              <p>Combination </p>
+<pre class="codeblock">&lt;Operation
+   xsi:type=&quot;GetListOfAssignedBatchExecutives&quot;
+   customXslt=&quot;\\soa12\xsl\CustomRecipeinfo.xslt&quot;
+   useCustomXslt=&quot;true&quot; &gt;
+&lt;CustomSchema&gt;
+   &lt;![CDATA[
+      ...insert schema here...
+   ]]&gt;
+&lt;/CustomSchema&gt;
+</pre>
+
+              
+            </div></li>
+
+          </ul>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_862A56E880A64A548B97FA88CFF43F09"><div class="li_content">
+          <p>When inserting XML inside a CDATA tag, omit the XML declaration: &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; This applies to custom schemas and stylesheets and Recipe Exchange import.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_2FF37C1F987641BF93054B783C8FD2EF"><div class="li_content">
+          <p>If you set the schema or stylesheet under the PerformOperations node, they can be applied to any Operation node (global). If you set the schema or stylesheet under the Operation node, they apply only to that Operation node (local) and override any global schema or stylesheet.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_422EF062319440BF858908A96EA5D1F5"><div class="li_content">
+          <p>The custom schema validates only the child nodes of the Operation node. Additional attributes to the Operation node are not allowed. See the examples.</p>
+
+        </div></li>
+
+        <li id="c_soa_using_perform_operations__li_504082EC04284785B5A137FDDA785FF1"><div class="li_content">
+          <p>The custom stylesheet transforms the entire Operation node. Make sure that the resulting XML&#39;s root node is Operation and that it retains the xsi namespace alias and declaration as well as the xsi:type attribute. Also, make sure the resulting XML passes the web service schema validation. See the examples.</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="c_soa_using_perform_operations__three"><a name="c_soa_using_perform_operations__three"></a><h2 class="sectiontitle">Examples</h2>
+      
+    </div>
+<div class="section" id="c_soa_using_perform_operations__section_A613EB0E09D2455E84273A3BBFA4C937"><a name="c_soa_using_perform_operations__section_A613EB0E09D2455E84273A3BBFA4C937"></a><h2 class="sectiontitle">CustomRecipeInfo.xml</h2>
+      <pre class="codeblock">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!-- Note: Sample XML for custom transformation. This XML file will not run
+             if used directly in the Recipe Exchange Web service. --&gt;
+&lt;Operation xsi:type=&quot;GetBatchExecutive&quot; useCustom=&quot;true&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; &gt;
+   &lt;rs:recipeInfo recipeType=&quot;Procedure&quot; recipeName=&quot;PRC_PAINT&quot; xmlns:rs=&quot;http://tempuri.org/RecipeSchema.xsd&quot;/&gt;
+&lt;/Operation&gt;
+</pre>
+
+      
+    </div>
+
+    
+    <div class="section" id="c_soa_using_perform_operations__section_F1DFC59CD066426DA112166AAE0F9537"><a name="c_soa_using_perform_operations__section_F1DFC59CD066426DA112166AAE0F9537"></a><h2 class="sectiontitle">CustomRecipeInfo.xsd</h2>
+      <pre class="codeblock">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;xs:schema id=&quot;recipeInfo&quot; targetNamespace=&quot;http://tempuri.org/RecipeSchema.xsd&quot; 
+                           elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://tempuri.org/RecipeSchema.xsd&quot; 
+                           xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+   &lt;xs:complexType name=&quot;recipeInfoType&quot;&gt;
+      &lt;xs:sequence&gt;
+      &lt;/xs:sequence&gt;
+      &lt;xs:attribute name=&quot;recipeType&quot; type=&quot;xs:string&quot; /&gt;
+      &lt;xs:attribute name=&quot;recipeName&quot; type=&quot;xs:string&quot; /&gt;
+   &lt;/xs:complexType&gt;
+   &lt;xs:element name=&quot;recipeInfo&quot; type=&quot;recipeInfoType&quot;&gt;
+   &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre>
+
+      
+    </div>
+
+    <div class="section" id="c_soa_using_perform_operations__section_AFE124A6527F427CB9A5176EF7A5273F"><a name="c_soa_using_perform_operations__section_AFE124A6527F427CB9A5176EF7A5273F"></a><h2 class="sectiontitle">CustomRecipeInfo.xslt</h2>
+      <pre class="codeblock">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+                xmlns=&quot;http://EmersonProcess.WebServices/PerformOperations&quot;
+                xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; &gt;
+   &lt;xsl:output method=&quot;xml&quot; encoding=&quot;UTF-8&quot; indent=&quot;yes&quot; omit-xml-declaration=&quot;yes&quot;/&gt;
+   &lt;xsl:template match=&quot;Operation&quot;&gt;
+      &lt;xsl:element name=&quot;{local-name()}&quot;&gt;
+         &lt;xsl:apply-templates select=&quot;@type | @xsi:type&quot; mode=&quot;xsi&quot; /&gt;
+         &lt;xsl:apply-templates select=&quot;@useCustom&quot; mode=&quot;attribute&quot; /&gt;
+         &lt;!-- add other Operation attributes that will be retained or added here--&gt;
+         &lt;!-- do custom transformations here --&gt;
+         &lt;xsl:apply-templates select=&quot;*&quot;/&gt;
+      &lt;/xsl:element&gt;
+   &lt;/xsl:template&gt;
+   &lt;!-- ignore CustomSchema and CustomXslt elements --&gt;
+   &lt;xsl:template match=&quot;CustomSchema | CustomXslt&quot;/&gt;
+   &lt;xsl:template match=&quot;@*&quot; mode=&quot;attribute&quot;&gt;
+      &lt;xsl:attribute name=&quot;{name()}&quot; &gt;
+         &lt;xsl:value-of select=&quot;.&quot;/&gt;
+      &lt;/xsl:attribute&gt;
+   &lt;/xsl:template&gt;
+   &lt;xsl:template match=&quot;@*&quot; mode=&quot;xsi&quot;&gt;
+      &lt;xsl:attribute name=&quot;xsi:{local-name()}&quot;&gt;
+         &lt;xsl:value-of select=&quot;.&quot;/&gt;
+      &lt;/xsl:attribute&gt;
+   &lt;/xsl:template&gt;
+   &lt;xsl:template match=&quot;@*&quot;&gt;
+      &lt;xsl:element name=&quot;{local-name()}&quot;&gt;
+         &lt;xsl:value-of select=&quot;.&quot;/&gt;
+      &lt;/xsl:element&gt;
+      &lt;xsl:apply-templates/&gt;
+   &lt;/xsl:template&gt;
+   &lt;xsl:namespace-alias result-prefix=&quot;xsi&quot; stylesheet-prefix=&quot;xsi&quot;/&gt;
+   &lt;xsl:template match=&quot;*&quot;&gt;
+      &lt;xsl:element name=&quot;{local-name()}&quot;&gt;
+         &lt;xsl:apply-templates select=&quot;@*|node()&quot;/&gt;
+      &lt;/xsl:element&gt;
+   &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+
+      
+      
+      
+    </div>
+
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

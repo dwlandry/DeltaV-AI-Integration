@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Inspect with InSight" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="asset, malfunctioning, device, Inspect with InSight, standard deviation" name="DC.subject" /><meta content="asset, malfunctioning, device, Inspect with InSight, standard deviation" name="keywords" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_diag.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_overview.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_using_dv_inspect.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_application_examples.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_B6EFD759EE7344DCAC79F07FFD028A6C" name="DC.Identifier" /><title>Inspect with InSight</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_overview.html" /><link rel="next" href="c_insight_using_dv_inspect.html" /></head><body class="fixed" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C" data-relpath="c_insight_inspect.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C"></a>
+
+<h1 class="topictitle1">Inspect with InSight</h1>
+<div> 
+    <p>Poorly tuned loops and malfunctioning field devices can jeopardize
+      product quality and, quite often, production or yield. Therefore, the ability
+      to inspect control and measurement loops quickly is of primary importance.
+      InSight provides advanced process monitoring that allows under-performing loops
+      and malfunctioning field devices to be identified instantly. In providing this
+      advanced capability, InSight takes full advantage of the fieldbus block
+      architecture supported in the DeltaV system. A Bad, Uncertain, or Limited
+      measurement, downstream limitations in control, and incorrect mode of operation
+      are automatically determined based on block mode and status of block
+      parameters. In addition, the Input/Output function blocks (AI, AO, DI, DO, and
+      PIN) and Control function blocks (DC, FLC, MPC, PID, and Ratio) include two
+      parameters that are provided to support performance monitoring. These
+      parameters are updated automatically without any extra block configuration.
+      Since most calculations required for performance monitoring are done in
+      function blocks, this approach greatly simplifies InSight and reduces network
+      traffic between controller and workstation. 
+    </p>
+ 
+    <p>The InSight user interface provides indices that quantify loop
+      utilization, measurements with a Bad, Uncertain or Limited status, limitations
+      in control action, process variability, and availability of recommended tuning.
+      In addition, the 
+      <span class="wintitle">Overview</span> page shows control performance and
+      utilization for a selected area, unit, or cell. 
+    </p>
+ 
+    <p>InSight performance monitoring contains the following features: 
+    </p>
+ 
+    <div class="p"> 
+    <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__ul_91779112163545BC90E6B9E018D9EA12"></a><ul id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__ul_91779112163545BC90E6B9E018D9EA12"> 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_F4A1959CCBFE496BABC13AEB313ED45D"><div class="li_content">Innovative loop performance
+        and loop utilization monitoring techniques 
+      </div></li>
+ 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_558795425F8245589D4B81E25FFE615D"><div class="li_content">Easy custom settings 
+      </div></li>
+ 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_B44F604FEB754B5EA79CD0D4BB0E4BBF"><div class="li_content">Summary results presented in
+        a graphical way (bar graph) for hour, shift, and day 
+      </div></li>
+ 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_1080FB11071F40C08ABA4ED1C8B7F560"><div class="li_content">Easy access to detailed
+        results for modules and blocks and device alerts 
+      </div></li>
+ 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_7C954B32E6A043069D579266A45DC631"><div class="li_content">Guidance for improving
+        performance 
+      </div></li>
+ 
+      <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_0D95BBC63D1D4189887F5B077D9E6C8F"><div class="li_content">An easy-to-use user
+        interface 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+    <p>From the user interface you can monitor the performance of the entire
+      plant or any part of the plant of particular interest. DeltaV also includes an
+      Inspect function block and an Inspect dynamo. Operators can use the function
+      block to enable and disable areas and make utilization information available
+      for viewing, plotting, adding to history, and so on. The dynamo can be used to
+      provide operators easy access to data. 
+    </p>
+ 
+    <div class="section" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_E1F6CF489EB64894A433E480DF6BFB35"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_E1F6CF489EB64894A433E480DF6BFB35"></a><h2 class="sectiontitle">Reporting Loop Utilization and Performance </h2> 
+       
+      <p>InSight consists of one server and multiple clients. The server is the
+        central collection point for the information obtained from the DeltaV
+        controllers. The server calculates the percent time an abnormal condition is
+        present for hour/shift/day, compares the results of these calculations with
+        percent time limits you set to detect an abnormal condition or an
+        under-performing loop, and provides this information to clients for viewing
+        upon request. The clients (Inspect with InSight) can access information only
+        through the server. 
+      </p>
+ 
+      <p>The existence of an abnormal condition is determined within the
+        controller based on function block parameters in the controller (such as
+        measurement status, back calculation input status, standard deviation, tuning
+        index, and mode). The state of these monitored conditions are automatically
+        reported to the DeltaV Inspect server on an exception basis. This server is
+        located on the DeltaV ProfessionalPLUS workstation. The server calculates the
+        percent time a condition is active and flags it if the value is above a maximum
+        percent time limit. These results can be accessed through any DeltaV Inspect
+        client. 
+      </p>
+ 
+      <div class="p"> 
+        <div class="fignone" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__fig_D3857FACE2DF412FAD4BCB53CE0CF6AD"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__fig_D3857FACE2DF412FAD4BCB53CE0CF6AD"></a><div><span class="figcap">Information Flow for InSight Performance Monitoring</span></div> 
+           
+          <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_BA043823C549436E9B0E1F369265EA6B"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_BA043823C549436E9B0E1F369265EA6B" src="ichelp0005.gif" /> 
+        </div>
+ 
+      </div>
+ 
+      <p>The status and actual mode parameters are used by the function block
+        to determine incorrect mode, Limited control, and Bad, Limited, or Uncertain
+        measurement status. Other parameters are used within the block to calculate
+        standard deviation, Tuning and Variability Index, and to determine if these
+        values exceed limits set for the block. These conditions are communicated in a
+        single parameter to the server 
+        <em>only</em> when a monitored condition changes state. Therefore, the
+        communication load for reporting these parameters is usually very small. 
+      </p>
+ 
+      <p>When the DeltaV Inspect Server is initially placed online, the current
+        state of all monitored conditions is reported to the DeltaV InSight server by
+        the DeltaV controller. From that point on, these parameters are reported by the
+        controller only if one of the monitored conditions changes state. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_EA5313DAB4174C108B8A836066E9ACD5"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_EA5313DAB4174C108B8A836066E9ACD5"></a><h2 class="sectiontitle">Loop Performance Calculations </h2> 
+       
+      <p>This section provides details about the calculations performed by the
+        DeltaV control blocks to evaluate control performance. Read this topic if you
+        are interested in how these calculations are performed. 
+      </p>
+ 
+      <p>A Variability Index (<em>VI</em>), a measure of the quality of control,
+        is calculated in all DeltaV Control blocks. 
+      </p>
+ 
+      <p>If Process Learning is enabled for a PID block and a process model has
+        been automatically identified, the function block will calculate a Tuning
+        Index. The Tuning Index indicates the potential for improving control
+        performance by updating controller tuning according to the identified process
+        mode; and the selected or default tuning rule. 
+      </p>
+ 
+      <p>Through the Variability and Tuning Index calculations, you can better
+        judge the performance of plant control. These calculated performance
+        measurements can be viewed at DeltaV workstations that support DeltaV InSight
+        clients. InSight identifies Control blocks, whose Variability Index and total
+        standard deviation exceeds the configured limits. In Control function blocks,
+        the total standard deviation and capability standard deviation are calculated.
+        Based on these two values, Variability Index is calculated in the function
+        block and compared to a limit. These conditions determined in the block are
+        reported to the DeltaV InSight server where the condition becomes visible if it
+        persists longer than the specified percent (%) time limit for high variability.
+        
+      </p>
+ 
+      <p>In the InSight server, overall control performance is calculated as
+        follows: 
+      </p>
+ 
+      <p> 
+        <em>Performance</em> = 100-Average % time high variability as reported by
+        the block. 
+      </p>
+ 
+      <p> 
+        <em>VI</em> - Variability Index 
+      </p>
+ 
+      <p>The overall control utilization is as follows: 
+      </p>
+ 
+      <p> 
+        <em>Utilization</em> = Average Percent Time Control blocks were in Normal
+        Mode% 
+      </p>
+ 
+      <p>To support the performance calculations performed in the Control
+        function blocks (FLC, MPC, MPCPro, PID, and Ratio) and fieldbus devices,
+        calculate σ<sub><em>cap</em></sub>, σ<sub><em>tot</em></sub>, and VI.
+        σ<sub><em>cap</em></sub> and σ<sub><em>tot</em></sub> are visible parameters (STDEV
+        and STDEV_CAP respectively) of these function blocks. The block parameter
+        STDEV_TIME determines the time frame over which these calculations are
+        performed. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_48F68DFAD52040F4BB35972E8DAF4AC1"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_48F68DFAD52040F4BB35972E8DAF4AC1"></a><h2 class="sectiontitle">Calculations in Function Blocks </h2> 
+       
+      <p>The I/O function blocks (AI, AO, and PIN) and Control function blocks
+        (FLC, MPC, MPCPro, PID, and Ratio) in DeltaV controllers and fieldbus devices
+        support the STDEV and STDEV_CAP parameters, σ<sub><em>tot</em></sub> and
+        σ<sub><em>cap</em></sub>. These intermediate calculations are done each time one
+        of these function blocks execute. After N executions of the function block
+        (where N = 120) or two minutes (whichever is longest), the parameter values are
+        updated. 
+      </p>
+ 
+      <p>The total standard deviation, σ<sub><em>tot</em></sub>, is calculated
+        using &quot;moving time window computation&quot; based on N=120 executions of the
+        function block and the time horizon (in seconds) defined by STDEV_TIME as
+        follows: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F4DC5CE1EC3D48C195DF66D21DF84801"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F4DC5CE1EC3D48C195DF66D21DF84801" src="Inspec3.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_2EA4830147594401AE4B0DBBF0CC9976"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_2EA4830147594401AE4B0DBBF0CC9976" src="MeanAbsoluteError.gif" /> = mean absolute error 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_4F2E193259FD43B090E4A60494DDE857"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_4F2E193259FD43B090E4A60494DDE857" src="yt.gif" /> is the function block output 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_A22360E104EB4F05BEC04F1ED1474869"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_A22360E104EB4F05BEC04F1ED1474869" src="ythat.gif" /> is the function block output mean
+        value 
+      </p>
+ 
+      <p> 
+        <em>WF<sub>std</sub></em> = 120/((STDEV_TIME/module execution period) +
+        120) = standard deviation filter factor 
+      </p>
+ 
+      <p> σ<sub><em>tot_old</em></sub> = Previously calculated value of
+        σ<sub><em>tot</em></sub> 
+      </p>
+ 
+      <p>The PV is used in the I/O block to calculate the mean values as
+        follows based on N=30 executions of the function block and the time horizon
+        defined by STDEV_TIME. 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_2E2786EB245849E3AFD8CF35535B93A6"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_2E2786EB245849E3AFD8CF35535B93A6" src="YTold.gif" /> 
+      </p>
+ 
+      <p>Where: 
+      </p>
+ 
+      <p> WF<sub><em>mean</em></sub> = 30/((STDEV_TIME/module execution period) +
+        30) = mean value filter factor 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_56BAEFA5DCB34E06B4D2DB163D4987FB"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_56BAEFA5DCB34E06B4D2DB163D4987FB" src="Perf_Calc8.gif" /> = Previously calculated mean
+        value of the function block output 
+      </p>
+ 
+      <p>In Control blocks, either the working setpoint or PV is used,
+        depending on the block mode. 
+      </p>
+ 
+      <p>The capability standard deviation, σ<sub><em>cap</em></sub>, is
+        calculated as follows: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_80EAEC1C623F40E19771BF5C65C2A159"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_80EAEC1C623F40E19771BF5C65C2A159" src="CapabilitySD.gif" /> 
+      </p>
+ 
+      <p>Where: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_5D746171E9144ED495BB42B7F3AF3E3E"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_5D746171E9144ED495BB42B7F3AF3E3E" src="ichelp0023.gif" /> = average moving range 
+      </p>
+ 
+      <p> σ<sub><em>cap_old</em></sub> = Previously calculated value of
+        σ<sub><em>cap</em></sub>. 
+      </p>
+ 
+      <p>Only the summing component associated with the mean absolute error
+        (<em>MAE</em>) and moving range (<em>MR</em>) is computed at each execution of the
+        function block. The parameter STDEV_TIME should be set to match the time
+        response for the process (in seconds) and by default is set to zero. 
+      </p>
+ 
+      <p>After calculating σ<sub><em>cap</em></sub> and σ<sub><em>tot</em></sub>,
+        the Variability Index (<em>VI</em>) is computed from the following formulas: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_62543D9FEEBA48CA97AD5DFC259E9382"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_62543D9FEEBA48CA97AD5DFC259E9382" src="VariabilityIndex.gif" /> 
+      </p>
+ 
+      <p>Where 
+      </p>
+ 
+      <p> 
+        <em>S</em> is the sensitivity factor that makes calculations stable; 
+        <em>S</em>=0.1% of the variable scale. 
+      </p>
+ 
+      <p> σ<sub><em>tot</em></sub> is the actual measured standard deviation. 
+      </p>
+ 
+      <p> σ<sub><em>lq</em></sub> is the minimum standard deviation that can be
+        achieved with feedback control. σ<sub><em>lq</em></sub> is defined as: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_714BFD25F87B4AF5A568FC25BC7E2A6B"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_714BFD25F87B4AF5A568FC25BC7E2A6B" src="SigmaLQ.gif" /> 
+      </p>
+ 
+      <p> σ<sub><em>cap</em></sub> is the estimated capability standard deviation
+        (measurement of short-term variation) 
+      </p>
+ 
+      <p>The Tuning Index is based on the variability difference estimate for
+        the current controller tuning (PID1) and the model-based desired controller
+        tuning (PID2). 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_30223B8F78D343789BC55478E0F53359"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_30223B8F78D343789BC55478E0F53359" src="Inspec14.gif" /> 
+      </p>
+ 
+      <p>The Tuning Index indicates the potential for improving control
+        performance and is defined as the ratio of the potential non-compensated PID
+        variability reduction to the actual PID non-compensated variability, for
+        example: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_31A38B8240804BAC86B2A5A631548963"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_31A38B8240804BAC86B2A5A631548963" src="Inspec15.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_33FA65830546439884327F6CCC530129"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_33FA65830546439884327F6CCC530129" src="Inspec16.gif" /> 
+      </p>
+ 
+      <p>In the implementation, the standard deviation&#39;s ratio is used instead
+        of the variances ratio which results in the formula: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_5364FD05BDEB4C708E878E83FB8AB7B3"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_5364FD05BDEB4C708E878E83FB8AB7B3" src="Inspec17.gif" /> 
+      </p>
+ 
+      <p>The Tuning Index estimates how much PID variability can be reduced by
+        applying model-based tuning. The Tuning Index calculation requires estimates
+        for process model parameters 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_FC46D674A58C464580C8B97C5E2C620B"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_FC46D674A58C464580C8B97C5E2C620B" src="Inspec18.gif" />, 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_C929C5F6EE194B6C90B8C05E942ED2B6"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_C929C5F6EE194B6C90B8C05E942ED2B6" src="Inspec19.gif" />, 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_3F4ADB26C0464AE892AF1C2CDBFADCF9"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_3F4ADB26C0464AE892AF1C2CDBFADCF9" src="Inspec20.gif" /> as described here: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_EAA7C76B4707419CABF16B0E901CCB9D"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_EAA7C76B4707419CABF16B0E901CCB9D" src="Inspec21.gif" /> is the parameter of the assumed
+        noise Z-transform model 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_64BDF4C2DE744CD58F520C660D1B1BED"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_64BDF4C2DE744CD58F520C660D1B1BED" src="Inspec22.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_96879AA2180A4B0384D5D41FFFFBFC7C"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_96879AA2180A4B0384D5D41FFFFBFC7C" src="Inspec23.gif" /> where 
+        <strong>λ<sub><em>noise</em></sub></strong> is white noise filter time constant 
+      </p>
+ 
+      <p>It is assumed 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_554F44D896834AA0AEE8FD9F57269602"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_554F44D896834AA0AEE8FD9F57269602" src="Inspec25.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_E15C45EFC85540CB8D1309DB1B25F311"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_E15C45EFC85540CB8D1309DB1B25F311" src="Inspec26.gif" /> - sampling period 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_C76B9B2692F0412D90BFD7A916DBF602"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_C76B9B2692F0412D90BFD7A916DBF602" src="Inspec27.gif" /> where 
+        <strong>λ<sub>1</sub></strong> is the closed loop time constant for the current
+        PID tuning. An estimate of the closed loop time constant could be
+        back-calculated from the tuning formula: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_712D34A1DE7E42938A6341182802C5E2"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_712D34A1DE7E42938A6341182802C5E2" src="Inspec29.gif" /> as 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F0E20A4B25A64ED697109222D1888967"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F0E20A4B25A64ED697109222D1888967" src="Inspec30.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F36C7FE128BE4967A2594CA95B5C41C6"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_F36C7FE128BE4967A2594CA95B5C41C6" src="Inspec31.gif" /> where 
+        <strong>λ<sub>2</sub></strong> is the desired closed loop time constant for a new
+        tuning that can be defined from the process model time constant and lambda
+        factor as 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_8CB4E4313CFB42D0800F95FC4441ACCA"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_8CB4E4313CFB42D0800F95FC4441ACCA" src="Inspec33.gif" />. 
+      </p>
+ 
+      <p>Calculations for the integrating process are: 
+      </p>
+ 
+      <p> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_FDD2E1C61AC74A2E9D26138F2CD9EC0B"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_FDD2E1C61AC74A2E9D26138F2CD9EC0B" src="Inspec34.gif" /> 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_81ECB6E25CDC4DD38CD163D844EFE6A1"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_81ECB6E25CDC4DD38CD163D844EFE6A1" src="Inspec35.gif" /> and 
+        <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_D2E80F80A6784FBA9D054F12D348D90A"></a><img id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__image_D2E80F80A6784FBA9D054F12D348D90A" src="Inspec36.gif" /> 
+      </p>
+ 
+      <p>Where: 
+      </p>
+ 
+      <p><em>K</em> is PID controller gain 
+      </p>
+ 
+      <p><em> T<sub>i</sub></em> is PID integral time (reset) 
+      </p>
+ 
+      <p><em> K<sub>p</sub></em> is self-regulating process gain 
+      </p>
+ 
+      <p><em> K<sub>i</sub></em> is integrating process gain 
+      </p>
+ 
+      <p> 
+        <em>θ</em> is process deadtime 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_DA15882CAC484085AE5F0AB552BC6546"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_DA15882CAC484085AE5F0AB552BC6546"></a><h2 class="sectiontitle">Identification of Under-Performing Loops </h2> 
+       
+      <p>The following block measurement and processing conditions are
+        automatically identified by InSight based on block mode and parameter status: 
+      </p>
+ 
+      <p> 
+        <strong>Mode Incorrect</strong> - The actual mode of the block does not match the
+        Normal mode configured for the block. This can be caused by the operator
+        changing the target mode because of poor response or equipment malfunction. 
+      </p>
+ 
+      <p> 
+        <strong>Limited Control (Action)</strong> - BKCAL_IN status of the block is
+        either high limited or low limited, indicating that a block downstream from the
+        control block has reached a setpoint or output limit. Such limitations can
+        prevent the loop from achieving or maintaining setpoint. Limiting is detected
+        through BKCAL_IN only if the block is wired to another block such as AO. If a
+        PID block with direct I/O is used, limiting is detected through BKCAL_OUT. The
+        limited condition is suppressed if this block is not selected by the downstream
+        block because the downstream block should be flagged for incorrect mode. 
+      </p>
+ 
+      <p> 
+        <strong>Uncertain Input</strong> - The status of the block process variable (PV
+        parameter) is Bad, Uncertain or Limited. A sensor failure, miscalibration of
+        the measurement range, or measurement diagnostics have detected a condition
+        that requires attention by maintenance. 
+      </p>
+ 
+      <p> 
+        <strong>High Variability</strong> - Standard deviation and the Variability Index
+        calculated by the block exceed their default configured limits. 
+      </p>
+ 
+      <p> 
+        <strong>Tuning Recommendation is Available</strong> - The Tuning Index calculated
+        by the block exceeds its default or configured limit. 
+      </p>
+ 
+      <p>The percent of the time that these conditions exist over an hour, a
+        shift, or a day is computed for every block by the DeltaV Inspect Server and
+        compared to a configured global limit for each condition. When one of these
+        limits is exceeded, the associated module is displayed in InSight. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_D98910A16DD349B1B3D13ADD7934A05D"><a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__section_D98910A16DD349B1B3D13ADD7934A05D"></a><h2 class="sectiontitle">Identification of Malfunctioning Devices </h2> 
+       
+      <p>InSight monitors devices for the following device diagnostics values: 
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_B6EFD759EE7344DCAC79F07FFD028A6C__ul_55CB45E62C9B4EDCA39192D665B4DD7C"></a><ul id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__ul_55CB45E62C9B4EDCA39192D665B4DD7C"> 
+        <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_590D0BE46ABB4914915DB26496CCC779"><div class="li_content">Advisory Device Count 
+        </div></li>
+ 
+        <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_7E0F2BDD3A16447D9F30F9E0A0B079D5"><div class="li_content">Maintenance Device Count 
+        </div></li>
+ 
+        <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_BB6705D1ECC4419997DAF29C5985681F"><div class="li_content">Failed Device Count 
+        </div></li>
+ 
+        <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_349EE2A82675425B865916C68B4814ED"><div class="li_content">Comm Fail Device Count 
+        </div></li>
+ 
+        <li id="concept_B6EFD759EE7344DCAC79F07FFD028A6C__li_2FCE8212E27F486EBC580185EF28A15B"><div class="li_content">Total Device Count 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The diagnostic values are sent to the Inspect block as totals for the
+        time period. For the 
+        <em>Now</em> time frame, the value is 0 or 1. For all other time frames,
+        the values is the total count of the time the value was true. For large
+        systems, this will typically be the number of minutes in the time frame.
+        However, for small systems where there are fewer than 60 modules enabled, there
+        may be more than one read per minute. This is similar to how data is polled for
+        other items. 
+      </p>
+ 
+      <p>These values are available to InSight directly from devices that
+        support PlantWeb rules (fieldbus devices, for example). No additional
+        configuration is required. For other devices, use the Diagnostic function block
+        to access device diagnostic information and make it available to InSight.
+        Parameters that indicate device diagnostic information can be wired to the
+        Diagnostic block directly or processed by other blocks first, if necessary. 
+      </p>
+ 
+      <p>When you use Diagnostic blocks it is important to give each block a
+        unique name. It is recommended that you name the Diagnostic blocks the same as
+        the device the block refers to. Because the Devices page does not include the
+        module name in which a Diagnostic block resides, this naming convention
+        eliminates duplicate names and gives operators more meaningful information. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_insight_using_dv_inspect.html">Using Inspect with InSight</a><br />
+</li>
+<li class="ulchildlink"><a href="c_insight_application_examples.html">Inspect with InSight Application Examples</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_dvtune_using.html">Using Tune with InSight</a></div>
+<div><a href="c_fblk_spec_diag.html">Diagnostic function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

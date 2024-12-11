@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Add a group" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="Barcode tutorial, add a group" name="DC.subject" /><meta content="Barcode tutorial, add a group" name="keywords" /><meta content="t_add_items.html" name="DC.Relation" scheme="URI" /><meta content="c_barcode_tutorial.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_add_a_group" name="DC.Identifier" /><title>Add a group</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_connect_to_the_deltav_opc_data_access_server.html" /><link rel="next" href="t_add_items.html" /></head><body class="fixed" id="t_add_a_group" data-relpath="t_add_a_group.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_add_a_group"></a>
+
+<h1 class="topictitle1">Add a group</h1>
+<div><div></div>
+<div class="section" id="t_add_a_group__context_511E08B11E6B43B4A38E18E32D18CDED"><a name="t_add_a_group__context_511E08B11E6B43B4A38E18E32D18CDED"></a><p>For this application we only need two groups. One for monitoring data and the other for data that is set in our application and sent to the DeltaV system. The way the data is divided into groups is up to the discretion of the programmer. There are a few settings that are changed at the group level. They are:</p>
+<p><strong>Name -</strong> Name of the group. The name must be a unique group name, with respect to the naming of other groups created by this client.</p>
+<p><strong>UpdateRate</strong> - The rate, in milliseconds, at which group data is updated with the values in the DeltaV system.</p>
+<p><strong>Deadband</strong> - The amount that the data must change before it is reported as changed. The amount is given as a percentage of the engineering units of the individual data values. In other words, if the PercentDeadband is 5% then a data value that ranges from 0 to 200 GPM must change at least 10 GPM before it is reported.</p>
+<p><strong>TimeBias</strong> - A Time Zone offset in minutes.</p>
+<p><strong>LocaleID</strong> - Identifies a locale for national language support. The LCID for US-English is 409 hexadecimal.</p>
+<p><strong>ClientHandle</strong> - This value is any unsigned 32-bit integer. The DeltaV OPC Data Access Server will provide this handle when returning data in an asynchronous connection. This allows the client application to identify the group to which the data belongs.</p>
+<p><strong>IsActive -</strong> Controls the active state of the group. A group that is active acquires data. An inactive group typically does not continue data acquisition except as required for read/writes.</p>
+<p><strong>IsSubscribed -</strong> Controls asynchronous notifications to the group. A group that is subscribed receives data changes from the server.</p>
+<p>The client application can change the <strong>active</strong> state of a group at any time. If the active state of the group is false, the DeltaV OPC Data Access Server will not keep the values of its items up to date. The client application will not be notified of changes. Read requests to cache will return successfully however, the data values will be stale and the quality statuses will be &quot;bad&quot; (for a detailed description of statuses, refer to Appendix B). Read requests to &quot;device&quot; are sent directly to the DeltaV controller and always return the current values if no errors are encountered.</p>
+</div>
+<a name="t_add_a_group__steps_D6F0029502BC47579772AC7A5A2A89F6"></a><ol id="t_add_a_group__steps_D6F0029502BC47579772AC7A5A2A89F6"><li class="stepexpand" id="t_add_a_group__step_AAC658B879E844E7B7A35D6F00461294"><a name="t_add_a_group__step_AAC658B879E844E7B7A35D6F00461294"></a><span>In the declarations section of the OPCServer class, add the following code:
+</span> <pre class="codeblock">Dim WithEvents MyGroups As OPCGroups</pre>
+
+<p>OPCGroups is a collection of OPCGroup objects, and the methods that create, remove, and manage them.</p>
+
+<p>This object also has properties for OPCGroup defaults. When OPCGroups are added, the DefaultGroupXXXX properties set its initial state. The defaults can be changed to add OPCGroups with different initial states. Changing the defaults does not affect groups that have already been created. Once an OPCGroup is added, its properties can be modified. This reduces the number of parameters required to call the Add method.</p>
+
+<p>The OPC Groups provide a way for clients to organize data. For example, the group might represent items in a particular operator display or report. Data can be read and written. Exception based connections can also be created between the client and the items in the group and can be enabled and disabled as needed. An OPC client can configure the rate that a DeltaV OPC Data Access Server should provide the data changes to the OPC client.</p>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_2733DB0CE2914938BF193F81B7C49B04"><a name="t_add_a_group__step_2733DB0CE2914938BF193F81B7C49B04"></a><span>Add a function to the OPCServer class called AddGroup. It should be a public function and should return an integer.</span></li>
+<li class="stepexpand" id="t_add_a_group__step_BB19A1DC91A74E9AAB7EC0BDBD41643E"><a name="t_add_a_group__step_BB19A1DC91A74E9AAB7EC0BDBD41643E"></a><span>Add the following parameters to the function AddGroup:
+</span> <pre class="codeblock">Public Function AddGroup(GroupName As String, RequestedUpdateRate As Long) 
+As Long</pre>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_6B88ACEDD361450099387F2D1AA93371"><a name="t_add_a_group__step_6B88ACEDD361450099387F2D1AA93371"></a><span>In the function AddGroup, add the following code:
+</span> <pre class="codeblock">Dim OneGroup As OPCGroup
+AddGroup = False
+    On Error GoTo ErrorHandler
+&#39;Test to be sure the server object is valid
+    If TypeName(AnOpcServer) = TypeName(Nothing) Then
+        MsgBox &quot;Error - No Server Connection&quot;
+        Exit Function &#39;no server
+End If
+&#39;Add group to our Collection
+    Set OneGroup = MyGroups.Add(GroupName)
+    &#39;In theory, we don&#39;t need this part....  There&#39;s a default.
+OneGroup.UpdateRate = RequestedUpdateRate
+OneGroup.IsActive = True
+AddGroup = OneGroup.ServerHandle
+Exit Function
+ErrorHandler:
+    MsgBox &quot;AddGroup: Error!&quot; &amp; vbCrLf _
+        &amp; &quot;Err.Number = &quot; &amp; Err.Number &amp; vbCrLf _
+        &amp; &quot;Err.Description = &quot; &amp; Err.Description &amp; vbCrLf _
+        &amp; &quot;Err.Source = &quot; &amp; Err.Source &amp; vbCrLf
+End Function</pre>
+
+<p>The OPCServer will return the actual update rate for the group and the server handle. One reason the actual update rate may differ is if the requested rate is less than one second. The Server Handle will be used in calls from the client to the OPCServer that request changes to the group.</p>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_5B73EE5B8832480DACF6DC494EC0CC53"><a name="t_add_a_group__step_5B73EE5B8832480DACF6DC494EC0CC53"></a><span>Add a function to the OPCServer class called RemoveGroup. It should be a public function and should return an integer.</span></li>
+<li class="stepexpand" id="t_add_a_group__step_150E913A07C64AB6AEC308FEBF84D820"><a name="t_add_a_group__step_150E913A07C64AB6AEC308FEBF84D820"></a><span>Add the following parameters to the function RemoveGroup:
+</span> <pre class="codeblock">Public Function RemoveGroup(GroupName As String) As Integer</pre>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_22CD0ABE5F484FC8BF827A75465A259F"><a name="t_add_a_group__step_22CD0ABE5F484FC8BF827A75465A259F"></a><span>In the function RemoveGroup, add the following code:
+</span> <pre class="codeblock">Dim OneGroup As OPCGroup
+RemoveGroup = False
+    On Error GoTo ErrorHandler
+    MyGroups.Remove (GroupName)
+    RemoveGroup = True
+    Exit Function
+ErrorHandler:
+    MsgBox &quot;RemoveGroup: Error!&quot; &amp; vbCrLf _
+        &amp; &quot;Err.Number = &quot; &amp; Err.Number &amp; vbCrLf _
+        &amp; &quot;Err.Description = &quot; &amp; Err.Description &amp; vbCrLf _
+        &amp; &quot;Err.Source = &quot; &amp; Err.Source &amp; vbCrLf
+End Function</pre>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_246FEE01231D4D6283EF8570A20063CB"><a name="t_add_a_group__step_246FEE01231D4D6283EF8570A20063CB"></a><span>Add a support function for looking up the group handle from the name. The function should be called &quot;LookUpGroup&quot;. It is a public function with the following declaration:
+</span> <pre class="codeblock">Private Function LookUpGroup(GroupName As String) As Integer</pre>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_810C7649127C43BCB459E9031C760FBB"><a name="t_add_a_group__step_810C7649127C43BCB459E9031C760FBB"></a><span>In the LookUpGroup function, add the following code:
+</span> <pre class="codeblock">Dim Done As Integer
+Dim Count As Integer
+
+LookUpGroup = -1
+
+Done = False
+Count = 0
+While Not Done
+    If Count &gt; GroupCount Then
+        Done = True
+    ElseIf GroupName = Groups(Count).Name Then
+        LookUpGroup = Count
+        Done = True
+    Else
+        Count = Count + 1
+    End If
+Wend
+
+Exit Function
+errHandler:
+    MsgBox Err.Description
+    Exit Function
+End Function</pre>
+</li>
+<li class="stepexpand" id="t_add_a_group__step_8111A45E2C944C0FBC0979D7048C6E8E"><a name="t_add_a_group__step_8111A45E2C944C0FBC0979D7048C6E8E"></a><span>Save the project and run with full compile to highlight errors.</span></li>
+</ol>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_add_items.html">Add items</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

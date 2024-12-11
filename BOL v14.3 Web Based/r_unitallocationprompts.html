@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Unit allocation prompts" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="dynamic unit allocation, unit allocation prompts, programmatic unit allocation, auto-select units, equipment trains, auto-select prompts" name="DC.subject" /><meta content="dynamic unit allocation, unit allocation prompts, programmatic unit allocation, auto-select units, equipment trains, auto-select prompts" name="keywords" /><meta content="r_howdynamicunitallocationworks.html" name="DC.Relation" scheme="URI" /><meta content="r_dynamicunitallocationatruntime.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_unitallocationprompts" name="DC.Identifier" /><title>Unit allocation prompts</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_dynamicunitallocationatruntime.html" /><link rel="next" href="c_dv-explorer.html" /></head><body class="fixed" id="r_unitallocationprompts" data-relpath="r_unitallocationprompts.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_unitallocationprompts"></a>
+
+<h1 class="topictitle1">Unit allocation prompts</h1>
+<div><div></div>
+
+    <div class="section" id="r_unitallocationprompts__section_0FBF7A689B2F407FA89FC3F6BF8AC252"><a name="r_unitallocationprompts__section_0FBF7A689B2F407FA89FC3F6BF8AC252"></a>
+      <p>The following prompts are displayed to the operator when the system is either unable to automatically select the unit or the selection made will not validate. In either scenario, the operator must manually select the unit.  When referenced in the prompt, an unfiltered list contains all the units from the unit class for the unit alias as defined in the equipment train.</p>
+
+      <p>The flow chart scenarios in the topic, <cite>How Dynamic Unit Allocation Works</cite>, illustrate where potential problems can occur, necessitating an operator prompt.</p>
+
+      <p>
+        <strong>Example Configuration Definition</strong>
+      </p>
+
+      <pre class="pre">
+Aliases: AX -&gt; AY -&gt; AW
+
+AX - units {UnitA, UnitF, UnitJ} - Step1
+AY - units {UnitB, UnitC, UnitG} - Step 2
+AW - units {UnitD, UnitE, UnitK} - Step 3
+
+UnitA -&gt; UnitB -&gt; UnitD
+UnitF -&gt; UnitC -&gt; UnitE
+UnitG -&gt; UnitK
+</pre>
+
+      
+<div class="tablenoborder"><a name="r_unitallocationprompts__table_A94F86EE813A435AB1A33D87D0B6B0C8"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_unitallocationprompts__table_A94F86EE813A435AB1A33D87D0B6B0C8" rules="all" summary=""><caption><span class="tablecap">Select Equipment Prompts for Unit Aliases with From_Policy Selection Mode</span></caption>
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d3266191e75" valign="top" width="NaN%">
+                <p>Prompt</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3266191e81" valign="top" width="NaN%">
+                <p>Explanation</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e75 " valign="top" width="NaN%">
+                <p>Select Equipment for &lt;StepName&gt;.</p>
+
+                <p>
+Auto Selection Stopped:</p>
+
+                <p>
+(reasons A, B, C, D, E, F, G, &amp; H possible)</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e81 " valign="top" width="NaN%">
+                <p>No units passed the downstream equipment filtering, equipment sorting, and run-time filtering.  One reason for the error is listed in the prompt. Refer to the <em>Downstream Equipment Filtering Failed Reasons</em> table below for the reasons and explanations.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+<div class="tablenoborder"><a name="r_unitallocationprompts__table_92449299261A4F299F5770ACD5389DF1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_unitallocationprompts__table_92449299261A4F299F5770ACD5389DF1" rules="all" summary=""><caption><span class="tablecap">Select Equipment Prompts for Unit Aliases with Defer Selection Mode</span></caption>
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d3266191e134" valign="top" width="NaN%">
+                <p>Prompt</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3266191e140" valign="top" width="NaN%">
+                <p>Explanation</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e134 " valign="top" width="NaN%">
+                <p>Select Equipment for &lt;StepName&gt;</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e140 " valign="top" width="NaN%">
+                <p>This prompt is expected. The step requires a unit be selected at this point. The operator is being prompted to select from a list of units that have successfully passed the downstream equipment filtering.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e134 " valign="top" width="NaN%">
+                <p>Select Equipment for &lt;StepName&gt;</p>
+
+                <p>
+Unit list not filtered:</p>
+
+                <p>
+(reasons A, B, D, or E possible)</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e140 " valign="top" width="NaN%">
+                <p>No units passed the downstream equipment filtering and equipment sorting.  One reason for the error is listed in the prompt. Refer to the <em>Downstream Equipment Filtering Failed Reasons</em> table below for the reasons and explanations.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+<div class="tablenoborder"><a name="r_unitallocationprompts__table_CC44212F448D43C19E7875510DA99C4D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_unitallocationprompts__table_CC44212F448D43C19E7875510DA99C4D" rules="all" summary=""><caption><span class="tablecap">Reselect Equipment Prompts and Unit Alias ToolTips</span></caption>
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d3266191e207" valign="top" width="NaN%">
+                <p>Prompt</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3266191e213" valign="top" width="NaN%">
+                <p>Explanation</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e207 " valign="top" width="NaN%">
+                <p>&lt;UnitName&gt; does not have required unit(s) downstream.</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e213 " valign="top" width="NaN%">
+                <p>If the downstream unit alias is assigned, then &lt;UnitName&gt; does not have the assigned unit as its downstream unit.
+
+
+
+
+</p>
+
+                <p>If the downstream unit alias is not assigned, then the units that can be assigned to the downstream unit alias are not downstream of &lt;UnitName&gt;.</p>
+
+                <p>For example:</p>
+
+                <p>UnitA is assigned to unit alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to unit alias AY on step 2.</p>
+
+                <p>The reselect prompt that is issued during the execution of step1 is</p>
+
+                <pre class="pre">
+UnitA does not have required unit(s) downstream.
+The unit list provided contains { UnitF}
+</pre>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e207 " valign="top" width="NaN%">
+                <p>&lt;UnitName&gt; is not downstream of the upstream unit(s).</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e213 " valign="top" width="NaN%">
+                <p>The unit is not listed as a downstream unit for the upstream unit alias, but there is at least one unit defined for this unit alias that is listed.
+
+
+
+
+
+
+</p>
+
+                <p>If the upstream unit alias is assigned then &lt;UnitName&gt; is not downstream of the assigned unit.</p>
+
+                <p>If the upstream unit alias is not assigned then &lt;UnitName&gt; is not downstream of any unit that can be assigned to the upstream unit alias.</p>
+
+                <p>For example:</p>
+
+                <p>
+UnitA is assigned to alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to alias AY on step 2.</p>
+
+                <p>
+Step 1 ran on UnitA.</p>
+
+                <p>The reselect prompt that is issued during the execution of step 2 is</p>
+
+                <pre class="pre">
+UnitC is not downstream of upstream unit(s).
+The unit list provided contains { UnitB}
+</pre>
+
+                <p>This can be a configuration issue, especially where there is a convergence of two parallel steps. There must be at least one unit in common as a downstream unit for all upstream steps.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e207 " valign="top" width="NaN%">
+                <p>&lt;UnitName&gt; does not have required unit(s) downstream.  No units meet criteria, unfiltered list provided.</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e213 " valign="top" width="NaN%">
+                <p>The unit is not found in the unit list of the downstream unit alias and no other units defined for this unit alias are found in the list.</p>
+
+                <p>If the downstream unit alias is assigned then &lt;UnitName&gt; does not have the assigned unit as its downstream unit.</p>
+
+                <p>If the downstream unit alias is not assigned then units that can be assigned to the downstream unit alias are not downstream of &lt;UnitName&gt;.</p>
+
+                <p>For example:</p>
+
+                <p>
+UnitA is assigned to alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to alias AY on step 2.</p>
+
+                <p>
+UnitK is assigned to alias AW on step 3.</p>
+
+                <p>
+Step 1 ran on UnitA.</p>
+
+                <p>The reselect prompt that is issued during execution of step 2 is</p>
+
+                <pre class="pre">
+UnitC does not have required unit(s) downstream.
+No units meet criteria, unfiltered list provided.
+The unit list provided contains: 
+{ UnitB, UnitC, UnitG}
+</pre>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e207 " valign="top" width="NaN%">
+                <p>&lt;UnitName&gt; is not downstream of the upstream unit(s). No units meet criteria, unfiltered list provided.</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e213 " valign="top" width="NaN%">
+                <p>If the upstream alias is assigned then &lt;UnitName&gt; is not downstream of the assigned unit.
+
+
+
+</p>
+
+                <p>If the upstream alias is not assigned then &lt;UnitName&gt; is not downstream of any unit that can be assigned to the upstream alias.</p>
+
+                <p>For example:</p>
+
+                <p>
+UnitJ is assigned to alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to alias AY on step 2.</p>
+
+                <p>
+Step 1 ran on UnitJ.</p>
+
+                <p>The reselect prompt that is issued during execution of step 2 is</p>
+
+                <pre class="pre">
+UnitC is not downstream of upstream unit(s).
+No units meet criteria, unfiltered list provided.
+The unit list provided contains: 
+{ UnitB, UnitC, UnitG}
+</pre>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e207 " valign="top" width="NaN%">
+                <p>Unit list is not filtered:</p>
+
+                <p>
+(reasons A, B, D, &amp; E possible)</p>
+
+                <p>
+(This prompt only applies to Tooltips for red unit aliases)</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e213 " valign="top" width="NaN%">
+                <p>This tooltip appears on a red unit alias when it is not assigned ({Defer}). It indicates that there are no valid units to select from. No units passed the downstream equipment filtering. 
+
+</p>
+
+                <p>One reason for the error is listed in the prompt. Refer to the <em>Downstream Equipment Filtering Failed Reasons</em> table below for the reasons and explanations.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+<div class="tablenoborder"><a name="r_unitallocationprompts__table_2F48919308CB4BC08407977E44182CF1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_unitallocationprompts__table_2F48919308CB4BC08407977E44182CF1" rules="all" summary=""><caption><span class="tablecap">Downstream Equipment Filtering Failed Reasons - Unfiltered List of Units Displayed</span></caption>
+          
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" colspan="2" id="d3266191e427" valign="top">
+                <p>Prompt</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3266191e433" valign="top" width="NaN%">
+                <p>Explanation</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>A </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Unit bound to upstream unit alias &lt;UnitAliasName&gt; does not have downstream units.  </p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>You are (or the system is) selecting a unit for a unit alias that is downstream of another unit alias.  At least one unit alias that is upstream of the one you are selecting is bound to a unit. That unit does not have any downstream units configured. Therefore, when the filtering is applied to determine the list of potential units for the one you are trying to select, that list is empty.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>B </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Upstream unit aliases do not have common downstream units.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Where parallel paths converge, the unit aliases that are upstream of the convergence must have at least one common downstream unit to be selected for the step after the paths converge.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>C </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Potential units are already assigned to other step(s) in the batch.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>This only pertains to unit aliases with a selection mode of From_Policy.
+
+</p>
+
+                <p>All the units that passed the downstream equipment filtering have been assigned to other steps in this batch. You can select from the unfiltered list of units.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>D </p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Units defined for &lt;UnitAliasName&gt; are not downstream of the upstream unit(s).</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>The unit being assigned is not listed as a downstream unit for the upstream unit alias, and there are no other units defined for this alias that are listed.
+
+
+
+
+</p>
+
+                <p>If the upstream alias is assigned then &lt;UnitName&gt; is not downstream of the assigned unit.</p>
+
+                <p>If the upstream alias is not assigned then &lt;UnitName&gt; is not downstream of any unit that can be assigned to the upstream alias.</p>
+
+                <p>For example:</p>
+
+                <p>
+UnitJ is assigned to alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to alias AY on step 2.</p>
+
+                <p>
+Step 1 ran on UnitJ.</p>
+
+                <p>The reselect prompt that is issued during execution of step 2 is</p>
+
+                <pre class="pre">
+UnitC is not downstream of upstream unit(s).
+No units meet criteria, unfiltered list provided.
+The unit list provided contains: 
+{ UnitB, UnitC, UnitG}
+</pre>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>E</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Units filtered for &lt;UnitAliasName&gt; do not have applicable downstream units.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>The unit is not found in the unit list of the downstream unit alias and no other units defined for this unit alias are found in the list.</p>
+
+                <p>If the downstream unit alias is assigned then &lt;UnitName&gt; does not have the assigned unit as its downstream unit.</p>
+
+                <p>If the downstream unit alias is not assigned then units that can be assigned to the downstream unit alias are not downstream of &lt;UnitName&gt;.</p>
+
+                <p>For example:</p>
+
+                <p>
+UnitA is assigned to alias AX on step 1.</p>
+
+                <p>
+UnitC is assigned to alias AY on step 2.</p>
+
+                <p>
+UnitK is assigned to alias AW on step 3.</p>
+
+                <p>
+Step 1 ran on UnitA.</p>
+
+                <p>The reselect prompt that is issued during execution of step 2 is</p>
+
+                <pre class="pre">
+UnitC does not have required unit(s) downstream.
+No units meet criteria, unfiltered list provided.
+The unit list provided contains: 
+{ UnitB, UnitC, UnitG}
+</pre>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>F</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>All units are either unavailable or out of service.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>This only pertains to unit aliases with a selection mode of From_Policy.
+
+</p>
+
+                <p>The possible valid units are either unavailable (as determined by the value of the $AVAILABLE parameter) or are OOS (as determined by the value of the MSTATE parameter).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>G</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>No units meet the unit selection policy expression criteria.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>This only pertains to unit aliases with a selection mode of From_Policy. 
+
+</p>
+
+                <p>The selection policy is evaluated to False on all filtered units. The list presented is filtered by downstream equipment filtering, equipment sorting and run-time filtering.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d3266191e427 " valign="top" width="NaN%">
+                <p>H</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3266191e427 d3266191e433 " valign="top" width="NaN%">
+                <p>Unit selection policy expression evaluation timeout.</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>This only pertains to unit aliases with a selection mode of From_Policy.
+
+</p>
+
+                <p>The unit selection policy times out after 5 seconds. The list presented is filtered by downstream equipment filtering, equipment sorting and run-time filtering.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_howdynamicunitallocationworks.html">How dynamic unit allocation works</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

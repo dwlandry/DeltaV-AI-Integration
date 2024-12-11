@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Cause and Effect Matrix function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Cause and Effect Matrix (LSCEM), Cause and Effect Matrix (LSCEM) function block" name="DC.subject" /><meta content="SIS function blocks, Cause and Effect Matrix (LSCEM), Cause and Effect Matrix (LSCEM) function block" name="keywords" /><meta content="c_ls_fblk_spec_cem.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logicsolver_cause_and_effect_function_block_execution" name="DC.Identifier" /><title>Logic Solver Cause and Effect Matrix function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_spec_cem.html" /><link rel="next" href="c_logicsolver_cause_and_effect_function_block_alarm_detection.html" /></head><body class="fixed" id="c_logicsolver_cause_and_effect_function_block_execution" data-relpath="c_logicsolver_cause_and_effect_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logicsolver_cause_and_effect_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Cause and Effect Matrix function block execution</h1>
+<div><div></div>
+<p>Each EFFECT<em>n</em> output has a corresponding STATE<em>n</em> parameter. EFFECT<em>n</em> can be either 1 (Normal) or 0 (Tripped). STATE<em>n</em> can have one of six values shown in the following figure. The arrows in the figure show the possible transitions between state values during normal operation.</p>
+<div class="fignone" id="c_logicsolver_cause_and_effect_function_block_execution__fig_15CEACBBDA8D4AE5956D5E1B0ADB7731"><a name="c_logicsolver_cause_and_effect_function_block_execution__fig_15CEACBBDA8D4AE5956D5E1B0ADB7731"></a><div><span class="figcap">State Transition Diagram for STATEn Parameters</span></div><br /><a name="c_logicsolver_cause_and_effect_function_block_execution__image_9D2F28B82A0640F7A0C83D04B44CA2C1"></a><div class="imageleft"><img class="imageleft" id="c_logicsolver_cause_and_effect_function_block_execution__image_9D2F28B82A0640F7A0C83D04B44CA2C1" src="SIS_CEM_exe.gif" /></div><br /></div>
+<p>The values that STATE<em>n</em> can assume depend on whether EFFECT<em>n</em> is Tripped or Normal. The following table shows the combinations that can occur.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_3237C984C2C74A759750E657D803CAE7"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_3237C984C2C74A759750E657D803CAE7" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e53" valign="top" width="NaN%"><p> EFFECT<em>n</em></p>
+</th>
+
+<th class="cellrowborder" id="d1142148e59" valign="top" width="NaN%"><p>STATE<em>n</em></p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1142148e53 " rowspan="2" valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e59 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1142148e53 " valign="top" width="NaN%"><p>Trip Initiated-Delayed</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1142148e53 " rowspan="4" valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e59 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1142148e53 " valign="top" width="NaN%"><p>Waiting for Reset Permit</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1142148e53 " valign="top" width="NaN%"><p>Ready to Reset</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1142148e53 " valign="top" width="NaN%"><p>Waiting for Start Permit  </p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>After an initial download or a restart of the Logic Solver card, the initial value of every EFFECT<em>n</em> is Tripped. An effect remains Tripped as long as any causes associated with that effect are tripped. After all associated causes clear the effect become Normal.</p>
+<p>The default behavior of the block is for EFFECT<em>n</em> output values to be a function of the value and status of the CAUSE<em>n</em> inputs. EFFECT<em>n</em> Trips when one or more CAUSE<em>n</em> associated with it is active.</p>
+<p>You can modify this behavior with the LSCEM block&#39;s parameters in a number of ways:</p>
+<a name="c_logicsolver_cause_and_effect_function_block_execution__ul_DD2360A28D0F4F10AA8F696FC02DE7C9"></a><ul id="c_logicsolver_cause_and_effect_function_block_execution__ul_DD2360A28D0F4F10AA8F696FC02DE7C9">
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_2CECBE497498475D99741311FA2BD3C5"><div class="li_content"><p>Use DELAY_TIME<em>n</em> to set a delay time for EFFECT<em>n</em> to transition to Tripped.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_FD35864468BB4BAE9298EDCDDE9BFB48"><div class="li_content"><p>Use RESET_PERMIT<em>n</em> to require an operator reset to transition EFFECT<em>n</em> to Normal. RESET_PERMIT<em>n</em> can be set from process feedback or it could be a manual operator reset, such as from a key switch.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_88E8DDE634304A169E26E2A6081E25D9"><div class="li_content"><p>Use START_PERMIT<em>n</em> to force STATE<em>n</em> to Waiting for Start Permit, which prevents EFFECT<em>n</em> from becoming Normal unless START_PERMIT<em>n</em> is True.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_D17FCFFC5E4442BD8ACE374F25FA6D95"><div class="li_content"><p>Use FORCE_PERMIT to allow forcing of effects.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_F11D3CAFC45A435B9E8310FDAC22D70F"><div class="li_content"><p>Use FORCE_OPTS to allow forcing effects without FORCE_PERMIT being True.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_104CAFEDE2064BEF94A865FD23833B0C"><div class="li_content"><p>Use FORCE_OPTS to allow forcing multiple effects simultaneously.</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_5FC0A9CB05BE4461B6A4635790C087C2"><div class="li_content"><p>Use FORCE_EFFECT<em>n</em> to set EFFECT<em>n</em> to Tripped or Normal.
+</p>
+<div class="note"><span class="notetitle">Note:</span> <p> It is recommended that you use the FORCE_EFFECT<em>n</em> parameters to manipulate final elements only when the process is not running.</p>
+</div>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_2F64C0D5DD3040D79157348028A20D9C"><div class="li_content"><p>Use CAUSE_MASK to prevent selected causes from becoming active.</p>
+</div></li>
+
+</ul>
+<p>If all you require is simple, time-based sequencing, use DELAY_TIME<em>n</em> to prevent EFFECT<em>n</em> from going directly to Tripped when an associated cause becomes active. While DELAY_TIME<em>n</em> is greater than 0 (zero) STATE<em>n</em> is Trip Initiated - Delayed, which keeps EFFECT<em>n</em> Normal.   </p>
+<p>To require an operator reset before an effect can return to Normal, use REQUIRE_RESET<em>n,</em> RESET_PERMIT<em>n,</em> and RESET<em>n.</em> When REQUIRE_RESET<em>n</em> is True, EFFECT<em>n</em> remains Tripped when an associated cause is active. How STATE<em>n</em> transitions depends on RESET_PERMIT<em>n.</em></p>
+<p>If RESET_PERMIT<em>n</em> is True (the default value), STATE<em>n</em> transitions from Tripped directly to Ready to Reset. Configure RESET_PERMIT<em>n</em> to False to make STATE<em>n</em> transition from Tripped to Waiting for Reset Permit. The reset permit can be written from process feedback or set by an operator from a key switch or other hardware device. When RESET_PERMIT<em>n</em> becomes True, STATE<em>n</em> transitions to Ready to Reset. From here, setting RESET<em>n</em> to True transitions STATE<em>n</em> and EFFECT<em>n</em> to Normal.</p>
+<p>Use START_PERMIT<em>n</em> in a similar way to require permission to transition STATE<em>n</em> from Waiting for Start Permit. The default value of START_PERMIT<em>n</em> is True, which allows the transition. If START_PERMIT<em>n</em> is False and associated causes are cleared, STATE<em>n</em> transitions from Tripped to Waiting for Start Permit. To move STATE<em>n</em> and EFFECT<em>n</em> to Normal, set START_PERMIT<em>n</em> to True.</p>
+<p>Use a combination of FORCE_PERMIT, FORCE_OPTS, and FORCE_EFFECT<em>n</em>  to force EFFECT<em>n</em> to a desired value. To force effects you must first either set FORCE_PERMIT to True, or select the FORCE_OPTS option <em>Force permit is not required to force Effects</em>. Changing FORCE_PERMIT from True to False removes current forces.</p>
+<p>The parameter LATENT_TRIP is True when:</p>
+<a name="c_logicsolver_cause_and_effect_function_block_execution__ul_E4BE6BEED84E40CE9DECB661FF4F2DF2"></a><ul id="c_logicsolver_cause_and_effect_function_block_execution__ul_E4BE6BEED84E40CE9DECB661FF4F2DF2">
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_1C66CC5327BD4B7AB48A444DBD566F38"><div class="li_content"><p>FORCE_PERMIT is required to force an Effect (FORCE_OPTS option <em>Force permit is not required to force Effects</em> is not selected)</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_FE224AAEE0344EAAA0712F0F34AE5B08"><div class="li_content"><p>ACTIVE_CAUSES<em>n</em> is non-zero</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_5919CDCB498A43749AE90158D96B9E6A"><div class="li_content"><p>FORCE_EFFECT<em>n</em> is Force Normal</p>
+</div></li>
+
+</ul>
+<p>If LATENT_TRIP is True, setting FORCE_PERMIT to False trips Effects that have been forced to Normal.</p>
+<p>Setting FORCE_EFFECT<em>n</em> to Force Trip immediately transitions EFFECT<em>n</em> to Tripped even if DELAY_TIME<em>n</em> is configured. Setting FORCE_EFFECT<em>n</em> to Force Normal immediately transitions EFFECT<em>n</em> to Normal, regardless of any configured recovery strategy. If STATE<em>n</em> is Trip Initiated-Delayed, setting FORCE_EFFECT<em>n</em> to Force Normal returns STATE<em>n</em> to Normal.</p>
+<p>When CAUSE<em>n</em> is in a trip condition DELAY_TIMER<em>n</em> begins counting down. If you set FORCE_EFFECT<em>n</em> to Force Normal, then set it back to Do Not Force, DELAY_TIMER<em>n</em> resets and begins counting down again.</p>
+<p>You can manipulate FORCE_EFFECT<em>n</em> from runtime interfaces. Manipulating FORCE_EFFECT<em>n</em> from within a module is not likely to be useful. Use the FORCE_OPTS option <em>Forcing of multiple Effects is allowed</em> to set whether multiple effects can be forced at the same time.</p>
+<p>FORCE_OPTS includes an additional option: <em>Force permit control should be visible in operator interface</em>. Select this option if your force effect control is in an operator display. Do not select this option if you are using a key switch or other manual means to force effects.</p>
+<p>Manipulate the parameter CAUSE_MASK to prevent one or more causes from becoming active under certain process conditions. Setting a bit in CAUSE_MASK to True prevents the corresponding CAUSE<em>n</em> from tripping any associated effects. If after an effect is tripped CAUSE_MASK masks the causes that tripped that effect, STATE<em>n</em> transitions out of Tripped. The state it transitions to depends on the configuration of the block parameters FORCE_EFFECT<em>n,</em> START_PERMIT<em>n,</em> REQUIRE_RESET<em>n</em>, and RESET_PERMIT<em>n.</em> Manipulate CAUSE_MASK using a Calc/Logic block based on process conditions, for example, the current batch phase. Do not manipulate CAUSE_MASK directly from runtime interfaces. To bypass process conditions use upstream voter blocks instead.</p>
+<p>The OVERRIDES<em>n</em> parameter indicates if EFFECT<em>n</em> is being overridden. The OVERRIDES<em>n</em> values are:</p>
+<a name="c_logicsolver_cause_and_effect_function_block_execution__ul_ECFAE597D9C9419C969F3AF98995303E"></a><ul id="c_logicsolver_cause_and_effect_function_block_execution__ul_ECFAE597D9C9419C969F3AF98995303E">
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_386E1D0F9E1C4D6AAFE344BA071A38D6"><div class="li_content"><p>None </p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_CD4AA7EF3E1F4CD7A5935B6089ABB359"><div class="li_content"><p>Forced to Tripped </p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_1BAD2BD988DC49B48B6710791233DA7C"><div class="li_content"><p>Forced to Normal</p>
+</div></li>
+
+<li id="c_logicsolver_cause_and_effect_function_block_execution__li_2E1C241B6C424B2C8B3B3F44805840B6"><div class="li_content"><p>All associated Causes masked</p>
+</div></li>
+
+</ul>
+<p>ACTIVE_CAUSES<em>n</em> indicates the currently active causes that are associated with EFFECT<em>n</em> that are not masked in CAUSE_MASK. FIRST_OUT<em>n</em> indicates the cause or causes that first tripped EFFECT<em>n</em>. If additional causes become active, FIRST_OUT<em>n</em> does not change. FIRST_OUT<em>n</em> retains its value until EFFECT<em>n</em> returns to Normal.</p>
+<p>For example, if CAUSE2 becomes active and EFFECT1 trips, ACTIVE_CAUSES1 and FIRST_OUT1 are both set to 2. If CAUSE3 (which is also associated with EFFECT1) subsequently becomes active, FIRST_OUT1remains 2 and ACTIVE_CAUSES1 becomes 6 (bits 2 and 3 of ACTIVE_CAUSES1 are set).</p>
+<p>The following table summarizes the state-dependant conditions necessary to transition EFFECT<em>n</em>  value between Tripped and Normal.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_84DF4FBC53834EB8B7B10269EE67BD6B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_84DF4FBC53834EB8B7B10269EE67BD6B" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1142148e488" rowspan="2" valign="top" width="NaN%"><p>REQUIRE_RESET<em>n</em> Value</p>
+</th>
+
+<th class="cellrowborder" colspan="2" id="d1142148e495" valign="top"><p>State-dependent Conditions Required to Transition EFFECT<em>n</em>...</p>
+</th>
+
+</tr>
+<tr valign="top">
+<th class="cellrowborder" id="d1142148e504" valign="top" width="NaN%"><p>From Tripped to Normal</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e508" valign="top" width="NaN%"><p>From Normal to Tripped</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e488 d1142148e504 " valign="top" width="NaN%"><p>False</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e495 d1142148e508 " valign="top" width="NaN%"><p>
+(All associated non-masked causes are inactive</p>
+<p>
+and START_PERMIT<em>n</em> = True)</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Normal
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e495 " valign="top" width="NaN%"><p>Any associated non-masked cause is active</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e488 d1142148e504 " valign="top" width="NaN%"><p>True</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e495 d1142148e508 " valign="top" width="NaN%"><p>
+(All associated non-masked causes are inactive</p>
+<p>
+and RESET_PERMIT<em>n</em> = True</p>
+<p>
+and RESET<em>n</em> = True</p>
+<p>
+and START_PERMIT<em>n</em> = True)</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Normal
+</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e495 " valign="top" width="NaN%"><p>Any associated non-masked cause is active</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>The following descriptions and tables explain each state and the conditions necessary to transition to other allowable states. Note that the value of the RESET<em>n</em> parameter is set to False at the end of every execution independent of the current value of STATE<em>n</em>.</p>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_9E2D4993B18E45C4A9945A3275242ED3"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_9E2D4993B18E45C4A9945A3275242ED3"></a><h2 class="sectiontitle">STATEn: Tripped</h2><p>If STATE<em>n</em> is Tripped EFFECT<em>n</em> is also Tripped. STATE<em>n</em> remains Tripped as long as one or more associated non-masked causes are active and FORCE_EFFECT<em>n</em> is not Force Normal or FORCE_EFFECT<em>n</em> is Force Trip.</p>
+<p>EFFECT<em>n</em> transitions from Tripped when all the associated non-masked causes are inactive. If an operator reset is not required and START_PERMIT<em>n</em> is True, STATE<em>n</em> is set to Normal. If START_PERMIT<em>n</em> is False, STATE<em>n</em> moves to Waiting for Start Permit. If an operator reset is required and RESET_PERMIT<em>n</em> is True, STATE<em>n</em> becomes Ready to Reset. If RESET_PERMIT<em>n</em> is False, the STATE<em>n</em> becomes <em>Waiting for Reset Permit</em>.</p>
+<p>If FORCE_EFFECT<em>n</em> is Force Normal, STATE<em>n</em> changes to Normal regardless of the value of START_PERMIT<em>n</em> or RESET_PERMIT<em>n</em>.</p>
+<p>The following table summarizes the possible changes STATE<em>n</em> can make from Tripped.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_765C35EAA1154AC1A42F1F40CC21F328"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_765C35EAA1154AC1A42F1F40CC21F328" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1142148e684" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e691" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e684 " valign="top" width="NaN%"><p>Waiting for Reset Permit</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e691 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> = 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> = No Force</p>
+<p>
+and REQUIRE_RESET<em>n</em> = True</p>
+<p>
+and RESET_PERMIT<em>n</em> = False</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e684 " valign="top" width="NaN%"><p>Ready to Reset</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e691 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> = 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> = No Force</p>
+<p>
+and REQUIRE_RESET<em>n</em> = True</p>
+<p>
+and RESET_PERMIT<em>n</em> = True</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e684 " valign="top" width="NaN%"><p>Waiting for Start Permit</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e691 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> = 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> = No Force</p>
+<p>
+and REQUIRE_RESET<em>n</em> = False</p>
+<p>
+and START_PERMIT<em>n</em> = False</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e684 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e691 " valign="top" width="NaN%"><p>(ACTIVE_CAUSES<em>n</em> = 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> = No Force</p>
+<p>
+and REQUIRE_RESET<em>n</em> = False</p>
+<p>
+and START_PERMIT<em>n</em> = True)</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Normal</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_FB319D4EB8CB47728133DAAC258BE80D"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_FB319D4EB8CB47728133DAAC258BE80D"></a><h2 class="sectiontitle">STATEn: Waiting for Reset Permit</h2><p>While STATE<em>n</em> is Waiting for Reset Permit, EFFECT<em>n</em> is set to Tripped. STATE<em>n</em> can transition to this state from Tripped or Ready to Reset if REQUIRE_RESET<em>n</em> is True. If REQUIRE_RESET<em>n</em> becomes False while STATE<em>n</em> is Waiting for Reset Permit, STATE<em>n</em> does not change until a reset occurs.</p>
+<p>STATE<em>n</em> changes back to Tripped if an associated non-masked cause becomes active or FORCE_EFFECT<em>n</em> is Force Trip.</p>
+<p>STATE<em>n</em> changes to Ready to Reset if RESET_PERMIT<em>n</em> becomes True.</p>
+<p>If FORCE_EFFECT<em>n</em> is Force Normal, STATE<em>n</em> changes to Normal regardless of the current values of START_PERMIT<em>n</em> and RESET_PERMIT<em>n</em>.</p>
+<p>The following table summarizes the possible changes from Waiting for Reset Permit.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_55D4EAC8758F493B9BBC8FBD575884E4"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_55D4EAC8758F493B9BBC8FBD575884E4" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e881" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e888" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e881 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e888 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> != 0</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e881 " valign="top" width="NaN%"><p>Ready to Reset</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e888 " valign="top" width="NaN%"><p>RESET_PERMIT<em>n</em> = True</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e881 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e888 " valign="top" width="NaN%"><p>FORCE_EFFECT<em>n</em> = Force Normal</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_99105FC7D32248ED936ED11A7FD49C42"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_99105FC7D32248ED936ED11A7FD49C42"></a><h2 class="sectiontitle">STATEn: Ready to Reset</h2><p>STATE<em>n</em> can transition to Ready to Reset from Tripped or Waiting for Reset Permit. EFFECT<em>n</em> is Tripped when STATE<em>n</em> is Ready to Reset.</p>
+<p>To reach this state REQUIRE_RESET<em>n</em> must be True. If REQUIRE_RESET<em>n</em> becomes False while STATE<em>n</em> is Ready to Reset, the STATE<em>n</em> does not change until a reset occurs.</p>
+<p>If an associated non-masked cause becomes active or FORCE_EFFECT<em>n</em> is Force Trip, STATE<em>n</em> changes to Tripped. If RESET_PERMIT<em>n</em> becomes False, STATE<em>n</em> changes back to Waiting for Reset Permit.</p>
+<p>If START_PERMIT<em>n</em> is True, the STATE<em>n</em> changes to Normal when RESET<em>n</em> is True. If START_PERMIT<em>n</em> is False, RESET<em>n</em> becoming True causes STATE<em>n</em> to change to Waiting for Start Permit.</p>
+<p>If FORCE_EFFECT<em>n</em> is Force Normal, STATE<em>n</em> changes to Normal regardless of the values of START_PERMIT<em>n</em> and RESET<em>n</em>.</p>
+<p>The following table summarizes the possible changes of STATE,i&gt;n from Ready to Reset.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_921D2B2477C949F89205DC64C722BBDB"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_921D2B2477C949F89205DC64C722BBDB" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e1029" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e1036" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e1029 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1036 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> != 0</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e1029 " valign="top" width="NaN%"><p>Waiting for Reset Permit</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1036 " valign="top" width="NaN%"><p>RESET_PERMIT<em>n</em> = False</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e1029 " valign="top" width="NaN%"><p>Waiting for Start Permit</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1036 " valign="top" width="NaN%"><p>RESET<em>n</em> = True</p>
+<p>
+and START_PERMIT<em>n</em> = False</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e1029 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1036 " valign="top" width="NaN%"><p>(RESET<em>n</em> = True</p>
+<p>
+and START_PERMIT<em>n</em> = True)</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Normal</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_1C1BA031740F4666A1671D2EF4DAD546"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_1C1BA031740F4666A1671D2EF4DAD546"></a><h2 class="sectiontitle">STATEn: Waiting for Start Permit</h2><p>STATE<em>n</em> can change from Tripped or Ready to Reset to Waiting for Reset Permit. EFFECT<em>n</em> is Tripped when STATE<em>n</em> is Waiting for Start Permit.</p>
+<p>If an associated non-masked cause becomes active or FORCE_EFFECT<em>n</em> is Force Trip, STATE<em>n</em> changes to Tripped.</p>
+<p>If START_PERMIT<em>n</em> is True, STATE<em>n</em> changes to Normal.</p>
+<p>If FORCE_EFFECT<em>n</em> is Force Normal, STATE<em>n</em> changes to Normal regardless of the current value of STATE<em>n</em>.</p>
+<p>The following table summarizes the possible changes of STATE<em>n</em> from Waiting for Start Permit.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_2F88BF16F76B4C8FA6BE6D6EEBDF7D07"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_2F88BF16F76B4C8FA6BE6D6EEBDF7D07" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e1174" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e1181" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e1174 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1181 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> != 0</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e1174 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1181 " valign="top" width="NaN%"><p>START_PERMIT<em>n</em> = True</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Normal</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_0AD15BDF5EC5441A81E63F836F4E51FE"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_0AD15BDF5EC5441A81E63F836F4E51FE"></a><h2 class="sectiontitle">STATEn: Normal</h2><p>EFFECT<em>n</em> is Normal when STATE<em>n</em> is Normal.</p>
+<p>STATE<em>n</em> changes when a trip is initiated, that is, when one or more non-masked causes associated with EFFECT<em>n</em> become active and FORCE_EFFECT<em>n</em> is <strong><em>not</em></strong> Force Normal or FORCE_EFFECT<em>n</em> is Force Trip. If EFFECT<em>n</em> is not being sequenced with other effects, STATE<em>n</em> becomes Tripped immediately. Use DELAY_TIME<em>n</em> to set how long to delay the transition to Tripped.  If DELAY_TIME<em>n</em> is non-zero STATE<em>n</em> changes to Trip Initiated-Delayed. If FORCE_EFFECT<em>n</em> is Force Trip, STATE<em>n</em> becomes Tripped immediately. </p>
+<p>The following table summarizes the possible changes from Normal.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_B1FF1344A78E4C1695838451A99AAC66"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_B1FF1344A78E4C1695838451A99AAC66" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e1291" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e1298" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1142148e1291 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1298 " valign="top" width="NaN%"><p>(ACTIVE_CAUSES<em>n</em> != 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> != Force Normal</p>
+<p>
+and DELAY_TIME<em>n</em> = 0)</p>
+<p>
+or</p>
+<p>
+FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1142148e1291 " valign="top" width="NaN%"><p>Trip Initiated-Delayed</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1298 " valign="top" width="NaN%"><p>ACTIVE_CAUSES<em>n</em> != 0</p>
+<p>
+and FORCE_EFFECT<em>n</em> != Force Normal  and DELAY_TIME<em>n</em> &gt; 0</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="c_logicsolver_cause_and_effect_function_block_execution__section_601FDCA2F6FE4017B40F49B7E683BC46"><a name="c_logicsolver_cause_and_effect_function_block_execution__section_601FDCA2F6FE4017B40F49B7E683BC46"></a><h2 class="sectiontitle">STATEn: Trip Initiated - Delayed</h2><p>When STATE<em>n</em> is Trip Initiated - Delayed the trip condition has occurred, but EFFECT<em>n</em> continues to be Normal until DELAY_TIME<em>n</em> seconds have elapsed.</p>
+<p>The timer DELAY_TIMER<em>n</em> decrements from DELAY_TIME<em>n</em> each scan based on the block&#39;s scan rate. The timer continues to count down even if no causes remain active.</p>
+<p>When DELAY_TIMER<em>n</em> reaches zero, STATE<em>n</em> changes to Tripped even if there are no active causes. If FORCE_EFFECT<em>n</em> becomes Force Trip while DELAY_TIMER<em>n</em> is still decrementing, STATE<em>n</em> changes immediately to Tripped.</p>
+<p>Setting FORCE_EFFECT<em>n</em> to Force Normal while DELAY_TIMER<em>n</em> is decrementing prevents EFFECT<em>n</em> from evolving to Tripped and changes STATE<em>n</em> back to Normal.</p>
+<p>The following table summarizes the possible changes from Trip Initiated-Delayed.</p>
+
+<div class="tablenoborder"><a name="c_logicsolver_cause_and_effect_function_block_execution__table_35BC33BC53364C48BBC5A2957665C060"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_cause_and_effect_function_block_execution__table_35BC33BC53364C48BBC5A2957665C060" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d1142148e1425" valign="top" width="NaN%"><p>To Transition STATE<em>n</em> To...</p>
+</th>
+
+<th class="cellrowborder" id="d1142148e1432" valign="top" width="NaN%"><p>Requires the Following Conditions</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td align="left" class="cellrowborder" headers="d1142148e1425 " valign="top" width="NaN%"><p>Tripped</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1432 " valign="top" width="NaN%"><p>FORCE_EFFECT<em>n</em> = Force Trip</p>
+<p>
+or</p>
+<p>
+DELAY_TIMER<em>n</em> = 0</p>
+<p>
+or</p>
+<p>
+STATUS_OPT is set to Trip if Bad and any CAUSEn status is Bad.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td align="left" class="cellrowborder" headers="d1142148e1425 " valign="top" width="NaN%"><p>Normal</p>
+</td>
+
+<td class="cellrowborder" headers="d1142148e1432 " valign="top" width="NaN%"><p>FORCE_EFFECT<em>n</em> = Force Normal</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

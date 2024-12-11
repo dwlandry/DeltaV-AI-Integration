@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Enhanced Control Selector function block configuration and execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_enhanced_control_select.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_enhanced_control_selector_function_block_execution" name="DC.Identifier" /><title>Enhanced Control Selector function block configuration and execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_enhanced_control_select.html" /><link rel="next" href="c_enhanced_control_selector_function_block_modes.html" /></head><body class="fixed" id="c_enhanced_control_selector_function_block_execution" data-relpath="c_enhanced_control_selector_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_enhanced_control_selector_function_block_execution"></a>
+
+<h1 class="topictitle1">Enhanced Control Selector function block configuration and
+    execution</h1>
+<div><div></div>
+ 
+    <p id="c_enhanced_control_selector_function_block_execution__blockexecutionenhancedcontrolselectorfunctionblock"><a name="c_enhanced_control_selector_function_block_execution__blockexecutionenhancedcontrolselectorfunctionblock"></a>The Enhanced
+      Control Selector function block supports up to 16 inputs and selects the inputs
+      either by direct selection (OP_SELECTION) or by applying a selected algorithm
+      (SEL_TYPE). 
+    </p>
+ 
+    <div class="section"><h2 class="sectiontitle">Configure selections and the number of used selections</h2> 
+       
+      <p>All required selections and corresponding statuses are automatically
+        generated if you extend the default selection of 3 to any number between 2 and
+        16. 
+      </p>
+ 
+      <p>You can set the NOF_USED_SEL parameter of the Enhanced Control
+        Selector function block at the function block level. For the module instance,
+        the NOF_TOTAL_SEL parameter is not configurable. 
+      </p>
+ 
+      <p>By default, the function block has three selections. You can define
+        the NOF_TOTAL_SEL parameter for a number of selections of 2 through 16. The
+        parameters related to the selection numbers up to NOF_TOTAL_SEL are shown at
+        the function block level. 
+      </p>
+ 
+      <p>The number of selections that are used at the instance level by the
+        logic of the function block is defined by the NOF_USED_SEL parameter.
+        NOF_USED_SEL must be less than or equal to NOF_TOTAL_SEL. If NOF_USED_SEL is
+        greater than NOF_TOTAL_SEL, the number of selections used by the block logic is
+        limited to NOF_TOTAL_SEL. By default, 
+        <span class="nowrap">NOF_USED_SEL = 3</span>. 
+      </p>
+ 
+      <p><strong>Example:</strong> 
+        <span class="nowrap">NOF_TOTAL_SEL = 7</span> and 
+        <span class="nowrap">NOF_USED_SEL = 3.</span> Only the first three
+        selections are evaluated by the logic of the function block; however, the
+        selection parameters associated with all seven selections are shown at the
+        function block level. 
+      </p>
+ 
+      <div class="p">The following table shows the configuration constraints of the
+        NOF_TOTAL_SEL and NOF_USED_SEL parameters: 
+      
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+            <tr> 
+              <th class="cellrowborder" id="d964573e63" valign="top" width="19.047619047619047%">Usage 
+              </th>
+ 
+              <th class="cellrowborder" id="d964573e66" valign="top" width="28.57142857142857%">NOF_TOTAL_SEL 
+              </th>
+ 
+              <th class="cellrowborder" id="d964573e69" valign="top" width="52.38095238095239%">NOF_USED_SEL 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr> 
+              <td class="cellrowborder" headers="d964573e63 " valign="top" width="19.047619047619047%">Module instance 
+              </td>
+ 
+              <td class="cellrowborder" headers="d964573e66 " valign="top" width="28.57142857142857%"> Not user-configurable 
+              </td>
+ 
+              <td class="cellrowborder" headers="d964573e69 " rowspan="3" valign="top" width="52.38095238095239%"> User-configurable, 2 through
+                16 
+                <ul> 
+                  <li><div class="li_content">By default, 
+                    <span class="nowrap">NOF_USED_SEL = 3</span>. 
+                  </div></li>
+ 
+                  <li><div class="li_content">Otherwise, NOF_USED_SEL must be 
+                    <span class="nowrap">≤ NOF_TOTAL_SEL</span>. 
+                  </div></li>
+ 
+                </ul>
+ 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d964573e63 " valign="top" width="19.047619047619047%">Module class 
+              </td>
+ 
+              <td class="cellrowborder" headers="d964573e66 " rowspan="2" valign="top" width="28.57142857142857%"> User-configurable 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d964573e63 " valign="top" width="19.047619047619047%">Module that is not class-based 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Configure or wire the input selection for non-Auto
+        selection</h2> 
+       If the OP_SELECTION parameter is not set to Auto selection,
+      OP_ SELECTION is set to the user-configured input selection by the operator or
+      to the input selection defined by calculation code and wired to the selector. 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Calculate the Enhanced Control Selector function block actual
+        mode</h2> 
+       
+      <p> At the beginning of each scan period, the Enhanced Control Selector
+        function block calculates the actual mode according to the input status, target
+        mode, and configured parameter settings. The function block steps into the
+        calculated actual mode or stays in the original mode. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p>If the Shed to MAN on a bad input status option is selected for the
+          STATUS_OPTS parameter, the Enhanced Control Selector function block works the
+          same as the Control Selector function block. For example: In Auto mode, if any
+          of the connected SEL_ X 
+          <span class="nowrap">(X = 1</span>, 
+          <span class="nowrap">2, …, NOF_USED_SEL)</span> inputs have Bad
+          status during block execution, the function block transitions its actual mode
+          to Man. If the Bad SEL_X input transitions back to Good status, the function
+          block resumes Auto operation. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Indicate the selected input number in Auto mode</h2> 
+       
+      <p>If the the Enhanced Control Selector function block is in Auto mode,
+        the SELECTED parameter indicates the selected input as a read-only integer, 
+        <span class="nowrap">1 ≤ SELECTED ≤ NOF_USED_SEL.</span> 
+      </p>
+ 
+      <p> If OP_SELECTION is not set to Auto selection, SELECTED is set to the
+        index value of OP_SELECTION.
+      </p>
+ 
+      <p>If OP_SELECTION is set to Auto selection, SELECTED is calculated based
+        on the SEL_TYPE parameter. The function block picks a Low, Middle, or High
+        value from SEL_X 
+        <span class="nowrap">(X = 1,</span> 
+        <span class="nowrap">2, …, NOF_USED_SEL)</span> and sets X to
+        SELECTED. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p>You can select Middle only when there are exactly three inputs. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Calculate the Enhanced Control Selector function block
+        output</h2> 
+       
+      <div class="p"> Next, the Enhanced Control Selector function block calculates the
+        forward path primary output: 
+      <ul> 
+        <li><div class="li_content"> In Initializing Manual mode (IMan), the primary output OUT is
+          unchanged. The BKCAL_SELX 
+          <span class="nowrap">(X = 1,</span> 
+          <span class="nowrap">2, …, NOF_USED_SEL)</span> parameter values
+          are passed to the upstream function blocks. 
+        </div></li>
+ 
+        <li><div class="li_content"> In Manual (Man) mode, OUT can be set manually. 
+        </div></li>
+ 
+        <li><div class="li_content"> In Automatic (Auto) mode: 
+          <ul> 
+            <li><div class="li_content"> If OP_SELECTION is not set to Auto selection, the block
+              selects SEL_X (where X is the index of OP_SELECTION) as the primary output OUT
+            </div></li>
+ 
+            <li><div class="li_content"> If OP_SELECTION is set to Auto selection, the block selects
+              SEL_X (where 
+              <span class="nowrap">X = SELECTED)</span> as the primary output
+              based on the SEL_TYPE parameter.
+            </div></li>
+ 
+          </ul>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The output value is sent back to all (NOF_USED_SEL) upstream function
+        blocks. 
+      </p>
+ 
+      <p>All the output parameter status values are set to indicate the status
+        of the function block and the status of the corresponding parameter. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Output limit scaling</h2> 
+       
+      <div class="p"> During download, OUT_HI_LIM and OUT_LO_LIM are set to their
+        configured values. If you have not changed these values from their defaults,
+        they are set as follows during the first execution of the Enhanced Control
+        Selector function block: 
+      <ul> 
+        <li><div class="li_content"> OUT_HI_LIM is set to OUT_SCALE(EU100). 
+        </div></li>
+ 
+        <li><div class="li_content"> OUT_LO_LIM is set to OUT_SCALE(EU0). 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="p"> During runtime, the limits are restricted as follows: 
+      <ul> 
+        <li><div class="li_content"> OUT_HI_LIM is restricted to 
+          <span class="nowrap">OUT_SCALE(EU100)</span> + 0.1 × 
+          <span class="nowrap">(OUT_SCALE(EU100)</span> – 
+          <span class="nowrap">OUT_SCALE(EU0)).</span> 
+        </div></li>
+ 
+        <li><div class="li_content"> OUT_LO_LIM is restricted to 
+          <span class="nowrap">OUT_SCALE(EU0)</span> - 0.1 × 
+          <span class="nowrap">(OUT_SCALE(EU100)</span> – 
+          <span class="nowrap">OUT_SCALE(EU0)).</span> 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The OUT parameter is not changed as a result of changing the scale or
+        limits. However, if OUT violates the new limits, OUT is forced within the
+        limits on the next execution of the function block. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section"><h2 class="sectiontitle">Output limiting</h2> 
+       
+      <p>You can limit the output by configuring the OUT_HI_LIM and OUT_LO_LIM
+        parameters. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

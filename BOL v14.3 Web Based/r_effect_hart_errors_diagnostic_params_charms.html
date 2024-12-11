@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Effect of HART error conditions on diagnostic parameters (CHARMs I/O)" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="r_effect_hart_errors_diagnostic_params.html" name="DC.Relation" scheme="URI" /><meta content="c_hart_errorconditions_charms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_effect_hart_errors_diagnostic_params_unique_1" name="DC.Identifier" /><title>Effect of HART error conditions on diagnostic parameters (CHARMs I/O)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_hart_comm_and_mismatch_errors.html" /><link rel="next" href="r_hart_command_errors.html" /></head><body class="fixed" id="r_effect_hart_errors_diagnostic_params_unique_1" data-relpath="r_effect_hart_errors_diagnostic_params_charms.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_effect_hart_errors_diagnostic_params_unique_1"></a>
+
+<h1 class="topictitle1">Effect of HART error conditions on diagnostic parameters (CHARMs I/O)</h1>
+<div><div></div>
+<div class="section" id="r_effect_hart_errors_diagnostic_params_unique_1__section_969166B946BB4B1C90F95213313CEFD4_unique_1"><a name="r_effect_hart_errors_diagnostic_params_unique_1__section_969166B946BB4B1C90F95213313CEFD4_unique_1"></a><p>This section lists the effect of HART error conditions on DeltaV Diagnostic parameters. For ease of use the information is organized into two tables. This table lists the status returned to the following Diagnostics parameters as a result of HART error conditions:</p>
+<a name="r_effect_hart_errors_diagnostic_params_unique_1__ul_459CEC1B4BC3474EB93C31A8859D891A_unique_1"></a><ul id="r_effect_hart_errors_diagnostic_params_unique_1__ul_459CEC1B4BC3474EB93C31A8859D891A_unique_1">
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_EA63AD912BDE4B82A8C2E8D0FA38083B_unique_1"><div class="li_content"><p>COLD_START</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_8703E23679804C368719A41ECBD59617_unique_1"><div class="li_content"><p>CONFIG_CHANGED</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_C95616198E2A489F8EF8DB50096DE875_unique_1"><div class="li_content"><p>DEV_CFG_MISMATCH</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_940A0909BFBE4D94870395D46B2C9EA2_unique_1"><div class="li_content"><p>DEV_MALFUNC</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_A8CDC6D4EC8D43008891C179A2F2998D_unique_1"><div class="li_content"><p>HINTEG</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_BF6A32B3B80B4CE2AB53277352BBFEC0_unique_1"><div class="li_content"><p>MORE_STATUS</p>
+</div></li>
+
+
+</ul>
+<p><em>The following table lists the status returned to NO_COMM, OINTEG, NPV_PAST_LIM, PV_FIXED,PV_PAST_LIM,PV_SAT</em></p>
+
+<div class="tablenoborder"><a name="r_effect_hart_errors_diagnostic_params_unique_1__table_4B687EF6F96B4888B1A71D39524E6C4E_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_diagnostic_params_unique_1__table_4B687EF6F96B4888B1A71D39524E6C4E_unique_1" rules="all" summary=""><caption><span class="tablecap">Effect of HART Error Conditions on Diagnostic Parameters (CHARMs I/O) - Table One</span></caption><thead align="left"><tr>
+<th class="cellrowborder" id="d2559585e61" rowspan="2" valign="top"><p>HART Error Condition</p>
+</th>
+
+<th class="cellrowborder" colspan="6" id="d2559585e65" valign="top"><p>Status returned to:</p>
+</th>
+
+</tr>
+<tr>
+<th class="cellrowborder" id="d2559585e71" valign="top"><p>COLD_START</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e75" valign="top"><p> CONFIG_CHANGED</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e79" valign="top"><p>DEV_CFG_MISMATCH</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e83" valign="top"><p>DEV_MALFUNC</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e87" valign="top"><p> HINTEG</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e92" valign="top"><p> MORE_STATUS</p>
+</th>
+
+
+</tr>
+<tr><th class="cellrowborder" id="d2559585e97" valign="top"><p>Channel Type</p>
+</th>
+<th class="cellrowborder" id="d2559585e100" valign="top"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e103" valign="top"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e106" valign="top"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e109" valign="top"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e112" valign="top"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e115" valign="top"><p>AI, AO</p>
+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Controller Configuration Error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>I/O card A/D error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>I/O card open loop</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>I/O card loss of digital comms</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>PV not reported by device</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>DV not configured in controller</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>DV not reported by device</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Diagnostics in progress</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>High, low, or high high alarm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Scale error and no comm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Scale error and good comm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device malfunction</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device configuration changed</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device cold start</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device more status available</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>TRUE</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device analog output current fixed</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device analog output saturated</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device primary variable out of limits</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device non-primary variable out of limits</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Device alerts enabled and device ID mismatch</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>Stale data</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e61 d2559585e97 " valign="top"><p>HART busy, HART update warning, 5% comm error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e71 d2559585e100 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e75 d2559585e103 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e79 d2559585e106 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e83 d2559585e109 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e87 d2559585e112 " valign="top"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e65 d2559585e92 d2559585e115 " valign="top"><p>No effect</p>
+</td>
+
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table lists the status returned to the following Diagnostics parameters as a result of HART error conditions:</p>
+<a name="r_effect_hart_errors_diagnostic_params_unique_1__ul_038F980C1B794AF9B43177EB76867216_unique_1"></a><ul id="r_effect_hart_errors_diagnostic_params_unique_1__ul_038F980C1B794AF9B43177EB76867216_unique_1">
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_D9503EE8E36E4245B94386AE98AAD61A_unique_1"><div class="li_content"><p>NO_COMM</p>
+</div></li>
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_15CA50157F00473B9031BC2738825E40"><div class="li_content"><p>OINTEG (for both AI and AO channels)</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_0C9EB3A74C5349C49FA69E3AEDCB601A_unique_1"><div class="li_content"><p>NPV_PAST_LIM</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_8D444CB20D4644CFBD83B982238ED96D_unique_1"><div class="li_content"><p>PV_FIXED</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_A3CA937D710245F992A6F2DBC31CA909_unique_1"><div class="li_content"><p>PV_PAST_LIM</p>
+</div></li>
+
+<li id="r_effect_hart_errors_diagnostic_params_unique_1__li_E0710CE4AAF9455691612D0CCD8DC398_unique_1"><div class="li_content"><p>PV_SAT</p>
+</div></li>
+
+</ul>
+
+<div class="tablenoborder"><a name="r_effect_hart_errors_diagnostic_params_unique_1__table_113EF0B30A274CA9A0B5FFDDC0908AC1_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_effect_hart_errors_diagnostic_params_unique_1__table_113EF0B30A274CA9A0B5FFDDC0908AC1_unique_1" rules="all" summary=""><caption><span class="tablecap">Effect of HART Error Conditions on Diagnostic Parameters (CHARMs I/O) - Table Two</span></caption><thead align="left"><tr>
+<th class="cellrowborder" id="d2559585e846" rowspan="2" valign="top" width="12.5%"><p>HART Error Condition</p>
+</th>
+
+<th class="cellrowborder" colspan="7" id="d2559585e850" valign="top"><p>Status returned to:</p>
+</th>
+
+</tr>
+<tr><th class="cellrowborder" id="d2559585e855" valign="top" width="12.5%"><p> NO_COMM</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e859" valign="top" width="12.5%"><p>OINTEG</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e863" valign="top" width="12.5%"><p> OINTEG</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e867" valign="top" width="12.5%"><p> NPV_PAST_LIM</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e871" valign="top" width="12.5%"><p> PV_FIXED</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e875" valign="top" width="12.5%"><p>PV_PAST_LIM</p>
+</th>
+
+<th class="cellrowborder" id="d2559585e880" valign="top" width="12.5%"><p>PV_SAT</p>
+</th>
+
+</tr>
+<tr><th class="cellrowborder" id="d2559585e885" valign="top" width="12.5%"><p>Channel Type</p>
+</th>
+<th class="cellrowborder" id="d2559585e888" valign="top" width="12.5%"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e891" valign="top" width="12.5%"><p>AI</p>
+</th>
+<th class="cellrowborder" id="d2559585e894" valign="top" width="12.5%"><p>AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e897" valign="top" width="12.5%"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e900" valign="top" width="12.5%"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e903" valign="top" width="12.5%"><p>AI, AO</p>
+</th>
+<th class="cellrowborder" id="d2559585e906" valign="top" width="12.5%"><p>AI, AO</p>
+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Controller Configuration Error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>I/O card A/D error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>I/O card open loop</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>I/O card loss of digital comms</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>TRUE</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>PV not reported by device</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>DV not configured in controller</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>DV not reported by device</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Diagnostics in progress</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>High, low, or high high alarm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Scale error and no comm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Scale error and good comm</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device malfunction</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device configuration changed</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device cold start</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device more status available</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device analog output current fixed</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device analog output saturated</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>TRUE</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device primary variable out of limits</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>BAD<a href="r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2"><sup>r_effect_hart_errors_diagnostic_params.html#r_effect_hart_errors_diagnostic_params__footnote1_unique_2</sup></a></p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device non-primary variable out of limits</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>BAD</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%">BAD</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>TRUE</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Device alerts enabled and device ID mismatch</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>Stale data</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d2559585e846 d2559585e885 " valign="top" width="12.5%"><p>HART busy, HART update warning, 5% comm error</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e855 d2559585e888 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+<td class="cellrowborder" headers="d2559585e850 d2559585e859 d2559585e891 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e863 d2559585e894 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e867 d2559585e897 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e871 d2559585e900 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e875 d2559585e903 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+<td class="cellrowborder" headers="d2559585e850 d2559585e880 d2559585e906 " valign="top" width="12.5%"><p>No effect</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_effect_hart_errors_diagnostic_params.html">Effect of HART error conditions on diagnostic parameters (Classic I/O)</a></div>
+</div>
+</div><div class="p"><sup>1</sup>  If not caused by an Open Loop or A/D Error</div><div class="p"><sup>2</sup>  If not ignored by the configuration</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

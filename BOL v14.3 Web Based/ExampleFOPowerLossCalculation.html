@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Calculating the fiber-optic link loss" name="DC.Title" /><meta content="install" name="DC.Coverage" /><meta content="fiber-optic link loss" name="DC.subject" /><meta content="fiber-optic link loss" name="keywords" /><meta content="r_SISNet_Repeater_Specifications.html" name="DC.Relation" scheme="URI" /><meta content="r_sisnet_distance_extender_Specifications.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="ExampleFOPowerLossCalculation" name="DC.Identifier" /><title>Calculating the fiber-optic link loss</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_sisnet_distance_extender_Specifications.html" /><link rel="next" href="AddingCarriersToAnOperSys.html" /></head><body class="fixed" id="ExampleFOPowerLossCalculation" data-relpath="ExampleFOPowerLossCalculation.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="ExampleFOPowerLossCalculation"></a>
+
+<h1 class="topictitle1">Calculating the fiber-optic link loss</h1>
+<div><div></div>
+ 
+	 <div class="section" id="ExampleFOPowerLossCalculation__section_477235B3886849899A4D76B5CB286440"><a name="ExampleFOPowerLossCalculation__section_477235B3886849899A4D76B5CB286440"></a> 
+		<p id="ExampleFOPowerLossCalculation__1020005"><a name="ExampleFOPowerLossCalculation__1020005"></a>The fiber-optic link budget must account for all losses
+		  at fiber-optic cable splices and connector insertion points. Keep an accurate
+		  account of losses at all connectors and splices in the system. Refer to 
+		  <a href="r_SISNet_Repeater_Specifications.html">SISNet Repeater Specifications</a> and 
+		  <a href="r_sisnet_distance_extender_Specifications.html">SISNet Distance Extender Specifications</a> for the link
+		  budgets for single mode and multimode fiber at various core diameters. The
+		  manufacturer of the components can provide the loss specifications. Many types
+		  of cables and connectors with different loss (attenuation) specifications are
+		  available.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="ExampleFOPowerLossCalculation__section_D035A54BCCE44C8390C5A89F88F304EA"><a name="ExampleFOPowerLossCalculation__section_D035A54BCCE44C8390C5A89F88F304EA"></a><h2 class="sectiontitle">Example fiber-optic link loss calculation for multimode
+		  fiber</h2> 
+		 
+		<p id="ExampleFOPowerLossCalculation__1020026"><a name="ExampleFOPowerLossCalculation__1020026"></a>The following example shows typical link losses in a
+		  multimode, point-to-point fiber-optic link.
+		</p>
+ 
+		<a name="ExampleFOPowerLossCalculation__ul_0CF2C0F46B764568A9C02491AD56A126"></a><ul id="ExampleFOPowerLossCalculation__ul_0CF2C0F46B764568A9C02491AD56A126"> 
+		  <li id="ExampleFOPowerLossCalculation__1019577"><div class="li_content">Link budget 11 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019578"><div class="li_content"> Fiber-optic cable (example 2 dB/km) x 2 km max = 4 dB
+			 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019579"><div class="li_content"> TxD connector =.5 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019580"><div class="li_content">RxD connector =.5 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019585_unique_1"><div class="li_content"> Patch panel splices 2 x .5 dB = 1 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019586_unique_2"><div class="li_content">Fiber-optic cable loss due to aging over time = 3 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1019587"><div class="li_content">Total link losses = 4 + .5 + .5 + 1 + 3 = 9 dB 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p id="ExampleFOPowerLossCalculation__1019588"><a name="ExampleFOPowerLossCalculation__1019588"></a>Margin = 11 dB -9 dB = 2 dB (the margin is greater than
+		  zero and falls within the link budget).
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="ExampleFOPowerLossCalculation__section_AAD14350DC2C4288855E132BF46EDACE"><a name="ExampleFOPowerLossCalculation__section_AAD14350DC2C4288855E132BF46EDACE"></a><h2 class="sectiontitle"> 
+		<strong>Example fiber-optic link loss calculation for single mode fiber</strong>
+		</h2> 
+		 
+		<p id="ExampleFOPowerLossCalculation__1020039"><a name="ExampleFOPowerLossCalculation__1020039"></a>The following example shows typical link losses in a
+		  single mode, point-to-point fiber-optic link with a core diameter of 9/125 µm.
+		  Refer to 
+		  <a href="r_SISNet_Repeater_Specifications.html">SISNet Repeater Specifications</a> and 
+		  <a href="r_sisnet_distance_extender_Specifications.html">SISNet Distance Extender Specifications</a> for the link
+		  budgets for other fiber-optic core diameters.
+		</p>
+ 
+		<a name="ExampleFOPowerLossCalculation__ul_3E5DE0E90AAA40C1963CB15940F8D29C"></a><ul id="ExampleFOPowerLossCalculation__ul_3E5DE0E90AAA40C1963CB15940F8D29C"> 
+		  <li id="ExampleFOPowerLossCalculation__1020044"><div class="li_content">Link budget 30 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020045"><div class="li_content"> Fiber-optic cable (example 0.38 dB/km) x 60 km max =
+			 22.8 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020046"><div class="li_content"> TxD connector = 0.6 dB
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020047"><div class="li_content">RxD connector = 0.6 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020051"><div class="li_content">Patch panel splices 2 x 0.1 dB = 0.2 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020052"><div class="li_content">Cable splices 10 x 0.1 dB = 1 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020053"><div class="li_content"> Fiber-optic cable loss due to aging over time = 3 dB 
+		  </div></li>
+ 
+		  <li id="ExampleFOPowerLossCalculation__1020054"><div class="li_content">Total link losses = 22.8 + 0.6 + 0.6 + 0.2 + 1.0 + 3.0
+			 = 28.2 dB 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p id="ExampleFOPowerLossCalculation__1020058"><a name="ExampleFOPowerLossCalculation__1020058"></a>Margin = 30 dB - 28.2 dB = 1.8 dB (the margin is greater
+		  than zero and falls within the link budget).
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_SISNet_Repeater_Specifications.html">SISNet Repeater specifications</a></div>
+<div><a href="r_sisnet_distance_extender_Specifications.html">SISNet Distance Extender specifications</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Zone-to-Zone data communication" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Zones, data communication" name="DC.subject" /><meta content="Zones, data communication" name="keywords" /><meta content="c_zones_events_alarms.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_zones1.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_zone_to_zone_data_communication" name="DC.Identifier" /><title>Zone-to-Zone data communication</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_redundant_inter_zone_servers.html" /><link rel="next" href="c_zones_and_security_considerations.html" /></head><body class="fixed" id="c_zone_to_zone_data_communication" data-relpath="c_zone_to_zone_data_communication.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_zone_to_zone_data_communication"></a>
+
+<h1 class="topictitle1">Zone-to-Zone data communication</h1>
+<div><div></div>
+ 
+	 <p>After Inter-Zone Servers and Control Networks are installed and
+		configuration (including Remote Zone Areas) is completed in each of the
+		connected DeltaV systems, you can read and write information (with some
+		restrictions) between DeltaV systems. The syntax necessary for communication
+		varies with the DeltaV application and the type of data being communicated. 
+	 </p>
+ 
+	 <div class="p">Types of data that can be communicated: 
+	 <a name="c_zone_to_zone_data_communication__ul_D961D2307178496788B11E9D5D247416"></a><ul id="c_zone_to_zone_data_communication__ul_D961D2307178496788B11E9D5D247416"> 
+		<li id="c_zone_to_zone_data_communication__li_E2E7F542ADCD4758BBA8166520207834"><div class="li_content">Module and block parameters 
+		</div></li>
+ 
+		<li id="c_zone_to_zone_data_communication__li_C646C289B263475FBEA3700B0FD236E8"><div class="li_content">Diagnostic parameters 
+		</div></li>
+ 
+		<li id="c_zone_to_zone_data_communication__li_DD6C582405A2460DBEDFF17D94269305"><div class="li_content">I/O parameters (classic,
+		  CHARMs, wireless, and remote) 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>Module and block parameters, diagnostic parameters, and classic I/O
+		parameters each have a syntax you can use to directly reference from another
+		zone as shown below. 
+	 </p>
+ 
+	 <p>CHARMs I/O, wireless I/O, and remote I/O cannot be referenced directly
+		from another zone. Instead, you must configure a function block (AI, AO, DI,
+		DO, PID, DC, and so on) with an I/O Reference to the CHARM, wireless, or remote
+		I/O. Then that block&#39;s output can be referenced across zones like any other
+		module parameter (or wired into an algorithm and then a downstream parameter
+		can be referenced). 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>Browsing to data in other DeltaV systems is not supported. You must
+		  enter the path to the parameter in the other system. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_3DD4DBD4399D49CAB08B2A859568DEED"><a name="c_zone_to_zone_data_communication__section_3DD4DBD4399D49CAB08B2A859568DEED"></a><h2 class="sectiontitle">Control Studio and DeltaV Explorer</h2> 
+		 
+		<p>When DeltaV Zones is enabled you can include data from other DeltaV
+		  systems as external or dynamic references if the remote areas are shared with
+		  the local DeltaV system. Inter-Zone write references are not supported.
+		  Disallowing Inter-Zone module-to-module writes ensures that those responsible
+		  for a system&#39;s configuration oversee Inter-Zone data (and volume of data)
+		  coming into the system. As a result, the configuration must include adequate
+		  logic to ensure the appropriate action when Inter-Zone reads fail. The syntax
+		  required to reference parameters depends on whether you are referencing them
+		  from an expression or a user-defined parameter. 
+		</p>
+ 
+		<p><strong>Addressing in an expression</strong> 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_4B5F4D3FF1594783981A4980203F0B7C"></a><ul id="c_zone_to_zone_data_communication__ul_4B5F4D3FF1594783981A4980203F0B7C"> 
+		  <li id="c_zone_to_zone_data_communication__li_C2ACF4F0F23B44B88FCBD10D394DE4AC"><div class="li_content">Module and block
+			 parameters: 
+			 <p><samp class="codeph">//&lt;zone
+				  name&gt;%&lt;module&gt;/[&lt;block&gt;/]&lt;parameter&gt;.&lt;field&gt;</samp>
+				
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_04FAE749D3554189B2ECAA1E0BAE64FA"><div class="li_content">Diagnostic parameters: 
+			 <p><samp class="codeph">//&lt;zone
+				  name&gt;%&lt;node&gt;/&lt;subsystem&gt;/&lt;parameter&gt;.&lt;field&gt;</samp>
+				
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_54862F6B094D4DB09532028E5C04DAE3"><div class="li_content">Classic I/O parameters: 
+			 <div class="p"><samp class="codeph">//&lt;zone
+				  name&gt;%&lt;controller&gt;/IO1/&lt;card&gt;/&lt;channel&gt;/&lt;parameter&gt;.&lt;field&gt;</samp>
+				
+				<div class="note"><span class="notetitle">Note:</span>  
+				  <p>Expression references to device signal tags (DSTs) in other
+					 systems are not allowed. You 
+					 <em>must</em> use the physical address (also known as the I/O
+					 path) as shown. 
+				  </p>
+ 
+				</div>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>For example, a reference from an expression to a block parameter of a
+		  module in another DeltaV system looks like: 
+		</p>
+ 
+		<p><samp class="codeph">//ZONE_B%AI_MOD/AI1/OUT.CV</samp> 
+		</p>
+ 
+		<p>The .CV field is the default and you do not need to include it. When
+		  using a reference field other than the .CV field, you must include the field
+		  name. 
+		</p>
+ 
+		<p><strong>Addressing in user-defined parameters</strong> 
+		</p>
+ 
+		<p>Addressing in user-defined parameters is similar to addressing in
+		  expressions: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_ACC6C577200246C387FA094E18A43CB7"></a><ul id="c_zone_to_zone_data_communication__ul_ACC6C577200246C387FA094E18A43CB7"> 
+		  <li id="c_zone_to_zone_data_communication__li_535E9899CA7349D2A90F370C65618273"><div class="li_content"><samp class="codeph">&lt;zone
+				name&gt;%&lt;module&gt;/&lt;block&gt;/&lt;parameter&gt;</samp> 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_C4FC5AD280CD4F61B87C5A7D9681A098"><div class="li_content"><samp class="codeph">&lt;zone
+				name&gt;%&lt;node&gt;/&lt;subsystem&gt;/&lt;parameter&gt;</samp> 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_0BC1455BEEEE4420ABB8A59B567D80B7"><div class="li_content"><samp class="codeph">&lt;zone
+				name&gt;%&lt;controller&gt;/IO1/&lt;card&gt;/&lt;channel&gt;/&lt;parameter&gt;</samp>
+			 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>For example, a user-defined parameter reference to a parameter in
+		  another DeltaV system looks like: 
+		</p>
+ 
+		<p><samp class="codeph">ZONE_B%AI_MOD/AI1/OUT</samp> 
+		</p>
+ 
+		<p>The leading slashes (//) are not required and are stripped out if you
+		  include them. Fields are not allowed in external reference parameters. If you
+		  include a field an error appears when you close the parameter. 
+		</p>
+ 
+		<p>If you create references to parameters in the local system that
+		  include the local zone name, the local zone name is removed when you save the
+		  parameter or expression. 
+		</p>
+ 
+		<p>Dynamic reference parameters between DeltaV systems work as expected
+		  with two exceptions: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_D67E576AC0F74856B98234135CB653AD"></a><ul id="c_zone_to_zone_data_communication__ul_D67E576AC0F74856B98234135CB653AD"> 
+		  <li id="c_zone_to_zone_data_communication__li_C39D4F3AA2564186959A68CB4AB248B5"><div class="li_content"> You cannot include the
+			 zone prefix in a dynamic reference in the local system. 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_BF6C006B068A4FD1AAC91A1420D8D699"><div class="li_content">A dynamic reference
+			 between systems stops working if you change the zone name of the system you are
+			 referencing. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>Paths that do not include zone names are interpreted as referring to a
+		  parameter in the DeltaV system where the module is defined. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_149CF74C790F4158BECBB9E5D3107DC0"><a name="c_zone_to_zone_data_communication__section_149CF74C790F4158BECBB9E5D3107DC0"></a><h2 class="sectiontitle">DeltaV Operate</h2> 
+		 
+		<p>The impact of DeltaV Zones on Display configuration and management
+		  includes the following: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_BE8421080A91417CB87145FC5119F05A"></a><ul id="c_zone_to_zone_data_communication__ul_BE8421080A91417CB87145FC5119F05A"> 
+		  <li id="c_zone_to_zone_data_communication__li_6787CBAF23904B4898F57AB881CD270B"><div class="li_content">Display configuration for
+			 multiple systems 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_E1DEA766ACBF4902B20DCB2C09DA605E"><div class="li_content">Writing parameters between
+			 DeltaV systems 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_5D48752AF59F45F49442D7A3FE80AFE5"><div class="li_content">Alarm and event services
+			 and appearance in alarm banner and alarm list 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_773D218524FF49F0BD483E8B63BEE288"><div class="li_content">Zone name appearing in
+			 faceplates and detail displays 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>You can configure displays in a DeltaV Zones environment so users can
+		  access information in other DeltaV systems. This is accomplished by including
+		  the zone name in datalink parameter paths. References to parameters in the
+		  local DeltaV system (the system in which the display is viewed) do not need to
+		  include the zone name. Example parameter paths in displays: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_BC08B1FCC11A40A392525B127FF7E2E5"></a><ul id="c_zone_to_zone_data_communication__ul_BC08B1FCC11A40A392525B127FF7E2E5"> 
+		  <li id="c_zone_to_zone_data_communication__li_3166C7CBEE7647EABF526CEB533846C3"><div class="li_content"><samp class="codeph">DVSYS.&lt;zone
+				name&gt;%&lt;module&gt;/&lt;block&gt;/&lt;parameter&gt;.F_&lt;field&gt;</samp>
+			 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_00D4792453D746A6AF4A712FC8DF1D8F"><div class="li_content"><samp class="codeph">DVSYS.&lt;zone
+				name&gt;%&lt;node&gt;/&lt;subsystem&gt;/&lt;parameter&gt;.F_&lt;field&gt;</samp>
+			 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_6A39D6CFA8684462B7C59D97A72A3F1C"><div class="li_content"><samp class="codeph">DVSYS.&lt;zone
+				name&gt;%&lt;DSTname&gt;/&lt;parameter&gt;.F_&lt;field&gt;</samp> 
+			 <p>You can also use 
+				<samp class="codeph">DVSYS.&lt;zone
+				  name&gt;%&lt;controller&gt;/IO1/&lt;card&gt;/&lt;channel&gt;/&lt;parameter&gt;.F_&lt;field&gt;</samp>
+				
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>Both A_ and F_ fields are valid. 
+		</p>
+ 
+		<p>For example, a datalink configured to access a parameter from a DeltaV
+		  system whose zone name is ZONE_B looks like: 
+		</p>
+ 
+		<p><samp class="codeph">DVSYS.ZONE_B%AI_MOD/PID1/SP.F_CV</samp> 
+		</p>
+ 
+		<p>Tag substitutions for faceplate and detail displays cause paths to
+		  change from 
+		</p>
+ 
+		<p><samp class="codeph">DVSYS.@MOD@/&lt;block&gt;/&lt;parameter&gt;.A_&lt;field&gt;</samp>
+		  
+		</p>
+ 
+		<p> to 
+		</p>
+ 
+		<p> 
+		  <samp class="codeph">DVSYS.&lt;zone
+			 name&gt;%&lt;module&gt;/&lt;block&gt;/&lt;parameter&gt;.A_&lt;field&gt;</samp>
+		  
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_C6067195472443E5836DA23DE574DEB0"><a name="c_zone_to_zone_data_communication__section_C6067195472443E5836DA23DE574DEB0"></a><h2 class="sectiontitle">Writing parameters between Zones</h2> 
+		 
+		<p>Writing parameters between DeltaV systems from workstations is
+		  supported. This is the method used for all operator initiated parameter changes
+		  (changing mode or setpoint, acknowledging alarms, and so on) and other client
+		  applications (OPC data servers, Excel spreadsheets, and so on). For a user to
+		  be able to write to a parameter in another zone from DeltaV Operate the
+		  following conditions must be met: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_41B9EB89591B49D8B03E2CC202B318A2"></a><ul id="c_zone_to_zone_data_communication__ul_41B9EB89591B49D8B03E2CC202B318A2"> 
+		  <li id="c_zone_to_zone_data_communication__li_07EA0081E8014B35B87D83918C9C8E46"><div class="li_content"> The remote zone area the
+			 parameter is in must be shared with read and write access with the local area. 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_68A9E4A3911648AABCB25238D9A17B0A"><div class="li_content">The remote area must be
+			 included in the local zone&#39;s Remote Zone Areas folder for the remote zone 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_2EC73D8D2AAD4471A3B4EF87141D88B6"><div class="li_content">The datalink in the
+			 display must include the remote zone name. 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_F642913B3A1E4C5183A01015DCDEFFC0"><div class="li_content">The user attempting the
+			 write must have the correct security key for the remote zone area. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>The Inter-Zone Server in the target DeltaV system blocks write access
+		  attempts of all types if the parameter resolves to be in a module or node in a
+		  plant area that has not been configured to have read and write access from the
+		  DeltaV system attempting to write the parameter. 
+		</p>
+ 
+		<p>Writes between DeltaV systems may fail for any of several reasons. The
+		  status returned to the application attempting to write the parameter can be
+		  useful when diagnosing the cause of the failure (communications, configuration
+		  in either DeltaV system, or other reasons). 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>SIS Secure writes between DeltaV systems are not supported. They can
+			 be configured, but fail with an error in run mode. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_2B72F7D9AC644788AB3D636A04D84E3E"><a name="c_zone_to_zone_data_communication__section_2B72F7D9AC644788AB3D636A04D84E3E"></a><h2 class="sectiontitle">Considerations when using Named Set parameters</h2> 
+		 
+		<p>The behavior of reads and writes of named set parameters between
+		  DeltaV systems depends on how well the named set on the local system matches
+		  the named set on the other system. The following table summarizes the behavior.
+		  
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_zone_to_zone_data_communication__table_E570F9AE518C4D63AB4C6CB27A56E722"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_zone_to_zone_data_communication__table_E570F9AE518C4D63AB4C6CB27A56E722" rules="all" summary=""> 
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1456219e313" valign="top" width="NaN%"> 
+					 <p>ZONE_A and ZONE_B Named Set configuration 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1456219e319" valign="top" width="NaN%"> 
+					 <p>Read and write behavior between systems 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+			 </thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1456219e313 " valign="top" width="NaN%"> 
+					 <p>Named sets are identical in both systems 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1456219e319 " valign="top" width="NaN%"> 
+					 <p>Can read and write parameters in both directions without
+						problems. The remote named set input parameter will change and reflect the
+						state selected on the local display and vise-versa. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1456219e313 " valign="top" width="NaN%"> 
+					 <p>Some named set names differ between systems 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1456219e319 " valign="top" width="NaN%"> 
+					 <p>The writes between systems work on states with identical
+						names, but fail (in either direction) on the states that are unique in either
+						system. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1456219e313 " valign="top" width="NaN%"> 
+					 <p>Some named set values differ between systems 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1456219e319 " valign="top" width="NaN%"> 
+					 <p>The writes between systems work on states with identical
+						values, but fail (in either direction) on the states that are unique in either
+						system. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1456219e313 " valign="top" width="NaN%"> 
+					 <p>Local system does not have named set configured 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1456219e319 " valign="top" width="NaN%"> 
+					 <p>Can read named set parameters from the remote system, but
+						cannot write to remote system named set parameters because the named set is not
+						defined in the local system. An error message appears but no other problems
+						result. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>If your configuration requires writing named set parameters across
+		  zones, ensure that named set definitions are identical in all zones. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_B8E360E6E3D440488C16377C10976F45"><a name="c_zone_to_zone_data_communication__section_B8E360E6E3D440488C16377C10976F45"></a><h2 class="sectiontitle">Modifying pictures for use in a Zones environment</h2> 
+		 
+		<p>If you are implementing zones in an existing plant so that you can
+		  communicate between DeltaV systems, you can use the DeltaV Picture Upgrade
+		  Expert to modify displays from one DeltaV system to use in another system. The
+		  expert adds the zone name specified to all parameter references in a display
+		  that do not already specify a zone name. Thus, displays configured for one
+		  DeltaV system can be easily modified for use in another DeltaV system to
+		  display information from the original system. Any user-defined variables and
+		  color threshold tables that support your displays must also be available on the
+		  local DeltaV system. 
+		</p>
+ 
+		<p>When a faceplate or detail display opens for a module in a remote
+		  zone, the zone name appears above the module or function block tag name. 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__image_CE8C831FC20747E98D3B9E70F7712F78"></a><img id="c_zone_to_zone_data_communication__image_CE8C831FC20747E98D3B9E70F7712F78" src="zones_fp.gif" /> 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_EDE6E75ABBF24F9E9AA9D642DE20543D"><a name="c_zone_to_zone_data_communication__section_EDE6E75ABBF24F9E9AA9D642DE20543D"></a><h2 class="sectiontitle"><span id="c_zone_to_zone_data_communication__phvDVZone"><a name="c_zone_to_zone_data_communication__phvDVZone"></a>Process History View: viewing historical and
+			 real-time parameter data in a DeltaV Zones environment</span></h2> 
+		 
+		<p>You cannot assign areas from remote zones to the Continuous Historian
+		  subsystem on a workstation. Each DeltaV system defines and administers its
+		  Continuous Historian subsystem and historical data collection policy. You can
+		  create charts in Process History View that display information from other
+		  DeltaV systems (zones). Inter-Zone historical data can be managed in one of the
+		  following ways: 
+		</p>
+ 
+		<a name="c_zone_to_zone_data_communication__ul_5444AA6650CE438B8E18571FED83CCC0"></a><ul id="c_zone_to_zone_data_communication__ul_5444AA6650CE438B8E18571FED83CCC0"> 
+		  <li id="c_zone_to_zone_data_communication__li_814D30DACCBD4761AAA03909B2FA2763"><div class="li_content">Run the Process History
+			 View application on a Remote Desktop Services node in the other zone. 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_C831487DD30D43A0BE8AE754B005C90F"><div class="li_content">Connect the Process
+			 History View application to historical data servers in other zones, using plant
+			 network connections and client/server communications. These connections do not
+			 use the Inter-Zone Control Network. 
+		  </div></li>
+ 
+		  <li id="c_zone_to_zone_data_communication__li_BEDFDD70BB844DB0B815A2BC695EB6D1"><div class="li_content">Read a limited number of
+			 parameters from the other zone into module parameters in this zone, and record
+			 historical data on these parameters. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>In Process History View you specify the historical data server. This
+		  server is used for historical data on all charts that are configured to use 
+		  <samp class="codeph">defaulthost</samp> as the historical data server. You can
+		  configure each chart to get its data from a different historical data server
+		  node. Historical data servers from other zones are accessed from the Process
+		  History View node over the plant network. A historical data server in another
+		  zone does not appear in the 
+		  <span class="uicontrol">Historical Data Server</span> field of the 
+		  <span class="wintitle">Set Default Data Servers</span> dialog in Process History
+		  View. You must explicitly enter the node name where the DeltaV Continuous
+		  Historian, the Advanced Continuous Historian, or OSIsoft PI Server is installed
+		  and running. 
+		</p>
+ 
+		<p>The real-time history server is always the OPC data server on the
+		  workstation running Process History View. 
+		</p>
+ 
+		<p>In a DeltaV Zones environment, specify a parameter in the 
+		  <span class="wintitle">Parameter Reference Entry</span> dialog in the general
+		  form: 
+		</p>
+ 
+		<p><samp class="codeph">&lt;zone
+			 name&gt;%&lt;module&gt;/&lt;block&gt;/&lt;parameter&gt;.&lt;field&gt; 
+		  </samp> 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>To access a DST parameter you must use the hardware address (I/O
+			 path): 
+		  </p>
+ 
+		  <p> 
+			 <samp class="codeph">&lt;zone
+				name&gt;%&lt;controller&gt;/IO1/&lt;card&gt;/&lt;channel&gt;/&lt;parameter&gt;.&lt;field&gt;</samp>
+			 
+		  </p>
+ 
+		</div>
+ 
+		<p>To see historical data, the parameter must be in the collection list
+		  of the historical data server specified in the chart configuration. 
+		</p>
+ 
+		<p>To see real-time data, the parameter must exist in the zone specified.
+		  
+		</p>
+ 
+		<p>Because a faceplate does not know which historian is collecting data
+		  for a chart opened from the faceplate in a DeltaV Zones environment, the
+		  historical data server referenced by 
+		  <samp class="codeph">defaulthost</samp> must be set to the correct historical data
+		  server for the module being viewed. Otherwise, only real-time data appears in
+		  charts opened from faceplates in a DeltaV Zones environment. For example, if
+		  Process History View is opened in DeltaV Operate in ZONE_A from a faceplate
+		  that is displaying the module MOD_1 in ZONE_B, only real-time data appears on
+		  the chart unless 
+		  <samp class="codeph">defaulthost</samp> is set to the historical data server
+		  collecting historical data for MOD_1 in ZONE_B. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="c_zone_to_zone_data_communication__section_8DEC149661EC4B1F91427E59B9E33F88"><a name="c_zone_to_zone_data_communication__section_8DEC149661EC4B1F91427E59B9E33F88"></a><h2 class="sectiontitle">Diagnostics</h2> 
+		 
+		<p>You cannot run DeltaV Diagnostics from an Inter-Zone Server (IZS).
+		  When Diagnostics is running on another workstation type, select the Inter-Zone
+		  Server in the hierarchy and right-click to view diagnostic parameters. 
+		</p>
+ 
+		<p>From the Redundancy subsystem of an IZS you can perform a redundancy
+		  switchover. 
+		</p>
+ 
+		<p>From the Communications subsystem of an IZS you can check the
+		  Inter-Zone Control Network integrity. You can also display the Communications
+		  Connection List for the IZS by selecting 
+		  <span class="uicontrol">Display Com Connection List</span> from the
+		  Communications subsystem context menu. 
+		</p>
+ 
+		<p>The Zones subsystem and the configured zones have diagnostic
+		  parameters. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>DeltaV Diagnostics does not check for time differences between
+			 zones. If it is important to your implementation that the time between
+			 different zones be synchronized you must address this in your installation. One
+			 way to do this is to include a Network Time Server in each DeltaV system. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_zones_events_alarms.html">Inter-Zone alarms and events</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

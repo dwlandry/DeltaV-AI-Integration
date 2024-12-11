@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Link initialization" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_HART_devices_and_the_DeltaV_System.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_link_initialization" name="DC.Identifier" /><title>Link initialization</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_using_hart_error_conditions.html" /><link rel="next" href="t_accessing_ams_device_manager.html" /></head><body class="fixed" id="c_link_initialization" data-relpath="c_link_initialization.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_link_initialization"></a>
+
+<h1 class="topictitle1">Link initialization</h1>
+<div><div></div>
+
+	 <p>In order for the HART field device to be compatible with the DeltaV
+		system, it must be able to communicate using the HART commands listed in this
+		section.
+	 </p>
+
+	 <p>In the DeltaV system, HART link initialization is performed by the
+		DeltaV AI-HART card and the controller function block.
+	 </p>
+
+	 <p><strong>I/O Card Initialization</strong>
+	 </p>
+
+	 <p>When a HART card is plugged in, it assumes that all channels are analog
+		only. When you configure the card, you can set the channel to HART_ANALOG_INPUT
+		(AO also).
+	 </p>
+
+	 <p>The card then tests for an open circuit. If no open circuit is detected,
+		the card sends out HART Command 0 (Read Manufacturer and Device Type) followed
+		by Command 59 (Write Number of Response Preambles).
+	 </p>
+
+	 <p><strong>Controller Function Block Channel Initialization</strong>
+	 </p>
+
+	 <p>The DeltaV Controller also performs HART channel initialization. As soon
+		as the controller is notified that an AI-HART card configuration is complete,
+		it sends Command 0 to each HART channel.
+	 </p>
+
+	 <p>If a function block is linked to the HART_FIELD_VAL parameter (for AI)
+		or OUT parameter (for AOUT) of the HART channel, the first time the function
+		block executes, it sends scaling information (high and low range and units) to
+		the HART instrument for its analog output signal. The units code is sent via
+		HART Command 44 (Write Primary Variable Units). The high and low range
+		information is sent via HART Command 35 (Write Primary Variable Range Values).
+		At this time, the HART instrument sets a bit saying that it has changed its
+		configuration to the new values. The controller sends HART Command 15 (Read
+		Primary Variable Output Information) to read the range and units information.
+		This is followed by Command 38 (Reset Configuration Change Flag) to clear the
+		change flag in the instrument. Note that if command 44 is not supported,
+		command 15 is inserted before command 35 in the description above.
+	 </p>
+
+	 <p>There are other scenarios that affect link initialization, including:
+	 </p>
+
+	 <ul> 
+		<li><div class="li_content">
+		  <p>You might connect a handheld device to an instrument in the field to
+			 change its scale values. The controller detects this change in the instrument
+			 and sends Command 15 to read the new values followed by command 38.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>During loop tuning, you can change the range values in an AI
+			 function block. These changes are sent to the HART instrument.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>You might specify range values to a high level of precision and some
+			 HART instruments might not be able to support that precision. The controller
+			 sends Command 15 to detect the actual range precision the instrument is using
+			 in the process.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p>If a HART instrument does not support the HART Commands 44 and 35 (used
+		to set the scale values), the values read by HART Command 15 are compared to
+		those specified by the function block. If the values are the same, they are
+		accepted and the link initialization continues. If the values are not the same
+		(or if the HART instrument is write-protected or blocking access to that
+		configuration information), the controller stops the HART link initialization
+		for 5 seconds, restarts it with cmd 0, and the initialization repeats.
+	 </p>
+
+	 <p><strong>HART Special Units Handling</strong>
+	 </p>
+
+	 <p>The HART protocol allows units that might be unique to a particular HART
+		instrument and unknown to the DeltaV system. To deal with this for a specific
+		function block, select one of the following values for the Engineering unit
+		descriptor: hyphen (-), blank space ( ), or 
+		<strong>no units</strong>. The DeltaV system then uses the units and scale
+		information that are currently configured in the HART instrument. If the type
+		of units are known to the DeltaV system, the units are displayed in the
+		XD_SCALE parameter of the function block. However if they are unknown to the
+		DeltaV system, the units field in XD_SCALE is blank.
+	 </p>
+
+	 <p><strong>HART Scan Update Rate (AI card)</strong>
+	 </p>
+
+	 <p>After this card&#39;s initialization phase, the card sends out Command 3
+		(Read Dynamic Variables and Primary Variable) repeatedly to each HART channel.
+		The HART scan update rate for each input channel on an I/O card configured for
+		HART is 600 to 800 ms. The analog values for each input channel are scanned in
+		much faster than the HART scan update rate.
+	 </p>
+
+	 <p>Passthrough messages sent by AMS Device Manager can cause a card&#39;s HART
+		scan rate to be twice the rate without AMS Device Manager running.
+	 </p>
+
+	 <p><strong>HART Scan Update Rate (AOUT card)</strong>
+	 </p>
+
+	 <p>After this card&#39;s initialization phase, the card sends out Command 3
+		(Read Dynamic Variables and Primary Variable) repeatedly to each HART channel.
+		The HART scan update rate for each output channel on an I/O card configured for
+		HART is 600 to 800 ms.
+	 </p>
+
+	 <p>If device variables (DV_SLOT) are configured for a channel, the card
+		sends command 33 to read the configured device variables. The HART scan update
+		rate for each channel configured for device variables is an additional 600 to
+		800 ms.
+	 </p>
+
+	 <p>Passthrough messages sent by AMS Device Manager can cause a card&#39;s HART
+		scan rate to be as much as twice the rate without AMS Device Manager running.
+	 </p>
+
+	 <p>If valve diagnostics is running on a channel, the card&#39;s HART scan rate
+		can be as much as twice the rate without diagnostics running.
+	 </p>
+
+	 <p>As an example:
+	 </p>
+
+	 <p>The scan rate for an 8 channel analog output card with all channels
+		configured for HART is 4.8 to 6.4 seconds:
+	 </p>
+
+	 <ul> 
+		<li><div class="li_content">
+		  <p>If the Device Variables screen is open, the scan rate can be 9.6 to
+			 12.8 seconds.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>If AMS Device Manager is running and the Device Variables screen is
+			 open, the scan rate can be 19.2 to 25.6 seconds.
+		  </p>
+
+		</div></li>
+ 
+		<li><div class="li_content">
+		  <p>If the AMS Device Manager is running, the Device Variables screen is
+			 open, and valve diagnostics are running, the scan rate can be 38.4 to 51.2
+			 seconds.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p><strong>HART Scan Update Rate (AI 4-20 mA CHARM)</strong>
+	 </p>
+
+	 <p>The HART scan update rate for an AI 4-20 mA HART CHARM is typically less
+		than one second but is dependent on HART communication loading and the
+		capability of the HART device.
+	 </p>
+
+	 <p><strong>HART Scan Update Rate (AO 4-20 mA CHARM)</strong>
+	 </p>
+
+	 <p>The HART scan update rate for an AO 4-20 mA HART CHARM is typically less
+		than one second but is dependent on HART communication loading and the
+		capability of the HART device.
+	 </p>
+
+	 <p><strong>HART Scan Update Rate (Redundant WirelessHART I/O card)</strong>
+	 </p>
+
+	 <p>The HART scan update rate for a Redundant WirelessHART I/O card is 5
+		seconds.
+	 </p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

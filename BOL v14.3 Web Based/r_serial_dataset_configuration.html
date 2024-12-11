@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Configuring serial datasets" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="dataset, configuration" name="DC.subject" /><meta content="dataset, configuration" name="keywords" /><meta content="c_serial_devices_and_dv_system.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_serial_dataset_configuration" name="DC.Identifier" /><title>Configuring serial datasets</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_serial_device_config.html" /><link rel="next" href="r_maximum_number_of_values_for_datasets.html" /></head><body class="fixed" id="r_serial_dataset_configuration" data-relpath="r_serial_dataset_configuration.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_serial_dataset_configuration"></a>
+
+<h1 class="topictitle1">Configuring serial datasets</h1>
+<div><div></div>
+<div class="section"><p>In master mode, the Serial Card exchanges data with the serial device through a dataset. A dataset is a collection of parameters associated with a serial device. The parameters in the dataset hold data values that correspond to registers or data in a serial device.</p>
+<p>The dataset defines the type and amount of data being sent to or received from the serial device. All the data values for a dataset have the same properties. Properties include the data type, data direction, and so on. The data values in a dataset map to a contiguous series of serial device registers or data.</p>
+<p>In slave mode, the Serial Card emulates sets of data through datasets. The datasets are used to define the data that the Serial Card and DeltaV system are to emulate. The dataset in the slave mode defines the type and amount of data the Serial Card supports. All the data values for a dataset have the same properties.</p>
+<p>You can create as many as 16 datasets for each Serial Card port. These 16 datasets can be allocated to the serial devices in several ways. For example, you can configure one serial device with 16 datasets, or you can have 16 devices on the port with one dataset each.</p>
+<p>The DeltaV Explorer help describes how to add a dataset for a Serial Card. Basically, you define the dataset through the <span class="wintitle">Serial Dataset Properties</span> dialog. The following table defines the fields in the dialog.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Serial Dataset Properties</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d3159683e45" valign="top" width="NaN%"><p>Property</p>
+</th>
+
+<th class="cellrowborder" id="d3159683e49" valign="top" width="NaN%"><p>Card Type</p>
+</th>
+
+<th class="cellrowborder" id="d3159683e53" valign="top" width="NaN%"><p>Valid Values</p>
+</th>
+
+<th class="cellrowborder" id="d3159683e57" valign="top" width="NaN%"><p>Description</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Data direction</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Input or output</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Defines whether this dataset sends DeltaV data to a serial device (output) or receives data from a serial device (input). The Data Direction indicates whether this data set is input data from the slave device or output data to be sent to the slave device when in master mode. The Data Direction is not needed when in the slave mode. The default value for Data Direction is Input.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Dataset Tag</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>An existing Dataset Tag or a new Dataset Tag you create by typing in a name.</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Identifies the Dataset Tag associated with this dataset. You use the Dataset Tag when configuring a module that reads from or writes to a serial device.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>DeltaV data type</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Boolean; discrete; 8-bit, 16-bit, and 32-bit signed integers; 8-bit, 16-bit, and 32-bit unsigned integers; floating point; and string</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Determines the type of data this dataset contains (Boolean, discrete, integer, floating point, and so on). This field value creates storage space for the dataset and determines how the DeltaV System accesses the data. The String data type is only valid if the PLC data type is input registers or holding registers.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>DeltaV start address</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>0 to 65535</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Indicates to which device address this dataset corresponds.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Description</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>As many as 256 characters</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Describes the use of the dataset. This description only appears when you view the properties of the dataset from the DeltaV Explorer.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Number of values</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Standard cards:  dependent on the PLC data type and the DeltaV data type. Refer to the table entitled Maximum Number of Values for Datasets for details.
+</p>
+<p>
+Programmable cards: 0 to 100.</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Standard cards: the number of Modbus values (registers or coils) to be read or written when in master mode. When in slave mode, the Number of Values defines the size (in registers or coils) of the data set used to emulate Modbus data.
+</p>
+<p>
+Programmable cards: the number of data values to be read from or written to the custom device.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Output mode</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Complete block or single value</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>The Output Mode controls how output data is transmitted to the Modbus slave when the Serial Card is in master mode. If the Output Mode is set to Block, then the entire data set is output when any value in that set changes. If the Output Mode is set to Single Value, then the outputs are set to the Modbus device one value (register or coil) at a time when the values are changed. The Output Mode is only configurable if the Data Direction is set to output. The default value for the Output Mode is Block.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Output read back</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard, Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Checked or unchecked</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Determines whether the output dataset should be read back during the Serial Card&#39;s input scan. If this box is checked, the Serial Card reads back the values during the card&#39;s next input scan. The values that are read back update the current output values. If this box is not checked, no output read back will be performed. You can only configure this field if the Data direction is set to output. This field is not applicable when in slave mode.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>PLC data type</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>For outputs: coils or registers
+
+
+</p>
+<p>For inputs: coils, input status, input registers, holding registers, diagnostic data</p>
+<p>For slave mode: coils, input status, input registers, or Holding Registers</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>For master mode, defines which data table to read from or write to in the serial device.
+
+</p>
+<p>For slave mode, defines which data table (type) the Serial Card is to emulate.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>PLC register offset</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>An integer from 0 to 9999</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Identifies the starting register that maps to the first dataset parameter.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>PLC start register address</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Standard</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>Read only</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Indicates the PLC register address corresponding to the first value in the Modbus device or configured data type.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d3159683e45 " valign="top" width="NaN%"><p>Special Data</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e49 " valign="top" width="NaN%"><p>Programmable</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e53 " valign="top" width="NaN%"><p>0 to 65535</p>
+</td>
+
+<td class="cellrowborder" headers="d3159683e57 " valign="top" width="NaN%"><p>Special Data fields can be used for any purpose not covered by the standard fields.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, the user needs a dataset with the following parameter values:</p>
+<ul>
+<li><div class="li_content"><p>Output mode: Output</p>
+</div></li>
+
+<li><div class="li_content"><p>DeltaV datatype: floating point</p>
+</div></li>
+
+<li><div class="li_content"><p>PLC datatype: holding registers</p>
+</div></li>
+
+<li><div class="li_content"><p>Number of values: 2</p>
+</div></li>
+
+</ul>
+<p>The following steps describe how to configure the values:</p>
+<ol>
+<li><div class="li_content"><p>Right-click the device (for example, Dev01 under port PO1).</p>
+</div></li>
+
+<li><div class="li_content"><p>Select <span class="uicontrol">New Dataset</span>.</p>
+</div></li>
+
+<li><div class="li_content"><p>On the <span class="uicontrol">General</span> tab, select <span class="uicontrol">output</span> in the <span class="uicontrol">Data direction</span> field.</p>
+</div></li>
+
+<li><div class="li_content"><p>On <span class="uicontrol">DeltaV</span> tab, select <span class="uicontrol">Floating point with status</span> in the <span class="uicontrol">DeltaV data type</span> field.</p>
+</div></li>
+
+<li><div class="li_content"><p>On the <span class="uicontrol">PLC</span> tab, select <span class="uicontrol">holding registers</span> and set <span class="uicontrol">Number of values</span> to 2.</p>
+</div></li>
+
+</ol>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Discrete Voter function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Discrete Voter (LSDVTR), Discrete Voter (LSDVTR) function block" name="DC.subject" /><meta content="SIS function blocks, Discrete Voter (LSDVTR), Discrete Voter (LSDVTR) function block" name="keywords" /><meta content="c_ls_fblk_spec_dvtr.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logicsolver_discrete_voter_function_block_execution" name="DC.Identifier" /><title>Logic Solver Discrete Voter function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_spec_dvtr.html" /><link rel="next" href="c_logicsolver_discrete_voter_function_block_alarm_detection.html" /></head><body class="fixed" id="c_logicsolver_discrete_voter_function_block_execution" data-relpath="c_logicsolver_discrete_voter_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logicsolver_discrete_voter_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Discrete Voter function block
+	 execution</h1>
+<div><div></div>
+ 
+	 <p>The LSDVTR function block has one or more discrete inputs with status
+		and one discrete output with status. The block examines each input to determine
+		whether that input is a vote to trip the output (change it from the normal
+		operating value to the tripped value). 
+	 </p>
+ 
+	 <div class="section"><h2 class="sectiontitle">Basic Block Operation</h2> 
+		 
+		<p>Voting in the Discrete Voter function block is an M out of N function,
+		  that is, M inputs of the total N inputs must vote to trip. For example, the
+		  block can be configured as a 2oo3 (two out of three) voter, where two of the
+		  three inputs must vote to trip before the output is tripped. The output of the
+		  block (OUT_D) is typically wired to an LSCEM (Cause and Effect Matrix) block or
+		  to an LSMON (Monitor) block, which interpret the value as either a safe or
+		  dangerous process state. OUT_D is either Normal or Tripped. For CSLS major
+		  revision 2, the actual value (TRUE or FALSE) depends on the value of the
+		  LOGIC_TYPE parameter. 
+		</p>
+ 
+		<p>The LSDVTR block has three inputs by default. The number of inputs is
+		  extensible from 1 to 16. The 
+		  <em>M</em> value corresponds to the parameter NUM_TO_TRIP (default value
+		  is 2). Common voting schemes include 2oo3, 1oo2, and 2oo2. Other features of
+		  the block make it useful for single transmitter applications as a 1oo1 voter. 
+		</p>
+ 
+		<p>A vote to trip must remain a vote to trip for a configured time
+		  (TRIP_DELAY) before the output changes to tripped. When the vote to trip
+		  clears, it must remain clear for NORMAL_DELAY before the output changes to the
+		  normal state. The default value for both delays is 0.0 seconds. The TRIP_STATUS
+		  parameter indicates the state of the vote to trip. For example, the possible
+		  values for TRIP_STATUS are: 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>Normal 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Tripped 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Voted to Trip, Delayed 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Voted Normal, Delayed. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content"> 
+			 <p>Trip Inhibited (when applicable) 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Startup and Maintenance Bypass Options</h2> 
+		 
+		<p>It is often necessary to force a voter block&#39;s output to remain at the
+		  Normal value during plant startup to prevent a trip caused by inputs that have
+		  not stabilized at their normal operating values. You may also want to bypass
+		  inputs to allow for sensor maintenance. By default, you can bypass only one
+		  input of the block at a time. The bypassed input cannot vote to trip. 
+		</p>
+ 
+		<p>The following sections explain how to use the BYPASS_OPTS options to
+		  implement startup and maintenance bypasses. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Bypassing Inputs</h2> 
+		 
+		<p>If you have voter blocks with 1oo2 or 1oo1 voting schemes you may want
+		  the ability to bypass inputs to allow for maintenance. Voters that require
+		  multiple votes to trip can benefit from bypass functions as well, resulting in
+		  more predictable behavior during transmitter maintenance. Default block
+		  behavior requires that BYPASS_PERMIT be true to bypass inputs. You can
+		  configure BYPASS_PERMIT to be set by a display button or physical switch
+		  (discrete input to the SIS module). 
+		</p>
+ 
+		<p>If your application does not require permission before inputs can be
+		  bypassed you can select the BYPASS_OPTS option 
+		  <em>Bypass permit is not required to bypass</em>. 
+		</p>
+ 
+		<p><strong>Reducing the Number to Trip</strong> 
+		</p>
+ 
+		<p>By default, a block configured as an 
+		  <em>M</em>oo<em>N</em> voter becomes an 
+		  <em>M</em>oo<em>(N-1)</em> block (a 2oo3 voter becomes a 2oo2 voter) when
+		  an input is bypassed because the bypassed input cannot vote to trip. Selecting
+		  the BYPASS_OPTS option 
+		  <em>A maintenance bypass reduces the number to trip</em> causes an 
+		  <em>M</em>oo<em>N</em> voter to become an 
+		  <em>(M-1)</em>oo<em>(N-1)</em> voter (reduces the number required to trip
+		  by one when an input is bypassed). 
+		</p>
+ 
+		<p>The following table shows the effect the BYPASS_OPTS option 
+		  <em>A maintenance bypass reduces the number to trip</em> has on the
+		  actual number to trip (A_NUM_TO_TRIP) for several voting schemes. Note that in
+		  no case is A_NUM_TO_TRIP less than one. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d1150414e155" rowspan="2" valign="top" width="NaN%"> 
+					 <p>Configured Voting Scheme 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" colspan="2" id="d1150414e161" valign="top"> 
+					 <p>The BYPASS_OPTS option 
+						<em>A maintenance bypass reduces the number to trip</em> 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d1150414e173" valign="top" width="NaN%"> 
+					 <p>The option is not selected 
+					 </p>
+ 
+					 <p>(Uses configured NUM_TO_TRIP) 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1150414e182" valign="top" width="NaN%"> 
+					 <p>The option is selected 
+					 </p>
+ 
+					 <p>(Reduces A_NUM_TO_TRIP) 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>2oo3 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>2oo2 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>1oo2 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>2oo2 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>Trip Inhibited 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>1oo1 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>1oo2 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>1oo1 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>1oo1 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>1oo1 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>Trip Inhibited 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>Trip Inhibited 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>2oo4 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>2oo3 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>1oo3 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1150414e155 d1150414e173 " valign="top" width="NaN%"> 
+					 <p>6oo8 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 d1150414e182 " valign="top" width="NaN%"> 
+					 <p>6oo7 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1150414e161 " valign="top" width="NaN%"> 
+					 <p>5oo7 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p><strong>Allowing Multiple Bypasses</strong> 
+		</p>
+ 
+		<p>If your application requires, you can enable bypassing multiple inputs
+		  simultaneously by selecting the BYPASS_OPTS option 
+		  <em>Multiple maintenance bypasses are allowed</em>. 
+		</p>
+ 
+		<p>If multiple bypasses are set, deselecting the BYPASS_OPTS option 
+		  <em>Multiple maintenance bypasses are allowed</em> prevents further
+		  bypasses being set but existing bypasses remain set. Additional bypasses cannot
+		  be set until all existing bypasses are cleared. 
+		</p>
+ 
+		<p><strong>Maintenance Bypass Timeout</strong> 
+		</p>
+ 
+		<p>You can configure a maintenance bypass to be active for a finite time
+		  using BYPASS_TIMEOUT. Its default value is 0.0 seconds, which means no timeout
+		  is applied (maintenance bypasses remain active until BYPASS<em>n</em> parameters
+		  become False, either by changing True BYPASS<em>n</em> parameters to False or
+		  changing BYPASS_PERMIT to False). 
+		</p>
+ 
+		<p>When BYPASS_TIMEOUT is non-zero, BYPASS_TIMER is preset to
+		  BYPASS_TIMEOUT seconds when the first BYPASS<em>n</em> parameter becomes True
+		  (not when BYPASS_PERMIT becomes True). Each module scan thereafter BYPASS_TIMER
+		  is decremented until it times out (unless all BYPASS<em>n</em> parameters become
+		  False, in which case the block resets BYPASS_TIMER to 0.0). 
+		</p>
+ 
+		<p>BYPASS_TIMER is common to all inputs. The value of BYPASS_TIMER does
+		  not change when a second BYPASS<em>n</em> parameter is changed to True (if
+		  multiple bypasses are allowed). When BYPASS_TIMER times out, the block default
+		  behavior changes all True BYPASS<em>n</em> parameters to False. If you use bypass
+		  timeouts, do not expose BYPASS<em>n</em> parameters as block inputs and wire to
+		  them. Doing so will prevent the block from removing bypasses upon timeout. If
+		  you need to manipulate BYPASS<em>n</em> parameters from SIS module logic, use an
+		  LSCALC block to conditionally assign them. 
+		</p>
+ 
+		<p>Optionally, you can use the bypass timer for indication only by
+		  selecting the BYPASS_OPTS option 
+		  <em>Maintenance bypass timeout is for indication only</em>.This causes
+		  the timeout of BYPASS_TIMER to activate a notification alarm (DVTR_ALERTS 
+		  <em>Expiration Reminder</em>), but does not undo bypasses. 
+		</p>
+ 
+		<p><strong>Bypass Timeout Reminder</strong> 
+		</p>
+ 
+		<p>You can configure the block to remind operators that a bypass timeout
+		  is imminent. By default, the block does not notify. There are two ways you can
+		  cause a notification: 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>For bypasses with a configured timeout, you can cause notification
+				in advance of the timeout by setting REMINDER_TIME to a non-zero value. When
+				BYPASS_TIMER is non-zero but less than or equal to REMINDER_TIME, the alarm
+				condition DVTR_ALERTS 
+				<em>Expiration Reminder</em> is active. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>The bypass timer is re-armed only after the first bypass. However,
+		  BYPASS_TIMER is a writeable parameter. After notification that a timeout is
+		  about to happen, BYPASS_TIMER can be incremented using a display button or some
+		  other suitable technique to extend the time. 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"> 
+			 <p>A second approach is available when you are using the bypass
+				timeout for indication only, that is, bypasses are not removed when
+				BYPASS_TIMER expires (the BYPASS_OPTS option 
+				<em>Maintenance bypass timeout is for indication only</em> is
+				selected). In this case the reminder alarm condition becomes active when
+				BYPASS_TIMER times out even if REMINDER_TIME is 0.0. If REMINDER_TIME is
+				non-zero, the reminder occurs prior to timeout. If BYPASS_TIMER times out, the
+				reminder is active and remains active until all bypasses have been removed. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>The following table describes the behavior of the bypass timeout and
+		  reminder function for three different configuration setups. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Maintenance Bypass Timeout and Reminder Function Behavior</span></caption><thead align="left"> 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d1150414e442" rowspan="2" valign="top"> 
+				  <p>Condition 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" colspan="3" id="d1150414e448" valign="top"> 
+				  <p>BYPASS_TIMEOUT and BYPASS_OPTS Configuration 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<th class="cellrowborder" id="d1150414e457" valign="top"> 
+				  <p>BYPASS_TIMEOUT = 0.0 (no timeout) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1150414e463" valign="top"> 
+				  <p>BYPASS_TIMEOUT &gt; 0.0 and the BYPASS_OPTS option 
+					 <em>Maintenance bypass timeout is for indication only</em> is 
+					 <em>not</em> selected (BYPASS<em>n</em>  removed on timeout) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1150414e478" valign="top"> 
+				  <p>BYPASS_TIMEOUT &gt; 0.0 and the BYPASS_OPTS option 
+					 <em>Maintenance bypass timeout is for indication only</em> is
+					 selected (timeout for indication only) 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>BYPASS_PERMIT changes to True 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>BYPASS_TIMER stays 0.0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>BYPASS_TIMER stays 0.0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>BYPASS_TIMER stays 0.0 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>First input is bypassed (BYPASS<em>n</em> changes to True) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>BYPASS_TIMER stays 0.0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>BYPASS_TIMER = BYPASS_TIMEOUT seconds and begins timing down 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>BYPASS_TIMER = BYPASS_TIMEOUT seconds and begins timing down 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>Second input is bypassed (assuming the BYPASS_OPTS option 
+					 <em>Multiple maintenance bypasses are allowed</em> is selected). 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>BYPASS_TIMER stays 0.0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>BYPASS_TIMER continues timing down 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>BYPASS_TIMER continues timing down 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>BYPASS_TIMER &gt; REMINDER_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>No reminder 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>No reminder 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>BYPASS_TIMER &lt;= REMINDER_TIME 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>No reminder 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>Reminder alarm condition is active 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>Reminder alarm condition is active 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr valign="top"> 
+				<td class="cellrowborder" headers="d1150414e442 d1150414e457 " valign="top"> 
+				  <p>Bypass timer times out 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e463 " valign="top"> 
+				  <p>N/A 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 d1150414e478 " valign="top"> 
+				  <p>The block changes all BYPASS<em>n</em> parameters to False.
+					 Reminder alarm condition clears on the following scan. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e448 " valign="top"> 
+				  <p>Reminder alarm condition remains active until all bypasses are
+					 removed manually. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Startup Bypass Trip Inhibit</h2> 
+		 
+		<p>It is often necessary to force a voter block&#39;s output to remain at the
+		  Normal value during plant startup to prevent a trip caused by inputs that have
+		  not stabilized at their normal operating values. This startup bypass allows the
+		  process to reach normal operating conditions without tripping. Use the STARTUP
+		  and associated parameters for startup bypasses. Do not use maintenance
+		  overrides for this purpose. 
+		</p>
+ 
+		<p><strong>Timed Startup Bypass (the BYPASS_OPTS option 
+			 <em>Startup bypass duration is event based</em> is not selected)</strong> 
+		</p>
+ 
+		<p>On a rising edge of the parameter STARTUP the block forces OUT_D to
+		  the normal state value for a configurable length of time defined by
+		  STARTUP_TIME. When the countdown timer STARTUP_TIMER times out, the block
+		  resumes normal trip detection. The default behavior of the block is such that a
+		  subsequent rising edge of STARTUP does not affect the startup time while
+		  STARTUP_TIMER is timing down. To avoid a pending trip on timeout, you can allow
+		  each rising edge of STARTUP to re-arm STARTUP_TIMER (by selecting the
+		  BYPASS_OPTS option 
+		  <em>Startup bypass preset is allowed while active</em>). 
+		</p>
+ 
+		<p>A reminder becomes available to STARTUP bypasses by selecting the
+		  BYPASS_OPTS option 
+		  <em>Reminder applies to startup bypass</em>. When STARTUP_TIMER is
+		  greater than 0.0 but less than REMINDER_TIME the reminder alarm condition
+		  (DVTR_ALERTS 
+		  <em>Expiration Reminder</em>) is active. The reminder alarm condition is
+		  common to the timeout of maintenance and startup bypasses. 
+		</p>
+ 
+		<p>Another option is to have the startup timer expire when inputs have
+		  stabilized, that is, when there have not been enough votes to trip for a
+		  configurable period of time. When the BYPASS_OPTS option 
+		  <em>Startup bypass expires upon stabilization</em> is selected, the
+		  bypass timer expires when the process stabilizes. While STARTUP_TIMER is timing
+		  down, STABLE_TIMER times up whenever there are not enough votes to trip and
+		  resets whenever the trip votes equal or exceed the number required to trip. 
+		</p>
+ 
+		<p>If STABLE_TIMER reaches the configured STABLE_TIME, STARTUP_TIMER
+		  resets to 0.0 and normal trip detection resumes. While STARTUP_TIMER is timing
+		  down, the block increments TIME_TO_STABLE and stops as soon as the STABLE_TIMER
+		  is triggered. TIME_TO_STABLE indicates the total number of seconds during the
+		  startup bypass until the inputs become and remain stable (assuming STARTUP_TIME
+		  is sufficiently long). 
+		</p>
+ 
+		<p>STABLE_TIMER does not reset at the end of the startup time period, but
+		  is reset at the beginning of a startup and at any time during the startup when
+		  there are enough trip votes. TIME_TO_STABLE is reset at the beginning of a
+		  startup bypass. STABLE_TIMER and TIME_TO_STABLE are processed even when the
+		  stabilization option is not used (the BYPASS_OPTS option 
+		  <em>Startup bypass expires upon stabilization</em> is not selected). You
+		  can use the value of TIME_TO_STABLE to optimize the configured STARTUP_TIME. 
+		</p>
+ 
+		<p><strong>Event-Based Startup Bypass (the BYPASS_OPTS option 
+			 <em>Startup bypass duration is event based</em> is selected)</strong> 
+		</p>
+ 
+		<p>When the startup bypass expires based on an event rather than a fixed
+		  time period, select the BYPASS_OPTS option 
+		  <em>Startup bypass duration is event based</em>. This ends the startup
+		  bypass when the parameter STARTUP becomes False. STABLE_TIMER and
+		  TIME_TO_STABLE are not processed. They are set to 0.0 when STARTUP becomes
+		  True. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Bypass Permit Control</h2> 
+		 
+		<p>When the BYPASS_OPTS option 
+		  <em>Bypass permit control should be visible in operator interface</em> is
+		  selected, the block faceplate contains a button which operators can use to set
+		  BYPASS_PERMIT. Do not select this option if logic in the SIS module is writing
+		  to BYPASS_PERMIT (for example, a keyswitch is used to permit bypassing). 
+		</p>
+ 
+		<p>The following table summarizes the BYPASS_OPTS options and their
+		  effects. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_logicsolver_discrete_voter_function_block_execution__BYPASS_OPTS_unique_3"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_logicsolver_discrete_voter_function_block_execution__BYPASS_OPTS_unique_3" rules="all" summary=""><caption><span class="tablecap">BYPASS_OPTS Parameter Options</span></caption><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1150414e756" valign="top" width="NaN%"> 
+				  <p>Option 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1150414e762" valign="top" width="NaN%"> 
+				  <p>When Option Is Selected 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1150414e768" valign="top" width="NaN%"> 
+				  <p>When Option Is 
+					 <em>Not</em> Selected 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>A maintenance bypass reduces the number to trip 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>An 
+					 <em>M</em>oo<em>N</em> voter becomes an 
+					 <em>(M-1)oo(N-1)</em> voter (number required to trip by is
+					 reduced by one) when an input is bypassed. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>An 
+					 <em>MooN</em> voter becomes an 
+					 <em>Moo(N-1)</em> voter when an input is bypassed. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Multiple maintenance bypasses are allowed 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>You can bypass multiple inputs at the same time. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>Only one input can be bypassed at a time. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Maintenance bypass timeout is for indication only 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>When BYPASS_TIMER times out DVTR_ALERTS 
+					 <em>Bypass Active</em> remains set and input bypasses remain in
+					 effect. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>When BYPASS_TIMER times out DVTR_ALERTS 
+					 <em>Bypass Active</em> clears and all bypasses are cleared. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Startup bypass preset is allowed while active 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>Each time STARTUP is set to True, STARTUP_TIMER is reset to
+					 the configured value of STARTUP_TIME. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>STARTUP_TIMER is not reset. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Startup bypass expires upon stabilization 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>Startup bypass and STARTUP_TIMER clear if STABLE_TIMER reaches
+					 STABLE_TIME (after there are not enough votes to trip for the configured amount
+					 of time). 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>Startup bypass ends when STARTUP_TIMER reaches 0 (zero). 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Reminder applies to startup bypass 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>When STARTUP_TIMER is greater than 0.0 but less than
+					 REMINDER_TIME, the DVTR_ALERTS 
+					 <em>Expiration Reminder</em> is set. The reminder alarm condition
+					 is common to maintenance and startup bypass timeouts. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>DVTR_ALERTS 
+					 <em>Expiration Reminder</em> does not apply to startup bypass. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Startup bypass duration is event based. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>Startup bypass expires only when STARTUP becomes False.
+					 STABLE_TIMER and TIME_TO_STABLE are not processed. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>Startup bypass is time based. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Bypass permit is not required to bypass 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>BYPASS_PERMIT does not need to be set to True for inputs to be
+					 bypassed. 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>BYPASS_PERMIT must be set to True for inputs to be bypassed. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1150414e756 " valign="top" width="NaN%"> 
+				  <p>Bypass permit control should be visible in operator interface 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e762 " valign="top" width="NaN%"> 
+				  <p>Bypass permit controls appear in the standard LSDVTR
+					 faceplate. Do not select this option if SIS module logic writes to
+					 BYPASS_PERMIT (for example, bypass permitting is done using a keyswitch) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1150414e768 " valign="top" width="NaN%"> 
+				  <p>Bypass permit controls do not appear in the standard LSDVTR
+					 faceplate. 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using picture caching" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="drw_implementing_pictures_in_your_process.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="drw_using_picture_caching" name="DC.Identifier" /><title>Using picture caching</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="drw_using_the_picture_converter_utility.html" /><link rel="next" href="drw_making_changes_to_pictures_at_run_time.html" /></head><body class="fixed" id="drw_using_picture_caching" data-relpath="drw_using_picture_caching.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="drw_using_picture_caching"></a>
+
+<h1 class="topictitle1">Using picture caching</h1>
+<div><div></div>
+
+    <p id="drw_using_picture_caching__UsingPictureCaching"><a name="drw_using_picture_caching__UsingPictureCaching"></a>DeltaV Operate provides a picture caching capability that optimizes performance when opening pictures by eliminating the need for picture files to be read from the disk drive. Instead, pictures that have been previously opened and closed are held in memory and, when reopened, are read from memory.</p>
+
+    <p>With picture caching, you can:</p>
+
+    <a name="drw_using_picture_caching__ul_C7DE0817BB9A49EFAD7C6DDA1372938C"></a><ul id="drw_using_picture_caching__ul_C7DE0817BB9A49EFAD7C6DDA1372938C">
+      <li id="drw_using_picture_caching__li_A76ECCD264B049DFBB4D575557194ECE"><div class="li_content">
+        <p>Preload pictures that will always remain in the cache.</p>
+
+      </div></li>
+
+      <li id="drw_using_picture_caching__li_771C34103A2E4AB88ECDB7F0BE7E1FCF"><div class="li_content">
+        <p>Set the number of pictures to be reopened from the cache.</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>There are two types of pictures you can cache: run-time pictures and preload pictures. Run-time pictures are loaded into the cache when they are closed. When the number of cached pictures exceeds the cache size setting, the oldest picture is dropped from the cache and is replaced with the most recently closed picture. Preload pictures are loaded when DeltaV Operate is started (in run mode). Preload pictures have a property of AlwaysLoaded and are never dropped from the cache while you are in run mode.</p>
+
+    <p>In a new installation of DeltaV Operate, picture caching is enabled by default with a picture count of five. In upgrade installations, picture caching is not enabled by default.</p>
+
+    <div class="section" id="drw_using_picture_caching__SystemRequirements"><a name="drw_using_picture_caching__SystemRequirements"></a><h2 class="sectiontitle">System Requirements</h2>
+      
+      <p>System requirements for picture caching depend upon the number of pictures you choose to cache.</p>
+
+      <p>The current version of DeltaV Operate requires 96 megabytes of physical memory to run. However, as your cache size increases, your memory requirements will increase. Use the following as a guide for memory requirements when caching pictures. Memory should increase:</p>
+
+      <a name="drw_using_picture_caching__ul_BBA556E39BF44D418666A01303781F2A"></a><ul id="drw_using_picture_caching__ul_BBA556E39BF44D418666A01303781F2A">
+        <li id="drw_using_picture_caching__li_DCB87365DD2C4DCBA115F84C60327A1F"><div class="li_content">
+          <p>2 to 3 times the file size for each picture that does not include bitmaps and controls.</p>
+
+        </div></li>
+
+        <li id="drw_using_picture_caching__li_37D1013E456A41FB8DECEAEC539F5943"><div class="li_content">
+          <p>3 to 4 times the file size for each picture that includes bitmaps and controls.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>For example, a 2 megabyte file that does not include bitmaps and controls requires a 4 to 6 megabyte increase in memory.</p>
+
+    </div>
+
+    <div class="section" id="drw_using_picture_caching__PreloadingPictures"><a name="drw_using_picture_caching__PreloadingPictures"></a><h2 class="sectiontitle">Enabling Picture Caching</h2>
+      
+      <p>You must enable picture caching in order to preload pictures into the cache or to cache pictures at run time. You enable picture caching in the User Preferences Dialog box, shown in the following figure.</p>
+
+      <p>If you disable picture caching, the most recently used cache is disabled, no pictures will be preloaded, and all pictures will be fully closed when the file is closed.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Picture caching, by default, is disabled when you upgrade from a previous version of DeltaV Operate to the current version. If you are installing DeltaV Operate for the first time, picture caching, by default, is enabled, with a default cache size of five.</p>
+
+      </div>
+
+      <p>Most users will not notice any difference in the way the system behaves with cache enabled. However, if you have done extensive VBA scripting in your application, there will be a few minor differences in the system behavior. If you are upgrading from a previous version of DeltaV Operate, you should review and understand these changes before enabling picture caching. See <a href="drw_making_changes_to_pictures_at_run_time.html">Making Changes to Pictures at Run Time</a>  for more information.</p>
+
+      <div class="fignone" id="drw_using_picture_caching__fig_1F8E5190CA46481A86E6C0399B950006"><a name="drw_using_picture_caching__fig_1F8E5190CA46481A86E6C0399B950006"></a><div><span class="figcap">Enabling Picture Caching</span></div>
+        
+        <a name="drw_using_picture_caching__image_5E963EC821624D6999EA38AFD035D668"></a><img id="drw_using_picture_caching__image_5E963EC821624D6999EA38AFD035D668" src="userprefa.gif" />
+      </div>
+
+    </div>
+
+    <div class="section" id="drw_using_picture_caching__RunTimePictures"><a name="drw_using_picture_caching__RunTimePictures"></a><h2 class="sectiontitle">Preloading Pictures</h2>
+      
+      <p>You can preload frequently used pictures directly into the picture cache when DeltaV Operate starts in run mode. Preload the commonly used pictures to guarantee that those pictures will always be stored in the cache. The most recent version of preloaded pictures is always stored in the cache.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> DeltaV Operate will only preload pictures when picture caching is enabled and the option, Start DeltaV Operate in Run mode, check box is enabled. DeltaV Operate does not preload pictures when switching from configure mode to run mode.</p>
+
+      </div>
+
+      <p>To configure the Preload Pictures list, use the DeltaV Preload Pictures List utility <span><a name="drw_using_picture_caching__image_583F72B556FF4219848A81675BC1D84F"></a><img id="drw_using_picture_caching__image_583F72B556FF4219848A81675BC1D84F" src="PreloadPicButt.gif" /></span> from the DeltaV Utilities toolbar. Click OK to close and save the selected preload pictures list. Restart DeltaV Operate in Run mode to load the new preload pictures list.</p>
+
+      <p>Preloaded pictures are designated as always loaded by definition. They will not be dropped from the picture cache while you are in run mode. Displays are preloaded only when DeltaV Operate is initially started in run mode.</p>
+
+    </div>
+
+    <div class="section" id="drw_using_picture_caching__DisablingPictureCaching"><a name="drw_using_picture_caching__DisablingPictureCaching"></a><h2 class="sectiontitle">Run-Time Pictures</h2>
+      
+      <p>At run time, you can also cache pictures that you open and then close.</p>
+
+      <p>When picture caching is enabled, DeltaV Operate maintains a list of the most recently closed files. When you close a file, that document is placed on the list of most recently closed files. If this list of closed files exceeds the cache size, the first file closed is unloaded from memory and completely closed. However, preloaded pictures are not dropped from the cache. The following figure shows the picture caching process.</p>
+
+      <div class="fignone" id="drw_using_picture_caching__fig_3D6A6732EC674D13BEF77A1A9772EBED"><a name="drw_using_picture_caching__fig_3D6A6732EC674D13BEF77A1A9772EBED"></a><div><span class="figcap">How Picture Caching Works</span></div>
+        
+        <a name="drw_using_picture_caching__image_8BE8DFBCDD0346B289205CD67BD4DF4E"></a><img id="drw_using_picture_caching__image_8BE8DFBCDD0346B289205CD67BD4DF4E" src="picturecachea.gif" />
+      </div>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> You cannot delete a picture that is closed into the cache. You must wait unto that picture is dropped or flushed from the cache before deleting.</p>
+
+      </div>
+
+      <p>Picture Caching only functions when DeltaV Operate is in run mode. If you switch to configure mode, the most recently closed cache is cleared and any files in the cache are fully closed. All preloaded pictures in the loaded state are then closed. If you switch back to run mode, pictures in the preload list are not loaded into memory.</p>
+
+      <p>If you disable picture caching, the most recently used cache is disabled, no pictures are preloaded, and all pictures are then fully closed when the file is closed.</p>
+
+    </div>
+
+    <div class="section" id="drw_using_picture_caching__section_455DA8A25B644DD89FD01FCE4ECB3C04"><a name="drw_using_picture_caching__section_455DA8A25B644DD89FD01FCE4ECB3C04"></a><h2 class="sectiontitle">Disabling Picture Caching for Individual Pictures</h2>
+      
+      <p>DeltaV Operate also allows you to disable picture caching for individual pictures so that changes made during run time will not persist when the picture is reopened. To disable picture caching for a picture:</p>
+
+      <a name="drw_using_picture_caching__ol_A1A0C2D6A4464320A0AB581A1003FC8B"></a><ol id="drw_using_picture_caching__ol_A1A0C2D6A4464320A0AB581A1003FC8B">
+        <li id="drw_using_picture_caching__li_93554B7166E94CBF98F3690F98E2110D"><div class="li_content">
+          <p>Right-click the picture name in the system tree, or right-click any area in the picture outside of an object to display the pop-up menu.</p>
+
+        </div></li>
+
+        <li id="drw_using_picture_caching__li_3ACD7A384D014A8B82C73D2961A5F7B9"><div class="li_content">
+          <p>Select Picture to display the Edit Picture dialog.</p>
+
+        </div></li>
+
+        <li id="drw_using_picture_caching__li_30134ED92BCA4CF1901B80132640B0B1"><div class="li_content">
+          <p>Check the Disable caching for this picture check box from the Edit Picture dialog box.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="State Transition Diagram function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="function blocks, State Transition Diagram (STD), State Transition Diagram (STD) function block" name="DC.subject" /><meta content="function blocks, State Transition Diagram (STD), State Transition Diagram (STD) function block" name="keywords" /><meta content="c_state_transition_diagram_function_block_application_information.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_std.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_state_transition_diagram_function_block_execution" name="DC.Identifier" /><title>State Transition Diagram function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_std.html" /><link rel="next" href="c_state_transition_diagram_function_block_status_handling.html" /></head><body class="fixed" id="c_state_transition_diagram_function_block_execution" data-relpath="c_state_transition_diagram_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_state_transition_diagram_function_block_execution"></a>
+
+<h1 class="topictitle1">State Transition Diagram function block execution</h1>
+<div><div></div>
+
+    <p>The State Transition Diagram (STD) function block implements a state transition diagram. The block can have up to 16 states (outputs) and up to 16 transitions (inputs). You configure the number of transition inputs, the number of output states, and a matrix of states versus transitions where each entry indicates the state that the block goes to when that transition is active. By default the number of inputs (transitions) is 3 and the number of outputs (states) is 2.</p>
+
+    <p>The STD block has a discrete input with status (IN_D<em>n</em>) for each transition, a named set output STATE indicating the current state, and a discrete output with status for each state (OUT_D<em>n</em>). When the block executes it loops through the transition inputs until an active input is found that has an entry for the current state in the state-transition matrix. STATE is then set to the matrix value and the corresponding OUT_D<em>n</em> output is also set. Once an active transition is found that has a non-zero matrix entry, no more transitions are checked. If the current state is a terminal state, that is, there are no entries in the matrix for this state that are not zero, or if masked transitions prevent transition to another state, the TERMINAL parameter is set to True.</p>
+
+    <p>The initial state for the block is state 1. When RESET_STATE is set to True, the block returns to the initial state. The RESET_STATE parameter automatically resets to False after it has been used.</p>
+
+    <p>The STD block also has an ENABLE input. When ENABLE is False, STATE is set to 0 and all OUT_D<em>n</em> outputs are set to 0. When ENABLE is changed from False to True the block is forced into state 1 and OUT_D1 is set to True. This allows an STD block to control other STD blocks which implement sub-state machines. The Boolean output of the final sub-state machine can then be wired into a transition of the top level block which causes the sub-state block ENABLE parameter to be set to False.</p>
+
+    
+    <p>
+      <strong>Overrides</strong>
+    </p>
+
+    <p>In normal operation the block transitions between states based on the beginning state, the active transition inputs, and the configuration of the state-transition matrix.  The normal behavior can be overridden in two ways.</p>
+
+    <a name="c_state_transition_diagram_function_block_execution__ul_C09518BAB253498B94250F3E51ADB073"></a><ul id="c_state_transition_diagram_function_block_execution__ul_C09518BAB253498B94250F3E51ADB073">
+      <li id="c_state_transition_diagram_function_block_execution__li_E420A46530E645479B0D8DBA4CB92A9F"><div class="li_content">
+        <p>The parameter TRANSITION_MASK prevents one or more transition inputs from causing the state of the block to change. Setting bits in TRANSITION_MASK prevent the block from seeing the corresponding transition as active regardless of the transition&#39;s value or status. In practice TRANSITION_MASK is manipulated from within the module by a Calculation/Logic block (for example, based on the current batch phase).</p>
+
+      </div></li>
+
+      <li id="c_state_transition_diagram_function_block_execution__li_F2C40D24C3044CBFBB5E07294029D909"><div class="li_content">
+        <p>The block can also be forced into a specific state by setting the STATE_IN_D parameter to 1 and setting STATE_IN to the desired state.</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>The OVERRIDE parameter indicates when the normal logic is being overridden. It can take on one of the following values from lowest to highest priority:</p>
+
+    <a name="c_state_transition_diagram_function_block_execution__ul_2B76881AA4D44ACF9BE998FBF113C47C"></a><ul id="c_state_transition_diagram_function_block_execution__ul_2B76881AA4D44ACF9BE998FBF113C47C">
+      <li id="c_state_transition_diagram_function_block_execution__li_5FD31320352648CBA431E0FE41B43661"><div class="li_content">
+        <p>None — No overrides in effect.</p>
+
+      </div></li>
+
+      <li id="c_state_transition_diagram_function_block_execution__li_1BF3959F35FB4BBAA3601A02DC5B685E"><div class="li_content">
+        <p>All Associated Transitions Masked — All transitions that would be active have been masked in TRANSITION_MASK.</p>
+
+      </div></li>
+
+      <li id="c_state_transition_diagram_function_block_execution__li_AAD6794C485047639029324D4362AFB7"><div class="li_content">
+        <p>State Forced — STATE_IN_D has been set to 1.</p>
+
+      </div></li>
+
+    </ul>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_state_transition_diagram_function_block_application_information.html">State Transition Diagram function block application
+    information</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

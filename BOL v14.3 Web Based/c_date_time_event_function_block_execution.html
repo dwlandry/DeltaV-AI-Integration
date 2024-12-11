@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Date Time Event function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_date_time_event.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_date_time_event_function_block_execution" name="DC.Identifier" /><title>Date Time Event function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_date_time_event.html" /><link rel="next" href="c_date_time_event_function_block_status_handling.html" /></head><body class="fixed" id="c_date_time_event_function_block_execution" data-relpath="c_date_time_event_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_date_time_event_function_block_execution"></a>
+
+<h1 class="topictitle1">Date Time Event function block execution</h1>
+<div><div></div>
+ 
+    <p id="c_date_time_event_function_block_execution__blockexecutionDTEfunctionblock"><a name="c_date_time_event_function_block_execution__blockexecutionDTEfunctionblock"></a>For scheduling events, TE_TIME_STR
+      and ENABLE are inputs. The block gets the internal (system) time
+      (UTC_TIME_STR).  
+    </p>
+ 
+    <p>If RESET is true, the block returns its parameters to the default
+      conditions (sets STATE to 1, or Armed).  
+    </p>
+ 
+    <p>If STATE is Idle, OUT_D is set to false. If this is the first time the
+      block executes and if INTERVAL is not zero, the block sets the target event
+      time. 
+    </p>
+ 
+    <p>If the TE_TIME_STR is still in the future the block sets STATE to armed.
+      
+    </p>
+ 
+    <p>During subsequent executions the block continues to compare the current
+      time to TE_TIME_STR. When the two times are the same, OUT_D is set to true and
+      STATE is set to Terminal if there are more events scheduled or set to Idle
+      otherwise. 
+    </p>
+ 
+    <p><strong>Relative time versus absolute time</strong> 
+    </p>
+ 
+    <p>The DTE function block generates events based on Absolute Time (local
+      time of day). If you use multiple DTE blocks to create a Relative Time
+      dependency between events and the events straddle the DST adjustment period,
+      the time relationship of the events changes according to the DST adjustment. 
+    </p>
+ 
+    <p><strong>Daylight savings time adjustments</strong> 
+    </p>
+ 
+    <p>The DTE function block has special behavior during Daylight Saving Time
+      (DST) adjustment periods. The TE_TIME_STR parameter of the DTE
+      (Date-Time-Event) function block adjusts its value while in transition to or
+      from Daylight Saving Time (DST), to match the DST change. 
+    </p>
+ 
+    <p>Therefore, if the DST change moves the time forward by an hour, the
+      TE_TIME_STR parameter will have an hour added to its value; and, if a DST
+      change moves the time backward by an hour, the TE_TIME_STR parameter will have
+      an hour subtracted from its value. 
+    </p>
+ 
+    <p>This behavior occurs only if both the TE_TIME_STR and INTERVAL_STR
+      parameters of the DTE block contain values as configured through Control Studio
+      edit mode or on-line mode. The TE_TIME_STR parameter is the time of day at
+      which an event is scheduled. It is known as terminal event or TE time and is
+      represented in local ISO time format. While the INTERVAL_STR parameter is the
+      time between recurring terminal events. 
+    </p>
+ 
+    <p>The DTE function block behaves this way because it tries to maintain the
+      time interval between events; hence, it changes the value of TE_TIME_STR. 
+    </p>
+ 
+    <div class="p">This causes the following possible outcomes: 
+    <ul> 
+      <li><div class="li_content">Any single event that is scheduled for a time that does not exist
+        because of a forward DST adjustment does not occur. 
+      </div></li>
+ 
+      <li><div class="li_content">Any single event that is scheduled in the hour preceding a backwards
+        DST adjustment will not have the second occurrence of the event occur. 
+      </div></li>
+ 
+      <li><div class="li_content">Periodic events are adjusted forward or backward, depending on the
+        DST adjustment. Periodic events are not  lost. 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+    <p><strong>Trigger an event during a DST transition 
+      </strong> 
+    </p>
+ 
+    <p>Use the following procedure to keep the trigger time constant (rather
+      than keeping the time interval between events constant) during a DST
+      transition. 
+    </p>
+ 
+    <p>The following configuration option sets a value on the TE_TIME_STR
+      parameter to ensure that the DTE block will execute at the preferred time and
+      not adjust with DST changes. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p>Applying this configuration could require modification to suit a
+        user’s requirements and application. 
+      </p>
+ 
+    </div>
+ 
+    <ol> 
+      <li><div class="li_content">In the module with the DTE function block, add a CALC block. 
+      </div></li>
+ 
+      <li><div class="li_content">Set the Calc block to execute BEFORE the DTE block. 
+        <div class="note"><span class="notetitle">Note:</span>  
+          <p>The Calc block must execute first. This is done to ensure that the
+            value of TE_TIME_STR parameter of the DTE block is set before the DTE function
+            block executes. 
+          </p>
+ 
+        </div>
+ 
+      </div></li>
+ 
+      <li><div class="li_content">Create the following expression in the CALC block: 
+        <pre class="codeblock">&#39;^/PARAM1.CV&#39; := time(&#39;$time_format:Local&#39;);
+&#39;^/PARAM2.CV&#39; := time_to_str(&quot;%D&quot;, &#39;^/PARAM1.CV&#39; );
+&#39;^/DTE1/TE_TIME_STR.CV&#39; := &#39;^/PARAM2.CV&#39; +&quot;T03:00:-00&quot;;</pre>
+ 
+        <p>The first line of the expression reads the current date and time and
+          writes the value into PARAM1. The second line extracts the date information
+          that will be used in the third line. With the time of day set (in this example,
+          3 A.M.) as the expression “T03:00:00”, the third line combines the date and
+          time to set the TE_TIME_STR parameter of the DTE function block. 
+        </p>
+ 
+        <p>On a transition to another day, at 12:00 am, this configuration sets
+          the TE_TIME_STR to a time of day as stated in the third line of the CALC block
+          expression. 
+        </p>
+ 
+      </div></li>
+ 
+    </ol>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p>This configuration might not work when the value of TE_TIME_STR
+        parameter is set to a time coinciding with the hour of the DST change. For
+        example, if a DST transition is set to happen at 1 AM and the time will move
+        forward by an hour, this configuration might not take effect if the TE_TIME_STR
+        parameter is set at any time between 1AM to 2AM. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

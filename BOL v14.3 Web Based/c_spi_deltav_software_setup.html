@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="SPI: setting up DeltaV software" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_spi_using_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_spi_deltav_software_setup" name="DC.Identifier" /><title>SPI: setting up DeltaV software</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_spi_using_overview.html" /><link rel="next" href="t_spi_smartplant_software_setup.html" /></head><body class="fixed" id="c_spi_deltav_software_setup" data-relpath="c_spi_deltav_software_setup.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_spi_deltav_software_setup"></a>
+
+<h1 class="topictitle1">SPI: setting up DeltaV software</h1>
+<div><div></div>
+
+    <p>SPI and DeltaV software each support a set of engineering units. They do not support the same set. If you intend to retrieve instrument configurations back in to SPI, you must use SPI compatible engineering units. To make SPI compatible engineering units available to DeltaV software (including the Excel add-in), you must import SPI compatible units into the DeltaV database. If you intend to publish the configuration and retrieve it back into SPI you must use SPI compatible units. Any incompatible units are changed to % when published from the Excel add-in. </p>
+
+    <p>The Intergraph website has fhx files from which you can import SPI compatible engineering units:</p>
+
+    <p>
+      <span class="filepath">http://www.intergraph.com/products/ppm/smartplant/instrumentation/Download_DeltaV_Definition_Files.asp</span>
+    </p>
+
+    <p>
+The fhx files have a naming convention:</p>
+
+    <p>DeltaVCustomEUFromSPI200<em>x.n_YYYY_MM_DD</em>.fhx </p>
+
+    <p>Where </p>
+
+    <p>
+      <em>x</em> is the year of release, </p>
+
+    <p>
+      <em>n</em> is the release within the year, </p>
+
+    <p>and <em>YYYY_MM_DD</em> are the year, month, and day the file was created. </p>
+
+    <p>The file contains two types of engineering units:</p>
+
+    <a name="c_spi_deltav_software_setup__ul_657EDA495C0947CF85354931EBAA0FD3"></a><ul id="c_spi_deltav_software_setup__ul_657EDA495C0947CF85354931EBAA0FD3">
+      <li id="c_spi_deltav_software_setup__li_BBB9E53F010F48E5902C93413ECF29F4"><div class="li_content">
+        <p>SPI engineering units not currently supported by DeltaV software — These are imported as custom engineering units and are SPI compatible.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_4A0719AC4AB645C9894F84D1DF44025E"><div class="li_content">
+        <p>Existing DeltaV engineering units that must be processed to become compatible with SPI — These are engineering units that both SPI and DeltaV software support. These remain standard engineering units but are SPI compatible after the import.</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>After you import the fhx file both types of engineering units are available as SPI compatible in DeltaV software.</p>
+
+    <p>To ensure that the SPI compatible engineering units are available, perform the following steps:</p>
+
+    <a name="c_spi_deltav_software_setup__ol_87838919ECDC4B0BB0AE37467301CD87"></a><ol id="c_spi_deltav_software_setup__ol_87838919ECDC4B0BB0AE37467301CD87">
+      <li id="c_spi_deltav_software_setup__li_B6334219B14748C7B4F11ECDF9343947"><div class="li_content">
+        <p>Download the fhx file for your version of software from the Intergraph website. 
+</p>
+
+        <div class="note"><span class="notetitle">Note:</span> 
+          <p> Import this file as is. Do not migrate this file. If you migrate this file you remove a number of SPI compatible engineering units.</p>
+
+        </div>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_C56EF3EC342545DDAF66C5D3B6772C8A"><div class="li_content">
+        <p>From DeltaV Explorer, select <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Import</span> &gt; <span class="uicontrol">Standard DeltaV Format</span></span>.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_AF2CFC6F42EB4A59B4FFC937C0A3511A"><div class="li_content">
+        <p>In the <span class="wintitle">Import</span> dialog, browse to the fhx file you downloaded and click <span class="uicontrol">Import</span>.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_D96F1B4F76364F8FB6FA51B675283F7A"><div class="li_content">
+        <p>In the Exploring DeltaV popup that appears, click <span class="uicontrol">Yes to All</span> to update the engineering units in the database. 
+</p>
+
+        <p>You must select <span class="uicontrol">Yes to All</span> to import the SPI compatible engineering units.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_F933D981AE0E4267BFCEA22F6782F060"><div class="li_content">
+        <p>Click <span class="uicontrol">Yes</span> on the confirmation dialog that appears.
+</p>
+
+        <p>You may see a warning about no schema. You can ignore this message. The engineering units are imported into the DeltaV database. </p>
+
+      </div></li>
+
+    </ol>
+
+    <p>The SPI compatible engineering units are now available in DeltaV Explorer and Control Studio. Importing the engineering units adds the <span class="uicontrol">Filter units</span> field to scale parameter <span class="wintitle">Properties</span> dialogs.</p>
+
+    <p><a name="c_spi_deltav_software_setup__image_160EEC6880E34F26BA401C378138B306"></a><img id="c_spi_deltav_software_setup__image_160EEC6880E34F26BA401C378138B306" src="spi_dv_eu.gif" /></p>
+
+    <p>If you have already generated the libraries (this occurs automatically the first time you open Data Manager in the Excel add-in) you must regenerate the engineering units library after you import the SPI compatible engineering units fhx file:</p>
+
+    <a name="c_spi_deltav_software_setup__ol_CBA63BB7894F4A65A8BE85B5F36E3C87"></a><ol id="c_spi_deltav_software_setup__ol_CBA63BB7894F4A65A8BE85B5F36E3C87">
+      <li id="c_spi_deltav_software_setup__li_DBADA9DA081C40F9830E9CD0D0DE9C51"><div class="li_content">
+        <p>Select <span class="menucascade"><span class="uicontrol">DeltaV</span> &gt; <span class="uicontrol">I/O Support</span> &gt; <span class="uicontrol">Library</span></span>.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_4781092CCBA149239103AFB96FB3C461"><div class="li_content">
+        <p>On the <span class="wintitle">Library Manager</span> dialog, deselect everything except <span class="uicontrol">Engineering Units</span> (you cannot deselect <span class="uicontrol">Setup</span>).</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_7D539AC815B240209F61F0D6BD84BE96"><div class="li_content">
+        <p>Click <span class="uicontrol">Regenerate</span>.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_2722751FAC8B4C828E9E512A6964B79B"><div class="li_content">
+        <p>Click <span class="uicontrol">Close</span> when the regeneration is complete. </p>
+
+      </div></li>
+
+    </ol>
+
+    <p>To use the SPI compatible engineering units in the Excel add-in:</p>
+
+    <a name="c_spi_deltav_software_setup__ol_1D978F2C894449449C371350BE1119FD"></a><ol id="c_spi_deltav_software_setup__ol_1D978F2C894449449C371350BE1119FD">
+      <li id="c_spi_deltav_software_setup__li_C470AC8741E740D3AA819A3915706059"><div class="li_content">
+        <p>Retrieve an SPI instrumentation xml file into the Excel workbook (use <span class="menucascade"><span class="uicontrol">SPI Interface</span> &gt; <span class="uicontrol">Retrieve</span></span> from SPI).</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_E303DDBADF5D4355878699F0D5D5107C"><div class="li_content">
+        <p>Save the workbook to the DeltaV database.</p>
+
+      </div></li>
+
+      <li id="c_spi_deltav_software_setup__li_89FDD6A3D6094389A87808D96A37426E"><div class="li_content">
+        <p>Reload the controller from the DeltaV database into Excel.</p>
+
+      </div></li>
+
+    </ol>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> You must import the SPI engineering units into the DeltaV database before you retrieve any SPI controller configuration files. </p>
+
+    </div>
+
+    <p>You can now use SPI engineering units in the Excel add-in and in DeltaV configuration. When you right-click an engineering unit cell in Excel, the following dialog appears.</p>
+
+    <p><a name="c_spi_deltav_software_setup__image_A2B079B0685F413CBD49F0931E3074EB"></a><img id="c_spi_deltav_software_setup__image_A2B079B0685F413CBD49F0931E3074EB" src="spi_eu.gif" /></p>
+
+    <p>In the <span class="uicontrol">Scope</span> field you can select either <span class="uicontrol">SPI compatible engineering units</span> or <span class="uicontrol">All engineering units</span>. The choices in the <span class="uicontrol">Unit</span> field depend on the selection in the <span class="uicontrol">Scope</span> field.</p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

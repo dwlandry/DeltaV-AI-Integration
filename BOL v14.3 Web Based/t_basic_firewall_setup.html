@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Basic firewall setup" name="DC.Title" /><meta content="c_smartfirewall_worksheets_intro.html" name="DC.Relation" scheme="URI" /><meta content="c_configuration_proc.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_51B674B970AF4F56901608D74F08397E_unique_73" name="DC.Identifier" /><title>Basic firewall setup</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_communication_rules.html" /><link rel="next" href="t_configure_internal_network.html" /></head><body class="fixed" id="task_51B674B970AF4F56901608D74F08397E_unique_73" data-relpath="t_basic_firewall_setup.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_51B674B970AF4F56901608D74F08397E_unique_73"></a>
+
+<h1 class="topictitle1"> Basic firewall setup</h1>
+<div> 
+	 <div class="section"> 
+		<p> This procedure assumes: 
+		</p>
+ 
+		<ul> 
+		  <li><div class="li_content"> This is a new installation in a non-running system or the firewall
+			 is being installed in a running system with no communications between DeltaV
+			 workstations and the plant LAN. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> The firewall is at the default settings to start. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> You have printed and completed the Smart Firewall configuration
+			 worksheets and have the required setup information available. 
+		  </div></li>
+ 
+		  <li><div class="li_content"> You have some basic knowledge about Ethernet networks and
+			 understand how to set up the network addressing of the firewall and use basic
+			 Windows command line commands to test communications between computers. 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>This procedure follows a best practices approach to configuring the
+		  firewall and establishing communications between computers on either side of
+		  the firewall. There are many ways to accomplish this and you are welcome to
+		  develop the procedure that best fits the deployment method used in your
+		  company. Review the entire procedure before starting the firewall setup for the
+		  first time. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> If you are deploying the Emerson Smart Firewall in a system with
+		  existing communications between DeltaV workstations and external computers
+		  there are deployment issues to consider that are not covered in this procedure.
+		  Depending on the existing network architecture there are network addressing
+		  issues that must be resolved to ensure that the existing communications
+		  continue to function after the firewall is installed. It is recommended that
+		  you work with your IT department for help in deploying the Emerson Smart
+		  Firewall. 
+		</div>
+ 
+	 </div>
+ 
+	 <a name="task_51B674B970AF4F56901608D74F08397E_unique_73__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_62"></a><ol id="task_51B674B970AF4F56901608D74F08397E_unique_73__steps_D14DD05E851D4F628FBB8E83EE2409C0_unique_62"><li class="stepexpand" id="task_51B674B970AF4F56901608D74F08397E_unique_73__step_980B47629C8F486D8CBC8D5532223503_unique_56"><a name="task_51B674B970AF4F56901608D74F08397E_unique_73__step_980B47629C8F486D8CBC8D5532223503_unique_56"></a> 
+		  <span> Ensure that the PC connected to the firewall is set to obtain IP
+			 address from firewall or it has a static 192.168.1.XXX /255.255.255.0 address
+			 and subnet mask. The firewall&#39;s web UI defaults to this subnet and will assign
+			 the PC an address using DHCP. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Connect the network cable and wait for the PC to obtain an
+			 address or wait until the PC shows that there are communications with the
+			 firewall. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Open Internet Explorer and go to https://192.168.1.1. You will
+			 get a certificate error warning because the firewall uses secure HTTP but
+			 Emerson does not install certificates. You can ignore this warning. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Click the 
+			 <span class="uicontrol">account</span> link on the web UI&#39;s toolbar and
+			 change the administrator&#39;s default password. 
+		  </span> 
+		   It is a best practice to change the default admin password. Be
+			 sure to note the new password. If you forget the password it can be reset using
+			 the serial interface. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span> In the firewall&#39;s web user interface (UI) navigate to the 
+			 <span class="uicontrol">Configuration</span> tab, select 
+			 <span class="uicontrol">System time</span>, set the time zone and click 
+			 <span class="uicontrol">Apply</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> On the 
+			 <span class="uicontrol">Configuration</span> tab, make a selection in the 
+			 <span class="uicontrol">Change system time area</span> and click 
+			 <span class="uicontrol">Apply</span>. If you are not using an NTP server or
+			 if the firewall is not connected to the NTP server yet then select 
+			 <span class="uicontrol">Synchronize with local machine</span>. 
+		  </span> 
+		    It is good practice to immediately set the logging function to
+			 the current local time in order for setup events to be correctly logged. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span> Navigate to 
+			 <span class="menucascade"><span class="uicontrol">Administration 
+				</span> 
+				 &gt; <span class="uicontrol"> Backup/Restore</span></span> and create a
+			 backup. It is recommended that you give the backup a meaningful name such as
+			 &quot;firewall defaults&quot;. Since there is no menu selection to reset the firewall to
+			 the default settings, you can use this backup to restore the firewall to the
+			 default settings if necessary. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Navigate to 
+			 <span class="menucascade"><span class="uicontrol">Administration 
+				</span> &gt; <span class="uicontrol">Configuration audit 
+				</span></span> and save the default settings as a text
+			 file. This will provide documentation if you need to reset a specific parameter
+			 to a default value. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> On the 
+			 <span class="uicontrol">Configuration</span> tab, click 
+			 <span class="uicontrol">External USB drive</span> and click the 
+			 <span class="uicontrol">Save Now</span> button to test and ensure the USB
+			 drive is functioning correctly. 
+		  </span> 
+		    If you receive an error that the configuration cannot be saved,
+			 remove the USB drive from the firewall and format it with FAT32 using any
+			 Windows computer. If the USB drive is faulty, it may need to be replaced with a
+			 4GB Nano USB USB 2.0 compatible with Windows. Reinstall the cover to protect
+			 the USB interface. 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span> On the 
+			 <span class="uicontrol">Configuration</span> tab, click 
+			 <span class="uicontrol">Technical Support</span> and see if any errors are
+			 logged. If there are errors, save a copy of the error package to send to
+			 Emerson for analysis. An error log does not necessarily indicate that you need
+			 to stop using the firewall so you can continue with the setup. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> If you will be sharing firewall administrator duties this is a
+			 good time to create the other administrator users using a default password. It
+			 is good practice for users to log in with a unique user name so you can track
+			 any changes. You can also create a View only user if required. Since it is view
+			 only it is possible to create a single shared user for this function. 
+		  </span> 
+		   
+		   
+		    This completes the basic firewall setup. The next step is to
+			 install the firewall in the network where it will eventually reside. 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_smartfirewall_worksheets_intro.html">Smart Firewall configuration worksheets</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

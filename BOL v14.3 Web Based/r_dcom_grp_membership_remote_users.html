@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="User account Windows group membership and DeltaV User Manager options for accounts that are not in the DeltaV domain" name="DC.Title" /><meta content="DCOM, OPC, workgroup, domain, DCOM access, DeltaVAdmin, user account, user account, local user" name="DC.subject" /><meta content="DCOM, OPC, workgroup, domain, DCOM access, DeltaVAdmin, user account, user account, local user" name="keywords" /><meta content="c_dcom_connect_wrkgp_to_domain.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_grp_membership_remote_users" name="DC.Identifier" /><title>User account Windows group membership and DeltaV User Manager options for accounts that are not in the DeltaV domain</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_dcom_DeltaVAdmin_wrkgrp_to_domain.html" /><link rel="next" href="c_deltav_zones1.html" /></head><body class="fixed" id="reference_grp_membership_remote_users" data-relpath="r_dcom_grp_membership_remote_users.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_grp_membership_remote_users"></a>
+
+<h1 class="topictitle1">User account Windows group membership and DeltaV User Manager options
+	 for accounts that are not in the DeltaV domain</h1>
+<div> 
+	 <div class="section"> 
+		<p>This topic applies to connections coming from either a workgroup or
+		  another domain. 
+		</p>
+ 
+		<p>In addition to the DeltaVAdmin user account, some of the DeltaV
+		  applications and functions require additional settings be applied to the Local
+		  Account; that is, the non-DeltaV account that is being used to log into DeltaV
+		  from either a Remote Workstation or an OPC/DCOM client (such as any computer on
+		  which you have installed OPC Remote; or, any computer from which you connect to
+		  access any DeltaV historian or the Alarms and Events data). 
+		</p>
+ 
+		<p>Any account that requires DeltaV functionality to be verified by
+		  DeltaV security must be a DeltaV database account with the appropriate groups
+		  and keys assigned. For example, if you are running DeltaV Remote Operator
+		  Station and you want to control the Plant for Area B, the user account you log
+		  into DeltaV with on the Remote Operator Station (that matches the user on the
+		  DeltaV node) must have Area B privileges assigned to it in DeltaV User Manager
+		  on the DeltaV system to which you are connecting. Additionally, if you are on a
+		  Remote Workstation and are running DeltaV Explorer and want to download, the
+		  DeltaV database account must have the Can Download key. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"> 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>This table is outlining the requirements for the local user account
+			 that is either logging into DeltaV or a service account that is on the
+			 non-DeltaV node needing to be authenticated by DeltaV. All other configuration
+			 rules about the DeltaVAdmin accounts still apply. The local user must exist on
+			 the DeltaV ProfessionalPlus workstation. 
+		  </p>
+ 
+		</div>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2479355e83" rowspan="2" valign="top" width="NaN%">Connecting to: 
+				  </th>
+ 
+				  <th class="cellrowborder" colspan="2" id="d2479355e86" valign="top">Windows Group Membership 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2479355e89" rowspan="2" valign="top" width="NaN%">DeltaV User Manager Options 
+					 <p>(for the domain-based DeltaV user that matches the client&#39;s
+						local user account) 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2479355e95" rowspan="2" valign="top" width="NaN%">DeltaV User Manager
+					 Computer/Domain option 
+					 <p>(for the domain-based DeltaV user that matches the client&#39;s
+						local user account) 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+ 
+				<tr> 
+				  <th class="cellrowborder" id="d2479355e104" valign="top" width="NaN%">Client = Workgroup 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2479355e107" valign="top" width="NaN%"><span>Client = Trusted Domain</span> 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">DeltaV OPC Server (DA or HDA) 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">DeltaV Remote Access Server (RAS) 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">DeltaV Batch Executive 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">DeltaV Batch Historian 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+					 <p>LOCAL DVBHisUser group. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+					 <p>LOCAL DOMAIN DVBHisUser group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+					 <p><span class="uicontrol">DeltaV Batch Historian User</span> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">Campaign Manager Server 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2479355e83 " valign="top" width="NaN%">Native DeltaV Engineering applications 
+					 <p>(being opened on the DeltaV domain member) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e104 " valign="top" width="NaN%"> 
+					 <p>LOCAL DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e86 d2479355e107 " valign="top" width="NaN%"> 
+					 <p>LOCAL DOMAIN DeltaV group 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e89 " valign="top" width="NaN%"><span class="uicontrol">DeltaV Database
+						Account</span> 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2479355e95 " valign="top" width="NaN%"><span class="uicontrol">&lt;Unspecified&gt;</span> 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="note" id="reference_grp_membership_remote_users__note_native_DeltaV_Engr_apps_unique_1"><a name="reference_grp_membership_remote_users__note_native_DeltaV_Engr_apps_unique_1"></a><span class="notetitle">Note:</span>  
+		  <div class="p">Native DeltaV Engineering applications include the following: 
+		  <ul> 
+			 <li><div class="li_content">DeltaV Control Studio 
+			 </div></li>
+ 
+			 <li><div class="li_content">DeltaV Explorer 
+			 </div></li>
+ 
+			 <li><div class="li_content">DeltaV Diagnostics 
+			 </div></li>
+ 
+			 <li><div class="li_content">DeltaV User Manager 
+			 </div></li>
+ 
+			 <li><div class="li_content">Scheduled System Maintenance (SSM) - a release independent
+				application for DeltaV) 
+			 </div></li>
+ 
+			 <li><div class="li_content">SureService Registration Utility (SSReg) 
+			 </div></li>
+ 
+		  </ul>
+ 
+		  </div>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div><div class="p"><sup>1</sup>   When configuring users between trusted domains, you
+						  must add the users at the appropriate forest level. DeltaV domains are their
+						  own forest, however, your other domain (to/from which a trust exists), might be
+						  a child of a larger domain (the forest). You can only associate the users at
+						  the common domain level. Domain groups/users are noted as follows: 
+						  <ul> 
+							 <li><div class="li_content">Domain\DomainName\Group = the forest domain’s groups.
+								
+							 </div></li>
+ 
+							 <li><div class="li_content">Domain\DomainName\UserName = the forest domain’s user
+								account. 
+							 </div></li>
+ 
+							 <li><div class="li_content">DomainName\Group = the local domain (child)’s groups.
+								
+							 </div></li>
+ 
+							 <li><div class="li_content">DomainName\UserName = the local domain (child)’s user
+								account. 
+							 </div></li>
+ 
+						  </ul>
+(where 
+						  <var class="varname">DomainName</var> is the name of the domain,
+						  such as MyDeltaV.com and 
+						  <var class="varname">Group/UserName</var> is the name of the actual
+						  group (Administrators) or user account (JSmith).) All domains contain both
+						  notations, even when the entire domain is the forest (no child domains under
+						  it.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

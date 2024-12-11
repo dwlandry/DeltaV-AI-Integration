@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Install and set up the Secure SOA Server" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Configure" name="DC.Coverage" /><meta content="SOA, Recipe Exchange web service, Campaign Manager web service, Mynah Integration web service, Monitor web service, web services, SOA Gateway, Secure SOA Server, Mynah, Mimic, Campaign Manager web service, Recipe Exchange web service, Monitor web service, Secure SOA Gateway, installing, SOA Gateway, installing web services" name="DC.subject" /><meta content="SOA, Recipe Exchange web service, Campaign Manager web service, Mynah Integration web service, Monitor web service, web services, SOA Gateway, Secure SOA Server, Mynah, Mimic, Campaign Manager web service, Recipe Exchange web service, Monitor web service, Secure SOA Gateway, installing, SOA Gateway, installing web services" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="t_install_setup_secure_server" name="DC.Identifier" /><title>Install and set up the Secure SOA Server</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_from_appstation.html" /><link rel="next" href="t_enable_mynah_service.html" /></head><body class="fixed" id="t_install_setup_secure_server" data-relpath="t_install_setup_secure_server.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_install_setup_secure_server"></a>
+
+<h1 class="topictitle1">Install and set up the Secure SOA Server</h1>
+<div><div></div>
+ 
+	 <div class="section" id="t_install_setup_secure_server__context_17C42CBEFCE74645885951035AC8E51C"><a name="t_install_setup_secure_server__context_17C42CBEFCE74645885951035AC8E51C"></a> 
+		<p>If you need access to web services on computers outside of the area
+		  control network (ACN), both the DeltaV system and the external system must be
+		  in domains, not workgroups. The SOA web services do not support
+		  workgroup-to-workgroup communication. You must install the web services
+		  software on a computer in the external domain to create a Secure SOA Server.  
+		</p>
+ 
+		<p>The prerequisites for installing the Secure SOA Server are: 
+		</p>
+ 
+		<a name="t_install_setup_secure_server__ul_6513052627F1405FA71338CE5DE29F84"></a><ul id="t_install_setup_secure_server__ul_6513052627F1405FA71338CE5DE29F84"> 
+		  <li id="t_install_setup_secure_server__li_5BC7613253AA442BB776A31E29D308AE"><div class="li_content"> 
+			 <p>Set up the SOA Gateway in the DeltaV ACN as explained above. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="t_install_setup_secure_server__li_3B730C89AD37423E9D3233604293E469"><div class="li_content"> 
+			 <p>If you are using a firewall between the domains, make sure it has
+				been configured correctly.  
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="t_install_setup_secure_server__li_E8E23D0D59534D27B818742C8EE361BD"><div class="li_content"> 
+			 <p>Configure a two-way domain trust between the DeltaV domain system
+				and the external domain.  
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="t_install_setup_secure_server__li_3DA1C44A29C843C19F9ECDE1EC7FB80E"><div class="li_content"> 
+			 <p>Configure the domain name system (DNS) for both domains. 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>To install the Secure SOA Server software in the external domain: 
+		</p>
+ 
+	 </div>
+ 
+	 <a name="t_install_setup_secure_server__steps_362F4397D6B245AFBE1BAC596BE03B1E"></a><ol id="t_install_setup_secure_server__steps_362F4397D6B245AFBE1BAC596BE03B1E"><li class="stepexpand" id="t_install_setup_secure_server__step_545493E20C0D4403A63075761AAE424A"><a name="t_install_setup_secure_server__step_545493E20C0D4403A63075761AAE424A"></a> 
+		  <span>Run the setup.exe program on the DeltaV installation disk #1 in
+			 the 
+			 <span class="filepath">DV_Extras\Secure SOA Server</span> folder. 
+		  </span> 
+		    
+			 <p>A progress dialog appears, then after a few moments the 
+				<span class="wintitle">DeltaV External Gateway - InstallShield Wizard</span>
+				dialog appears. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_C5C2138825C24A69BF5A894D7719B92B"><a name="t_install_setup_secure_server__step_C5C2138825C24A69BF5A894D7719B92B"></a> 
+		  <span>In the Receiver field enter the fully-qualified domain name of the
+			 SOA Gateway configured within the DeltaV network.  
+		  </span> 
+		    
+			 <p>This is the domain that contains the DeltaV application station
+				configured as the SOA Gateway in DeltaV Explorer. For example: 
+			 </p>
+ 
+			 <p>AppStation1.MyDeltaVDomain 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_BB7E19FBD6794E1898D38922CDE2FAC5"><a name="t_install_setup_secure_server__step_BB7E19FBD6794E1898D38922CDE2FAC5"></a> 
+		  <span>Enter the port number the SOA Gateway (the application station)
+			 uses for the service EmersonProcess.Web.Services.MonitorHost.exe.  
+		  </span> 
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_F71F00F3BD984716B6F78C48389D3CD7"><a name="t_install_setup_secure_server__step_F71F00F3BD984716B6F78C48389D3CD7"></a> 
+		  <span>Click Next. 
+		  </span> 
+		    
+			 <p>A dialog appears in which you select and verify an installation
+				path for the web service software. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_D3E5CA24F77E4667A5D89E46096AEFDC"><a name="t_install_setup_secure_server__step_D3E5CA24F77E4667A5D89E46096AEFDC"></a> 
+		  <span>Click 
+			 <span class="uicontrol">Next</span>. 
+		  </span> 
+		    
+			 <p>A dialog appears that summarizes the installation settings you
+				have made. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_13C08B6348414EBAB28ACE51FA81DC8C"><a name="t_install_setup_secure_server__step_13C08B6348414EBAB28ACE51FA81DC8C"></a> 
+		  <span>Click 
+			 <span class="uicontrol">Next</span>. 
+		  </span> 
+		    
+			 <p>Installing the Secure SOA Server creates the Windows user account
+				DeltaVAdmin. A dialog appears in which you can change the password of this
+				account. This is the account used by the Gateway web services. You can change
+				this password or accept the default password. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_07B2DE1A328F40FB979048B6CF2A72A6"><a name="t_install_setup_secure_server__step_07B2DE1A328F40FB979048B6CF2A72A6"></a> 
+		  <span>Click 
+			 <span class="uicontrol">Next</span>. 
+		  </span> 
+		    
+			 <p>The setup continues until the 
+				<span class="wintitle">InstallShield Wizard Complete</span> dialog appears. 
+				
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand" id="t_install_setup_secure_server__step_057FE9517E2B4CB885787184128C5B1B"><a name="t_install_setup_secure_server__step_057FE9517E2B4CB885787184128C5B1B"></a> 
+		  <span>Click 
+			 <span class="uicontrol">Finish</span>. 
+		  </span> 
+		</li>
+</ol>
+ 
+	 <div class="section" id="t_install_setup_secure_server__result_83CD208748A84E6BB2D4EFC19EBF98D6"><a name="t_install_setup_secure_server__result_83CD208748A84E6BB2D4EFC19EBF98D6"></a> 
+		<p>The following services are installed on the Secure SOA Server: 
+		</p>
+ 
+		<a name="t_install_setup_secure_server__ul_BD4950BC1513481BBA1A12E508D8A454"></a><ul id="t_install_setup_secure_server__ul_BD4950BC1513481BBA1A12E508D8A454"> 
+		  <li id="t_install_setup_secure_server__li_644EB31A7A804196B9316CE8AA96F624"><div class="li_content"> 
+			 <p>Campaign Manager Web Service 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="t_install_setup_secure_server__li_3FBFA93F9CC2452F96EA5F5819038350"><div class="li_content"> 
+			 <p>Recipe Exchange Web Service 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="t_install_setup_secure_server__li_0E40427DA45346DD8230EE127B20A069"><div class="li_content"> 
+			 <p>Monitor Service 
+			 </p>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		<p>You can verify their existence from the Windows Task Manager or the
+		  Windows Services application. You can view service logs from the DeltaV SOA
+		  Gateway Administration application.  
+		</p>
+ 
+		<p>After the Monitor Service is activated, the other web services attempt
+		  to start using their default port numbers. If the default ports are already in
+		  use, the services do not start. The Windows Event Viewer contains information
+		  on whether the services started or not. For information on resolving port
+		  conflicts refer to the topic Troubleshooting SOA Web Services. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>SOA web service client programs in the external domain must point to
+			 the Secure SOA Server, not the SOA Gateway within the DeltaV system domain. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

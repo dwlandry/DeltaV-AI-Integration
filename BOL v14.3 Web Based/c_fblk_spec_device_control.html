@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Device Control function block" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Device Control (DC) function block" name="DC.subject" /><meta content="Device Control (DC) function block" name="keywords" /><meta content="c_logicblkintro.html" name="DC.Relation" scheme="URI" /><meta content="c_device_control_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_device_control_function_block_modes.html" name="DC.Relation" scheme="URI" /><meta content="c_device_control_function_block_alarm_detection.html" name="DC.Relation" scheme="URI" /><meta content="r_device_control_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_device_control_function_block_application_information.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_spec_device_control" name="DC.Identifier" /><title>Device Control function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_condition_block_application_information.html" /><link rel="next" href="c_device_control_function_block_execution.html" /></head><body class="fixed" id="c_fblk_spec_device_control" data-relpath="c_fblk_spec_device_control.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_spec_device_control"></a>
+
+<h1 class="topictitle1">Device Control function block</h1>
+<div><div></div>
+ 
+	 <p id="c_fblk_spec_device_control__devicecontrolfunctionblock"><a name="c_fblk_spec_device_control__devicecontrolfunctionblock"></a>The Device Control (DC) function block
+		provides setpoint control for multistate discrete devices, such as motors,
+		pumps, and block valves. The block compares the requested state (setpoint) to
+		the actual state reported from the device and, after allowing time for the
+		device to change state, detects alarm limits on any error. The basic
+		functionality is augmented by an assortment of interlocks and device control
+		options to customize the block&#39;s operation for your application.
+	 </p>
+ 
+	 <p>The Device Control function block supports mode control, setpoint
+		tracking, simulation, and alarm limit detection. You can select options that
+		specify the control strategy used in the block.
+	 </p>
+ 
+	 <p>The setpoint requests the device to go to one of two or three supported
+		states: Passive, Active 1 and Active 2 (optional). The Passive state is the
+		power failure (safe) state, such as OFF or CLOSED. An Active state usually
+		requires energy (or allows energy to flow), such as OPEN, RUN, FORWARD, or
+		REVERSE. You configure one or two Active states (Active 1 and Active 2) to
+		match the device you want to control. You select the set of state names that
+		applies to the device, such as STOP/FORWARD/REVERSE or OFF/LOW/HIGH.
+	 </p>
+ 
+	 <p>The Device Control block uses as many as eight discrete I/O channels to
+		command a device to the requested setpoint state and to read back its
+		confirmation contacts. Discrete I/O is associated with the Passive and Active
+		states by means of a mask for each state that allows each bit to be defined as
+		True (1), False (0), or not used. You can configure four bits as outputs to the
+		device and four bits as the contacts that confirm the device state. The confirm
+		contacts must be maintained because the block is designed to alarm on loss of
+		confirmation.
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_device_control__fig_CF979EBBBB964585A7304828D3E7DA5F"><a name="c_fblk_spec_device_control__fig_CF979EBBBB964585A7304828D3E7DA5F"></a><div><span class="figcap">Device Control function block</span></div> 
+		 
+		<a name="c_fblk_spec_device_control__image_C8EB97FC4B15414D9AFDED666989ED25"></a><img id="c_fblk_spec_device_control__image_C8EB97FC4B15414D9AFDED666989ED25" src="fbhelp0313.gif" /> 
+	 </div>
+ 
+	 <p>CAS_IN_D is the discrete value and status of a setpoint from another
+		block used when the block is in Cascade mode.
+	 </p>
+ 
+	 <p>SHUTDOWN_D is the Emergency Stop discrete value and status input that
+		forces and holds the device in the Passive state.
+	 </p>
+ 
+	 <p>PERMISSIVE_D is the optional discrete input value and status that must
+		be True when the 
+		<span class="uicontrol">Permissive</span> device option is enabled to allow the
+		device to be commanded to an Active state.
+	 </p>
+ 
+	 <p>TRK_IN_D is the discrete input value and status that forces the block
+		mode to Local Override and causes the output to follow the field value (FV_D).
+	 </p>
+ 
+	 <p>SIMULATE_IN_D is the optional discrete input value and status that is
+		used to simulate the field value.
+	 </p>
+ 
+	 <p>INTERLOCK_D is the optional discrete input value and status that must be
+		True when the 
+		<span class="uicontrol">Interlock</span> device option is enabled for the device
+		to remain in the Active state.
+	 </p>
+ 
+	 <p>OUT_D is the discrete output value and status that reflects the current
+		commanded device state.
+	 </p>
+ 
+	 <p>The following figure shows a simplified view of the internal components
+		of the Device Control function block:
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_device_control__fig_A963F40CC31F43B9A4020676059DFEC9"><a name="c_fblk_spec_device_control__fig_A963F40CC31F43B9A4020676059DFEC9"></a><div><span class="figcap">Device Control function block schematic diagram</span></div> 
+		 
+		<a name="c_fblk_spec_device_control__image_3610F836E45844F7899BB7D21D46E720"></a><img id="c_fblk_spec_device_control__image_3610F836E45844F7899BB7D21D46E720" src="dc_schem.gif" /> 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_device_control_function_block_execution.html">Device Control function block execution</a><br />
+</li>
+<li class="ulchildlink"><a href="c_device_control_function_block_modes.html">Device Control function block modes</a><br />
+</li>
+<li class="ulchildlink"><a href="c_device_control_function_block_alarm_detection.html">Device Control function block alarm detection</a><br />
+</li>
+<li class="ulchildlink"><a href="r_device_control_function_block_parameters.html">Device Control function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_device_control_function_block_application_information.html">Device Control function block application information</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

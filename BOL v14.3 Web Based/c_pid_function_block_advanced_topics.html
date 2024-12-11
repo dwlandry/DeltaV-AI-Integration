@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="PID function block advanced topics" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_basic_info_about_cascades.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_pid.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_pid_function_block_advanced_topics" name="DC.Identifier" /><title>PID function block advanced topics</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_pid_function_block_application_information.html" /><link rel="next" href="c_fblk_spec_ramp.html" /></head><body class="fixed" id="c_pid_function_block_advanced_topics" data-relpath="c_pid_function_block_advanced_topics.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_pid_function_block_advanced_topics"></a>
+
+<h1 class="topictitle1">PID function block advanced topics</h1>
+<div><div></div>
+ 
+	 <p id="c_pid_function_block_advanced_topics__advancedtopicsbkcalcommunications"><a name="c_pid_function_block_advanced_topics__advancedtopicsbkcalcommunications"></a> 
+		<strong>Interblock communication</strong> 
+	 </p>
+ 
+	 <p>The BKCAL parameters are used for interblock communication, specifically
+		to let upstream blocks know the status of downstream blocks. Blocks that
+		utilize the BKCAL parameters are referred to as cascaded blocks. When cascaded,
+		the blocks act as a control unit that must coordinate its control activity. 
+	 </p>
+ 
+	 <p>The BKCAL parameters include a BKCAL_OUT parameter in a downstream block
+		connected to a BKCAL_IN parameter in an upstream block. The downstream block
+		passes a value (usually its setpoint) as well as a status to the upstream
+		block. When the upstream block executes its algorithm, it takes into account
+		the status of the downstream block. The most common use of BKCAL is to prevent
+		reset windup. In other words, if a downstream block is in a limited state, it
+		sends the limited status to the upstream control block, which turns off its
+		integral action in response, as shown in the following figure. 
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_advanced_topics__fig_E16BAE66490A47BFB5592E0F9C225753"><a name="c_pid_function_block_advanced_topics__fig_E16BAE66490A47BFB5592E0F9C225753"></a><div><span class="figcap">Anti-Reset windup protection with control cascade</span></div> 
+		 
+		<a name="c_pid_function_block_advanced_topics__image_8A78682DA2DB4F349C5C6B56F49ABCFD"></a><img id="c_pid_function_block_advanced_topics__image_8A78682DA2DB4F349C5C6B56F49ABCFD" src="fbhelp0186.gif" />
+	 </div>
+ 
+	 <p> 
+		<strong>Cascade initialization</strong> 
+	 </p>
+ 
+	 <p>Another use of the BKCAL parameters is to initialize cascaded blocks.
+		This occurs when the control cascade is automated (for example, when the blocks
+		go from Manual to Auto or Cas mode). The simplest case of a control cascade is
+		a master PID block linked to a slave AO block. The dialog that takes place
+		between blocks during this process is shown in the following sequence of
+		figures. 
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_advanced_topics__fig_FE9ABC066DF64A358650D5F35E7DB696"><a name="c_pid_function_block_advanced_topics__fig_FE9ABC066DF64A358650D5F35E7DB696"></a><div><span class="figcap">Upstream block sets and achieves auto mode</span></div> 
+		 
+		<a name="c_pid_function_block_advanced_topics__image_ECDBB8506DB14142B0C461C452942768"></a><img id="c_pid_function_block_advanced_topics__image_ECDBB8506DB14142B0C461C452942768" src="fbhelp0191.gif" />
+	 </div>
+ 
+	 <p>Step 5 shows the fully automated cascade. The target mode of the master
+		controller is set to Auto. Since PID1/BKCAL_IN has a status other than Not
+		Invited (because the slave block is in Cas mode), the PID block is authorized
+		to go to Auto mode. Note that if the user had set the target mode of PID1 to
+		Auto at step 1, the block would have remained with mode Auto/IMan because of
+		the Not Invited status received by the PID through BKCAL_IN. 
+	 </p>
+ 
+	 <p> 
+		<strong>Multi-level cascade initialization</strong> 
+	 </p>
+ 
+	 <p>The following figure shows the initialization process for a multi-level
+		cascade (that is, a cascade with two levels of cascading). This figure
+		illustrates a control cascade with a downstream AO block. Cascade automation
+		starts from the most downstream block and proceeds step by step upstream. When
+		these steps are completed, all blocks in the cascade are in Cas mode except the
+		master block, which is in Auto mode when the cascade is fully automated. 
+	 </p>
+ 
+	 <div class="fignone" id="c_pid_function_block_advanced_topics__fig_B19EFDD8245346539B28F95F036A79BA"><a name="c_pid_function_block_advanced_topics__fig_B19EFDD8245346539B28F95F036A79BA"></a><div><span class="figcap">PID2 Setting of Target Mode to Cas; PID1 Initialization and
+		  Acknowledgement</span></div> 
+		 
+		<a name="c_pid_function_block_advanced_topics__image_FE819205AFB3470AB41FF4F83E37E2A5"></a><img id="c_pid_function_block_advanced_topics__image_FE819205AFB3470AB41FF4F83E37E2A5" src="fbhelp0195.gif" />
+	 </div>
+ 
+	 <p>The preceding examples regarding Cas mode also apply to RCas mode. The
+		same communication takes place between the master and slave blocks. However, in
+		RCas mode, substitute RCAS_IN for CAS_IN and RCAS_OUT for BKCAL_OUT. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_basic_info_about_cascades.html">Basic information about cascades</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

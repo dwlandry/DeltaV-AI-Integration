@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Power Dissipation Considerations" name="DC.Title" /><meta content="Plan" name="DC.Coverage" /><meta content="Install" name="DC.Coverage" /><meta content="Enclosures, power dissipation, Power dissipation for DeltaV products, Power dissipation, calculating" name="DC.subject" /><meta content="Enclosures, power dissipation, Power dissipation for DeltaV products, Power dissipation, calculating" name="keywords" /><meta content="AppI_over.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_B98CE5D9CD77402FA77933B103A77212" name="DC.Identifier" /><title>Power Dissipation Considerations</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_SelectingAnEnclosure.html" /><link rel="next" href="r_ExEnclosureSelectionProc.html" /></head><body class="fixed" id="reference_B98CE5D9CD77402FA77933B103A77212" data-relpath="r_PowerDissConsiderations.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_B98CE5D9CD77402FA77933B103A77212"></a>
+
+<h1 class="topictitle1">Power Dissipation Considerations</h1>
+<div> 
+	 <div class="section" id="reference_B98CE5D9CD77402FA77933B103A77212__section_5009F9FCCD154A75AA1DF9DCB750F1C3_unique_1"><a name="reference_B98CE5D9CD77402FA77933B103A77212__section_5009F9FCCD154A75AA1DF9DCB750F1C3_unique_1"></a> 
+		<p>The power dissipated within the enclosure generates heat. The
+		  enclosure supplier uses power dissipation figures to determine the air flow
+		  requirements needed to maintain the allowable heat rise. As the internal heat
+		  rise increases, the allowable external ambient temperature decreases. 
+		</p>
+ 
+		<p>The power dissipation in an enclosure is dependent on the power
+		  requirements of the enclosed equipment, including the: 
+		</p>
+ 
+		<a name="reference_B98CE5D9CD77402FA77933B103A77212__ul_138A739D2C1741C2883AB1477A9E2633_unique_1"></a><ul id="reference_B98CE5D9CD77402FA77933B103A77212__ul_138A739D2C1741C2883AB1477A9E2633_unique_1"> 
+		  <li id="reference_B98CE5D9CD77402FA77933B103A77212__li_E1104FD5B73A430AB45E19D0B667265E_unique_1"><div class="li_content">Power required to operate
+			 devices in the enclosure 
+		  </div></li>
+ 
+		  <li id="reference_B98CE5D9CD77402FA77933B103A77212__li_3E71B434FAF341DE8A3632DCBDB18EA9_unique_1"><div class="li_content">Field power dissipation
+			 within the cabinet 
+		  </div></li>
+ 
+		  <li id="reference_B98CE5D9CD77402FA77933B103A77212__li_C92E7106D5364591B38CE71944B16A79_unique_1"><div class="li_content">Power dissipated by the
+			 power supplies located in the enclosure 
+		  </div></li>
+ 
+		</ul>
+ 
+		<div class="p">The following table lists maximum power dissipation for each DeltaV
+		  component. To determine total power dissipation in an enclosure, sum the power
+		  requirements of all components to be mounted within the enclosure. 
+		  <div class="note"><span class="notetitle">Note:</span> The power dissipation for each DC-powered discrete and analog
+			 device includes the loss of a power supply which is 75% efficient. If the power
+			 supply is not included in the enclosure or a supply with a different efficiency
+			 is used, adjust the dissipation accordingly. 
+		  </div>
+ 
+		</div>
+ 
+		
+<div class="tablenoborder"><a name="reference_B98CE5D9CD77402FA77933B103A77212__table_EBECB4EADD804B259E061C3D9A6F8208_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_B98CE5D9CD77402FA77933B103A77212__table_EBECB4EADD804B259E061C3D9A6F8208_unique_1" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d2075268e62" valign="top" width="NaN%">Product Type 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d2075268e65" valign="top" width="NaN%">Power 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Controllers (MD Plus and MX) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 14 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Remote Interface Unit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 6.0 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>I/O
+						Subsystem</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AI, 8-Channel, 4-20 mA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AI, 8-Channel, 4-20 mA, HART 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AI, 8-Channel, 1-5 VDC 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AO, 8-Channel, 4-20 mA 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 11.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AO, 8-Channel, 4-20 mA, HART 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 11.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> AS-Interface 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 9.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DeviceNet 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 11.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 24 VDC, Isolated 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 24 VDC, Dry Contact 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 2.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 120 VAC, Isolated 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 120 VAC, Dry Contact 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 230 VAC, Isolated 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 8-Channel, 230 VAC, Dry Contact 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DI, 32-Channel, 24 VDC, Dry Contact 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.7 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DO, 8-Channel, 120/230 VAC, Isolated 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 6.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DO, 8-Channel, 120/230 VAC, High Side 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 6.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DO, 8-Channel, 24 VDC, Isolated 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 4.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DO, 8-Channel, 24 VDC, High Side 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.7 W + load dependent power dissipation (25 W maximum at
+						24 V)<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> DO, 32-Channel, 24 VDC, High-Side 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.0 W + load dependent power dissipation (27 W maximum at
+						24 V)<a href="#fntarg_2" name="fnsrc_2"><sup>2</sup></a> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Fieldbus H1 card 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.2 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Multifunction 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 8.2 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Profibus DP 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> RTD, ohms 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 2.7 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Sequence of Events 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.5 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Serial Card, 2 Ports, RS232/RS485 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Thermocouple, mV 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>Series 2
+						I/O Cards</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 AI, 4-20 mA with HART 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 8.4 W 
+					 </p>
+ 
+					 <p> 9.1 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 AI, 16-channel, 4-20 mA HART (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 12.7 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 AO, 4-20 mA with HART 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.2 W 
+					 </p>
+ 
+					 <p> 10.2 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 AS-Interface (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 9.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 DeviceNet (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 11.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 DI, 8-Channel, 24 VDC Dry Contact 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.7 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 DI, 32-Channel, 24 VDC Dry Contact (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.7 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 DO, 8-Channel, 24 VDC, High-Side 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.7 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 DO, 32-Channel, 24 VDC, High-Side (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.0 W + load dependent power dissipation (27 W maximum at
+						24 V)<a href="#fntarg_3" name="fnsrc_3"><sup>3</sup></a> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 H1 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 6.1 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 Isolated Input (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.9 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 Profibus (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 RTD, ohms (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 2.7 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 Thermocouple (Simplex) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 3.5 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Series 2 Serial 
+					 </p>
+ 
+					 <p> Simplex/ Redundant 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.1 W (per card) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>Intrinsically Safe I/O Cards</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. AI, 8-Channel, 4-20, mA, HART 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 9.8 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. AO, 8-Channel, 4-20, mA (and HART) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 11.3 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. DI, 16-Channel 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 7.6 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. DO, 4-Channel 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 10.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>Power
+						Supplies</strong> 
+					 <a href="#fntarg_4" name="fnsrc_4"><sup>4</sup></a> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Legacy DIN rail-mounted Bulk AC to 12 VDC Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 12 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p>Legacy DIN rail-mounted Bulk AC to 24 VDC Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 12 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p>Legacy Panel-mounted Bulk AC to 12 VDC Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 22 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p>Legacy Panel-mounted Bulk AC to 24 VDC Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 22 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p>Legacy Bulk 24 VDC to 12 VDC Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 14.5 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> System Power Supply (AC/DC) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 4.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> System Power Supply (Dual DC/DC) 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <a name="reference_B98CE5D9CD77402FA77933B103A77212__ul_A8CCE318162F4CBA8045AAC6E4496F5D"></a><ul id="reference_B98CE5D9CD77402FA77933B103A77212__ul_A8CCE318162F4CBA8045AAC6E4496F5D"> 
+						<li id="reference_B98CE5D9CD77402FA77933B103A77212__li_8D593B45BE4F41DAB25CCAB94B85714C"><div class="li_content">12 VDC Input:
+						  11.4 W 
+						</div></li>
+ 
+						<li id="reference_B98CE5D9CD77402FA77933B103A77212__li_CADEA0DB48104E1484AB5DC6DEBFD211"><div class="li_content">24 VDC Input:
+						  26.4 W 
+						</div></li>
+ 
+					 </ul>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>DeltaV SIS
+						Components</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Simplex Logic Solver 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 16.0 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Redundant Logic Solvers 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 24.0 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> SISNet Repeaters 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 9.6 W (per Repeater) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Auxiliary Relay Modules, Energize to Actuate and
+						De-Energize to Actuate, 24 VDC 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 4.65 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Auxiliary Relay Diode Module 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 2.25 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="2" headers="d2075268e62 d2075268e65 " valign="top"><strong>Miscellaneous Components</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Fieldbus H1 carrier 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.2 W<a href="#fntarg_5" name="fnsrc_5"><sup>5</sup></a> 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Media Converter 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 5.1 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Single Port Fiber Switch 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 8.2 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> Four Port Fiber Switch 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 8.4 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. LocalBus Isolator 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 1.2 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d2075268e62 " valign="top" width="NaN%"> 
+					 <p> I.S. System Power Supply 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d2075268e65 " valign="top" width="NaN%"> 
+					 <p> 1.5 W 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div><div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  Power dissipation in this card is based on a full load of 3 A at 24 V.
+						  Actual dissipation is determined by the following equation: Supply Voltage x
+						  Actual Load Current (8 channels) x [(1/Power Supply Efficiency) - 1] A typical
+						  value for eight channels driving a 24 V solenoid is 16.4 W.</div><div class="p"><a href="#fnsrc_2" name="fntarg_2"><sup>2</sup></a>  Power dissipation in this card is based on a full load of 3.2 A at 24
+						  V. Actual dissipation is determined by the following equation: Supply Voltage x
+						  Actual Load Current (32 channels) x [(1/Power Supply Efficiency) - 1]</div><div class="p"><a href="#fnsrc_3" name="fntarg_3"><sup>3</sup></a>  Power dissipation in this card is based on a full load of 3.2 A at 24
+						  V. Actual dissipation is determined by the following equation: Supply Voltage x
+						  Actual Load Current (32 channels) x [(1/Power Supply Efficiency) - 1]</div><div class="p"><a href="#fnsrc_4" name="fntarg_4"><sup>4</sup></a>  Refer to the 
+						<cite>DeltaV S-series and CHARMs Hardware Reference</cite>
+						manual for power dissipation for DeltaV Bulk Power Supplies.</div><div class="p"><a href="#fnsrc_5" name="fntarg_5"><sup>5</sup></a>  Does not include I/O card dissipation or 2.2 W
+						  power supply dissipation. (Assumes power supply is not in the same enclosure as
+						  the H1 carrier.)</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

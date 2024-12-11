@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configure the Remote Desktop Gateway server" name="DC.Title" /><meta content="This procedure describes how to configure a computer to be your Remote Desktop Gateway (RD Gateway) server." name="abstract" /><meta content="This procedure describes how to configure a computer to be your Remote Desktop Gateway (RD Gateway) server." name="description" /><meta content="Maintain" name="DC.Coverage" /><meta content="Remote Client, DeltaV, Remote Desktop Gateway, DeltaV Remote Client, Microsoft Windows Server, Remote Desktop Services, Microsoft Terminal Server, Remote Desktop Connection, Terminal Server, DeltaV Remote, remote desktop, Remote Desktop Gateway, DeltaV Remote Client, Remote Desktop Connection, certificates, SSL, X.509, SSL certificates" name="DC.subject" /><meta content="Remote Client, DeltaV, Remote Desktop Gateway, DeltaV Remote Client, Microsoft Windows Server, Remote Desktop Services, Microsoft Terminal Server, Remote Desktop Connection, Terminal Server, DeltaV Remote, remote desktop, Remote Desktop Gateway, DeltaV Remote Client, Remote Desktop Connection, certificates, SSL, X.509, SSL certificates" name="keywords" /><meta content="c_remote_desktop_gateway_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_config_RDGateway_server" name="DC.Identifier" /><title>Configure the Remote Desktop Gateway server</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_plan_RD_gateway_system.html" /><link rel="next" href="t_configure_RD_client_to_use_RD_Gateway.html" /></head><body class="fixed" id="task_config_RDGateway_server" data-relpath="t_configure_rd_gateway_server.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_config_RDGateway_server"></a>
+
+<h1 class="topictitle1">Configure the Remote Desktop Gateway server</h1>
+<div><p>This procedure describes how to configure a computer to be your
+	 Remote Desktop Gateway (RD Gateway) server. 
+  </p>
+ 
+	 <div class="section"> 
+		<p>The Remote Desktop Gateway (RD Gateway) server computer is a
+		  non-DeltaV computer that resides outside of the DeltaV ACN network. Normally in
+		  the DMZ or PlantLAN (L3/L4) networks. Through this gateway, computers on
+		  non-DeltaV networks can access DeltaV (provided the credentials and
+		  certificates are valid). 
+		</p>
+ 
+	 </div>
+ 
+	 <ol><li class="stepexpand"> 
+		  <span> Install Windows Server (2008 R2 or higher) on the computer that
+			 will be your RD Gateway server and configure the network address. 
+		  </span> 
+		  <ol type="a"> 
+			 <li class="substep"><div class="li_content"> 
+				<span>Using the Windows Server product disk, install the server
+				  operating system. This will require multiple reboots. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Name the computer something relevant. For this example, we use
+				  the name: 
+				  <var class="varname">RDG-SRV</var>. 
+				</span> 
+			 </div></li>
+ 
+			 <li class="substep"><div class="li_content"> 
+				<span>Configure TCP/IP properties so that RDG-SRV has an IPv4 static
+				  IP address. 
+				</span> 
+				  
+				  <p> Refer to your table of IP addresses developed earlier. For
+					 this example we use the address: 
+					 <var class="varname">10.0.0.11</var>. 
+				  </p>
+ 
+				 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand"> 
+		  <span> Connect the RDG-SRV to the appropriate switches/hubs/firewalls
+			 (based on your network map). 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span> Join RDG-SRV to the appropriate domain (if needed). 
+		  </span> 
+		   
+			 <p>Because the RD Gateway computer (RDG-SRV) is normally located
+				outside of the Emerson Smart Firewall, you would connect to a non-DeltaV
+				network in the DMZ or higher.
+			 </p>
+
+		  
+		</li>
+<li class="stepexpand"> 
+		  <span>Install the RD Gateway role on RDG-SRV (using Server Manager). 
+		  </span> 
+		    
+			 <p>This will also install any dependent roles, services, and
+				features. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Provide IIS with a certificate and export a certificate for RD
+			 Gateway. 
+		  </span> 
+		    
+			 <p>You can create this from IIS Manager for testing/evaluation
+				purposes. 
+			 </p>
+ 
+			 <p> The type of certificate (self-signed or CA) is the user&#39;s
+				decision. However, for TLS (Transport Layer Security) to function correctly,
+				you must install an SSL-compatible X.509 certificate on the RD Gateway server. 
+			 </p>
+ 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Install the certificate on the RD Gateway Server (RDG-SRV) using
+			 the Remote Desktop Gateway Manager. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Export the SSL certificate from the RD Gateway (RDG-SRV) using
+			 Remote Desktop Manager. 
+		  </span> 
+		    
+			 <p> This step is only required for self-signed certificates and
+				certificates not already trusted on the Remote Desktop Client. In those two
+				instances, the certificate will be installed on the Remote Desktop client
+				computer. 
+			 </p>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

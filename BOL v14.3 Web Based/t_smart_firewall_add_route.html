@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Add a static route to a workstation" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="Smart Firewall:, adding a static route" name="DC.subject" /><meta content="Smart Firewall:, adding a static route" name="keywords" /><meta content="c_whatis25network.html" name="DC.Relation" scheme="URI" /><meta content="c_smart_firewall_enable_comms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_51B674B970AF4F56901608D74F08397E_unique_72" name="DC.Identifier" /><title>Add a static route to a workstation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_smart_firewall_enable_comms.html" /><link rel="next" href="c_smart_firewall_resolve_wkstat_names.html" /></head><body class="fixed" id="task_51B674B970AF4F56901608D74F08397E_unique_72" data-relpath="t_smart_firewall_add_route.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_51B674B970AF4F56901608D74F08397E_unique_72"></a>
+
+<h1 class="topictitle1"> Add a static route to a workstation</h1>
+<div> 
+	 <div class="section" id="task_51B674B970AF4F56901608D74F08397E_unique_72__context_C9F59C30C525499281A9BB4980C60DE7"><a name="task_51B674B970AF4F56901608D74F08397E_unique_72__context_C9F59C30C525499281A9BB4980C60DE7"></a> 
+		<p> The 
+		  <strong>route add</strong> command is used to add a route to a computer&#39;s routing
+		  table. This topic presents basic information about the format of the 
+		  <strong>route add</strong> command. Before using this command, consult with your
+		  IT department or network administrator for the correct network addresses and
+		  subnets used in your organization and for more information on using the 
+		  <strong>route add</strong> command. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  The 
+		  <strong>route add</strong> command is effective on computers that are one hop
+		  from the firewall. If your computers are more than one hop from the DeltaV 2.5
+		  LAN then you should consult with your IT department to ensure the proper
+		  routing is set up for these computers to access the firewall. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="p" id="task_51B674B970AF4F56901608D74F08397E_unique_72__step_980B47629C8F486D8CBC8D5532223503_unique_55"><a name="task_51B674B970AF4F56901608D74F08397E_unique_72__step_980B47629C8F486D8CBC8D5532223503_unique_55"></a> 
+		  <span> Open a command prompt and enter 
+			 <strong>route add -p</strong> 
+			 <em>Destination</em> 
+			 <strong>mask</strong> 
+			 <em>Netmask Gateway.</em> 
+		  </span> 
+		    
+			 <a name="task_51B674B970AF4F56901608D74F08397E_unique_72__ul_8B2D6C6148BA4AB4AC7B4CC2E9E6E852"></a><ul id="task_51B674B970AF4F56901608D74F08397E_unique_72__ul_8B2D6C6148BA4AB4AC7B4CC2E9E6E852"> 
+				<li id="task_51B674B970AF4F56901608D74F08397E_unique_72__li_4C6BB36937C7443D8AD0D6973573CF34"><div class="li_content"><strong>Route add:</strong> adds
+				  the route to the routing table in the computer.
+				</div></li>
+ 
+				<li id="task_51B674B970AF4F56901608D74F08397E_unique_72__li_DC29F41D9F8446F0AD2B930FADA9D9BE"><div class="li_content"><strong>-p:</strong> makes the
+				  specified route persistent on the computer so the route survives a reboot. 
+				</div></li>
+ 
+				<li id="task_51B674B970AF4F56901608D74F08397E_unique_72__li_7A5BCDAD208A42039E3D6E85D135923B"><div class="li_content"><em>Destination:</em>the
+				  address of the network on the other side of the firewall to which this computer
+				  needs to communicate. 
+				</div></li>
+ 
+				<li id="task_51B674B970AF4F56901608D74F08397E_unique_72__li_87248A51FFF946B1A596229FAD76712C"><div class="li_content"><strong>mask:</strong> the
+				  subnet mask of the 
+				  <em>Destination</em> network. 
+				</div></li>
+ 
+				<li id="task_51B674B970AF4F56901608D74F08397E_unique_72__li_B98CB4A2058A4796BBD6D3B757BEE250"><div class="li_content"><em>Gateway:</em> The
+				  gateway to the 
+				  <em>Destination</em> network. For the Smart Firewall this is the IP
+				  address of the external port on the firewall. 
+				</div></li>
+ 
+			 </ul>
+ 
+		   
+		</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_whatis25network.html">What is the 2.5 network?</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

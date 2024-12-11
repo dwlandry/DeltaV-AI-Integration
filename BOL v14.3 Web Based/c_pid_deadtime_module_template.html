@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="PID_DEADTIME module template" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="PID_DEADTIME module template, module template, PID_DEADTIME" name="DC.subject" /><meta content="PID_DEADTIME module template, module template, PID_DEADTIME" name="keywords" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_control_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_pid_deadtime_module_template" name="DC.Identifier" /><title>PID_DEADTIME module template</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ff_pid_loop_module_template.html" /><link rel="next" href="c_pid_gainsched_module_template.html" /></head><body class="fixed" id="c_pid_deadtime_module_template" data-relpath="c_pid_deadtime_module_template.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_pid_deadtime_module_template"></a>
+
+<h1 class="topictitle1">PID_DEADTIME module template</h1>
+<div><div></div>
+
+    <p>This PID loop module uses a modified Smith Predictor for PID control with deadtime compensation. Use this module template if your self-regulating process is deadtime dominant, that is, its deadtime is about the same or greater than the process time constant.</p>
+
+    <div class="section" id="c_pid_deadtime_module_template__section_FE24D24923034271900E73DFFC0EC95C"><a name="c_pid_deadtime_module_template__section_FE24D24923034271900E73DFFC0EC95C"></a><h2 class="sectiontitle">Theory of operation</h2>
+      
+      <p>With a Smith Predictor, the control actions are calculated based on the predicted process response to a change, with and without the deadtime. The Smith Predictor first models the process as a first-order equation without deadtime. The predicted process variable is calculated and sent to the PID block as a pseudo-process variable.</p>
+
+      <p>To compensate for the disturbances in the process, the actual process variable with deadtime is added to the feedback loop. The Smith Predictor calculates the model error by taking the difference between the actual process variable and the model process variable. After it calculates the model error, a Smith Predictor adjusts the model bias according to the magnitude of the disturbance. The following figure contains a representation of the Smith Predictor control.</p>
+
+      <div class="fignone" id="c_pid_deadtime_module_template__fig_5F8C687777FE432E9673E9059AFB680F"><a name="c_pid_deadtime_module_template__fig_5F8C687777FE432E9673E9059AFB680F"></a><div><span class="figcap">Smith Predictor control scheme</span></div>
+        
+        <a name="c_pid_deadtime_module_template__image_971713CDF0D545B99AA6B75C66BA3DE2"></a><img id="c_pid_deadtime_module_template__image_971713CDF0D545B99AA6B75C66BA3DE2" src="modhelp0357.gif" />
+      </div>
+
+      <p>This text so far has explained a standard Smith Predictor, but the DeltaV PID_DEADTIME module uses a modified Smith Predictor. In addition to the capability of the standard Smith Predictor, the modified Smith Predictor can adjust the model gain instead of the model bias, if the primary process disturbances are proportional in nature. The following figure shows the change in the output caused by a disturbance when a bias correction is needed versus when a model gain correction is needed. You must decide which correction is best for your process based on the type of disturbances you have. For example, a disturbance in the feed temperature of a heat exchanger does not change the process gain, it merely results in a bias to the heat required to maintain the outlet temperature. However, a disturbance in the feed rate to that heat exchanger results in a change in the process gain. If the more significant disturbance is feed temperature, use Bias as the correction type. If feed rate is the more significant disturbance, use Gain as the correction type.</p>
+
+      <div class="fignone" id="c_pid_deadtime_module_template__fig_E5353E61A2F74E4B83F3733254FEDD66"><a name="c_pid_deadtime_module_template__fig_E5353E61A2F74E4B83F3733254FEDD66"></a><div><span class="figcap">Selecting model BIAS vs. model GAIN</span></div>
+        
+        <a name="c_pid_deadtime_module_template__image_AD6F8FE0E4F04699BC2BA8C0420056A5"></a><img id="c_pid_deadtime_module_template__image_AD6F8FE0E4F04699BC2BA8C0420056A5" src="modhelp0358.gif" />
+      </div>
+
+      <p>If the model process variable with deadtime accurately reflects the actual process, the model output cancels the process feedback signal. Under these conditions, the closed loop characteristics are only a function of the PID block and the process model without deadtime. The control is improved because deadtime is eliminated from the feedback signal used for control.</p>
+
+      <p>Model error and process disturbances can cause the model process variable with deadtime to deviate from the actual process. The modified Smith Predictor allows you to limit the amount of model error correction provided. The error correction limit should be set greater than the contribution of the typical disturbance to the process measurement, yet small enough to protect against potential instrumentation problems.</p>
+
+      <p>The following figure shows a representation of the modified Smith Predictor with model BIAS and correction limiting.</p>
+
+      <div class="fignone" id="c_pid_deadtime_module_template__fig_3268330FF70E40B0A3F54EA918F8318B"><a name="c_pid_deadtime_module_template__fig_3268330FF70E40B0A3F54EA918F8318B"></a><div><span class="figcap">Modified Smith Predictor with BIAS for model correction</span></div>
+        
+        <a name="c_pid_deadtime_module_template__image_CDBC34BE47124C8A9EC5ABC3078169FF"></a><img id="c_pid_deadtime_module_template__image_CDBC34BE47124C8A9EC5ABC3078169FF" src="modhelp0359.gif" />
+      </div>
+
+      <p>The following figure shows a representation of the modified Smith Predictor with model GAIN and correction limiting.</p>
+
+      <div class="fignone" id="c_pid_deadtime_module_template__fig_AE830C7C691945878E036A8963810D45"><a name="c_pid_deadtime_module_template__fig_AE830C7C691945878E036A8963810D45"></a><div><span class="figcap">Modified Smith Predictor with GAIN for model correction</span></div>
+        
+        <a name="c_pid_deadtime_module_template__image_C7DA7A3CB9F74CFD899F8B90A6779CCF"></a><img id="c_pid_deadtime_module_template__image_C7DA7A3CB9F74CFD899F8B90A6779CCF" src="modhelp0360.gif" />
+      </div>
+
+    </div>
+
+    <div class="section" id="c_pid_deadtime_module_template__section_0DC69FEA832144DB8994B397955A3E21"><a name="c_pid_deadtime_module_template__section_0DC69FEA832144DB8994B397955A3E21"></a><h2 class="sectiontitle">Configuration</h2>
+      
+      <p>To configure a PID with deadtime compensation module, create a module from the module template PID_DEADTIME using the DeltaV Explorer. You can use the DeltaV Explorer or Control Studio to customize the module&#39;s properties and configuration parameters. There are configuration tips in the function block diagram of the module in Control Studio. Refer to the Quick Configuration Parameter table below for PID_DEADTIME.</p>
+
+      <p>Enter the process model parameters (model GAIN, model TIMECONST, and model DEAD_TIME) if they are already known. If not, they can be entered from the detail display in DeltaV Operate after you have done the open-loop step testing. Because the module uses a modified Smith Predictor, you must also configure the CORRECTION type you want for your process disturbances (model GAIN or model BIAS) and the correction LIMIT.</p>
+
+      <p>Note that the I/O Reference parameter for the process variable input is configured using IO_IN in the AI function block, not in the PID block.</p>
+
+      <p>Scaling information for the process variable must be entered in three parameters, AI1/OUT_SCALE, PID1/PV_SCALE, and SCLR1/OUT_SCALE. Typically, the value of the fields in all three parameters should be the same. However, an offset can be applied to EU0 and EU100 in SCLR1/OUT_SCALE if there is model offset at steady state when SCLR1/OUT_SCALE has the same values as AI1/OUT_SCALE and PID1/PV_SCALE. In some processes the relationship between the PID output and the process output is linear but has a fixed offset. This means that at steady state the correction term that is calculated by subtracting the predicted process variable from the actual contains this offset value. This causes a problem when a model limit is applied that is similar to or smaller than the offset. If necessary, set the offset in EU0 and EU100 to be the same as the process offset so the value of the correction term is 0 at steady state.</p>
+
+      <p>Use the following guidelines when you configure alarm condition parameters in this module. Configure the alarm hysteresis value and the HI, HI_HI, LO, and LO_LO limit values in the AI function block. Configure the deviation limit parameters in the PID function block.</p>
+
+      <p>The PID_DEADTIME module template supports variable deadtime compensation. You can improve the control performance if the process deadtime is variable and can be calculated, for example, as a function of the process throughput. Calculate the actual process deadtime in another control module and write the value to the DEAD_TIME parameter in the DTC composite block in your deadtime compensation module.</p>
+
+      
+<div class="tablenoborder"><a name="c_pid_deadtime_module_template__table_483F16ECC22448FCB9381771A94FA751"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_pid_deadtime_module_template__table_483F16ECC22448FCB9381771A94FA751" rules="all" summary=""><caption><span class="tablecap">Quick Config parameters for the PID_DEADTIME module template</span></caption>
+          
+          
+          <thead align="left">
+            <tr valign="top">
+              <th class="cellrowborder" id="d1254363e132" valign="top" width="30%">
+                <p>Parameter</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1254363e138" valign="top" width="70%">
+                <p>Description</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/DTC_ENABLE</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Enables or disables deadtime compensation.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/GAIN</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Process model gain.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/TIMECONST</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Process model time constant (seconds).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/DEAD_TIME</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Process model deadtime (seconds).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/CORRECTION</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Specifies whether the major process load disturbance modifies the process BIAS or Process GAIN.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>DTC/LIMIT</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Maximum allowed deviation, in engineering units, between the actual PV and the output of the process model with deadtime.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>AI1/IO_IN</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>An I/O Reference parameter for configuring the Device Signal Tag for the process variable input. 
+
+</p>
+
+                <p>
+                  <strong>Note</strong> Configure this parameter in the AI block, not the PID block.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/IO_OUT</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>An I/O Reference parameter for configuring the Device Signal Tag for the control output.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>AI1/OUT_SCALE</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The high and low scale values, engineering units code, and number of digits to the right of the decimal point associated with OUT of the AI block.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/PV_SCALE</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The high and low scale values, engineering units code, and number of digits to the right of the decimal point associated with PV of the PID block. The values of these fields should be the same as those of AI1/OUT_SCALE.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>SCLR1/OUT_SCALE</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The high and low scale values, engineering units code, and number of digits to the right of the decimal point associated with OUT of the Scaler block. Typically, the values of these fields should be the same as those of AI1/OUT_SCALE and PID1/PV_SCALE. If there is model offset at steady state, the values of EU0 and EU100 can be biased to minimize the correction term at steady state.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>AI1/HI_LIM</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The high alarm limit value in engineering units. This is a Quick Config parameter because the HI_ALM alarm parameter is initially disabled.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>AI1/LO_LIM</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The low alarm limit value in engineering units. This is a Quick Config parameter because the LO_ALM alarm parameter is initially disabled.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>AI1/L_TYPE</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Linearization type. The default is Indirect. This might be changed to Ind Sqr Root (for example, when flow is being determined from differential pressure).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/CONTROL_OPTS</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>SP-PV Track in Man is the only control option enabled as a default. Use this parameter to set the control action to Direct when necessary. Other control options to consider are SP-PV Track in LO or IMan, Track Enable, and Track in Manual.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/IO_OPTS</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>None of the I/O options are initially enabled. IO_OPTS can be used to select the <span class="uicontrol">Increase to Close</span> option for the control output (for example, for a fail open valve).</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/GAIN</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>Proportional gain tuning parameter. The default is 1.0. Initial value for this parameter can be set as a function of the value entered for DTC/GAIN, the model gain.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>PID1/RESET</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The integral time constant tuning parameter in seconds (seconds per repeat). The default is 10 seconds. The initial value can typically be set equal to the value entered for DTC/TIMECONST, the model time constant.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>SP_HI_LIM</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The high limit for the setpoint. Typically, this value should be changed when the EU100 is changed from the default in PV_SCALE.</p>
+
+              </td>
+
+            </tr>
+
+            <tr valign="top">
+              <td class="cellrowborder" headers="d1254363e132 " valign="top" width="30%">
+                <p>SP_LO_LIM</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1254363e138 " valign="top" width="70%">
+                <p>The low limit for the setpoint. Typically, this value should be changed when the EU0 is changed from the default in PV_SCALE.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>To configure DeltaV Operate for this module, place the PID DT COMP dynamo on your control display. The faceplate and detail display names are pre-defined as module properties. The faceplate is essentially the same as the standard PID loop faceplate. The PV field is from the AI function block rather than the PID block because the PID block PV is the pseudo-PV when deadtime compensation is enabled. The detail display is unique for modules created from the deadtime compensation module template. For more information on the specific detail display, refer to the PID DT Comp detail display topic.</p>
+
+    </div>
+
+    <div class="section" id="c_pid_deadtime_module_template__section_025CFF2DFEA547CFB1D05238F71C48C2"><a name="c_pid_deadtime_module_template__section_025CFF2DFEA547CFB1D05238F71C48C2"></a><h2 class="sectiontitle">Tuning the modified Smith Predictor</h2>
+      
+      <p>When tuning the modified Smith Predictor, you first must identify a first order plus deadtime model of your process. You can use Tune with InSight or perform a manual step test to develop the model. If you are using Tune&#39;s On-demand or Adaptive tuning  to develop the model, disable DT Comp and use Tune for On-demand Tuning or enable Process Learning for Adaptive Tuning to identify the first order plus deadtime process model.</p>
+
+      <p>Optionally, you can perform one or more open loop step tests to determine the gain, time constant, and deadtime of the process. The values must be accurate to within 25 percent of the actual process values. Apply model parameters (for example, deadtime, time constant, and gain to the DT Compensator).</p>
+
+      <p>Do not update the PID controller with PID parameters provided by Tune. Instead, use one of the following methods:</p>
+
+      <a name="c_pid_deadtime_module_template__ul_E89C8C527B00421CAD1898479909D551"></a><ul id="c_pid_deadtime_module_template__ul_E89C8C527B00421CAD1898479909D551">
+        <li id="c_pid_deadtime_module_template__li_B9F69FE719964D7A8E045548E1866990"><div class="li_content">
+          <p>Enable DT Comp and run InSight again. Use PI selections only. Update PID with new tuning results.</p>
+
+          <p>or</p>
+
+        </div></li>
+
+        <li id="c_pid_deadtime_module_template__li_C455FFEC8F5A4D3EA4137B3CC821FB6A"><div class="li_content">
+          <p>Calculate the PID parameters as instructed below.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>After you enter the deadtime compensation parameters, setting the PID block tuning parameters is straightforward. With deadtime compensation enabled, the loop is tuned as if the process is without deadtime. Only set the GAIN and RESET values in the PID block for a loop with deadtime compensation. Set the RATE to 0.</p>
+
+      <p>Configure RESET to be equal to the model TIMECONST value. PID block GAIN can be adjusted to get the desired closed loop response. The initial PID block GAIN can be set as a function of the model GAIN. Setting the PID block GAIN equal to the inverse of the model GAIN (PID GAIN = 1 / model GAIN) results in a closed loop time constant equal to the open loop time constant. Make sure that the closed loop time constant is longer than the open loop time constant to reduce sensitivity to model error. Therefore, reduce the initial PID block GAIN by 30 percent or more (PID GAIN = 0.7 / model GAIN).</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_dvtune_using.html">Using Tune with InSight</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using DeltaV Neural" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Expert option, neural network, creating, commissioning, operator interface, outliers" name="DC.subject" /><meta content="Expert option, neural network, creating, commissioning, operator interface, outliers" name="keywords" /><meta content="c_data_exclusion_and_interpolation.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_neural.html" name="DC.Relation" scheme="URI" /><meta content="c_neural_dvn_main.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_6A70AEEAAB194BD4A7D834B050EF3C32" name="DC.Identifier" /><title>Using DeltaV Neural</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_neural_dvn_main.html" /><link rel="next" href="c_neural_dvn_extdata.html" /></head><body class="fixed" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32" data-relpath="c_neural_dvn_using.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32"></a>
+
+<h1 class="topictitle1">Using DeltaV Neural</h1>
+<div>
+    <p>Use DeltaV Neural to create and automatically train a neural
+network to provide a continuous estimate of a measurement that is
+currently determined using lab test or a sample analyzer. After
+downloading a module that contains an NN function block, historical
+data is automatically collected on the upstream inputs that you
+identify as potentially influencing the sample measurement. The
+Neural application allows you to easily preprocess the data that
+will be used in training the neural network. The inputs that are
+most significant and their associated delay are automatically
+identified and then used in the training of the neural network.
+Based on the trained neural network model, the Neural application
+automatically defines the neural model for the Neural Network (NN)
+function block. This section examines the features of DeltaV
+Neural.
+</p>
+
+    <div class="section" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_5F452FF7987F41319B27F26ED002A260"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_5F452FF7987F41319B27F26ED002A260"></a><h2 class="sectiontitle">Creating a Neural Network Module</h2>
+      
+      <p>Using DeltaV Neural to provide a continuous estimate of a
+process parameter begins with the creation of a DeltaV module that
+includes the Neural Network (NN) function block. Use the NN
+function block in conjunction with a Lab Entry (LE) function block
+where the parameter that is to be estimated by the NN block is
+currently only available through offline lab analysis. This offline
+lab analysis may be entered into your DeltaV system using the
+dynamo provided with the LE function block. Where the parameter of
+interest is periodically measured using an online sampled analyzer,
+use an Analog Input block to obtain the sampled value needed by the
+NN function block. In either case, the DeltaV Neural application
+uses the sampled measurement when training the neural network.
+Also, after the network is trained, the NN function block uses the
+sampled value to correct the continuous estimate of the current and
+future value of the parameter that is calculated based on upstream
+measurements.</p>
+
+      <p>After you decide on a process variable to model with a neural
+network, create a module in Control Studio. In the module, add an
+NN function block from the Advanced Control palette. If you are
+modeling a process that uses lab analysis data, add an LE function
+block. Through the configuration of the NN function block, you may
+specify the upstream measurements that you believe influence the
+estimated sampled parameter. You may specify as many as 20 inputs.
+You can assign a custom name to each input for display in the
+Neural application and the NN block dynamo. This name is used as
+the identifier for the input and must, therefore, be unique.</p>
+
+      <p>If the process variable to be estimated is currently measured
+using offline lab analysis, then include an LE function block wired
+to the NN function block. Otherwise, the analog input for the
+sample analyzer used for this measurement should be wired to the NN
+function block.</p>
+
+      
+    </div>
+
+    <div class="section" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_B5454CAF9DF34EC0A68EE5C03CCA349C"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_B5454CAF9DF34EC0A68EE5C03CCA349C"></a><h2 class="sectiontitle">Commissioning a Neural Network Function Block</h2>
+      
+      <p>To commission a Neural Network function block complete the
+following tasks:</p>
+
+      <div class="p">
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__ol_09F0969759C34041B5650DBA60B95327"></a><ol id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__ol_09F0969759C34041B5650DBA60B95327">
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_218882E0EEF44978BF666443435E26FE"><div class="li_content">Download the NN function block to a DeltaV controller.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_7EBE3F2311F04E67A123AF1616E9F2D4"><div class="li_content">Verify that the transmitters that provide the inputs are
+working correctly.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_196E36C2A620412D8143571CD189591E"><div class="li_content">Make sure the Continuous Historian is enabled and that the area
+containing the module has been assigned to the Continuous
+Historian.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_BB8B943217C948EDA4782862A99D1126"><div class="li_content">Download the system.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_F532545F94DB4AE585D2D45D726FF73E"><div class="li_content">Verify all the inputs and outputs of the NN function
+block.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_25F4E8418E6A426D833E59C239574617"><div class="li_content">Open the Neural application to commission the NN control. You
+can open the Neural application from Control Studio or DeltaV
+Explorer by right-clicking the NN function block, and then
+selecting <span class="menucascade"><span class="uicontrol">Advanced Control</span> &gt; <span class="uicontrol">Neural</span></span> from the context menu.</div></li>
+
+        </ol>
+
+      </div>
+
+      <p>The Neural application appears as shown.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_E58AE53E5E3C4949B696CB7B3ED09528"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_E58AE53E5E3C4949B696CB7B3ED09528"></a><div><span class="figcap">DeltaV Neural Application</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_96749FAA9F414983AB4739847290795F"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_96749FAA9F414983AB4739847290795F" src="icimage81sm.gif" />
+      </div>
+
+      <p>The referenced inputs (REF) parameters and the sampled (SAMPLE)
+parameter are trended automatically. Up to six of the neural
+network inputs can be trended at one time. For good data values,
+trends appear in the colors indicated in the parameter data area.
+The color varies to indicate questionable status (yellow for
+uncertain or limited values, red for bad values). To add or remove
+a parameter from the trend view, double-click the parameter in the
+<span class="wintitle">Operation Trend</span> pane. When you right-click a selected parameter,
+options are provided that allow you to modify the trend view (that
+is, change the trend range). You can use the toolbar controls or
+the slider bar to adjust the time window that is shown on the
+trend. Note that if the trend parameter list and trend view shows any
+inputs with an incorrect value of 0.0, it may be a result of
+configuring invalid reference inputs in the NN block.</p>
+
+      <p>Next, you need to enter a value for the <span class="uicontrol">Sample Multiplier</span> to
+configure the Time to Steady State (TSS) - the estimated time (in
+seconds) for the process to completely respond to changes in
+inputs. This field also corresponds to the horizon over which
+DeltaV Neural estimates input delays.</p>
+
+      <p>The Time to Steady State (TSS) is calculated as:</p>
+
+      <p>TSS = 50 * Data Sampling Rate * Sample Multiplier.</p>
+
+      <p>The Data Sampling Rate (DSR) is the Historian Sampling rate
+entered in the NN function block Properties dialog. If you are
+using data from a file, the sampling rate in the file is read as
+the Data Sampling Rate for the TSS calculation.</p>
+
+      <p>The Sample Multiplier is the factor at which data from the given
+data set (created by sampling at the Data Sampling Rate) is sampled
+for creating the neural net model. For example, Sample Multiplier
+of one (1) means all the samples at the DSR are used, while Sample
+Multiplier of two (2) implies that only every second sample from
+the data set is going to be used for training - half of the former
+case. In effect, the product of DSR and Sample Multiplier
+establishes the effective sampling rate of the data to be used for
+training.</p>
+
+      <p>To modify the TSS, edit the <span class="uicontrol">Sample Multiplier</span> according to the
+formula above. For example, if the Historian Sampling Rate is one
+second and the process TSS is estimated to be 100 seconds, set the
+<span class="uicontrol">Sample Multiplier</span> to two (2). If you are using data from a file in
+which the sampling rate is two seconds, the minimum possible TSS is
+100 seconds (Sample Multiplier = 1). Other possible TSS values are
+200 seconds, 300 seconds, and so on for Sample Multipliers of 2, 3,
+and so on.</p>
+
+      <p>When using the NN block in conjunction with an LE block for lab
+analysis samples, note that the TSS value establishes the maximum
+sample delay that affects the NN block&#39;s automatic correction
+mechanism.</p>
+
+      <p>To form the data set to train the neural network, all input and
+output data should show reasonable variation (flat data lines have
+no effect) about the normal region of operation of the process.
+There should be sufficient data reflecting normal process operating
+conditions. If the time between samples is large, the data must be
+collected over a greater time. Generally speaking, the larger the
+data set, the better the resulting trained neural net. Also, NNs
+with a higher number of inputs require more data than smaller NNs.
+Once sufficient data is collected, select the historical data to
+generate the neural network. The green area on the trend view
+indicates the data used to generate the neural network. You can
+adjust the range by dragging the start and end bars or by
+right-clicking the trend to set the right or left edge of the green
+area. You can exclude other unwanted data within the selected data
+by right-clicking within the green and stretching the red band over
+the unwanted data. After you select the data, click <span class="uicontrol">Autogenerate</span> to
+create a neural network for the process.</p>
+
+      <div class="important"><span class="importanttitle">Important:</span> The module that contains the NN function block
+should not be open in Control Studio when you request Autogenerate
+because the NN function block is updated in the DeltaV database
+during autogenerate.</div>
+
+      <div class="note"><span class="notetitle">Note:</span> It is recommended that system time adjustments are
+not made over the data collection period. If it is necessary to
+make system time adjustments, it is best to exclude the data over
+the time range.</div>
+
+      <p>While the Neural application is generating the neural network, a
+line of status information appears in the Autogeneration area of
+the interface to show the progress.</p>
+
+      <p>When the minimum error is achieved, a pop-up message appears
+saying that the training is completed. The trained network is
+loaded into the NN function block in the database. The neural
+network model that is created is shown automatically in the left
+panel of the DeltaV Neural screen. A model overview of the
+calculated sensitivity is automatically displayed.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_B3BDD73F5E4C47FE8D319C2A4C7D6A02"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_B3BDD73F5E4C47FE8D319C2A4C7D6A02"></a><div><span class="figcap">Sensitivities View</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_A29ACA799E874A06A11F4E59FF8D6DAE"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_A29ACA799E874A06A11F4E59FF8D6DAE" src="icimage82sm.gif" />
+      </div>
+
+      <p>The sensitivities indicate how changes in the inputs affect the
+sampled measurement that is modeled by the neural network. Inputs
+that were determined to have insignificant influence on the sampled
+value are not used in the neural network and are indicated in the
+sensitivity display by a large red X shown in place of the
+sensitivity plot.</p>
+
+      <p>Double-click a sensitivity to see a more detailed view appear,
+as shown in the following figure.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_5A51B43A95184047BF9537DBB11A4D02"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_5A51B43A95184047BF9537DBB11A4D02"></a><div><span class="figcap">Sensitivity Detail</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_A95A6A27A8C94A8984B86DC9EF991318"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_A95A6A27A8C94A8984B86DC9EF991318" src="icimage83sm.gif" />
+      </div>
+
+      <p>The vertical scale shows the sensitivity of the output to this
+input. (Note that the sum of the sensitivities for all inputs is
+1.0.) The time scale shows the delay (the time it takes for a
+change in the input to be reflected in the output). The average
+sensitivity is shown as well.</p>
+
+      <p>Once you have viewed the input sensitivities and are satisfied
+that the important inputs were selected, download the associated
+module to utilize the trained network. If you would like input in
+the training of the neural network or more details on how well the
+neural network fits a set of process data, use the expert features
+of DeltaV Neural, as detailed in the following section.</p>
+
+    </div>
+
+    <div class="section" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_D49C3C03B7CF45F1B961D4785EAA0C71"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_D49C3C03B7CF45F1B961D4785EAA0C71"></a><h2 class="sectiontitle">Expert Option</h2>
+      
+      <p>You may provide greater input during the generation of the
+neural network by selecting the <span class="uicontrol">Expert</span> option from the DeltaV
+Neural application. If you have selected this option, additional
+features are available in the application. The following figure
+shows the application window with the Expert option selected.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_80D8E202A5C44FE3B7FA3277F589D483"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_80D8E202A5C44FE3B7FA3277F589D483"></a><div><span class="figcap">Application Window -- Expert Option Selected</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_EEACC4C9070A4A62A8A66B2262DF82C4"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_EEACC4C9070A4A62A8A66B2262DF82C4" src="icimage84sm.gif" />
+      </div>
+
+      <p>With the expert option selected, you can choose the data
+screening range by selecting a <span class="uicontrol">Data Screening</span> value. This sets the
+limits on the data used for training based on the selected sigma
+(number of standard deviations) value. The default is 3.5 sigma,
+which means that the data training limit is Mean ±3.5 sigma, and
+values outside those limits are treated as outliers. These same
+limits are used during online operation of the neural net.</p>
+
+      <p>Also, with the <span class="uicontrol">Expert</span> option selected, you can perform a
+Sensitivity Analysis (by clicking the <span class="uicontrol">Sensitivity Analysis</span> button)
+to determine the sensitivity of the output to the inputs without
+training the neural network.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_EC369CC09AA348FFAE76CE98A1E4D455"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_EC369CC09AA348FFAE76CE98A1E4D455"></a><div><span class="figcap">Sensitivity Overview -- Expert Option Selected</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_E4A83B767A074017976D7A76AFC911E9"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_E4A83B767A074017976D7A76AFC911E9" src="icimage86sm.gif" />
+      </div>
+
+      <p>The sensitivity overview with the <span class="uicontrol">Expert</span> option selected
+contains additional buttons you use to train and verify the
+network. Double-click a sensitivity to open a detailed view of that
+input sensitivity, as shown in the following figure.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_4E79BE694DA944BB88E69BC64DBC8F7B"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_4E79BE694DA944BB88E69BC64DBC8F7B"></a><div><span class="figcap">Sensitivity Analysis -- Expert Option Selected</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_6562F45840944B3F8AD15EF6B05324E9"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_6562F45840944B3F8AD15EF6B05324E9" src="icimage85sm.gif" />
+      </div>
+
+      <p>With the <span class="uicontrol">Expert</span> option selected, the sensitivity detail contains
+more information and controls. The detail view shows the cross
+correlation between the input and the sampled output. The Neural
+application uses the peak value found for the cross correlation to
+determine the time delay associated with the input and its impact
+on the sampled value. If you are familiar with the process delay
+and time constants associated with the inputs, you may want to
+verify that your knowledge of the delay matches what was
+calculated. To try a different delay, enter the value in the <span class="uicontrol">Delay</span>
+field, and then click <span class="uicontrol">Update</span>. In response, the sensitivity is
+recomputed for the delay you entered.</p>
+
+      <p>If the sensitivity associated with an input is low, then you may
+want to remove it from use in the neural network. In many cases,
+such inputs have already been eliminated and are shown with a red X
+in place of the sensitivity. To eliminate an input from the
+generation of the neural network, click the <span class="uicontrol">Use Input</span> check box to
+remove the check mark, and then click the <span class="uicontrol">Update</span> button. If an
+input is shown as not selected but you would like to examine the
+calculated sensitivity, select the <span class="uicontrol">Use Input</span> check box, and then
+click <span class="uicontrol">Update</span>. In response, the sensitivity and cross correlation
+are displayed.</p>
+
+      <p>After you are satisfied with the inputs selected for use in the
+neural network, click the <span class="uicontrol">Train network</span> button at the bottom of the
+sensitivity overview screen. You can also train a model by
+selecting it in the Hierarchy view, right-clicking, and then
+selecting <span class="uicontrol">Train Network</span> from the pop-up menu. The <span class="wintitle">Training
+Parameters</span> dialog appears as shown in the following figure.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_E333D619F12343709F7AA56D4B17DDB4"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_E333D619F12343709F7AA56D4B17DDB4"></a><div><span class="figcap">Training Parameters Dialog</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_FADD987E53894585B8BED8FC41C2A320"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_FADD987E53894585B8BED8FC41C2A320" src="trainparam.gif" />
+      </div>
+
+      <p>The dialog contains additional options you can use to modify the
+neural network training. If you have expert neural network
+knowledge, you can change the default values to address special
+requirements. For example, you can change the starting number of
+hidden nodes used in generating the neural network to determine the
+impact on the model accuracy. Click <span class="uicontrol">OK</span> on the dialog after you are
+satisfied with the values.</p>
+
+      <p>Training begins, and another dialog appears that provides
+information about the training, as shown in the following
+figure.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_5934FB8A831D401C8E07735A6D3CE763"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_5934FB8A831D401C8E07735A6D3CE763"></a><div><span class="figcap">Training Progress Dialog</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_67B6B69E147342F3A65849083577E8AB"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_67B6B69E147342F3A65849083577E8AB" src="icimage87sm.gif" />
+      </div>
+
+      <p>This dialog shows the neural network training progress and
+results. The graph shows the training error and test error values
+in Engineering Units as a function of the number of epochs. As
+hidden nodes are added, spikes appear as a result of random
+initialization of the network. The right pane of the dialog shows
+the network with the lowest error (test error) for each hidden node
+number. Among these, the best network is automatically selected by
+the Neural application as the trained neural network model. This is
+highlighted in gray at the end of training and is the network that
+is assigned to the NN block. Note that the random initialization of
+the network may result in different neural network configurations
+(as defined by the varying number of hidden nodes) being selected
+in the right pane for different training runs on the same data
+set.</p>
+
+      <p>After you train the neural network, you can verify how well the
+model fits the sampled data by clicking either selection in the
+<span class="uicontrol">Verify Against</span> area at the bottom of the sensitivity overview. To
+verify against the data used to create the model, click <span class="uicontrol">Original
+Data</span>. To verify against a different selection, open the <span class="uicontrol">Data</span> view
+(select the block or Models in the Hierarchy view), select a data
+range, return to the sensitivity overview (click the model in the
+Hierarchy view), and then click <span class="uicontrol">Selected Data</span>.</p>
+
+      <p>In response, a dialog appears that shows a plot of the actual
+values and predicted values calculated by the neural network, as
+shown in the following figure.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> Only the first 65,000 samples will be displayed.</div>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_0EFD7459B58E455CBDC5969D04A5CBCA"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_0EFD7459B58E455CBDC5969D04A5CBCA"></a><div><span class="figcap">Model Verification -- Actual and Predicted vs. Sample</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_0370E8462DD042F3A150CB10CD7BB319"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_0370E8462DD042F3A150CB10CD7BB319" src="icimage88sm.gif" />
+      </div>
+
+      <p>Use the squared error value shown at the bottom of the dialog in
+conjunction with the plotted data to determine how accurate the
+neural network model is for the selected data.</p>
+
+      <p>To see a plot of the actual vs. predicted values for the model,
+click the <span class="uicontrol">Actual vs. Predicted</span> radio button. A plot of the
+calculated vs. sampled data appears as shown below.</p>
+
+      <div class="fignone" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_671B6A22C3E143338CF394B7B5F24DB3"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__fig_671B6A22C3E143338CF394B7B5F24DB3"></a><div><span class="figcap">Model Verification -- Actual vs. Predicted Value</span></div>
+        
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_BFBE71B7A88D4A9BBAE4DA9402DB238E"></a><img id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__image_BFBE71B7A88D4A9BBAE4DA9402DB238E" src="icimage89sm.gif" />
+      </div>
+
+      <p>If the model is inaccurate, it may be the result of one or both
+of the following:</p>
+
+      <div class="p">
+        <a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__ul_5A098E8E4E464BEA8E17C80E4B25EE56"></a><ul id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__ul_5A098E8E4E464BEA8E17C80E4B25EE56">
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_9B1DC611ECC74013A6CCC3B9E2B495FA"><div class="li_content">The model includes an input that has little or no impact on the
+sample parameter. This may be the case if the calculated
+sensitivity for the input is very low.</div></li>
+
+          <li id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__li_28E702D21E584F77ACF85147DA7BBA3A"><div class="li_content">The model does not include an input that has a significant
+effect on the sample. This can happen if the input does not change
+over the data sample used to generate the model and is, therefore,
+excluded from the model.</div></li>
+
+        </ul>
+
+      </div>
+
+      <p>If autogeneration has eliminated an input which you know to have
+a significant influence on the parameter of interest, you can add
+that input to those used to train the neural network by selecting
+<span class="uicontrol">Use Input</span> from the input detail sensitivity display.</p>
+
+      <p>To use the new neural network definition after training, you
+must download the associated module. All neural network function
+block parameters have assigned defaults. During online operation of
+the function block in Control Studio, you can adjust only those
+parameters of the block that do not impact the neural network model
+file. Also, you can change some parameters that are used during
+controller generation in offline mode. Any changes in these
+parameters require that the neural network be retrained in order
+for the changes to be used in the neural network model.</p>
+
+    </div>
+
+    <div class="section" id="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_2BBC5F975D79452CBE96A0CBD76CD7E4"><a name="concept_6A70AEEAAB194BD4A7D834B050EF3C32__section_2BBC5F975D79452CBE96A0CBD76CD7E4"></a><h2 class="sectiontitle">Defining a Neural Network Operator Interface</h2>
+      
+      <p>You can create an operator interface for the NN function block
+using predefined dynamos. You can access these dynamos under the NN
+set in the DeltaV Dynamo Reference Library.
+</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_data_exclusion_and_interpolation.html">Data exclusion and interpolation</a></div>
+<div><a href="c_fblk_spec_neural.html">Neural Network (NN) function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

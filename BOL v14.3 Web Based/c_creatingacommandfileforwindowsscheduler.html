@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Creating a batch file for Windows Task Scheduler" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Event Chronicle, backup, DeltaV Event Chronicle" name="DC.subject" /><meta content="Event Chronicle, backup, DeltaV Event Chronicle" name="keywords" /><meta content="r_eventchroniclesecurityfunctions.html" name="DC.Relation" scheme="URI" /><meta content="c_EC_AutomatedBackup.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_creatingacommandfileforwindowsscheduler" name="DC.Identifier" /><title>Creating a batch file for Windows Task Scheduler</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_examples.html" /><link rel="next" href="r_errorlevelcodes.html" /></head><body class="fixed" id="c_creatingacommandfileforwindowsscheduler" data-relpath="c_creatingacommandfileforwindowsscheduler.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_creatingacommandfileforwindowsscheduler"></a>
+
+<h1 class="topictitle1">Creating a batch file for Windows Task Scheduler</h1>
+<div><div></div>
+ 
+    <p>The automated backup utility for the DeltaV Event Chronicle can be
+      scheduled using the Windows Task Scheduler. Use the Task Scheduler to create a
+      new scheduled task using the ECBackup.exe file and manually add the optional
+      parameters, or you can create a batch file with the optional parameters
+      included. The benefit of using a batch file is that you can also create a log
+      file to record the backup activities. 
+    </p>
+ 
+    <p>To create a batch file, use a text editor, such as Notepad, and type the
+      command for the backup you wish to create, using the syntax described in this
+      topic. Save this file to a local directory with a *.cmd file extension (for
+      example, 
+      <span class="filepath">EventBackup.cmd</span>). Use the 
+      <span class="wintitle">Add Scheduled Tasks</span> wizard to establish a schedule
+      for the Event Chronicle backup, using the batch file as the program you want to
+      schedule. 
+    </p>
+ 
+    <p><strong>Example</strong> 
+    </p>
+ 
+    <pre class="codeblock">c:\DeltaV\bin\ECBackup \\SiteServer\ECBackups  /OnlyIfModified /DeleteIfGTDays:30 /Retries:15 &gt;&gt;d:\ECBackups\ECBackup.log</pre>
+ 
+    <p>In this example, the automated backup utility backs up the event data
+      sets with the following conditions: 
+    </p>
+ 
+    <a name="c_creatingacommandfileforwindowsscheduler__ul_15255A6C74F54E348631A4E1AE4B03B3"></a><ul id="c_creatingacommandfileforwindowsscheduler__ul_15255A6C74F54E348631A4E1AE4B03B3"> 
+      <li id="c_creatingacommandfileforwindowsscheduler__li_EC1076BB6C98451C881EE01F41700229"><div class="li_content"> 
+        <p>The event data sets are be backed up to the UNC path 
+          <span class="filepath">\\SiteServer\ECBackups</span>. 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_creatingacommandfileforwindowsscheduler__li_1ECA364271C74647911B64BF7973AE2C"><div class="li_content"> 
+        <p>Only data sets that are modified are backed up. 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_creatingacommandfileforwindowsscheduler__li_3EDE56E99BE94E6DB247C5DF4988B051"><div class="li_content"> 
+        <p>Backed up event data sets located in 
+          <span class="filepath">\\Siteserver\ECBackups</span> that are greater than 30
+          days old are deleted. 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_creatingacommandfileforwindowsscheduler__li_14F7994CAF6F4F5D8C51ECC867C5F9D0"><div class="li_content"> 
+        <p>If the backup is unsuccessful,  the system executes up to 15
+          retries. 
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_creatingacommandfileforwindowsscheduler__li_39B0453966CB492CA12DCAB4FCAA1DDD"><div class="li_content"> 
+        <p>A log file, 
+          <span class="filepath">ECBackup.log</span>, is created the first time the
+          scheduled backup runs and is appended to each time thereafter. 
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> The user creating the scheduled task must have the appropriate
+        Windows and DeltaV security privileges to run the scheduled task, access the
+        automated backup utility, and write the log file. 
+      </p>
+ 
+    </div>
+ 
+    <div class="note"><span class="notetitle">Warning:</span>  
+      <p> During a Task Scheduler backup, a Command Prompt window opens briefly
+        with information about the backup if the logged-on user is one who has
+        privileges to run the scheduled task. Do not close the Command Prompt window;
+        if it is closed, the backup process terminates. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_eventchroniclesecurityfunctions.html">Event Chronicle security functions</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

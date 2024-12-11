@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Analog Tracking (AT) function block" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="Analog Tracking function block" name="DC.subject" /><meta content="Analog Tracking function block" name="keywords" /><meta content="c_analogblkintro.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_tracking_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_tracking_block_alarm_detection.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_tracking_function_block_status_handling.html" name="DC.Relation" scheme="URI" /><meta content="r_analog_tracking_function_block_parameters.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_tracking_module_template.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fblk_spec_analog_tracking" name="DC.Identifier" /><title>Analog Tracking (AT) function block</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_analogblkintro.html" /><link rel="next" href="c_analog_tracking_function_block_execution.html" /></head><body class="fixed" id="c_fblk_spec_analog_tracking" data-relpath="c_fblk_spec_analog_tracking.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fblk_spec_analog_tracking"></a>
+
+<h1 class="topictitle1">Analog Tracking (AT) function block</h1>
+<div><div></div>
+ 
+	 <p id="c_fblk_spec_analog_tracking__biasgainfunctionblock"><a name="c_fblk_spec_analog_tracking__biasgainfunctionblock"></a> The AT block evaluates up to 16 tracking
+		conditions. The output of the condition can be delayed on, delayed off, or
+		disabled. 
+	 </p>
+ 
+	 <p> The block can optionally latch one or more active tracking conditions
+		that keep the block tracking discrete output to True until all tracking
+		conditions evaluate to False and a reset is triggered. 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking__fig_5354E674F6C64F49ACA59AFC192C8963"><a name="c_fblk_spec_analog_tracking__fig_5354E674F6C64F49ACA59AFC192C8963"></a><div><span class="figcap">Analog Tracking function block</span></div> 
+		 
+		<a name="c_fblk_spec_analog_tracking__image_375A1B4ECDC840748091B07E6A1086E9"></a><img id="c_fblk_spec_analog_tracking__image_375A1B4ECDC840748091B07E6A1086E9" src="AT_block.png" /> 
+	 </div>
+ 
+	 <p>The block generates outputs that can typically be used by another
+		downstream analog function block (PID, Ratio, Bias/Gain, Fuzzy Logic, and
+		Manual Loader) as inputs for their tracking functionality. Additionally, the
+		block can store the first tracking conditions. 
+	 </p>
+ 
+	 <div class="p"> For tracking, the Analog Tracking block generates four outputs: 
+	 <a name="c_fblk_spec_analog_tracking__ul_F003E9A6FFD44C72A76EAE1D07E85A92"></a><ul id="c_fblk_spec_analog_tracking__ul_F003E9A6FFD44C72A76EAE1D07E85A92"> 
+		<li id="c_fblk_spec_analog_tracking__li_AA0B55840CBE41E79D2F575C3E752B72"><div class="li_content">The tracking discrete output
+		  (<span class="parmname">OUT_D</span>), used to initiate/enable the external tracking of
+		  another downstream analog block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking__li_AEDE121B53304B29A81FA479435B4507"><div class="li_content">The tracking analog output
+		  (OUT), used as a tracking input value of another downstream analog block. 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking__li_338FF9323EE84707A8D802FFEABE2A57"><div class="li_content">Another tracking output
+		  (OUT_INT) is calculated based on the weighted binary sum of the tracking
+		  conditions (similar to BFI). 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking__li_DA09097C9E924664B93CA345282D15CC"><div class="li_content">The tracking first out
+		  output (FIRST_OUT), the bit value of the highest priority condition (lowest
+		  condition number) that is currently active. If another condition that has a
+		  different track value (T_VAL<em>n</em>) and a higher priority becomes active,
+		  FIRST_OUT changes to the bit value of the newly active condition 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="p"> An event chronicle entry is added when: 
+	 <a name="c_fblk_spec_analog_tracking__ul_59DC48D72E7547D0AFB314B243C0F96B"></a><ul id="c_fblk_spec_analog_tracking__ul_59DC48D72E7547D0AFB314B243C0F96B"> 
+		<li id="c_fblk_spec_analog_tracking__li_396380A07AD74EFC80B272BDA7DDBE89"><div class="li_content"> the first detection of a
+		  condition evaluates true, or 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking__li_9B83F408DA984CC38268D34BAC54CB80"><div class="li_content"> any condition becomes true
+		  that changes the tracking analog output, or 
+		</div></li>
+ 
+		<li id="c_fblk_spec_analog_tracking__li_17F0E12523A44EE7BB6D5F7FB5512F5B"><div class="li_content"> all active conditions have
+		  cleared. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> The event record includes the number and description and the tracking
+		analog value of the condition(s) for the first two cases. 
+	 </p>
+ 
+	 <p>The block supports tracking condition signal status propagation to the
+		tracking discrete output and generates a bypass alarm when at least one of the
+		tracking input conditions is disabled. 
+	 </p>
+ 
+	 <p> There are no modes in the Analog Tracking function block itself. The
+		target analog block mode is set to Manual when the condition is true and the
+		condition&#39;s associated parameter is true. 
+	 </p>
+ 
+	 <p> The following figure shows a simplified view of the internal components
+		of the Analog Tracking function block: 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking__fig_6D4AEB1D0361478EAA64D2A4C2A1782E"><a name="c_fblk_spec_analog_tracking__fig_6D4AEB1D0361478EAA64D2A4C2A1782E"></a><div><span class="figcap">Analog Tracking function block schematic diagram</span></div> 
+		 
+		<br /><a name="c_fblk_spec_analog_tracking__image_F86F330A339C46F1A7A6325412B9F445"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking__image_F86F330A339C46F1A7A6325412B9F445" src="AT_schem.png" /></div><br /> 
+	 </div>
+ 
+	 <p> The following figure shows the details of the conditions of the Analog
+		Tracking function block: 
+	 </p>
+ 
+	 <div class="fignone" id="c_fblk_spec_analog_tracking__fig_DF2A7C07BDA2442B9520A43C97F1D756"><a name="c_fblk_spec_analog_tracking__fig_DF2A7C07BDA2442B9520A43C97F1D756"></a><div><span class="figcap">Analog Tracking Function Block Schematic Diagram - Detail of a
+		  tracking condition </span></div> 
+		 
+		<br /><a name="c_fblk_spec_analog_tracking__image_756EF16BC00B4EF0AFFD6491D9F45BD1"></a><div class="imageleft"><img class="imageleft" id="c_fblk_spec_analog_tracking__image_756EF16BC00B4EF0AFFD6491D9F45BD1" src="AT_Schem_detail_1.png" /></div><br /> 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_analog_tracking_function_block_execution.html">Analog Tracking function block configuration and execution</a><br />
+</li>
+<li class="ulchildlink"><a href="c_analog_tracking_block_alarm_detection.html">Analog Tracking function block alarm detection</a><br />
+</li>
+<li class="ulchildlink"><a href="c_analog_tracking_function_block_status_handling.html">Analog Tracking function block status handling</a><br />
+</li>
+<li class="ulchildlink"><a href="r_analog_tracking_function_block_parameters.html">Analog Tracking function block parameters</a><br />
+</li>
+<li class="ulchildlink"><a href="c_analog_tracking_module_template.html">PID_AT Analog Tracking module template</a><br />
+
+  </li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV PK controller Unlock Inhibit and Unlock Allow" name="DC.Title" /><meta content="PK controller, physical key, PK controller, lock, unlock, allow, inhibit, unlock allow, unlock inhibit, single unlock allow, PK controler" name="DC.subject" /><meta content="PK controller, physical key, PK controller, lock, unlock, allow, inhibit, unlock allow, unlock inhibit, single unlock allow, PK controler" name="keywords" /><meta content="c_locking_cntrl_cioc_wioc_eioc.html" name="DC.Relation" scheme="URI" /><meta content="c_p-series_controllers_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_PK_unlock_inhibit_allow_functions" name="DC.Identifier" /><title>DeltaV PK controller Unlock Inhibit and Unlock Allow</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_PK-controller-LEDs_specs.html" /><link rel="next" href="c_p-series_SysPwrSupplyOverview.html" /></head><body class="fixed" id="concept_PK_unlock_inhibit_allow_functions" data-relpath="c_PK_unlock_inhibit_unlock_allow.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_PK_unlock_inhibit_allow_functions"></a>
+
+<h1 class="topictitle1">DeltaV PK controller Unlock Inhibit and Unlock Allow</h1>
+<div> 
+	 <p>The DeltaV PK controller must be unlocked to commission, decommission,
+		download, upgrade, or access the node&#39;s privileged menus (for example, Telnet
+		access). Locking also prevents a user-initiated switchover when the controllers
+		are redundant. You lock and unlock the controller (when the controller is in
+		one of the Unlock Allow states) in DeltaV Explorer through the controller&#39;s
+		context (right-click) menu. 
+	 </p>
+ 
+	 <div class="p">To unlock the controller through DeltaV Explorer, 
+		<u>one</u> of the following is true: 
+	 <ul> 
+		<li><div class="li_content">The key switch is not enabled. 
+		</div></li>
+ 
+		<li><div class="li_content">The physical key switch is in the unlocked position (Unlock Allow)
+		  for less than the Auto Lock limit or has been in the unlocked position (Unlock
+		  Allow) for more than 5 seconds but less than 10 seconds before returning to the
+		  locked position (Unlock Inhibit). 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle"> Physical key switches</h2> 
+		 
+		<p>The physical key switch on the controller&#39;s carrier can be used to
+		  control the software 
+		  <span class="uicontrol">Lock</span> and 
+		  <span class="uicontrol">Unlock</span> functions. The key switch requires
+		  physical presence by plant personnel before the controller&#39;s locked state can
+		  be altered and therefore before any functions controlled by the locked state
+		  can be initiated. 
+		</p>
+ 
+		<div class="p">There are two positions for the physical key switch: 
+		<dl> 
+		   
+			 <dt class="dlterm">Unlock Allow 
+			 </dt>
+ 
+			 <dd>This is the shown as the 
+				<u>unlocked</u> symbol on the carrier. When it this position, the
+				controller 
+				<u>can be</u> unlocked in DeltaV Explorer. When unlocked, you can
+				perform certain functions (such as downloading, commissioning, upgrading, and
+				so on). The Unlock Allow position is further controlled by the Auto Lock option
+				and its Time Limit value, which locks the controller after the time specified.
+				Auto Lock is set on the controller&#39;s 
+				<span class="wintitle">Properties</span> dialog&#39;s 
+				<span class="wintitle">Security</span> tab. 
+			 </dd>
+ 
+			 <dd class="ddexpand">In this position, the 
+				<span class="uicontrol">KeyLockStatus</span> diagnostics parameter&#39;s value
+				is one of the following: 
+				<ul> 
+				  <li><div class="li_content"><span class="uicontrol">Controller Unlock Allowed</span> 
+				  </div></li>
+ 
+				  <li><div class="li_content"><span class="uicontrol">Single Unlock Allowed</span> 
+				  </div></li>
+ 
+				</ul>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Unlock Inhibit 
+			 </dt>
+ 
+			 <dd> 
+				<p>This is the shown as the 
+				  <u>locked</u> symbol on the carrier. When it this position, the
+				  controller 
+				  <u>cannot be</u> unlocked in DeltaV Explorer. Because the
+				  controller is locked, you 
+				  <u>cannot</u> perform certain functions (such as downloading,
+				  commissioning, upgrading, and so on). The Unlock Inhibit position is the
+				  default operating position when the 
+				  <span class="uicontrol">Enable Unlock Inhibit Key Switch</span> option is
+				  enabled. 
+				</p>
+ 
+			 </dd>
+ 
+			 <dd class="ddexpand">In this position, the 
+				<span class="uicontrol">KeyLockStatus</span> diagnostic parameter&#39;s value
+				is 
+				<span class="uicontrol">Controller Unlock Inhibited</span>. 
+			 </dd>
+ 
+		   
+		</dl>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Enable the physical key switch</h2> 
+		 
+		<p>Enable or disable the physical key switch with the 
+		  <span class="uicontrol">Enable Unlock Inhibit Key Switch</span> option on the
+		  controller&#39;s 
+		  <span class="wintitle">Properties</span> dialog&#39;s 
+		  <span class="wintitle">Security</span> tab. 
+		</p>
+ 
+		<p>The 
+		  <span class="uicontrol">Unlock Inhibit Key Switch</span> 
+		  <u>must be enabled</u> (and the physical key switch must be switched
+		  into the 
+		  <u>unlocked</u> position) for the unlock states to become active. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Controller Unlock States</h2> 
+		 
+		<p>The following are the valid states for the controller&#39;s 
+		  <span class="uicontrol">KeyLockStatus</span> diagnostic parameter (viewed in
+		  DeltaV Diagnostics by selecting the controller from the hierarchy). 
+		</p>
+ 
+		<dl> 
+		   
+			 <dt class="dlterm">Unlock Allowed State 
+			 </dt>
+ 
+			 <dd>This state allows the controller to be unlocked multiple times. 
+			 </dd>
+ 
+			 <dd class="ddexpand">To enter the Unlock Allowed state, turn the key switch to the
+				unlock position until the red LED flashes slowly on the controller&#39;s carrier
+				(flashing starts 5 seconds after turning the key). The red LED remains blinking
+				slowly for 5 seconds at which point (provided the key remains in the Unlock
+				Allow position) the LED stops flashing and turns off. 
+			 </dd>
+ 
+			 <dd class="ddexpand">If, during the 5 seconds that the red LED is flashing slowly, the
+				key is turned to the Unlock Inhibit position, the controller enters into the
+				Single Unlock Allowed state. 
+			 </dd>
+ 
+			 <dd class="ddexpand"> 
+				<div class="p"> 
+				  <div class="note"><span class="notetitle">Note:</span>  If Auto Lock is enabled (on the controller&#39;s 
+					 <span class="wintitle">Properties</span> dialog&#39;s 
+					 <span class="wintitle">Security</span> tab), the controller is locked
+					 after the Auto Lock time limit is reached. The 
+					 <span class="uicontrol">RelockTimer</span> diagnostics parameter counts
+					 down the remaining time until the controller is locked. 
+				  </div>
+ 
+				</div>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Single Unlock Allowed State 
+			 </dt>
+ 
+			 <dd>This state allows only one (single) unlock to occur and then
+				locks the controller again. The physical key is left in the Unlock Inhibit
+				position eliminating the chance of leaving the controller unlocked. 
+			 </dd>
+ 
+			 <dd class="ddexpand">To enter the Single Unlock Allow state, turn the key switch to
+				the unlock position until the red LED flashes slowly on the controller&#39;s
+				carrier (flashing starts 5 seconds after turning the key). Then turn the key
+				switch back to the lock position while the red LED is flashing slowly (at
+				greater than 5 seconds and less than 10 seconds post first turning the physical
+				key). 
+			 </dd>
+ 
+			 <dd class="ddexpand">You are then able to perform 
+				<u>one single</u> unlock through DeltaV Explorer. 
+			 </dd>
+ 
+			 <dd class="ddexpand"> 
+				<div class="note"><span class="notetitle">Note:</span>  
+				  <p>You have 
+					 <strong><u>5 minutes</u></strong> to perform this action. If the
+					 controller is not unlocked during the 5 minute window, the controller will
+					 automatically change back to Unlock Inhibited state (matching the key
+					 position). 
+				  </p>
+ 
+				</div>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Unlock Inhibited State 
+			 </dt>
+ 
+			 <dd>This state disallows unlocking the controller from DeltaV
+				Explorer. 
+			 </dd>
+ 
+			 <dd class="ddexpand">To enter the Unlock Inhibited state, turn the key switch to the
+				locked position (Unlock Inhibit position) at any point 
+				<u>except</u> when the red LED is flashing. 
+			 </dd>
+ 
+			 <dd class="ddexpand"> 
+				<div class="note"><span class="notetitle">Note:</span>  
+				  <p>Turning the key to the locked (Unlock Inhibit) position while
+					 the red LED is flashing first enters you into the Single Unlock Allowed state. 
+				  </p>
+ 
+				</div>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Disabled 
+			 </dt>
+ 
+			 <dd>This state means that the physical key switch does not control
+				the ability to lock or unlock the controller in DeltaV Explorer. 
+			 </dd>
+ 
+			 <dd class="ddexpand">To enter the Disabled state, do not enable the 
+				<span class="uicontrol">Enable Unlock Inhibit Key Switch</span> option on
+				the PK controller&#39;s 
+				<span class="wintitle">Properties</span> dialog&#39;s 
+				<span class="wintitle">Security</span> tab. 
+			 </dd>
+ 
+		   
+		</dl>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Lock/unlock options</h2> 
+		 
+		<p>You can set limits and alerts for the controller&#39;s locked state. These
+		  options are set on the controller&#39;s 
+		  <span class="wintitle">Properties</span> dialog&#39;s 
+		  <span class="wintitle">Security</span> tab 
+		</p>
+ 
+		<dl> 
+		   
+			 <dt class="dlterm">Auto Lock 
+			 </dt>
+ 
+			 <dd>Automatically puts the controller in a locked state after the
+				configured time limit. 
+			 </dd>
+ 
+			 <dd class="ddexpand">The limit can be set for 10 minutes to 24 hours. 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Unlocked Alert 
+			 </dt>
+ 
+			 <dd>Generates an alert when all of the following is true: 
+				<ul> 
+				  <li><div class="li_content">the controller remains in one of the 
+					 <span class="uicontrol">Unlock Allowed</span> states; and, 
+				  </div></li>
+ 
+				  <li><div class="li_content">the physical key is in the 
+					 <span class="uicontrol">Unlocked Inhibit</span> position; and, 
+				  </div></li>
+ 
+				  <li><div class="li_content">the configured time is exceeded. 
+				  </div></li>
+ 
+				</ul>
+ 
+			 </dd>
+ 
+		   
+		</dl>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_locking_cntrl_cioc_wioc_eioc.html">Locking controllers, CIOCs, 
+	 <span>EIOCs, and 
+	 </span>WIOCs</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

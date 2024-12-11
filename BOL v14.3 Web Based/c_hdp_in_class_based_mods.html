@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="History data points in class-based modules" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="bulk edit, history data points, history data points, bulk editing, history collection, history collection" name="DC.subject" /><meta content="bulk edit, history data points, history data points, bulk editing, history collection, history collection" name="keywords" /><meta content="c_bulk_edit_HDP.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_hdp_in_class_based_mods" name="DC.Identifier" /><title>History data points in class-based modules</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_hdp_paths_recorded_value.html" /><link rel="next" href="r_hdp_syntax.html" /></head><body class="fixed" id="c_hdp_in_class_based_mods" data-relpath="c_hdp_in_class_based_mods.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_hdp_in_class_based_mods"></a>
+
+<h1 class="topictitle1">History data points in class-based modules</h1>
+<div><div></div>
+
+    <p>From DeltaV Explorer you can create history data points in module
+      classes that propagate to module instances. However, from bulk edit, you can
+      only create history data points at the module level. The ability to modify
+      history data points in class-based modules is determined by values in two
+      fields in the exported history point data, hdp_type and use_default.
+    </p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The 
+        <em>hdp_type</em> and 
+        <em>use_default</em> fields are relevant only for history data points
+        defined in a module class. For all other history data points (including those
+        defined in instances of class-based modules) these fields can be ignored.
+      </p>
+
+    </div>
+
+    <p>The following table summarizes the values that can appear for hdp_type
+      and use_default based on settings in the 
+      <span class="wintitle">Add History Collection</span> dialog in the class and in
+      the instance.
+    </p>
+
+    
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left">
+          <tr> 
+            <th class="cellrowborder" id="d1093051e66" valign="top" width="NaN%">
+              <p>For HDP defined in module...
+              </p>
+
+            </th>
+ 
+            <th class="cellrowborder" id="d1093051e72" valign="top" width="NaN%">
+              <p>Allow instance history data point to be configured field (in
+                class)
+              </p>
+
+            </th>
+ 
+            <th class="cellrowborder" id="d1093051e78" valign="top" width="NaN%">
+              <p>Use default value from module class field (in instance)
+              </p>
+
+            </th>
+ 
+            <th class="cellrowborder" id="d1093051e84" valign="top" width="NaN%">
+              <p>Type field in History Collection dialog
+              </p>
+
+            </th>
+ 
+            <th class="cellrowborder" id="d1093051e90" valign="top" width="NaN%">
+              <p>hdp_type in Bulk Edit add-in
+              </p>
+
+            </th>
+ 
+            <th class="cellrowborder" id="d1093051e97" valign="top" width="NaN%">
+              <p>use_default in Bulk Edit add-in
+              </p>
+
+            </th>
+ 
+          </tr>
+</thead>
+
+        <tbody>
+          <tr> 
+            <td class="cellrowborder" headers="d1093051e66 " valign="top" width="NaN%">
+              <p>Class
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e72 " valign="top" width="NaN%">
+              <p>Checked
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e78 " valign="top" width="NaN%">
+              <p>Checked
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e84 " valign="top" width="NaN%">
+              <p>Configurable
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e90 " valign="top" width="NaN%">
+              <p>Configurable
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e97 " valign="top" width="NaN%">
+              <p>T
+              </p>
+
+            </td>
+ 
+          </tr>
+
+          <tr> 
+            <td class="cellrowborder" headers="d1093051e66 " valign="top" width="NaN%">
+              <p>Class
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e72 " valign="top" width="NaN%">
+              <p>Checked
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e78 " valign="top" width="NaN%">
+              <p>Not Checked
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e84 " valign="top" width="NaN%">
+              <p>Override
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e90 " valign="top" width="NaN%">
+              <p>Override
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e97 " valign="top" width="NaN%">
+              <p>F
+              </p>
+
+            </td>
+ 
+          </tr>
+
+          <tr> 
+            <td class="cellrowborder" headers="d1093051e66 " valign="top" width="NaN%">
+              <p>Class
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e72 " valign="top" width="NaN%">
+              <p>Not Checked
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e78 " valign="top" width="NaN%">
+              <p>NA
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e84 " valign="top" width="NaN%">
+              <p>Definition
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e90 " valign="top" width="NaN%">
+              <p>Definition
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e97 " valign="top" width="NaN%">
+              <p>&lt;NULL&gt;
+              </p>
+
+            </td>
+ 
+          </tr>
+
+          <tr> 
+            <td class="cellrowborder" headers="d1093051e66 " valign="top" width="NaN%">
+              <p>Instance
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e72 " valign="top" width="NaN%">
+              <p>NA
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e78 " valign="top" width="NaN%">
+              <p>NA
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e84 " valign="top" width="NaN%">
+              <p>Instance
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e90 " valign="top" width="NaN%">
+              <p>Instance
+              </p>
+
+            </td>
+ 
+            <td class="cellrowborder" headers="d1093051e97 " valign="top" width="NaN%">
+              <p>&lt;NULL&gt;
+              </p>
+
+            </td>
+ 
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>Do not modify the hdp_type values. Depending on the hdp_type value for
+      an HDP you can do the following from Bulk Edit:
+    </p>
+
+    <ul> 
+      <li><div class="li_content">
+        <p>Configurable — You can change the use_default value from T to F and
+          modify other fields. You cannot create new Configurable history data points.
+        </p>
+
+      </div></li>
+ 
+      <li><div class="li_content">
+        <p>Override — You can modify field values. You cannot create new
+          Override history data points.
+        </p>
+
+      </div></li>
+ 
+      <li><div class="li_content">
+        <p>Definition — You cannot make any changes.
+        </p>
+
+      </div></li>
+ 
+      <li><div class="li_content">
+        <p>Instance — You can create new instances or modify field values of
+          existing instances.
+        </p>
+
+      </div></li>
+ 
+    </ul>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

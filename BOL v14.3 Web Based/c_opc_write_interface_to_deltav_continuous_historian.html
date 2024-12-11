@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="OPC write interface to the DeltaV Continuous Historian" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="Continuous Historian, OPC interface, DeltaV Continuous Historian, OPC interface, OPC HDA, OPC .NET, OPC .NET Remote" name="DC.subject" /><meta content="Continuous Historian, OPC interface, DeltaV Continuous Historian, OPC interface, OPC HDA, OPC .NET, OPC .NET Remote" name="keywords" /><meta content="c_dcom_setup.html" name="DC.Relation" scheme="URI" /><meta content="c_using_opc.html" name="DC.Relation" scheme="URI" /><meta content="c_sample_client_opc_write_interface.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_opc_write_interface_to_deltav_continuous_historian" name="DC.Identifier" /><title>OPC write interface to the DeltaV Continuous Historian</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_log_file.html" /><link rel="next" href="r_createTags_method.html" /></head><body class="fixed" id="c_opc_write_interface_to_deltav_continuous_historian" data-relpath="c_opc_write_interface_to_deltav_continuous_historian.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_opc_write_interface_to_deltav_continuous_historian"></a>
+
+<h1 class="topictitle1">OPC write interface to the DeltaV Continuous Historian</h1>
+<div> 
+    <p> You can write a client application that interfaces with a DeltaV OPC
+      Historical Data Access (HDA) or DeltaV OPC .NET server to write history samples
+      to a DeltaV Continuous Historian database. 
+    </p>
+ 
+    <div class="p"> 
+      <div class="important"><span class="importanttitle">Important:</span> To use the OPC write interface, the 
+        <span class="uicontrol">Enable historical data entry</span> option on the 
+        <span class="uicontrol">Advanced</span> tab of the 
+        <span class="wintitle">Continuous Historian Properties</span> dialog must be
+        enabled on the workstation where the DeltaV Continuous Historian is running. 
+      </div>
+ 
+    </div>
+ 
+    <p> Before writing to the DeltaV Continuous Historian database, history
+      tags must be created. The OPC write interface provides a custom interface
+      method, CreateTags, to create an array of history tags. 
+    </p>
+ 
+    <p> Writing history samples to the DeltaV Continuous Historian database
+      relies on using the standard GetItemHandles method for the IOPCHDA_Server
+      interface and the Insert method for the IOPCHDA_SyncUpdate interface, as
+      described in 
+      <cite>OPC Historical Data Access Specification Version 1.20</cite>. 
+    </p>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_sample_client_opc_write_interface.html">Sample clients for the OPC write interface</a><br />
+</li>
+</ul>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_dcom_setup.html">DCOM Setup</a></div>
+<div><a href="c_using_opc.html">Using OPC</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

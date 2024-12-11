@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Diagnosing fieldbus devices" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Control Studio, using to diagnose fieldbus devices, DeltaV Explorer, devices, diagnosing fieldbus devices, diagnostics, fieldbus devices, diagnosing, H1 card" name="DC.subject" /><meta content="Control Studio, using to diagnose fieldbus devices, DeltaV Explorer, devices, diagnosing fieldbus devices, diagnostics, fieldbus devices, diagnosing, H1 card" name="keywords" /><meta content="c_fieldbus_device_general_info.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_fbdev_diagnosing" name="DC.Identifier" /><title>Diagnosing fieldbus devices</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fbdev_comission_decommission.html" /><link rel="next" href="c_fbdev_status_conditions.html" /></head><body class="fixed" id="c_fbdev_diagnosing" data-relpath="t_fbdev_diagnosing.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_fbdev_diagnosing"></a>
+
+<h1 class="topictitle1">Diagnosing fieldbus devices</h1>
+<div><div></div>
+<div class="section" id="c_fbdev_diagnosing__context_ADE8940EE33D467CAD237D2DA3F263C4"><a name="c_fbdev_diagnosing__context_ADE8940EE33D467CAD237D2DA3F263C4"></a><p>The DeltaV Explorer, Control Studio, and Diagnostics programs as well as the H1 card itself provide a great deal of diagnostic information on fieldbus devices.</p>
+<p><strong>H1 fieldbus Card</strong></p>
+<p>Communication information between the card and fieldbus devices is available from a visual inspection of the H1 card. The bottom two LEDs on the H1 card reflect communication between the port and fieldbus devices on that port. A blinking yellow LED indicates that the port is communicating with fieldbus devices but either a communication problem exists with an attached fieldbus device or no function blocks are configured on the segment. If the LED is off, either the port is disabled or the H1 card is not communicating with any fieldbus devices on the port. Use the DeltaV Explorer to enable and download the port and Control Studio to create and download configuration. A solid yellow LED indicates good communication between the port and devices on that port and at least one function block is configured on the segment.</p>
+<p><strong>DeltaV Explorer</strong></p>
+<p>Indicators in the DeltaV Explorer tell you if an H1 port or a fieldbus device needs to be downloaded or commissioned.</p>
+<a name="c_fbdev_diagnosing__ul_EFD76F0BD79E4AB492067F9F4499F958"></a><ul id="c_fbdev_diagnosing__ul_EFD76F0BD79E4AB492067F9F4499F958">
+<li id="c_fbdev_diagnosing__li_CDD0A89A2C1C40CA92CC5BEFE1E7C25E"><div class="li_content"><p>The <a name="c_fbdev_diagnosing__image_758FBF44FC3F4EC2BC9B8A3564730764"></a><img id="c_fbdev_diagnosing__image_758FBF44FC3F4EC2BC9B8A3564730764" src="ioHELP0035.gif" /> on an H1 port or device means that the port or device needs to be downloaded. Right-click the port or device, and then select <span class="uicontrol">Download</span> to open a dialog that lists the fieldbus configuration information to be downloaded.</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_F019F117D05A4D50A2682E24EA81D624"><div class="li_content"><p>The <a name="c_fbdev_diagnosing__image_80CFE5022CC34548AB3DA9AE6768F129"></a><img id="c_fbdev_diagnosing__image_80CFE5022CC34548AB3DA9AE6768F129" src="ioHELP0036.gif" /> on a device means that the device needs to be commissioned. To commission the device, select it from the Decommissioned device list and drag it to either the port or device placeholder.</p>
+</div></li>
+
+</ul>
+<p><strong>Control Studio</strong></p>
+<p>Use Control Studio in online mode to diagnose problems with modules running in fieldbus devices. You must assign and download a module before viewing it in online mode.</p>
+</div>
+<a name="c_fbdev_diagnosing__steps_5C70E2C0B9CF4B39938E0582FD296A1E"></a><ol id="c_fbdev_diagnosing__steps_5C70E2C0B9CF4B39938E0582FD296A1E"><li class="stepexpand" id="c_fbdev_diagnosing__step_3D13E7CA1DF44B2DB41CE2D266271EF9"><a name="c_fbdev_diagnosing__step_3D13E7CA1DF44B2DB41CE2D266271EF9"></a><span>Open the module in Control Studio.</span></li>
+<li class="stepexpand" id="c_fbdev_diagnosing__step_8F537FC8F9AE486FA2CF06BA4125B5C1"><a name="c_fbdev_diagnosing__step_8F537FC8F9AE486FA2CF06BA4125B5C1"></a><span>Click <span class="menucascade"><span class="uicontrol">View</span> &gt; <span class="uicontrol">On-line</span></span> to create an online (or debug) session in which you can examine module and block parameters. A red X on a function block parameter indicates a problem with the function block.
+</span> <div class="cautiontitle">CAUTION:</div><div class="caution"><p> Any online changes affect your process because the changes are made to downloaded modules in the controller. Use extreme care when changing values or stopping the execution of an algorithm.</p>
+</div>
+
+</li>
+<li class="stepexpand" id="c_fbdev_diagnosing__step_D804BFD7A9CD44E7855B20022EA37708"><a name="c_fbdev_diagnosing__step_D804BFD7A9CD44E7855B20022EA37708"></a><span>Select the block with the red X. The Parameter View window in Control Studio displays a full list of parameters for that block.</span></li>
+<li class="stepexpand" id="c_fbdev_diagnosing__step_02FCB2FE12A84A50996F7C240CC481DE"><a name="c_fbdev_diagnosing__step_02FCB2FE12A84A50996F7C240CC481DE"></a><span>Double-click a parameter in Parameter View to open the <span class="wintitle">Parameter Properties</span> dialog for that parameter.</span></li>
+</ol>
+<div class="section" id="c_fbdev_diagnosing__result_4C95750858574D508BA41AC9EC70BB90"><a name="c_fbdev_diagnosing__result_4C95750858574D508BA41AC9EC70BB90"></a><p><strong>Diagnostics</strong></p>
+<p>Use DeltaV Diagnostics to perform the following tasks:</p>
+<a name="c_fbdev_diagnosing__ul_7019842D4C574C709FA9F72953B19566"></a><ul id="c_fbdev_diagnosing__ul_7019842D4C574C709FA9F72953B19566">
+<li id="c_fbdev_diagnosing__li_85D75699818543DFB6AB7E311AB2E229"><div class="li_content"><p>determine if the device is commissioned</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_2A102542B55940EA95A9A473642F0C2F"><div class="li_content"><p>check integrity on the H1 card, backup Link Master device, and ports</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_862ABBDE398644D7A50E732A57DB1FFE"><div class="li_content"><p>check overall port statistics and communication statistics for each device</p>
+</div></li>
+
+</ul>
+<p>Open DeltaV Diagnostics and click <span class="menucascade"><span class="uicontrol">View</span> &gt; <span class="uicontrol">Details</span></span> or <span class="menucascade"><span class="uicontrol">View</span> &gt; <span class="uicontrol">Compare</span></span> to quickly see the device state. If the device is not commissioned, open the DeltaV Explorer and commission the device. Then, download the port and the device. If the device is commissioned, check integrity on the port and then check port and device communication statistics.</p>
+<p><strong>Port Integrity</strong></p>
+<p>Typically, integrity problems originate below the node and then rise to the node level. Integrity problems are indicated by the <a name="c_fbdev_diagnosing__image_58863DE454CC47A09E21BBB769116582"></a><img id="c_fbdev_diagnosing__image_58863DE454CC47A09E21BBB769116582" src="ioHELP0037.gif" /> overlay. Start by looking for a controller with the <a name="c_fbdev_diagnosing__image_829344C921F54934B3CFA86FBDEE7E89"></a><img id="c_fbdev_diagnosing__image_829344C921F54934B3CFA86FBDEE7E89" src="ioHELP0038.gif" /> overlay and, if found, expand the controller hierarchy until you find the root cause of the problem. If a fieldbus card has an integrity problem, expand the card to see which port has the problem. Select each port and look at the port&#39;s status. Possible port status values are:</p>
+<a name="c_fbdev_diagnosing__ul_D9E2B78FFC614CCDBB0921646EB16568"></a><ul id="c_fbdev_diagnosing__ul_D9E2B78FFC614CCDBB0921646EB16568">
+<li id="c_fbdev_diagnosing__li_FFDC5119D1E14394A9222D92BA98AC96"><div class="li_content"><p><strong>Good</strong> - Good basic communications with all devices on this port</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_E3EBBAA3CB6D4CA0B02C075A8E3E4892"><div class="li_content"><p><strong>No Termination on Link</strong> - This port is not terminated. Check attached cable.</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_730F4ED6582D407CBD5A6511E8300160"><div class="li_content"><p><strong>Link Error</strong> - PCMCIA Card problem exists. Replace the H1 card.</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_BAC01E33C3AE42A19AFD02DC217CB9C9"><div class="li_content"><p><strong>Duplicate Address on Link</strong> - Another device is currently communicating at this port&#39;s address.</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_6DEFB5A06A94420EA82E43E3E460AAF0"><div class="li_content"><p><strong>No Communications on Link</strong></p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_7AF6443D400F49E693291EFFE2C768C5"><div class="li_content"><p><strong>H1 Card Problem</strong> - Replace the H1 card.</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_C9AFE95B785543149993C842DE036AEF"><div class="li_content"><p><strong>One or more function block problems on link or device problem</strong> - Expand the port and check the state of each fieldbus device on the port. Any state other than Commissioned indicates a potential problem with that fieldbus device.</p>
+</div></li>
+
+</ul>
+<p><strong>Port Communication Statistics</strong></p>
+<p>The Port Statistics command provides a broad view of communication activity on the port. Right-click the port, and then select <span class="uicontrol">Port Statistics</span>. In the <span class="wintitle">Port Statistics</span> dialog, look for the following:</p>
+<a name="c_fbdev_diagnosing__ul_070B1919253B44F4863D80BBC9E1A023"></a><ul id="c_fbdev_diagnosing__ul_070B1919253B44F4863D80BBC9E1A023">
+<li id="c_fbdev_diagnosing__li_8652648F708545BB97AB8D3E5EEFFD97"><div class="li_content"><p>Retries</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_72544B3927F6441A8575EE55FB5C38D7"><div class="li_content"><p>Invalid responses</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_1D6CD76FF8CD44D88193E9BC27409386"><div class="li_content"><p>Stack errors</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_A6CC698A526340E7A613815BB28E4F58"><div class="li_content"><p>Timeouts</p>
+</div></li>
+
+</ul>
+<div class="note"><span class="notetitle">Note:</span> <p> If any of the port statistics and communication statistics are continually increasing, a potential communications problem could exist on this port. To isolate the problem, investigate the communication statistics on each fieldbus device. Refer to the following section for information.</p>
+</div>
+<p>Next, look at detailed port statistics. Right-click the port, and then select <span class="uicontrol">Display Port Detail Statistics</span>. In the <span class="wintitle">Detailed Port Statistics</span> dialog, look for the following:</p>
+<a name="c_fbdev_diagnosing__ul_E09B72F57B954F86A1A36BD5F329886D"></a><ul id="c_fbdev_diagnosing__ul_E09B72F57B954F86A1A36BD5F329886D">
+<li id="c_fbdev_diagnosing__li_A9827661EEEB4C859D72212F229B7662"><div class="li_content"><p>Identifies</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_2A01EDDA98B4479C97DA19D0A2ED5EBA"><div class="li_content"><p>Initiates</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_CD8243F8FC9846DC994B818285A9DFD3"><div class="li_content"><p>Aborts</p>
+</div></li>
+
+</ul>
+<div class="tip"><span class="tiptitle">Tip:</span> <p> Clicking the <span class="uicontrol">Reset Stats</span> button resets all values to 0 and makes it easier to read the statistics.</p>
+</div>
+<p><strong>Device Communication Statistics</strong></p>
+<p>Finally, look at communication statistics for each device. Rght-click each device, select <span class="uicontrol">Display Communication Statistics</span>, and look for the following:</p>
+<a name="c_fbdev_diagnosing__ul_849F44D4D13545DE801A0CED08A5E152"></a><ul id="c_fbdev_diagnosing__ul_849F44D4D13545DE801A0CED08A5E152">
+<li id="c_fbdev_diagnosing__li_47B9DA83A3C5456F999E5C6A4F0D92A0"><div class="li_content"><p>Aborts received and sent</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_F87547AE70754C60B717C33D9CF4B9A7"><div class="li_content"><p>Initiates received and sent</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_C95978E29D2E4455A4BE9B181ACDE127"><div class="li_content"><p>Pcr Timeouts</p>
+</div></li>
+
+<li id="c_fbdev_diagnosing__li_F4B03CA493244516B02F259BC5A9D1C0"><div class="li_content"><p>Livelist appearances (the number of times the device showed up as new)</p>
+</div></li>
+
+</ul>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

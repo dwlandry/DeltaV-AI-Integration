@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Working with the Scheduler and the DoEvents function" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_working_with_the_scheduler_and_the_doevents_function" name="DC.Identifier" /><title>Working with the Scheduler and the DoEvents function</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_working_in_the_run_time_environment.html" /><link rel="next" href="vba_creating_dynamos.html" /></head><body class="fixed" id="vba_working_with_the_scheduler_and_the_doevents_function" data-relpath="vba_working_with_the_scheduler_and_the_doevents_function.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_working_with_the_scheduler_and_the_doevents_function"></a>
+
+<h1 class="topictitle1">Working with the Scheduler and the DoEvents function</h1>
+<div><div></div>
+ 
+    <p id="vba_working_with_the_scheduler_and_the_doevents_function__WorkingwiththeSchedulerandtheDoEventsFunction"><a name="vba_working_with_the_scheduler_and_the_doevents_function__WorkingwiththeSchedulerandtheDoEventsFunction"></a>This topic briefly
+      discusses the Scheduler application and the VBA DoEvents function. For more
+      information on the Scheduler application, refer to 
+      <a href="adv_scheduler.html">The Scheduler</a>. For more information on the DoEvents
+      function, see the VBA Help file. The examples that appear later in this section
+      illustrate how to work with the two Scheduler objects: 
+      <strong>Timer</strong> and 
+      <strong>Event</strong>. 
+    </p>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__UsingtheScheduler"><a name="vba_working_with_the_scheduler_and_the_doevents_function__UsingtheScheduler"></a><h2 class="sectiontitle">Using the Scheduler</h2> 
+       
+      <p>There are certain tasks that you may want to perform at a specified
+        time or interval, or when a change occurs in a database value or in any OPC
+        data server value. For example, you may want to run a script that generates a
+        report at the end of every shift or replaces the currently displayed picture
+        when a database point exceeds a certain value. 
+      </p>
+ 
+      <p>The Scheduler allows you to create, edit, monitor, and run both types
+        of actions as scheduled entries. In the Scheduler, you define the time or event
+        that triggers a scheduled entry, and the action, referred to as an 
+        <strong>operation</strong>, that you want to occur. 
+      </p>
+ 
+      <p>The Scheduler is useful because it allows DeltaV Operate to schedule
+        time- or event-based scripts to run as background tasks. This makes it ideal
+        for reducing overhead, since you do not have to use VBA for monitoring
+        purposes. Because schedules can be run as background tasks, they have their own
+        VBA thread. This allows you to have two scripts running at the same time; one
+        in the background and one in the active application. 
+      </p>
+ 
+      <p>If you will be writing scripts from a background task that will be
+        manipulating objects or pictures in DeltaV Operate, you must first get a
+        pointer to the DeltaV Operate application. The script below shows how you can
+        use the GetObject method to do this: 
+      </p>
+ 
+      <pre class="pre">
+Dim App As Object
+Set App = GetObject(&quot;&quot;, &quot;WorkSpace.Application&quot;)
+</pre>
+ 
+      <p>Once you have the pointer to the application, you can use the App
+        object in your code to represent the Application object in DeltaV Operate. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__DoEventsFunction"><a name="vba_working_with_the_scheduler_and_the_doevents_function__DoEventsFunction"></a><h2 class="sectiontitle">DoEvents Function</h2> 
+       
+      <p>Within DeltaV Operate, VBA functions as a single-threaded application.
+        The system can initiate more than one script; however, only one script can be
+        running at any one time. When an event triggers a script, it is placed in a
+        queue. Each script in the queue is executed in the order in which it is
+        received once the previous script has run to completion. For this reason,
+        scripts that loop and scripts that take a long time to run can delay execution
+        of the scripts behind them in the queue. The DoEvents Function allows the
+        operating system to process events and messages waiting in the queue and
+        enables an event to yield execution so that the operating system can process
+        other UI events. Use the VBA DoEvents function in scripts that take a long time
+        to run. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Warning:</span>  
+        <p> Any time you temporarily yield the processor within an event
+          procedure, make sure the procedure is not executed again from a different part
+          of your code before the first call returns; this could cause unpredictable
+          results. In addition, do not use DoEvents if other applications could possibly
+          interact with your procedure in unforeseen ways during the time you have
+          yielded control. 
+        </p>
+ 
+      </div>
+ 
+      <p>See the Visual Basic for Applications Help file for more information,
+        including an example of the DoEvents function. For additional useful
+        information, visit the 
+        <a href="http://msdn.microsoft.com" target="_blank">Microsoft
+          MSDN</a> web site and search for resources on the DoEvents function. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__UsingTimersinplaceofDoEvents"><a name="vba_working_with_the_scheduler_and_the_doevents_function__UsingTimersinplaceofDoEvents"></a><h2 class="sectiontitle">Using Timers in place of DoEvents</h2> 
+       
+      <p>The DoEvents call allows a program to process events while in VBA
+        script. However, the DoEvents call cannot control what is executed and does not
+        control what is currently executing. 
+      </p>
+ 
+      <p>The following script is an example of a DoEvents call: 
+      </p>
+ 
+      <pre class="pre">
+Dim I as Integer
+For I = 0 to 10000
+  If I Mod 100 = 0 Then
+     DoEvents 
+<strong>     &#39;Execute events every hundredth iteration through the loop 
+</strong>  End If
+<strong>     &#39;Do Something</strong> 
+Next I
+</pre>
+ 
+      <p>If your code is tied to an event, your code may be executed again
+        before DoEvents returns. If the code is operating on global data or data that
+        exists outside the scope of the script, you could corrupt your own data by
+        reentering the routine. 
+      </p>
+ 
+      <p>You can solve this problem by using timers in place of DoEvents to
+        execute portions of the code. 
+      </p>
+ 
+      <p>The following script outlines the solution: 
+      </p>
+ 
+      <pre class="pre">
+<strong>&#39;Here is a global variable to track the iterations through the
+</strong><strong>&#39;loop.</strong> 
+<strong>&#39;Note that it is initialized to zero by VBA
+</strong>Dim IndexCount As Integer
+
+Sub StartRoutine() <strong>&#39;Execute this routine to start
+</strong>
+IndexCount = () <strong>&#39;We are starting a new loop</strong> 
+FixTimer.StartTimer <strong>&#39;Get the timer going</strong><strong> 
+</strong>
+End Sub 
+
+Private Sub StopRoutine() 
+<strong>&#39;The timer routine will execute this when completed</strong> 
+FixTimer.StopTimer 
+
+End Sub 
+
+Private Sub CfixPicture_Initialize() 
+<strong>
+</strong><strong>&#39;Make sure that the timer is stopped on picture load</strong> 
+StopRoutine 
+
+End Sub 
+
+Private Sub CommandButton1_Click(). 
+<strong>
+</strong><strong>&#39;This will launch the routine from a button</strong> 
+StartRoutine 
+
+End Sub 
+
+Private Sub FixTimer_OnTimeOut(ByVal1TimerId As Long) 
+<strong>&#39;This is the timer routine 
+</strong>
+<strong>&#39;This variable ensures that another timer event doesn&#39;t execute 
+&#39;the routine 
+</strong>Static iAlreadyHere As Integer 
+  If (iAlreadyHere = 1) Then 
+     Exit Sub 
+
+  End If 
+
+<strong>&#39;Lock out other callers
+</strong>iAlreadyHere = 1 
+Dim I As Integer 
+
+For i = IndexCount to 10000 
+<strong>  &#39;Note: We will exit this loop before we hit 10,000 
+</strong>
+<strong>  &#39;Do Something</strong> 
+  
+     If i Mod 100 = 0 Then 
+       IndexCount = i + 1 
+       iAlreadyHere = 0 <strong>&#39;Timers can now execute this routine 
+</strong>   
+       Exit Sub <strong>&#39;Give up process and allow other things to run 
+</strong>
+     End If
+
+Next i 
+
+StopRouting <strong>&#39;We are done 
+</strong>iAlreadyHere = 0 
+
+End Sub
+</pre>
+ 
+      <p>Using timers to execute portions of code allows VBA, the picture, and
+        global variables to be in a predictable state while executing your VBA script. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__UsingScriptswithTimeBasedEntries"><a name="vba_working_with_the_scheduler_and_the_doevents_function__UsingScriptswithTimeBasedEntries"></a><h2 class="sectiontitle">Using Scripts with Time-Based Entries</h2> 
+       
+      <p>There are certain tasks that you will want to perform at a specified
+        time or interval or when a change occurs in the process. To schedule these
+        tasks you will need to define the time that triggers the action that you want
+        to occur. You can use the Scheduler application within DeltaV Operate or you
+        can write your own VBA script. For more information on the Scheduler, refer to 
+        <a href="adv_scheduler.html">The Scheduler</a>. 
+      </p>
+ 
+      <p>The following example periodically checks the amount of available hard
+        disk space. If the amount of disk space gets too low, it triggers an alarm. The
+        OnTimeOut event occurs at an interval defined in the properties of the
+        CheckDiskSpace event. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__UsingScriptswithEventBasedEntries"><a name="vba_working_with_the_scheduler_and_the_doevents_function__UsingScriptswithEventBasedEntries"></a><h2 class="sectiontitle">Example: Checking Disk Space and Triggering an Alarm if Too
+        Low</h2> 
+       
+      <pre class="pre">
+<strong>&#39;First, declare the Windows API function call
+</strong><strong>&#39;GetDiskFreeSpace so you can use it to get the amount of 
+</strong><strong>&#39;free space available on the disk.
+</strong>
+Private Declare Function GetDiskFreeSpace Lib &quot;kernel32&quot; _
+Alias &quot;GetDiskFreeSpaceA&quot; (ByVal lpRootPathName As String, _
+lpSectorsPerCluster As Long, lpBytesPerSector As Long, _
+lpNumberOfFreeClusters As Long, lpTotalNumberOfClusters _
+As Long) As Long
+
+<strong>&#39;Check the disk space on the Timer Event&#39;s OnTimeOut
+</strong><strong>&#39;event. If it is less than 150MB, set an alarm.
+</strong><strong>&#39;CheckDiskSpace is the name of the Timer object 
+</strong><strong>&#39;created in the Scheduler.
+</strong>
+Private Sub CheckDiskSpace_OnTimeOut(ByVal lTimerId As Long)
+    Dim lAnswer As Long
+    Dim lpRootPathName As String
+    Dim lpSectorsPerCluster As Long
+    Dim lpBytesPerSector As Long
+    Dim lpNumberOfFreeClusters As Long
+    Dim lpTotalNumberOfClusters As Long
+    Dim lBytesPerCluster As Long
+    Dim lNumFreeBytes As Double
+    Dim lDiskSpace As Double
+    
+<strong>&#39;Warning:  The parameter below hard codes C: as the drive to
+</strong><strong>&#39;check.  If you do not have a C: drive, this code will return 0
+</strong><strong>&#39;as the free space.  You need to change this parameter to match
+</strong><strong>&#39;the drive you want checked.
+</strong>
+    lpRootPathName = &quot;c:\&quot;
+    lAnswer = GetDiskFreeSpace(lpRootPathName, _
+    lpSectorsPerCluster, lpBytesPerSector, _
+    lpNumberOfFreeClusters, lpTotalNumberOfClusters)
+    lBytesPerCluster = lpSectorsPerCluster * lpBytesPerSector
+    lNumFreeBytes = lBytesPerCluster * lpNumberOfFreeClusters
+    lDiskSpace = Format(((lNumFreeBytes / 1024) / 1024), _
+     &quot;0.00&quot;)
+
+    If lDiskSpace &lt; 150# Then
+        Fix32.NODE1.lowdiskspacealarm.f_cv = 1
+    
+    Else
+        Fix32.NODE1.lowdiskspacealarm.f_cv = 0
+    
+    End If
+End Sub
+</pre>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__section_5EE36438F6CA4B68ACBCA5C017FC2AEF"><a name="vba_working_with_the_scheduler_and_the_doevents_function__section_5EE36438F6CA4B68ACBCA5C017FC2AEF"></a><h2 class="sectiontitle">Using Scripts with Event-Based Entries</h2> 
+       
+      <p>The following is an example of downtime monitoring. The Scheduler
+        application waits for the value of FIX32.NODE1.DOWNTIMESTART.F_CV to be true.
+        When it is true, the script launches a form that allows the user to enter the
+        reason for the downtime occurrence. When the user clicks OK, the script opens
+        the appropriate database and writes the time, date, data source, and downtime
+        description to the database. Use the parameters in the following table to
+        create the event object and the form. Be careful to place the Option Buttons
+        inside the Frame. 
+      </p>
+ 
+      
+<div class="tablenoborder"><a name="vba_working_with_the_scheduler_and_the_doevents_function__table_EE873AD003844DB691054C54BA0B42D9"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="vba_working_with_the_scheduler_and_the_doevents_function__table_EE873AD003844DB691054C54BA0B42D9" rules="all" summary=""><caption><span class="tablecap">DownTime Start Event Properties</span></caption> 
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d3570990e256" valign="top"> 
+              <p>OBJECT 
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d3570990e262" valign="top"> 
+              <p>PROPERTY 
+              </p>
+ 
+            </th>
+ 
+            <th class="cellrowborder" id="d3570990e268" valign="top"> 
+              <p>SETTING 
+              </p>
+ 
+            </th>
+ 
+          </tr>
+ 
+        </thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Event</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Event Type 
+              </p>
+ 
+              <p> Data Source 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> Line1Packer1DownTime 
+              </p>
+ 
+              <p> On True 
+              </p>
+ 
+              <p> Fix32.NodeName.DownTimeStart.F_CV 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Form</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> frmDownTime 
+              </p>
+ 
+              <p> Downtime Monitoring Logging to Relational Database 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Command Button</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> cmdOK 
+              </p>
+ 
+              <p> OK 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Frame</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> fraLine1Packer1 
+              </p>
+ 
+              <p> Packaging Line 1 Packer 1 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Option Button</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> optDownTimeReasonOne 
+              </p>
+ 
+              <p> Bad packaging material 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Option Button</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> optDownTimeReasonTwo 
+              </p>
+ 
+              <p> Fallen bottle or bottle jam on linet to packer 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Option Button</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> optDownTimeReasonThree 
+              </p>
+ 
+              <p> Low oil pressure in packer drive 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Option Button</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Caption 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> optDownTimeReasonFour 
+              </p>
+ 
+              <p> &lt;Leave this caption blank&gt; 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3570990e256 " valign="top"> 
+              <p> 
+                <strong>Textbox</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e262 " valign="top"> 
+              <p> Name 
+              </p>
+ 
+              <p> Enabled 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3570990e268 " valign="top"> 
+              <p> 
+                <strong>TxtDownTimeReasonFour False</strong> 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    </div>
+ 
+    <div class="section" id="vba_working_with_the_scheduler_and_the_doevents_function__section_1F94DADFDE3D41A08174D3D53B39EF31"><a name="vba_working_with_the_scheduler_and_the_doevents_function__section_1F94DADFDE3D41A08174D3D53B39EF31"></a><h2 class="sectiontitle">Example: Recording DownTime Monitoring</h2> 
+       
+      <pre class="pre">
+<strong>&#39;Place the following code into the subroutine created after
+</strong><strong>&#39;clicking the VB Editor button in the Modify Event Entry dialog.
+</strong>
+<strong>&#39;On the Event object&#39;s OnTrue event, initialize the form
+</strong><strong>&#39;with the Event&#39;s data source and then show the form.
+</strong><strong>&#39;Line1Packer1DownTime is the name of the event created
+</strong><strong>&#39;in Scheduler.
+</strong>
+Private Sub Line1Packer1DownTime_OnTrue()
+    frmDownTime.InitializeDataSource _
+    (Line1Packer1DownTime.Source)
+    frmDownTime.Show
+
+End Sub
+
+</pre>
+ 
+      <div class="fignone" id="vba_working_with_the_scheduler_and_the_doevents_function__93923"><a name="vba_working_with_the_scheduler_and_the_doevents_function__93923"></a><div><span class="figcap">Downtime Monitoring Logging</span></div> 
+         
+        <a name="vba_working_with_the_scheduler_and_the_doevents_function__image_966420AF66B24859ACC4478339BF71B8"></a><img id="vba_working_with_the_scheduler_and_the_doevents_function__image_966420AF66B24859ACC4478339BF71B8" src="Downtime.gif" /> 
+      </div>
+ 
+      <pre class="pre">
+<strong>&#39;Place the following code directly in the form you create and 
+&#39;set a reference to Microsoft DAO 3.X Object Library.  See 
+&#39;Visual Basic Editor Help for details on setting references.
+</strong>
+Public sDataSource As String
+
+<strong>&#39;This is the initialize routine that is called from the Event
+</strong><strong>&#39;object&#39;s OnTrue event. It creates a public instance of the 
+</strong><strong>&#39;string name of the data source for the form to use.
+</strong>Public Sub InitializeDataSource(DataSource As String)
+    sDataSource = DataSource
+
+End Sub
+
+<strong>&#39;When the option button beside the text box is selected,
+</strong><strong>&#39;enable and set focus to the text box.
+</strong>Private Sub optDownTimeReasonFour_Click()
+
+    txtDownTimeReasonFour.Enabled = True
+    txtDownTimeReasonFour.SetFocus
+
+End Sub
+
+<strong>&#39;When the form gets activated, set the first option to true
+</strong>Private Sub UserForm_Activate()
+    optDownTimeReasonOne.Value = True
+
+End Sub
+
+<strong>&#39;When the user selects OK, store which reason they chose.
+</strong>Private Sub cmdOK_Click()
+    Dim DownTimeReason As String
+    If optDownTimeReasonOne.Value = True Then
+        DownTimeReason = optDownTimeReasonOne.Caption
+    ElseIf optDownTimeReasonTwo.Value = True Then
+        DownTimeReason = optDownTimeReasonTwo.Caption
+    ElseIf optDownTimeReasonThree.Value = True Then
+        DownTimeReason = optDownTimeReasonThree.Caption
+    ElseIf optDownTimeReasonFour.Value = True Then
+        If txtDownTimeReasonFour.Text &lt;&gt; &quot;&quot; Then
+            DownTimeReason = txtDownTimeReasonFour.Text
+        Else
+            MsgBox &quot;Please enter a reason for the _
+            downtime event&quot;
+            txtDownTimeReasonFour.SetFocus
+        End If
+    End If
+
+<strong>&#39;Call the AddDownTimeEventData subroutine to add the
+</strong><strong>&#39;downtime information to the database.
+</strong>Call AddDownTImeEventData(DownTimeReason)
+    Unload Me
+
+End Sub
+
+<strong>&#39;This subroutine writes the data to the database and</strong> 
+<strong>&#39;updates it.
+</strong><strong>&#39;This database has not been provided and will need to be created
+</strong><strong>&#39;for this subroutine to execute without error.
+</strong>
+Public Sub AddDownTImeEventData(DownTimeReason As String)
+
+    <strong>&#39;Create an instance of DeltaV Operate.
+</strong>    Dim wrkSpace As Workspace
+    Set wrkSpace = CreateWorkspace(&quot;&quot;, &quot;admin&quot;, &quot;&quot;, dbUseJet)
+
+    <strong>&#39;Open the downtime database.
+</strong>    Dim db As Database
+    Set db = wrkSpace.OpenDatabase(System.PicturePath &amp; _
+    &quot;\downtime.mdb&quot;)
+
+    <strong>&#39;Create a recordset.
+</strong>    Dim rs As Recordset
+    Set rs = db.OpenRecordset(&quot;Packaging&quot;, dbOpenDynaset)
+
+    <strong>&#39;Set up the time of downtime occurrence.
+</strong>    Dim TimeDate As Date
+    TimeDate = Now
+    rs.AddNew
+    rs.Fields(1) = TimeDate
+    rs.Fields(2) = TimeDate
+    rs.Fields(3) = sDataSource
+    rs.Fields(4) = DownTimeReason
+    rs.Fields(5) = Fix32.NODE1.downtimeperiod.f_cv
+    rs.Update
+
+End Sub
+
+</pre>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

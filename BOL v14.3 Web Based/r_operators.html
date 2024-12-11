@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Operators" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="precedence order for operators" name="DC.subject" /><meta content="precedence order for operators" name="keywords" /><meta content="c_syntaxrules.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_operators" name="DC.Identifier" /><title>Operators</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_operands.html" /><link rel="next" href="r_functions.html" /></head><body class="fixed" id="r_operators" data-relpath="r_operators.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_operators"></a>
+
+<h1 class="topictitle1">Operators</h1>
+<div><div></div>
+<div class="section" id="r_operators__section_D886D5191AF6462E8C818B247045F592"><a name="r_operators__section_D886D5191AF6462E8C818B247045F592"></a><p>Operators allow you to make complex calculations with arithmetic operations within expressions. Operators use operands to act upon. Normally, operators are used in the following order:</p>
+<p>Operand1 Operator Operand 2;</p>
+<p>For example:</p>
+<pre class="codeblock">OUT1 := 5;</pre>
+<p>This example shows the use of the addition operator:</p>
+<pre class="codeblock">OUT1 := 5 + 5;</pre>
+<p>Normally, the value of the calculation is assigned to either an output, external reference, or temporary variable. The following operators are supported in DeltaV expressions:</p>
+<p>+, -, *, /, AND, OR, NOT, XOR, MOD, !, =,&lt;&gt;, ~=, !=, &lt;, &gt;, &lt;=, &gt;=, **, :=, (,), x?y:z, ~, ^,&amp;, %</p>
+<div class="note"><span class="notetitle">Note:</span> <p> The equality operator (=) takes precedence over the AND and OR operators. However, it is important to write your expressions using parenthesis so that the result is as expected.</p>
+</div>
+
+<div class="tablenoborder"><a name="r_operators__table_8CF52CB741B24FCEA247187145515B8F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_operators__table_8CF52CB741B24FCEA247187145515B8F" rules="all" summary=""><caption><span class="tablecap">Operator Description</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d2956784e46" valign="top" width="NaN%"><p>Operator</p>
+</th>
+
+<th class="cellrowborder" id="d2956784e50" valign="top" width="NaN%"><p>Description</p>
+</th>
+
+<th class="cellrowborder" id="d2956784e54" valign="top" width="NaN%"><p>Notes</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>*</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Multiply</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The multiplication operator (*) causes its two operands to be multiplied.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>/</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Divide</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The division operator (/) causes the first operand to be divided by the second. If the first operand is less than zero and the second operand is zero, the divide operator returns the value -3.402823466e+38. If the first operand is greater than or equal to zero and the second operand is zero, the divide operator returns the value +3.402823466e+38.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>+</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Add</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The addition operator (+) causes its two operands to be added.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>-</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Subtract</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The subtraction operator (-) causes the second operand to be subtracted from the first.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>? :</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Conditional</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The conditional operator is a ternary operator (it takes three operands).
+
+
+
+
+</p>
+<p><em>Result := Conditional-expression ? Expression : Expression</em> The first operand is evaluated and all side effects are completed before continuing.
+</p>
+<p>
+When the first operand evaluates to True (a nonzero value), the second operand is evaluated.
+</p>
+<p>
+When the first operand evaluates to False (0), the third operand is evaluated.</p>
+<p>For example, the expression alpha&lt;beta ? delta : gamma; (where alpha and beta are simple operands) means that if alpha is less than beta, then evaluate delta; otherwise, evaluate gamma.</p>
+<p>You many need to rearrange your operands to use the ?: operator. For example, to write the conditional statement:</p>
+<pre class="codeblock">IF IN1 &lt; 90 THEN
+    OUT1 := IN1;
+ELSE
+    OUT1 := 90;ENDIF;</pre>
+<p>using the ?: operator, the statement is as follows:</p>
+<pre class="codeblock">OUT1 :=(IN1&lt;90) ? IN1 : 90</pre>
+<div class="note"><span class="notetitle">Note:</span> <p>
+ Always simplify the second and third operands when using the ?: operator.</p>
+</div>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>&amp;</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Bitwise AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The AND (bit) operator compares each bit of its first operand to the corresponding bit of its second operand. If both bits are 1, the corresponding resultant bit is set to 1. Otherwise, the corresponding resultant bit is set to 0.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Logical AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The logical AND operator produces the value 1 if both operands are 1 (non-zero). If either operand is 0, the result is 0.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>|</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Bitwise OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The inclusive OR (bit) operator compares each bit of its first operand to the corresponding bit of its second operand. If either bit is 1, the corresponding resultant bit is set to 1. Otherwise, the corresponding resultant bit is set to 0.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Logical OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The logical OR operator performs an inclusive OR operation on its operands. The result is 0 if both operands are 0. If either operand has a non-zero value, the result is 1.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>~</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Bitwise NOT</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The bitwise complement (or bitwise NOT) operator produces the bitwise complement of its operand.
+
+</p>
+<div class="note"><span class="notetitle">Note:</span> <p> This operator only works on signed values.</p>
+</div>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>! or NOT</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Logical NOT</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The logical negation (logical NOT) operator sets the result to 0 if its operand is TRUE (non-zero). If its operand is False (0), the result is 1.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>^</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Bitwise Exclusive OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The OR (bit) operator compares each bit of its first operand to the corresponding bit of its second operand. If one bit is 0 and the other bit is 1 (non-zero), the corresponding resultant bit is set to 1. Otherwise, the corresponding resultant bit is set to 0.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>XOR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Logical Exclusive OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The logical exclusive OR operator compares the first operand to the second operand. If one operand is 0 and the other is 1 (non-zero), the result is 1. Otherwise, the result is 0.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>MOD or %</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Modulus operator</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><div class="p">MOD is the remainder of simple integer division. For example, 13 / 5 (13 divided by 5) is 2 with a remainder of 3. Therefore, 13 MOD 5 is 3. When the division is inexact, the result is determined by the following rules:
+
+
+
+
+
+<a name="r_operators__ul_57C79B30DA3C423EAD8C0715482817A3"></a><ul id="r_operators__ul_57C79B30DA3C423EAD8C0715482817A3"><li id="r_operators__li_95FEDF24ED8A4E32BEB1DB273FB5D012"><div class="li_content">When the right operand is zero, the result is zero.</div></li>
+<li id="r_operators__li_775454BCAAF34B40BDF097AEA9B2AD3F"><div class="li_content">When both operands are positive, the result is positive.</div></li>
+<li id="r_operators__li_42E19810CEB74B40A4AC01CCECF6F74A"><div class="li_content">When either operand is negative and the result is inexact, the result is defined as follows:<a name="r_operators__ul_F5C1812FF4234570AC16688A92B05BDA"></a><ul id="r_operators__ul_F5C1812FF4234570AC16688A92B05BDA"><li id="r_operators__li_53E549DF4B3E414FA5982B01CA3C5288"><div class="li_content">In division where either operand is negative, the direction of truncation is toward zero.</div></li>
+</ul>
+</div></li>
+<li id="r_operators__li_7A24B9EB35A44FAB9A57AD1BC5855904"><div class="li_content">When either operation is negative in division with the remainder operator, the result has the same sign as the dividend (the first operand in the expression). For example -13 MOD 5 is -3, but 13 MOD -5 is 3.</div></li>
+</ul>
+</div>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Equality test</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is equal to second operand.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>&gt;</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Greater than</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is greater than the second operand.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>&lt;</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Less than</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is less than the second operand.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>&gt;=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Greater than or equal to</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is greater than or equal to second operand</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>&lt;=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Less than or equal to</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is less than or equal to second operand.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>!= or &lt;&gt; or ~=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Does not equal</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The first operand is not equal to the second operand.
+
+</p>
+<div class="note"><span class="notetitle">Note:</span> <p> The ~= operator only works on signed values.</p>
+</div>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>**</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Raise to power</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The power operator computes the first operand raised to the power of the second operand. If the first operand is negative and the second operand is not an integer, the result is zero.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e46 " valign="top" width="NaN%"><p>:=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e50 " valign="top" width="NaN%"><p>Assignment to output</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e54 " valign="top" width="NaN%"><p>The simple-assignment operator assigns its right operand to its left operand.</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note"><span class="notetitle">Note:</span> <p> The expression evaluator is stack oriented and allows a maximum of 32 operands and operators. The use of parentheses to organize the expression minimizes the stack usage. The equations are evaluated using RPN (Reverse Polish Notation).</p>
+</div>
+
+<div class="tablenoborder"><a name="r_operators__table_8C27EEF9CBC34DE0AA17EC4153D9D7D0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_operators__table_8C27EEF9CBC34DE0AA17EC4153D9D7D0" rules="all" summary=""><caption><span class="tablecap">Operator Precedence Rules</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d2956784e422" valign="top" width="22%"><p>Precedence Order</p>
+</th>
+
+<th class="cellrowborder" id="d2956784e426" valign="top" width="26%"><p>Operation</p>
+</th>
+
+<th class="cellrowborder" id="d2956784e430" valign="top" width="27%"><p>Symbol</p>
+</th>
+
+<th class="cellrowborder" id="d2956784e434" valign="top" width="25%"><p>Order of Evaluation</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>1</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Parenthesis</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>(Expression)</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Nonassociative</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>2</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Raise to power</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>**</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>3</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Logical NOT
+
+</p>
+<p>Bitwise NOT</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>! or NOT
+
+</p>
+<p>~</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>4</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Multiply
+
+
+</p>
+<p>Divide</p>
+<p>Modulus Operator</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>*
+
+
+</p>
+<p>/</p>
+<p>MOD or %</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>5</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Add
+
+
+</p>
+<p>Subtract</p>
+<p>Unary minus</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>+
+
+
+</p>
+<p>-</p>
+<p>-</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>6</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Equality test
+
+
+
+
+
+</p>
+<p>Greater than</p>
+<p>Less than</p>
+<p>Greater than or equal to</p>
+<p>Less than or equal to</p>
+<p>Does not equal</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>=
+
+
+
+
+
+</p>
+<p>&gt;</p>
+<p>&lt;</p>
+<p>&gt;=</p>
+<p>&lt;=</p>
+<p>!= or &lt;&gt; or ~=</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>7</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Bitwise AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>&amp;</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>8</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Bitwise Exclusive OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>^</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>9</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Bitwise OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>|</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>10</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Logical AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>AND</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>11</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Logical Exclusive OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>XOR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>12</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Logical OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>OR</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Left</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2956784e422 " valign="top" width="22%"><p>13</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e426 " valign="top" width="26%"><p>Conditional</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e430 " valign="top" width="27%"><p>?:</p>
+</td>
+
+<td class="cellrowborder" headers="d2956784e434 " valign="top" width="25%"><p>Right</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

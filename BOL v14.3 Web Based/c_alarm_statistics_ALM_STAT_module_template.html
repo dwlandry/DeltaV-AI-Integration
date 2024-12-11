@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="ALM_STATISTICS module template" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="ALM_STATISTICS module template, module template, ALM_STATISTICS, operator statistic module template, alarm modules" name="DC.subject" /><meta content="ALM_STATISTICS module template, module template, ALM_STATISTICS, operator statistic module template, alarm modules" name="keywords" /><meta content="adv_foreground_and_background_schedules.html" name="DC.Relation" scheme="URI" /><meta content="adv_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="configure_alm_statistics_module.html" name="DC.Relation" scheme="URI" /><meta content="c_operator_statistic_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_cascade_master_module_template" name="DC.Identifier" /><title>ALM_STATISTICS module template</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_operator_statistic_module_templates.html" /><link rel="next" href="c_analog_control_module_templates.html" /></head><body class="fixed" id="c_cascade_master_module_template" data-relpath="c_alarm_statistics_ALM_STAT_module_template.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_cascade_master_module_template"></a>
+
+<h1 class="topictitle1">ALM_STATISTICS module template</h1>
+<div><div></div>
+ 
+	 <p>The Operator Statistics module template (ALM_STATISTICS) is used to
+		gather and compute statistics for active, shelved, stale and acknowledged
+		alarms. The ALM_STATISTICS module requires some additional configuration in
+		order to set it up; it is intended that the module will be configured by an
+		experienced DeltaV control engineer familiar with Visual Basic and DeltaV
+		Operate (Configure) schedules. 
+	 </p>
+ 
+	 <div class="p">The ALM_STATISTICS module template consists of an action block
+		(SYSTEM-TIME), a calculation block (KPI_CALC) and a schedule
+		(ALM_STATS_CALC.evs) for the DeltaV Operate Scheduler. The SYSTEM-TIME block
+		parses the system time while the KPI_CALC block computes the sum and average of
+		active, shelved, stale and acknowledged alarms. There are four input blocks
+		(MM, DD, HH, YYYY) that are wired to the input parameters on the KPI_CALC
+		block. 
+	 <a name="c_cascade_master_module_template__ul_1CFD33C0BF4E43D590A87473FA2417E2"></a><ul id="c_cascade_master_module_template__ul_1CFD33C0BF4E43D590A87473FA2417E2"> 
+		<li id="c_cascade_master_module_template__li_1AEFAB84A70A4355BFA079D76E9F96F5"><div class="li_content">IN1 -&gt; MM (Months) 
+		</div></li>
+ 
+		<li id="c_cascade_master_module_template__li_63F1D073CC4F4706B30EE45D6DE441FD"><div class="li_content">IN2 -&gt; DD (Days) 
+		</div></li>
+ 
+		<li id="c_cascade_master_module_template__li_FDBC203B63BC469C808581703B5B75BE"><div class="li_content">IN3 -&gt; HH (Hours) 
+		</div></li>
+ 
+		<li id="c_cascade_master_module_template__li_4A081D6E69584650A9A23CC568039166"><div class="li_content">IN4 -&gt; YYYY (Years) 
+		</div></li>
+ 
+	 </ul>
+ 
+	  
+	 </div>
+ 
+	 <div class="p"> The schedule allows for periodic reading of alarm statistics. It
+		includes an event based entry that counts the active, shelved, stale and
+		acknowledged alarms and is triggered every 1 a.m. and 1 p.m. of each day. The
+		counted alarms are then used to compute the alarm averages in the Operator
+		Statistics Module. ALM_STATS_CALC.evs is a background schedule run by 
+		<span class="filepath">FixBackgroundServer.exe</span> and therefore must be added
+		manually to the Scheduler in DeltaV Operate Configure. ALM_STATS_CALC.evs is
+		located in 
+		<span class="menucascade"><span class="uicontrol">DeltaV</span> &gt; <span class="uicontrol">DVData</span> &gt; <span class="uicontrol">Graphics-iFix</span> &gt; <span class="uicontrol">PDB</span></span>.
+		
+		<div class="note"><span class="notetitle">Warning:</span>  
+		  <a name="c_cascade_master_module_template__ul_5BD3D28A7A3848878D9DFB7EFDADB98A"></a><ul id="c_cascade_master_module_template__ul_5BD3D28A7A3848878D9DFB7EFDADB98A"> 
+			 <li id="c_cascade_master_module_template__li_FE3079F3599045FEAA30502FFDCD4E4E"><div class="li_content">When upgrading from one
+				build to another build, ALM_STAT_CALC.evs is removed from the background
+				schedule and must be re-added to the schedule after the upgrade. 
+			 </div></li>
+ 
+		  </ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <p> The ALM_STATISTICS module template includes the following parameters: 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_cascade_master_module_template__table_AEB69EF96A6E4EE0B38A9BF8BA3E38F2"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_cascade_master_module_template__table_AEB69EF96A6E4EE0B38A9BF8BA3E38F2" rules="all" summary=""><caption><span class="tablecap">Parameters for the ALM_STATISTICS module template</span></caption><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" id="d771112e90" valign="top" width="NaN%">Parameter 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d771112e93" valign="top" width="NaN%">Description 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACK_ALM_AVG 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>The calculated average of acknowledged alarms for last month which is computed in the CALC block. <br />
+The ACK_ALM_KPI is result of this expression:<br />
+</p>
+<samp class="codeph">&#39;^/SUPP_ALM_SUM.CV&#39; / SNAPSHOT_CNT.CV;</samp> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACK_ALM_SUM 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Running total of ACK_ALMS computed every 1am
+				and 1pm of each day of the month. ACK_ALM_SUM resets to 0 at the beginning of
+				each month. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACK_ALMS 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Acknowledged alarms count 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACTIVE_ALM_AVG 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>The calculated average of active alarms for last month which is computed in the CALC block. <br />
+The ACTIVE_ALM_KPI is result of this expression:<br />
+</p>
+<samp class="codeph">&#39;^/ACTIVE_ALM_SUM.CV&#39; / SNAPSHOT_CNT.CV</samp> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACTIVE_ALM_SUM 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Running total of ACTIVE_ALMS computed every
+				1am and 1pm of each day of the month. ACTIVE_ALM_SUM resets to 0 at the
+				beginning of each month. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> ACTIVE_ALMS 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Active alarm count (up to 250 alarms) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%">DD 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>Parsed LOCALTIME by the SYSTEM-TIME block.<br />
+DD - Days</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%">HH 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>Parsed LOCALTIME by the SYSTEM-TIME block.<br />
+HH - Hours</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> LOCALTIME 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> System time in seconds parsed by the
+				SYSTEM-TIME block 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%">MM 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>Parsed LOCALTIME by the SYSTEM-TIME block.<br />
+MM - Months</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> MONTH_RPT_DONE 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Flag to indicate if the average has already
+				been computed for the month 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SCHED_STAT_CURR 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Flags to indicate if the scheduler (which
+				updates ACTIVE_ALMS, SHELVED_ALMS, ACK_ALMS and STALE_ALMS) is still running. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%">SCHED_STAT_PREV 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%">Flags to indicate if the scheduler (which
+				updates ACTIVE_ALMS, SHELVED_ALMS, ACK_ALMS and STALE_ALMS) is still running. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SHELVED_ALM_AVG 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>The calculated average of shelved alarms for last month which is computed in the CALC block.<br />
+ The SUPP_ALM_KPI is result of this expression: <br />
+</p>
+<samp class="codeph">&#39;^/SUPP_ALM_SUM.CV&#39; / SNAPSHOT_CNT.CV; 
+				</samp> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SHELVED_ALM_SUM 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Running total of SHELVED_ALMS computed every
+				1am and 1pm of each day of the month. SHELVED_ALM_SUM resets to 0 at the
+				beginning of each month. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SHELVED_ALMS 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Shelved alarms count 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SHIFT_ADD_DONE 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Flag to indicate if the sum has already been
+				computed on 1am or 1pm. This is to make sure that the sum will only be computed
+				once during 1am or 1pm. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> SNAPSHOT_CNT 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Number of times the sum for the four alarms
+				types have been computed for the month. This will start at 0 at the beginning
+				of each month and increments every time the sum is computed. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> STALE_ALM_AVG 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>The calculated average of stale alarms for last month which is computed in the CALC block. <br />
+The STALE_ALM_KPI is result of this expression:<br />
+</p>
+ 
+				<samp class="codeph">&#39;^/STALE_ALM_SUM.CV&#39; / SNAPSHOT_CNT.CV;</samp> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> STALE_ALM_SUM 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Running total of STALE_ALMS computed every 1am
+				and 1pm of each day of the month. STALE_ALM_SUM resets to 0 at the beginning of
+				each month. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> STALE_ALMS 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Stale alarms count (active alarms for more
+				than 24 hours) 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%"> STATION_NAME 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> Node where Operator Statistics Module is
+				Assigned 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d771112e90 " valign="top" width="NaN%">YYYY 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d771112e93 " valign="top" width="NaN%"> 
+				<p>Parsed LOCALTIME by the SYSTEM-TIME block.<br />
+YYYY - Years</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p>Open the module in Control Studio Off-Line mode to modify the module
+		parameters and in Control Studio On-Line mode to view the current values of the
+		module&#39;s parameters. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="adv_foreground_and_background_schedules.html">Running foreground and background schedules</a></div>
+<div><a href="adv_scheduler.html">The Scheduler</a></div>
+<div><a href="configure_alm_statistics_module.html">Configure an ALM_STATISTICS module for gathering and computing alarm
+	 statistics</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

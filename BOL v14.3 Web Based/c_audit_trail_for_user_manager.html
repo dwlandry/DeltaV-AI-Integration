@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Audit trail for User Manager" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="audit trail, User Manager, version control, User Manager" name="DC.subject" /><meta content="audit trail, User Manager, version control, User Manager" name="keywords" /><meta content="c_checking_items_in_and_out.html" name="DC.Relation" scheme="URI" /><meta content="c_recover_purge_command.html" name="DC.Relation" scheme="URI" /><meta content="c_version_control.html" name="DC.Relation" scheme="URI" /><meta content="c_deltav_user_manager_and_deltav_security.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_audit_trail_for_user_manager" name="DC.Identifier" /><title>Audit trail for User Manager</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_managing_computers_and_domains.html" /><link rel="next" href="c_generating_reports_from_user_manager.html" /></head><body class="fixed" id="c_audit_trail_for_user_manager" data-relpath="c_audit_trail_for_user_manager.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_audit_trail_for_user_manager"></a>
+
+<h1 class="topictitle1">Audit trail for User Manager</h1>
+<div><div></div>
+ 
+	 <p>User security operations performed in the DeltaV User Manager are
+		tracked by Version Control Audit Trail, for DeltaV database accounts only. If
+		the account is both a DeltaV database account and an operating system account,
+		only the changes made through DeltaV User Manager are tracked.
+	 </p>
+ 
+	 <p>The audit trail tracks creation of new DeltaV database accounts and
+		account modifications and deletions by storing the date, time, user name, and
+		description of the event in the Version Control Audit Trail database. Version
+		Control Recover, Purge, and Show History commands can be accessed from the User
+		Manager. Version Control must be enabled for User Manager changes to be
+		tracked. Use the User Manager online help for information on adding, deleting,
+		and modifying accounts. The Version Control Check Out and Check In preferences
+		do not apply to User Manager. User security items are automatically checked out
+		and checked in.
+	 </p>
+ 
+	 <p>When Version Control is enabled and a change is made in DeltaV User
+		Manager, the 
+		<span class="wintitle">Version Control - Messages</span> dialog provides a log of
+		Version Control activities. In some DeltaV applications such as the Explorer
+		and Control Studio, check marks indicate that an item has been checked out of
+		Version Control. There are no indications of Version Control activity other
+		than the messages dialog in the DeltaV User Manager application.
+	 </p>
+ 
+	 <div class="p">
+		<div class="fignone" id="c_audit_trail_for_user_manager__fig_570E8EEA316C43509F268453A64A18D5"><a name="c_audit_trail_for_user_manager__fig_570E8EEA316C43509F268453A64A18D5"></a><div><span class="figcap">Version Control check-in message</span></div> 
+		   
+		  <a name="c_audit_trail_for_user_manager__image_16969E2B03E44AEBB2DF65417085C357"></a><img id="c_audit_trail_for_user_manager__image_16969E2B03E44AEBB2DF65417085C357" src="VCATMessages.GIF" /> 
+		</div>
+
+	 </div>
+ 
+	 <p>In the example shown above, a new user account (Jane Doe) is added in
+		DeltaV User Manager.
+	 </p>
+ 
+	 <p>As shown in the following image, when a modification is made to an
+		existing account, the messages dialog indicates that the account data is
+		checked out of Version Control and then checked in when the changes are made.
+	 </p>
+ 
+	 <div class="p">
+		<div class="fignone" id="c_audit_trail_for_user_manager__fig_D682E5BD77BF46C3938405F3C2B3A47B"><a name="c_audit_trail_for_user_manager__fig_D682E5BD77BF46C3938405F3C2B3A47B"></a><div><span class="figcap">Version Control check-in check-out message</span></div> 
+		   
+		  <a name="c_audit_trail_for_user_manager__image_A3D6E34F69F740CBAF0F2D626C55DB0F"></a><img id="c_audit_trail_for_user_manager__image_A3D6E34F69F740CBAF0F2D626C55DB0F" src="VCATMessage2.GIF" /> 
+		</div>
+
+	 </div>
+ 
+	 <p>Similar Version Control messages are logged for all User Manager actions
+		when Version Control is enabled.
+	 </p>
+ 
+	 <div class="section" id="c_audit_trail_for_user_manager__section_7C45328772DB408F81A4DFCD51F88E91"><a name="c_audit_trail_for_user_manager__section_7C45328772DB408F81A4DFCD51F88E91"></a><h2 class="sectiontitle">Recovering deleted security items, purging items, and showing
+		  history</h2> 
+		 
+		<p>The Version Control Show History and Purge and Recover commands can be
+		  accessed from the DeltaV User Manager&#39;s Tools menu. With Version Control
+		  enabled, deleted User Manager items can be recovered from the Version Control
+		  database or permanently removed from the Version Control database. Similarly,
+		  you can access a user account&#39;s version control history from the DeltaV User
+		  Manager. Select the user name and click 
+		  <span class="menucascade"><span class="uicontrol">Tools</span> &gt; <span class="uicontrol">Version
+				Control</span> &gt; <span class="uicontrol">Show History</span></span>.
+		</p>
+ 
+		<p>You can delete a user&#39;s DeltaV database account without deleting the
+		  operating system account. If this has been done and you recover that account,
+		  the 
+		  <span class="uicontrol">DeltaV Database Account</span> box on the user
+		  account&#39;s properties (<span class="uicontrol">General</span> tab) is selected. If both
+		  the DeltaV database account and the operating system account are deleted and
+		  then recovered, the system prompts you for a password (that is compliant with
+		  the Windows password complexity requirements) to be allowed to restore that
+		  account.
+		</p>
+ 
+		<p>The following table lists what items Version Control restores when a
+		  user or a group is rolled back.
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="c_audit_trail_for_user_manager__table_A217C9F67CDC455FB4334FD531D7DCD8"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_audit_trail_for_user_manager__table_A217C9F67CDC455FB4334FD531D7DCD8" rules="all" summary=""><thead align="left">
+				<tr>
+				  <th class="cellrowborder" id="d808558e118" valign="top" width="NaN%">
+				  </th>
+
+				  <th class="cellrowborder" id="d808558e121" valign="top" width="NaN%">Restored
+				  </th>
+
+				  <th class="cellrowborder" id="d808558e124" valign="top" width="NaN%">Not restored
+				  </th>
+
+				</tr>
+</thead>
+
+			 <tbody>
+				<tr>
+				  <td class="cellrowborder" headers="d808558e118 " valign="top" width="NaN%">
+					 <p><strong>User</strong>
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d808558e121 " valign="top" width="NaN%">
+					 <p>Groups the user is a member of<br />
+Keys assigned to the user<br />
+SIS keys assigned to the user</p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d808558e124 " valign="top" width="NaN%">
+					 <p>Description<br />
+The operating system account type<br />
+    DeltaV Administrator<br />
+    DeltaV Batch Historian Administrator<br />
+    DeltaV Batch Historian User<br />
+    DeltaV Event Chronicle Administrator<br />
+    Windows Desktop Access<br />
+    Windows Administrator<br />
+    Allow Remote Desktop Logon<br />
+Logon ScrTerminalipt<br />
+Account and Password Status<br />
+    Disable Account<br />
+    Password Must Change at Next Logo<br />
+    User Can&#39;t Change Password<br />
+    Password Never Expires<br />
+Home Directory</p>
+
+				  </td>
+
+				</tr>
+
+				<tr>
+				  <td class="cellrowborder" headers="d808558e118 " valign="top" width="NaN%">
+					 <p><strong>Group</strong>
+					 </p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d808558e121 " valign="top" width="NaN%">
+					 <p>Description<br />
+Keys assigned to the group</p>
+
+				  </td>
+
+				  <td class="cellrowborder" headers="d808558e124 " valign="top" width="NaN%">
+					 <p>Members of the group<br />
+SIS keys</p>
+
+				  </td>
+
+				</tr>
+
+			 </tbody>
+
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_checking_items_in_and_out.html">Checking items in and out</a></div>
+<div><a href="c_recover_purge_command.html">Recover/Purge command</a></div>
+<div><a href="c_version_control.html">Version Control</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

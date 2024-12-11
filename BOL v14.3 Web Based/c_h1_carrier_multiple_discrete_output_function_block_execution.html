@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="H1 Carrier Multiple Discrete Output function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_multiple_do.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_h1_carrier_multiple_discrete_output_function_block_execution" name="DC.Identifier" /><title>H1 Carrier Multiple Discrete Output function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_multiple_do.html" /><link rel="next" href="c_h1_carrier_multiple_discrete_output_function_block_modes.html" /></head><body class="fixed" id="c_h1_carrier_multiple_discrete_output_function_block_execution" data-relpath="c_h1_carrier_multiple_discrete_output_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_h1_carrier_multiple_discrete_output_function_block_execution"></a>
+
+<h1 class="topictitle1">H1 Carrier Multiple Discrete Output function block execution</h1>
+<div><div></div>
+<p id="c_h1_carrier_multiple_discrete_output_function_block_execution__blockexecutionmultiplediscreteoutputfunctionblock"><a name="c_h1_carrier_multiple_discrete_output_function_block_execution__blockexecutionmultiplediscreteoutputfunctionblock"></a>The H1 Carrier Multiple Discrete Output function block determines its setpoint and sets the output.</p>
+<p><strong>Setting the Output</strong></p>
+<p>The block first must determine its setpoint. Normally, the block is used in Cas mode, and the cascade input value (CAS_IN_D) becomes the setpoint (SP_D). In Automatic (Auto) mode, the block disconnects CAS_IN_D and allows a manual entry to change the value of SP_D. In Man mode, OUT_D can be entered manually.</p>
+<div class="note"><span class="notetitle">Note:</span> <p> CAS_IN_D should always be an 8-bit integer value.</p>
+</div>
+<p><strong>I/O Options</strong></p>
+<div class="p">You select the I/O options by using the IO_OPTS parameter:<a name="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_3E19CA6BCB1046AB94C000D1103EDD71"></a><ul id="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_3E19CA6BCB1046AB94C000D1103EDD71"><li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_89861AADCE4442C28CEF4C65D4081B25"><div class="li_content"><p><strong>SP-PV Track in Man</strong> — This option is enabled (True) as a default. SP_D becomes a copy of PV_D when the block&#39;s target mode is Man. A manually entered SP_D value is overwritten on the block&#39;s next execution cycle. This can prevent a state change when transitioning from Man to Auto mode. You can disable this option in OOS mode only.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_302E391424D64292A1E8E027EDF36550"><div class="li_content"><p><strong>SP-PV Track in LO or IMan</strong> — When this option is selected, SP_D becomes a copy of PV_D when the actual mode of the block is Initializing Manual or Local Override.</p>
+<div class="p">The block goes to IMan mode under the following conditions:<a name="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_8278FDF5799F4771A1CA0EC39A197D38"></a><ul id="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_8278FDF5799F4771A1CA0EC39A197D38">
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_C8B213C3E67C4AE8B43934FBE3918C7B"><div class="li_content"><p>No DO card or the wrong card is present.</p>
+</div></li>
+
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_FF04FC825FBE4270AEA338F416DF7F45"><div class="li_content"><p>Communication with the H1 carrier is bad.</p>
+</div></li>
+
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_97C89584A40148CA972FFE8B6CBA05A1"><div class="li_content"><p>The transducer block in the H1 carrier is in OOS mode.</p>
+</div></li>
+
+</ul>
+</div>
+<p>The block goes to LO mode when the fault state is active.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_B5955ED203BE4564AB3121AC2CF08E9C"><div class="li_content"><div class="p"><strong>Tgt to Man if Fault State Active</strong> — This option causes the target mode of the block to become Man when the fault state is active. Any of the following conditions causes the fault state to be active:<a name="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_CB006BAEC37D406A889E37CADBAC5277"></a><ul id="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_CB006BAEC37D406A889E37CADBAC5277">
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_54FC7D2A1C914789BFEFAA0DD183D8D9"><div class="li_content"><p>The actual mode of the block is Cas and the status of CAS_IN_D is <em>BAD</em>.</p>
+</div></li>
+
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_A431643706F3417F81CEF7F653AAF6EE"><div class="li_content"><p>The actual mode of the block is Cas, and the substatus of CAS_IN_D is Initiate Fault State.</p>
+</div></li>
+
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_5B7EBE675A6E4DB88A825FFF525E5405"><div class="li_content"><p>The fault state is set manually in the resource block in the H1 carrier.</p>
+</div></li>
+
+</ul>
+</div>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_72549FED540544B8950C7C7C4EDCE44D"><div class="li_content"><p><strong>Use Fault st val on Restart</strong> — This option causes OUT_D to have the value of FSTATE_VAL_D on a restart (that is, when the carrier is powered up).</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_10F0501C58104BFD94328D5DF4E04F79"><div class="li_content"><p><strong>Fault State to value</strong> — This option causes OUT_D to have the value of FSTATE_VAL_D when the fault state is active. This occurs FSTATE_TIME seconds after the fault state is detected if the condition still exists. When the option is not selected, OUT_D keeps its value when the fault state is active.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_C7989DEF018A4B6FA30906A3E41E3D75"><div class="li_content"><p><strong>Use PV for BKCAL_OUT</strong> — This option results in the value of BKCAL_OUT_D being that of PV_D. Normally, BKCAL_OUT is the value of SP_D.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_DE786C1019E04AF5A42DD4D7677A68B8"><div class="li_content"><p><strong>Invert</strong> — When this option is enabled (True), OUT_D becomes an inverted copy of SP_D. When this option is not enabled (False), OUT_D is a straight copy of SP_D. Inversion is done on a bit by bit basis.</p>
+</div></li>
+</ul>
+</div>
+<div class="note"><span class="notetitle">Note:</span> <p> You can set I/O options in Out of Service mode only.</p>
+</div>
+<p><strong>Simulation</strong></p>
+<p>When SIMULATE_D is not enabled and the mode is not Out of Service (OOS), the value of OUT_D is sent to the hardware. When SIMULATE_D is enabled, the status of OUT_D is forced to <em>Good</em>, regardless of the condition of the hardware. In addition, READBACK_D and PV_D take on the value and status of SIMULATE_D.</p>
+<p><strong>Block Errors</strong></p>
+<div class="p">The following conditions are reported in the BLOCK_ERR parameter:<a name="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_D5B428C83EBB47D785E5E43904D8AF58"></a><ul id="c_h1_carrier_multiple_discrete_output_function_block_execution__ul_D5B428C83EBB47D785E5E43904D8AF58"><li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_9612A3B3D25D4175A258E6EF4DF6271F"><div class="li_content"><p><strong>Simulate active</strong> — SIMULATE_D is enabled; therefore, PV_D is not real.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_B301E438A5C44F839E85E6668BBB9887"><div class="li_content"><p><strong>Input failure/process variable has <em>Bad</em> status</strong> — The source of the block&#39;s process variable is bad. For the FFMDO block, this might indicate a hardware failure or a Bad status on the SIMULATE_D parameter.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_7F39897FE85442ADB4F4996B483CE31A"><div class="li_content"><p><strong>Output failure</strong> — The output hardware is Bad.</p>
+</div></li>
+<li id="c_h1_carrier_multiple_discrete_output_function_block_execution__li_BE8E751AAEAD4D26B34CE77F8AE26204"><div class="li_content"><p><strong>Out of Service</strong> — The block is not being processed.</p>
+</div></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

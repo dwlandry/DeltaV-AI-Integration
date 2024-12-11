@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Composite historian status values" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="c_historical_data_retrieval.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_composite_historian_status_values" name="DC.Identifier" /><title>Composite historian status values</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_composite_ff_status_values.html" /><link rel="next" href="c_aggregate_functions_supported.html" /></head><body class="fixed" id="c_composite_historian_status_values" data-relpath="c_composite_historian_status_values.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_composite_historian_status_values"></a>
+
+<h1 class="topictitle1">Composite historian status values</h1>
+<div><div></div>
+ 
+    <p>The DvCH status value indicates the validity of historical information
+      involving historian behavior not covered by the Ff status value. 
+    </p>
+ 
+    <p>Historian values associated with raw history samples usually have at
+      most one historian status bit set. Historian values returned for history
+      aggregates involving several raw data samples are quite likely to have several
+      historian status bits set. Composite historian status values for interpolated
+      history samples or history aggregates are obtained by bit-ORing the individual
+      historian status values that were involved in computing the interpolated sample
+      or aggregate. 
+    </p>
+ 
+    <div class="p">The individual historian status bits defined are: 
+    <a name="c_composite_historian_status_values__ul_4B4BF546A0C9450D80C66E690B59377B"></a><ul id="c_composite_historian_status_values__ul_4B4BF546A0C9450D80C66E690B59377B"> 
+      <li id="c_composite_historian_status_values__li_ABD870C7CABC46F6A61DBB71C20BC501"><div class="li_content"> 
+        <strong>History data unavailable</strong> 
+        <strong>(** No Data **)</strong> – When set, indicates a type of hole in the
+        historical data record. This status would let history clients know that the
+        historical data server has no historical data set mounted that includes this
+        history tag for this point in time. Situations would include the period of time
+        before the oldest history sample currently online for a history tag or gaps in
+        the online historical data record due to historical data sets being removed. 
+      </div></li>
+ 
+      <li id="c_composite_historian_status_values__li_2FB704BAA2784F01B9A0BDB425D3ABEA"><div class="li_content"><strong>History collection not
+          configured</strong> 
+        <strong>(Not Configured)</strong> – When set, indicates a type of hole in the
+        historical data record. This lets history clients know that the hole is
+        intentional, that is, caused by the configuration engineer deciding to no
+        longer have historical data captured for this tag on this node, or configuring
+        the historian to be disabled. 
+      </div></li>
+ 
+      <li id="c_composite_historian_status_values__li_2AC199133E0946709F234C786E8C055E"><div class="li_content"><strong>Historian/scanner
+          shutdown (Historian shut down)</strong> – When set, indicates a type of hole in the
+        historical data record. This status lets history clients know that the hole was
+        a temporary outage due to the historian not operating or due to planned or
+        unplanned DeltaV shutdowns. It is likely that no other history tags have data
+        available from this server at this point in time. 
+      </div></li>
+ 
+      <li id="c_composite_historian_status_values__li_9F7F79DD270B4120963FE7029A17010A"><div class="li_content"><strong>History data
+          unreadable</strong> 
+        <strong>(Not Readable)</strong> – When set, indicates a type of hole in the
+        historical data record. This lets history clients know that the history tags
+        became unreadable for whatever reason: source node crash, communication
+        problems, configuration changes partially distributed, etc. 
+      </div></li>
+ 
+      <li id="c_composite_historian_status_values__li_1754BD8B0B5948FB91F2DCF61B230F68"><div class="li_content"><strong>Aggregate value invalid
+          (Bad Aggregate)</strong> – This status bit is set for aggregate values requested
+        using 
+        <em>read processed</em> calls that could not be produced. Situations
+        where it is impossible to compute a requested aggregate value might include: 
+        <a name="c_composite_historian_status_values__ul_87FB9C2409634DB0B139C4F960A24BDB"></a><ul id="c_composite_historian_status_values__ul_87FB9C2409634DB0B139C4F960A24BDB"> 
+          <li id="c_composite_historian_status_values__li_C0921A0F26124A0EB5CCECB1C8C8E87C"><div class="li_content">A minimum, maximum, or
+            average is requested for an interval that is entirely within a hole in raw data
+            samples, so there are no useful values that can be used in computing the
+            aggregate. 
+          </div></li>
+ 
+          <li id="c_composite_historian_status_values__li_B0133D66C5854410BC3A1FFB285F5A1D"><div class="li_content">An aggregate is
+            requested that is not supported on a history tag of that type; for example,
+            requesting a time-weighted average for a string type history tag. 
+          </div></li>
+ 
+        </ul>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

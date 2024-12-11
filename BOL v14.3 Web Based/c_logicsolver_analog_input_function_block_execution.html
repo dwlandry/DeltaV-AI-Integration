@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Analog Input function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Analog Input (LSAI), Analog Input (LSAI) function block" name="DC.subject" /><meta content="SIS function blocks, Analog Input (LSAI), Analog Input (LSAI) function block" name="keywords" /><meta content="c_ls_fblk_spec_ai.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logic_solver_analog_input_function_block_execution" name="DC.Identifier" /><title>Logic Solver Analog Input function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ls_fblk_spec_ai.html" /><link rel="next" href="c_logicsolver_analog_input_function_block_status_handling.html" /></head><body class="fixed" id="c_logic_solver_analog_input_function_block_execution" data-relpath="c_logicsolver_analog_input_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logic_solver_analog_input_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Analog Input function block execution</h1>
+<div><div></div>
+ 
+    <p>The LSAI function block accesses a single analog measurement value and
+      status from an input. 
+    </p>
+ 
+    <p>The LSAI function block supports signal scaling, signal filtering,
+      signal status calculation, and simulation. 
+    </p>
+ 
+    <p>The block&#39;s output parameter (OUT) reflects the process variable (PV)
+      value and status. 
+    </p>
+ 
+    <p>When you configure the LSAI function block, you select the input
+      associated with an analog measurement by configuring the Device Signal Tag
+      (DST) of the IO_IN parameter. You select the DST and the parameter the LSAI
+      block accesses on that input. In SLS 1508 systems the input specified can be
+      one of the 16 channels on this logic solver or an input channel on a logic
+      solver on the same controller. In CHARMs Smart Logic Solver systems the input
+      specified can be any of the CHARMs of any CSLS in the Local Safety Network. 
+    </p>
+ 
+    <div class="p">The only selectable parameter for IO_IN is: 
+    <a name="c_logic_solver_analog_input_function_block_execution__ul_D552AA9F9A6E4CC6B3268A865C5592B5"></a><ul id="c_logic_solver_analog_input_function_block_execution__ul_D552AA9F9A6E4CC6B3268A865C5592B5"> 
+      <li id="c_logic_solver_analog_input_function_block_execution__li_614C3A12F88543859F97362CCACE7CF9"><div class="li_content">FIELD_VAL_PCT - the 4 to 20
+        mA signal, in percent of range. XD_SCALE is always set to 0 - 100%. 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+    <div class="section" id="c_logic_solver_analog_input_function_block_execution__section_F8A7638264F14CF4B37C90A04CDDC983"><a name="c_logic_solver_analog_input_function_block_execution__section_F8A7638264F14CF4B37C90A04CDDC983"></a><h2 class="sectiontitle">Signal Conversion</h2> 
+       
+      <p>Choose direct, indirect, or indirect square root signal conversion
+        with the linearization type parameter (L_TYPE). 
+      </p>
+ 
+      <p>Select one of the following signal conditioning options: 
+      </p>
+ 
+      <a name="c_logic_solver_analog_input_function_block_execution__ul_009ABE0C88A74F6DA5353F693EBD781E"></a><ul id="c_logic_solver_analog_input_function_block_execution__ul_009ABE0C88A74F6DA5353F693EBD781E"> 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_34DB423053DE4154AF215B2C2E822CBA"><div class="li_content"> 
+          <p>Direct — PV becomes the input value. OUT becomes the PV value. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_69797F183CC1425CBF9152E6F036D885"><div class="li_content"> 
+          <p>Indirect signal conditioning — linearly converts the accessed
+            input value (or the simulated value when simulation is enabled) from percent to
+            the range and units of the PV and OUT parameters (OUT_SCALE). 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_C59335AEB91B42068F1F7B1C089F62C1"><div class="li_content"> 
+          <p>Indirect square root signal conditioning — converts the accessed
+            input value (or the simulated value when simulation is enabled) from percent by
+            taking the square root of the value and scaling it to the range and units of
+            the PV and OUT parameters (OUT_SCALE). 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      <p>You view the accessed value in percent through the FIELD_VAL
+        parameter. 
+      </p>
+ 
+      <p>The DeltaV system cannot change the scaling in a HART device connected
+        to a logic solver channel or CHARM. Such changes must be done using AMS Device
+        Manager or a handheld configurator. These changes do not propagate into the
+        DeltaV database. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_logic_solver_analog_input_function_block_execution__section_2AD30E4FF2424236870633FF8E0D8D30"><a name="c_logic_solver_analog_input_function_block_execution__section_2AD30E4FF2424236870633FF8E0D8D30"></a><h2 class="sectiontitle">Simulation</h2> 
+       
+      <p>To test a module&#39;s logic, download to a simulated logic solver (a
+        logic solver assigned to the ProfessionalPLUS workstation), enable the SIMULATE
+        parameter, and supply an input value. Note that you cannot enable the SIMULATE
+        parameter when the LSAI block is running in a physical Logic Solver card. 
+      </p>
+ 
+      <p>You must configure the LSAI block completely to successfully download
+        and use for simulation. This includes: 
+      </p>
+ 
+      <a name="c_logic_solver_analog_input_function_block_execution__ol_EDDC9BB2C958412385FC60F8FFF6AD7A"></a><ol id="c_logic_solver_analog_input_function_block_execution__ol_EDDC9BB2C958412385FC60F8FFF6AD7A"> 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_FF4C1C7D66784ACABD79D3A711B68BEF"><div class="li_content"> 
+          <p>Enable a channel in the simulated Logic Solver card. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_22702C3FFD834945B36DC10B87A21469"><div class="li_content"> 
+          <p>Define the channel type as Analog Input. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_59F59208BEEB46C2A7888BD01A462CC8"><div class="li_content"> 
+          <p>Assign the DST to the LSAI block&#39;s IO_IN parameter. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="c_logic_solver_analog_input_function_block_execution__li_680FB1F9021640A69DED32C4CBC80C84"><div class="li_content"> 
+          <p>Save and download the module. 
+          </p>
+ 
+        </div></li>
+ 
+      </ol>
+ 
+      <p>You cannot download a simulated Logic Solver card with SIS modules
+        containing incompletely configured LSAI and LSDI blocks. 
+      </p>
+ 
+      <p>To change a value from Control Studio Online, open the SIMULATE
+        properties dialog and set a simulate value and status. 
+      </p>
+ 
+      <p>When SIMULATE is enabled, the value and status of the SIMULATE
+        parameter become the value and status of FIELD_VAL. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_logic_solver_analog_input_function_block_execution__section_23A1470C7D00427780AA025993A18BB7"><a name="c_logic_solver_analog_input_function_block_execution__section_23A1470C7D00427780AA025993A18BB7"></a><h2 class="sectiontitle">Filtering</h2> 
+       
+      <p>You apply filtering to the converted value (PV) by specifying the
+        filter time constant (in seconds) in the PV_FTIME parameter. When you specify a
+        value of zero, no filtering is applied. The following figure shows how the OUT
+        changes based on filtering. 
+      </p>
+<a name="c_logic_solver_analog_input_function_block_execution__image_AA56FE89C9894F46B2C13527FB1B98CD"></a><img id="c_logic_solver_analog_input_function_block_execution__image_AA56FE89C9894F46B2C13527FB1B98CD" src="SIS_AI_exe1.gif" /> 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

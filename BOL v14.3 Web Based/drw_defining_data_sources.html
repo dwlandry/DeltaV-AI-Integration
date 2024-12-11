@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Defining data sources" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="drw_animating_object_properties.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="drw_defining_data_sources" name="DC.Identifier" /><title>Defining data sources</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="drw_animating_object_properties.html" /><link rel="next" href="drw_animating_properties_using_color.html" /></head><body class="fixed" id="drw_defining_data_sources" data-relpath="drw_defining_data_sources.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="drw_defining_data_sources"></a>
+
+<h1 class="topictitle1">Defining data sources</h1>
+<div><div></div>
+
+    <p id="drw_defining_data_sources__DefiningDataSources"><a name="drw_defining_data_sources__DefiningDataSources"></a>The Animations dialog box groups similar properties together into categories. Each category is represented by a tab in the dialog box. You can select one or more properties from these tabs as needed. For example, suppose you want to horizontally fill a tank and change the foreground color simultaneously. To do this, you would select the HorizontalFillPercentage property on the Fill tab and the ForegroundColor property on the Color tab. Alternately, you could use the Fill Expert.</p>
+
+    <p>Regardless of the number of properties you select, you must connect to a data source for each property so that the necessary data can be retrieved and processed. The data source for one property can be completely different than that of another property.</p>
+
+    <div class="section" id="drw_defining_data_sources__EnteringDataSourceSyntax"><a name="drw_defining_data_sources__EnteringDataSourceSyntax"></a><h2 class="sectiontitle">Entering Data Source Syntax</h2>
+      
+      <p>To select a data source, enter its name in the Data Source field of the Animations dialog box, using the required syntax that tells DeltaV Operate what type of source contains the data. To assist you with the data source and its syntax, DeltaV Operate provides <em>intelligent defaults</em>, which allows the software to automatically fetch a data source based on an incomplete entry. For example, if your data source is a DeltaV Operate tag, and you enter AI1 in the Data Source field, DeltaV Operate connects to a .F_CV field in the database.</p>
+
+      <p>The following table lists the syntax for each data source type.</p>
+
+      
+<div class="tablenoborder"><a name="drw_defining_data_sources__table_08EC53849D354B49AED5BD748FEC0B43"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_defining_data_sources__table_08EC53849D354B49AED5BD748FEC0B43" rules="all" summary=""><caption><span class="tablecap">Data Source Syntax</span></caption>
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1494351e58" valign="top">
+                <p id="drw_defining_data_sources__577171"><a name="drw_defining_data_sources__577171"></a>When the data source is...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e64" valign="top">
+                <p id="drw_defining_data_sources__577173"><a name="drw_defining_data_sources__577173"></a>Use the syntax...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+A DeltaV Operate tag
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>Dvsys.tag.field</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>tag</em> is the database tag; and</p>
+
+                <p>
+                  <em>field</em> is the database field.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+An I/O address
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>server.io_address</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>server</em> is the name of the OPC server; and</p>
+
+                <p>
+                  <em>io_address</em> is the I/O address of that server.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+An object property in a picture
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>picture.object.property</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>picture</em> is the picture that contains the object;</p>
+
+                <p>
+                  <em>object</em> is the object in the picture; and</p>
+
+                <p>
+                  <em>property</em> is the object&#39;s property name.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+A picture property
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>picture.property</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>picture</em> is the picture that contains the property; and</p>
+
+                <p>
+                  <em>property</em> is the picture&#39;s property name.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+A global variable
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>xxx.variable</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>xxx</em> is the global object; and</p>
+
+                <p>
+                  <em>variable</em> is the name of the variable within the global object.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e58 " valign="top">
+                <p>
+An expression
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e64 " valign="top">
+                <p>value operator value</p>
+
+                <p>where:</p>
+
+                <p>
+                  <em>value</em> is the primary value;</p>
+
+                <p>
+                  <em>operator</em> is an operator relating to both values; and</p>
+
+                <p>
+                  <em>value</em> is the secondary value.</p>
+
+                <p>For more information on creating expressions, refer to <a href="drw_building_expressions.html">Building Expressions</a>.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>Some third-party OPC servers require characters in their syntax that are not parsable by the Expression Editor. If the OPC server syntax uses any characters that do not appear in the list of valid characters below, the server syntax must be enclosed within single quotes (&#39;) as follows:</p>
+
+      <pre class="pre">
+ServerName.&#39;Device:MyAddress&#39;
+</pre>
+
+      <p>In this example, <em>ServerName</em> is the name used to identify the third-party OPC server, and single quotes surround <em>Device:MyAddress</em>, the part of the syntax that contains the unparsable character(s). If an unparsable character is not enclosed in single quotes, an error message displays.</p>
+
+      <p>
+        <strong>Valid Characters:</strong> all alphanumeric characters, hyphen (-), underscore (_), exclamation point (!), less than (&lt;), greater than (&gt;), pound (#), percent (%), dollar sign ($), ampersand (&amp;), forward slash (/), backslash (\), pipe (|), opening bracket ([), closing bracket (]), and single quote (&#39;).</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> You will have to remove the added single quotes from any VBA scripts for operation to succeed.</p>
+
+      </div>
+
+      <p>If a single quote (&#39;) or a backslash (\) is a literal part of the addressing string syntax, it must be preceded by a backslash (\) in order for the character to be passed to the server as part of the address.</p>
+
+      <p>Refer to the documentation supplied with third-party OPC servers for information on server-specific syntax.</p>
+
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__SelectingDataSourcesfromaList"><a name="drw_defining_data_sources__SelectingDataSourcesfromaList"></a><h2 class="sectiontitle">Selecting Data Sources from a List</h2>
+      
+      <p>In addition to entering a data source directly, you can also select a data sourcefrom a list using the Expression Builder dialog box. This dialog box lets you select the data source you want to use, or create expressions by combining two or more data sources together. To open the Expression Builder dialog box, click the ellipsis buttonnext to to Data Source field on the Animations dialog box. The topic <a href="drw_building_expressions.html">Building Expressions</a> describes how to create expressions, and describes the components of the Expression Builder.</p>
+
+      <p>On the Expression Builder dialog box click the tab you want and select the source from the list. For example, to select the DeltaV tag AI1, click the Data Server tab, select DVSYS from the browse dialog, and browse for the tag.</p>
+
+      <p>If an existing object contains properties, you can also select those properties from a list. For example, to select the Width property of a picture window:</p>
+
+      <a name="drw_defining_data_sources__ol_420082E19B4A4221A574F432FECAAEBD"></a><ol id="drw_defining_data_sources__ol_420082E19B4A4221A574F432FECAAEBD">
+        <li id="drw_defining_data_sources__li_AE3C4FE29AA0426295253FFE7A24788A"><div class="li_content">
+          <p>Click the Pictures tab.</p>
+
+        </div></li>
+
+        <li id="drw_defining_data_sources__li_A63D3F7CBF674EE6AA0B2D51705E14C5"><div class="li_content">
+          <p>Select the picture you want to modify.</p>
+
+        </div></li>
+
+        <li id="drw_defining_data_sources__li_25E3CBA4C96F4BB7BB0190F4AEF3673F"><div class="li_content">
+          <p>In the Properties list, click the WindowWidthPercentage property.</p>
+
+        </div></li>
+
+      </ol>
+
+      <p>As you make selections from the Expression Builder, the text in the lower window changes to match your selections, displaying the expression as you build it. If applicable, the tolerance, deadband, or refresh rate also appear in this window. </p>
+
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__FilteringDataSources"><a name="drw_defining_data_sources__FilteringDataSources"></a><h2 class="sectiontitle">Filtering Data Sources</h2>
+      
+      <p>Using the Expression Builder dialog box, you can filter data sources to search for specific data at any level. This is a helpful tool for eliminating data that you don&#39;t need to access.</p>
+
+      <p>To filter data sources, enter the data source string in the Filter field and click Filter. (For the FIX Database tabbed page, the Filter button appears as an <em>F</em>.) To select from the list box, click the down arrow to the right of the field. You can also search for wildcard entries by using an asterisk in the field. For example, to view all of the F_ fields for blocks, enter F_* in the Filter field.</p>
+
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__section_0C4C7688A19446F3913CFBB9BA9C8ABE"><a name="drw_defining_data_sources__section_0C4C7688A19446F3913CFBB9BA9C8ABE"></a><h2 class="sectiontitle">Specifying Data Conversions</h2>
+      
+      <p>After you enter a data source, you need to select the type of data conversion to apply to the data from that source. A data conversion defines how the incoming data should be processed or formatted so that your objects behave according to the properties you have assigned to them. It also defines how the outgoing data calculates errors, what those errors mean, and how they are conveyed to operators.</p>
+
+      <p>The following table lists the types of data conversions you can specify in the Data Conversion area of the Animations dialog box.</p>
+
+      
+<div class="tablenoborder"><a name="drw_defining_data_sources__table_C1633D1D8F014E64B0F42D2B4370F7E6"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_defining_data_sources__table_C1633D1D8F014E64B0F42D2B4370F7E6" rules="all" summary=""><caption><span class="tablecap">Data Conversion Types</span></caption>
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1494351e397" valign="top">
+                <p id="drw_defining_data_sources__589362"><a name="drw_defining_data_sources__589362"></a>The data conversion...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e403" valign="top">
+                <p id="drw_defining_data_sources__589364"><a name="drw_defining_data_sources__589364"></a>Lets you specify...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1494351e397 " valign="top">
+                <p>
+Range
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e403 " valign="top">
+                <p>A range of values on which to animate an object. You can enter the minimum and maximum input and output values. When you enter a range of values, the input values are mapped into the output values, allowing you to apply linear signal conditioning.</p>
+
+                <p>You can also specify if input is allowed to the range.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e397 " valign="top">
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e403 " valign="top">
+                <p>A lookup table. Using a lookup table is like using a spreadsheet, as the following figure shows.</p>
+
+                
+                  <p><a name="drw_defining_data_sources__image_2D1D3D44C9C043ADB06C35E2B8E38091"></a><img id="drw_defining_data_sources__image_2D1D3D44C9C043ADB06C35E2B8E38091" src="lookup.gif" /></p>
+
+                
+                <p>When completing a lookup table, you can define a single lookup value or a range of lookup values for each row in the table. In addition, you need to enter an output value. Depending on the selected property, this value may be a color, string, fill style, edge style, or numeric value. When the incoming value from the data source matches an entry in the table, it changes the selected property to match the output value.</p>
+
+                <p>The buttons below the lookup table help you modify the appearance of the table. You can insert, modify, or delete rows in the table by clicking the appropriate buttons. Or, by clicking the Advanced button, you can assign toggle values, a shared lookup table, a toggle rate, and a tolerance value for exact match thresholds. For more information on these advanced options, refer to the <a href="drw_animating_properties_using_color.html">Animating Properties Using Color</a> and Classifying Animations Errors, later in this topic. For more information on using the toggle rate, refer to Using Blinking Thresholds in the topic <a href="drw_animating_properties_using_color.html">Animating Properties Using Color</a>.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e397 " valign="top">
+                <p>
+Format
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e403 " valign="top">
+                <p>How to format the data. You can specify:</p>
+
+                <a name="drw_defining_data_sources__ul_73132799D38D4B32A14C2FCAE49D9E46"></a><ul id="drw_defining_data_sources__ul_73132799D38D4B32A14C2FCAE49D9E46">
+                  <li id="drw_defining_data_sources__li_9225DEC092CF491E8D3128C583FC5778"><div class="li_content">
+                    <p>How to justify the data.</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_7D985FF917C0411194829A2A5A4BE919"><div class="li_content">
+                    <p>How many lines to display.</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_1136DE7A8D0B46F4BF20AC3800A8EFC8"><div class="li_content">
+                    <p>How many characters appear on each line.</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_C8951C42C1AF44E28E287A55A84B7F90"><div class="li_content">
+                    <p>Whether data entry is allowed and, if so, if it can be entered in-place.</p>
+
+                  </div></li>
+
+                </ul>
+
+                <p>For more information on formatting options, refer to Adding Data Links in the topic <a href="drw_adding_objects_to_pictures.html">Adding Objects to Pictures</a> or the online Help.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e397 " valign="top">
+                <p>
+Object
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e403 " valign="top">
+                <p>
+No signal conditioning. The data received from the data source is processed or displayed at that exact value. If an object contains a property that provides the desired animation, you can connect to that property. This is because every object has the ability to perform permanent connections from one of its properties to another. Essentially, the animation object only transforms data from the property of one object to the property of another object.
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__ClassifyingAnimationsErrors"><a name="drw_defining_data_sources__ClassifyingAnimationsErrors"></a><h2 class="sectiontitle">Sample Table Data Conversion</h2>
+      
+      <p>The following table data conversion has been set up for the FillStyle property of an oval.</p>
+
+      
+<div class="tablenoborder"><a name="drw_defining_data_sources__table_CD74D6A2C87E4BAA9AD56430CB614074"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_defining_data_sources__table_CD74D6A2C87E4BAA9AD56430CB614074" rules="all" summary="">
+          
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1494351e547" valign="top">
+                <p id="drw_defining_data_sources__589101"><a name="drw_defining_data_sources__589101"></a>Low</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e553" valign="top">
+                <p id="drw_defining_data_sources__589103"><a name="drw_defining_data_sources__589103"></a>High</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e559" valign="top">
+                <p id="drw_defining_data_sources__589105"><a name="drw_defining_data_sources__589105"></a>Value</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1494351e547 " valign="top">
+                <p>
+0
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e553 " valign="top">
+                <p>
+25
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e559 " valign="top">
+                <p>
+0-Solid
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e547 " valign="top">
+                <p>
+26
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e553 " valign="top">
+                <p>
+50
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e559 " valign="top">
+                <p>
+2-Horizontal
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e547 " valign="top">
+                <p>
+51
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e553 " valign="top">
+                <p>
+75
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e559 " valign="top">
+                <p>
+3-Vertical
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e547 " valign="top">
+                <p>
+76
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e553 " valign="top">
+                <p>
+100
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e559 " valign="top">
+                <p>
+1-Hollow
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>Using these definitions, the oval fill style appears as shown in the following table.</p>
+
+      
+<div class="tablenoborder"><a name="drw_defining_data_sources__table_BC9FF714D24B405F9C9D004A929660CD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_defining_data_sources__table_BC9FF714D24B405F9C9D004A929660CD" rules="all" summary="">
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1494351e671" valign="top">
+                <p id="drw_defining_data_sources__577441"><a name="drw_defining_data_sources__577441"></a>When the incoming value is...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e677" valign="top">
+                <p id="drw_defining_data_sources__577443"><a name="drw_defining_data_sources__577443"></a>The oval appears...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1494351e671 " valign="top">
+                <p>
+Less than 25
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e677 " valign="top">
+                
+                  <a name="drw_defining_data_sources__image_2834BC5B612849B39CE7370E28FF9621"></a><img id="drw_defining_data_sources__image_2834BC5B612849B39CE7370E28FF9621" src="drwf84a.gif" />
+                
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e671 " valign="top">
+                <p>
+Between 26 to 50
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e677 " valign="top">
+                
+                  <a name="drw_defining_data_sources__image_0181CA5C73F547FF97FB18B3421D54B3"></a><img id="drw_defining_data_sources__image_0181CA5C73F547FF97FB18B3421D54B3" src="drwf84b.gif" />
+                
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e671 " valign="top">
+                <p>
+Between 51 to 75
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e677 " valign="top">
+                
+                  <a name="drw_defining_data_sources__image_871E8C864C9341C5AFA7EBC8BC89DCBA"></a><img id="drw_defining_data_sources__image_871E8C864C9341C5AFA7EBC8BC89DCBA" src="drwf84c.gif" />
+                
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e671 " valign="top">
+                <p>
+Between 76 to 100
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e677 " valign="top">
+                
+                  <a name="drw_defining_data_sources__image_AED8510919D34C17B55BB21BB8605613"></a><img id="drw_defining_data_sources__image_AED8510919D34C17B55BB21BB8605613" src="drwf84d.gif" />
+                
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__section_14953B1AF3D94ADA873AC807B8F3D61F"><a name="drw_defining_data_sources__section_14953B1AF3D94ADA873AC807B8F3D61F"></a><h2 class="sectiontitle">Classifying Animations Errors</h2>
+      
+      <p>DeltaV Operate lets you define how any animation behaves if an error occurs. Using the Output Error Mode field of the Animations dialog box, you determine how the output data appears to operators. From this field you select the desired error classification based on the specified data conversion method. The output data appears to the user as the specified error type when the default value is reached.</p>
+
+      <p>The following table details the error output you can define for a particular data conversion type.</p>
+
+      
+<div class="tablenoborder"><a name="drw_defining_data_sources__table_5A36F129441F421C9ECEF77761F3B8EA"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="drw_defining_data_sources__table_5A36F129441F421C9ECEF77761F3B8EA" rules="all" summary=""><caption><span class="tablecap">Error Handling Based on Data Conversion Types</span></caption>
+          
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d1494351e775" valign="top">
+                <p id="drw_defining_data_sources__577527"><a name="drw_defining_data_sources__577527"></a>The data conversion...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e781" valign="top">
+                <p id="drw_defining_data_sources__577529"><a name="drw_defining_data_sources__577529"></a>Lets you define errors using...</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d1494351e787" valign="top">
+                <p id="drw_defining_data_sources__577531"><a name="drw_defining_data_sources__577531"></a>Which gives you the following options...</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d1494351e775 " valign="top">
+                <p>
+Range
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e781 " valign="top">
+                <a name="drw_defining_data_sources__ul_EC2DBA3B140945978192A2462E8368F0"></a><ul id="drw_defining_data_sources__ul_EC2DBA3B140945978192A2462E8368F0">
+                  <li id="drw_defining_data_sources__li_A9791873227044ECABE5BCE27E3F90D7"><div class="li_content">
+                    <p>Current Output</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_264925D0E8F44E24A3FE8C7E6F7F69DE"><div class="li_content">
+                    <p>Error Table</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_21380F4E53E24DC2AD71F616526A3F9C"><div class="li_content">
+                    <p>Minimum Value</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_128E71E62A0042D78A67C96085C47FB6"><div class="li_content">
+                    <p>Maximum Value</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e787 " valign="top">
+                <a name="drw_defining_data_sources__ul_A64B27645EBC43D7AE011F4833B2D1FF"></a><ul id="drw_defining_data_sources__ul_A64B27645EBC43D7AE011F4833B2D1FF">
+                  <li id="drw_defining_data_sources__li_E4AA18640BED41938F33BB06F3D6DCD7"><div class="li_content">
+                    <p>Minimum and Maximum Input</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_86D3E6AB67C5440BA6E5C01AA6B107FD"><div class="li_content">
+                    <p>Minimum and Maximum Output</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_B1C38C62EEFA4E858CBC6AED42520358"><div class="li_content">
+                    <p>Use Offset</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_A41EF0D3D48142638E8B056B334A54ED"><div class="li_content">
+                    <p>Fetch Input Range on Open</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e775 " valign="top">
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e781 " valign="top">
+                <a name="drw_defining_data_sources__ul_3BA4B6FE658345A5BA262799C94B5EF9"></a><ul id="drw_defining_data_sources__ul_3BA4B6FE658345A5BA262799C94B5EF9">
+                  <li id="drw_defining_data_sources__li_3A3D9E6672D6477EACD656C28F5D9EF2"><div class="li_content">
+                    <p>Current Output</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_47AAFCE596B54EDF9907ACD1DBF702C2"><div class="li_content">
+                    <p>Error Table</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e787 " valign="top">
+                <a name="drw_defining_data_sources__ul_0A42CC9758AB492FB40A7F251C1FEDDE"></a><ul id="drw_defining_data_sources__ul_0A42CC9758AB492FB40A7F251C1FEDDE">
+                  <li id="drw_defining_data_sources__li_DE717A496AA34FADB378F259FD45FC77"><div class="li_content">
+                    <p>Exact Match (and tolerance)</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_D0BC7C8025E64F1C9BEB46CCF4A72CB7"><div class="li_content">
+                    <p>Range Comparison</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e775 " valign="top">
+                <p>
+Format
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e781 " valign="top">
+                <a name="drw_defining_data_sources__ul_C75C4EBF60EC4F43829D1654674F35E1"></a><ul id="drw_defining_data_sources__ul_C75C4EBF60EC4F43829D1654674F35E1">
+                  <li id="drw_defining_data_sources__li_F7B45478174D4D66B7614860791379C9"><div class="li_content">
+                    <p>Current Output</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_4DDC232395474FD99F3AEA6C9FEBB3CE"><div class="li_content">
+                    <p>Error Table</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e787 " valign="top">
+                <p>Display messages in a Data link for any of the following errors:</p>
+
+                <a name="drw_defining_data_sources__ul_B1CB223567284D999098AECA9668EE3B"></a><ul id="drw_defining_data_sources__ul_B1CB223567284D999098AECA9668EE3B">
+                  <li id="drw_defining_data_sources__li_A83EAB0DB80948B2961AFEA0D883EAB8"><div class="li_content">
+                    <p>Communication Failure</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_62984A887C0D40EEA718B9C338070419"><div class="li_content">
+                    <p>Data Uncertain</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_4612A64B94614B3FB739AA6A34FCBE19"><div class="li_content">
+                    <p>Unknown Failure</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_2688AECE328746A48C01B5B1E7D78CF7"><div class="li_content">
+                    <p>Device Failure</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_2FE664E87AB5432688F0DF9C6C1B332E"><div class="li_content">
+                    <p>Out of Space</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_3D2B8D6172694924A0A0DFEA25FCDD19"><div class="li_content">
+                    <p>Configuration Error</p>
+
+                  </div></li>
+
+                  <li id="drw_defining_data_sources__li_D6734F7AC11D463BAA03E1555014924B"><div class="li_content">
+                    <p>Custom messages for any of the above as entered in User Preferences.</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d1494351e775 " valign="top">
+                <p>
+Object
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e781 " valign="top">
+                <a name="drw_defining_data_sources__ul_70A31EC673CB45ADA7831D03B7B5A5F6"></a><ul id="drw_defining_data_sources__ul_70A31EC673CB45ADA7831D03B7B5A5F6">
+                  <li id="drw_defining_data_sources__li_1B42681E107542CE8E6BFE80A1204F1B"><div class="li_content">
+                    <p>Exact Value</p>
+
+                  </div></li>
+
+                </ul>
+
+              </td>
+
+              <td class="cellrowborder" headers="d1494351e787 " valign="top">
+                <p>
+No output classification. The data received from the data source is processed or displayed at that exact value.
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> The default for the Output Error Mode setting in the definition of a Datalink is the Use Error Table option, causes an animation to display values as configured on the Animations Data Error Defaults tab of the User Preferences dialog. In contrast, the Use Current Output option causes an animation to display whatever data is returned at the time an error occurred, even if it currently has a bad status. It is recommended that you specify the default option, Use Error Table.</p>
+
+      </div>
+
+      <p>For more information on the output fields, refer to the online help, and the <a href="drw_animating_properties_using_color.html">Animating Properties Using Color</a> section.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> Error handling in DeltaV Operate is global, not per-object. You can choose the behavior of a single object based on an error condition; however, because of performance reasons, the error classification is applied system-wide.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section" id="drw_defining_data_sources__section_12F276BB67744E83A576E5D11CDC68A6"><a name="drw_defining_data_sources__section_12F276BB67744E83A576E5D11CDC68A6"></a><h2 class="sectiontitle">Specifying OPC Errors</h2>
+      
+      <p>DeltaV Operate provides predefined error defaults that you can customize for your needs. The Animations Data Error Defaults tabbed page of the User Preferences dialog box contains the default OPC error strings and values that display when an error occurs. The tabbed page is divided into three areas:</p>
+
+      <a name="drw_defining_data_sources__ul_FC75EFD8F8074FADB1E0CBEC590E298B"></a><ul id="drw_defining_data_sources__ul_FC75EFD8F8074FADB1E0CBEC590E298B">
+        <li id="drw_defining_data_sources__li_0F2DD44C7BB54FE8A148EDF9D539201A"><div class="li_content">
+          <p>
+            <strong>Linear Animation Object Defaults</strong> - Contains six numeric, OPC failure strings based on the Linear object using a Range data conversion.</p>
+
+        </div></li>
+
+        <li id="drw_defining_data_sources__li_9298745FEB8C488CA94A213BB909E70E"><div class="li_content">
+          <p>
+            <strong>Format Animation Object Defaults -</strong> Contains six OPC strings based on the Format object using a Format data conversion. The error string is displayed in a Data link.</p>
+
+        </div></li>
+
+        <li id="drw_defining_data_sources__li_6EEDDA735B464FDDABBB7A132F78C76B"><div class="li_content">
+          <p>
+            <strong>Lookup Animation Object Defaults</strong> - Contains six numeric table, string table, and color table entries based on the Lookup object using a Table data conversion.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>The error defaults are global, resulting in better system performance. You can modify the defaults to make error messages more intuitive for your specific process. For example, when a device error occurs, Data links display by default the text &quot;XXXX&quot;. To create a more intuitive message for device error messages in the future, enter an alternate string in the Device field of the Format Animation Object Defaults area. For example:</p>
+
+      <pre class="pre">
+Device is not working!
+</pre>
+
+      <p>By changing the defaults, you can configure error messages with the text and color that you want, thereby customizing your error handling scheme. For more information on the fields of the Animations Error Defaults tabbed page, refer to the online help.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

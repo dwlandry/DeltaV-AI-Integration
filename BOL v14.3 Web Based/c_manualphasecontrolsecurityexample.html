@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Manual phase control security example" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="phase security, manual phase control" name="DC.subject" /><meta content="phase security, manual phase control" name="keywords" /><meta content="c_manualphasecontrolsecurity.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_manualphasecontrolsecurityexample" name="DC.Identifier" /><title>Manual phase control security example</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_manualphasecontrolsecurity.html" /><link rel="next" href="r_deltavbatchnamingconventions.html" /></head><body class="fixed" id="c_manualphasecontrolsecurityexample" data-relpath="c_manualphasecontrolsecurityexample.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_manualphasecontrolsecurityexample"></a>
+
+<h1 class="topictitle1">Manual phase control security example</h1>
+<div><div></div>
+
+    <p>The following example shows one scenario of how to effectively use the manual phase control security. This is only one scenario, given as an example and it may or may not fit your situation.</p>
+
+    <p>The first element in this example is the user security and how it is defined. For our purposes, the BATCH_PHASE_CONTROL function has been re-assigned to a user-defined lock called MANUAL_PHASE_CONTROL. The user group OPERATOR has a key to the BATCH_OPERATE lock, but not to the MANUAL_PHASE_CONTROL lock. The user group MAINTENANCE has the key to MANUAL_PHASE_CONTROL lock but does not have the key to the BATCH_OPERATE lock. In other words, the OPERATOR user can acquire, run, and release a batch, but cannot take manual control of the phase. The MAINTENANCE user can run a batch in manual control, but cannot acquire or release a batch.</p>
+
+    <p>The BATCH_ACTION_VERIFY function has also been re-assigned to a user-defined lock named VERIFY_RIGHTS. The key to the VERIFY_RIGHTS lock is only given to the SUPERVISE group.</p>
+
+    <p>In our example, a maintenance person is needed to step through the batch manually to troubleshoot a problem in the phase.</p>
+
+    <p>The operator logs in and acquires the batch.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_804753423AA845169C0AB2D288315F70"></a><img id="c_manualphasecontrolsecurityexample__image_804753423AA845169C0AB2D288315F70" src="Acquire.gif" /></p>
+
+    
+    <p>The maintenance person logs in next and starts the batch manually.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_F73C5710C1044199B1F7212B767F5A2F"></a><img id="c_manualphasecontrolsecurityexample__image_F73C5710C1044199B1F7212B767F5A2F" src="Login.gif" /></p>
+
+    
+    <p>Then the maintenance person can run the recipe.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_8898763F0D294892A0FA02199629CEF5"></a><img id="c_manualphasecontrolsecurityexample__image_8898763F0D294892A0FA02199629CEF5" src="Manual_StartBatch.gif" /></p>
+
+    
+    <p>The batch is monitored as it runs. At the point where the maintenance person sees the problem, he issues a Hold.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_E526C5B2920E48CB977B45358C7269D1"></a><img id="c_manualphasecontrolsecurityexample__image_E526C5B2920E48CB977B45358C7269D1" src="Hold.gif" /></p>
+
+    
+    <p>Since Holds have been configured as a confirm and verify action, the person with the BATCH_ACTION_VERIFY function key (SUPERVISE group) must verify the Hold command. This is not the maintenance person, since DeltaV security will check for the key to the VERIFY_RIGHTS lock. The MAINTENANCE group does not have that key, only the key to MANUAL_PHASE_CONTROL, and the OPERATOR group only has the key to the BATCH_OPERATE lock. The user must be a member of the SUPERVISE group to verify the Hold command request.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_617CC2DF447F4C81A9B90CD336CB8A6C"></a><img id="c_manualphasecontrolsecurityexample__image_617CC2DF447F4C81A9B90CD336CB8A6C" src="Verify.gif" /></p>
+
+    
+    <p>After the batch has been held and the problem resolved (for example a unit not being released properly), the maintenance person issues a Restart.</p>
+
+    
+      <p><a name="c_manualphasecontrolsecurityexample__image_7F7B3EED1C6A480FB54DCC46CED1464B"></a><img id="c_manualphasecontrolsecurityexample__image_7F7B3EED1C6A480FB54DCC46CED1464B" src="restart.gif" /></p>
+
+    
+    <p>The restart command has been configured as a confirm action. Verification is not required. Therefore, the maintenance person can confirm his Restart command.</p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

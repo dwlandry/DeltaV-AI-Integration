@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Acquiring resources" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Operate" name="DC.Coverage" /><meta content="phase control" name="DC.subject" /><meta content="phase control" name="keywords" /><meta content="c_allocatingresources.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_acquiringresources" name="DC.Identifier" /><title>Acquiring resources</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_allocatingresources.html" /><link rel="next" href="c_releasingresources.html" /></head><body class="fixed" id="c_acquiringresources" data-relpath="c_acquiringresources.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_acquiringresources"></a>
+
+<h1 class="topictitle1">Acquiring resources</h1>
+<div><div></div>
+<p>To control a resource, an operator must first acquire that resource. Operators can acquire a resource when the number of current owners is less than the maximum number of owners configured in DeltaV Explorer.</p>
+<p>When an operator is finished using a resource, he must then release the resource to make it available for acquisition by other resources or running batches.</p>
+<p>As an example, suppose an maintenance engineer needs to adjust a resource, AGITATE3, the agitator used by MIX3 in the PAINT recipe. This phase, however, is currently in use for a batch of paint. To ensure that the maintenance engineer can safely adjust the agitator without affecting the batch, the operator can request MIX3 (the unit where the unit phase, AGITATE3 runs), notify the maintenance engineer when it is acquired, and release it when the maintenance engineer is done.</p>
+<p>The following steps occur when the operator acquires MIX3 from the Arbitration screen:</p>
+<ol>
+<li><div class="li_content"><p>The operator sets List Devices to Equipment and selects MIX3.</p>
+</div></li>
+
+<li><div class="li_content"><p>T12-R456:\PAINT\... appears in the <span class="uicontrol">Owned By</span> box, indicating that the unit is in use by Batch ID T12-R456.</p>
+</div></li>
+
+<li><div class="li_content"><p>The operator clicks the <span class="uicontrol">Acquire</span> button.</p>
+</div></li>
+
+<li><div class="li_content"><p>The name Operator appears in the Priority List <span class="uicontrol">Needed By</span> box.</p>
+</div></li>
+
+<li><div class="li_content"><p>The Arbitration screen is static until the PAINT batch is done with the unit, at which time this unit is released.</p>
+</div></li>
+
+<li><div class="li_content"><p>OPERATOR is now given ownership of MIX3. The name Operator appears in the <span class="uicontrol">Owned By</span> box. Simultaneously, Operator is removed from the <span class="uicontrol">Needed By</span> box.</p>
+</div></li>
+
+<li><div class="li_content"><p>MIX3 is now owned by the operator. It&#39;s phases can be manipulated from the phase control screen, but not from a recipe.</p>
+</div></li>
+
+<li><div class="li_content"><p>When maintenance is complete, the operator clicks the <span class="uicontrol">Release</span> button on the Arbitration screen to release MIX3.</p>
+</div></li>
+
+</ol>
+<p>This completes the resource acquisition process.</p>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

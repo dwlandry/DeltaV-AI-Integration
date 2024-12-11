@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Optimizing your VBA project development" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_optimizing_your_vba_project_development" name="DC.Identifier" /><title>Optimizing your VBA project development</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="deltav-specific-vba-functions.html" /><link rel="next" href="vba_general_ifix_scripting_tips.html" /></head><body class="fixed" id="vba_optimizing_your_vba_project_development" data-relpath="vba_optimizing_your_vba_project_development.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_optimizing_your_vba_project_development"></a>
+
+<h1 class="topictitle1">Optimizing your VBA project development</h1>
+<div><div></div>
+
+    <p id="vba_optimizing_your_vba_project_development__OptimizingYourVBAProjectDevelopment"><a name="vba_optimizing_your_vba_project_development__OptimizingYourVBAProjectDevelopment"></a>VBA is a powerful scripting tool integral to DeltaV Operate. Many features of DeltaV Operate allow you to use VBA more effectively. This chapter presents many options that help you build your projects more easily.</p>
+
+    <div class="section" id="vba_optimizing_your_vba_project_development__UsingSubroutines"><a name="vba_optimizing_your_vba_project_development__UsingSubroutines"></a><h2 class="sectiontitle">Using Subroutines</h2>
+      
+      <p>DeltaV Operate includes several subroutines that can help simplify scripts that are intended to perform common tasks, such as acknowledging alarms or replacing pictures. Since these subroutines are stored in the FactoryGlobals project, they can be accessed directly through the Visual Basic Editor. For more information on FactoryGlobals, see <a href="vba_creating_global_scripts.html">Creating Global Scripts</a>.</p>
+
+      <p>In addition to providing the code necessary to perform the task at hand, subroutines offer several &quot;extras&quot; that you would normally have to code yourself, including:</p>
+
+      <ul>
+        <li><div class="li_content">
+          <p>Generic error handling.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Posting of operator messages to the alarm system.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Conformance to VBA naming conventions.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>If you are using tag names that contain special characters, this is a perfect case for using the <strong>ReadValue</strong> and <strong>WriteValue</strong> global subroutines to access your tags in VBA.</p>
+
+      <p>For example, suppose you have the following tag:</p>
+
+      <pre class="pre">
+Fix32.SCADA.SORTER|SIZER|BLOCK10|PT.F_CV
+</pre>
+
+      <p>In VBA, you can read this tag with the following syntax:</p>
+
+      <pre class="pre">
+Private Sub Text1_Click()
+    Dim x As Variant
+    x = ReadValue(&quot;Fix32.SCADA.SORTER|SIZER|BLOCK10|PT.F_CV&quot;)
+    Text1.Caption = x
+End Sub
+</pre>
+
+      <p>Once the value is stored as a variant (<em>x</em>), you can use it in expressions.</p>
+
+    </div>
+
+    <div class="section" id="vba_optimizing_your_vba_project_development__SendingOperatorMessages"><a name="vba_optimizing_your_vba_project_development__SendingOperatorMessages"></a><h2 class="sectiontitle">Sending Operator Messages</h2>
+      
+      <p>In some cases, you may need to handle the sending of operator messages in your own scripts. For example, a subroutine may not exist for the exact task that you want to perform. The following is an example of a specific case involving the frsWriteValue subroutine.</p>
+
+      <p>As stated in the previous section, subroutines handle the posting of operator messages to alarm areas for you. Therefore, the following script:</p>
+
+      <pre class="pre">
+frsWritevalue &quot;1&quot;, &quot;dummy&quot;
+</pre>
+
+      <p>will send out this message:</p>
+
+      <pre class="pre">
+dvsys.dummy.f_cv was set to 1.
+</pre>
+
+      <p>However, this script will not generate an operator message:</p>
+
+      <pre class="pre">
+dvsys.dummy.f_cv=1
+</pre>
+
+      <p>A separate subroutine, <strong>SendOperatorMessage</strong>, is provided for that purpose. Simply add a call to the SendOperatorMessage to generate the desired message.</p>
+
+      <p>
+        <strong>frsWriteValue</strong>, <strong>frsReadValue</strong>, <strong>SendOperatorMessage</strong>, and all other DeltaV Operate subroutines are described in more detail in the Automation Interfaces Help file.</p>
+
+      <p>The code within the global subroutines offers a wealth of information to the developer who is learning how to automate DeltaV Operate with VBA. Realizing this, all of the code within these subroutines has been exported to a text file entitled globalsubroutines.txt (located in the \DeltaV\iFIX\NLS path) for your convenience.</p>
+
+      <p>DeltaV Operate also provides several Experts to help you perform the most common functionality. Just as subroutines offer help to the seasoned VBA programmer, Experts can help developers who want to achieve similar results without having to write any VBA code at all. These Experts, which look like standard dialog boxes, actually generate VBA code for you, based on how you configured the options within the Expert.</p>
+
+    </div>
+
+    <div class="section" id="vba_optimizing_your_vba_project_development__KeyboardAccelerators"><a name="vba_optimizing_your_vba_project_development__KeyboardAccelerators"></a><h2 class="sectiontitle">Keyboard Accelerators</h2>
+      
+      <p>You can use keyboard accelerators, key sequences that allow you to perform a function, to fire scripts using the KeyUp or KeyDown events. However, the built-in keyboard accelerators take precedence over any KeyUp or KeyDown events in the picture or user area. Therefore, you should avoid using keyboard accelerators that conflict with those that are reserved for internal use. The following table lists all of the reserved accelerators in the run-time and configuration environments.</p>
+
+      
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary="" width="100%">
+          
+          
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" id="d3565246e167" valign="top">
+                <p>Keyboard Accelerator</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3565246e173" valign="top">
+                <p>Purpose</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3565246e179" valign="top">
+                <p>Works in
+Run-time Mode</p>
+
+              </th>
+
+              <th class="cellrowborder" id="d3565246e185" valign="top">
+                <p>Works in Configure Mode</p>
+
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+F1
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Invokes Help.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+F10, Ctrl + F10, Alt (alone)
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Activates the WorkSpace menu bar.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + F4
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Closes document.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + W
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Toggles between configuration or run-time environment.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + O
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Activates Open File dialog.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + P
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Activates Print File dialog.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + Esc
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Activates Windows Start menu (unless disabled through security).
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + Break, Ctrl + Alt +Break
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Breaks script execution.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + Alt + Esc, Ctrl + Alt + Shift + Esc
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Window becomes inactive (unless disable through security).
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + Alt + Del
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Opens Windows Login dialog (unless disabled through security).
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+All Alt key combinations
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Activates the WorkSpace menu.
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Shift + letter combinations
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Alphanumeric data entry (could trigger when entering an uppercase letter).
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + A
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Selects all
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + C
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Copies
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + D
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Duplicates
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + F
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Finds and replaces
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + O
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Opens document
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + P
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Prints document
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + S
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Saves document
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + V
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Pastes from the clipboard
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" headers="d3565246e167 " valign="top">
+                <p>
+Ctrl + Z
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e173 " valign="top">
+                <p>
+Undoes the last action
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e179 " valign="top">
+                <p>
+No
+</p>
+
+              </td>
+
+              <td class="cellrowborder" headers="d3565246e185 " valign="top">
+                <p>
+Yes
+</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

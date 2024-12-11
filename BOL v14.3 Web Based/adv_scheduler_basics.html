@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Scheduler basics" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adv_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="adv_scheduler_basics" name="DC.Identifier" /><title>Scheduler basics</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="adv_scheduler.html" /><link rel="next" href="adv_foreground_and_background_schedules.html" /></head><body class="fixed" id="adv_scheduler_basics" data-relpath="adv_scheduler_basics.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="adv_scheduler_basics"></a>
+
+<h1 class="topictitle1">Scheduler basics</h1>
+<div><div></div>
+
+    <p id="adv_scheduler_basics__SchedulerBasics"><a name="adv_scheduler_basics__SchedulerBasics"></a>Before you start scheduling entries, you should understand how the Scheduler executes scripts. The Scheduler can run as a foreground or background task. When you run a schedule in the foreground, it runs on the same thread as the scripts in DeltaV Operate, allowing you to quickly test and debug scripts in the run-time environment. When you run a schedule in the background, it runs on a separate thread from the scripts in DeltaV Operate, monitoring the system and triggering scheduled events.</p>
+
+    <p>The Scheduler does not loop; it waits for events to occur. When a selected event occurs, the script is triggered from a schedule running in the background, it is added to the queue, and it executes after the scripts in front of it have finished executing. For this reason, when a schedule is run as a background task it is ideal for monitoring tasks. This is exactly the same as scripts triggered from schedules running as foreground tasks in DeltaV Operate.</p>
+
+    <p>Generally, schedules created to run in the foreground are used for testing and debugging. Once a schedule created to run in the foreground has been tested and debugged, we suggest that you set it to run in the background. Refer to <a href="adv_foreground_and_background_schedules.html">Running Foreground and Background Schedules</a> for more information.</p>
+
+    <p>
+      <strong>Note</strong> You must copy the schedule file (*.EVS) from the ProfessionalPLUS workstation to those Operator Stations that require that schedule.</p>
+
+    <div class="section" id="adv_scheduler_basics__UsingtheScheduler_unique_1"><a name="adv_scheduler_basics__UsingtheScheduler_unique_1"></a><h2 class="sectiontitle">Using the Scheduler</h2>
+      
+      <p>Schedules are spreadsheets with separate tabs for event-based entries and time-based entries. Double-clicking an empty row in a schedule displays a dialog box for adding an entry. Once you have created an entry, you can edit individual cells in the spreadsheet without using the dialog box.</p>
+
+      <p>Time-based entries create a timer object while event-based entries create an event object. These objects have associated properties, methods, and events that you can use in VBA scripts. They are displayed in the system tree and are the objects to which scheduled scripts are tied.</p>
+
+    </div>
+
+    <div class="section" id="adv_scheduler_basics__SecuringtheScheduler"><a name="adv_scheduler_basics__SecuringtheScheduler"></a><h2 class="sectiontitle">Securing the Scheduler</h2>
+      
+      <p>DeltaV Operate&#39;s schedule protection prevents unauthorized users from accessing or modifying schedules. To configure security for your schedules, enter a security area in the Properties window.</p>
+
+    </div>
+
+    <div class="section" id="adv_scheduler_basics__ResolvingSchedules"><a name="adv_scheduler_basics__ResolvingSchedules"></a><h2 class="sectiontitle">Resolving Schedules</h2>
+      
+      <p>Database information for each data source in a schedule is saved as part of the file on disk. When a schedule executes in the run-time environment, and the database information is not up-to-date, DeltaV Operate queries the database and the tag definitions. This can be a time-consuming process which slows the execution of the schedule.</p>
+
+      <p>Resolving schedules removes the need for DeltaV Operate to query the database. Therefore, resolved schedules execute faster in the run-time environment. We recommend resolving your schedules as a final step in the configuration process. The Resolve feature is available for both schedules and pictures.</p>
+
+      <p>If the process database is modified after you resolve a schedule, you need to run Resolve again. These modifications include:</p>
+
+      <ul>
+        <li><div class="li_content">
+          <p>Loading a different database.</p>
+
+        </div></li>
+
+        <li><div class="li_content">
+          <p>Deleting database tags.</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="adv_scheduler_basics__WritingVBAScriptstoAccessDeltaVOperate"><a name="adv_scheduler_basics__WritingVBAScriptstoAccessDeltaVOperate"></a><h2 class="sectiontitle">Writing VBA Scripts to Access DeltaV Operate</h2>
+      
+      <p>When you write a scheduled script that opens, closes, replaces, or accesses a property of an object in a picture, you must ensure that DeltaV Operate is running and that the picture you need to access is open and active. This differs from writing scripts that run from pictures.</p>
+
+      <p>Before you can access any information about the active picture in DeltaV Operate, you must activate DeltaV Operate using the GetObject method as shown in the following example.</p>
+
+      <pre class="pre">
+Dim AppObj As Object
+Set AppObj = GetObject(&quot;&quot;,&quot;Workspace.Application&quot;)
+</pre>
+
+      <p>You can now check to see if the picture is open:</p>
+
+      <pre class="pre">
+If UCase(AppObj.ActiveDocument.Name) = UCase(&quot;MyPicture&quot;) 
+Then
+&lt;perform a task or open the picture&gt;
+</pre>
+
+      <p>You can then check to see which document or picture is open, and replace it if it is not the one you need. Once the proper picture is open, you can access it&#39;s objects.</p>
+
+      <p>Refer to <a href="vba_intro.html">Writing Scripts</a> for more information on using VBA with DeltaV Operate.</p>
+
+    </div>
+
+    <div class="section" id="adv_scheduler_basics__DebuggingVBAScripts"><a name="adv_scheduler_basics__DebuggingVBAScripts"></a><h2 class="sectiontitle">Debugging VBA Scripts</h2>
+      
+      <p>If a scripting error occurs while a schedule is running, the VBE debugger automatically launches to allow you to quickly edit and save the changes made to the script. If the schedule is running in the foreground when the VBE launches, any changes made to the script are automatically saved in the schedule. If the schedule is running in the background when the VBE launches, close the VBE editor, re-open it in DeltaV Operate, and make the necessary changes to the script. Any changes made to the script are automatically saved in the schedule.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> In order for scripting changes to be saved in a schedule, the VBE must be started in DeltaV Operate. Any scripting changes made in the VBE launched from the FixBackgroundServer task will not be saved in a schedule.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

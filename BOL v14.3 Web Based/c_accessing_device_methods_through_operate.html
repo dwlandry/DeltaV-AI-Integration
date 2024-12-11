@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Accessing device methods from DeltaV Operate" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="AMSMenu" name="DC.subject" /><meta content="AMSMenu" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="c_accessing_device_methods_through_operate" name="DC.Identifier" /><title>Accessing device methods from DeltaV Operate</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_ams_license_functionality.html" /><link rel="next" href="c_profibus-asi-fb.html" /></head><body class="fixed" id="c_accessing_device_methods_through_operate" data-relpath="c_accessing_device_methods_through_operate.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_accessing_device_methods_through_operate"></a>
+
+<h1 class="topictitle1">Accessing device methods from DeltaV Operate</h1>
+<div><div></div>
+ 
+	 <p>You can provide access to fieldbus, HART, and PROFIBUS DP device methods
+		from DeltaV Operate pictures using the AMSMenu application. The AMSMenu
+		application is available with the licensed version of AMS Device Manager. The
+		application opens a menu that allows access to device methods, device views,
+		installed SNAP-ONs and the AMS Device Manager Audit Trail. This topic describes
+		how to develop a script that calls the AMSMenu application. 
+	 </p>
+ 
+	 <p>The command line for the AMSMenu application has two forms which take
+		different command line parameters. 
+	 </p>
+ 
+	 <p>In the following form, the AMSMenu application opens the AMS menu for
+		the specified device. 
+	 </p>
+ 
+	 <p><strong>fieldbus syntax</strong> 
+	 </p>
+ 
+	 <p><samp class="codeph">AMSMenu -n 
+		  <em>&lt;device tag&gt;</em> 
+		</samp> 
+	 </p>
+ 
+	 <p><strong>HART syntax</strong> 
+	 </p>
+ 
+	 <p><samp class="codeph">AMSMenu -hart 
+		  <em>&lt;device tag&gt;</em></samp> 
+	 </p>
+ 
+	 <p><strong>PROFIBUS DP syntax</strong> 
+	 </p>
+ 
+	 <p><samp class="codeph">AMSMenu -profibus 
+		  <em>&lt;device tag&gt;</em></samp> 
+	 </p>
+ 
+	 <p><strong>Alternative AMSMenu command syntax</strong> 
+	 </p>
+ 
+	 <p>In the following form, the command provides all the device information
+		so the AMSMenu application does not connect to the DeltaV database and is
+		therefore faster: 
+	 </p>
+ 
+	 <p><strong>fieldbus syntax</strong> 
+	 </p>
+ 
+	 <p>AMSMenu -n 
+		<em>&lt;device tag&gt;</em> -m 
+		<em>&lt;manufacturer id&gt;</em> -t 
+		<em>&lt;device type id&gt;</em> -r 
+		<em>&lt;revision number&gt;</em> -i 
+		<em>&lt;physical device id&gt;</em> -p 
+		<em>&lt;host path&gt;</em> 
+	 </p>
+ 
+	 <p><strong>HART syntax</strong> 
+	 </p>
+ 
+	 <p><samp class="codeph">AMSMenu -hart 
+		  <em>&lt;device tag&gt;</em> -m 
+		  <em>&lt;manufacturer id&gt;</em> -t 
+		  <em>&lt;device type id&gt;</em> -r 
+		  <em>&lt;revision number&gt;</em> -p 
+		  <em>&lt;host path&gt;</em> 
+		</samp> 
+	 </p>
+ 
+	 <p><strong>PROFIBUS DP syntax</strong> 
+	 </p>
+ 
+	 <p><samp class="codeph">AMSMenu -profibus 
+		  <em>&lt;device tag&gt;</em> -p 
+		  <em>&lt;host path&gt;</em> -id 
+		  <em>&lt;identifier&gt;</em> 
+		</samp> 
+	 </p>
+ 
+	 <p>The following table explains the meanings of the parameters in the
+		AMSMenu commands. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_accessing_device_methods_through_operate__table_5BAC224AAE704BBA98D4A436FEDF8048"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_accessing_device_methods_through_operate__table_5BAC224AAE704BBA98D4A436FEDF8048" rules="all" summary=""><caption><span class="tablecap">Parameter explanations</span></caption><thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d756396e162" valign="top" width="33.33333333333333%">Command line flag 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d756396e165" valign="top" width="33.33333333333333%">Parameter 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d756396e168" valign="top" width="33.33333333333333%">Explanation 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-n 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>device tag 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>The device tag in the DeltaV database 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-m 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>manufacturer id 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>The hexadecimal identifier code for the device manufacturer. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-t 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>device type id 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>The unique identifier for the HART device type. This value can
+				  be found in the device documentation or on the 
+				  <span class="wintitle">Properties</span> dialog for the device in DeltaV
+				  Explorer device library.   
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-r 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>revision number 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>Device revision number 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-i 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>physical device id 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>Unique identifier for this fieldbus device type. This value can
+				  be found in the device documentation or on the 
+				  <span class="wintitle">Properties</span> dialog for the device in DeltaV
+				  Explorer device library.  
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-id 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>identifier 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%">Unique identifier for this device type (for
+				PROFIBUS DP devices). This value can be found in the device documentation or on
+				the 
+				<span class="wintitle">Properties</span> dialog for the device in DeltaV
+				Explorer device library. 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d756396e162 " valign="top" width="33.33333333333333%">-p 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e165 " valign="top" width="33.33333333333333%"> 
+				<p>host path 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d756396e168 " valign="top" width="33.33333333333333%"> 
+				<p>The location of the device in the control system in the form: 
+				</p>
+ 
+				<p>
+				  IO1.<em>&lt;card&gt;.&lt;channel_or_port&gt;</em>^<em>&lt;protocol&gt;</em>%%ROC.<em>&lt;controller&gt;</em>
+				  
+				</p>
+ 
+				<p> Examples: 
+				</p>
+ 
+				<p>HART — IO1.C05.CH01^HART%%ROC.CTRL1 
+				</p>
+ 
+				<p>fieldbus — IO1.C05.P01^FFBUS%%ROC.CTRL1 
+				</p>
+ 
+				<p> Profibus — IO1.C05.P01^PFBUS%%ROC.CTRL1 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p>For example, if your configuration includes a Fisher Controls DVC 6000
+		with a device tag of CTLR1C05CH01 that has the following characteristics: 
+	 </p>
+ 
+	 <a name="c_accessing_device_methods_through_operate__ul_E175FD3AA469481387EDF5D63D93EBCA"></a><ul id="c_accessing_device_methods_through_operate__ul_E175FD3AA469481387EDF5D63D93EBCA"> 
+		<li id="c_accessing_device_methods_through_operate__li_B757862A18854B4DB7053BA90F7F7B3C"><div class="li_content"> 
+		  <p>Manufacturer ID: 19 (hex) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_accessing_device_methods_through_operate__li_CF53B9D042AF476D8C51753B0610F580"><div class="li_content"> 
+		  <p>Device Type ID: 3 (hex) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_accessing_device_methods_through_operate__li_617E0B2E50D84090B791B4B5FDED0CDB"><div class="li_content"> 
+		  <p>Revision Level: 1 (decimal) 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_accessing_device_methods_through_operate__li_FCCBE2FD7A05475D87D646AF041FE190"><div class="li_content"> 
+		  <p>Host path: IO1.C05.CH01^HART%ROC.CTLR1 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>The following script opens the AMS Device Manager menu for the device
+		when a user clicks the object to which the script is attached: 
+	 </p>
+ 
+	 <pre class="codeblock">Private Sub Rect1_Click()
+    frsruntask &quot;AMSMenu&quot;, &quot;-hart ctlr1c05ch01 -m 19 -t 3 -r 1 &quot; _
+     &amp; &quot;-p IO1.C05.CH01^HART%%ROC.CTLR1&quot;
+End Sub</pre>
+ 
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

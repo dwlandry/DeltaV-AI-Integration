@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="VIM Ethernet device configuration data" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="VIMNet, EIOC" name="DC.subject" /><meta content="VIMNet, EIOC" name="keywords" /><meta content="t_configure_ethernet_vim_devices.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_vim_configure_ethernet_devices" name="DC.Identifier" /><title>VIM Ethernet device configuration data</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_configure_ethernet_vim_devices.html" /><link rel="next" href="t_vim_autosense_vims.html" /></head><body class="fixed" id="r_vim_configure_ethernet_devices" data-relpath="r_vim_configure_ethernet_devices.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_vim_configure_ethernet_devices"></a>
+
+<h1 class="topictitle1">VIM Ethernet device configuration data</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_199FE362459A4F6EBB032FAEFF12FA60"><a name="r_vim_configure_ethernet_devices__section_199FE362459A4F6EBB032FAEFF12FA60"></a> 
+      
+<div class="tablenoborder"><a name="r_vim_configure_ethernet_devices__table_0A809FD9596E4865B8863E14D077C5DC"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vim_configure_ethernet_devices__table_0A809FD9596E4865B8863E14D077C5DC" rules="all" summary=""><caption><span class="tablecap">Device data types</span></caption> 
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d3314868e46" valign="top" width="NaN%">Device data type 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e49" valign="top" width="NaN%">Command type 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e52" valign="top" width="NaN%">PLC type 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 0-3 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Reserved 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 4 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Typed (Logical ASCII Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 5 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Ranged (Logical ASCII Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 6 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Diagnostic 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 7 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Read-Mod-Write (Logical ASCII Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 8 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Typed (Logical Binary Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 9 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Ranged (Logical Binary Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 10 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Read-Mod-Write (Logical Binary Addressing) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> PLC5 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 11 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Protected Typed Logical R/W with 3 address fields 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> SLC 505 &amp; Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 12-14 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Reserved 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 15 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> Generic ENBT 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> Logix 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e46 " valign="top" width="NaN%"> 
+              <p> 255 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e49 " valign="top" width="NaN%"> 
+              <p> VIMNet Diagnostics data (see notes at end of Section) 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e52 " valign="top" width="NaN%"> 
+              <p> All 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+      <p>The following table lists the meanings of Special data values. 
+      </p>
+ 
+      
+<div class="tablenoborder"><a name="r_vim_configure_ethernet_devices__table_4CD8C2AFECA04C768AE9B2102DF1B7CD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vim_configure_ethernet_devices__table_4CD8C2AFECA04C768AE9B2102DF1B7CD" rules="all" summary=""><caption><span class="tablecap">Special data values</span></caption> 
+         
+         
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> 
+                <strong>SpecialData1</strong> 
+              </p>
+ 
+              <p>PLC-5 /SLC File Type 
+              </p>
+ 
+              <p>For ControlLogix devices, you must map internal native tags to
+                PLC5/SLC file types and file numbers when using DF1 DeviceDataTypes. When using
+                Generic ENBT communications (DeviceDataType=15), special data values are not
+                used. 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p>0 = Output File Type, O 
+              </p>
+ 
+              <p>1 = Input File Type, I 
+              </p>
+ 
+              <p>2 = Status File Type, S 
+              </p>
+ 
+              <p>3 = Binary File Type, B 
+              </p>
+ 
+              <p>4 = Timer File Type, T 
+              </p>
+ 
+              <p>5 = Counter File Type, C 
+              </p>
+ 
+              <p>6 = Control File Type, R 
+              </p>
+ 
+              <p>7= Integer File Type, N 
+              </p>
+ 
+              <p>8 = Floating File Type, F 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> 
+                <strong>SpecialData2</strong> 
+              </p>
+ 
+              <p>PLC-5 /SLC File Number 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p>0 – 65535 file number 
+              </p>
+ 
+              <p>For example, when reading/writing Integer file N15, configure
+                special data 1 as 7, and special data 2 as 15. Similarly, when reading/writing
+                Floating point file 8, configure special data 1 as 8 and special data 2 as 8. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> 
+                <strong>SpecialData3</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> Reserved 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> 
+                <strong>SpecialData4</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <a name="r_vim_configure_ethernet_devices__ul_EE4A469A74E64C6AA125C9F770600C68"></a><ul id="r_vim_configure_ethernet_devices__ul_EE4A469A74E64C6AA125C9F770600C68"> 
+                <li id="r_vim_configure_ethernet_devices__li_01FDA61C64EB441F98B5EF9D80E9C7FD"><div class="li_content"> 
+                  <p>For Logix, this parameter is configured such that the low
+                    byte is always set to 1, and the high byte is the Logix CPU slot number in the
+                    chassis. The slot number is zero based. For example, if the CPU is in the first
+                    slot (slot 0), configure a 1 for this parameter. If the CPU is in second slot,
+                    configure a 257 for this parameter. The parameter is calculated as (256 X slot)
+                    + 1. 
+                  </p>
+ 
+                </div></li>
+ 
+                <li id="r_vim_configure_ethernet_devices__li_363730D1F186498B8B1F44CA8B4A74D7"><div class="li_content"> 
+                  <p>For SLC 505 and PLC5/XXe, this parameter should be set to
+                    0. 
+                  </p>
+ 
+                </div></li>
+ 
+              </ul>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> 
+                <strong>SpecialData5</strong> 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" valign="top" width="NaN%"> 
+              <p> Reserved 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_2271A186E9E246D7B69295DBB2020C24"><a name="r_vim_configure_ethernet_devices__section_2271A186E9E246D7B69295DBB2020C24"></a><h2 class="sectiontitle">DeltaV Data Type</h2> 
+       
+      <p>This attribute defines how data is stored in the DeltaV dataset. The
+        following tables describes available options for PLC5/XXE, SLC 5XX, and
+        ControlLogix processors. 
+      </p>
+ 
+      
+<div class="tablenoborder"><a name="r_vim_configure_ethernet_devices__table_62421FCE448C4ADA994813299C318E15"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vim_configure_ethernet_devices__table_62421FCE448C4ADA994813299C318E15" rules="all" summary=""><caption><span class="tablecap">PLC 5/XXE Data Tables</span></caption> 
+         
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d3314868e495" valign="top" width="NaN%">PLC data type 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e498" valign="top" width="NaN%">Available DeltaV data types 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e501" valign="top" width="NaN%">Access 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e504" valign="top" width="NaN%">Restrictions 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e495 " valign="top" width="NaN%"> 
+              <p>O – Table 
+              </p>
+ 
+              <p>B – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e498 " valign="top" width="NaN%"> 
+              <p>Boolean with Status 
+              </p>
+ 
+              <p>Discrete with Status 
+              </p>
+ 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e501 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e504 " valign="top" width="NaN%"> 
+              <a name="r_vim_configure_ethernet_devices__ul_D8ABC44B903B4127975C1945D10C79C7"></a><ul id="r_vim_configure_ethernet_devices__ul_D8ABC44B903B4127975C1945D10C79C7"> 
+                <li id="r_vim_configure_ethernet_devices__li_748CBC41356B4307850C13ED1E70507A"><div class="li_content"> 
+                  <p>a. 16-bit aligned dataset Start Address. For example: 0,
+                    16, 32, etc. 
+                  </p>
+ 
+                </div></li>
+ 
+                <li id="r_vim_configure_ethernet_devices__li_93D900E7AF5E44CB9315F99DD790A932"><div class="li_content"> 
+                  <p>b. Number of values is multiple of 16, and refers to bits.
+                    Maximum 96 registers. Each dataset register is a bit. 
+                  </p>
+ 
+                </div></li>
+ 
+              </ul>
+ 
+              <p>Maximum registers are 100. Starting address is any 16-bit word
+                
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e495 " valign="top" width="NaN%"> 
+              <p> I – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e498 " valign="top" width="NaN%"> 
+              <p>Boolean with Status 
+              </p>
+ 
+              <p>Discrete with Status 
+              </p>
+ 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e501 " valign="top" width="NaN%"> 
+              <p> R 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e504 " valign="top" width="NaN%"> 
+              <a name="r_vim_configure_ethernet_devices__ul_6018435AC4464F748097EBE377614777"></a><ul id="r_vim_configure_ethernet_devices__ul_6018435AC4464F748097EBE377614777"> 
+                <li id="r_vim_configure_ethernet_devices__li_66A6626085FC46729955A628129CA78C"><div class="li_content"> 
+                  <p>a. 16-bit aligned dataset Start Address. For example: 0,
+                    16, 32, etc. 
+                  </p>
+ 
+                </div></li>
+ 
+                <li id="r_vim_configure_ethernet_devices__li_52615BED6C4D4158B9531FD928DBA955"><div class="li_content"> 
+                  <p>b. Number of values is multiple of 16, and refers to bits.
+                    Maximum 96 registers. Each dataset register is a bit. 
+                  </p>
+ 
+                </div></li>
+ 
+              </ul>
+ 
+              <p>Maximum registers are 100. Starting address is any 16-bit
+                word. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e495 " valign="top" width="NaN%"> 
+              <p>N – Table 
+              </p>
+ 
+              <p>C – Table 
+              </p>
+ 
+              <p>T – Table 
+              </p>
+ 
+              <p>S – Table 
+              </p>
+ 
+              <p>R – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e498 " valign="top" width="NaN%"> 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e501 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e504 " valign="top" width="NaN%"> 
+              <p> Maximum registers are 100. Starting address is any 16-bit
+                word. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e495 " valign="top" width="NaN%"> 
+              <p> F – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e498 " valign="top" width="NaN%"> 
+              <p> Floating Point with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e501 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e504 " valign="top" width="NaN%"> 
+              <p> Maximum registers are 50. Starting address is any floating
+                point register. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+      
+<div class="tablenoborder"><a name="r_vim_configure_ethernet_devices__table_5BA6A6812D2B44BC83077030982A71BE"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="r_vim_configure_ethernet_devices__table_5BA6A6812D2B44BC83077030982A71BE" rules="all" summary=""><caption><span class="tablecap">SLC 5/XX and ControlLogix Data Tables</span></caption> 
+         
+         
+         
+         
+        <thead align="left"> 
+          <tr> 
+            <th class="cellrowborder" id="d3314868e707" valign="top" width="NaN%">PLC data type 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e710" valign="top" width="NaN%">Availalbe DeltaV data types 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e713" valign="top" width="NaN%">Access 
+            </th>
+ 
+            <th class="cellrowborder" id="d3314868e716" valign="top" width="NaN%">Restrictions 
+            </th>
+ 
+          </tr>
+</thead>
+ 
+        <tbody> 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e707 " valign="top" width="NaN%"> 
+              <p>O – Table 
+              </p>
+ 
+              <p>B – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e710 " valign="top" width="NaN%"> 
+              <p>Boolean with Status 
+              </p>
+ 
+              <p>Discrete with Status 
+              </p>
+ 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e713 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e716 " valign="top" width="NaN%"> 
+              <p>a. 16-bit aligned dataset Start Address. For example: 0, 16,
+                32, etc. 
+              </p>
+ 
+              <p>b. Number of values is multiple of 16, and refers to bits.
+                Maximum 96 registers. Each dataset register is a bit. 
+              </p>
+ 
+              <p>Maximum registers are 100. Starting address is any 16-bit
+                word. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e707 " valign="top" width="NaN%"> 
+              <p> I – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e710 " valign="top" width="NaN%"> 
+              <p>Boolean with Status 
+              </p>
+ 
+              <p>Discrete with Status 
+              </p>
+ 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e713 " valign="top" width="NaN%"> 
+              <p> R 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e716 " valign="top" width="NaN%"> 
+              <p>a. 16-bit aligned dataset Start Address. For example: 0, 16,
+                32, etc. 
+              </p>
+ 
+              <p>b. Number of values is multiple of 16, and refers to bits.
+                Maximum 96 registers. Each dataset register is a bit. 
+              </p>
+ 
+              <p>Maximum registers are 100. Starting address is any 16-bit
+                word. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e707 " valign="top" width="NaN%"> 
+              <p>N – Table 
+              </p>
+ 
+              <p>C – Table 
+              </p>
+ 
+              <p>T – Table 
+              </p>
+ 
+              <p>S – Table 
+              </p>
+ 
+              <p>R – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e710 " valign="top" width="NaN%"> 
+              <p>16-bit Int with Status 
+              </p>
+ 
+              <p>16-bit Uint with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e713 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e716 " valign="top" width="NaN%"> 
+              <p> Maximum registers are 100. Starting address is any 16-bit
+                word. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+          <tr> 
+            <td class="cellrowborder" headers="d3314868e707 " valign="top" width="NaN%"> 
+              <p> F – Table 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e710 " valign="top" width="NaN%"> 
+              <p> Floating Point with Status 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e713 " valign="top" width="NaN%"> 
+              <p> R/W 
+              </p>
+ 
+            </td>
+ 
+            <td class="cellrowborder" headers="d3314868e716 " valign="top" width="NaN%"> 
+              <p> Maximum registers are 50. Starting address is any floating
+                point register. 
+              </p>
+ 
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+</div>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_6E2C93BBBD7E4E988CE159275AFF486F"><a name="r_vim_configure_ethernet_devices__section_6E2C93BBBD7E4E988CE159275AFF486F"></a><h2 class="sectiontitle">Device Data Type</h2> 
+       
+      <p>This attribute defines what type of transaction will be performed for
+        the Dataset between the Serial Card and the Allen-Bradley device Values from 0
+        to 11 are listed in the above table. They are briefly described below: 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_8C2ED35D554040DC87C6361C62ADCC34"><a name="r_vim_configure_ethernet_devices__section_8C2ED35D554040DC87C6361C62ADCC34"></a><h2 class="sectiontitle">Types 4 (Typed Transaction with ASCII addressing) and 8 (Typed
+        Transaction with binary addressing):</h2> 
+       
+      <p>The typed transactions treat each data type as an element and
+        automatically adjust the memory address to accommodate the defined element
+        type. Therefore, the starting address points to different memory location
+        depending on the data type. It points to the word address for integer data and
+        double word address for floating point data. 
+      </p>
+ 
+      <p>For Binary data type, it points to the word, not the bit, address
+        within the Binary file. The number of element denotes the number of bits to be
+        included in the Dataset starting at the specified word address. The bit
+        position is relative to the starting word address. Therefore, every seventeenth
+        bit will start at the next word. For example, a starting address of 8 with 32
+        elements means the Dataset starts at the eighth word in the binary file and
+        contains 32 bits. The seventeenth bit will start at the ninth word. The bit
+        position in the PLC is specified by a slash (/) after the word address.
+        Therefore, the first bit in the above Dataset has an address of B3:8/0.
+        Although each Dataset can contain 100 elements, it is recommended that the
+        maximum number to be 96 to ensure the Dataset ends on a word address boundary. 
+      </p>
+ 
+      <p>Both single and block output modes are supported for integer, binary,
+        and floating point file type. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_5E3D6F69519140D684D8BE0F9D1F54C7"><a name="r_vim_configure_ethernet_devices__section_5E3D6F69519140D684D8BE0F9D1F54C7"></a><h2 class="sectiontitle">Types 5 (Ranged Transaction with ASCII addressing) and 9 (Ranged
+        Transaction with binary addressing):</h2> 
+       
+      <p>Unlike Typed operations that automatically adjust the memory address
+        to accommodate the defined element type, the Ranged operations use word address
+        exclusively. It performs consecutive memory word read and write. The driver
+        takes care of address adjustment for floating point file type, making it
+        transparent to the user and DeltaV. Therefore, the Ranged operation on integer,
+        binary and floating point file types is the same as the Typed operation. 
+      </p>
+ 
+      <p>Both single and block output modes are supported for integer, binary,
+        and floating point file type. 
+      </p>
+ 
+      <p>Unlike the Typed read which only accesses the accumulator or position
+        attribute, the Ranged read always starts at the first attribute and includes
+        all three attributes in the data file. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_EE148FEE1EB04DDF89773BA9EEAC80BF"><a name="r_vim_configure_ethernet_devices__section_EE148FEE1EB04DDF89773BA9EEAC80BF"></a><h2 class="sectiontitle">Types 7 (Read-Modify-Write with ASCII addressing) and 10
+        (Read-Modify-Write with binary addressing):</h2> 
+       
+      <p>When communicating with a PLC-5, Read-Modify-Write (RMW) is used to
+        set/reset a single bit in the binary file. User can set any bit in the Dataset.
+        It is different from writing to the binary file with Typed write. The Typed
+        write will write all 16 bits in the word. The RMW let user write a single bit
+        in any word, leaving other bit unaffected. The block output mode is not
+        supported in RMW. Therefore, single output mode (1) must be used with RMW. 
+      </p>
+ 
+      <p>RMW is for output only. The data direction parameter in the Dataset
+        configuration must be &quot;output&quot;. Configuring RMW as input to Serial Card will
+        cause error and undesirable results. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="r_vim_configure_ethernet_devices__section_79073B84000140E7A81803172171EF5B"><a name="r_vim_configure_ethernet_devices__section_79073B84000140E7A81803172171EF5B"></a><h2 class="sectiontitle">Type 11 (SLC 500, SLC 5/03 and SLC 5/04 Protected Typed Logical
+        Read/Write with three address fields):</h2> 
+       
+      <p>This DeviceDataType is used to read/write all available tables
+        (including the Input and Output tables) of the SLC processors listed. The reads
+        and writes are from/to the logical address generated based on the starting
+        address of the dataset. The following describes the parameters and their usage:
+        
+      </p>
+ 
+      <p>Input, Output, and Binary tables can be defined as Boolean, Discrete
+        or 16-bit UINT. When using Boolean or Discrete, the starting address is always
+        a 16-bit word address (0, 16, 32, etc), and the Number of Values refers to
+        bits. For example, a Dataset with starting address at 0 and 32 values gives you
+        32 bits. When using 16-bit UINT, the starting address can be anywhere in the
+        table, and the Number of Values refers to 16-bit registers. 
+      </p>
+ 
+      <p>Input tables are read only. Output tables can be read and written.
+        When performing reads/writes to the Output table, the driver will access the
+        SLC on a 16-bit word basis. If the Output mode in DeltaV is 0 (i.e., Block),
+        the entire block will be written if any bit in the Dataset changes. On the
+        other hand, if the Output mode is 1 (i.e., Single Value), then on a single bit
+        change, the 16-bit word containing that bit will be written. 
+      </p>
+ 
+      <p>For floating point values, the starting address refers to the register
+        number and a 4-byte value is read/written. For all other tables, the starting
+        address refers to the register number and a 2-byte value is read/written. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> When using Device Data Type of 255 for VIMNet diagnostics,
+          configure the dataset as Input; 32-bit UINT; Start Address=0; and Number of
+          values=50, No Special Data parameters are needed.. 
+        </p>
+ 
+        <p> DeviceDataTypes 7 and 10 are only valid with file type 3 and output
+          mode 1. 
+        </p>
+ 
+        <p> Output Modes: 0- block output; 1- single data output. 
+        </p>
+ 
+        <p> Floating Point file types, 32-bit Integer, and 32-bit unsigned
+          Integer require 2 16-bit registers per value, thus reducing the registers per
+          dataset to 50 (maximum 16-bit registers per dataset is 100). 
+        </p>
+ 
+        <p> When addressing registers, DeltaV Serial Card register numbers are
+          1 based, whereas PLC and SLC registers are 0 based. 
+        </p>
+ 
+      </div>
+ 
+      <p>For information on how to connect I/O registers in a Logix controller
+        to DeltaV datasets using Class1 and Class3 Ethernet/IP messaging, refer to the 
+        <cite>Mynah Ethernet/IP Master Driver for DeltaV Virtual I/O Module
+          User&#39;s Manual</cite>. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

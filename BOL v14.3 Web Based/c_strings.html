@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Strings" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SELSTR, string selection function" name="DC.subject" /><meta content="SELSTR, string selection function" name="keywords" /><meta content="c_syntaxrules.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="strings" name="DC.Identifier" /><title>Strings</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_diagnosticparametersinexpressions.html" /><link rel="next" href="c_operands.html" /></head><body class="fixed" id="strings" data-relpath="c_strings.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="strings"></a>
+
+<h1 class="topictitle1">Strings</h1>
+<div><div></div>
+<p>Strings can be used in all types of expressions in the DeltaV system. The use of strings allows great flexibility when constructing or selecting parameter reference paths in internal, external, and dynamic reference parameters.</p>
+<p>A reference parameter/field can be assigned a string constant or a string variable. String constants are enclosed in quotation marks (&quot; &quot;). String variables are enclosed in single quotes (&#39; &#39;).</p>
+<div class="note"><span class="notetitle">Note:</span> <p> Strings referring to module names and associated paths must always use uppercase letters. </p>
+</div>
+<p>Supported string functions are described below.</p>
+<a name="strings__ul_46A0053BAD684CF79597EB7748BA7209"></a><ul id="strings__ul_46A0053BAD684CF79597EB7748BA7209">
+<li id="strings__li_D0AD55E04B0C4CA6A1225FAE540F6E99"><div class="li_content"><p><strong>String Assignment</strong> — A string constant can be assigned to a parameter/field. For example:
+</p>
+<div class="p"><pre class="codeblock">&#39;OUTLET_POS.$REF&#39; := &quot;VLV1004/AO/OUT.CV&quot;;
+&#39;OUTLET_POS.$REF&#39; := &quot;&quot;;    // empty string  constant</pre>
+</div>
+<p>A string parameter/field can be assigned to another string parameter/field. For example:</p>
+<pre class="codeblock">&#39;TEMPSTR2.CV&#39; := &#39;TEMPSTR1.CV&#39;;
+&#39;OUTLET_POS.$REF&#39; := &#39;TEMPSTR2.CV&#39;;</pre>
+<p>A named set string value can be assigned to a string parameter/field. For example:</p>
+<pre class="codeblock">&#39;STRING.CV&#39; := &#39;NAMED_SET.CVS&#39;;</pre>
+</div></li>
+
+<li id="strings__li_5329A37EA7EE4D5082B4B8BA4F8833DB"><div class="li_content"><p><strong>Numeric Value to String Conversion</strong>  — If the right side of the assignment evaluates to a numeric value and the left side of the assignment is a string parameter, the numeric value is converted to a string, and the string is assigned.</p>
+</div></li>
+
+<li id="strings__li_EE684959062440B7B442A44409688A19"><div class="li_content"><p><strong>String to Numeric Value Conversion</strong> —  If the right side of the assignment evaluates to a string value and the left side of the assignment is a numeric parameter, the string is converted to a float, which is then converted to the type of the numeric parameter.</p>
+</div></li>
+
+<li id="strings__li_092C06A74BD643849801057766C670CF"><div class="li_content"><p><strong>String Comparison Using Relational Operators</strong> —  Two relational operators, equal (=) and not equal (!=), can be used to compare string parameter/fields or string constants, as in the following:
+</p>
+<div class="p"><pre class="codeblock">IF    (&#39;OUTLET_POS.$REF&#39; = &quot;VLV1004/AO/OUT.CV&quot;)
+THEN    …
+IF    (&quot;VLV1004/AO/OUT.CV&quot; != &#39;OUTLET_POS.$REF&#39;)
+THEN    …
+IF    (&#39;TEMPSTR2.CV&#39; = &#39;TEMPSTR1.CV&#39;)
+THEN    …
+IF    (&#39;TEMPSTR2.CV&#39; != &#39;TEMPSTR1.CV&#39;)
+THEN    …</pre>
+</div>
+<p>Other relational operators are not supported for string comparison.</p>
+</div></li>
+<li id="strings__li_05A3C037896340B682A810515AB502A5"><div class="li_content"><p><strong>String Concatenation</strong> —  The full path is constructed from a partial path string (for example, a module name) and concatenated with a another string (such a string constant) using a plus operator (+). For example:
+</p>
+<div class="p"><pre class="codeblock">&#39;OUTLET_POS.$REF&#39; := &#39;MODULE.CV&#39; + &quot;/PID/SP.CV&quot;;</pre>
+</div>
+<div class="note"><span class="notetitle">Note:</span> <p>Strings written from expressions are limited to 256 characters. The software does not check if the limit is exceeded and no messages appear. You must ensure that strings written from expressions are no longer than 256 characters.</p>
+</div>
+<p>If one of the terms is a string and the other is numeric, the numeric term is converted to a string and the two strings are concatenated, resulting in a string. For example:</p>
+<pre class="codeblock">&#39;TEMPSTR.CV&#39; := &quot;FIC&quot;;
+&#39;TEMPNUM.CV&#39; := 105;
+&#39;TEMPSTR2.CV&#39; := &#39;TEMPSTR.CV&#39; + &#39;TEMPNUM.CV&#39;&#39;
+IF &#39;TEMPSTR2.CV&#39; = &quot;FIC105&quot; THEN // would be true</pre>
+</div></li>
+<li id="strings__li_9FDCBF0768DB4350B6682E6075C250C5"><div class="li_content"><p><strong>String Selection Function (SELSTR)</strong>  — The SELSTR function allows selection from up to five string constants or string parameters, based on an input to the string selection function. It is intended to take the place of a series of IF…THEN statements and temporary string parameters.</p>
+<p>SELSTR takes float one term (expected to hold an integer value) and five string terms (usually string constants), returning a string that corresponds to the value of the float term:</p>
+
+<div class="tablenoborder"><a name="strings__table_6234CFF952984FCD9B6D2A8F94059BE1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="strings__table_6234CFF952984FCD9B6D2A8F94059BE1" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d1392824e97" valign="top" width="50%"><p>Float Value</p>
+</th>
+
+<th class="cellrowborder" id="d1392824e101" valign="top" width="50%"><p>String Returned</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&lt;1.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>empty string</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;= 1.0 and &lt;2.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>first string parameter</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;= 2.0 and &lt;3.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>second string parameter</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;= 3.0 and &lt;4.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>third string parameter</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;= 4.0 and &lt;5.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>fourth string parameter</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;= 5.0 and &lt;6.0</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>fifth string parameter</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d1392824e97 " valign="top" width="50%"><p>&gt;=6</p>
+</td>
+
+<td class="cellrowborder" headers="d1392824e101 " valign="top" width="50%"><p>empty string</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example:</p>
+<pre class="codeblock">&#39;OUTLET_POS.$REF&#39;:= SELSTR(&#39;SEL.CV&#39;,
+&quot;FIC101&quot;,
+&quot;FIC102&quot;,
+&quot;FIC103&quot;,
+&quot;&quot;,
+&quot;&quot;) + &quot;/PID1/SP.CV&quot;;
+</pre>
+</div></li>
+</ul>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

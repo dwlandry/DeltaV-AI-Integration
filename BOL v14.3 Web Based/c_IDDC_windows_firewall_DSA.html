@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Firewalls and the Independent DeltaV Domain Controller" name="DC.Title" /><meta content="Install" name="DC.Coverage" /><meta content="domain, independent domain controller, controller, independent domain controller, Windows firewall, independent domain controller, independent domain controller, firewall-IPD, Windows firewall, intrusion protection device (IPD)" name="DC.subject" /><meta content="domain, independent domain controller, controller, independent domain controller, Windows firewall, independent domain controller, independent domain controller, firewall-IPD, Windows firewall, intrusion protection device (IPD)" name="keywords" /><meta content="c_dsa_overview.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_IDDC_windows_firewall" name="DC.Identifier" /><title>Firewalls and the Independent DeltaV Domain Controller</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_manage_dsa_firewall_rules.html" /><link rel="next" href="c_smart_cards.html" /></head><body class="fixed" id="concept_IDDC_windows_firewall" data-relpath="c_IDDC_windows_firewall_DSA.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_IDDC_windows_firewall"></a>
+
+<h1 class="topictitle1">Firewalls and the Independent DeltaV Domain Controller</h1>
+<div> 
+	 <div class="section"><h2 class="sectiontitle">Windows Firewalls</h2> 
+		 
+		<p> On all DeltaV nodes, the Windows Firewall is disabled on the DeltaV
+		  ACN NICs (Network Interface Cards). This must occur on the Independent Domain
+		  Controller as well. 
+		</p>
+ 
+		<p>For non-DeltaV networks, (such as the 3rd NIC on the IDDC), configure
+		  the Windows Firewall to allow only the domain authentication traffic through. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Physical Firewalls</h2> 
+		 
+		<p>To protect the DeltaV ACN, an optional, physical Firewall-IPD is
+		  available with rules to allow only the domain authentication and time
+		  synchronization traffic through. The Emerson Firewall-IPD is used on the DeltaV
+		  ACNs (primary and secondary, where exists). It is connected between the
+		  Independent DeltaV Domain Controller (IDDC) and the rest of the DeltaV
+		  workstations.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Firewall Rules for all Firewalls</h2> 
+		 
+		<p>The following table outlines the rules to configure on your firewall.
+		  These rules ALLOW communication through the firewall on the ports specified in
+		  the direction specified (where the Independent DeltaV Domain Controller is the
+		  point of reference). The Emerson Firewall-IPD comes with the rules configured.
+		  Other firewalls (including the Windows firewall) might also need the rules to
+		  be created. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Firewall rules</span></caption><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d725532e87" rowspan="2" valign="top" width="NaN%">Function 
+				</th>
+ 
+				<th class="cellrowborder" id="d725532e90" rowspan="2" valign="top" width="NaN%">Ports 
+				</th>
+ 
+				<th class="cellrowborder" id="d725532e93" rowspan="2" valign="top" width="NaN%">Direction 
+				  <p>(where the starting point is the DeltaV Independent Domain
+					 Controller) 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" colspan="2" id="d725532e99" valign="top">Configure on the following
+				  network: 
+				</th>
+ 
+				<th class="cellrowborder" id="d725532e102" rowspan="2" valign="top" width="NaN%">Comment 
+				</th>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<th class="cellrowborder" id="d725532e108" valign="top" width="NaN%">DeltaV ACNs 
+				</th>
+ 
+				<th class="cellrowborder" id="d725532e111" valign="top" width="NaN%">Non-ACN network 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Domain controller to domain controller (RPC) 
+				  </p>
+ 
+				  <p>Client to domain controller (RPC) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>UDP 135 
+				  </p>
+ 
+				  <p>TCP 135 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>High Range (RCP) Ports (Ephemeral Ports) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 1024 to 65535 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				   
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				   
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Client queries to the domain controller (LDAP) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>UDP 389 
+				  </p>
+ 
+				  <p>TCP 389 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Kerberos Password Change 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 464 
+				  </p>
+ 
+				  <p>UDP 464 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>DNS client-to-Domain Controller 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 53 
+				  </p>
+ 
+				  <p>UDP 53 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Kerberos 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 88 
+				  </p>
+ 
+				  <p>UDP 88 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Kerberos V5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 464 
+				  </p>
+ 
+				  <p>UDP 464 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>User and Computer Authentication 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 139 
+				  </p>
+ 
+				  <p>UDP 137 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>File Replications Service 
+				  </p>
+ 
+				  <p>Sysvol Share (SMB) 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 445 
+				  </p>
+ 
+				  <p>UDP 445 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%">Necessary for group policy distribution
+				  between the Independent DeltaV Domain Controller and the DeltaV workstations. 
+				  <div class="important"><span class="importanttitle">Important:</span>  
+					 <p>This should not be opened on the non-DeltaV NICs (connecting
+						the Independent DeltaV Domain Controller and a non-ACN network). 
+					 </p>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Global Catalog from Client to Domain Controller 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 3268 
+				  </p>
+ 
+				  <p>UDP 3269 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%">This setting is dependent on the direction of
+				  any domain to domain trust. 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>NTP 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>UDP 123 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				  <div class="important"><span class="importanttitle">Important:</span>  
+					 <p>The Independent DeltaV Domain Controller listens for time
+						broadcasts. Therefore, to remain in sync with the rest of the DeltaV nodes, the
+						Independent DeltaV Domain Controller 
+						<strong>must only</strong> listen for time from the DeltaV Master Time
+						node. 
+					 </p>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Group Policy 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>ICMP 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				   
+				  <div class="important"><span class="importanttitle">Important:</span>  
+					 <p>This should 
+						<strong>not</strong> be opened on the non-DeltaV NICs (connecting the
+						Independent DeltaV Domain Controller and a non-ACN network). 
+					 </p>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>File Replication Service between Domain Controllers - not
+					 Client 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 25, 139 
+				  </p>
+ 
+				  <p>UDP 138 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%">Required for Domain Controller to Domain
+				  Controller file replication within the DeltaV network. 
+				  <div class="important"><span class="importanttitle">Important:</span>  
+					 <p>This should 
+						<strong>not</strong> be opened on the non-DeltaV NICs (connecting the
+						Independent DeltaV Domain Controller and a non-ACN network). 
+					 </p>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>Sysvol Replication between Domain Controllers 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 5722 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%">Required for Domain Controller to Domain
+				  Controller Sysvol replication within the DeltaV network. 
+				  <div class="important"><span class="importanttitle">Important:</span>  
+					 <p>This should 
+						<strong>not</strong> be opened on the non-DeltaV NICs (connecting the
+						Independent DeltaV Domain Controller and a non-ACN network). 
+					 </p>
+ 
+				  </div>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d725532e87 " valign="top" width="NaN%"> 
+				  <p>WINS in a Domain Trust Scenario offering NetBIOS resolution 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e90 " valign="top" width="NaN%"> 
+				  <p>TCP 42 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e93 " valign="top" width="NaN%"> 
+				  <p>Incoming 
+				  </p>
+ 
+				  <p>Outgoing 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e108 " valign="top" width="NaN%"> 
+				  <p>No 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e99 d725532e111 " valign="top" width="NaN%"> 
+				  <p>Yes 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d725532e102 " valign="top" width="NaN%"> 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+		 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

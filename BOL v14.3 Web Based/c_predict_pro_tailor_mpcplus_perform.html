@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Tailoring MPCPlus Control Performance" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_2987DF78D79448F88152D6400D3D7B19_unique_425" name="DC.Identifier" /><title>Tailoring MPCPlus Control Performance</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict_pro_tailor_perform_predict_pro.html" /><link rel="next" href="c_entech_toolkit_intro.html" /></head><body class="fixed" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425" data-relpath="c_predict_pro_tailor_mpcplus_perform.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_425"></a>
+
+<h1 class="topictitle1"> Tailoring MPCPlus Control Performance</h1>
+<div> 
+	 <div class="section" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__section_4F104D2F70EA4CAB9B8F4567309A32F1"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__section_4F104D2F70EA4CAB9B8F4567309A32F1"></a> 
+		<p> The control performance of the MPCPlus function block is modified in
+		  much the same way as the MPC and MPCPro blocks. The main difference between the
+		  three function blocks is that the MPCPlus block requires no controller
+		  generation. 
+		</p>
+ 
+		<p> The following table provides guidelines for tailoring the control
+		  performance of the MPCPlus block. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__table_131E25E6EF7F42FA82DEC893A7313B7D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__table_131E25E6EF7F42FA82DEC893A7313B7D" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1267621e33" valign="top" width="31.044776119402982%">Steps to achieve the desired level of
+					 control performance 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1267621e36" valign="top" width="29.850746268656714%">Where 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1267621e39" valign="top" width="39.1044776119403%">Comments 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Review and modify the process model. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>DeltaV PredictPro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the Penalty on Moves settings. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Tuning dialog in the MPC Operate Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>
+						for guidelines on setting the value. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the Penalty on Error (POE) settings. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Tuning dialog in the MPC Operate Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>The value of the dynamic POE that the block calculates for
+						CVs with a Target optimization type is based mostly on the configured/tuned
+						value of POE_MID. Therefore, when the optimization type is Target, a good
+						starting point for all three POE values (POE_ABOVE, POE_MID, and POE_BELOW) is
+						1.0. Use the response trajectory filter for the CV or the POM values of
+						manipulated variables to tune the control response for target CVs. In general,
+						if it is necessary to tune the POE values, adjust all three POE values equally.
+						It may be appropriate for the POE_MID value to be lower than POE_ABOVE and
+						POE_BELOW, but keep in mind that the value of POE_MID dominates. 
+					 </p>
+ 
+					 <p> For a constraint variable with an optimization type of
+						None, a good starting point for POE_MID is 0.1 or lower, and 1.0 for POE_ABOVE
+						and POE_BELOW. 
+					 </p>
+ 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>
+						for basic guidelines on setting the error penalty. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the response trajectories: setpoint trajectory or
+						setpoint filter. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Detail display for controlled variables in the MPC Operate
+						Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the maximum MV move. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Detail display for manipulated variables in the MPC Operate
+						Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the model error filter values ( model correction
+						factor). 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> The MOD_CORR_FACTOR[#] parameter, where #
+					 is the process output number. 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>Refer to 
+						<a href="c_predict_tailor_perform_predict.html#concept_D10833FBA4234EB287904CA22C610FBA">Tailoring MPC Control Performance</a>.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the target setpoint filter. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>The horizontal slider on the Tuning dialog in the MPC
+						Operator Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>The single slider simultaneously adjusts the target setpoint
+						filter for all process outputs in the range of 0.1 (Robustness) to 0.8
+						(Performance). The larger the value, the faster the optimizer&#39;s optimal
+						setpoint value is applied to the working setpoint of controlled variables. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust the MV target weight. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>The OPT_MV_WT parameter. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>The parameter holds a value common to all manipulated
+						variables. The default value of 1.0 results in the MV move plan being strongly
+						influenced by the steady-state MV values determined by the optimizer. A value
+						of 0.0 provides a light influence; a value of 0.1 provides a moderate
+						influence. Control performance is subtly impacted by the value. A value of 0.0
+						provides slightly less integrated error when working setpoints of controlled
+						variables remain at their setpoint (no constraints are being hit). A value of
+						1.0 provides slightly less integrated error when working setpoints tend to
+						deviate from setpoint during a dynamic response (constraints are being hit). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust moves blocking and CV blocking 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> The MV_BLOCKING and CV_BLOCKING parameters
+					 visible offline and online in Control Studio 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <div class="p"> Normally, the default moves blocking and CV blocking
+						settings suffice. There are two reasons to change these settings: 
+					 <a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__ol_6B6D84BA90844F78BC55C47CB82731A6"></a><ol id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__ol_6B6D84BA90844F78BC55C47CB82731A6"> 
+						<li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__li_7BA975A8767C4F749C79F1CCAB9766D2"><div class="li_content">To shorten the
+						  block execution time for a large application by reducing the number of moves in
+						  the move plan (called extended blocking). The recommended values for extended
+						  blocking are: 
+						  <a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__ul_EE3748212249442A9833D0B5AE214B55"></a><ul id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__ul_EE3748212249442A9833D0B5AE214B55"> 
+							 <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__li_679BC075890044049A3B3094616367C5"><div class="li_content"> MV_BLOCKING
+								[1,2,5,14] 
+							 </div></li>
+ 
+							 <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__li_F854FB06153D4BE588B7798FDA5BEEE2"><div class="li_content">CV_BLOCKING
+								[1,1,1,1,1,1,1,2,2,4,6,8,11,15,20,20,20,20] 
+							 </div></li>
+ 
+						  </ul>
+ 
+						</div></li>
+ 
+						<li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_425__li_5F8BD2022DF24CD19CB628B8FC4A4932"><div class="li_content">To accommodate a
+						  configuration with diverse dynamics. Custom settings are required in this case.
+						  
+						</div></li>
+ 
+					 </ol>
+ 
+					 </div>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Set the optimization type for process outputs. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Tuning dialog in the MPC Operate Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>In the MPCPlus block, a CV with an economic objective (Max
+						or Min) is given a lower preference by the optimizer than a CV with a target
+						objective. If you want a Max or Min CV to have a higher preference than a
+						Target CV, change the Target CV to a PSV CV by setting the optimization type to
+						PSV. A PSV CV behaves the same as a Target CV with the exception that a PSV CV
+						will relax its working setpoint if needed for an economic objective to be met
+						when there are insufficient degrees of freedom. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Set the Priority for process outputs. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Tuning dialog in the MPC Operate Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>The optimizer uses the Priority value to differentiate
+						preference when the solution is infeasible. If it becomes necessary for
+						steady-state working setpoints to deviate from CV setpoints, the optimizer will
+						relax variables in priority order, that is, start with the variables with the
+						lowest priority (highest Priority value). Each process output has a priority
+						setting because all have the potential to become constrained. The priority
+						setting will not override the block&#39;s standard preference based on the
+						optimization type, but will differentiate among outputs with the same
+						optimization type. Gain ratios can have an influence on preference, so you may
+						need to increase the spread between Priority values to achieve the desired
+						result. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Adjust Value per % for economic variables. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p>Tuning dialog in the MPC Operate Pro application. 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <p>The Value per % setting applies to economic variables and is
+						used by the optimizer to essentially differentiate preference among economic
+						variables. A higher value gives more weight to achieving the economic
+						objective. The priority setting for an economic variable can have a
+						supplemental influence when multiple economic objectives have already been
+						achieved and there are insufficient degrees of freedom. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1267621e33 " valign="top" width="31.044776119402982%"> 
+					 <p>Change the MPCPlus block&#39;s model gain 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e36 " valign="top" width="29.850746268656714%"> 
+					 <p> An expression in a CALC or Action block or an Action in a
+						phase Sequential Function Chart (SFC).
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1267621e39 " valign="top" width="39.1044776119403%"> 
+					 <div class="p">For MODEL_GAIN[x][y] where: 
+					 <ul> 
+						<li><div class="li_content"> x is the number of the controlled variable 
+						</div></li>
+ 
+						<li><div class="li_content"> y is the number of the manipulated/disturbance variable 
+						</div></li>
+ 
+					 </ul>
+ 
+					 </div>
+ 
+					 <p> The instruction in the following expression sets the gain
+						multiplier of the transfer function for control/constraint variable 2,
+						manipulated/disturbance variable 4 in the MPC-PLUS1 block of module MPCP-8CON
+						to the value of the parameter named GAIN_C2_M4: 
+					 </p>
+<span class="nowrap"><samp class="codeph">
+						  &#39;//MPCP-8CON/MPC-PLUS1/MODEL_GAIN[2][4].CV&#39; := &#39;^/GAIN_C2_M4.CV&#39;;</samp></span>
+					 
+					 <p>If the transfer function gain is set to 0.6 in PredictPro
+						and the MODEL_GAIN[2][4] is 0.25, the actual gain becomes 0.15. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Module-driven macrocycle" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_troubleshoot_ff_loops.html" name="DC.Relation" scheme="URI" /><meta content="c_module_scan_rate_and_macrocycles.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_module-driven_macrocycle" name="DC.Identifier" /><title>Module-driven macrocycle</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_user-specified_macrocycle.html" /><link rel="next" href="c_stale_link_count_limit.html" /></head><body class="fixed" id="c_module-driven_macrocycle" data-relpath="c_module-driven_macrocycle.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_module-driven_macrocycle"></a>
+
+<h1 class="topictitle1">Module-driven macrocycle</h1>
+<div><div></div>
+<p>Unlike the user-specified option in which the actual macrocycle is based on one block scan rate for all blocks as well as module scan rates, the Module-driven option bases the actual macrocycle on the scan rates of multiple blocks and module scan rates. With the Module-driven option, the <span class="uicontrol">Block Scan Rate</span> selection is enabled for fieldbus blocks allowing users to specify the scan rate for each block individually. For example in a Cascade loop, you would typically configure the blocks in the master loop to execute at a slower rate than the blocks in a slave loop. With the Module-driven option there is no need to coordinate module execution rates with the macrocycle. The system takes the module scan rate, block scan rate, and the macrocycle of the device in which the block executes to determine the macrocycle for the block. This macrocycle is then mapped to a predetermined macrocycle:</p>
+
+<div class="tablenoborder"><a name="c_module-driven_macrocycle__table_3FEAEBC2D31048DEB0E852D2C52D261A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_module-driven_macrocycle__table_3FEAEBC2D31048DEB0E852D2C52D261A" rules="all" summary="" width="100%"><thead align="left"><tr>
+<th class="cellrowborder" id="d1196992e30" valign="top" width="26.666666666666668%"><p>A block scan rate of:</p>
+</th>
+
+<th class="cellrowborder" id="d1196992e34" valign="top" width="73.33333333333333%"><p>is mapped to an actual macrocycle of:</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d1196992e30 " valign="top" width="26.666666666666668%"><p>0 to 500 ms</p>
+</td>
+
+<td class="cellrowborder" headers="d1196992e34 " valign="top" width="73.33333333333333%"><p>500 ms</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1196992e30 " valign="top" width="26.666666666666668%"><p>&gt;500 to 1000 ms</p>
+</td>
+
+<td class="cellrowborder" headers="d1196992e34 " valign="top" width="73.33333333333333%"><p>1000 ms</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1196992e30 " valign="top" width="26.666666666666668%"><p>&gt;1000 to 2000 ms</p>
+</td>
+
+<td class="cellrowborder" headers="d1196992e34 " valign="top" width="73.33333333333333%"><p>2000 ms</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d1196992e30 " valign="top" width="26.666666666666668%"><p>&gt;2000 ms</p>
+</td>
+
+<td class="cellrowborder" headers="d1196992e34 " valign="top" width="73.33333333333333%"><p>4000 ms</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>Depending upon the configuration, up to four macrocycles can run concurrently on a segment. The macrocycles can be seen in the MacroCycle Viewer application.</p>
+<p>With the Module-driven option, all blocks on the segment run only as a fast as the blocks in each module need to be updated; not at the same rate as the fastest module. This is the most efficient option if you have multiple modules that contain blocks running at different scan rates such as Cascade loops.</p>
+<div class="tip"><span class="tiptitle">Tip:</span> <p> Under certain circumstances when the Module-driven option is used, you can receive a warning when trying to save a module or download a port or controller. </p>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_troubleshoot_ff_loops.html">Troubleshooting fieldbus loops</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

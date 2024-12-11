@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="SIS CSLS logic checkout using virtual machines" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="virtual machines, SIS CSLS logic checkout" name="DC.subject" /><meta content="virtual machines, SIS CSLS logic checkout" name="keywords" /><meta content="c_virt_scenarios_strategies.html" name="DC.Relation" scheme="URI" /><meta content="c_virt_create_system.html" name="DC.Relation" scheme="URI" /><meta content="c_virt_config_test_move.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_csls_lsnb_unique_1" name="DC.Identifier" /><title>SIS CSLS logic checkout using virtual machines</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_autoupdate_LSNB_LSNG.html" /><link rel="next" href="c_virt_scenarios_strategies.html" /></head><body class="fixed" id="c_csls_lsnb_unique_1" data-relpath="c_virt_csls_for_logic_checkout.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_csls_lsnb_unique_1"></a>
+
+<h1 class="topictitle1">SIS CSLS logic checkout using virtual machines</h1>
+<div><p>
+  </p>
+ 
+	 <p> 
+	 </p>
+ 
+	 <p>You can test the configuration and logic of a SIS CSLS system without
+		physical hardware by creating a test DeltaV system using the DeltaV virtual
+		machine (VM) templates of the SZ controller, the CHARMs Smart Logic Solver
+		(CSLS), and the Local Safety Network Bridge (LSNB). Use these templates with
+		DeltaV Virtual Studio (DVS) to create test systems. 
+	 </p>
+ 
+	 <p>All of the SIS CSLS hardware in a test system using VMs must be virtual
+		machines, but depending on your requirements and situation, you may need or
+		want some physical hardware in your system, for example, 
+		<span>Global Safety Networks, 
+		</span>ACNs, and the ProfessionalPLUS workstation. The information in this
+		document applies whether these items are physical or virtual. This document
+		uses the term 
+		<em>virtual system</em> to refer to the test system that is a collection of
+		physical and virtual items used for logic checkout. 
+	 </p>
+ 
+	 <p>The following are necessary to use virtual machines to check out SIS
+		CSLS logic: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="c_csls_lsnb_unique_1__ol_BE4DBE623AB64C60AB0F053EEE517170"></a><ul id="c_csls_lsnb_unique_1__ol_BE4DBE623AB64C60AB0F053EEE517170"> 
+		<li id="c_csls_lsnb_unique_1__li_C545D2104814471283FC233795976A18"><div class="li_content"> An adequate number of
+		  Virtual Machine host computers to support the virtual machines to be configured
+		  in the virtual system are available. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_27AFE38BBDEE44C58D3D9954526E284E"><div class="li_content"> DeltaV Virtual Studio is
+		  available. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_DAC8D5BE06934D93B0A6929559C541EE"><div class="li_content"> The virtual system is not
+		  connected to a production system. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_FA06965927C340D0B57567166CF1FF19"><div class="li_content"> The VM templates you need
+		  are accessible from DeltaV Virtual Studio. 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>The use of SIS CSLS VMs as described in this document is constrained by
+		the following: 
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="c_csls_lsnb_unique_1__ol_827847C427944136AC316371C9875DE8"></a><ul id="c_csls_lsnb_unique_1__ol_827847C427944136AC316371C9875DE8"> 
+		<li id="c_csls_lsnb_unique_1__li_65AB1B8579574E829EFFB61E55C28F3B"><div class="li_content"> A virtual system supports
+		  checking of configuration logic 
+		  <em>only.</em> It does 
+		  <em>not</em> support simulation systems or operator training systems. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_5F457729E32F4890A83E9C51C0BA7EF9"><div class="li_content"> If you are using the
+		  recommended and supported computers, each VM host supports as many as 18
+		  virtual machines. For example, one VM host can contain an entire virtual Local
+		  Safety Network (one SZ controller, 16 CSLSs, and one LSNB) or any combination
+		  of SZ controllers, CSLSs and LSNBs as long as the total number of VMs does not
+		  exceed 18. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_E0CAABE7135545FFA20D1978B89C05C6"><div class="li_content"> You cannot combine virtual
+		  and physical SIS CSLS hardware in a system. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_B2150383567749B2B98D39C6181FE406"><div class="li_content"> Simulated I/O is not
+		  supported but you can use the SIMULATE_IN parameter at the function block
+		  level. You can also use Debug mode. 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_C7748B22D18840BCA7E90096F96E83CE"><div class="li_content"> The entire DeltaV system
+		  must be exported and imported to ensure module CRCs are unchanged. 
+		  <div class="note"><span class="notetitle">Note:</span>  
+			 <p>If the same ProfessionalPLUS workstation is used in the virtual
+				system and the physical system you do not need to export and import the DeltaV
+				system. You need only to unassign the CSLSs and SZs from the virtual nodes to
+				the physical nodes. 
+			 </p>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_7F1AEDF2B28644E3B712C509DCA0ADE7"><div class="li_content"> The ProfessionalPlus
+		  workstation name should be the same in the virtual system and the production
+		  system. (This is not an absolute requirement but if the names are the same
+		  there is less clean up required after importing to the production system.) 
+		</div></li>
+ 
+		<li id="c_csls_lsnb_unique_1__li_7408CA293757492EB6169DB01B14CE9B"><div class="li_content"> Only if the instructions in
+		  this document are followed will module CRCs remain unchanged when the
+		  configuration is moved from the virtual system to the production DeltaV system.
+		  
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_virt_scenarios_strategies.html">SIS CSLS VM scenarios and strategies</a><br />
+
+  </li>
+<li class="ulchildlink"><a href="c_virt_create_system.html">Create the SIS CSLS virtual system</a><br />
+</li>
+<li class="ulchildlink"><a href="c_virt_config_test_move.html">Configure virtual system, test, and move configuration to production
+	 system</a><br />
+
+  </li>
+</ul>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

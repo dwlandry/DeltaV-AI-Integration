@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Install OPC Mirror for redundancy" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC Mirror, install for redundancy, Redundant OPC Mirror" name="DC.subject" /><meta content="OPC Mirror, install for redundancy, Redundant OPC Mirror" name="keywords" /><meta content="c_deltav_opc_mirror.html" name="DC.Relation" scheme="URI" /><meta content="c_redundant_deltav_opc_mirror.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_install_opc_mirror_for_redundancy" name="DC.Identifier" /><title>Install OPC Mirror for redundancy</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_deltav_opc_mirror_supported_configurations.html" /><link rel="next" href="c_running_the_opc_mirror_configuration_program.html" /></head><body class="fixed" id="t_install_opc_mirror_for_redundancy" data-relpath="t_install_opc_mirror_for_redundancy.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_install_opc_mirror_for_redundancy"></a>
+
+<h1 class="topictitle1">Install OPC Mirror for redundancy</h1>
+<div><div></div>
+ 
+    <div class="section" id="t_install_opc_mirror_for_redundancy__context_ED5BCF9859AB4C73A0790C0B3396D61D"><a name="t_install_opc_mirror_for_redundancy__context_ED5BCF9859AB4C73A0790C0B3396D61D"></a> 
+      <p>To install OPC Mirror as a redundant subsystem, you must first set up
+        a pair of Application Stations by creating an Application Station in DeltaV
+        Explorer, and then enable the 
+        <span class="uicontrol">Enable Redundancy for Assigned Modules</span> option on
+        the 
+        <span class="uicontrol">Redundancy</span> tab of its 
+        <span class="wintitle">Properties</span> dialog. Also, you must select 
+        <span class="uicontrol">OPC DA Server and OPC Mirror</span> from the pull-down
+        list for the 
+        <span class="uicontrol">Redundant OPC</span> option. 
+      </p>
+ 
+      <div class="fignone" id="t_install_opc_mirror_for_redundancy__fig_52BD501A647B409CA5967CDC72D807B0"><a name="t_install_opc_mirror_for_redundancy__fig_52BD501A647B409CA5967CDC72D807B0"></a><div><span class="figcap">Redundancy tab in Application Station Properties dialog</span></div> 
+         
+        <a name="t_install_opc_mirror_for_redundancy__image_FD8CDCF9AC124122AE67EBA390604921"></a><img id="t_install_opc_mirror_for_redundancy__image_FD8CDCF9AC124122AE67EBA390604921" src="OPCDARedundancy.png" /> 
+      </div>
+ 
+      <p>After setting up the Application Station pair, install OPC Mirror on
+        each Application Station, run the Setup.exe file located in the 
+        <span class="filepath">DV_Extras\OPCMirror</span> folder on the DeltaV
+        installation disk #1. 
+      </p>
+ 
+      <div class="important"><span class="importanttitle">Important:</span>  To be used redundantly on a pair of Application
+        Stations, OPC Mirror must be installed in the same directory path on each
+        workstation in the pair. By default, OPC Mirror is installed in 
+        <span class="filepath">C:\Program Files (x86)\FRS\OPC Mirror</span>. If you
+        specify a different location when installing OPC Mirror on one of the
+        Application Stations, you must also specify the same installation directory
+        path on the other Application Station. Because OPC Mirror runs as a service in
+        Windows, it must be started by a user whose security permissions are set to
+        Full Control for this directory. 
+      </div>
+ 
+      <p>After installing OPC Mirror, complete the following steps: 
+      </p>
+ 
+    </div>
+ 
+    <a name="t_install_opc_mirror_for_redundancy__steps_5EC8DB0FB8804DD8A16D9F88BC34E9BE"></a><ol id="t_install_opc_mirror_for_redundancy__steps_5EC8DB0FB8804DD8A16D9F88BC34E9BE"><li class="stepexpand" id="t_install_opc_mirror_for_redundancy__step_8944E58DED2840E09058C8ADF849F8E5"><a name="t_install_opc_mirror_for_redundancy__step_8944E58DED2840E09058C8ADF849F8E5"></a> 
+        <span>Assign the appropriate OPC Mirror and OPC Mirror Redundancy
+          licenses to the Application Stations. 
+        </span> 
+        <span class="step_result">  
+          <div class="note"><span class="notetitle">Note:</span>  If the OPC Mirror installation program finds an
+            OPC Mirror configuration database file from a previous installation, you are
+            prompted to import the database file into the current installation. If the
+            previous installation of OPC Mirror licensed more OPC Data Access Servers than
+            you are licensing for the current installation, it is possible that errors may
+            appear in DeltaV Diagnostics in the event that OPC Mirror attempts to
+            reestablish more connections than allowed for the current installation. 
+          </div>
+ 
+        </span> 
+      </li>
+<li class="stepexpand" id="t_install_opc_mirror_for_redundancy__step_EA87435B58E649EB9AB0C74860454B09"><a name="t_install_opc_mirror_for_redundancy__step_EA87435B58E649EB9AB0C74860454B09"></a> 
+        <span>Start the OPC Mirror service by right-clicking the 
+          <span class="uicontrol">OPC Mirror</span> icon 
+          <a name="t_install_opc_mirror_for_redundancy__image_28E6D9720BC74A6DAE74297E02B57338"></a><img id="t_install_opc_mirror_for_redundancy__image_28E6D9720BC74A6DAE74297E02B57338" src="MirrorSysTrayIcon.png" /> in the System Tray , and then
+          selecting 
+          <span class="uicontrol">Start OPC Mirror Service</span> from the shortcut
+          menu. (You can also start the OPC Mirror service by using the Computer
+          Management program in Windows.) 
+        </span> 
+          
+          <div class="note"><span class="notetitle">Note:</span>  If the OPC Mirror setup program initiates a system
+            restart during installation, you do not need to manually start the OPC Mirror
+            service, because it starts automatically on system startup, by default. 
+          </div>
+ 
+          <div class="important"><span class="importanttitle">Important:</span>  After setting up OPC Mirror for redundancy
+            and downloading the Application stations, if the value of the MirLic (OPC
+            Mirror Redundancy Enabled) or MirPAvail (OPC Mirror Partner Application
+            Available) parameters in DeltaV Diagnostics is NO, stop the OPC Mirror service
+            (if necessary), and then restart it on both Application Stations. 
+          </div>
+ 
+         
+      </li>
+<li class="stepexpand" id="t_install_opc_mirror_for_redundancy__step_5AED3DD5C22445BB90E314CDDCB45585"><a name="t_install_opc_mirror_for_redundancy__step_5AED3DD5C22445BB90E314CDDCB45585"></a> 
+        <span>Start the OPC Mirror Configuration program to add OPC servers and
+          items and to define server monitoring specifications. To start the OPC Mirror
+          Configuration program, right-click the 
+          <span class="uicontrol">OPC Mirror</span> icon 
+          <a name="t_install_opc_mirror_for_redundancy__image_E1D9982DD996476184BF36C0FBBD74C1"></a><img id="t_install_opc_mirror_for_redundancy__image_E1D9982DD996476184BF36C0FBBD74C1" src="MirrorSysTrayIcon.png" /> in the System Tray, and then
+          select 
+          <span class="uicontrol">Configure</span> from the shortcut menu, or select 
+          <span class="menucascade"><span class="uicontrol">Programs</span> &gt; <span class="uicontrol">OPC
+              Mirror</span> &gt; <span class="uicontrol">OPC Mirror Configuration</span></span>
+          on the 
+          <span class="uicontrol">Start</span> menu. 
+        </span> 
+      </li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_deltav_opc_mirror.html">DeltaV OPC Mirror</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

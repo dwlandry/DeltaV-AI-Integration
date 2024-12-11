@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Getting started using the control" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Campaign Manager control, using" name="DC.subject" /><meta content="Campaign Manager control, using" name="keywords" /><meta content="c_appndxf.html" name="DC.Relation" scheme="URI" /><meta content="c_thecampaignmanagercomponents.html" name="DC.Relation" scheme="URI" /><meta content="c_completedcampaignmanagerexamples.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_gettingstartedusingthecontrol" name="DC.Identifier" /><title>Getting started using the control</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_appndxf.html" /><link rel="next" href="c_thecampaignmanagercomponents.html" /></head><body class="fixed" id="c_gettingstartedusingthecontrol" data-relpath="c_gettingstartedusingthecontrol.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_gettingstartedusingthecontrol"></a>
+
+<h1 class="topictitle1">Getting started using the control</h1>
+<div><div></div>
+<p>In order to use the Campaign Manager control, it must first be instantiated. The easiest and suggested way of accomplishing this task is to insert the control (DVBCtrlCampaignMgr) onto an ActiveX compliant container, for example, a Visual Basic form, or, a Visual C++ dialog resource. The control can also be instantiated through raw COM API functions, but only advanced users should use this method. To use the Campaign Manager control in a DeltaV Operate picture, you must use a Visual Basic form.</p>
+<p>Once the control has been dropped onto a compliant form, the end-user can begin coding against the control&#39;s API. Depending on the environment, the actual programming can differ, but for the most part, is fairly consistent.</p>
+<p>The following is a high-level overview of the semantics associated with adding a batch to a campaign via the Campaign Manager control.</p>
+<div class="note"><span class="notetitle">Note:</span> <p> The use of the Campaign Manager control and the following examples are not intended as a replacement for the Campaign Manager Operator Interface. There are features of the Campaign Manager that are not included in these examples.</p>
+</div>
+<ol>
+<li><div class="li_content"><p>Drop the control (DVBCtrlCampaignMgr) onto an ActiveX container form.</p>
+</div></li>
+
+<li><div class="li_content"><p>Get a reference to the DVBCMClient object from the control.</p>
+</div></li>
+
+<li><div class="li_content"><p>Call the Connect method on the DVBCMClient object.</p>
+</div></li>
+
+<li><div class="li_content"><p>Get a new (empty) DVBCMCampaignEdit object from the DVBCMClient object.</p>
+</div></li>
+
+<li><div class="li_content"><p>Set new campaign&#39;s properties, including its base recipe (use its DVBCMRecipeEdit object).</p>
+</div></li>
+
+<li><div class="li_content"><p>Add the campaign to the server via the DVBCMClient object&#39;s AddCampaign method.</p>
+</div></li>
+
+<li><div class="li_content"><p>Get any number of new DVBCMBatchEdit objects from the DVBCMCampaignEdit object.</p>
+</div></li>
+
+<li><div class="li_content"><p>Set the batch properties of the DVBCMBatchEdit objects, including their recipe settings.</p>
+</div></li>
+
+<li><div class="li_content"><p>Add the batches to the campaign through the DVBCMCampaignEdit object&#39;s AddBatch method.</p>
+</div></li>
+
+<li><div class="li_content"><p>Disconnect from the Campaign Manager Server, using the Disconnect method of DVBCMClient.</p>
+</div></li>
+
+</ol>
+<div class="note"><span class="notetitle">Note:</span> <p> The complete Visual Basic code required for the sample applications can be found in their respective folders under: <span class="filepath">DeltaV\Samples\CampaignManager</span>.</p>
+</div>
+</div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_thecampaignmanagercomponents.html">The Campaign Manager components</a><br />
+</li>
+<li class="ulchildlink"><a href="c_completedcampaignmanagerexamples.html">Completed Campaign Manager examples</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

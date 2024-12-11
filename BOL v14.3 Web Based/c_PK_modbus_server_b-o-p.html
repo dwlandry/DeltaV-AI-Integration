@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Modbus Port on the DeltaV PK controller" name="DC.Title" /><meta content="Operate" name="DC.Coverage" /><meta content="Modbus server, PK controller, PK controller, Modbus server, Modbus port, referencing, Modbus server, Modbus port, PK controller" name="DC.subject" /><meta content="Modbus server, PK controller, PK controller, Modbus server, Modbus port, referencing, Modbus server, Modbus port, PK controller" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="concept_" name="DC.Identifier" /><title>Modbus Port on the DeltaV PK controller</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_PK_servers_b-o-p.html" /><link rel="next" href="c_pk_merge_overview_b-o-p.html" /></head><body class="fixed" id="concept_" data-relpath="c_PK_modbus_server_b-o-p.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_"></a>
+
+<h1 class="topictitle1">Modbus Port on the DeltaV PK controller</h1>
+<div> 
+	 <p>DeltaV PK controllers can communicate to a third-party control system
+		through Modbus TCP with the controller acting as a slave device (Modbus
+		server). The DeltaV PK controller supports both simplex and redundant Modbus
+		communication. 
+	 </p>
+ 
+	 <p>The DeltaV PK controller can handle both communications (DeltaV and
+		Modbus) simultaneously by using different IP addresses for Modbus
+		communication. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>It is important that IP addresses assigned to any device connected
+		  either directly or through a switch to any of the ports must be unique. Since
+		  IP address verification is done at configuration, if a device is plugged into
+		  the network later with an IP address that conflicts with an existing device, it
+		  will cause problems on the network due to duplicate IP addresses. 
+		</p>
+ 
+	 </div>
+ 
+	 <p> When Modbus is enabled, the primary communications port defaults to any
+		of the left-side physical ports (Primary Network Ports 1-3) of the DeltaV PK
+		controller and the Modbus Server port is set to 502 (and is not configurable). 
+	 </p>
+ 
+	 <p>Redundant server connectivity is accomplished by selecting enabling the
+		secondary port on the Modbus properties dialog. Secondary connection is
+		available on the right-side physical ports (Secondary Network Port 4-6) of the
+		DeltaV PK controller. 
+	 </p>
+ 
+	 <p>Configure the IP address for Modbus TCP through the 
+		<strong>Modbus Port Properties</strong> dialog. Set the number of each type of
+		register on the 
+		<span class="wintitle">Data Sets</span> tab. Define Modbus TCP register mapping on
+		the 
+		<span class="wintitle">Map Registers</span> or 
+		<span class="wintitle">Register mapping</span> dialogs. 
+	 </p>
+ 
+	 <p> Enabling the Modbus Port enables one Modbus stack that makes available
+		(to connected clients) the data mapped into a single Modbus register table.
+		When Modbus TCP is selected as the DeltaV PK controller&#39;s data server, the
+		Modbus stack serves register Modbus register table on the enabled ports. The
+		number of TCP connections is limited to 8 across the primary and secondary
+		ports. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>The DeltaV PK controller&#39;s Modbus server is a 
+		  <strong>Big-Endian</strong> device and the clients must be configured
+		  accordingly. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>The following table shows the register types and their data types and
+		the number of values and register addresses that can be configured. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="concept___table_B650536004654DF19C110DC91A95FA4D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept___table_B650536004654DF19C110DC91A95FA4D" rules="all" summary=""><caption><span class="tablecap">Modbus Port data configuration</span></caption><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" id="d734120e97" valign="top" width="15.384615384615385%">Register type 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d734120e100" valign="top" width="15.384615384615385%">Data type 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d734120e103" valign="top" width="23.076923076923077%">Description 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d734120e106" valign="top" width="23.076923076923077%">Number of values 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d734120e109" valign="top" width="23.076923076923077%">Base register address (read-only and fixed) 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">coil 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">Boolean 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%">For discrete output parameter read/writes 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%">0 to 1000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R1 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">input status 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">Boolean 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%">For discrete input and status parameter reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%">0 to 1000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R10001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">float input 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">floating point 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%">Floating point for analog input parameter
+				reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%">0 to 3000 
+				<p>(in increments of 2) 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R30001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">integer input 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">8- or 16-bit unsigned 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%">Integer for integer value input parameter
+				reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%">0 to 3999 
+				<p>(restricted by the last register being 39999) 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R36001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">float holding 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">floating point 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%"> Floating point for analog input parameters
+				read/writes 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%">0 to 3000 
+				<p>(in increments of 2) 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R40001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d734120e97 " valign="top" width="15.384615384615385%">integer holding 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e100 " valign="top" width="15.384615384615385%">8- or 16-bit unsigned 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e103 " valign="top" width="23.076923076923077%"> Integer for integer value input parameters
+				read/writes 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e106 " valign="top" width="23.076923076923077%"> 0 to 3999 
+				<p>(restricted by the last register being 49999) 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d734120e109 " valign="top" width="23.076923076923077%">R46001 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> There is only one data set for each register type and the register
+		  offset will always be 0. The data set must be sized large enough to account for
+		  all register usage required for that type. The base register address shown in
+		  the table above is a read-only field and is the start address of that type. 
+		</p>
+ 
+		<p>Writes to integer register mapped to a 32bit integer Module parameter
+		  of a value over 16bits is not supported. Use a float register for this module
+		  parameter. 
+		</p>
+ 
+		<p>You map individual parameters to Modbus port registers from the 
+		  <span class="wintitle">Register mapping</span> and 
+		  <span class="wintitle">Map Register</span> dialogs in DeltaV Explorer. Use Bulk
+		  Edit to easily map large numbers of parameters. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

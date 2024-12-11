@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Running the PID block in the DeltaV controller" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_deciding_where_to_run_fieldbus_blocks.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_pid_block_in_deltav_controller" name="DC.Identifier" /><title>Running the PID block in the DeltaV controller</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_pid_block_in_fieldbus_device.html" /><link rel="next" href="c_troubleshoot_ff_loops.html" /></head><body class="fixed" id="c_pid_block_in_deltav_controller" data-relpath="c_pid_block_in_deltav_controller.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_pid_block_in_deltav_controller"></a>
+
+<h1 class="topictitle1">Running the PID block in the DeltaV controller</h1>
+<div><div></div>
+<p><strong>Provides Additional Control Options</strong></p>
+<p>The FFPID extended block may not support all the parameters supported by the PID block in the fieldbus device. You can configure the full set of parameters when the PID block runs in the controller. Or, you can use the FFPID_RMT extended block with compatible devices to use the full set of parameters.</p>
+<p><strong>May Facilitate Input Output Conditioning (if required)</strong></p>
+<p>When a control loop goes beyond the simple AI-PID-AO combination, there may be a rationale for having the PID block reside in the controller. In most cases however, there are calculation blocks available in fieldbus devices for this purpose. Examples of conditioning include, but are not limited to the following:</p>
+<ul>
+<li><div class="li_content"><p>Selecting the input from multiple sensors</p>
+</div></li>
+
+<li><div class="li_content"><p>Compensating a flow for temperature and pressure</p>
+</div></li>
+
+<li><div class="li_content"><p>Characterizing the control output</p>
+</div></li>
+
+<li><div class="li_content"><p>Rate limiting the control output during a startup or shutdown situation</p>
+</div></li>
+
+</ul>
+<p>If you find it necessary to perform this type of conditioning in the controller, you do not lose anything by also running the PID block in the controller because anything done in the controller (such as conditioning) eliminates synchronous control. However, it is usually possible for the entire loop to reside in field devices on the segment, thus maintaining synchronous execution. For example:</p>
+<ul>
+<li><div class="li_content"><p>Use the Input Selector function block to select the input from multiple sensors.</p>
+</div></li>
+
+<li><div class="li_content"><p>Use the Arithmetic block for pressure-temperature compensation.</p>
+</div></li>
+
+<li><div class="li_content"><p>Use the Signal Characterizer block to characterize both the forward and backward paths of the control output.</p>
+</div></li>
+
+<li><div class="li_content"><p>Enable rate limiting by placing the AO block in Auto mode and manipulating the setpoint during startup or shutdown (Setpoint rate limits apply in Auto mode but not in Cas mode).</p>
+</div></li>
+
+</ul>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

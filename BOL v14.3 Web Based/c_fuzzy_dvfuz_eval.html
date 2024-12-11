@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Fuzzy Logic Evaluation" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="fuzzy logic, evaluation, membership functions, reasoning" name="DC.subject" /><meta content="fuzzy logic, evaluation, membership functions, reasoning" name="keywords" /><meta content="c_fuzzy_dvfuz.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC" name="DC.Identifier" /><title>Fuzzy Logic Evaluation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fuzzy_dvfuz.html" /><link rel="next" href="c_simulate_dvsim.html" /></head><body class="fixed" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC" data-relpath="c_fuzzy_dvfuz_eval.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC"></a>
+
+<h1 class="topictitle1">Fuzzy Logic Evaluation</h1>
+<div>
+    <p>The following topics describe standard fuzzy logic operations. The
+control provided by the Fuzzy Logic Control function block is based
+on the evaluation of the membership functions and rules described
+for the block algorithm.
+</p>
+
+    <div class="section" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_8E946DE8540A4974BB3402F4EF9C9A80"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_8E946DE8540A4974BB3402F4EF9C9A80"></a><h2 class="sectiontitle">Membership
+</h2>
+      
+      <p>Fuzzy logic provides a way to quantify states and the overlap
+between them (for example, High and Low), assigning degrees of
+membership (truth) to each one.</p>
+
+      <p>
+        <strong>Membership Functions</strong>
+      </p>
+
+      <p>Fuzzy logic uses mathematical functions to describe the degrees
+of membership in various states or conditions. One mathematical
+function describes each state. These states are called membership
+functions and are usually represented graphically as triangles that
+overlap.</p>
+
+      <p>Each membership function is given a fuzzy keyword or label that
+describes the process state. For example, the following figure
+shows two membership functions with these levels: Low and High.
+Note that input and output variables can have different sets of
+associated membership functions and labels.</p>
+
+      <p>
+        <strong>Degree of Membership</strong>
+      </p>
+
+      <p>Rather than require 100% membership in one state or the other,
+fuzzy logic allows for a tank&#39;s level to be <strong>somewhat high</strong>
+(70% membership) and <strong>somewhat low</strong> (30% membership) at the
+same time. In other words, a statement is typically true only to a
+certain extent or degree.</p>
+
+      <p>
+      </p>
+
+      <p>
+      </p>
+
+      <div class="fignone" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_70F8B5959E7E408AB846E6DACB37F636"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_70F8B5959E7E408AB846E6DACB37F636"></a><div><span class="figcap">Example Tank Level&#39;s Degrees of Membership for <strong>High</strong> and
+<strong>Low</strong> Variables (0.7 and 0.3, Respectively)</span></div>
+        
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_52DA32BC8B654DE3B2525F780B3A0940"></a><img id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_52DA32BC8B654DE3B2525F780B3A0940" src="ichelp0087.gif" />
+      </div>
+
+      <p>The degree of membership for a particular state is represented
+by a value that ranges from 0 to 1. For example, the degree of
+membership for High is 0.7 in the above graph, and its degree of
+membership for Low is 0.3.</p>
+
+    </div>
+
+    <div class="section" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_184CC02F7D61417982B7C40673572F79"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_184CC02F7D61417982B7C40673572F79"></a><h2 class="sectiontitle">Fuzzy Logic Reasoning Process
+</h2>
+      
+      <p>Fuzzy logic reasoning can be expressed using AND/OR operations,
+as defined in the following table.</p>
+
+      
+<div class="tablenoborder"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__table_C67C4FBC32994FF9AAC56510C129BD8B"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__table_C67C4FBC32994FF9AAC56510C129BD8B" rules="all" summary=""><caption><span class="tablecap">Fuzzy Logic AND/OR Operations</span></caption>
+          
+          
+          <tbody>
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <strong>AND (A, B)</strong>
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <strong>OR (A, B)</strong>
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Minimum (A, B)</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Maximum (A, B)</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>The above table is suitable for fuzzy logic statements with all
+possible degrees of membership. In the case where the fuzzy logic
+statements are 100% true or false, the fuzzy logic operations
+produce the same result as binary logic (that is, 1 or 0 value,
+respectively). In all other cases, fuzzy logic operations generate
+continuous output values between 0 and 1.</p>
+
+    </div>
+
+    <div class="section" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_0CBDB78BDB284DB984560D658439CCC7"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__section_0CBDB78BDB284DB984560D658439CCC7"></a><h2 class="sectiontitle">Typical Fuzzy Logic Control Function Block
+</h2>
+      
+      <p>A typical FLC function block has three basic operations:</p>
+
+      <div class="p">
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__ol_220E8A144DFC47FF997934CD499A38D3"></a><ol id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__ol_220E8A144DFC47FF997934CD499A38D3">
+          <li id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__li_71F9CD8117044B4AB55EDDE9C3513D88"><div class="li_content">Translation from input signals to fuzzy logic
+values or fuzzification.</div></li>
+
+          <li id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__li_11EF07F5CB344DAAA8BC0B72D527DC3E"><div class="li_content">Rule inference based on input states.</div></li>
+
+          <li id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__li_67DEF7F2E0964812AF1EEDABE5A7D9EB"><div class="li_content">Retranslation of the fuzzy logic values to
+continuous signals or defuzzification.</div></li>
+
+        </ol>
+
+      </div>
+
+      <div class="fignone" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_0A4AB58A839347CC9B046DC42CBD384B"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_0A4AB58A839347CC9B046DC42CBD384B"></a><div><span class="figcap">Typical FLC Function Block Components</span></div>
+        
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_A905D01F98234667855A2DD4D83916B7"></a><img id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_A905D01F98234667855A2DD4D83916B7" src="ichelp0088.gif" />
+      </div>
+
+      <p>For example, fuzzy logic can be used to control the level in a
+tank through a control valve based on inlet flow and tank level
+measurement, as shown in the following figure.</p>
+
+      <div class="fignone" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_39B9087AC28F414786CBF67EBB555BF1"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_39B9087AC28F414786CBF67EBB555BF1"></a><div><span class="figcap">Tank Level Being Controlled by Fuzzy Logic</span></div>
+        
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_1496047FC1CF4289A6BC677B965B565C"></a><img id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_1496047FC1CF4289A6BC677B965B565C" src="ichelp0089.gif" />
+      </div>
+
+      <p>In this example, the membership function describing the tank&#39;s
+level and valve might be defined as follows.</p>
+
+      <div class="fignone" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_F6C3451977D6417396DA8B8FA8F0A325"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_F6C3451977D6417396DA8B8FA8F0A325"></a><div><span class="figcap">Tank Level Membership Function</span></div>
+        
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_750FD36401A640B48CDA31DEFD5DFE04"></a><img id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_750FD36401A640B48CDA31DEFD5DFE04" src="ichelp0090.gif" />
+      </div>
+
+      <p>For this example, the rules for controlling the tank level might
+be defined as follows.</p>
+
+      
+<div class="tablenoborder"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__table_D0BA2827B9DA403C9B776AD978AD2E69"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__table_D0BA2827B9DA403C9B776AD978AD2E69" rules="all" summary=""><caption><span class="tablecap">Example Tank Level Control Rules</span></caption>
+          
+          
+          <tbody>
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <strong>Number</strong>
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <strong>Rule</strong>
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Rule 1</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>If level is Low and inlet flow is Normal, make
+outlet valve Closed.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Rule 2</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>If level is High and inlet flow is Normal, make
+outlet valve Open.</p>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>Rule 3</p>
+
+              </td>
+
+              <td class="cellrowborder" valign="top" width="NaN%">
+                <p>If level is High and inlet flow is Low, make outlet
+valve Normal.</p>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      <p>For this example, the fuzzy logic would be evaluated in the
+following manner to determine the outlet valve position based on
+the current value of the tank level and inlet flow.</p>
+
+      <p>
+        <strong>Step 1 - Fuzzification/Translation</strong>
+      </p>
+
+      <p>Calculate the degree of membership in each of the predefined
+membership functions (refer to the following figure).</p>
+
+      <p>
+        <strong>Step 2 - Rule Inference</strong>
+      </p>
+
+      <p>Apply the degree of membership for both level and inlet flow to
+the fuzzy rules for tank outlet flow as shown below:</p>
+
+      <div class="fignone" id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_5AFDAEF9231C445189085E852EFBEB5F"><a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__fig_5AFDAEF9231C445189085E852EFBEB5F"></a><div><span class="figcap">FLC Function Block Operation Principle</span></div>
+        
+        <a name="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_540D2C21475F44E3A63EAFDF4A446A4A"></a><img id="concept_8F1B6F1B61AC49A29CA61AB6C5D226BC__image_540D2C21475F44E3A63EAFDF4A446A4A" src="ichelp0091.gif" />
+      </div>
+
+      <p>
+        <strong>Step 3 - Defuzzification</strong>
+      </p>
+
+      <p>Calculate a weighted average of all of the activated output
+membership functions to determine the outlet valve position.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

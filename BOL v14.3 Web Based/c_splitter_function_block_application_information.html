@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Splitter function block application information" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="example, Splitter function block" name="DC.subject" /><meta content="example, Splitter function block" name="keywords" /><meta content="c_fblk_spec_splitter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_splitter_function_block_application_information" name="DC.Identifier" /><title>Splitter function block application information</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_splitter_function_block_parameters.html" /><link rel="next" href="c_splitter_function_block_advanced_information.html" /></head><body class="fixed" id="c_splitter_function_block_application_information" data-relpath="c_splitter_function_block_application_information.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_splitter_function_block_application_information"></a>
+
+<h1 class="topictitle1">Splitter function block application information</h1>
+<div><div></div>
+
+    <p id="c_splitter_function_block_application_information__applicationinformationsplitterfunctionblock"><a name="c_splitter_function_block_application_information__applicationinformationsplitterfunctionblock"></a>You can use the Splitter function block to regulate multiple control loops or outputs. The following figure shows a function block diagram example when the output from a PID function block is split into two signals that are sent to Analog Output (AO) function blocks:</p>
+
+    <div class="fignone"><div><span class="figcap">Splitter function block diagram example</span></div>
+      
+      <img src="fbhelp0239.gif" />
+    </div>
+
+    <p>The following examples illustrate typical uses for the Splitter function block.</p>
+
+    <p>
+      <strong>Application example: Split range control</strong>
+    </p>
+
+    <p>Assume two valves (one for heating and one for cooling) are driven by a single temperature controller. You use the Splitter function block between the controller and two Analog Output (AO) function blocks. When the controller requires heat, the AO block action for the cooling valve does not matter. When the AO block for the heating valve goes to Bad status, the controller is prevented from calling for more heat, but is allowed to call for cooling if required. For this example, you can set up the splitter characterization in the following manner:</p>
+
+    
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Splitter function block split range control example settings</span></caption>
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1376494e69" valign="top" width="NaN%">
+              <p>Parameter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1376494e75" valign="top" width="NaN%">
+              <p>Setting</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>IN_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>IN_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>49</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>IN_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>51</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>IN_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>LOCKVAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>Hold</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e69 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e75 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>This allows the controller to call for maximum cooling (negative heat) at 0 output and maximum heat at 100 output, with a gap of 2 around 50 to make sure that the heating and cooling valves are not both open at the same time. The following figure graphically represents the settings for this example:</p>
+
+    <div class="fignone"><div><span class="figcap">Splitter function block split ranging example</span></div>
+      
+      <img src="fbhelp0240.gif" />
+    </div>
+
+    <p>
+      <strong>Application example: Sequencing control</strong>
+    </p>
+
+    <p>Assume you must use two valves for control because one valve does not provide enough range for a nonlinear control problem, such as pH control. The small valve controls an expensive reagent in the pH region near neutral; therefore, it must be closed when the pH is away from neutral. The big valve adds caustic, which is too strong to use near a neutral pH.</p>
+
+    <p>You can use the Splitter function block between the controller and two Analog Output (AO) blocks. As in the preceding example, one AO block can have Bad status without disturbing control when it is not the block required by the pH controller. For this example, you can set up the splitter characterization in the following manner:</p>
+
+    
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Splitter function block sequencing control example settings</span></caption>
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1376494e264" valign="top" width="NaN%">
+              <p>Parameter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1376494e270" valign="top" width="NaN%">
+              <p>Setting</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>IN_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>IN_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>40</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>IN_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>40</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>IN_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>LOCKVAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[1][1]</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e264 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e270 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>The following figure graphically represents the settings for this example:</p>
+
+    <div class="fignone"><div><span class="figcap">Splitter function block sequencing control example</span></div>
+      
+      <img src="fbhelp0241.gif" />
+    </div>
+
+    <p>
+      <strong>Application example: Cascade fan-out</strong>
+    </p>
+
+    <p>The cascade fan-out scheme is used when a cascade control strategy includes multiple secondary controllers. For example, assume a header pressure controller interacts with two secondary boiler controllers. You use the Splitter function block between the pressure controller and the two boiler master controllers. Header pressure control is maintained when one or both secondary Bias/Gain blocks are in Auto mode. When both secondary blocks are not in Auto mode, the pressure controller output is frozen and initializes to balance the first secondary block that is put into Auto mode.</p>
+
+    <p>For this example, you can set up the splitter characterization in the following manner:</p>
+
+    
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Splitter function block cascade fan-out example settings</span></caption>
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1376494e459" valign="top" width="NaN%">
+              <p>Parameter</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1376494e465" valign="top" width="NaN%">
+              <p>Setting</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>IN_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>IN_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>IN_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>IN_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>LOCKVAL</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>Hold</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[1][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[2][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[3][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>0</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>OUT_ARRAY[4][1]</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>100</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1376494e459 " valign="top" width="NaN%">
+              <p>BAL_TIME</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1376494e465 " valign="top" width="NaN%">
+              <p>Four times the pressure controller integral time</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

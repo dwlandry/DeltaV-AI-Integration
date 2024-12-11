@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="IP masks and routing of messages in a DeltaV workstation" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="recommended practices, IP mask, routing, IP mask, message routing, messages" name="DC.subject" /><meta content="recommended practices, IP mask, routing, IP mask, message routing, messages" name="keywords" /><meta content="c_recommended_maintenance_practices.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_ip_mask_routing" name="DC.Identifier" /><title>IP masks and routing of messages in a DeltaV workstation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_nic_binding_order.html" /><link rel="next" href="t_synchronize_time_stamps_after_changing_the_time_zone.html" /></head><body class="fixed" id="concept_ip_mask_routing" data-relpath="c_ip_masks_routing_msgs_dv_wkstn.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_ip_mask_routing"></a>
+
+<h1 class="topictitle1">IP masks and routing of messages in a DeltaV workstation</h1>
+<div> 
+	 <p>This topic discusses how the IP mask works with the DeltaV-defined IP
+		addresses and specifically how DeltaV workstations use the IP mask to route
+		messages on different networks to assist you in determining the best IP address
+		and mask to use. 
+	 </p>
+ 
+	 <p>When various IP addresses and masks have been applied to unused NIC’s in
+		DeltaV workstations issues can arise due to the combination of IP address and
+		IP masks used. 
+	 </p>
+ 
+	 <div class="tip"><span class="tiptitle">Tip:</span>  
+		<p>A best practice for unused NICs is to uninstall the NIC card driver. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">General Information of how Message Routing is Performed using the
+		  IP Mask</h2> 
+		 
+		<div class="p">When a workstation has multiple NICs in it, the process by which the
+		  workstation selects the correct NIC is as follows: 
+		<ol> 
+		  <li><div class="li_content">The workstation will ‘AND’ its IP address with the mask and obtain
+			 a result. This ‘ANDing’ is done at the binary level, bit for bit. This will
+			 occur for each NIC installed in the workstation. 
+		  </div></li>
+ 
+		  <li><div class="li_content">As the workstation attempts to determine which NIC to route a
+			 message to, it will ‘AND’ the destination address of the message to the mask
+			 for each NIC. 
+		  </div></li>
+ 
+		  <li><div class="li_content">The NIC which has the ‘ANDed’’ results for steps one and two equal
+			 will then be selected as the current network for routing the message. 
+		  </div></li>
+ 
+		  <li><div class="li_content">If there is no NIC that results with the same ‘ANDed’ result as the
+			 destination address of the message, then it will select the NIC on the network
+			 that has a default gateway address configured. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">DeltaV workstations and message routing</h2> 
+		 
+		<p>In the following route print example, the DeltaV workstation (a
+		  ProfessionalPLUS) has three NIC’s installed in it. Two are the area control
+		  network (ACN) NICs. The third NIC (192.168.4.200) is the Plant LAN NIC and has
+		  a designated default gateway (router) configured at IP address 192.168.4.1. The
+		  Plant LAN NIC has an IP mask of 255.255.255.0. The ‘ANDed’ result of
+		  192.168.4.200 with this mask is 192.168.4.0. The least significant octet of the
+		  IP address is masked out by the zeros in the mask. 
+		</p>
+ 
+		<p>The DeltaV mask is 255.254.0.0. The &#39;ANDed&#39; result of a message
+		  addressed to 192.168.5.112 is 192.168.0.0. The &#39;ANDed&#39; result of this same
+		  message against the Plant LAN mask of 255.255.255.0 is 192.168.5.0. None of
+		  these results equals the result of the three NIC addresses against their
+		  respective masks (10.4.0.0, 10.8.0.0, and 192.168.4.0). 
+		</p>
+ 
+		<p>Because none of the NICs resulted in a match, the workstation routes
+		  the message to the default gateway network address (in this example, configured
+		  on the Plant LAN NIC (192.168.4.200) as 192.168.4.1). The router can then route
+		  the message to the 195.168.5.0 network. 
+		</p>
+<img src="ip_route_print.png" />
+		
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Redundant controllers and message routing</h2> 
+		 
+		<p>With DeltaV redundant controllers, the IP address for the primary
+		  control network is 10.4.xx.xx for the primary controller and 10.5.xx.xx for the
+		  redundant controller on the primary control network. With the DeltaV mask of
+		  255.254.0.0 the ‘ANDed’ result for either 10.4.xx.xx or 10.5.xx.xx is the same
+		  (10.4.0.0) so the devices will associate both addresses with the same network,
+		  the primary control network in this example. The least significant bit is
+		  masked out on the octet with the 254 value in the mask. See below for a
+		  detailed bit level depiction of what occurs. 
+		</p>
+<img src="ip_mask_cntrls_pri.png" />
+		
+		<p>For the secondary control network the following applies. The ‘ANDed’’
+		  result is 10.8.0.0 for both the primary and secondary controller on the
+		  secondary control network. As long as the ‘ANDed’’ result is the same for both
+		  the 10.8.xx.xx and 10.9.xx.xx addresses they are considered to be on the same
+		  network. 
+		</p>
+<img src="ip_mask_cntrls_sec.png" />
+		
+		<p>DeltaV workstations do not use the 10.5.x.x or 10.9.x.x IP addresses
+		  as there are no redundant DeltaV workstations in the same way as DeltaV
+		  controllers. 
+		</p>
+ 
+		<p>Because of the DeltaV 255.254.0.0 mask, care should be taken on
+		  entering an IP address on any unused NIC’s in a DeltaV workstation. For
+		  example, if an unused NIC was given an IP address of 10.9.0.6 and a mask of
+		  255.254.0.0, the workstation would consider this NIC on the secondary control
+		  network just as it would if the IP address is 10.8.0.6. 
+		</p>
+ 
+		<p>For workstations with multiple NIC’s on the same network, the
+		  Microsoft (Windows) operating system will attempt to load balance the number of
+		  client connections between the different NIC’s on the same subnet. 
+		</p>
+ 
+		<p>DeltaV engineering applications such as Control Studio or DeltaV
+		  Diagnostics, DeltaV Batch applications, or OPC applications utilize DCOM to
+		  establish communication connections. The DeltaV Batch Operator Interface uses
+		  OPC and therefore DCOM to communicate to the Batch Executive. Typically DeltaV
+		  workstations are set up with the secondary control NIC first in the binding
+		  order to route DCOM applications on the secondary control network. 
+		</p>
+ 
+		<p>In the previous example of an unused NIC at 10.9.0.6, the operating
+		  system regards both the 10.8.0.6 and 10.9.0.6 NIC’s on the same network
+		  (secondary). This may affect DCOM operation on the engineering applications as
+		  DCOM selects the secondary control network. If the 10.8.0.6 NIC is first in the
+		  binding order, DCOM will use this first, but after several client connections
+		  are placed on 10.8.0.6 some load balancing may be attempted to 10.9.0.6 even
+		  though there is no cable connected to this NIC. If this occurs, DCOM will be
+		  negatively affected. This will be observed as issues with the engineering,
+		  batch, and OPC applications. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span>  
+		  <p>A best practice for unused NICs is to uninstall the NIC card driver.
+			 
+		  </p>
+ 
+		</div>
+ 
+		<p>If the NIC driver is not uninstalled, you can address the unused NIC
+		  to an IP address that will not be considered on the secondary control network
+		  (for example 192.168.7.15 with a mask of 255.255.255.0). 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Network Time Protocol (NTP) broadcasts on a DeltaV network</h2> 
+		
+		
+		<p>Network Time Protocol (NTP) operation can be affected by how the IP
+		  address and masks are used. In DeltaV, the NTP operation uses a time broadcast
+		  where the DeltaV Master Network Time Server broadcasts to 10.5.255.255 on the
+		  primary and 10.9.255.255 on the secondary where both addresses use the
+		  255.254.0.0 mask. 
+		</p>
+ 
+		<p>If an unused NIC on the master network time server were addressed at
+		  10.5.0.6 with a mask of 255.254.0.0, the route print for this workstation would
+		  include an additional entry of the following: 
+		</p>
+<img src="ip_mask_NTP.png" />
+		
+		<p>This route entry essentially is designating the 10.5.0.6 NIC as the
+		  interface to the 10.5.0.0 network but with this mask the 10.5.0.0 network is
+		  treated as if it were the same as the 10.4.0.0 network. 
+		</p>
+ 
+		<p>The primary NTP broadcast would be routed to the NIC addressed
+		  10.5.0.6 even though it is not connected to any network. There would be no NTP
+		  time update broadcast on the 10.4.0.0 network (primary). 
+		</p>
+ 
+		<p>All the DeltaV nodes would reflect this in Diagnostics with an NTP
+		  server address of 10.8.0.6 (secondary network) if the ProfessionalPLUS were the
+		  master time protocol server as in this example. 
+		</p>
+ 
+		<p>Any DeltaV node that did not have a secondary network configured and
+		  connected would not receive an NTP time update. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span>  
+		  <p>A best practice for unused NICs is to uninstall the NIC card driver.
+			 
+		  </p>
+ 
+		</div>
+ 
+		<p>By addressing the unused NIC to say 192.168.7.15 with a mask of
+		  255.255.255.0, then the 10.4.0.6 NIC with a mask of 255.254.0.0 becomes the NIC
+		  of choice for the NTP broadcast message at the 10.5.255.255 IP address which,
+		  when ‘ANDed’’ to the 255.254.0.0 mask, results in 10.4.0.0. This equals the
+		  result of 10.4.0.6 ‘ANDed’’ to the 255.254.0.0 mask. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section"><h2 class="sectiontitle">Inability to browse the network and see all other
+		  workstations</h2> 
+		 
+		<p>A possible symptom of incorrect IP addressing and IP masks is the
+		  inability to browse the network and see every other workstation. An affected
+		  workstation may be attempting to browse the network through an unused NIC
+		  believing it to be on the same network. With the previous (the NTP) example,
+		  the workstation may attempt to browse the network using 10.5.0.6 instead of
+		  10.4.0.6. There may be an additional entry in the route print as follows: 
+		</p>
+<img src="ip_mask_browse.png" />
+		
+		<p>IP addresses that begin with 224 are class ‘D’ multicast addresses.
+		  More specifically the 224.0.0.1 multicast IP address designates all multicast
+		  aware hosts. The multicast IP address of 224.0.1.24 is the Microsoft WINS
+		  locator service. Browsing utilizes IP multicasting. What the above entry is
+		  indicating is the 10.5.0.6 NIC will be used for this function (as well as all
+		  other NIC’s). 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span>  
+		  <p>A best practice for unused NICs is to uninstall the NIC card driver.
+			 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

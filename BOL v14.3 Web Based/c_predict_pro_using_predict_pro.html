@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using DeltaV PredictPro" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="control objectives, DeltaV PredictPro, DeltaV PredictPro, defining control objectives, setting sampling and execution rate parameters, using, MPC SimulatePro, Sampling and execution rate parameters, DeltaV PredictPro" name="DC.subject" /><meta content="control objectives, DeltaV PredictPro, DeltaV PredictPro, defining control objectives, setting sampling and execution rate parameters, using, MPC SimulatePro, Sampling and execution rate parameters, DeltaV PredictPro" name="keywords" /><meta content="c_data_exclusion_and_interpolation.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpcpro.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="mpcoperatefaceplate.html" name="DC.Relation" scheme="URI" /><meta content="dynamoreference.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro_diff_Pro_Plus_blocks.html" name="DC.Relation" scheme="URI" /><meta content="c_predict_pro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_CC409BB6BC3940E893A2DA3B131F29BD" name="DC.Identifier" /><title>Using DeltaV PredictPro</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict_pro.html" /><link rel="next" href="c_predict_pro_diff_Pro_Plus_blocks.html" /></head><body class="fixed" id="concept_CC409BB6BC3940E893A2DA3B131F29BD" data-relpath="c_predict_pro_using_predict_pro.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD"></a>
+
+<h1 class="topictitle1">Using DeltaV PredictPro</h1>
+<div> 
+	 <p>The DeltaV PredictPro application is used to create and automatically
+		commission multivariable control strategies. After downloading a module that
+		contains an MPCPro or MPCPlus function block, the PredictPro application can
+		automatically test the process. The PredictPro application can be used to view
+		the historical data collected on the process response during testing. Also,
+		PredictPro uses the historical data collected for the module to create a step
+		response model of the process. Based on the identified process model and the
+		user defined control objectives and cost, the PredictPro application
+		automatically defines the control matrix for the MPCPro or MPCPlus function
+		blocks and saves the data to be downloaded. Using the DeltaV PredictPro&#39;s
+		Simulation environment, you can fully test the control before placing it
+		online. Once you download the module containing the MPCPro or MPCPlus block,
+		you can launch the MPC Operate Pro application from a user graphic or from the
+		PredictPro application. 
+	 </p>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_AAF37910DA6F436783928239E0EAD16B"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_AAF37910DA6F436783928239E0EAD16B"></a><h2 class="sectiontitle">Creating an MPCPro module </h2> 
+		 
+		<p>Before using DeltaV PredictPro in the control of a process unit, you
+		  must create a control strategy that uses the MPCPro or MPCPlus function block.
+		  Either function block can be used with large, multivariable applications when
+		  the application&#39;s size exceeds the capability of the MPC block. In addition,
+		  these blocks can be used for applications that require process optimization in
+		  addition to constraint and process input limits handling. Generally, you can
+		  use these function blocks to meet your operation objective whether that is
+		  maximizing the throughput of a unit, minimizing operation cost, or maximizing
+		  or minimizing one or more process outputs within the process operating
+		  constraints. 
+		</p>
+ 
+		<p>The DeltaV Control Studio application is used to configure the inputs
+		  and outputs of the MPCPro or MPCPlus function blocks to satisfy your particular
+		  control application. Three types of inputs to the function block can be defined
+		  using the block&#39;s 
+		  <span class="uicontrol">Properties</span> page: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_DA8E4D0810904600AA9F882F197BA8D5"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_DA8E4D0810904600AA9F882F197BA8D5"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_120A771CCE0B486A82408589C8B67903"><div class="li_content">Control (CNTRL) - Process
+			 output measurement that is to be maintained at a specific setpoint value or
+			 within the specified range through the control action of the function block. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_E12A6A6399414EE8ACFE13F3FB6365D8"><div class="li_content">Disturbance (DSTRB) -
+			 Process input measurement that impacts one or more of the Control or Constraint
+			 variables. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_402639E41C4C49648CAAD08DD462C85C"><div class="li_content">Constraint (CNSTR) -
+			 Process output measurement that is to be maintained within constraint limits
+			 through the control action of the function block. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The Manipulated (MNPLT) parameters are outputs of the function block
+		  and are used to adjust process inputs such as inlet flow setpoint or feed
+		  valve. These process inputs are set using either the Analog Output (AO)
+		  function block or another control block such as the PID function block. The
+		  setpoint of these blocks is adjusted to achieve the specified control
+		  objective. The default standard control objective allows maintenance of the
+		  MPCPro Control parameters at target and the Constraint parameters within their
+		  associated limits. The number of controlled parameters must be less than or
+		  equal to the number of manipulated parameters. 
+		</p>
+ 
+		<p> For information on how to configure an MPCPro or MPCPlus function
+		  block and for examples of how these block can be used to address different
+		  application requirements, refer to the MPCPro and MPCPlus function block
+		  topics. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_19A6EB6A7DC4400ABE916CDF942EA867"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_19A6EB6A7DC4400ABE916CDF942EA867"></a><h2 class="sectiontitle">Commissioning an MPCPro or MPCPlus block </h2> 
+		 
+		<p>After downloading a module containing an MPCPro function block to a
+		  DeltaV controller<span> or Application Station or an MPCPlus block
+			 to an Application station</span>, verify that the transmitters and valves that
+		  provide the inputs and use the outputs of the block are working correctly.
+		  Also, make sure the Continuous Historian is enabled, the area containing the
+		  module has been assigned to the Continuous Historian, and the Continuous
+		  Historian has been downloaded. Once you have verified all of the block&#39;s I/O,
+		  you can use the PredictPro application to commission the control. To open the
+		  PredictPro application, right-click the MPCPro or MPCPlus function block in the
+		  DeltaV Explorer, and then select 
+		  <span class="menucascade"><span class="uicontrol">Advanced
+				Control</span> &gt; <span class="uicontrol">PredictPro</span></span>. You can
+		  also open the PredictPro application from Control Studio by selecting the block
+		  and selecting 
+		  <span class="menucascade"><span class="uicontrol">Advanced
+				Control</span> &gt; <span class="uicontrol">Predict</span></span> from the
+		  context menu. 
+		  <span>Be sure that the module containing the function block
+			 is running in the Application Station. 
+		  </span>The following interface appears when the application opens. The
+		  labels on this image call out the different areas on the interface. In the
+		  following image the PredictPro application was opened from an MPCPro block.
+		  Note that some areas on the application look slightly different when it is
+		  opened from an MPCPlus block. 
+		</p>
+ 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0D7546325179439C90BD1D4F204269A5"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0D7546325179439C90BD1D4F204269A5" src="Using2.JPG" /> 
+		<div class="note"><span class="notetitle">Note:</span> The scale on the smallest faceplates shows the High and
+		  Low limits, not 0% to 100% of scale shown on the large faceplates. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_2868F670DF6C4BA9B707C46BA9E727D6"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_2868F670DF6C4BA9B707C46BA9E727D6"></a><h2 class="sectiontitle">Setting up trends </h2> 
+		 
+		<p>Three trend sets (A, B, C) consisting of eight trend windows each are
+		  provided on the 
+		  <span class="wintitle">Trend Setup</span> page to plot the function block
+		  parameters. Up to six of the inputs and output parameters can be trended at one
+		  time in a selected trend. To add or delete a parameter from the trend, select
+		  the check box provided with the parameter in the faceplate area. As shown
+		  below, the Trend Setup icon in the left pane can be selected to define trends
+		  and get a complete view of the 
+		  <span class="wintitle">Trend Setup</span> page. 
+		</p>
+ 
+		<p>For good data values, trends appear in the colors indicated in the
+		  parameter data area. The color varies to indicate questionable status (yellow
+		  for uncertain or limited values, red for bad values). 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_8B293E9EA8D8421088EB341B5387FB4D"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_8B293E9EA8D8421088EB341B5387FB4D" src="Using3.JPG" /> 
+		</p>
+ 
+		<p>From this view, parameters can be easily added to a trend by selecting
+		  a parameter and clicking the transfer arrow. Use the 
+		  <span class="uicontrol">Tab Name</span> field to define a custom name for each
+		  trend view. Once trends have been defined, you can return to the PredictPro
+		  overview by selecting the top level in the left pane. Use the Toolbar buttons
+		  to modify the trend display and the slider bar to adjust the time window that
+		  is shown on the trend. 
+		</p>
+ 
+		<p>The PredictPro application uses an automated testing feature to
+		  determine the process dynamics. Before testing, the downstream blocks that are
+		  manipulated by the MPCPro or MPCPlus block must be in the correct mode. Select 
+		  <span class="uicontrol">MPC</span> in the Control portion of the Operation area
+		  to force all the downstream blocks to the right mode. After changing the mode,
+		  notice that the actual mode of the MPCPro or MPCPlus function block changes
+		  from IMAN to MAN if the target mode is MAN. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_0FBD92D3B3894F97921B9C2DA81C25EA"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_0FBD92D3B3894F97921B9C2DA81C25EA"></a><h2 class="sectiontitle">Setting up the test</h2> 
+		 
+		<p>Select the Test Setup icon to define the parameters included in a
+		  test, the Manipulated parameters that will be tested at one time, and the size
+		  of the change made in the Manipulated parameters. The following figure shows
+		  the Test Setup view with the 
+		  <span class="uicontrol">Manipulated</span> tab selected. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_159CC7C3642B462E9549BF4F21E9F444"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_159CC7C3642B462E9549BF4F21E9F444" src="Using4.JPG" /> 
+		</p>
+ 
+		<p>As shown in the following image, additional setup options are
+		  automatically shown in the right portion of the setup window when 
+		  <span class="uicontrol">Expert</span> option is selected. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_1276F4A0D4AB4D3E94338D6E9B8AEE83"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_1276F4A0D4AB4D3E94338D6E9B8AEE83" src="Using4B.JPG" /> 
+		</p>
+ 
+		<p>The length of the test is determined by the Time to Steady State
+		  (TSS). The Time to Steady State is the estimated time, in seconds, for the
+		  process to respond to input changes. Typical estimates are: (3 × First Order
+		  Time Constant + Dead Time) or (4 × Dead Time), whichever is greater for the
+		  slowest responding input/output pair of the MPCPro block. The default, and
+		  minimum value, is 120 seconds. If any process output exhibits integrating
+		  response, use the following guidelines to estimate the Time to Steady State: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_BFACDB29DE7549EDBAC6E5DF88D25FF9"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_BFACDB29DE7549EDBAC6E5DF88D25FF9"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_64ABD82F50374FCE85A4CAD081A157E0"><div class="li_content">For integrating responses
+			 with insignificant lag and/or processes where the non-integrating response is
+			 significantly slower than integrating, limit the TSS to the approximate time it
+			 takes for the integrating process variable to reach one half of its operational
+			 limit value(s) when a normal change is applied to the process input. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_36073E5D9FA1454E9755360E2ED78937"><div class="li_content">The initial estimate of
+			 the recommended TSS can be 120 * approximate lag, provided the limiting
+			 condition described in the previous guideline is not violated. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_F850614061FA4542AEA176CD07869510"><div class="li_content">If the identified response
+			 is still not satisfactory or the slow dynamics of non-integrating responses
+			 necessitate violating the first guideline, estimate the response based on the
+			 physical and operational process parameters. The volume of a tank is an example
+			 of a physical process parameter and flow rates, low/high tank level limits, and
+			 so on are examples of operational process parameters. Then enter the calculated
+			 response parameters (Gain per second, dead time, and first order lag, if any)
+			 in the corresponding fields of the 
+			 <span class="wintitle">Step Response Design</span> dialog. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> For MPC configurations that use Cascade, select a TSS
+		  for the master MPC block that is at least 4 times larger than the TSS for the
+		  slave block. Otherwise, process identification and control will be impaired. If
+		  using PredictPro with a simulated process, consider adding random noise with an
+		  amplitude of about 0.25% to the process outputs. Introducing small noise levels
+		  improves robustness in developing the ARX process model particularly for
+		  cascade configurations. 
+		</div>
+ 
+		<p>Use the 
+		  <span class="uicontrol">Select All for Test</span> button to select all the
+		  Manipulated parameters. Select an individual parameter and select Modify to
+		  define the setup of the Manipulated parameter. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_95AF82E2B76B4AC08214A1071FF882F7"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_95AF82E2B76B4AC08214A1071FF882F7"></a><div><span class="figcap">Dialog for defining Manipulated parameters</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_EB24BCBCBDAC45F797C6995FFFCFFB64"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_EB24BCBCBDAC45F797C6995FFFCFFB64" src="Using5B.JPG" /> 
+		</div>
+ 
+		<p>Manipulated parameters can be included or excluded from model and
+		  controller generation. Manipulated parameters that are selected for test are
+		  automatically adjusted in a pseudo-random binary manner when testing is
+		  initiated. The change in the Manipulated parameter is determined by the step
+		  size in percent of scale. You can change the step size to a value that will
+		  cause a process change that is not disruptive to normal process operation. 
+		</p>
+ 
+		<p>Normally, testing aborts if the manipulate parameter becomes limited
+		  when testing is active.Selecting 
+		  <span class="uicontrol">Ignore Errors</span> causes testing to continue even if
+		  limits are hit. 
+		</p>
+ 
+		<p>When the process gain is large (big change in process output for a
+		  small change in input), you may need to pick a very small step size such as
+		  less than 1%. For these types of processes, you can select a range suppression
+		  multiplier (10X or 100X) to enable better process identification. Selecting 
+		  <span class="uicontrol">AUTO</span> for range suppression causes PredictPro to
+		  automatically scale the manipulated parameter to enable better process
+		  identification. 
+		</p>
+ 
+		<p>Select the 
+		  <span class="uicontrol">Control</span> and 
+		  <span class="uicontrol">Constraint</span> parameter tabs to define the
+		  parameters included in the model identification. By default, all parameters are
+		  included. Select the 
+		  <span class="uicontrol">Integrating</span> option to include the parameter as
+		  an integrating response. 
+		</p>
+ 
+		<p>If the normal process output change is very small compared to its
+		  engineering unit range, such as 5 degF with a range of 1000, select a range
+		  suppression multiplier (10X, 100X) to get good identification results.
+		  Selecting 
+		  <span class="uicontrol">AUTO</span> for range suppression causes PredictPro to
+		  automatically scale the manipulated parameter to enable better process
+		  identification. 
+		</p>
+ 
+		<p>The Test Limit deviation value, measured in percent, and type (None,
+		  Deviation, Above, Below) should be set to automatically abort testing if the
+		  associated Control or Constraint disturbance deviates (above, below, or either)
+		  from its starting value by more than the Test Limit. The following table
+		  describes the Test Limit types: 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_90E3D400FDCC4A32BB4DE949E150BD0A"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_90E3D400FDCC4A32BB4DE949E150BD0A" rules="all" summary=""> 
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1268962e260" valign="top" width="NaN%"> 
+					 <strong>Test Limit Types</strong> 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1268962e266" valign="top" width="NaN%"> 
+					 <strong>Description</strong> 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e260 " valign="top" width="NaN%"> 
+					 <p>Above 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e266 " valign="top" width="NaN%"> 
+					 <p>Above the current value plus the deviation amount 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e260 " valign="top" width="NaN%"> 
+					 <p>Below 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e266 " valign="top" width="NaN%"> 
+					 <p>Below the current value minus the deviation amount 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e260 " valign="top" width="NaN%"> 
+					 <p>Deviation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e266 " valign="top" width="NaN%"> 
+					 <p>Above the current value plus the deviation amount or below
+						the current value minus the deviation amount. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> If you include an integrating parameter for proper
+		  optimizer operation, assign it a higher priority than self-regulating
+		  parameters. 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_56B8FC256E1E49ABB9645A4B389E0A6E"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_56B8FC256E1E49ABB9645A4B389E0A6E"></a><div><span class="figcap">Dialog for defining Control and Constraint parameters</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6EA6992056594CFC90EC53AAA72650E8"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6EA6992056594CFC90EC53AAA72650E8" src="Using6B.JPG" /> 
+		</div>
+ 
+		<p>For Disturbance parameters, indicate if the parameter is to be
+		  included in the model identification. Normally, testing aborts if the
+		  Disturbance parameter becomes limited when testing is active. Selecting 
+		  <span class="uicontrol">Ignore Errors</span> causes testing to continue even if
+		  limits are hit. 
+		</p>
+ 
+		<p>If the normal process output change is very small compared to its
+		  engineering unit range, such as 5 degF with a range of 1000, select a range
+		  suppression multiplier (10X, 100X) to get good identification results.
+		  Selecting 
+		  <span class="uicontrol">AUTO</span> for range suppression causes PredictPro to
+		  automatically scale the manipulated parameter to enable better process
+		  identification. 
+		</p>
+ 
+		<p>The Test Limit deviation value and type
+		  (<span class="uicontrol">Deviation</span>, 
+		  <span class="uicontrol">Above</span>, 
+		  <span class="uicontrol">Below</span>) should be set to automatically abort
+		  testing if the associated Disturbance input deviates (above, below, or either)
+		  from its starting value by more than the Test Limit. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_4A962D05CBD241D69DB5FFF7C230676D"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_4A962D05CBD241D69DB5FFF7C230676D"></a><div><span class="figcap">Dialog for defining Disturbance parameters</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_7B8650B194FA4249B6881A193AE2D93E"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_7B8650B194FA4249B6881A193AE2D93E" src="Using6B.JPG" /> 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_16D76C8AE4B9492D9321E293EEC5B993"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_16D76C8AE4B9492D9321E293EEC5B993"></a><h2 class="sectiontitle">Running the test </h2> 
+		 
+		<p>Once test setup is complete and the downstream blocks associated with
+		  the Manipulated parameters included in the test are in their remote mode,
+		  select the top level in the left pane, and then select 
+		  <span class="uicontrol">Test</span> to initiate automatic testing of the
+		  process. In response, the Manipulated parameters will automatically change in a
+		  pseudo-random manner over the test time. 
+		</p>
+ 
+		<p>While testing is active, the actual mode of the MPCPro or MPCPlus
+		  function block changes to LO. During testing, a Manipulated parameter can be
+		  modified by right-clicking it and selecting 
+		  <span class="uicontrol">Set Value</span>. The portion of testing that is
+		  complete is indicated by a progression bar. The estimated time remaining to
+		  complete the test is shown above the progression bar. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_E4E2463089744E4AB07C24213B76ABD7"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_E4E2463089744E4AB07C24213B76ABD7"></a><div><span class="figcap">A test in progress</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_BFC4328A6E524EDF956557093B127893"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_BFC4328A6E524EDF956557093B127893" src="Using8.JPG" /> 
+		</div>
+ 
+		<p>When the test completes, a green area automatically covers portions of
+		  the trend associated with the time that testing was active. You can adjust the
+		  time covered by the green area either by dragging the start and end divider
+		  bars or positioning the bars by right-clicking the chart. 
+		</p>
+ 
+		<p>For good data values, trends appear in the colors indicated in the
+		  parameter data area. The color varies to indicate questionable status (yellow
+		  for uncertain or limited values, red for bad values). 
+		</p>
+ 
+		<p>Indicate the area of test data that reflects normal process operating
+		  conditions by dragging the green area over the data on the trend window. You
+		  can exclude data within the green bar that does not represent normal operation
+		  by right-clicking within the green area, selecting 
+		  <span class="uicontrol">Add Excluded Area</span>, and stretching the resulting
+		  red bar over the bad data. After you select the test data, click 
+		  <span class="uicontrol">Create Model</span> to create a step response model for
+		  the process. For the MPCPro block you can select 
+		  <span class="uicontrol">Autogenerate</span> instead of 
+		  <span class="uicontrol">Create Model</span>, which will create the model and
+		  the associated controller. It is recommended that you review the model prior to
+		  generating the controller. 
+		</p>
+ 
+		<div class="important"><span class="importanttitle">Important:</span> The module that contains the MPCPro block should
+		  not be open in Control Studio when you request 
+		  <strong>Autogenerate</strong> since the MPCPro function block is updated in the
+		  database during autogeneration. You must first download the associated module
+		  to use the MPCPlus model or the MPCPro-generated control. 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  It is recommended that system time adjustments are not
+		  made over the data collection period. If it is necessary to make system time
+		  adjustments, it is best to exclude the data over the time range. 
+		</div>
+ 
+		<p>An expert user (select 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>)
+		  can select the 
+		  <span class="uicontrol">Create Model</span> option to create the model only
+		  from the currently selected I/O parameters. If all the block variables are not
+		  included in identification, the result of identification is a partial model
+		  since some step responses are unidentified. Block variables are not included if
+		  
+		  <span class="uicontrol">Identify</span> is not selected for Control/Constraint
+		  parameters or 
+		  <span class="uicontrol">Include</span> is not selected for
+		  Manipulated/Disturbance parameters. The model cannot be created and control
+		  cannot be generated from a partial model or if one or more step responses are
+		  undefined or questionable. The model contents page shows the status of the
+		  current model. Additionally, the following icons show the model status. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_5DD2882C60A843278175C3D3FACF0623"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_5DD2882C60A843278175C3D3FACF0623" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_2D3A8E0B4484414DBB1C9A96D4BEB072"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_2D3A8E0B4484414DBB1C9A96D4BEB072" src="GoodModel.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Complete model. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0B0FF3808611457D86422E66464462DF"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0B0FF3808611457D86422E66464462DF" src="Using12Icon.jpg" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Complete model with one or more questionable step responses.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3302A282D8724AA0BA2A7BCA4F52A6E0"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3302A282D8724AA0BA2A7BCA4F52A6E0" src="PartialModel.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Partial model. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6A696C4A936846F6B306D9B7F0F2EE4C"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6A696C4A936846F6B306D9B7F0F2EE4C" src="Using12Icon4.JPG" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Partial model with at least one questionable step response. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_39E0D83CD4CD4CAA8C79C950710E9613"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_39E0D83CD4CD4CAA8C79C950710E9613" src="CtrlNotYetGen.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Controller has not yet been generated for this model. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6E9D3B182DC44F64846544506CDCE4FA"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6E9D3B182DC44F64846544506CDCE4FA" src="CtrlModelNotDwnld.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>This model has been modified since the last download. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_AEBF2FB8F8864825A716CFB2E87FA2C0"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_AEBF2FB8F8864825A716CFB2E87FA2C0" src="ModelModifiy.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>This controller or model has not yet been downloaded. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>When model generation is complete, you can record the conditions that
+		  existed for the test in the description area of the interface provided for the
+		  model. The default model name can be modified; however, the name cannot include
+		  the following characters: \ / : * ? &quot; &lt; &gt; |. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> It is recommended that the model is created (click the 
+		  <span class="uicontrol">Create Model</span> button), then verified before
+		  generating the controller for the MPCPro block. 
+		</div>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_BE1456D43C8943F4B7DAFA9645B73956"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_BE1456D43C8943F4B7DAFA9645B73956" src="Using9.JPG" /> 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B3E8FFC90A8C4E42859C283DB620F6D4"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B3E8FFC90A8C4E42859C283DB620F6D4"></a><h2 class="sectiontitle">Verifying the model</h2> 
+		 
+		<p>Opening a model folder and selecting Control and Constraint shows a
+		  verification of the model in terms of the calculated process outputs versus the
+		  actual process outputs, as shown in the following figure. From this view you
+		  can examine the actual process output in direct comparison with the calculated
+		  output based on the model either for the time frame defined by the green area
+		  of the trend plot or for the original data used in generating the model. You
+		  can also examine the XY plot of the actual process output against the
+		  calculated output and the corresponding best fit line. In addition, you can use
+		  statistics that are provided to indicate how closely the model matches the
+		  plant data. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Only the first 65,000 samples will be displayed. 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_F664C148D0624E5BB435BDC0CA9305C8"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_F664C148D0624E5BB435BDC0CA9305C8"></a><div><span class="figcap">Interface for model verification</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4835A0EB213A4968870A31097377C1C0"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4835A0EB213A4968870A31097377C1C0" src="Using10.JPG" /> 
+		</div>
+ 
+		<p>The squared error is shown for all Control and Constraint parameters.
+		  In addition, for a selected parameter, the calculated and actual value can be
+		  plotted for the original time or for the time frame selected by the green bar
+		  in the overview. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_39037B8E63664D0A9AA7E85872FB070C"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_39037B8E63664D0A9AA7E85872FB070C"></a><h2 class="sectiontitle">Accessing step responses</h2> 
+		 
+		<p>Select a parameter from the Control &amp; Constraint folder to access
+		  the parameter&#39;s step response to changes in the Manipulated and Disturbance
+		  inputs to a process. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_56A32378691A46868C879D2E5C821A63"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_56A32378691A46868C879D2E5C821A63"></a><div><span class="figcap">View of a selected parameter&#39;s step response to process input
+			 changes</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0D722F8058BE44CCB40D375CF0E56DC0"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_0D722F8058BE44CCB40D375CF0E56DC0" src="Using11.JPG" /> 
+		</div>
+ 
+		<p>The background color of the individual step response provides further
+		  information about the validity of the step response and if it can be used in
+		  controller generation. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_4246F1656D0F4395856ED3A4CB5DA3A5"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_4246F1656D0F4395856ED3A4CB5DA3A5" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Background color</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Meaning</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_E035880E5E214B5D929819DEDB3B14D2"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_E035880E5E214B5D929819DEDB3B14D2" src="DarkBlue.GIF" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>The step response has been identified and can be used in
+						controller generation. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_1E40B8F7E95F42B0AF722FFD41E728BB"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_1E40B8F7E95F42B0AF722FFD41E728BB" src="Rust.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> The step response has been identified and selected as the
+					 most significant for the associated Manipulated process input. Refer to 
+					 <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D316B919560A4BECB08D86345EF0D085">Parameters in MPCPro block controller generation </a>
+					 for more information. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_E631C446764644F78CC332893635362F"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_E631C446764644F78CC332893635362F" src="LightBlue.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> The step response is questionable and must be edited
+					 before controller generation. Refer to 
+					 <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_E3FAB18C5C904EE2A85F4CAA85B30755">Modifying step responses</a>
+					 for more information. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D5C9EEBB7E9F4B008214CB6182B0EE4E"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D5C9EEBB7E9F4B008214CB6182B0EE4E" src="Gray.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> The step response is unidentified because this parameter
+					 was not included in the test setup, the step response has been deleted or cut,
+					 or the associated input or output parameter was added to the MPCPro or MPCPlus
+					 block after the model was identified. The step response must be completed
+					 before controller generation is possible. Refer to 
+					 <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_E3FAB18C5C904EE2A85F4CAA85B30755">Modifying step responses</a>
+					 for more information. 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>The techniques used to identify the step response assume that valid
+		  process gains must fall in a range of 0.1-20. If the gains calculated by both
+		  the ARX and FIR technique fall below 0.1, the step response will be displayed
+		  as invalid (light blue background) with zero gain (a straight line). Also, if
+		  the ARX and FIR do not significantly agree, the application presents the step
+		  response as invalid as shown in the following figure. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FCFAFC017CBB4FD7BD5E36342C139FFF"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FCFAFC017CBB4FD7BD5E36342C139FFF" src="Using12.JPG" /> 
+		</p>
+ 
+		<p>If only one of the identification techniques calculated a gain of less
+		  than 0.1, a step response with zero gain will be displayed with a light blue
+		  background. The light blue background indicates that the step response is 
+		  <em>questionable</em>. In these cases, you can set the range suppression
+		  multiplier at x10 or x100 for process output. If you expect model gain to be
+		  greater than 20, set range suppression at x10 or x100 for the process input. In
+		  some cases, the FIR response can be used as a guide in manually editing the
+		  step response. As shown in the following figure, often times the FIR response
+		  can provide valuable information on the process gain and response and can be
+		  used to create the model using Design Response or Plot. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FE86B10FA36F43BC9CDDFAD4DA06075E"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FE86B10FA36F43BC9CDDFAD4DA06075E" src="Using13.JPG" /> 
+		</p>
+ 
+		<p>For example, the actual process shown as questionable with zero gain,
+		  may be caused by a transmitter with a much wider than normal operating range.
+		  In this case, it is recommended that range suppression is selected in Test
+		  Setup. Range suppression should also be selected if the Manipulated parameter
+		  changes are less than 1%. The PredictPro identifier uses the suppressed range
+		  as the measurement engineering unit range and then automatically corrects the
+		  model gain for the actual range. The process gain based on the suppressed range
+		  should be within the assumed range for the process gain (0.1-20). 
+		</p>
+ 
+		<p>Similarly, if one of the identification techniques provides a process
+		  gain that exceeds 20, the response will be shown with zero gain and indicated
+		  as questionable. 
+		</p>
+ 
+		<p>By drilling down into the folder you can access an individual step
+		  response to closely examine the step response for any measured Disturbance
+		  inputs included in the MPC configuration. The associated step response might be
+		  inaccurate if the Disturbance input did not change significantly in the data.
+		  If the associated step responses are inaccurate, a warning message is displayed
+		  when the model is generated. In some cases, the inaccuracy will be indicated by
+		  a step response shown in light blue or as a light blue straight line that
+		  indicates no response. Examine the confidence interval calculated for the step
+		  response to determine if the step response is accurate. This can be done by
+		  selecting the 
+		  <span class="uicontrol">Expert</span> options and then selecting the 
+		  <span class="uicontrol">Display Confidence</span> option in the lower left
+		  corner of the screen. In response, the range of 95% confidence is plotted, as
+		  shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_EBF8F22F040F4B4EAE445D821B50D92C"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_EBF8F22F040F4B4EAE445D821B50D92C"></a><div><span class="figcap">Plot of 95% confidence range</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4A45399B599B4A489FF3A1B4BC3042C3"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4A45399B599B4A489FF3A1B4BC3042C3" src="Using14.JPG" /> 
+		</div>
+ 
+		<p>As another check on the accuracy of the model, you can compare the ARX
+		  model to the FIR response. This can be done by selecting the 
+		  <span class="uicontrol">Expert</span> option, and then selecting the 
+		  <span class="uicontrol">FIR</span> check box. Both responses are displayed as
+		  shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_A48E8DC4E145483BACE4BFF562148514"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_A48E8DC4E145483BACE4BFF562148514"></a><div><span class="figcap">Comparison of ARX model to the FIR response</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_C0B66B38F2BC4BCF947CE81E64E64C59"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_C0B66B38F2BC4BCF947CE81E64E64C59" src="Using15.JPG" /> 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Only the first 60 points of the FIR response are
+		  displayed. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_E3FAB18C5C904EE2A85F4CAA85B30755"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_E3FAB18C5C904EE2A85F4CAA85B30755"></a><h2 class="sectiontitle">Modifying step responses</h2> 
+		 
+		<p>Sometimes, the ARX and FIR responses might not agree. In this case,
+		  you may need to use other data that includes times when the input changed and
+		  then regenerate the model and the controller. If you are familiar with the
+		  process dynamics, select the 
+		  <span class="uicontrol">Expert</span> option, and then modify the step response
+		  to reflect your knowledge of the process. Similarly, if the plot of the FIR
+		  response seems more accurate based on your knowledge of the process, click the 
+		  <span class="uicontrol">Use FIR</span> button. 
+		</p>
+ 
+		<p>Make sure to save the step response by clicking the 
+		  <span class="uicontrol">Save</span> button after modifying it. This causes the
+		  new step response to be enabled and subsequently used. Some methods for
+		  modifying the step response are described in the following paragraphs. 
+		</p>
+ 
+		<p>Design the response by adding points to the selected response: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_B9893D3EE6DC4440A520B5D0C6F3CE07"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_B9893D3EE6DC4440A520B5D0C6F3CE07"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_3AEC4A4D4FB74D899AA69BBF5F5E76BB"><div class="li_content">Select the step response
+			 to be modified. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_B1994352531C456B9CCF620D03762335"><div class="li_content">In the step response area,
+			 right-click or click the 
+			 <span class="uicontrol">Add Points</span> button to add the points that
+			 define the desired step response. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_38571A51A34546A7B69CB4F53B583B2D"><div class="li_content">Click the 
+			 <span class="uicontrol">Plot</span> button to display the step response. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_0B350AFA668D4B639FB0491DCDE8C1E1"><div class="li_content">Select 
+			 <span class="uicontrol">Save</span> if you want the plotted response to
+			 replace the original response. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_7B48DE242CF64F078C4F45636F4292F1"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_7B48DE242CF64F078C4F45636F4292F1"></a><div><span class="figcap">Adding points to modify a step response</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D7B26056D87F46AB84F1141385D40444"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D7B26056D87F46AB84F1141385D40444" src="Using16.JPG" /> 
+		</div>
+ 
+		<p>Modify the step response if you are familiar with the process delay
+		  and time constants associated with inputs. Enter the response directly by
+		  performing the following steps: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_DF953660156444A29F5C8EF12270829D"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_DF953660156444A29F5C8EF12270829D"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_1ADBBE3E5BD944269639B245EF3CCB0E"><div class="li_content">Click the 
+			 <span class="uicontrol">Design Response</span> button in the lower left
+			 corner of the interface. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_6965568BCC804B66B57C4FC9B165C423"><div class="li_content">Enter the response in the 
+			 <span class="wintitle">Step Response Design</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_803B9129C8664717B0AF69074B47B46F"><div class="li_content">Click 
+			 <span class="uicontrol">Apply</span> to display the new step response. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_17F62519CA1144C3BE4018AF39EDF78D"><div class="li_content">Click 
+			 <span class="uicontrol">Save</span> to save the designed step response. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_49B207B9CA0647C5A16445DAA096F524"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_49B207B9CA0647C5A16445DAA096F524"></a><div><span class="figcap">Designing a step response</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_F3022DB780E6474F85ED2D503DD76762"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_F3022DB780E6474F85ED2D503DD76762" src="Using17.JPG" /> 
+		</div>
+ 
+		<p>Another way to modify a step response involves copying and pasting
+		  individual step responses or all step responses for a Manipulated or
+		  Disturbance input between models as shown below. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_D51128C5AFF64E12BB1FA0E7D69BB359"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_D51128C5AFF64E12BB1FA0E7D69BB359"></a><div><span class="figcap">Copying and pasting step responses</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4E3A805CD81B453AB5CC70446E856225"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_4E3A805CD81B453AB5CC70446E856225" src="Using18.JPG" /> 
+		</div>
+ 
+		<p>When copying step responses between models, the Time to Steady State
+		  used in the model creation must be the same. 
+		</p>
+ 
+		<p>Using the 
+		  <span class="uicontrol">Copy</span> and 
+		  <span class="uicontrol">Paste</span> commands on the context menu, it is
+		  possible to combine step responses from different models to create one complete
+		  model of the process response. For example, operating conditions may not allow
+		  automated testing with all Manipulated parameters selected for the test. Only
+		  one or two Manipulated parameters may have been selected for test at any given
+		  time. As a result, you may need to generate multiple models, each of which
+		  includes valid step responses for the process inputs used in the test. Using
+		  the 
+		  <span class="uicontrol">Copy</span> and 
+		  <span class="uicontrol">Paste</span> or 
+		  <span class="uicontrol">Cut</span> and 
+		  <span class="uicontrol">Paste</span> commands on the context menu, it is
+		  possible to copy the good step responses from one model to another model. In
+		  this way, a good step response can be copied to replace one not identified or
+		  not included in the test. As a result, a complete model can be created and then
+		  used to generate the control. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> When a step response is cut, its background changes
+		  immediately to gray but the response is still shown. After a step response is
+		  pasted, the cut step response is shown as blank with a gray background. 
+		</div>
+ 
+		<p>If a step response model is known to be invalid, you can use the 
+		  <span class="uicontrol">Delete</span> command on the context menu to remove the
+		  step response from the model. After using the 
+		  <span class="uicontrol">Delete</span> or 
+		  <span class="uicontrol">Cut</span> command on the context menu, the step
+		  response&#39;s background changes to gray as shown in the following figure. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_8C4DD2D92BD444619C0A60DF86472D02"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_8C4DD2D92BD444619C0A60DF86472D02" src="Using19.JPG" /> 
+		</p>
+ 
+		<p>Any Questionable or Unidentified responses must be manually edited or
+		  a good step response pasted to obtain a complete model. All step response
+		  models must be good (dark blue background) before a controller can be generated
+		  using the model. 
+		</p>
+ 
+		<p>Make sure that you clean up any residual step responses with gains
+		  that are smaller than 0.1. 
+		</p>
+ 
+		<p>For the MPCPro block, once you are satisfied that the model accurately
+		  reflects the process dynamics, select 
+		  <span class="uicontrol">Generate</span> to update the MPCPro configuration for
+		  the new model and to generate the controller using the step response
+		  modifications. When the controller is generated from a selected model, the
+		  Control parameters used for generation are displayed as shown in the following
+		  figure. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3009917693D543F99EFA40167C4C3307"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3009917693D543F99EFA40167C4C3307" src="Using20.JPG" /> 
+		</p>
+ 
+		<p>It is recommended in most cases that you leave the controller
+		  generation parameters at their default values and select 
+		  <span class="uicontrol">Generate</span> in the 
+		  <span class="wintitle">Controller Generation</span> dialog to generate the
+		  control. If you have expert MPC knowledge, you can change the default values to
+		  address special requirements. For example, you can increase the Penalty on Move
+		  to make the control less aggressive or more robust. Options to extend the
+		  control horizon and to block control moves and include MV targets for better
+		  constraint management are available for advanced users. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_30555CF009914740B4D9DCE796A25B1A">PredictPro options for advanced users</a>
+		  for information. 
+		</p>
+ 
+		<p>You must download the associated module to use the new control
+		  definition after generating control. You can verify and refine the MPCPro
+		  configuration and control generation with the off-line PredictPro simulation
+		  application, MPC SimulatePro. However, the controller generation parameters
+		  cannot be changed online because any changes in these parameters require that
+		  the controller be re-generated and the module re-downloaded. 
+		</p>
+ 
+		<p> For the MPCPlus block select 
+		  <span class="uicontrol">Controller Setup</span> in the hierarchy pane which is
+		  visible when the Expert option is selected in the 
+		  <span class="uicontrol">Options</span> menu. The offline penalty values used
+		  for tuning appear in the contents pane as shown in the following figure.<br /><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_2A3D65D5F7984426991C651907940DC2"></a><div class="imageleft"><img class="imageleft" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_2A3D65D5F7984426991C651907940DC2" src="ContOfControllerSetup.png" /></div><br />
+		  
+		</p>
+ 
+		<p> When you are satisfied with the initial tuning values, save and
+		  download the associated module. You can use MPC SimulatePro to verify and
+		  refine the MPCPlus configuration, including modifying the tuning values without
+		  the need to download for the changes to take effect. Refer to the MPCPlus
+		  function block documentation for more information on tuning parameters. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_28BD7E9642764703BF7C83122426B560"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_28BD7E9642764703BF7C83122426B560"></a><h2 class="sectiontitle">Controller loading</h2> 
+		 
+		<p>For MPCPro block modules, the loading on the controller depends
+		  heavily on the block execution period (the configured Time to Steady State
+		  divided by 120). Depending upon how sparse the model is, a block configured for
+		  20x20 needs about 200-500 ms of computation time for an SQ, MQ, and SDPlus
+		  controllers and 100 – 250 ms of computation time for SX and MX controllers. The
+		  loading for computation time is automatically leveled over multiple module
+		  executions. This can be seen in controller diagnostic parameters such as
+		  LPctOnTime, FreTim (MD Plus and SD Plus controllers) and Perf_Index (for SQ,
+		  SX, MX, and MQ controllers). If you notice severe slippage in modules other
+		  than the module that contains the MPCPro block, consider giving these modules a
+		  higher priority or assigning them to another node. If a configuration is larger
+		  than 20x20, it is recommended that the MPCPro block be configured singly in its
+		  own module with a scan rate of five seconds or slower. This places the
+		  computation in the low priority task and prevents slippage of medium and high
+		  priority tasks. Larger processes usually have longer time constants and dead
+		  times than smaller processes. A time to steady state of 7200 (60s block
+		  execution) or slower is realistic for processes with 20 or more inputs and 20
+		  or more outputs. 
+		</p>
+ 
+		<p>PredictPro allows the configuration of 20x20 processes with Time to
+		  Steady States as small as 120s (1 s block execution). When the time it takes to
+		  run the MPCPro block approaches the block execution period, controller
+		  overloading occurs and you are prevented from generating and downloading an
+		  MPCPro block. This situation is unlikely with larger processes since they are
+		  usually slower. To avoid controller overloading, increase the Time to Steady
+		  State and/or reduce the number of inputs and/or outputs. The red area in the
+		  chart and table below indicates the range in which PredictPro prevents MPCPro
+		  controller generation and downloading. The yellow area indicates the range in
+		  which PredictPro displays an MPCPro controller loading warning but allows
+		  MPCPro controller generation and downloading to proceed. The green area shows
+		  the recommended configuration. As an example, refer to the table: an MPCPro
+		  controller for a process with 20 inputs and 30 outputs (600) must have a Time
+		  to Steady State of at least 257. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_AF379A783727454A97FE7AB15F5E000B"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_AF379A783727454A97FE7AB15F5E000B" src="CtrlLoading.jpg" /> 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_EDC09D4C66474C189C4D9EB2941A72F0"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_EDC09D4C66474C189C4D9EB2941A72F0" rules="all" summary=""> 
+			  
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1268962e1002" valign="top" width="NaN%"> 
+					 <p># inputs * # outputs 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1268962e1008" valign="top" width="NaN%"> 
+					 <p>Not recommended range 
+					 </p>
+ 
+					 <p>(PredictPro displays a warning message) 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1268962e1017" valign="top" width="NaN%"> 
+					 <p>Not allowed range 
+					 </p>
+ 
+					 <p>(PredictPro prevents controller generation) 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>400 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>&lt; 480 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>[any Tss allowed] 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>257 to 960 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 257 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>800 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>514 to 1440 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 514 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>1000 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>771 to 1920 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 771 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>1200 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>1029 to 2400 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 1029 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>1400 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>1286 to 2880 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 1286 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>1600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>1543 to 3360 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 1543 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>1800 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>1800 to 6840 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 1800 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>2000 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>2057 to 4320 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 2057 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>2200 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>2314 to 4800 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 2314 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>2400 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>2571 to 5280 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 2571 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>2600 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>2829 to 5760 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 2829 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>2800 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>3086 to 6240 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 3086 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>3000 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>3343 to 6720 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 3343 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1002 " valign="top" width="NaN%"> 
+					 <p>3200 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1008 " valign="top" width="NaN%"> 
+					 <p>3600 to 7200 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1017 " valign="top" width="NaN%"> 
+					 <p>&lt; 3600 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>In general, we recommend having at least 30-50% freetime in a
+		  controller before adding a large MPCPro block to leave ample CPU for
+		  communication tasks that might be required for all the display updates. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The table and chart present the maximum numbers for one
+		  single block per controller. Users should not allow more than one MPCPro block
+		  in the same controller to be in the yellow area (not recommended range in the
+		  table). This is not enforced programmatically. 
+		</div>
+ 
+		<p>The memory used by an MPCPro block is automatically adjusted based on
+		  the configured number of inputs and outputs. It ranges from about 0.3 to 5 MB.
+		  If the available memory in the controller is insufficient, a block remains in
+		  OutOfService mode and flags a configuration error after download. 
+		</p>
+ 
+		<p>The MPCPlus block takes longer to execute than the MPCPro block
+		  because it generates the control matrix online at each execution cycle and can
+		  require multiple iterations to determine the move plan. For this reason the
+		  MPCPlus block must execute in a module assigned and downloaded to a
+		  workstation. A module with an MPCPlus block cannot be downloaded to a
+		  controller. 
+		</p>
+ 
+		<div class="p">The following table should be used as a guideline for selecting the
+		  scan rate for an MPCPlus block module and the Time to Steady State (TSS)
+		  configured in the PredictPro application. Normally the TSS is chosen based on
+		  the input/output pair with the slowest dynamics. But an MPCPlus block with many
+		  MVs and fast dynamics may require a slower scan rate and a longer TSS than
+		  would be indicated by dynamics alone. A slower scan rate gives an MPCPlus block
+		  with many MVs time to complete its execution before the start of the next scan
+		  interval. 
+		
+<div class="tablenoborder"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_9BCCDBEABF9744A8A400D3D6588F4435"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__table_9BCCDBEABF9744A8A400D3D6588F4435" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1268962e1374" valign="top" width="NaN%">Number of MVs 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1268962e1377" valign="top" width="NaN%">Recommended fastest module scan rate (in
+					 seconds) 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1268962e1380" valign="top" width="NaN%">TSS (in seconds) corresponding to fastest
+					 scan rate 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1374 " valign="top" width="NaN%">1 or 2 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1377 " valign="top" width="NaN%">1 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1380 " valign="top" width="NaN%">120 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1374 " valign="top" width="NaN%">3 to 5 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1377 " valign="top" width="NaN%">2 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1380 " valign="top" width="NaN%">240 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1374 " valign="top" width="NaN%">6 to 12 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1377 " valign="top" width="NaN%">5 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1380 " valign="top" width="NaN%">600 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1374 " valign="top" width="NaN%">13 to 24 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1377 " valign="top" width="NaN%">10 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1380 " valign="top" width="NaN%">1200 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1268962e1374 " valign="top" width="NaN%">25 to 40 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1377 " valign="top" width="NaN%">50 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1268962e1380 " valign="top" width="NaN%">6000 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		</div>
+ 
+		<p> After commissioning the application check that the module Exec_Time
+		  parameter value (microseconds) is shorter than the module scan rate (seconds).
+		  If Exec_Time is longer and you are using default blocking, try using extended
+		  moves blocking to reduce the Exec_Time to an acceptable level. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_30555CF009914740B4D9DCE796A25B1A">PredictPro options for advanced users</a>
+		  for information on blocking in the MPCPlus function block. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B1CA40E2D913446A90F86035B1739A46"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B1CA40E2D913446A90F86035B1739A46"></a><h2 class="sectiontitle">Setting sampling and execution rate parameters</h2> 
+		 
+		<p>Model identification and validation depend on the availability of data
+		  at precise sampling points. Therefore, the test data (or data from an external
+		  file) must have accurate parameter settings which determine the data sampling.
+		  The following three parameters, accessible through the Control Studio and
+		  PredictPro applications, are used to determine the data sampling: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_3FEC21DE12104DC98310A9C0663B63E7"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_3FEC21DE12104DC98310A9C0663B63E7"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_D2B3CCB568DD4608AE2E4CB0BCF65FFD"><div class="li_content">Data Sampling Rate (DSR) -
+			 the block history sample rate configured in the 
+			 <span class="wintitle">MPCPro Properties</span> and 
+			 <span class="wintitle">MPCPlus</span>dialogs (accessible from the Control
+			 Studio and DeltaV Explorer applications). If you are using file data, this is
+			 the file data rate. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_94262ACC810742CF99FC80762503B1A3"><div class="li_content">Module Execution Rate
+			 (MExec) - the Module scan rate configured in the Control Studio application. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_0DF4723B30AD47B7A09AA730F2984441"><div class="li_content">Time to Steady State (TSS)
+			 - the process Time to Steady State configured in the PredictPro application. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Since PredictPro uses a horizon of 120 (120 sample points along the
+		  process TSS so that the block executes at the rate TSS/120 in seconds), the
+		  fundamental requirements, in mathematical form, for accurate data sampling are:
+		  
+		</p>
+ 
+		<p>Equation 1: 
+		  <span class="Nowrap">TSS = 120 x DSR x n</span> 
+		</p>
+ 
+		<p>Equation 2: 
+		  <span class="Nowrap">TSS = 120 x MExec x m</span> 
+		</p>
+ 
+		<p>where m and n are integers. 
+		</p>
+ 
+		<p>Ideally, 
+		  <span class="Nowrap">DSR = MExec x p</span> (p is an integer) also
+		  should be satisfied. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_ECCCAA826B914709B3282916366C58CE"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_ECCCAA826B914709B3282916366C58CE"></a><h2 class="sectiontitle">Recommendations </h2> 
+		 
+		<p> 
+		  <strong>Module Execution Rate (MExec) for the MPCPro block:</strong> The default
+		  value is 1 second; however, for large MPC configurations, or those with a TSS
+		  of 1 hour (3600 sec) or more, consider configuring MExec at 5 seconds. For
+		  blocks with a configuration where (Number of Outs × Number of Ins &gt; 400),
+		  MExec of 10 seconds or slower is more appropriate. For blocks with a
+		  configuration where (Number of Outs × Number of Ins &gt; 200), MExec of 5
+		  seconds or slower is more appropriate. 
+		</p>
+ 
+		<p><strong>Module Execution Rate (MExec) for the MPCPlus block:</strong> Refer to
+		  the table in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_28BD7E9642764703BF7C83122426B560">Controller loading</a>.
+		  
+		</p>
+ 
+		<p> 
+		  <strong>Data Sampling Rate (DSR):</strong> The default value is 1 second; however
+		  like MExec, for larger MPC configurations or those with a TSS of 1 hour (3600
+		  sec) or more, consider configuring DSR at 5 seconds or slower. When configuring
+		  DSR, it is advisable that the value of n in Equation 1 range between 3 and 10.
+		  This permits the creation of models at different TSS that are close to your
+		  expected TSS. At the same time, it does not overload the Continuous Historian. 
+		</p>
+ 
+		<p> 
+		  <strong>Time to Steady State (TSS):</strong> The Time to Steady State is the
+		  estimated time, in seconds, for the process to respond to input changes.
+		  Typical estimates are: (3 x First Order Time Constant + Dead Time) or (4 × Dead
+		  Time), whichever is greater for the slowest responding input/output pair of the
+		  MPCPro block. The default, and minimum value, is 120 seconds. When accurate TSS
+		  values are not known, it is advisable to use the higher of the two estimates.
+		  For integrating processes, refer to the guidelines in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_0FBD92D3B3894F97921B9C2DA81C25EA">Setting up the test</a>.
+		  
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_8184E2A7501D4DF6BAAF8895AF0E4F04"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_8184E2A7501D4DF6BAAF8895AF0E4F04"></a><h2 class="sectiontitle">Applicability in PredictPro </h2> 
+		 
+		<p>The DeltaV PredictPro application checks for relationships between the
+		  time parameters for test, model creation, and verification operations. It uses
+		  the entered process TSS as the basis for making any recommendations and/or
+		  changes. 
+		</p>
+ 
+		<p> 
+		  <strong>Test:</strong> Since the test generates the data to be used in all
+		  subsequent operations, both Equations 1 and 2 (shown in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B1CA40E2D913446A90F86035B1739A46">Setting sampling and execution rate parameters</a>)
+		  must be satisfied. If not, PredictPro suggests an adjusted TSS that does not
+		  require a change to DSR or MExec. If the adjusted TSS is significantly
+		  different than the configured TSS, PredictPro recommends some values. Note that
+		  a threshold of an approximate 25% change in value applies in either displaying
+		  the adjusted values or automatically using the adjusted values. 
+		</p>
+ 
+		<p> 
+		  <strong>Model creation:</strong> Since data is already available at this stage,
+		  PredictPro checks that only Equation 1 (shown in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B1CA40E2D913446A90F86035B1739A46">Setting sampling and execution rate parameters</a>)
+		  is satisfied. In the case of a mismatch, PredictPro suggests a new TSS value.
+		  Naturally, if the suggested values are not accurate, the TSS and/or the
+		  sampling rate may be changed. If you are changing the sampling rate, generate a
+		  new data set at the new sampling rate before creating the model. 
+		</p>
+ 
+		<p> 
+		  <strong>Verification against selected data:</strong> PredictPro checks that only
+		  Equation 1 (shown in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_B1CA40E2D913446A90F86035B1739A46">Setting sampling and execution rate parameters</a>)
+		  is satisfied. If not, the application proceeds no further since the models
+		  execution rate must be an integer multiple of the sampling rate of the data set
+		  for verification. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_42F14382F70D4C62B13BDB56D8A7D869"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_42F14382F70D4C62B13BDB56D8A7D869"></a><h2 class="sectiontitle">Changing the parameter values</h2> 
+		 
+		<p>To change the Continuous Historian sampling rate (DSR): 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_8CB72DCDBB8147D2B8508B63CBE90150"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_8CB72DCDBB8147D2B8508B63CBE90150"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_10B43C8DFCEF46658D79055F19B21277"><div class="li_content">In Control Studio,
+			 double-click the MPCPro or MPCPlus block to open the block&#39;s 
+			 <span class="wintitle">Properties</span> dialog. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_7F70E6FCDF1F43C9924685F31A96730D"><div class="li_content">Click the 
+			 <span class="uicontrol">History sample rate</span> drop-down list, and then
+			 change the parameter value. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_0CA6E0AFE5234A1CA5B5AB51AC361B03"><div class="li_content">Save and re-download the
+			 module. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_B353A9357F3241149FCF01A8293521F8"><div class="li_content">Re-download the Continuous
+			 Historian node to which this module is assigned. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_EA8316688FEF4C828B20C3602F6474B5"><div class="li_content">Reconnect the PredictPro
+			 application to this block by shutting down and restarting PredictPro or by
+			 selecing 
+			 <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Select
+				  Block</span></span>. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>To change the module execution rate (MExec): 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_B16ADDFE69884A208430300DDA0A15D2"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_B16ADDFE69884A208430300DDA0A15D2"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_8A5CB3EFB46944798A0E15A1DEE23BD8"><div class="li_content">Open the module with the
+			 MPCPro or MPCPlus block in Control Studio. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_AEC080AF06504429A56070018863DB0E"><div class="li_content">Right-click the Diagram
+			 view, and then click 
+			 <span class="uicontrol">Properties</span> to open the 
+			 <span class="wintitle">Module Properties</span> dialog, and then select the 
+			 <span class="uicontrol">Execution</span> tab. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_003C830A26AE4032BFF00BB804CE0198"><div class="li_content">Click the 
+			 <span class="uicontrol">Scan rate</span> drop-down list, and then change the
+			 parameter value. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_23B6DBEB9D05443A9FE3DCC9A42DFB3C"><div class="li_content">Save and re-download the
+			 module. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_43C25CE2496E49B3B447B73E92C17098"><div class="li_content">Re-download the Continuous
+			 Historian node to which this module is assigned. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_640D5EACC6C542BFAAAA49CED78766C7"><div class="li_content">Re-connect the PredictPro
+			 application to this block by shutting down and restarting PredictPro. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>To change the TSS: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_FD9FAAD127A04E57AF9812292BAA5625"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_FD9FAAD127A04E57AF9812292BAA5625"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_9439396CE4064BCE89BE6E78A5F0EC59"><div class="li_content">Open the PredictPro
+			 application and select Test Setup in the left pane. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_F192FA668C56444F9BD552064E8CB87A"><div class="li_content">Enter the appropriate
+			 value for 
+			 <span class="uicontrol">Time to Steady State</span>. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_960EA7AAA0EB45F7B846C5CFC7CAD141"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_960EA7AAA0EB45F7B846C5CFC7CAD141"></a><h2 class="sectiontitle">Defining control and optimization objectives</h2> 
+		 
+		<p>Optimization objectives are defined for: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_BC2A52A0DD0C46E5A2CAB54603A29392"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_BC2A52A0DD0C46E5A2CAB54603A29392"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_DA3E14698F18475783A4521820FBC87B"><div class="li_content">Constraint handling 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_38387179EECE4B5DAA7E317745D96BFE"><div class="li_content">Achieving the desired
+			 control functionality 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_ACBB2D24B4174AF99B8EE078A0EBC31A"><div class="li_content">Achieving economic
+			 objectives 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p> 
+		  <em>Constraint handling</em> is defined by assigning priorities to the
+		  process outputs such as the Control and Constraint variables. The Optimizer
+		  operates such that if a Constraint or Control parameter is projected to exceed
+		  its constraint limits or control range, the working setpoints of the other
+		  control parameters and MV targets are adjusted to bring the process output
+		  within limits. 
+		</p>
+ 
+		<p>If processing conditions do not allow all Control and Constraint
+		  parameters to be maintained within control ranges and constraint limits, the
+		  lower priority Control or Constraint parameters are allowed to go outside the
+		  control range or constraint limits. Refer to the MPCPro or MPCPlus function
+		  block topics for information on setting the priority. The function blocks
+		  allows five priorities for the process outputs: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_0A7EB000E50B4EB1B9454C189EBF3675"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_0A7EB000E50B4EB1B9454C189EBF3675"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_E8EAAC0D76EF4624B878906B9776A69A"><div class="li_content">High 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_81020316C75B456B876D4DE77E3C5807"><div class="li_content">Higher than Normal 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_7D56B78B0CEA409A9ED3943564FD71AC"><div class="li_content">Normal 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_DA34BBDD6A8648A99F14BBE53B8D919A"><div class="li_content">Lower than Normal 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_42F3E246AE4940A381B0F6FF66D0298B"><div class="li_content">Low 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The default priorities set during MPCPro configuration may not apply
+		  to a specific application. Users should 
+		  <em>always</em> review the priorities for Control and Constraint
+		  variables. There are two way to review priorities: during configuration and
+		  from the MPC Operate Pro application. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_C77AC1FBF9FF4A89AAF7070700B1C5D5"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_C77AC1FBF9FF4A89AAF7070700B1C5D5"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_CF017F54A0584AB487C5EDAA5A3993B6"><div class="li_content">During configuration:
+			 Select and right-click the function block, select 
+			 <span class="uicontrol">Properties</span>, click the 
+			 <span class="uicontrol">Advanced</span> button, and read the value in the
+			 Priority column. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_CA8E63BD1D594213848B1033B1615900"><div class="li_content">From the MPC Operate Pro
+			 application: In the PredictPro application, click 
+			 <span class="menucascade"><span class="uicontrol">Applications</span> &gt; <span class="uicontrol">MPC
+				  Operate Pro</span></span> to launch the application, and then click
+			 
+			 <span class="menucascade"><span class="uicontrol">Optimizer</span> &gt; <span class="uicontrol">Show
+				  Dialog</span> 
+			 </span> for the MPCPro block or 
+			 <span class="menucascade"><span class="uicontrol">Tuning</span> &gt; <span class="uicontrol">Show
+				  Dialog</span> 
+			 </span> for the MPCPlus block. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_F78C28EF316D46FD9D1B64346708FCAC"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_F78C28EF316D46FD9D1B64346708FCAC"></a><div><span class="figcap">The MPCPro function block Optimizer dialog in the MPC Operate
+			 Pro Application</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6014CDC6CCC14A8799A8A7276107DA28"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6014CDC6CCC14A8799A8A7276107DA28" src="OptWindow.jpg" /> 
+		</div>
+ 
+		<p> 
+		  <em>Control objectives</em> define multivariable control configuration
+		  functionality at normal operating conditions, that is when all process outputs
+		  are within control ranges and constraint limits and economic objectives are
+		  satisfied. The control functionality is defined for Control, Constraint and
+		  Manipulated variables. In the PredictPro application, select 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Optimization
+				Configuration</span></span> to open the 
+		  <span class="wintitle">Configure Multiple Objective Functions</span> dialog. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_FA31196A33FC4B419D9BFEBF13C40FBF"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_FA31196A33FC4B419D9BFEBF13C40FBF"></a><div><span class="figcap">Dialog for defining control and economic objectives</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9BBDF5D34F0142179D60E1CEA8E0EA37"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9BBDF5D34F0142179D60E1CEA8E0EA37" src="DefContEconObjWindow.jpg" /> 
+		</div>
+ 
+		<p> 
+		  <em>Control parameters in MPCPro</em> included in an objective function
+		  have determined behavior around setpoints. As a rule, Control parameters
+		  defined in the objective function are driven towards their setpoint values. A
+		  Controlled parameter can deviate below and/or above the setpoint, depending
+		  upon its definition of maximize, minimize, or target. 
+		</p>
+ 
+		<p>A Control parameter defined as: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_F4B9A6A8CA9D42D89AE17156B017C13C"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_F4B9A6A8CA9D42D89AE17156B017C13C"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_DEC5BD97695D4AB8A8EE1E8AF0E61D52"><div class="li_content"> 
+			 <em>Maximize</em> moves below the setpoint within the control range if
+			 necessary to achieve constraint handling or economic objectives. When other
+			 objectives are achieved, it then moves upward to the setpoint high limit
+			 (maximizing the Control parameter). 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_D3D2B65499B9470F927C6B28C11E99ED"><div class="li_content"> 
+			 <em>Minimize</em> moves above the setpoint within the control range if
+			 necessary to achieve constraint handling or economic objectives. When other
+			 objectives are achieved, it then moves downward to the setpoint low limit
+			 (minimizing the Control parameter). 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_FA1C7FB6472A4DD3B6BF0FC7CEDAD745"><div class="li_content"> 
+			 <em>Target</em> moves above or below the setpoint within the control
+			 range if necessary to achieve constraint handling or economic objectives. When
+			 other objectives are achieved, it then moves toward the setpoint. Achieving a
+			 Target objective has a higher preference than achieving a Maximize or Minimize
+			 objective when all objectives cannot be achieved. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_CB8B20D22B2B4CE291BCCC88B18FA920"><div class="li_content"><em>PSV (MPCPlus only)</em>
+			 moves above or below the setpoint within the control range if necessary to
+			 achieve constraint handling or economic objectives. When other objectives are
+			 achieved, it then moves toward the setpoint. Achieving a PSV objective has a
+			 lower preference than achieving a Target, Maximize, or Minimize objective when
+			 all objectives cannot be achieved. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Control parameters not included in the objective function are defined
+		  automatically as 
+		  <em>None</em> and will be kept above or below the setpoint with no
+		  attraction toward the setpoint. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_219BF297E8024A04B02FB0050172514A"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_219BF297E8024A04B02FB0050172514A"></a><div><span class="figcap">Control parameter - range and direction driven by the
+			 Optimizer</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_13FC26E3F9844E69BA3DD9EE5C8361D6"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_13FC26E3F9844E69BA3DD9EE5C8361D6" src="ControlParamRange.GIF" /> 
+		</div>
+ 
+		<p> For an MPCPro block, the Control Range is the setpoint plus and minus
+		  the SP_DELTA_RANGE parameter value for Target. For an MPCPlus block, the
+		  Control Range is set to zero (0) for Target. For both the MPCPro and MPCPlus
+		  blocks, None, Minimize, and Maximize, the Control Range is the full CV range
+		  (low CV SP limit to high CV SP limit) and the setpoint is not considered. For
+		  PSV (the MPCPlus block only), the Control Range is the full CV range, but the
+		  setpoint is the same as with Target. 
+		</p>
+ 
+		<p> 
+		  <em>Constraint parameters</em> included in the objective function are
+		  driven towards their high or low limit based on the maximize or minimize
+		  definition. When the Constraint parameter is not included in the objective
+		  function, the optimizer is free to make changes that cause the constraint to
+		  move within its upper and lower limits as shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_BB735FDF80B94DA688A23E1DC7CD3D12"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_BB735FDF80B94DA688A23E1DC7CD3D12"></a><div><span class="figcap">Constraint parameter - range and direction driven by the
+			 Optimizer</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3CF86F1ECC87459A815CFFC0E7772240"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3CF86F1ECC87459A815CFFC0E7772240" src="ConstraintParamRange2.GIF" /> 
+		</div>
+ 
+		<p> 
+		  <em>Manipulated parameters</em> included in the objective function are
+		  driven towards their high or low output limits based on their maximized or
+		  minimized settings 
+		  <em>or their associated CV&#39;s</em> maximized or minimized settings. If a
+		  Manipulated parameter is not included in the objective function, the optimizer
+		  attempts to maintain the current value if no other conditions require the
+		  Manipulated parameter to be moved. Selecting 
+		  <span class="uicontrol">PSV</span> (Preferred Settling Value) causes the
+		  optimizer to maintain the Manipulated parameter at the configured preferred
+		  settling value if no other conditions require a changed MV position. 
+		</p>
+ 
+		<p>When the MV objective is defined as: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_977DC0C4D574498CBCC736A67A5CA59D"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_977DC0C4D574498CBCC736A67A5CA59D"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_A367116F4FCB47B0B622EE4E22A1BE2C"><div class="li_content"> 
+			 <em>None</em> and all other objectives are satisfied, the MV is kept at
+			 the current (last) position. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_624340BEFE1C48A3BC25FE40366AE6D1"><div class="li_content"> 
+			 <em>Preferred Settling Value (PSV)</em>, it will be satisfied only when
+			 all other objectives are satisfied. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>If two or more MVs are configured for equalize, the optimizer attempts
+		  to maintain the associated MVs at the same value after achieving the other
+		  objectives as shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_FD2CC35F46A54279AF74428D4FD66EDC"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_FD2CC35F46A54279AF74428D4FD66EDC"></a><div><span class="figcap">Manipulated parameter - range and direction driven by the
+			 Optimizer</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6A3220F3529A450B9214E47539A4D7C9"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_6A3220F3529A450B9214E47539A4D7C9" src="ManipParamRange2.GIF" /> 
+		</div>
+ 
+		<p> Note that the default objective function, Standard, does not need to
+		  be defined and is automatically created for the block configuration. The
+		  standard control objective is to maintain Control parameters at setpoints. If
+		  the configuration contains only Constraint variables, the last MV values are
+		  maintained thus preserving the stability of the configuration. By default,
+		  Control variables have normal priorities assigned and Constraint variables have
+		  higher than normal priorities assigned. 
+		</p>
+ 
+		<p>The Standard control objective can be modified but not renamed.
+		  However, the other objective functions can be modified and renamed. An
+		  objective function is modified by selecting a parameter that is included in the
+		  objective, and then selecting 
+		  <span class="uicontrol">Modify</span> to define the optimization type
+		  (<span class="uicontrol">Maximize</span>, 
+		  <span class="uicontrol">Minimize</span>, 
+		  <span class="uicontrol">Target</span>, 
+		  <span class="uicontrol">PSV</span>, or 
+		  <span class="uicontrol">Equalize</span>). You can also define the limits for
+		  constraints included in the objective function. The objective functions for
+		  which the 
+		  <span class="uicontrol">Operator Selectable</span> box is checked are
+		  automatically included in the objective list that is displayed in the MPC
+		  Operate Pro interface. 
+		</p>
+ 
+		<p> 
+		  <em>Economic objectives</em> add economic meaning to the defined control
+		  objectives by setting value per% to some or all Control, Constraint and/or
+		  Manipulated parameters included in the objective function. Any value entered in
+		  the value per % column outweighs all other related control only objectives with
+		  no economic meaning (value per % = 0). The acceptable range for &quot;value per %&quot;
+		  is [0.0-1000.0]. If you need to apply &quot;value(s) per %&quot; that are out of the
+		  accepted range, you must rescale all &quot;values per %&quot;by multiplying them by an
+		  arbitrary scaling coefficient. &quot;Value per %&quot; can be rescaled in a meaningful
+		  way; for example, &quot;$ per % per one hour operation&quot; to &quot;$1000.00 per % per one
+		  hour operation&quot; by multiplying the original values by 10<sup>-3</sup> or to &quot;$
+		  per % per one day&quot; by multiplying the original values by 24. The Economic
+		  objective is satisfied prior to Control objectives unless limits are exceeded
+		  and then Constraint objectives take the highest priority. 
+		</p>
+ 
+		<p>Except for economic objectives for MVs defined in the value per%
+		  column in the 
+		  <span class="wintitle">Optimizer</span> dialog in the MPC Operate Pro
+		  application, the Objective Function per% column for each MV displays the
+		  effective value per percent. This column includes the value defined for the MV
+		  itself in the value per% column and values projected from the other Control and
+		  Constraint variables associated with this MV. These projected values may
+		  outweigh the original MV objective and the optimizer would drive that MV in a
+		  direction opposite to that which was intended. Users should be aware of this
+		  possibility and always verify the Objective Function per% column to get an
+		  initial evaluation of the optimizer&#39;s functionality. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_087B2D42260E4933AFCBB3AE48909E50"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_087B2D42260E4933AFCBB3AE48909E50"></a><div><span class="figcap">Relationship of the objectives defined for Control, Constraint,
+			 and Manipulated variables and effective objective projected on MV</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9139C42A2D4C46B684CE32C0394097A5"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9139C42A2D4C46B684CE32C0394097A5" src="Relationship.jpg" /> 
+		</div>
+ 
+		<p>To meet special requirements where the control objective can change
+		  based on feedstock cost, or product value, you can define different objective
+		  functions for the same configuration and select desired functions during
+		  operation. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D316B919560A4BECB08D86345EF0D085"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D316B919560A4BECB08D86345EF0D085"></a><h2 class="sectiontitle">Parameters in MPCPro block controller generation </h2> 
+		 
+		<p>The Constraint and Control parameters included in the controller
+		  generation are automatically selected to give the best possible dynamic
+		  response. The total number of Control and Constraint parameters included in the
+		  controller generation must be equal to or less than the number of independent
+		  parameters (the total number of Manipulated parameters). The selection of the
+		  Control and Constraint parameters to include in the control generation is
+		  automatically made to provide the minimum condition number associated with the
+		  control generation. In addition, the delay and gain of the process output step
+		  responses for a change in the Manipulated process input is also considered.
+		  Select the 
+		  <span class="uicontrol">Controller Setup</span> icon in the left pane to
+		  examine the parameters that have been selected for the control generation. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_BBEDACD78F114184B82C0E431616D51A"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_BBEDACD78F114184B82C0E431616D51A"></a><div><span class="figcap">View of the parameters selected for control generation for the
+			 MPCPro function block</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_17F1644943164602B512B1437C30924F"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_17F1644943164602B512B1437C30924F" src="Using22.JPG" /> 
+		</div>
+ 
+		<p>In this interface, the dynamics of the process outputs for a selected
+		  Manipulated parameter are displayed. Also, the condition number for the current
+		  selection of Constraint and Control parameters is shown. By removing a
+		  selection for a Manipulated parameter, it is possible to select another Control
+		  or Constraint parameter to be used in the control generation. When the new
+		  process output is added, the resulting condition number is automatically
+		  displayed. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_B554BE597DB34C29A89F5D45ED0EF5C9"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_B554BE597DB34C29A89F5D45ED0EF5C9" src="Using22b.jpg" /> 
+		</p>
+ 
+		<p>Best control is normally achieved if the process outputs are selected
+		  to give the minimum condition number. It is possible to have more independent
+		  or Manipulated parameters than Control and Constraint parameters. The possible
+		  range of condition numbers is: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_FA20DC7A4CD441FD92DF9EF2251E7533"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_FA20DC7A4CD441FD92DF9EF2251E7533"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_F654DE49DEF240E89A577B0C3D18542E"><div class="li_content">Less than 1000 - normal
+			 control generation is possible 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_A4D804EE59534B28A9D88738F873475F"><div class="li_content">Greater than 1000 but less
+			 than 10,000 - control generation with warning is possible 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_6308587148344A40B466708318E74508"><div class="li_content">Greater than 10,000 -
+			 control generation is not possible 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> Review your model and control configuration and try to
+		  minimize the condition number. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_530C3E74A9184B0D9BD4E5C766C26286"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_530C3E74A9184B0D9BD4E5C766C26286"></a><h2 class="sectiontitle">MPC SimulatePro </h2> 
+		 
+		<p>After downloading the module, you can use the MPC SimulatePro
+		  application to test the control off-line without impacting the process
+		  operation. An off-line simulation of the process is provided based on the
+		  process model that was identified using DeltaV PredictPro. In this simulation
+		  environment, you can simulate control as well as the process response to
+		  changes made by the PredictPro control. Using MPC SimulatePro&#39;s special
+		  interface, you can interact with the control just as you would during an actual
+		  process. You can add noise and unmeasured load disturbances to the process
+		  inputs. MPC SimulatePro also allows you to evaluate the control performance for
+		  different plant operating conditions. In addition, you can perform an expedient
+		  test on the control without disturbing actual plant operations. In this way,
+		  MPC SimulatePro can also serve as an operator training tool. 
+		</p>
+ 
+		<p>The prerequisites for running MPC SimulatePro are: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_89216F440F2946C78F2651C4EDD65B71"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_89216F440F2946C78F2651C4EDD65B71"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_66D3CF6AB3CC49F0AD18EA5526B7C966"><div class="li_content">DeltaV PredictPro is open
+			 for the module. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_6898DE9E92BC4F67BF199B4081AEB055"><div class="li_content">You have identified or
+			 manually entered a process model using PredictPro and generated the controller
+			 for the MPCPro block. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_11BAD6FF69784AB6A40696B8161BF152"><div class="li_content"> The module has been
+			 downloaded. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>To access MPC SimulatePro, you must first select 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>
+		  to identify yourself as an expert user. Then, either select the process model
+		  that you want to use for the process simulation from the models that have been
+		  generated and click the 
+		  <span class="uicontrol">Simulate</span> button located at the bottom left
+		  corner of the screen or select the process model in the hierarchy, right-click,
+		  and select 
+		  <span class="uicontrol">Simulate</span> to test the control off-line. Refer to
+		  the following figures. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The process simulation provided is based on the model
+		  you select in the hierarchy before clicking the 
+		  <span class="uicontrol">Simulate</span> button. The control used in this
+		  simulation environment is always based on the assigned model. To test the
+		  control for changes that impact the process response (model mismatch) select a
+		  model other than the assigned model. The selected model will be used for the
+		  process simulation. 
+		</div>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_7B5696C8D6634D3EADCD4651A565CCCC"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_7B5696C8D6634D3EADCD4651A565CCCC" src="Using23.JPG" /> 
+		</p>
+ 
+		<p>Once Simulate is selected, the interface used to access the simulation
+		  is automatically created as shown in the following image. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_D5398BC066AE464782FD9A975ABBF94C"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_D5398BC066AE464782FD9A975ABBF94C"></a><div><span class="figcap">MPC SimulatePro interface</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3B7686D52AA849AAB022811CA768DA7C"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_3B7686D52AA849AAB022811CA768DA7C" src="Using24.JPG" /> 
+		</div>
+ 
+		<p>MPC SimulatePro functions similarly to MPC Operate Pro. However, MPC
+		  SimulatePro also allows you to perform the following functions to support
+		  simulation: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_FB3DF572EA0F4859A4EEB27B5B7C696D"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_FB3DF572EA0F4859A4EEB27B5B7C696D"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_89345FFBD0E84ACE900618D52BBCF00F"><div class="li_content">Execute the process and
+			 control simulation faster than real time. This allows you to evaluate the
+			 performance of a process that is slow in response. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_C269E07D0F894536B66EC817000B4BB4"><div class="li_content">Introduce disturbances
+			 that will be added to the process output or disturbance input used in the
+			 simulation. You can evaluate the impact of noise and unmeasured load
+			 disturbances on the process control and change the value of measured load
+			 disturbances inputs. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_8BE1A289C3CC4690B037D1E1820277DF"><div class="li_content">Disable inputs to test
+			 control performance when the status of a Control, Constraint, or Disturbance
+			 input is Bad. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_E6E3FB03106B4E92BBB77896B24B0AC1"><div class="li_content">Switch the mode of the
+			 downstream blocks to Local so that the control performance can be examined for
+			 this situation. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>All values and ranges are based on the function block&#39;s configuration.
+		  MPC SimulatePro shows the names of both the configured model and the simulation
+		  model. The trend area continually updates (that is, it defaults to Continuous
+		  mode upon launching). The future area comprises one third of the graph, and is
+		  yellow to distinguish it from MPC Operate Pro, which is green. Initially, the
+		  time scale on the chart is based on the time when MPC SimulatePro was launched.
+		  As you change the real-time execution multiplier, the time change reflects that
+		  multiplier. You can change the setpoint and Manipulated variable. Also, the
+		  effects on predicted Control and Constraint variables are shown in the trend
+		  and the faceplates. You can select and change the real-time execution
+		  multiplier to be used in the Continuous mode or you can select the Step mode by
+		  clicking the 
+		  <span class="uicontrol">Advance</span> button. Refer to the following figure
+		  for information on these controls. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_96CFFF9641EB4CEB9537AF7AB3D4D0C0"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_96CFFF9641EB4CEB9537AF7AB3D4D0C0" src="Using25.jpg" /> 
+		</p>
+ 
+		<p>When using the real-time execution multiplier, click the 
+		  <span class="uicontrol">Pause</span> button to temporarily freeze the display
+		  of the multiplier change. Click the 
+		  <span class="uicontrol">Resume</span> button to continue updates. When using
+		  Step mode, the trend is a snapshot and the function block execution is only
+		  performed on request. Click the 
+		  <span class="uicontrol">Advance</span> button to access Step mode. You can
+		  change from Step mode to Continuous mode by clicking the 
+		  <span class="uicontrol">Resume</span> button. 
+		</p>
+ 
+		<p>To force a disturbance on a process output or Disturbance input,
+		  select the parameter to which the disturbance is to be added. The faceplate for
+		  this parameter is displayed in the left pane of the MPC SimulatePro interface.
+		  Use the selections provided in the bottom half of this faceplate to specify the
+		  disturbance to be introduced, as shown in the following figure. 
+		</p>
+ 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_22ABE47B5ABF4834AFC57CE556E27581"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_22ABE47B5ABF4834AFC57CE556E27581" src="Using26.JPG" /> 
+		<p>When you are finished using MPC SimulatePro, you can save the file you
+		  created for future reference. Saving the file saves not only the trend
+		  selection and the Y-scale, it also saves all user-adjusted values for signal
+		  amplitude, bias, and the period for the next simulation run on the same module.
+		  For this module, you can select a new model to be used in simulation. When you
+		  do so, if you previously saved this setup information, it can be used with the
+		  new model. In addition, the previously used setup data becomes the default. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_80F487C365F34386A074A15B805E49C1"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_80F487C365F34386A074A15B805E49C1"></a><h2 class="sectiontitle">Defining an MPCPro operator interface</h2> 
+		 
+		<p>You can create an operator interface for the MPCPro function block
+		  using the MPCPro Input (MV/DV) and the MPCPro Output (CV/AV) dynamos from the
+		  frsAdvCFncblk dynamo set in DeltaV Operate in configure mode. For the MPCPlus
+		  block use the MPCPlus Input (MV/DV) and the MPCPlus Output (CV/AV) dynamos. 
+		</p>
+ 
+		<p> 
+		  <br /><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_ED94D1DC6A4845D1B53A1DF544970F99"></a><div class="imageleft"><img class="imageleft" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_ED94D1DC6A4845D1B53A1DF544970F99" src="Using27.JPG" /></div><br />
+		  
+		</p>
+ 
+		<p>Place the dynamo adjacent to the associated I/O or control block on
+		  the process graphic. When you place a dynamo on a graphic, the 
+		  <span class="wintitle">Dynamo Properties</span> dialog opens. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9EAB17F67BCE48A69D2622843990AA67"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_9EAB17F67BCE48A69D2622843990AA67" src="Using28.JPG" /> 
+		</p>
+ 
+		<p>For the Input and Output dynamos to work properly, both the
+		  module/function block name and the parameter description are 
+		  <em>required fields</em>. The Parameter Description is the description
+		  that was configured for the input or output variable in Control Studio. The
+		  following example shows how this entry appears for module UNIT1_MPC and a
+		  Manipulated parameter with a user description FC101. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D1F5C953864C4377B138F39528FA8867"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D1F5C953864C4377B138F39528FA8867" src="Using28B.JPG" /> 
+		</p>
+ 
+		<p>The dynamos provide access to the module&#39;s faceplate and the faceplate
+		  provides access to the module&#39;s Detail display. Both the faceplate and the
+		  Detail display provide additional information on the target or limit values as
+		  shown in the following figures. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_80782CD58BC549CAA57AA15EC2648B20"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_80782CD58BC549CAA57AA15EC2648B20"></a><div><span class="figcap">Controlled parameter faceplate and detail display</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_722A20289FA64E7A8B395EE6202DD680"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_722A20289FA64E7A8B395EE6202DD680" src="Using30.JPG" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_A951CEEF6FA94753A819398D0693CCF0"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_A951CEEF6FA94753A819398D0693CCF0"></a><div><span class="figcap">Manipulated parameter faceplate and detail display</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D3D081B89E2E4C3F92D12BB05A598E12"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_D3D081B89E2E4C3F92D12BB05A598E12" src="Using29.JPG" /> 
+		</div>
+ 
+		<p>As shown in this faceplate, the manipulated variable value 50.0
+		  represents the preferred settling value if OptType=PSV. If OptType=Equalize,
+		  this value represents the equalized value. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_4FD565344C644517827C606D3590D22F"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_4FD565344C644517827C606D3590D22F"></a><div><span class="figcap">Constraint parameter faceplate and detail display</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_598BF29A6C1D4593AED153F2BCE422BE"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_598BF29A6C1D4593AED153F2BCE422BE" src="Using32.JPG" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_5D396D155A9A45DEBBCB93D780F2BE43"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_5D396D155A9A45DEBBCB93D780F2BE43"></a><div><span class="figcap">Disturbance parameter faceplate</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_93448B5CFAB8442B8FF5CBB29CA47DEC"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_93448B5CFAB8442B8FF5CBB29CA47DEC" src="Using31.JPG" /> 
+		</div>
+ 
+		<p>Place the MPCPro_Oper dynamo on the primary graphic display of the
+		  process that is controlled by MPCPro. When you access this dynamo or the one on
+		  the faceplate, a predefined view of MPCPro control is provided that you can use
+		  to make setpoint and mode changes associated with the MPCPro function block.
+		  The following examples are for the MPCPro block but the MPCPro_Oper dynamo is
+		  also suitable for the MPCPlus block. 
+		</p>
+ 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_52E8C1C30B7B474D8AC00ECB64941861"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_52E8C1C30B7B474D8AC00ECB64941861" src="Using33.JPG" /> 
+		<p>Through the view selection, you can select options to customize the
+		  information presented in the MPC Operate Pro interface. For large MPCPro
+		  applications that involve many process inputs and outputs, the Smallest
+		  Faceplate size option allows more process inputs and outputs to be viewed
+		  directly, as shown in the following image. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_5FB3961BD1554D0CA4C21E9E5D1F9E43"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_5FB3961BD1554D0CA4C21E9E5D1F9E43" src="Using34.JPG" /> 
+		</p>
+ 
+		<p>From the MPC Operate Pro toolbar, you can select a dialog that shows
+		  the cost and profit associated with the selected objective as shown in
+		  following image. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_CC5FF50830E34761BE3189F38BBB047B"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_CC5FF50830E34761BE3189F38BBB047B" src="Using35.JPG" /> 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_30555CF009914740B4D9DCE796A25B1A"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_30555CF009914740B4D9DCE796A25B1A"></a><h2 class="sectiontitle">PredictPro options for advanced users</h2> 
+		 
+		<p>The default settings for controller generation should work in most
+		  situations; however, using advanced options to extend the control horizon and
+		  to block control moves might improve control performance in certain situations.
+		  
+		</p>
+ 
+		<div class="cautiontitle">CAUTION:</div><div class="caution">The options described in this section are for
+		  advanced users with a deep understanding of the implications of changing the
+		  parameters described here. 
+		</div>
+ 
+		<p> 
+		  <strong>Adding CV and MV optimal targets to the MPC controller</strong> 
+		</p>
+ 
+		<p>The MPC controller, working with the LP optimizer, has two main
+		  objectives as shown in the following figure: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_30F792F76D634979AF78735376FBBF7C"></a><ul id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ul_30F792F76D634979AF78735376FBBF7C"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_03B4DD214F794A6588F2940CA4DF100C"><div class="li_content">Dynamic control objectives
+			 - minimize the CV control error with minimal MV moves within the operational
+			 constraints. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_9A3F81C217DE4553A8C8A8C7D74742AB"><div class="li_content">Steady state optimization
+			 objectives - achieve optimal steady state MV target values set by the optimizer
+			 and target CV values calculated from the MV target values. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The MPC controller with default settings directly applies only optimal
+		  CV targets and then works to achieve both the dynamic control and steady state
+		  optimization objectives. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>
+		  for information on how to include MV targets into controller generation and
+		  operation. 
+		</p>
+ 
+		<div class="fignone" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_5F2D60B4491043F3B67DC7316763E395"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__fig_5F2D60B4491043F3B67DC7316763E395"></a><div><span class="figcap">Optimized MPC control objectives</span></div> 
+		   
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FF4958837F884790AB33510A3C17FA0C"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_FF4958837F884790AB33510A3C17FA0C" src="OptMPCContObj.png" /> 
+		</div>
+ 
+		<p>Steady state MV targets are eventually achieved in an indirect way by
+		  achieving the CV targets. Some applications may require tighter control on MVs.
+		  This can be achieved by setting optimal MV target weights for the MPC
+		  controller. By developing a combined solution, the MPC controller provides
+		  output that accounts for both the CV and MV targets. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>
+		  for information on MV target weights. 
+		</p>
+ 
+		<p> 
+		  <strong>Extending the control horizon</strong> 
+		</p>
+ 
+		<p>The potential benefit from extending the control horizon would occur
+		  in processes with significantly different deadtimes and response times. For the
+		  MPCPro block, the default value for control horizon is 16 and the allowed range
+		  is from 1 to 32. For MPCPlus, the default value is 14 and the allowed range is
+		  up to 40. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>
+		  for information on how to extend the control horizon. 
+		</p>
+ 
+		<p> 
+		  <strong>Blocking control moves</strong> 
+		</p>
+ 
+		<p>Blocking control moves might improve the condition of the control
+		  matrix and in some cases, improve control performance when there are responses
+		  with significantly different deadtimes and responses. The following image shows
+		  how several moves up front will ensure that short term errors are addressed by
+		  the controller. Refer to 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>
+		  for information on how to block control moves. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_5C9F4323E3A542EAB0339A5E1B7303AF"></a><img id="concept_CC409BB6BC3940E893A2DA3B131F29BD__image_5C9F4323E3A542EAB0339A5E1B7303AF" src="predictpro.gif" /> 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The automatically calculated values for penalty on move
+		  and penalty on error are for the default control horizon and moves blocking.
+		  Changing the control horizon and or the moves blocking options requires a
+		  cautious, manual readjustment of penalties. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_36AD21C3625C4EEE99D12089A0753ECF"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_36AD21C3625C4EEE99D12089A0753ECF"></a><h2 class="sectiontitle">Using the advanced options</h2> 
+		 
+		<p><strong>MV target weights</strong> 
+		</p>
+ 
+		<p> For the MPCPro block the MV target weights are in the controller
+		  header file, ControllerHeader.predictPro, in 
+		  <span class="filepath">DVData\PredictPro</span>. There is a floating point value
+		  for each MV. The default values in the file are 1.0, but the default state is
+		  False, so the actual default value weights are 0.0. The recommended range is 0
+		  to 2.0. Close to zero values provide the minimum enforcement of the steady
+		  state MV optimal target values by the controller; 1.0 is moderate, 2.0 is
+		  strong. Follow the instructions in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>
+		  to change the weight values. 
+		</p>
+ 
+		<p> For the MPCPlus block the MV target weight is in the parameter
+		  OPT_MV_WT. A single floating point value applies to all MVs. The default value
+		  is 1.0. The recommended range is 0.0 to 1.0. Values close to zero provide
+		  minimum enforcement, 0.1 is moderate, 1.0 is strong. 
+		</p>
+ 
+		<p><strong>Extending the control horizon and moves blocking</strong> 
+		</p>
+ 
+		<p> For the MPCPro block the values are in the controller header file,
+		  ControllerHeader.predictPro, in 
+		  <span class="filepath">DVData\PredictPro</span>. The default control horizon is
+		  16, but can be changed up to 32. The default moves blocking is no blocking,
+		  which has the value &quot;1111111111111111&quot;. To adjust the control horizon and moves
+		  blocking follow the instructions in 
+		  <a href="c_predict_pro_using_predict_pro.html#concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8">Changing the advanced options for the MPCPro block </a>.
+		  This section includes and explanation of the ones (1) and zeros (0) in the
+		  blocking mask. 
+		</p>
+ 
+		<p> For the MPCPlus block both the control horizon and the moves blocking
+		  values are held in the MV_BLOCKING parameter. MV_BLOCKING contains 16 integer
+		  elements with a default value of &quot;1,2,3,4,5,7,9,14,0,0,0,0,0,0,0,0&quot;. The
+		  integer values should increase sequentially up to the maximum value that
+		  represents the control horizon value. In the default MV_BLOCKING value, moves
+		  6, 8, and 10-13 are blocked and the control horizon is 14 (but can be as high
+		  as 40). Use zeros in the unused elements. Note that the equivalent blocking
+		  value in the MPCPro block is &quot;11111010100001&quot;. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Extended moves blocking can be used in the MPCPlus block to reduce
+		  the block execution time if needed. Example MV_BLOCKING values for extended
+		  moves blocking are &quot;1,2,4,8,14,0,0,0,0,0,0,0,0,0,0,0&quot; and
+		  &quot;1,2,5,14,0,0,0,0,0,0,0,0,0,0,0,0&quot;. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8"><a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__section_D4E18670122A4A87AC9EA2B563A78DB8"></a><h2 class="sectiontitle">Changing the advanced options for the MPCPro block </h2> 
+		 
+		<p>In order to use these options the controller must be generated at
+		  least once for the selected block and model pair. 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_45FEED901DD94D48999A842FA8816725"></a><ol id="concept_CC409BB6BC3940E893A2DA3B131F29BD__ol_45FEED901DD94D48999A842FA8816725"> 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_025BEB4C8ED1406F987C0E3C6E1FE05C"><div class="li_content">Close the PredictPro
+			 application. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_09DC92C2049D46509645BC0012467EBA"><div class="li_content">Navigate to 
+			 <span class="nowrap"><span class="filepath">DVData\PredictPro\<var class="varname">module
+					 name</var>\<var class="varname">block
+					 name</var>\Model<var class="varname">data&amp;ID</var></span></span>. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_AF3465BBBD3840DBA786DC4EC2E925CE"><div class="li_content">Right-click the
+			 ControllerHeader.predictPro file, and then select 
+			 <span class="uicontrol">Properties</span> from the context menu. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_CF7F00CA1E65409C9F018259983E22D1"><div class="li_content">Uncheck the 
+			 <span class="uicontrol">Read-Only</span> check box, and then click 
+			 <span class="uicontrol">OK</span>. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_5721E7EE52F14565AB9D628C2DF35861"><div class="li_content">Open the file with
+			 Notepad. 
+			 <p>Use the example file (ControllerHeader.predictPro) that follows
+				this list for guidance in performing the next steps. 
+			 </p>
+ 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_2D0D9F76C0CC4CC6957632D9EC533A96"><div class="li_content">To enable and disable MV
+			 targets in the MPC controller, enter True (enabled) or False (disabled) in the
+			 Penalty on MV Error Enabled section of the file. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_72D4B218FAF0414285C7EE46C875B280"><div class="li_content">To adjust the MV targets&#39;
+			 controller weights coefficients, edit the Penalty on MV Error section of the
+			 file. Each consecutive parameter corresponds to a consecutive MV. The default
+			 weights are 0.0. It is recommended that the weights not exceed 2.0. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_FF90C0A704F94E3EA238FD7DDA57C1F2"><div class="li_content">In the Control Horizon
+			 section, edit the number. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_19A599F30A0940558A6E1D0C2616384C"><div class="li_content">In the Moves Blocking
+			 section, edit the mask of moves blocking. The mask consists of ones (1) and
+			 zeros (0). The number of digits is determined by the control horizon. The
+			 settings for the control moves start on the left and end on the right. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_01D71F800F4049F9A344A865AD5AC46A"><div class="li_content">To block moves, enter 1
+			 with consecutive zeroes to indicate the start and end of the moves blocking. In
+			 this example, moves 6 to 9 and 11 to 16 are blocked: 1111100001000000. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_EE18EA3DD17441D1ABD6B1A720BE64BF"><div class="li_content">To enable and disable
+			 moves blocking enter True (enabled) or False (disabled) in the Moves Blocking
+			 Enabled section of the file. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_392DA80D6777461294DA804B441981BA"><div class="li_content">Save and close
+			 ControllerHeader.predictPro. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_CD3B9C834CB9481F8E9CF385A4F1C351"><div class="li_content">Open PredictPro, and then
+			 generate and download the controller. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_A74F44C2B2CD4DAF84207D231A5847F2"><div class="li_content">Repeat this procedure for
+			 each new model created. A ControllerHeader.predictPro file must be available
+			 for each model. 
+		  </div></li>
+ 
+		  <li id="concept_CC409BB6BC3940E893A2DA3B131F29BD__li_7F29F27AF57A4B22BFD4A7FB57155207"><div class="li_content">Validate the controller
+			 stability and performance after setting new parameters for controller
+			 generation. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p> 
+		  <strong>Adjusting MV target online weights</strong> 
+		</p>
+ 
+		<p>For the MPCPro block online weights for MV targets can be adjusted by
+		  changing the MV_TGT_FACT[1..40] values (one multiplier for each MV). It is
+		  possible to disable the controller action towards the MV targets by applying a
+		  factor of 0.0 to the corresponding MV. Default weights are set to 1.0, although
+		  they are not used if the controller was generated with MV targets disabled. It
+		  is recommended that the weights do not exceed 10.0. 
+		</p>
+ 
+		<p> For the MPCPlus block, make online changes to the MV target weight by
+		  changing the parameter OPT_MV_WT. 
+		</p>
+ 
+		<p>The following segment from a ControllerHeader.predictPro file shows
+		  the control horizon and moves blocking sections. 
+		</p>
+ 
+		<pre class="codeblock">ControllerHeader.predictPro
+.
+.
+.
+Penalty on MV Error
+1.000000    1.000000    1.000000    1.000000		/Range 0.0 - 10.0
+
+Control Horizon
+16		/Up to 32
+
+Moves Blocking
+1111100001000000		/0=move blocked
+
+Moves Blocking Enabled
+True		/Move blocking applied only if True
+
+Penalty on MV Error Enabled
+True		/MV targets applied to the controller only if True</pre>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_data_exclusion_and_interpolation.html">Data exclusion and interpolation</a></div>
+<div><a href="c_fblk_spec_mpcpro.html">Model Predictive Control Professional (MPCPro) function block</a></div>
+<div><a href="c_fblk_spec_mpcplus.html"> Model Predictive Control Professional Plus (MPCPlus) function
+	 block</a></div>
+<div><a href="mpcoperatefaceplate.html">MPC Operate and MPC Operate Pro faceplate</a></div>
+<div><a href="dynamoreference.html">FrsModules dynamo reference</a></div>
+<div><a href="c_predict_pro_diff_Pro_Plus_blocks.html">Summary of the differences between the MPCPro and MPCPlus function
+	 blocks</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

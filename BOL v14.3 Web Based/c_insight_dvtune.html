@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Tune with InSight" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adaptive tuning algorithm, algorithm, adaptive tuning, manual tuning, Astrom-Hagglund Algorithm, critical gain, critical period, loop tuning, loop tuning, calculated, theory, trial and error, manual tuning algorithm, manual tuning algorithm, critical period, noise, primary control algorithm, process noise, relay hysteresis, Tune with InSight, tuning algorithm" name="DC.subject" /><meta content="adaptive tuning algorithm, algorithm, adaptive tuning, manual tuning, Astrom-Hagglund Algorithm, critical gain, critical period, loop tuning, loop tuning, calculated, theory, trial and error, manual tuning algorithm, manual tuning algorithm, critical period, noise, primary control algorithm, process noise, relay hysteresis, Tune with InSight, tuning algorithm" name="keywords" /><meta content="c_insight_overview.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune_apps.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_3C68FB9284AD4300ACAB035599806D1D" name="DC.Identifier" /><title>Tune with InSight</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_perform_reports.html" /><link rel="next" href="c_insight_dvtune_using.html" /></head><body class="fixed" id="concept_3C68FB9284AD4300ACAB035599806D1D" data-relpath="c_insight_dvtune.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_3C68FB9284AD4300ACAB035599806D1D"></a>
+
+<h1 class="topictitle1">Tune with InSight</h1>
+<div>
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_002CE0C8AC77452192FAD94AB5A10E93"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_002CE0C8AC77452192FAD94AB5A10E93"></a><h2 class="sectiontitle">Loop Tuning Overview</h2>
+      
+      <p>Once a control loop is designed and configured to govern a process it
+        must be tuned. Making the necessary adjustments to provide for stable and
+        responsive operation of the process is referred to as 
+        <strong>loop tuning</strong>. If a loop is tuned for responses that are too slow,
+        the process is stable but not responsive. If the loop is tuned for responses
+        that are too fast, it can be very responsive, but it might overshoot and cycle
+        around the setpoint (SP). The objective is to achieve a reasonably responsive
+        and stable control loop.
+      </p>
+ 
+      <p>The most common methods of loop tuning are 
+        <strong>calculated tuning</strong> and 
+        <strong>trial and error tuning</strong>. The calculated method involves computing
+        the tuning values using known constants and algorithms. The trial and error
+        method involves manually adjusting the tuning values until the process is
+        stable. The calculated method is superior to the trial and error method because
+        it requires a small number of cycles to achieve the desired results. If a
+        process is slow, using the calculated method can be extremely advantageous to
+        using the trial and error method.
+      </p>
+ 
+      <p>InSight provides three approaches to loop tuning:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_B4D0CB1EB06C42A58F1083FD2384DC2C"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_B4D0CB1EB06C42A58F1083FD2384DC2C"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_B23CD5B7765C41B28524814D1AA68AED"><div class="li_content"> 
+          <strong>On-Demand Tuning</strong> - Uses an on-demand test of the process to
+          automatically provide tuning recommendations. On-Demand tuning is available for
+          PID and Fuzzy Logic Control blocks. Tuning recommendations are available
+          on-demand by initiating automatic testing of the process. When testing is
+          requested using On-Demand tuning, the PID or FLC block&#39;s actual mode switches
+          to Local Override (LO). Once in LO mode, the operation of the loop&#39;s primary
+          control algorithm is suspended and the controller resident relay identification
+          adjusts the control block output (OUT). The On-Demand tuning capability is
+          based on the patented Aström-Hägglund Algorithm for calculating the tuning
+          parameters of a process control loop. Emerson has enhanced this algorithm with
+          a patented technique for identifying process deadtime. During tuning, the
+          output of the Proportional Integral Derivative (PID) or Fuzzy Logic Control
+          (FLC) block that is selected for tuning is determined by a known function that
+          acts as a relay with hysteresis. This relay provides two-state control and
+          causes the process to oscillate with a small, controlled amplitude. Using the
+          amplitude and the frequency of this oscillation, InSight calculates the
+          Ultimate Gain and Ultimate Period of the process. The controller settings are
+          then computed based on the defined process parameters and selected process
+          type. Optionally, tuning rules for modified Ziegler-Nichols, Lambda, or
+          Internal Model Control can be selected in determining the best loop tuning.
+          Process Learning does not need to be enabled to use On-Demand tuning.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_F7EB7A0CBC7D4EE883D7BA56D06A8AD9"><div class="li_content"> 
+          <strong>Adaptive Tuning (open loop)</strong> - Uses normal operator changes in
+          setpoint or output to identify process models and provide tuning
+          recommendations. When automatic model identification is requested using
+          Adaptive Tuning, there is no impact on the block mode and block mode is based
+          on normal operating conditions. DeltaV InSight learns the process by
+          continuously evaluating your plant performance, evaluating controller tuning,
+          and calculating process models based on normal day-to-day operations. Process
+          Learning must be enabled for model creation.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_5300A029E24246E4B70714AA08F47558"><div class="li_content"> 
+          <strong>Adaptive Control (closed loop) -</strong> Includes all of the Adaptive
+          Tuning capabilities plus the ability to create models in up to 5 regions and to
+          automatically change control loop tuning. The model quality is validated by
+          taking into account the most recent adaptation and the last several
+          adaptations. A high quality model and the expected operation with the
+          recommended tuning is used as criteria for setting Adaptive Control. An
+          Adaptive Control license is required for full or partial Adaptive Control and
+          to create models in up to 5 regions. Adaptive Control licenses can be assigned
+          to PID blocks that reside in the controller. PID blocks residing in the H1 card
+          and in fieldbus devices cannot be licensed for full or partial Adaptive
+          Control. Process Learning must be enabled for model creation.
+          <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_5D1E4281E3234D21A3DD08851B1DA3BF"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_5D1E4281E3234D21A3DD08851B1DA3BF">
+            <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_5405353A40D243F0A0798F7C1B162F19"><div class="li_content"><strong>Partial Adaptive
+                Control</strong> - the controller calculates new models and tuning for each region
+              and adjusts closed loop tuning based on the approved models for each region.
+              The controller adjustments are made only for models the user has reviewed and
+              approved.
+            </div></li>
+
+            <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_890B9FC95FEB44559399C9CD0907EF54"><div class="li_content"><strong>Full Adaptive
+                Control</strong> - the controller calculates new models and tuning for each region
+              and automatically adjusts closed-loop tuning based on the last model calculated
+              for each region. No user review or approval is required for Full Adaptive
+              Control.
+            </div></li>
+
+          </ul>
+
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_6BF824DD596F46D9953BFD51F375AB97"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_6BF824DD596F46D9953BFD51F375AB97"></a><h2 class="sectiontitle">Process Learning </h2>
+      
+      <p>If Process Learning is enabled on a PID block assigned to the DeltaV
+        Controller, the process model and recommended tuning are automatically
+        calculated in the controller and a copy is transferred to the ProfessionalPLUS
+        workstation. The models are used for both Adaptive Tuning and Adaptive Control.
+        Process Learning can be enabled on:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_507AE8719BBF424E97EC27C4D796ABF6"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_507AE8719BBF424E97EC27C4D796ABF6"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_4B904A400A1148D182326ABAE816FD01"><div class="li_content">PID blocks running in the
+          controller. The blocks can be licensed for Adaptive Control.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_1DA0F2A29ECB45BC9F0848C8F30742F7"><div class="li_content">PID blocks assigned to an
+          H1 card. These blocks cannot be licensed for Adaptive Control.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_25CD4B83A3FB44DF8B45CA29A5828C2A"><div class="li_content">PID blocks running in
+          fieldbus devices. These blocks cannot be licensed for Adaptive Control.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_9760662F959948CF94EBA1B9986FE5A0"><div class="li_content">FFPID_RMT blocks running
+          in device. These blocks cannot be licensed for Adaptive Control.
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_2598FF364F1742DEA9E92B65320BD258"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_2598FF364F1742DEA9E92B65320BD258"></a><h2 class="sectiontitle">InSight Architecture</h2>
+      
+      <p>DeltaV InSight is distributed between the DeltaV workstation and the
+        DeltaV controller. Time-critical features associated with the process
+        identification are implemented in the function block. This approach allows the
+        process dynamics to be captured precisely without introducing errors by
+        communication delays. The portion of InSight in the workstation supports
+        viewing controller parameters and tuning calculation based on the process
+        dynamics captured by the PID or FLC function block. You can enable Process
+        Learning or initiate on-demand tuning if you have sufficient privilege at the
+        DeltaV workstation being used to view and interact with DeltaV InSight. You can
+        initiate closed loop Adaptive Tuning if you have sufficient privilege at the
+        workstation and if PID blocks are licensed for Adaptive Control.
+      </p>
+ 
+      <p>To check and allow further refinement of tuning, InSight provides
+        simulated loop response, robustness plotting, and robustness based tuning.
+      </p>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_BC5AEC1F9FC84D8E9D481F733EECBA9D"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_BC5AEC1F9FC84D8E9D481F733EECBA9D"></a><h2 class="sectiontitle">Algorithms </h2>
+      
+      <p>The following sections describe the Adaptive Tuning and On-Demand
+        Tuning algorithms. Understanding these algorithms is not required to use the
+        InSight applications and this information is provided for reference only.
+      </p>
+
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_00ECF9DFB7B84DC78D7FB9909D003026"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_00ECF9DFB7B84DC78D7FB9909D003026"></a><h2 class="sectiontitle">Adaptive Tuning Algorithm </h2>
+      
+      <p>The process identification algorithm included in the PID Function
+        Block Adapt Modifier addresses the shortcomings of many Adaptive Control
+        products. Specifically, the PID Function Block Adapt Modifier provides
+        adaptation for feedback control. The model switching strategy used for
+        identification incorporates parameter interpolation and model re-centering that
+        makes it possible to dramatically reduce the number of models used for
+        adaptation. Salient features of the technology include: shorter adaptation
+        time, complete process model identification, and reduction in required process
+        excitation.
+      </p>
+ 
+      <p>The main objectives of the algorithm design are to:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_7D9A1261F70544AE88A2CD5D4F2B077E"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_7D9A1261F70544AE88A2CD5D4F2B077E"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_8AD69BCFDFE841F2AB88E40A30D2DEF8"><div class="li_content">Provide a unified solution
+          for feedback model identification
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_9E75D647C86547CC8FA3EE65EF458E19"><div class="li_content">Achieve a shorter
+          adaptation time
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_ABF5F9D9DCF04F1ABBA6E87FF99EFCC0"><div class="li_content">Achieve adaptation with
+          minimal excitation of the process
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>The structure of the PID Function Block Adapt Modifier with model
+        parameter interpolation is shown below.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_7A176DA23D2F453E950FE7C459989BB6"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_7A176DA23D2F453E950FE7C459989BB6"></a><div><span class="figcap">Adaptive Feedback Control Design</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_94B4C1224C9E4917BE3F8CED0CD4D244"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_94B4C1224C9E4917BE3F8CED0CD4D244" src="InSight-Adapt-FB-Cont-Dsgn.jpg" />
+      </div>
+
+      <p>The process identification design is based on the evaluation of
+        multiple sets of models. In principle, a model can have any form, but in this
+        implementation, each model consists of three parameters. All models have the
+        same 
+        <strong> 
+          <em>three</em> 
+        </strong> parameter structure. Assigning 
+        <strong> 
+          <em>n</em> 
+        </strong> values for every parameter, the model set has 
+        <strong> 
+          <em>N = n<sup>3</sup> 
+          </em> 
+        </strong> models.
+      </p>
+ 
+      <p>The Adaptive Control operates in the following way:
+      </p>
+ 
+      <p>The supervisor detects changes in:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_F8C46FEC9D3447C0AFF1A887E459A247"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_F8C46FEC9D3447C0AFF1A887E459A247"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_2531834935C14A42B6D0AB07750E04C9"><div class="li_content">The process output or the
+          controlled variable (<em><strong>y</strong></em>)
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_AB30E1B02CCA4F7D9E7EA4508284688B"><div class="li_content">The setpoint
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_8522F033328B41EEAB7940A05B2BF191"><div class="li_content">The manipulated process
+          input (<em><strong>u</strong></em>) 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>If changes on any input exceed a user-defined minimum level, model
+        evaluation starts. It involves several steps:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_38CE3CADF9E54D0EB3A9A2C13B89F6B9"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_38CE3CADF9E54D0EB3A9A2C13B89F6B9"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_E342555060CE4A46A48753F3554A8331"><div class="li_content">Model initialization and
+          adjustment of the model&#39;s output with the current process output
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_70A1644EE56E493EB1895F5A184566C3"><div class="li_content">Model incremental update
+          based on the changes of 
+          <strong> 
+            <em>the manipulated</em> 
+          </strong> input to the process
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_40B20943B0B04D1ABAB03F2B23E488A8"><div class="li_content">Computing for every model
+          squared error:
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>For each iteration, the squared error 
+        <em>E<sub>i</sub></em>(<em>t</em>) is computed for every model 
+        <em>i</em> each scan 
+      </p>
+ 
+      <p> 
+        <strong>Equation 1</strong>: 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_F44D50A3279249ED9511AC23C24304D9"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_F44D50A3279249ED9511AC23C24304D9" src="Equation1.gif" />
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p><em>y</em>(<em>t</em>) = the process output at the time 
+        <em>t</em>
+      </p>
+ 
+      <p><em>Yi</em>(<em>t</em>) = 
+        <em>i-th</em> model output
+      </p>
+ 
+      <p>The norm, shown in equation 1, is assigned for every parameter value
+        of the model 
+        <strong><em>i</em></strong>, if the parameter value is used in the evaluated model.
+        A zero is assigned to any parameter value that is not part of the evaluated
+        model. Next, the model 
+        <strong><em>i+1</em></strong> is evaluated, and again the norm (defined in equation
+        1) is computed for the model and assigned for every parameter value of the
+        model 
+        <strong><em>i+1</em></strong> and added to the previously assigned norm for every
+        parameter value. The process continues until all models are evaluated. As a
+        result of the evaluation, every parameter value is assigned a sum of squared
+        errors from all models in which this specific parameter value has been used. In
+        the one scan 
+        <strong><em>t</em></strong> therefore, every parameter value
+      </p>
+ 
+      <p> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_57E6B74A6A554FA4964EEA2EB686A633"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_57E6B74A6A554FA4964EEA2EB686A633" src="icimage144.gif" />, 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_F8F3B394116D419FB30E2992E8536B7B"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_F8F3B394116D419FB30E2992E8536B7B" src="icimage145.gif" />
+      </p>
+ 
+      <p>has assigned norm
+      </p>
+ 
+      <p> 
+        <strong>Equation 2: 
+        </strong><a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_3C528B53047846CDAE89E038A3752B51"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_3C528B53047846CDAE89E038A3752B51" src="icimage146.gif" />
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p> 
+        <em>k</em> = parameter type
+      </p>
+ 
+      <p><em> l</em> = parameter value
+      </p>
+ 
+      <p> 
+        <em>Ep<sup>kl</sup></em>(<em>t</em>) = the evaluation norm of the parameter
+        
+        <em>p<sup>kl</sup></em> at the scan 
+        <em>t</em>
+      </p>
+ 
+      <p><em> N</em> = the number of models
+      </p>
+ 
+      <p><em> Y<sub>kl</sub></em> = 1 if parameter value 
+        <em>p<sup>kl</sup></em> is used in the model, otherwise = 0
+      </p>
+ 
+      <p>Model evaluation is repeated in the scan 
+        <em>t+1</em> and the sum of the squared errors for every parameter value
+        is added to the sum of the appropriate parameter value accumulated in the
+        previous scans. The adaptation cycle continues through a declared number of
+        scans (1 to M), or until there is enough excitation on the inputs. As a result
+        of this procedure, every parameter value 
+        <strong><em>p<sup>kl</sup></em></strong> is assigned the accumulated value of the
+        squared errors over a period of evaluation:
+      </p>
+ 
+      <p> 
+        <strong>Equation 3:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_9CD09C172F584879BEFE34FBC07B3A99"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_9CD09C172F584879BEFE34FBC07B3A99" src="icimage153.gif" /> 
+      </p>
+ 
+      <p>At the end of the adaptation cycle, the inverse of the sum is
+        calculated for every parameter value 
+        <em>p<sup>kl</sup></em>:
+      </p>
+ 
+      <p> 
+        <strong>Equation 4:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_22EE44BEB75D47889BC2FF8587FD1101"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_22EE44BEB75D47889BC2FF8587FD1101" src="icimage154.gif" /> 
+      </p>
+ 
+      <p>An adaptive parameter value 
+        <em>p<sup>k</sup></em>(<em>a</em>) for the parameter 
+        <em>p<sup>k</sup></em> is calculated as a weighted average of all values
+        of this parameter:
+      </p>
+ 
+      <p> 
+        <strong>Equation 5:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_6464507F534E4D32A61458F45365C684"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_6464507F534E4D32A61458F45365C684" src="icimage157.gif" /> 
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p> 
+        <strong>Equation 6:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_DF873D59563A45E4B2727AED6DD75C8C"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_DF873D59563A45E4B2727AED6DD75C8C" src="icimage159.gif" /> 
+      </p>
+ 
+      <p> 
+        <strong>Equation 7:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_3B591B1958294245A80488DD6F623757"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_3B591B1958294245A80488DD6F623757" src="icimage160.gif" /> 
+      </p>
+ 
+      <p>Calculated parameters define a new model set with center parameter
+        values 
+        <span class="nowrap"><em>p<sup>k</sup></em>(<em>a</em>), 
+          <em>k</em> = 1,…<em>m</em></span> and the range of parameter changes
+        defined as ±Δ%. Within that range, two parameters at a minimum should be
+        defined. Practically, two additional parameters, 
+        <span class="nowrap"><em>p<sup>k</sup></em>(<em>a</em>) +
+          Δ%<em>p<sup>k</sup></em>(<em>a</em>)/100</span> and 
+        <span class="nowrap"><em>p<sup>k</sup></em>(<em>a</em>) –
+          Δ%<em>p<sup>k</sup></em>(<em>a</em>)/100</span>, are defined around the parameter 
+        <em>p<sup>k</sup></em>(<em>a</em>). Every parameter defines a lower and
+        upper limit for adaptation and if 
+        <em>p<sup>k</sup></em>(<em>a</em>) exceeds the limit, it is clamped to the
+        limit. As soon as a model has been updated, controller redesign takes place
+        based on updated 
+        <span class="nowrap"><em>p<sup>k</sup></em>(<em>a</em>), 
+          <em>k</em> = 1,…<em>m</em></span> model parameters.
+      </p>
+ 
+      <p>The adaptation process is shown by simply considering a pure gain
+        process. The process input is assumed to be changing as shown in the following
+        figure.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_41CCD51967F246E29E86CFA5351C7753"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_41CCD51967F246E29E86CFA5351C7753"></a><div><span class="figcap">Example - Pure Gain Process</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_F4EC9FF4184045E7B950DD521A661F4C"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_F4EC9FF4184045E7B950DD521A661F4C" src="PureGainProcess.gif" />
+      </div>
+
+      <p>For an assumed initial process gain value of 
+        <em>G1</em>, the bank of process models that will be evaluated in the
+        first iteration will have gains of 
+        <span class="nowrap"><em>G1</em> – Δ</span>, 
+        <em>G1</em>, 
+        <span class="nowrap"><em>G1</em> + Δ</span>. Based on the calculated
+        process output and actual process output for each model, a new gain value
+        estimate, 
+        <em>G2</em>, is computed and a new model bank 
+        <span class="nowrap"><em>G2</em> – Δ</span>, 
+        <em>G2</em>, 
+        <em>G2</em> + Δ is centered around 
+        <em>G2</em>. It is used in the second iteration of the adaptation. This
+        process continues as shown below, until further reduction in the norm (shown in
+        equation 1) is within a defined limit or the maximum number of iterations has
+        been completed. The range ∆ is decreased after each iteration.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_7D0A0C93D706414BBE300122A653F295"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_7D0A0C93D706414BBE300122A653F295"></a><div><span class="figcap">Adaptation Sequence - Pure Gain Process</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_BD72197E4FE947FFAB1F76E891EEA6E3"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_BD72197E4FE947FFAB1F76E891EEA6E3" src="AdaptationSequence.gif" />
+      </div>
+
+      <p>A first order plus deadtime process model, in a discrete form, is used
+        to describe the process response to changes in the manipulated input or the
+        disturbance input in the PID Function Block Adapt Modifier.
+      </p>
+ 
+      <p> 
+        <strong>Equation 8:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_6CF79BCA93BF4D6D9A2BB1C92A5EA5EB"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_6CF79BCA93BF4D6D9A2BB1C92A5EA5EB" src="icimage171.gif" /> 
+      </p>
+ 
+      <p> 
+        <strong>Equation 9:</strong> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_F726FBC85F5A4A8E8FFBC05BC6DF852F"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_F726FBC85F5A4A8E8FFBC05BC6DF852F" src="icimage172.gif" /> 
+      </p>
+ 
+      <p> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_DB77517CC19E4DCF95BFFD0CCDBE397B"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_DB77517CC19E4DCF95BFFD0CCDBE397B" src="icimage173.gif" /> 
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p> 
+        <em>h</em> = loop scan period
+      </p>
+ 
+      <p>Δ<em>u</em> = process input incremental change since adaptation started
+      </p>
+ 
+      <p> Δ<em>Y</em> = model incremental change
+      </p>
+ 
+      <p>t = model time constant
+      </p>
+ 
+      <p>With three values for every parameter of the model, there are 
+        <span class="nowrap">3<sup>3</sup> = 27</span> models for evaluation.
+      </p>
+ 
+      <p>Improved convergence and reduction in the number of models is achieved
+        by the following amendments to the basic algorithm:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_3C68FB9284AD4300ACAB035599806D1D__ul_76A66088322B4D1CAF42E7E6E5BACD73"></a><ul id="concept_3C68FB9284AD4300ACAB035599806D1D__ul_76A66088322B4D1CAF42E7E6E5BACD73"> 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_3737A0675C464DC99D2FF48B06EB17EA"><div class="li_content">Performing parameter
+          adaptation sequentially, one parameter at a time. In this way, the number of
+          model combinations for the first order plus deadtime model has been reduced to
+          3+3+3=9.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_14B02B79E7BE43DD8CE90503A80D545A"><div class="li_content">Performing adaptation for
+          only two parameters with minimum error values.
+        </div></li>
+ 
+        <li id="concept_3C68FB9284AD4300ACAB035599806D1D__li_56A39588185044ED987BFEA5B0054B9A"><div class="li_content">Using the original data
+          set and performing adaptation iteratively by running the algorithm several
+          times.
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>In a sequential procedure in which one parameter is updated over a
+        calculation cycle, the updating is performed in the sequence process gain
+        (<em>K<sub>m</sub></em>), deadtime in scans (<em>n</em>), and time constant
+        (<em>t</em>=<em>f</em>(<em>a</em>)).
+      </p>
+ 
+      <p>The adaptation example for a first-order plus deadtime process with a
+        changing input is shown below.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_A808BD82AF9740B9B1177442CAAC6B93"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_A808BD82AF9740B9B1177442CAAC6B93"></a><div><span class="figcap">Example - First-Order Plus Deadtime Process</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_64125520BED343989B115609B8348E93"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_64125520BED343989B115609B8348E93" src="FirstOrder_plus_deadtime.gif" />
+      </div>
+
+      <p>The following two figures show the sequential procedure of updating
+        one parameter at a time over a calculation cycle.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_6A624ACCD4194EEBB014885BC7FADAD9"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_6A624ACCD4194EEBB014885BC7FADAD9"></a><div><span class="figcap">Sequence of Parameter Adjustments Within Identification
+          Iteration</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_FE7F23B61614455E974A6E0A1639E6AB"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_FE7F23B61614455E974A6E0A1639E6AB" src="ParameterAdjust.gif" />
+      </div>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_C564154AE4B24D9D93AA94127788A5C7"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_C564154AE4B24D9D93AA94127788A5C7"></a><div><span class="figcap">First Order Plus Deadtime Process Model
+          Interpolation</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_CB589735CDAA4E949A1E47B081E8805D"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_CB589735CDAA4E949A1E47B081E8805D" src="Firstorderdeadtime.gif" />
+      </div>
+
+      <p>After model adaptation completes, controller redesign begins. Since a
+        complete first order plus deadtime process model is used, any tuning rules
+        (Lambda or IMC tuning, typically) can be applied. You can select the tuning
+        rule that the PID Function Block Adapt Modifier uses with the process model to
+        set the feedback tuning.
+      </p>
+ 
+      <p>If there are infrequent changes in the manipulated input, external
+        excitations can be optionally automatically injected into the manipulated input
+        in Automatic modes. An output change of 3-7% is normally enough for a process
+        model identification. The following figure shows the typical process response
+        for this level of excitation.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_F5355C3033D54475AA4A2C506409172D"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_F5355C3033D54475AA4A2C506409172D"></a><div><span class="figcap">Example of Process Input Excitation and Response for a Simple
+          Process</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_14605A9FFE044898915556C7F2873CC1"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_14605A9FFE044898915556C7F2873CC1" src="ProcessInputExcite.GIF" />
+      </div>
+
+      <p>The following trend shows the step response of a caustic flow loop
+        that is controlled by Adapt. Notice how the initial tuning is automatically
+        refined during normal block operation in Automatic mode at the setpoint
+        changes.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_CD86DCFDA8E44F7697E5A8D9C89309C8"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_CD86DCFDA8E44F7697E5A8D9C89309C8"></a><div><span class="figcap">Adaptation of Caustic Flow Loop</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_F756C65758EA484E9AAD0009123AA686"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_F756C65758EA484E9AAD0009123AA686" src="CausticLoopAdapt.gif" />
+      </div>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_E845ED76441E473EA5018B349D9F7093"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_E845ED76441E473EA5018B349D9F7093"></a><h2 class="sectiontitle">On-Demand Tuning Algorithm </h2>
+      
+      <p>On-Demand tuning can be used to establish loop tuning based on the
+        process parameters identified using the supervised relay oscillation test. The
+        On-Demand tuning feature of InSight uses modified Ziegler-Nichols model-based
+        tuning rules. The following image shows how the On-Demand tune modifier is used
+        with the PID block to provide the On-Demand tuning capability.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_0DA60D18F92849D68277D5957E3AD7E2"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_0DA60D18F92849D68277D5957E3AD7E2"></a><div><span class="figcap">Determination of Process Dynamics Using On-Demand
+          Tuning</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_59654FD2F56343AB8044C49F8EEAD6F4"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_59654FD2F56343AB8044C49F8EEAD6F4" src="InSight-Man-Tune-Mod.jpg" />
+      </div>
+
+      <p>The On-Demand tune modifier identifies the process dynamics using the
+        relay oscillation principle. During the identification procedure of loop
+        tuning, the mode of the PID or FLC block changes to LO and the output is
+        determined by a two-state (or relay) function. During this phase of tuning, the
+        loop is under two-state control. As indicated previously, loops under two-state
+        control exhibit slight oscillations. The amplitude of these oscillations
+        defines the Ultimate Gain. The oscillation period defines the Ultimate Period.
+      </p>
+ 
+      <p>The Ultimate Gain (<em>K<sub>u</sub></em>) is defined by the following
+        equation:
+      </p>
+ 
+      <p> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_4AAEB6190C824BBC8B2FEC631AB3233A"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_4AAEB6190C824BBC8B2FEC631AB3233A" src="ichelp0036.gif" /> 
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p> 
+        <em>d</em> - relay amplitude
+      </p>
+ 
+      <p> 
+        <em>a</em> - amplitude of the oscillation of the process variable (PV)
+      </p>
+ 
+      <p>Having identified the Ultimate Gain and the Ultimate Period, you can
+        determine the controller PID settings using the modified Ziegler-Nichols rules.
+        You can also determine the process deadtime based on the initial phase of the
+        oscillation test. Based on a knowledge of the deadtime, Ultimate Gain, and
+        Ultimate Period, InSight can calculate the process time constant and static
+        gain needed for model-based tuning (Internal Model Control tuning and Lambda
+        tuning) available in InSight as options.
+      </p>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_A2D9E2EFCEC14F0A8B25C1451FE30289"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_A2D9E2EFCEC14F0A8B25C1451FE30289"></a><h2 class="sectiontitle">Tuning Period </h2>
+      
+      <p>The following figure illustrates a typical time plot of the relay
+        output and the process variable (PV) during tuning. Note that the relay is
+        triggered at the point when the PV passes through the SP.
+      </p>
+ 
+      <p>The relay amplitude (<em>d</em>) is typically 3 to 10 percent of the
+        controller output range. For a DeltaV control block, this corresponds to the
+        percent change in OUT. The PV change (<em>a</em>) is largest during
+        initialization (that is, during the first oscillation period). Typically, the
+        PV change ranges from 1 to 3 percent of the PV range.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_467335AAD05D403C9A0F73DEECED5137"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_467335AAD05D403C9A0F73DEECED5137"></a><div><span class="figcap">Relay Output and Process Output During Tuning</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_2DC2F317D41D41878AE7AA19EABFE8A0"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_2DC2F317D41D41878AE7AA19EABFE8A0" src="ichelp0037.gif" />
+      </div>
+
+      <p>Oscillations must continue for at least one period after
+        initialization. If more periods are used for tuning, the average amplitude of
+        the oscillations is used to determine the Ultimate Gain. InSight uses two
+        tuning periods by default and defines the amplitude of the oscillations as the
+        average amplitude.
+      </p>
+ 
+      <p>During the oscillation periods after initialization (the tuning
+        periods), relay switching is disabled at the start of each half period to
+        increase the tuner&#39;s resistance to noise. The duration that the relay switching
+        is disabled depends on the deadtime of the tuned loop, which is defined during
+        the initialization period.
+      </p>
+ 
+    </div>
+
+    <div class="section" id="concept_3C68FB9284AD4300ACAB035599806D1D__section_22F6306BE691457E805CD2B45D6D76B3"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__section_22F6306BE691457E805CD2B45D6D76B3"></a><h2 class="sectiontitle">Relay Hysteresis </h2>
+      
+      <p>For very noisy processes, you can adjust the amount of relay
+        hysteresis for additional noise protection. With hysteresis, the relay switches
+        only if the PV passes through the SP by a specified amount.
+      </p>
+ 
+      <p>Under stable conditions, the relationship of input and output can be
+        expressed by the transfer function. Generally, a process transfer function can
+        be represented by a magnitude (or amplitude) and an angle (or phase shift).
+        When the frequency varies from 0 to infinity, the transfer function changes.
+        The resulting curve is called the 
+        <strong>Nyquist curve</strong>. The following figure shows a typical Nyquist
+        curve for a control loop at the tuning.
+      </p>
+ 
+      <div class="fignone" id="concept_3C68FB9284AD4300ACAB035599806D1D__fig_73B1E40798A142E2872D227D4DED352D"><a name="concept_3C68FB9284AD4300ACAB035599806D1D__fig_73B1E40798A142E2872D227D4DED352D"></a><div><span class="figcap">Example of a Nyquist Curve</span></div>
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_003268406ABB4025B4213EBE7083D106"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_003268406ABB4025B4213EBE7083D106" src="ichelp0038.gif" />
+      </div>
+
+      <p>For a relay with hysteresis, the describing function, 
+        <em>N</em>(<em>a</em>), defines the relationship between the relay input
+        and the output.
+      </p>
+ 
+      <p> 
+        <a name="concept_3C68FB9284AD4300ACAB035599806D1D__image_807DCD9C7BB3428DB47A8FCF9C2FFFE5"></a><img id="concept_3C68FB9284AD4300ACAB035599806D1D__image_807DCD9C7BB3428DB47A8FCF9C2FFFE5" src="ichelp0039.gif" /> 
+      </p>
+ 
+      <p>Where:
+      </p>
+ 
+      <p> 
+        <em>N</em>(<em>a</em>) is the describing function of the relay.
+      </p>
+ 
+      <p> ε is the relay hysteresis.
+      </p>
+ 
+      <p> 
+        <em>d</em> is the relay amplitude.
+      </p>
+ 
+      <p> 
+        <em>a</em> is the amplitude of the oscillation of the process variable
+        (PV).
+      </p>
+ 
+      <p> 
+        <em>i</em> is the imaginary component.
+      </p>
+ 
+      <p> 
+        <em>N</em>(<em>a</em>) amplitude is considered an approximation for the
+        Ultimate Gain. Note that with hysteresis, ε=0, 
+        <em>N</em>(<em>a</em>) is exactly the Ultimate Gain, as shown in the above
+        formula.
+      </p>
+ 
+      <p>However, with hysteresis, the frequency and gain determined by the
+        oscillation are not exactly the Ultimate Period and the Ultimate Gain. As
+        illustrated in the above figure, the hysteresis introduces an error in defining
+        the critical point of the Nyquist curve.
+      </p>
+ 
+      <p>To prevent the introduction of additional errors, only set the relay
+        hysteresis when InSight will be operating in an extremely noisy environment.
+      </p>
+ 
+    </div>
+
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_insight_dvtune_using.html">Using Tune with InSight</a><br />
+</li>
+<li class="ulchildlink"><a href="c_insight_dvtune_apps.html">Tune with InSight Application Guidelines</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

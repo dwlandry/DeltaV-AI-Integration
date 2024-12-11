@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Composite Ff status values" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="c_historical_data_retrieval.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_composite_ff_status_values" name="DC.Identifier" /><title>Composite Ff status values</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_data_compression.html" /><link rel="next" href="c_composite_historian_status_values.html" /></head><body class="fixed" id="c_composite_ff_status_values" data-relpath="c_composite_ff_status_values.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_composite_ff_status_values"></a>
+
+<h1 class="topictitle1">Composite Ff status values</h1>
+<div><div></div>
+ 
+    <p>Certain aggregate functions used in 
+      <em>read processed</em> data requests involve picking a single raw sample
+      from each subinterval as the information returned for the whole subinterval;
+      for example, minimum value, maximum value, first raw sample, etc. In these
+      cases, the Ff status of the raw sample picked is also returned. 
+    </p>
+ 
+    <p>Other aggregate functions involve the computation of a result that can
+      involve more than one raw sample; for example, an interpolated value at start
+      of interval, a time-weighted average. In these cases, a 
+      <em>composite</em> Ff status is returned which summarizes the Ff status
+      values for the raw samples involved in the computation. 
+    </p>
+ 
+    <p><em>Read raw</em> data requests also return a 
+      <em>composite</em> Ff status for the boundary samples when the boundary
+      specification requested is 
+      <em>interpolated</em>. 
+    </p>
+ 
+    <p>Ff status values comprise three component values: 
+    </p>
+ 
+    <p><strong>Quality</strong> 
+    </p>
+ 
+    <a name="c_composite_ff_status_values__ul_2675FF808D3F4E068283C9112A19DFA2"></a><ul id="c_composite_ff_status_values__ul_2675FF808D3F4E068283C9112A19DFA2"> 
+      <li id="c_composite_ff_status_values__li_0C7590A7971B47EC8CEA9EC1D624A656"><div class="li_content"> Bad
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_6E2874168EAD48ADA551E75432D6B68D"><div class="li_content"> Uncertain 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_624AEA602E8A44EFAF8D74F6B9C83928"><div class="li_content">GoodCascade 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_C89A2B6998074AAFB63C462D4B4FB422"><div class="li_content">GoodNonCascade 
+      </div></li>
+ 
+    </ul>
+ 
+    <p><strong>Substatus</strong> 
+    </p>
+ 
+    <a name="c_composite_ff_status_values__ul_77B72668AC154E158D4C847E3A8A6246"></a><ul id="c_composite_ff_status_values__ul_77B72668AC154E158D4C847E3A8A6246"> 
+      <li id="c_composite_ff_status_values__li_BA4CD5F92BB946629A5158E96F51D70C"><div class="li_content">NonSpecific 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_39CBC38999E34D6AA3C97FF6F0B4B1F0"><div class="li_content">Other values whose
+        interpretation depends on Quality 
+      </div></li>
+ 
+    </ul>
+ 
+    <p><strong>Limits</strong> 
+    </p>
+ 
+    <a name="c_composite_ff_status_values__ul_C0A59421FD324607B617EC00FAD22DF6"></a><ul id="c_composite_ff_status_values__ul_C0A59421FD324607B617EC00FAD22DF6"> 
+      <li id="c_composite_ff_status_values__li_5C45A15502F44F5AAF74BB857124AF80"><div class="li_content">Constant 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_3BE368EC46544E10A8D1386E6006A399"><div class="li_content">HighLimited 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_3EC7B3ABEB2E4981BC4F7ADC6819ED7A"><div class="li_content">LowLimited 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_B07EB5B00EFE406898A3773CE0D23228"><div class="li_content">NotLimited 
+      </div></li>
+ 
+    </ul>
+ 
+    <div class="p">The composite Ff status value returned is a value representing the 
+      <em>worst</em> of individual Ff status values seen. Specifically, each part
+      of the composite Ff status is computed separately as follows: 
+    <a name="c_composite_ff_status_values__ul_53D84ED68D8F483BA630BDCD7070E9CC"></a><ul id="c_composite_ff_status_values__ul_53D84ED68D8F483BA630BDCD7070E9CC"> 
+      <li id="c_composite_ff_status_values__li_048CBE11115F40118C0A1E2E74EC7A21"><div class="li_content"><strong>Quality</strong> – The
+        composite Quality value is the worst of Quality values of all the raw sampled
+        involved. As such: 
+        <a name="c_composite_ff_status_values__ul_7F4385EC92514710844017B7980B3519"></a><ul id="c_composite_ff_status_values__ul_7F4385EC92514710844017B7980B3519"> 
+          <li id="c_composite_ff_status_values__li_F522607484154666BAA9B5BD33E1E507"><div class="li_content">GoodCascade is 
+            <em>worse</em> than GoodNonCascade 
+          </div></li>
+ 
+          <li id="c_composite_ff_status_values__li_8548854152B44FB18E2C54DF8486C4B8"><div class="li_content">Uncertain is 
+            <em>worse</em> than Good Cascade 
+          </div></li>
+ 
+          <li id="c_composite_ff_status_values__li_A25C9ECEBC714AE9A5CC6D779BABAE31"><div class="li_content">Bad is 
+            <em>worse</em> than Uncertain 
+          </div></li>
+ 
+        </ul>
+ 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_4E1FC3B0D0974BE09C987BD066A1D5FD"><div class="li_content"><strong>Substatus</strong> – If the
+        Quality value AND the Substatus value of all the raw samples involved are
+        exactly the same, the Substatus is that same value; otherwise a Substatus value
+        of NonSpecific is returned. 
+      </div></li>
+ 
+      <li id="c_composite_ff_status_values__li_B74848A2658D438BAD4A1ECF66AB21C7"><div class="li_content"><strong>Limits</strong> – The
+        composite Limit value is a 
+        <em>Limit value OR</em> function of all the individual Limit values from
+        the raw samples involved. 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

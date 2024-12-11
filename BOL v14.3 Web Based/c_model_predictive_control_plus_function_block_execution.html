@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional Plus function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="MPCPlus function block, block execution" name="DC.subject" /><meta content="MPCPlus function block, block execution" name="keywords" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_214" name="DC.Identifier" /><title>Model Predictive Control Professional Plus function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_mpcplus.html" /><link rel="next" href="c_model_predictive_control_plus_function_block_configuration.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_214" data-relpath="c_model_predictive_control_plus_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214"></a>
+
+<h1 class="topictitle1"> Model Predictive Control Professional Plus function block
+	 execution</h1>
+<div> 
+	 <p>When implementing a multivariable control strategy, the process&#39;s
+		Manipulated and Disturbance inputs and Controlled outputs are defined in the
+		MPCPlus function block. This block can replace conventional implementations
+		involving decoupling, feedforward control, override control, and complex
+		dynamics. An essential part of the MPCPlus block is an LP (Linear Programming)
+		optimizer that can set control targets to satisfy cost or profit objectives and
+		dynamic objectives accounting for the process constraints. 
+	 </p>
+ 
+	 <p>The target mode of the MPCPlus function block and the status of the
+		block&#39;s inputs determine the actual mode of the MPCPlus block and the output
+		status. In addition, because of the communication between the downstream
+		function blocks and the MPCPlus function block, the previous status of the
+		downstream blocks influences the mode of the MPCPlus block. 
+	 </p>
+ 
+	 <p> For every scan, the MPCPlus algorithm and the LP optimizer executes in
+		the following order: 
+	 </p>
+ 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ol_CD987CD2CAB647DCB9E310B8EB418C2E"></a><ol id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ol_CD987CD2CAB647DCB9E310B8EB418C2E"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_0EAADA7A6A374D20934D0A315659CDE4"><div class="li_content"> The MPCPlus block evaluates
+		  the actual mode based on the target mode and the status of block inputs. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_0CDF10D7FAF24953B734782A7EC183DA"><div class="li_content"> The MPCPlus algorithm
+		  predicts the future trajectories of the process outputs taking into account the
+		  predictions from the previous scan, the process input changes that were
+		  implemented in that scan, the and measurements at the current scan. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_5321ADD959CF482AB376307DA3E4ED0E"><div class="li_content"> The LP Optimizer calculates
+		  and transfers the MV targets and CV target setpoints to the MPCPlus algorithm,
+		  to optimally handle constraints and satisfy economic objectives. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_C22B1B85D80945D99EB78C5802AF88AA"><div class="li_content"> The MPCPlus algorithm
+		  compares the current value of predicted process outputs (control parameters) to
+		  the optimal target trajectories. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_440C4FEB61B74621879AFAE78E89879C"><div class="li_content"> The MPCPlus algorithm
+		  determines the Manipulated parameters&#39; future move plan that satisfies the
+		  optimizer MV final targets and CV trajectories without violating MV limits over
+		  all of the move plan&#39;s future moves. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_26AC8A128B474A84897742DF6F8B7A1D"><div class="li_content"> The MPCPlus block
+		  implements the first MV moves as calculated in the move plan. 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_6B8158497BC4497A8E917C1CB573770A"><div class="li_content"> The MPCPlus block
+		  determines the status and value for block outputs update. Calculate variability
+		  and time at or above limits for performance monitoring. 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__section_24B6EF7BCB65409190E1C9BD95A71EA4"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__section_24B6EF7BCB65409190E1C9BD95A71EA4"></a><h2 class="sectiontitle"> Evaluate actual mode</h2> 
+		 
+		<p> The MPCPlus block actual mode is based on the following: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ul_67B8A4396D794FC1880F2CFC6C02A093"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ul_67B8A4396D794FC1880F2CFC6C02A093"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_C11E8B5EF8BC4A2B85F5540CD1FDC14A"><div class="li_content"> Target Mode 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_C979FCE3408943BCB046F8705B1F6DA9"><div class="li_content"> Status attribute of the
+			 MV back calculation input parameter 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_8EFE50975C0443A49D60F59E5F3D6337"><div class="li_content"> Status attribute of CV
+			 and DV input parameter 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_914BC70AC289432FB666BCE03EF91E70"><div class="li_content"> Status of remote setpoint
+			 value(s) and time since updated 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_8FEB60445B7345909CF9A2D7D937A853"><div class="li_content"> Failure Action configured
+			 for MV, CV and DV 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_4AAF7C7559AE4DC4A868FE92D89C7893"><div class="li_content"> STATUS_OPTS selection for
+			 treating Uncertain as Good or Bad 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_A2F7F3DB010E42D7A0DBDB6EE340E954"><div class="li_content"> State of MPCPlus model
+			 download 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_13A9404FEEE947B6AADB90606030041C"><div class="li_content"> Based on these
+			 conditions, the actual block mode must be calculated before the MPCPlus
+			 algorithm executes. The actual mode influences the path taken in the MPCPlus
+			 algorithm execution. 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__section_26ED06CA379542D983F9FC05437E625C"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__section_26ED06CA379542D983F9FC05437E625C"></a><h2 class="sectiontitle">Mode evaluation order</h2> 
+		 
+		<p> The actual mode of the MPCPlus block must be determined after all
+		  inputs are read but before the MPCPlus control algorithm is executed. The
+		  following figure shows the conditions that are determined in the block before
+		  the actual mode is calculated. 
+		</p>
+ 
+		<div class="p">
+		  <div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__fig_3C2A028EDDC343A2AC1F2AAB522CAD39"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__fig_3C2A028EDDC343A2AC1F2AAB522CAD39"></a><div><span class="figcap">Block conditions before actual mode calculation</span></div>
+			 <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__image_F58F15E85AD842A88287A99502DC11D7"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__image_F58F15E85AD842A88287A99502DC11D7" src="BlockCondBeforeActMode.png" /></div><br />
+		  </div>
+
+		</div>
+ 
+		<p> The conditions that impact mode are evaluated before executing the
+		  MODE calculation. These conditions are evaluated in the following order: 
+		</p>
+ 
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ol_B624835DD5014391B63F8B6190DC9BBA"></a><ol id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ol_B624835DD5014391B63F8B6190DC9BBA"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_C41E4B04B4234777B46D9E450C958E7C"><div class="li_content"><strong>No Model</strong> - If the
+			 process model has not been downloaded for this block, then the No Model flag is
+			 set. Otherwise this flag is cleared. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_430254A87F20496ABA7AAF5F5B4CCF41"><div class="li_content"><strong>Bad Control Input: 
+			 </strong> 
+			 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ul_3346C189C6774A568FC89BE5D74B2033"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__ul_3346C189C6774A568FC89BE5D74B2033"> 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_C27B6E6126DD46F78F922B32B12F4FFC"><div class="li_content"> If the status of one
+				  or more Control or Constraint parameters is Bad, Good Constant, or Uncertain
+				  (and the status option is configured to treat Uncertain as Bad) AND the Fail
+				  Condition for that input is Manual, then the Bad Control Input flag is set.
+				  Otherwise, the Bad Control Input Flag is cleared 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_229530C7634141E2BA4475F18F8F5C64"><div class="li_content"> If the input is Bad,
+				  Uncertain (and treated as Bad) or Good Constant, then take the configured fail
+				  action. 
+				</div></li>
+ 
+				<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_020696BAD5B04B3F8F0927C826FC8C4C"><div class="li_content"> If Simulate is
+				  defined as the Fail Condition, or the input has a status of constant (analyzer
+				  or manual input) then the associated model value from the last execution is
+				  passed to the MPCPro algorithm as the measured input. A Simulate timer is set
+				  (if not already set). Reset the Simulate time if none of the Control inputs are
+				  being simulated. 
+				</div></li>
+ 
+			 </ul>
+ 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_E3112CE0599A41DA88A6E5A8B5B31319"><div class="li_content"> 
+			 <strong>Simulate Too Long</strong> - The simulate timer is checked to see if it
+			 is set or cleared. If the Simulate timer exceeds the timeout limit based on
+			 time to steady state, then the Simulate Too Long flag is set. Otherwise, the
+			 Simulate Too Long flag is cleared. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_FD280ECAAD404F5EA8BC6C4397BFB4D5"><div class="li_content"><strong>Bad Disturbance
+				Input</strong> - If the status of one or more Disturbance parameters is Bad or
+			 Uncertain (and the status option is configured to treat Uncertain as Bad) AND
+			 the Fail Condition for that input is Manual, then the Bad Disturbance Input
+			 flag is set. Otherwise, the Bad Disturbance Input flag is cleared. If a
+			 Disturbance input is Bad and Hold Last Good is defined as the Fail Condition,
+			 then the input value used in the MPCPlus control is not updated. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_BA359A137F8A439DAE89BFD12F1F08E2"><div class="li_content"> 
+			 <strong>Bad Downstream</strong> - If no handshake has completed or the
+			 handshake associated with one or more of the Manipulated process inputs is
+			 incomplete (as a result of the back calculation inputs having a status of Bad
+			 or a status of Good Cascade Not Invited) and the associated Fail Condition for
+			 that input is Manual, then set the Bad Downstream flag. Otherwise, the Bad
+			 Downstream flag is cleared. If the handshake is incomplete and the Fail
+			 Condition is hold last good, then the last good back calculation input is
+			 passed as the current position of the MV to the MPCPlus algorithm. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_6BDDAFCA45724DF5B7703D38030B36FD"><div class="li_content"> 
+			 <strong>Remote Unavailable</strong> - If the target mode of the MPCPlus block
+			 is RCAS and the handshake with one or more of the RCAS inputs is not complete,
+			 then the Remote Unavailable flag is set. Otherwise, the Remote Unavailable flag
+			 is cleared. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_565FD33D20444B178F29285FC56293C1"><div class="li_content"> 
+			 <strong>Remote Timeout</strong> - If the actual mode of the MPCPlus block is
+			 RCAS, then a remote timer is set (if not already set) for each RCAS input that
+			 has not been updated since the last execution. If any of the RCAS timers exceed
+			 the limit based on the time to steady state, then the Remote Timeout flag is
+			 set. If the actual mode of the block is not RCAS, then the remote timers are
+			 reset. 
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_214__li_F61022BB14404E29A091CBEE263303CB"><div class="li_content"> 
+			 <strong>Test Active</strong> - Handshake is complete with downstream loops that
+			 will be required for automated testing and process identification is ready to
+			 start. While testing is active, the mode of the MPCPlus block transitions to LO
+			 to indicate to an operator that one or more MPCPlus outputs are automatically
+			 adjusted. 
+		  </div></li>
+ 
+		</ol>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

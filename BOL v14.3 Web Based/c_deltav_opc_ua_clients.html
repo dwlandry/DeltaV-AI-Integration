@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV OPC UA clients" name="DC.Title" /><meta content="c_opc_ua_specifications.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_for_opc_ua_client.html" name="DC.Relation" scheme="URI" /><meta content="c_opc_ua_and_the_deltav_system.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_deltav_opc_ua_clients" name="DC.Identifier" /><title>DeltaV OPC UA clients</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_deltav_opc_ua_servers.html" /><link rel="next" href="c_opc_ua_data_types.html" /></head><body class="fixed" id="c_deltav_opc_ua_clients" data-relpath="c_deltav_opc_ua_clients.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_deltav_opc_ua_clients"></a>
+
+<h1 class="topictitle1">DeltaV OPC UA clients</h1>
+<div> 
+	 <div class="p">DeltaV OPC clients contain the following subsystems: 
+	 <ul> 
+		<li><div class="li_content"><strong>OPC UA Physical Devices (PDTs):</strong> establish the communication
+		  link to a single OPC UA server through the server’s endpoint URL. The physical
+		  device stores the configuration information for a connection to an OPC UA
+		  server. Each physical device is typically configured to communicate with one
+		  server. In redundant network configurations, you can configure a secondary UA
+		  server as well. 
+		</div></li>
+ 
+		<li><div class="li_content"><strong>OPC UA Logical Devices:</strong> group related signals using common
+		  settings and define the interval at which the client gets data from the server.
+		  
+		</div></li>
+ 
+		<li><div class="li_content"><strong>OPC UA Signals: 
+		  </strong>map the client to an OPC UA variable node in the server address
+		  space. To use the server data in the DeltaV system, you need to assign function
+		  block parameters to the OPC UA signals. OPC UA signals include a signal tag.
+		  You assign a block parameter to an OPC UA signal tag using the 
+		  <span class="menucascade"><span class="uicontrol">Assign I/O</span> &gt; <span class="uicontrol">To Signal
+				Tag</span></span> command in Control Studio. 
+		  <p><img src="OPC_UA_signal_tag.png" /> 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>EIOC OPC UA client signal tags can only be assigned to function block
+		and module parameters assigned to that EIOC. These parameters can also be
+		referenced by other controllers or workstations. You can also use the signal
+		through external and internal references or blocks that support expressions
+		(for example, the CALC and Action blocks). 
+	 </p>
+ 
+	 <p> Workstation OPC UA client signal tags can only be assigned to function
+		block and module parameters assigned to that workstation. These parameters can
+		also be referenced by other controllers or workstations. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span> Performing a partial download on any of the following items
+		disconnects and reconnects the session even if no changes have been made: 
+		<ul> 
+		  <li><div class="li_content">OPC UA physical device (PDT) 
+		  </div></li>
+ 
+		  <li><div class="li_content">EIOC port using the OPC UA protocol 
+		  </div></li>
+ 
+		  <li><div class="li_content">Workstation OPC UA Client subsystem 
+		  </div></li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_opc_ua_specifications.html">DeltaV OPC UA server and client capacities</a></div>
+<div><a href="c_implementing_security_for_opc_ua_client.html">Implementing security for a DeltaV OPC UA client</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

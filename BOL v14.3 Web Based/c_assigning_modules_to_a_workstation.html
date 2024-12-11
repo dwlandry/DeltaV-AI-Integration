@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Assigning modules to a workstation" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="modules, assigning to a workstation" name="DC.subject" /><meta content="modules, assigning to a workstation" name="keywords" /><meta content="r_capacity_limits_for_workstations.html" name="DC.Relation" scheme="URI" /><meta content="c_dst_counting_in_workstations.html" name="DC.Relation" scheme="URI" /><meta content="c_module_template_library.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_assigning_modules_to_a_workstation" name="DC.Identifier" /><title>Assigning modules to a workstation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_editing_the_module_in_deltav_explorer.html" /><link rel="next" href="c_workstations.html" /></head><body class="fixed" id="c_assigning_modules_to_a_workstation" data-relpath="c_assigning_modules_to_a_workstation.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_assigning_modules_to_a_workstation"></a>
+
+<h1 class="topictitle1">Assigning modules to a workstation</h1>
+<div><div></div>
+ 
+	 <p>The DeltaV system is comprised of workstations, controllers and I/O, and
+		the control network. The controllers execute the control strategies for their
+		assigned control modules. Certain workstations also provide the ability to host
+		control modules and execute their associated control strategies. This
+		functionality in the workstation is called the virtual controller. The virtual
+		controller is available on the ProfessionalPLUS<span> and
+		  Application Station 
+		</span>workstation<span> types</span> where the workstation may
+		be used as another controller; that is, performing the same function as a
+		physical controller by allowing control modules to run on the workstation. 
+	 </p>
+ 
+	 <p>Using the workstation as a virtual controller allows you to keep
+		controller resources available for other control processes. The virtual
+		controller should be used to host supervisory or data acquisition control
+		strategies, where execution of the control strategy is not critical. The
+		Windows operating system running in the workstation is not a real-time
+		operating system like the operating system in the physical controller, and thus
+		the virtual controller should not be used for real-time control. Typical
+		control modules assigned to the virtual controller include control strategies
+		using OPC data values or Bailey Connect interface blocks. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> For a workstation acting as a virtual controller, it is not advised
+		  to construct configurations that drive the HPCTONTIME, MPCTONTIME, and
+		  LPCTONTIME parameters in Diagnostics to a value less than a constant 100%. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>The virtual controller is represented in the DeltaV system by the
+		Assigned Modules subsystem on the ProfessionalPLUS<span> or
+		  Application Station</span>. There is one virtual controller per Assigned Modules
+		subsystem. 
+		<span>The number of virtual controllers in a DeltaV system is
+		  limited by the number of ProfessionalPLUS and Application Stations available in
+		  the system.</span> 
+	 </p>
+ 
+	 <p>To configure the virtual controller, open DeltaV Explorer and expand the
+		ProfessionalPLUS<span> or Application Station</span> node. Select and
+		right-click Assigned Modules, and then select 
+		<span class="uicontrol">Assign</span> from the context menu. Select Area (all
+		modules in the area are assigned to the workstation), Process Cell (all modules
+		in the process cell are assigned to the workstation), or Modules (individual
+		modules are assigned to the workstation). Finally, download the workstation.
+		The virtual controller supports running significantly more control modules than
+		the physical controller due to the greater processing and memory capability of
+		the workstation. 
+	 </p>
+ 
+	 <p>The following table lists the function blocks that are allowed in a
+		control module assigned to a virtual controller. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> If the control module contains a function block that is not listed
+		  here, the module cannot be successfully downloaded to a workstation. 
+		</p>
+ 
+	 </div>
+ 
+	 
+<div class="tablenoborder"><a name="c_assigning_modules_to_a_workstation__assign_modules_to_workstation"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_assigning_modules_to_a_workstation__assign_modules_to_workstation" rules="all" summary=""><caption><span class="tablecap">Function blocks allowed in ProfessionalPLUS<span> and
+		  Application stations</span></span></caption><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" id="d801042e81" valign="top" width="21.88183807439825%"> 
+				<p>Function block name 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d801042e87" valign="top" width="37.417943107221%"> 
+				<p>Description 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d801042e93" valign="top" width="40.70021881838075%"> 
+				<p>Comments 
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Advanced Control palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>DIAG 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Diagnostic 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> INSPECT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Inspect Data Block 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> LE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Lab Entry 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>MPC Analyzer Template 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>MPC Analyzer Template 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>MPC_INREF 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>MPC Input Reference 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>MPC_OUTREF 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>MPC Output Reference 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> MPC-PRO 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> MPCPro 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> MPC_SIM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> MPC Process Simulator 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Advanced Functions palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>AVTR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Analog Voter 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>CEM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Cause and Effect Matrix 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>DVTR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Discrete Voter 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>STD 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>State Transition Diagram 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SEQ 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Step Sequencer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Analog Control palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>AT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Analog Tracking 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>BG 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Bias/Gain 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> CALC 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Calc/Logic 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>DT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Deadtime 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>ERAMP 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Enhanced Ramp 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>FLTR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Filter 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ISEL 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Input Selector 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>MANLD 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Manual Loader 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>LL 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Lead/Lag 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>LIM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Limit 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>PID<a href="#fntarg_1" name="fnsrc_1"><sup>1</sup></a> 
+				  <a href="#fntarg_2" name="fnsrc_2"><sup>2</sup></a> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>PID 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>RAMP 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Ramp 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>RTLM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Rate Limit 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SCLR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Scaler 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> SGCR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Signal Characterizer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> SGGN 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Signal Generator 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SGSL 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Signal Selector 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SPLTR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Splitter 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Energy metering</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> AGA_SI 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Flow Metering in SI engineering units 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>AGA_US 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Flow Metering in US engineering units 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>ISE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Isentropic Expansion 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SST 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Saturated Steam Properties - Given Temperature 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>TSS 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Saturated Temperature 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>SDR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Steam Density Ratio 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>STM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Steam Properties 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>WTH 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Water Enthalpy 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>WTS 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>Water Entropy 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>IO palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ALM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Alarm Detection 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> AI 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Analog Input 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>AO 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Analog Output 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> DI 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Discrete Input 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> DO 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Discrete Output 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> PIN 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Pulse Input 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+				<p>Not supported by OPC UA workstation clients. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Logical palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ACT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Action 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> AND 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> And 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> BDE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Bi-Directional Edge Trigger 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> BFI 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Boolean Fan In 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> BFO 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Boolean Fan Out 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> CND 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Condition 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> DC 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Device Control 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> DCC 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Device Control Condition 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>EDC 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p>EDC 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> MLTX 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Multiplexer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> NDE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Negative Edge Trigger 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> NOT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Not 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> OR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Or 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> PDE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Positive Edge Trigger 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> RS 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> RS Flip-Flop 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> SR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> SR Flip-Flop 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> XFR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Transfer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Math palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ABS 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Absolute Value 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ADD 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Add 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> ARTHM 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Arithmetic 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> CMP 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Comparator 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p>DIV 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Divide 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> INT 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Integrator 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> MLTY 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Multiply 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> SUB 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Subtract 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" colspan="3" headers="d801042e81 d801042e87 d801042e93 " valign="top"> 
+				<p><strong>Timer Counter palette</strong> 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> CTR 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Counter 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> DTE 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Date Time Event 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> OFFD 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Off-Delay Timer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> OND 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> On-Delay Timer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> RET 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Retentive Timer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d801042e81 " valign="top" width="21.88183807439825%"> 
+				<p> TP 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e87 " valign="top" width="37.417943107221%"> 
+				<p> Timed Pulse 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d801042e93 " valign="top" width="40.70021881838075%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="r_capacity_limits_for_workstations.html">Capacity limits for workstations</a></div>
+<div><a href="c_dst_counting_in_workstations.html"> I/O signal-bearing parameters in modules assigned to
+	 workstations</a></div>
+</div>
+</div><div class="p"><a href="#fnsrc_1" name="fntarg_1"><sup>1</sup></a>  PID blocks assigned to workstations only support the IMAN
+					 mode when the system is based on a User System Identifier.</div><div class="p"><a href="#fnsrc_2" name="fntarg_2"><sup>2</sup></a>  PID blocks remain in IMAN mode when used with workstation OPC
+					 UA clients.</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

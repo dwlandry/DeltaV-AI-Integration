@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Working with DeltaV Operate objects" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="vba_making_connections.html" name="DC.Relation" scheme="URI" /><meta content="vba_animation_properties_and_methods.html" name="DC.Relation" scheme="URI" /><meta content="configuring_etc_for_adding_removing_pens_at_runtime.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_working_with_ifix_objects" name="DC.Identifier" /><title>Working with DeltaV Operate objects</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_guidelines_for_using_asynchronous_methods_and_subroutines_in_ifix_scripts.html" /><link rel="next" href="vba_making_connections.html" /></head><body class="fixed" id="vba_working_with_ifix_objects" data-relpath="vba_working_with_ifix_objects.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_working_with_ifix_objects"></a>
+
+<h1 class="topictitle1">Working with DeltaV Operate objects</h1>
+<div><div></div>
+
+    <p id="vba_working_with_ifix_objects__WorkingwithDeltaVOperateObjects"><a name="vba_working_with_ifix_objects__WorkingwithDeltaVOperateObjects"></a>The integration of VBA into DeltaV Operate provides you with additional control and flexibility to develop, manipulate, and animate objects and graphics in DeltaV Operate. This is important since objects make up a large part of your application.</p>
+
+    <p>This chapter gives you some specific examples on how you can use VBA scripting to enhance the performance of objects in your application. It also gives you helpful tips for working with objects and their characteristics.</p>
+
+    <div class="section" id="vba_working_with_ifix_objects__VBAObjectCountLimit"><a name="vba_working_with_ifix_objects__VBAObjectCountLimit"></a><h2 class="sectiontitle">VBA Object Count Limit</h2>
+      
+      <p>Microsoft currently limits the amount of VBA controls to 1207 per project. A picture is considered a VBA project. The current version of DeltaV Operate provides a VBA Object Count warning that notifies you when you are approaching the maximum level.</p>
+
+      <p>After creating your 1147th control, DeltaV Operate provides a dialog box notifying you that you are approaching the maximum allowed and should begin to remove unnecessary controls. If you continue to create scripts without removing them, you will continue to receive the warning. If you try to create your 1208th control, DeltaV Operate notifies you that the script cannot be created. To continue adding scripts, you must remove some VBA controls.</p>
+
+    </div>
+
+    <div class="section" id="vba_working_with_ifix_objects__ObjectAvailabilityintheVBEditor"><a name="vba_working_with_ifix_objects__ObjectAvailabilityintheVBEditor"></a><h2 class="sectiontitle">Object Availability in the VB Editor</h2>
+      
+      <p>To make a single object available in the VB Editor:</p>
+
+      <a name="vba_working_with_ifix_objects__ol_7B49C5E43F794D7FB784C6E84B8165CD"></a><ol id="vba_working_with_ifix_objects__ol_7B49C5E43F794D7FB784C6E84B8165CD">
+        <li id="vba_working_with_ifix_objects__li_2225AEE0297245CB8A7F34D067E188EC"><div class="li_content">
+          <p>Select the object in the picture.</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_2D2D59A589054119845A2D0CDFEEEE64"><div class="li_content">
+          <p>Select Edit Script from the right-click menu.</p>
+
+        </div></li>
+
+      </ol>
+
+      <p>To make a group of objects available in the VB Editor:</p>
+
+      <a name="vba_working_with_ifix_objects__ol_666623A8BFED4A30B965D642FABE2C68"></a><ol id="vba_working_with_ifix_objects__ol_666623A8BFED4A30B965D642FABE2C68">
+        <li id="vba_working_with_ifix_objects__li_5E56123DEF974F6F8760BE5DBEFA4308"><div class="li_content">
+          <p>Select the group of objects in the picture.</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_713396D3F16A49D1BD12B58CEC02B64F"><div class="li_content">
+          <p>Select Enable Scripts from the right-click menu.</p>
+
+        </div></li>
+
+      </ol>
+
+      <div class="note"><span class="notetitle">Note:</span> 
+        <p> When you select Enable Scripts, DeltaV Operate adds the objects to the VBA project, but does not start the VB Editor. Objects that are visible, such as rectangles and ovals, are not automatically available in the Editor.</p>
+
+      </div>
+
+      <p>For optimization purposes, if you choose not to tie a script to the object, it does not remain available after you close the picture. You will have to select it again in the picture and add the objects to the VBE if you want to use them in a script.</p>
+
+      <p>You can, however, forward-reference objects that are not available in the VBE. For example, you can write a script tied to Rect1 that references Oval1, as shown in the following example:</p>
+
+      <pre class="pre">
+Oval1.Visible = False
+</pre>
+
+      <p>The above code is acceptable even when Oval1 is not available to the VBE. The only difference in the VBE between objects that are available and objects that are not available is that the list of properties and methods available to the object appear when you type the period (.) after available objects. When forward-referencing objects, the objects will be added to the project when the picture is closed or saved.</p>
+
+      <p>The following objects are always available in the VBE:</p>
+
+      <a name="vba_working_with_ifix_objects__ul_CEE92B3B14D54E84ADA0492EBD02DD32"></a><ul id="vba_working_with_ifix_objects__ul_CEE92B3B14D54E84ADA0492EBD02DD32">
+        <li id="vba_working_with_ifix_objects__li_C95E333C1BEC440E9FECC49E453E3306"><div class="li_content">
+          <p>Timer objects</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_FF63039194914544962826B4A5432579"><div class="li_content">
+          <p>Event objects</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_61154DFE4A914C86B3697C110029646C"><div class="li_content">
+          <p>Buttons</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_7FFA4F3F46304D20B5BE8DC8E8F2ADE1"><div class="li_content">
+          <p>Dynamos</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_627D377EBB0C43E2B8B44C40C0063E9C"><div class="li_content">
+          <p>ActiveX controls</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_D2B8A79BF77D4EE398AD47B84E51C1D1"><div class="li_content">
+          <p>Variables</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_4E51AD0D49AF4E1D854D64205907D9A3"><div class="li_content">
+          <p>Any objects that have been added to the Global page</p>
+
+        </div></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section" id="vba_working_with_ifix_objects__TheDeltaVOperateObjectHierarchy"><a name="vba_working_with_ifix_objects__TheDeltaVOperateObjectHierarchy"></a><h2 class="sectiontitle">The DeltaV Operate Object Hierarchy</h2>
+      
+      <p>There is a general hierarchy of objects in DeltaV Operate. The individual objects, as well as all of their related properties, methods, and events, are described in much greater detail in the Object Summary Help Topic in the   Help file.</p>
+
+      <p>The Object Browser figure in the VBA Object Browser, shown later in this topic, is an image of the DeltaV Operate object hierarchy.  The top layers in the object hierarchy are the Application and the System objects. The Application object represents the DeltaV Operate application. The System object is on the same level as the Application object and contains system information, date, time pathways and so on.</p>
+
+      <p>The next level below the Application object is the documents object which is a collection of active documents within DeltaV Operate such as pictures, schedules and so on.</p>
+
+      <p>The third level in the object hierarchy is the Page Object, which may be a picture, dynamo set or scheduler object. If the page object is a picture, it can contain lines, rectangles and so on. If the page object is a Scheduler object, it might contain timer or event objects.</p>
+
+      <p>Animation objects are unique to DeltaV Operate pictures and do not apply to other document objects.</p>
+
+      
+    
+      <div class="fignone" id="vba_working_with_ifix_objects__fig_DDE7B5EB0AE94957905B399D694CB363"><a name="vba_working_with_ifix_objects__fig_DDE7B5EB0AE94957905B399D694CB363"></a><div><span class="figcap">DeltaV Operate Object Hierarchy Map
+      </span></div><a name="vba_working_with_ifix_objects__image_6864BED5DD4C4D3FA1E1650189200B35"></a><img id="vba_working_with_ifix_objects__image_6864BED5DD4C4D3FA1E1650189200B35" src="FDObjectModel1rev.gif" /></div>
+
+        
+        
+      
+      
+    </div>
+
+    <div class="section" id="vba_working_with_ifix_objects__ConnectingObjectstoDataSourcestoCreateAnimations"><a name="vba_working_with_ifix_objects__ConnectingObjectstoDataSourcestoCreateAnimations"></a><h2 class="sectiontitle">VBA Object Browser</h2>
+      
+      <p>In addition to the Automation Interfaces Help file, another great tool for visualizing the object hierarchy is the VBA Object Browser. The Object Browser displays the classes, properties, methods, events, and constants available from object libraries and the procedures in your project. You can use it to find and use objects you create, as well as all objects within DeltaV Operate. To launch the Object Browser in the VBE, press F2 or select the Object Browser command from the View menu.</p>
+
+      <div class="fignone" id="vba_working_with_ifix_objects__1001902"><a name="vba_working_with_ifix_objects__1001902"></a><div><span class="figcap">Object Browser</span></div>
+        
+        <a name="vba_working_with_ifix_objects__image_0B1F09F1290F4422B3CABDEDB2CC1001"></a><img id="vba_working_with_ifix_objects__image_0B1F09F1290F4422B3CABDEDB2CC1001" src="object_browser.gif" />
+      </div>
+
+      
+      </div>
+
+    <div class="section" id="vba_working_with_ifix_objects__section_2DA2DA3C2F82479B9DA3193CD6D07C22"><a name="vba_working_with_ifix_objects__section_2DA2DA3C2F82479B9DA3193CD6D07C22"></a><h2 class="sectiontitle">Connecting Objects to Data Sources to Create Animations</h2>
+      
+      <p>In order to animate the property of an object, you must connect that property to the data source that is providing the data. For example, if you want a tank to fill based on the output of a PLC connected to the tank, you would connect the vertical fill property of the tank&#39;s cylinder with the database point that contains the real-time value of the correct PLC address.</p>
+
+      <p>The transformation of data between objects occurs through <strong>animation objects</strong>. There are three types of animation objects:</p>
+
+      <a name="vba_working_with_ifix_objects__ul_A4DA9151BDA34428BB2E857634EE4162"></a><ul id="vba_working_with_ifix_objects__ul_A4DA9151BDA34428BB2E857634EE4162">
+        <li id="vba_working_with_ifix_objects__li_DB945DBC61C149A99AF94FEBB33D3298"><div class="li_content">
+          <p>
+            <strong>Linear</strong> – Converts data from one range of values to another, thereby performing signal conditioning. For example, if a data source has EGU limits from 0 to 65535, and a tank&#39;s fill percentage has a range of 0 to 100, the Linear object transforms the data source range to the tank&#39;s fill percentage range.</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_89E3439F548D458E9BDF0225D796D165"><div class="li_content">
+          <p>
+            <strong>Lookup</strong> – Uses a table structure to map either a range of values or exact values from a data source to a single value of the connected object&#39;s property. For example, if a data source has multiple alarm values, the Lookup object maps each alarm value to a rectangle&#39;s color. You can also set up a Lookup object to divide a range of values into levels or rows, and map those levels to a rectangle&#39;s color. The Lookup object also has a Toggle property that can be used for blinking colors.</p>
+
+        </div></li>
+
+        <li id="vba_working_with_ifix_objects__li_A9FCF4944F514A99B90DD31C81D7BBEB"><div class="li_content">
+          <p>
+            <strong>Format</strong> – Converts the source data into a string. When you set up a data source for a data link, for example, you actually create a Format object that transforms the data source into a string.</p>
+
+        </div></li>
+
+      </ul>
+
+      
+      <p>Visual Basic has many methods you can use to make connections to data sources. These various methods are detailed in the following sections.</p>
+
+    </div>
+
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="vba_making_connections.html">Making connections</a><br />
+</li>
+<li class="ulchildlink"><a href="vba_animation_properties_and_methods.html">Animation properties and methods</a><br />
+</li>
+<li class="ulchildlink"><a href="configuring_etc_for_adding_removing_pens_at_runtime.html"> 
+  <strong>Configuring Embedded Trend Controls for adding or removing pens at run
+	 time</strong> </a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Writing custom scripts for the Scheduler" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="adv_scheduler.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="adv_writing_custom_scripts_for_the_scheduler" name="DC.Identifier" /><title>Writing custom scripts for the Scheduler</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="adv_designing_schedules.html" /><link rel="next" href="adv_creating_picture_specific_help_files.html" /></head><body class="fixed" id="adv_writing_custom_scripts_for_the_scheduler" data-relpath="adv_writing_custom_scripts_for_the_scheduler.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="adv_writing_custom_scripts_for_the_scheduler"></a>
+
+<h1 class="topictitle1">Writing custom scripts for the Scheduler</h1>
+<div><div></div>
+
+    <p id="adv_writing_custom_scripts_for_the_scheduler__WritingCustomScriptsfortheScheduler"><a name="adv_writing_custom_scripts_for_the_scheduler__WritingCustomScriptsfortheScheduler"></a>The Scheduler provides Script Authoring Experts that generate a script that is executed when an entry triggers. These Experts are available for common tasks such as toggling a digital point or generating a report. You can also create custom scripts for tasks that you need to perform.</p>
+
+    <p>This section shows sample code that may be helpful when writing custom scripts for use with the Scheduler. For additional examples, use the VBE to view the code for the Experts, buttons, and forms supplied with DeltaV Operate. Refer to <a href="vba_intro.html">Writing Scripts</a> for detailed information on writing VBA scripts.</p>
+
+    <div class="section" id="adv_writing_custom_scripts_for_the_scheduler__ScriptAuthoringExpertSampleCode"><a name="adv_writing_custom_scripts_for_the_scheduler__ScriptAuthoringExpertSampleCode"></a><h2 class="sectiontitle">Script Authoring Expert Sample Code</h2>
+      
+      <p>The following properties store information that is passed between a Script Authoring Expert, the Scheduler, and DeltaV Operate:</p>
+
+      <a name="adv_writing_custom_scripts_for_the_scheduler__ul_0EBB3120A717422E905866BDB8D00C80"></a><ul id="adv_writing_custom_scripts_for_the_scheduler__ul_0EBB3120A717422E905866BDB8D00C80">
+        <li id="adv_writing_custom_scripts_for_the_scheduler__li_4C0C87E6245A43AEAE7A74A728525308"><div class="li_content">
+          <p>ProcedureObject.</p>
+
+        </div></li>
+
+        <li id="adv_writing_custom_scripts_for_the_scheduler__li_A8AEAFBF27854DE2A43464A69A85FE3F"><div class="li_content">
+          <p>EventProcedure.</p>
+
+        </div></li>
+
+        <li id="adv_writing_custom_scripts_for_the_scheduler__li_6F97E3D772DF47B4ACED05F68BA85E0E"><div class="li_content">
+          <p>Property1 through Property10.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>Only the following two properties have a specific purpose:</p>
+
+      <a name="adv_writing_custom_scripts_for_the_scheduler__ul_7065BD1BC32B433CBFCD88303966C3CE"></a><ul id="adv_writing_custom_scripts_for_the_scheduler__ul_7065BD1BC32B433CBFCD88303966C3CE">
+        <li id="adv_writing_custom_scripts_for_the_scheduler__li_2359A52339214A6EAAE6387926438E0C"><div class="li_content">
+          <p>
+            <strong>ProcedureObject</strong> – the Timer or Event entry to which the script will be attached. X For example, Event5 or Timer 3.</p>
+
+        </div></li>
+
+        <li id="adv_writing_custom_scripts_for_the_scheduler__li_0B432B24DE0A4D78BB40ACB7878BC5A0"><div class="li_content">
+          <p>
+            <strong>EventProcedure</strong> – the name of the event type that will trigger the script. For example, OnTrue.</p>
+
+        </div></li>
+
+      </ul>
+
+      <p>Property1 through Property10 are available to the Expert for operational parameters specific to the Expert. Initially, these parameters are passed from the Expert to the Scheduler, and do not appear in the Scheduler until after the script has been generated. For example, if the user re-enters the Expert, the Scheduler passes them back to the Expert, which can then use them to populate a form.</p>
+
+      <p>The following example shows the code behind the Toggle Digital Point Script Authoring Expert.</p>
+
+      <pre class="pre">
+Private Sub ToggleDigitalPointWizard_Click()
+    Dim CurrentObj As Object
+    Dim szEventName As String
+    
+    On Error GoTo ErrorHandler
+    
+    Application.DeActivateWorkspaceUI True, False
+
+<strong>&#39;Prevent this button from being used in a Picture document</strong> 
+    If InStr(1, Application.ActiveDocument.Type, &quot;FIXSchedule&quot;,_
+    vbTextCompare) = 0 Then
+        Application.ActivateWorkspaceUI
+        MsgBox &quot;This button is not for use.  Use the button _
+        from the Command Tasks category.&quot;
+        Exit Sub
+    End If
+
+<strong>&#39;Pass the timer or event object&#39;s ProcedureObject and</strong> 
+<strong>&#39;EventProceduure to the form 
+</strong>    Set CurrentObj = ToggleDigitalPointWizard.ProcedureObject
+    szEventName = ToggleDigitalPointWizard.EventProcedure
+
+<strong>&#39;The database tag is in Property1.  Enter the tag in the</strong> 
+<strong>&#39;form field 
+</strong>frmToggleDigitalPointCommand.ExpressionEditor1.EditText = 
+ToggleDigitalPointWizard.Property1
+
+<strong>&#39;Call a subroutine in the form that enters the ProcedureObject 
+</strong><strong>&#39;and EventProcedure as global variables so that the script in</strong> 
+<strong>&#39;the form can act on them</strong> 
+    Call 
+frmToggleDigitalPointCommand.GetSchedulerValues(CurrentObj, 
+szEventName)
+    frmToggleDigitalPointCommand.bCancel = False
+
+<strong>&#39;Open the form</strong> 
+    frmToggleDigitalPointCommand.Show
+    
+<strong>&#39;Pass the database tag back to the scheduler</strong> 
+    If frmToggleDigitalPointCommand.bCancel = False Then
+        ToggleDigitalPointWizard.Property1 = 
+frmToggleDigitalPointCommand.ExpressionEditor1.EditText
+    End If
+
+    Application.ActivateWorkspaceUI
+    Exit Sub
+    
+ErrorHandler:
+    HandleError
+
+End Sub
+
+</pre>
+
+      <p>The following example shows the code behind the Generate Report Script Authoring Expert.</p>
+
+      <pre class="pre">
+Private Sub GenerateReportWizard_Click()
+    Dim CurrentObj As Object
+    Dim szEventName As String
+    
+    On Error GoTo ErrorHandler
+
+    Application.DeActivateWorkspaceUI True, False
+    
+<strong>&#39;Prevent this button from being used in a Picture document</strong> 
+    If InStr(1, Application.ActiveDocument.Type, &quot;FIXSchedule&quot;, 
+vbTextCompare) = 0 Then
+        Application.ActivateWorkspaceUI
+        MsgBox &quot;This button is not for use.  Use the button _
+        from the Command Tasks category.&quot;
+        Exit Sub
+    End If
+    
+<strong>&#39;Pass the timer or event object&#39;s ProcedureObject and</strong> 
+<strong>&#39;EventProceduure to the form</strong> 
+    Set CurrentObj = GenerateReportWizard.ProcedureObject
+    szEventName = GenerateReportWizard.EventProcedure
+
+<strong>&#39;The Crystal Report name is in Property1.  Enter the report name</strong> 
+<strong>&#39;in the form field</strong> 
+    frmGenerateReportCommand.txtReport.Text = 
+GenerateReportWizard.Property1
+
+<strong>&#39;Call a subroutine in the form that enters the ProcedureObject</strong> 
+<strong>&#39;and EventProcedure as global variables so that the script in</strong> 
+<strong>&#39;the form can act on them</strong> 
+    Call frmGenerateReportCommand.GetSchedulerValues_
+    (CurrentObj, szEventName)
+    frmGenerateReportCommand.bCancel = False
+
+<strong>&#39;Open the form</strong> 
+    frmGenerateReportCommand.Show
+    
+<strong>&#39;Pass the Crystal Report name back to the scheduler</strong> 
+    If frmGenerateReportCommand.bCancel = False Then
+        GenerateReportWizard.Property1 = 
+frmGenerateReportCommand.txtReport
+    End If
+
+    Application.ActivateWorkspaceUI
+    Exit Sub
+    
+ErrorHandler:
+    HandleError
+
+End Sub
+</pre>
+
+    </div>
+
+    <div class="section" id="adv_writing_custom_scripts_for_the_scheduler__FormScriptSampleCode"><a name="adv_writing_custom_scripts_for_the_scheduler__FormScriptSampleCode"></a><h2 class="sectiontitle">Form Script Sample Code</h2>
+      
+      <p>The following example shows code that collects the name of the picture the user wants to display when the event is triggered, generates the script, and creates the event. The Procedures object is a collection of scripts. Before you generate the script, you need to get the index number for the next script using the GetEventHandlerIndex method. Once you generate the string that will become the script, use the AddEventHandler method to add the event.</p>
+
+      <pre class="pre">
+Private CurrentObject As Object
+Private EventName As String
+
+Public Sub GetCurrentObjectValues(obj, Str)
+    Set CurrentObject = obj
+    EventName = Str
+End Sub
+
+Private Sub CommandButton1_Click()
+
+<strong>&#39;get file name entered by user</strong> 
+Dim FileName As String
+FileName = TextBox1.Value
+
+Dim WorkingObj As Object
+Set WorkingObj = CurrentObject.Procedures
+
+<strong>&#39;Get the index for the procedure</strong> 
+Dim Index As Long
+Dim Found As Long
+WorkingObj.GetEventHandlerIndex EventName, Index, Found
+
+<strong>&#39;Generate code</strong> 
+Dim StringCode As String
+StringCode = &quot;Dim doc As Object&quot; &amp; Chr(13) _
+                &amp; &quot;Dim PicturePath As String&quot; &amp; Chr(13) _
+                &amp; &quot;PicturePath = &quot;&quot;c:\fix32\pic\&quot;&quot; &amp; FileName&quot; &amp; _
+                Chr(13) &amp; &quot;Set doc = _ 
+                Application.Documents.Open(PicturePath)&quot; &amp; Chr(13)
+
+<strong>&#39;Add the event 
+</strong>WorkingObj.AddEventHandler EventName, StringCode, Index
+
+<strong>&#39;Close the form 
+</strong>End
+
+End Sub
+</pre>
+
+    </div>
+
+    <div class="section" id="adv_writing_custom_scripts_for_the_scheduler__ButtonScriptSampleCode"><a name="adv_writing_custom_scripts_for_the_scheduler__ButtonScriptSampleCode"></a><h2 class="sectiontitle">Button Script Sample Code</h2>
+      
+      <p>The following example shows code for a button object called MyExpert that gets the timer or event object, the event trigger name, and picture name, if any, from the Add Event dialog box. It passes this information in to the form using the GetCurrentObjectValues procedure, and then displays the form.</p>
+
+      <pre class="pre">
+Private Sub MyExpert_Click()
+
+    Dim CurrentObj As Object
+    Dim EventName As String
+
+    <strong>&#39;Set procedure object, event name, and file name</strong> 
+    Set CurrentObj = MyExpert.ProcedureObject
+    EventName = MyExpert.EventProcedure
+    MyExpert.Property1 = frmOpenPicture.TextBox1.Value
+
+    <strong>&#39;Pass the object and event name into the form 
+</strong>    Call frmOpenPicture.GetCurrentObjectValues(CurrentObj,_
+    EventName)
+    frmOpenPicture.Show
+    frmOpenPicture.Hide
+End Sub
+</pre>
+
+    </div>
+
+    <div class="section" id="adv_writing_custom_scripts_for_the_scheduler__GeneratedScriptSampleCode"><a name="adv_writing_custom_scripts_for_the_scheduler__GeneratedScriptSampleCode"></a><h2 class="sectiontitle">Generated Script Sample Code</h2>
+      
+      <p>The following example shows the script that would be generated if you ran this Expert on the Timer7 object, using the OnTimeOut event.</p>
+
+      <pre class="pre">
+Private Sub Timer7_OnTimeOut(ByVal lTimerId As Long)
+Dim doc As Object
+Dim PicturePath As String
+PicturePath = &quot;c:\fix32\pic\&quot; &amp; FileName
+Set doc = Application.Documents.Open(PicturePath)
+End Sub
+</pre>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

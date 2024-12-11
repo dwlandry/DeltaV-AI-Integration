@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="State-driven module example" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="state-driven algorithms, example, algorithms, state-driven" name="DC.subject" /><meta content="state-driven algorithms, example, algorithms, state-driven" name="keywords" /><meta content="c_state_driven_algorithms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_state_driven_module_example" name="DC.Identifier" /><title>State-driven module example</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_state_driven_algorithms.html" /><link rel="next" href="c_standard_composite_blocks.html" /></head><body class="fixed" id="c_state_driven_module_example" data-relpath="c_state_driven_module_example.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_state_driven_module_example"></a>
+
+<h1 class="topictitle1">State-driven module example</h1>
+<div><div></div>
+
+    <p>An equipment module named REACTOR_OUTLET contains three control modules assigned to on-off valves: OUTLET, PRODUCT, and DRAIN.</p>
+
+    <p>REACTOR_OUTLET is based on a named set called OutletState. The OutletState named set has five states: Closed, Draining, Releasing_Product, Error, and In Transition. The In Transition state has a value of 255 which designates it as an undefined state. The named set used in a state-driven algorithm must contain a state with a value of 255 to designate an undefined condition. The system does not create a composite block for the undefined state.</p>
+
+    <p>The following table shows how the named set states correlate to the composite blocks.</p>
+
+    
+<div class="tablenoborder"><a name="c_state_driven_module_example__table_8F8161098C854EA8B96FD85511815C62"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_state_driven_module_example__table_8F8161098C854EA8B96FD85511815C62" rules="all" summary="">
+        
+        
+        
+        <thead align="left">
+          <tr>
+            <th class="cellrowborder" id="d1386696e56" valign="top" width="NaN%">
+              <p>Named set state</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e62" valign="top" width="NaN%">
+              <p>State value</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e68" valign="top" width="NaN%">
+              <p>State composite block</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="cellrowborder" headers="d1386696e56 " valign="top" width="NaN%">
+              <p>
+Closed
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e62 " valign="top" width="NaN%">
+              <p>
+1
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e68 " valign="top" width="NaN%">
+              <p>
+STATE_00001
+</p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td class="cellrowborder" headers="d1386696e56 " valign="top" width="NaN%">
+              <p>
+Draining
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e62 " valign="top" width="NaN%">
+              <p>
+2
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e68 " valign="top" width="NaN%">
+              <p>
+STATE_00002
+</p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td class="cellrowborder" headers="d1386696e56 " valign="top" width="NaN%">
+              <p>
+Releasing_Product
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e62 " valign="top" width="NaN%">
+              <p>
+3
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e68 " valign="top" width="NaN%">
+              <p>
+STATE_00003
+</p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td class="cellrowborder" headers="d1386696e56 " valign="top" width="NaN%">
+              <p>
+Error
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e62 " valign="top" width="NaN%">
+              <p>
+254
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e68 " valign="top" width="NaN%">
+              <p>
+STATE_00254
+</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>Add items at the module level that define how state changes drive specific contained module parameters. The following graphic shows the interface for adding items. When adding an item, you must provide an item name and browse to the parameters you want to write to and read from. In some cases the program supplies default parameter fields. For example, if you select a MODE parameter as a write path (without browsing to a specific field) and then click <span class="uicontrol">OK</span>, the program automatically uses the TARGET field as the write path and the ACTUAL field as the readback path.</p>
+
+    <p>Note that an item named DRAIN has already been added for the setpoint of the contained module named DRAIN. The number of items supported in the table depends in part on the number of states. The number of states multiplied by the number of items cannot exceed 2,048.</p>
+
+    
+    <p><a name="c_state_driven_module_example__image_A7D98594898F4AB7A0E96BA84F28E370"></a><img id="c_state_driven_module_example__image_A7D98594898F4AB7A0E96BA84F28E370" src="Image2.gif" /></p>
+<p>You can copy an existing item by selecting and right-clicking it, and then selecting <span class="uicontrol">Duplicate Item</span> from the context menu. The selected item is duplicated below the last item in the list and renamed ITEM<em>n</em>.</p>
+
+    <p>After you add an item, define the value that each state writes to the associated parameter by clicking on the value field under the state name in the table. When you click a field, the item name appears on the item&#39;s tab. It is also possible to manually enter values under the state names in online mode. If a value is entered manually, the algorithm uses the manually entered value at the appropriate state change. </p>
+
+    <p>Each item has a sequence number. The default is 0 (zero) meaning that they are written to without waiting for confirmation. You can assign each item a sequence number between 1 and 15 to define the execution order. Items are executed in sequence order, from lowest to highest.  Items with non-zero sequence numbers wait for all items with the previous sequence numbers to confirm. .</p>
+
+    <p>You can prevent a state from writing to a parameter by selecting and right-clicking the value field, and then selecting <span class="uicontrol">Don&#39;t Care</span> from the context menu. A check mark appears on the menu and the value field changes to three dashes (---). Setpoints set to <span class="uicontrol">Don&#39;t Care</span> are not driven. Readback is immediate for setpoints set to <span class="uicontrol">Don&#39;t Care</span>.</p>
+
+    <p>For this example, the following items are required:</p>
+
+    
+<div class="tablenoborder"><a name="c_state_driven_module_example__table_65E3EC8C5FFB43998A9CA3274A299829"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_state_driven_module_example__table_65E3EC8C5FFB43998A9CA3274A299829" rules="all" summary="">
+        
+        
+        
+        
+        
+        <thead align="left">
+          <tr>
+            <th class="cellrowborder" id="d1386696e227" valign="top" width="20%">
+              <p>Item name</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e233" valign="top" width="20%">
+              <p>Closed state</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e239" valign="top" width="20%">
+              <p>Draining state</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e245" valign="top" width="20%">
+              <p>Releasing_Product state</p>
+
+            </th>
+
+            <th class="cellrowborder" id="d1386696e251" valign="top" width="20%">
+              <p>Write path (contained module/parameter)</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="cellrowborder" headers="d1386696e227 " valign="top" width="20%">
+              <p>
+DRAIN
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e233 " valign="top" width="20%">
+              <p>
+0 (valve closed)
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e239 " valign="top" width="20%">
+              <p>1 (valve open)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e245 " valign="top" width="20%">
+              <p>0 (valve closed)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e251 " valign="top" width="20%">
+              <p>
+DRAIN/SETPOINT
+</p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td class="cellrowborder" headers="d1386696e227 " valign="top" width="20%">
+              <p>
+OUTLET
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e233 " valign="top" width="20%">
+              <p>
+0 (valve closed)
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e239 " valign="top" width="20%">
+              <p>1 (valve open)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e245 " valign="top" width="20%">
+              <p>1 (valve open)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e251 " valign="top" width="20%">
+              <p>
+OUTLET/SETPOINT
+</p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td class="cellrowborder" headers="d1386696e227 " valign="top" width="20%">
+              <p>
+PRODUCT
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e233 " valign="top" width="20%">
+              <p>
+0 (valve closed)
+</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e239 " valign="top" width="20%">
+              <p>0 (valve closed)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e245 " valign="top" width="20%">
+              <p>1 (valve open)</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1386696e251 " valign="top" width="20%">
+              <p>
+PRODUCT/SETPOINT
+</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>The default comparison between the Write and Readback values is equals (=). You may change this as follows: Select and right-click the value under the state name, and then click <span class="uicontrol">Set Operator</span>. This allows you to choose the comparison operator (=, &gt;, &gt;=, &lt;, &lt;=).</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> If the comparison involves a floating point number, it is recommended not to use the equals (=) operator because differences caused by rounding may occur, preventing the compared values from matching.</p>
+
+    </div>
+
+    <p>When viewing a state-driven module online, the items may be preceded by green check marks or red Xs. Items with red Xs have been driven but their readback has not been successful. Green check marks indicate the readback was successful. A blank indicates that the item has not been driven because it is waiting for items with lower sequence numbers to complete.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> If the write path for an item references a user-created parameter and you need to change the parameter type, delete the item first, change the parameter type and add a new item referencing the revised parameter.</p>
+
+    </div>
+
+    <p>The instructions in the underlying SFC are ordered based on the sequence number. You can take advantage of this sequencing when, for example, you need to change a mode before changing the value of a parameter. For example, an AI block mode must be in MANUAL mode before OUT.CV can be changed. You can change the display order, but that has no effect on execution order.</p>
+
+    <p>A write check failure on a single item inhibits the writing of any items for that state.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The order of items cannot be guaranteed if the write paths are in different controllers.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

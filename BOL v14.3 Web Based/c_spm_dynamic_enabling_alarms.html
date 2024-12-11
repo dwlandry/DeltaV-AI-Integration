@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Dynamic enabling and disabling of SPM alarms" name="DC.Title" /><meta content="SPM, dynamic enabling of alarms" name="DC.subject" /><meta content="SPM, dynamic enabling of alarms" name="keywords" /><meta content="c_rtm_spm_templates.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_239" name="DC.Identifier" /><title>Dynamic enabling and disabling of SPM alarms</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_spm_faceplate_variables.html" /><link rel="next" href="c_spm_configuration.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239" data-relpath="c_spm_dynamic_enabling_alarms.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239"></a>
+
+<h1 class="topictitle1">Dynamic enabling and disabling of SPM alarms</h1>
+<div> 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_1E03B041BB0D496E9C0E52CC3D0A0431"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_1E03B041BB0D496E9C0E52CC3D0A0431"></a> Situations may
+      exist where the monitored point is deliberately being operated outside its
+      normal operating range, or the process may be starting up or shutting down, or
+      the process may be transitioning from one operating regime to another. During
+      those times it may be desirable to disable alarms so operators don&#39;t experience
+      nuisance alarms. The CALC block has logic for dynamically enabling and
+      disabling alarms at run-time. The logic does this by changing the HI_ENAB and
+      LO_ENAB parameters of the AI blocks (RMT_SPM_HART) or the Alarm blocks
+      (RMT_SPM_FF). There are two separate criteria used to enable and disable
+      alarms. One is by an external reference, and the other is by operating the
+      process outside configured PV or Mean limits. 
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_4D6206C295054BADABEACB1C5B5F53AB"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_4D6206C295054BADABEACB1C5B5F53AB"></a><h2 class="sectiontitle"> Alarm Management by external reference </h2> 
+       
+      <p> The 
+        <em>ALARMS_ENABLED</em> configuration parameter in the template is used
+        to link the control module to an external reference used to toggle the SPM
+        alarms between the enabled and the disabled states. The value of this external
+        reference can be modified by a process parameter, or by an operator action. The
+        external reference is generally a logic statement in another control module. A
+        logic result of 
+        <em>0</em> (zero) disables alarms. A logic result of 
+        <em>1</em> (one) enables alarms. A single external reference can be used
+        to enable or disable the alarms from a single or multiple instances of SPM
+        modules. 
+      </p>
+ 
+      <p> The 
+        <em>ALARMS_ENABLED</em> configuration parameter enables and disables the
+        HI and LO alarms of all AI Blocks (AI1, MEAN, STDEV, CV). The parameter does
+        NOT enable or disable AI1 HIHI (HI_HI_ALM), AI1 LOLO (LO_LO_ALM), or PV_BAD
+        alarms. 
+      </p>
+<br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239__image_90D4585300984613B710F2278B0FDC1A"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239__image_90D4585300984613B710F2278B0FDC1A" src="rtm_spm_5.png" /></div><br />
+      
+    </div>
+ 
+    <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_6025C6179CA84ECB88388EB6B13F10BB"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239__section_6025C6179CA84ECB88388EB6B13F10BB"></a><h2 class="sectiontitle">Alarm management by PV or Mean</h2> 
+       The 
+      <em>PV_LIM_MODE</em> parameter disables and enables StDev or CV alarms
+      based on the PV or MEAN exceeding the HI or LO limit. The parameter 
+      <em>FP_VAR_1</em> (described in 
+      <em>Faceplate variables</em>) determines whether the PV or Mean limits are
+      used to enable or disable StDev and CV alarms.<br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_239__image_AA3D99BC2FF14184906896D53918E466"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_239__image_AA3D99BC2FF14184906896D53918E466" src="rtm_spm_6.png" /></div><br />
+      
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

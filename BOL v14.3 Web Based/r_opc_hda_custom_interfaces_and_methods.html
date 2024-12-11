@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="OPC HDA custom interfaces and methods" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="OPC HDA, OPC HDA, custom interfaces and methods" name="DC.subject" /><meta content="OPC HDA, OPC HDA, custom interfaces and methods" name="keywords" /><meta content="c_deltav_opc_history_server.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_opc_hda_custom_interfaces_and_methods" name="DC.Identifier" /><title>OPC HDA custom interfaces and methods</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_deltav_opc_history_server_com_objects.html" /><link rel="next" href="c_opc_historical_data_access_clients.html" /></head><body class="fixed" id="r_opc_hda_custom_interfaces_and_methods" data-relpath="r_opc_hda_custom_interfaces_and_methods.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_opc_hda_custom_interfaces_and_methods"></a>
+
+<h1 class="topictitle1">OPC HDA custom interfaces and methods</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_40C589C807F54323BE903DE04F1D4761"><a name="r_opc_hda_custom_interfaces_and_methods__section_40C589C807F54323BE903DE04F1D4761"></a> 
+      <p>Individuals writing programs to access the DeltaV Continuous Historian
+        historical data using the DeltaV OPC History Server should be familiar with the
+        OPC Historical Data Access Specification. 
+      </p>
+ 
+      <p>The DeltaV OPC History Server implements the following OPC HDA custom
+        interfaces and methods. 
+      </p>
+ 
+      <p><strong>IOPCCommon</strong> 
+      </p>
+ 
+      <div class="p">The IOPCCommon interface is defined in the OPC Common Definitions and
+        Interfaces specification. The following methods make up this interface: 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_AE52659C0E1A4DD8980D0C9B216A52D9"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_AE52659C0E1A4DD8980D0C9B216A52D9"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_1192C7C6708B4DADB479230E51A3BCFE"><div class="li_content">IOPCCommon::SetLocaleID 
+          <p>The only supported locale is English with a sublanguage of US
+            English. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_4C61F9E56F184A56BAF475052BC25924"><div class="li_content">IOPCCommon::GetLocaleID 
+          <p>The value returned from this method corresponds to English with a
+            sublanguage of US English. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_D26344F8C38741DBB990620049D5775C"><div class="li_content">IOPCCommon::QueryAvailableLocaleIDs 
+          <p>The available locale is returned by this method. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_5BB336A727DF47479D9199425D98788D"><div class="li_content">IOPCCommon::GetErrorString
+          
+          <p>This method may be used to convert from an HRESULT returned by any
+            of the methods or the HRESULT for an HDA Item into a user friendly description
+            of the error. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_00F4F3F8804848798336348D645E8A7A"><div class="li_content">IOPCCommon::SetClientName 
+          <p>This method may be used by a client to set the name of the client.
+            The client name is used in some of the events recorded in the Windows Event
+            Log. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_3653D7A822D949E689624F9E520632B0"><a name="r_opc_hda_custom_interfaces_and_methods__section_3653D7A822D949E689624F9E520632B0"></a> 
+      <p><strong>IConnectionPointContainer</strong> 
+      </p>
+ 
+      <div class="p">The IConnectionPointContainer is a Microsoft defined interface used to
+        obtain call back interfaces. The DeltaV OPC History Server implements this
+        interface in support of the client providing an IOPCShutdown interface. The
+        methods making up this interface are: 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_5ADFA31D7C8E411593390D1BB2681FD8"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_5ADFA31D7C8E411593390D1BB2681FD8"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_1767B1D331B44D70994D1FFAB603D63E"><div class="li_content">IConnectionPointContainer::EnumConnectionPoints
+          
+          <p>Only the IOPCShutdown interface is included in the
+            IEnumConnectionPoints enumerator. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_CE619763C6CE43DA964150B9AC64F808"><div class="li_content">IConnectionPointContainer::FindConnectionPoint
+          
+          <p>This method may be used to obtain the interface corresponding to
+            the IID_IOPCShutdown. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_2217325151914855AF8D5A58897D3AED"><a name="r_opc_hda_custom_interfaces_and_methods__section_2217325151914855AF8D5A58897D3AED"></a> 
+      <p><strong>IOPCShutdown</strong> 
+      </p>
+ 
+      <div class="p">This is a client-side interface used by the DeltaV OPC History Server
+        to notify clients when the supporting DeltaV services are shutting down. The
+        single method provided by this interface is: 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_883040D19D854D03B0A82B314FE51D10"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_883040D19D854D03B0A82B314FE51D10"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_72896CBB06FB47A5B84F4C398867BDA7"><div class="li_content">IOPCShutdown::ShutdownRequest 
+          <p>This method is invoked by the DeltaV OPC History Server to notify
+            the client that the DeltaV services are shutting down. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_2B1B0DB85B4A466E9209FDFF7583747B"><a name="r_opc_hda_custom_interfaces_and_methods__section_2B1B0DB85B4A466E9209FDFF7583747B"></a> 
+      <p><strong>IOPCHDA_Server</strong> 
+      </p>
+ 
+      <div class="p">This interface is the primary interface for the DeltaV OPC History
+        Server. The IOPCHDA_Server interface provides a method for setting up access to
+        historical data values. The methods that make up this interface are: 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_C524809051E4412D9A0D8FA952A49BBF"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_C524809051E4412D9A0D8FA952A49BBF"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_397449D91BA04D9B949B9C64484C02F1"><div class="li_content">IOPCHDA_Server::GetItemAttributes 
+          <div class="p">This method returns the list of attributes supported by the DeltaV
+            OPC History Server. These are: 
+          <a name="r_opc_hda_custom_interfaces_and_methods__ul_370179EBFA9345A9976EF84E69679B10"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_370179EBFA9345A9976EF84E69679B10"> 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_DC8AF26780A54EBFAB0762812EDFCBE3"><div class="li_content">Data Type 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_DB63279E35294D05ACDD0DCDECC579AA"><div class="li_content"> Stepped 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_787DF8F3A0F14F46A7DB8F5B862DDA9E"><div class="li_content"> ItemID 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_4900FDC85EBF429EB312FB10121842CE"><div class="li_content"> Maximum Time Interval
+              
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_AB07A59B58E24DD1BB5B86805D84F303"><div class="li_content"> Minimum Time Interval
+              
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_35E0201FD6814BDBB2081532A9DA9DC0"><div class="li_content"> Exception Deviation
+              (expressed in Engineering Units) 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_1DB8C21138944D2A9AD6B3EBA413636C"><div class="li_content"> Current DeltaV Module
+              Description 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_B6DB30F6A31B4371989ABF984DC32817"><div class="li_content"> Current DeltaV
+              Engineering Units 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_C4170C10B9D34A01A4907060E26B6F9B"><div class="li_content"> Current DeltaV
+              Engineering Units 100% Value (default is 100) 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_7E71AD8393484130A9C98DA77E614EA5"><div class="li_content"> Current DeltaV
+              Engineering Units 0% Value (default is 0) 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_732151692EFE49ACBB87EEDFFA278B30"><div class="li_content"> Last download of
+              Continuous Historian 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_3727375BFCDF42A9B1865E682A523EBD"><div class="li_content"> Continuous Historian
+              On Scan 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_0A8E520872E740FBBE0E156B9A5398FB"><div class="li_content"> Named Set 
+            </div></li>
+ 
+          </ul>
+ 
+          </div>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_27D84B411D934A199D1AF8C9A3FAB222"><div class="li_content">IOPCHDA_Server::GetAggregates 
+          <div class="p">This method returns the list of aggregates supported by the DeltaV
+            OPC History Server. These are: 
+          <a name="r_opc_hda_custom_interfaces_and_methods__ul_D79B459BBC844317BC3BB0AA5A63516F"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_D79B459BBC844317BC3BB0AA5A63516F"> 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_33E807E6AA8B4BA7BBC80424856F4FE3"><div class="li_content">Interpolative 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_E56A67123FCE41D1ACE7D02656CE4E5B"><div class="li_content"> Time Average 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_0EA2BFD21E5E40189D634D91F0849B84"><div class="li_content"> Count 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_8AE23136D07B4B92A3108031C146EF46"><div class="li_content"> Minimum Actual Time 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_EA38C79654ED422288D1A9F6422C5CBA"><div class="li_content"> Minimum 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_F05BFC0DAE724EC49204520ED527BC09"><div class="li_content"> Maximum Actual Time 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_343C9DD0EE164D29ABB55439C5AD7950"><div class="li_content"> Maximum 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_2E1ABB8AD5DE446AB6381E8E5715F059"><div class="li_content"> Start 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_7E838BC41FF54D2C90552F954DA00572"><div class="li_content"> End 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_EA459EDE857743BBA8C050D4385526A7"><div class="li_content"> Average 
+            </div></li>
+ 
+            <li id="r_opc_hda_custom_interfaces_and_methods__li_3B3186E3367543E1BA6A3D0BA1696254"><div class="li_content"> Total 
+            </div></li>
+ 
+          </ul>
+ 
+          </div>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_0EB33A7DB58347E49F6C7349F4AD77F9"><div class="li_content">IOPCHDA_Server::GetHistorianStatus 
+          <p>This method may be used to obtain the status of the DeltaV OPC
+            History Server. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_8A1FA0408F0C43E88DC1B2AF7BC87BA4"><div class="li_content">IOPCHDA_Server::GetItemHandles 
+          <p>This method returns associations between server handles and client
+            handles for specific HDA items. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_473263B0D6CE4A038903DC79066447B9"><div class="li_content">IOPCHDA_Server::ReleaseItemHandles 
+          <p>This method releases associations between server handles and
+            client handles for specific HDA items. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_78262F10E51F410B82F3595C956FA7A0"><div class="li_content">IOPCHDA_Server::ValidateItemIDs 
+          <p>This method validates that specific HDA Item IDs are known to the
+            server. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_EBCBC6EB71BE49DFA484768BD9D7C3FF"><div class="li_content">IOPCHDA_Server::CreateBrowse 
+          <p>This method returns a pointer to an OPCHDA_Browser interface. The
+            Item ID filtering is specified as part of the creation of a new browser. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_D41EF4D02FE34B0E94A039AD34BBFF06"><a name="r_opc_hda_custom_interfaces_and_methods__section_D41EF4D02FE34B0E94A039AD34BBFF06"></a> 
+      <p><strong>IOPCHDA_Browser</strong> 
+      </p>
+ 
+      <div class="p">This interface provides a method to access the list of OPC HDA Item
+        IDs that pass the filter criteria set when this browser was created. It should
+        be noted that the DeltaV Continuous Historian provides a flat list of
+        historical parameters. Thus, the DeltaV OPC History Server provides a flat list
+        of OPC HDA Item IDs. 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_F57ED947339841A7A5CF861224B088DF"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_F57ED947339841A7A5CF861224B088DF"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_E1C4ECA2679F4EB29F366A4F696DD23F"><div class="li_content">IOPCHDA_Browser::GetEnum 
+          <p>This method returns an enumeration containing all of the OPC HDA
+            Item IDs provided by the DeltaV Continuous Historian that pass the filter
+            criteria. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_CDFF29EF63D341E090AE12428F70AF44"><div class="li_content">IOPCHDA_Browser::ChangeBrowsePosition 
+          <p>This method may be used to move up and down the list of OPC HDA
+            Item IDs or to move directly to a particular OPC HDA Item ID. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_34FA6C776F0B4460BAE19084505EB7C6"><div class="li_content">IOPCHDA_Browser::GetItemID
+          
+          <p>This method provides a way to obtain the current OPC HDA Item ID. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_FBE6E5CFB6524B1CAC2049544E420E7D"><div class="li_content">IOPCHDA_Browser::GetBranchPosition 
+          <p>This method provides the current OPC HDA Item ID. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="r_opc_hda_custom_interfaces_and_methods__section_E0B0F60D8D154D09B5DC444C6235E494"><a name="r_opc_hda_custom_interfaces_and_methods__section_E0B0F60D8D154D09B5DC444C6235E494"></a> 
+      <p><strong>IOPCHDA_SyncRead</strong> 
+      </p>
+ 
+      <div class="p">This interface provides access to the data held by the DeltaV
+        Continuous Historian. 
+      <a name="r_opc_hda_custom_interfaces_and_methods__ul_332593E8683E419E84DF17D3112F9A06"></a><ul id="r_opc_hda_custom_interfaces_and_methods__ul_332593E8683E419E84DF17D3112F9A06"> 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_9175195498B0422D9E0EDE24EA3BF423"><div class="li_content">IOPCHDA_SyncRead::ReadRaw 
+          <p>This method reads the values, qualities, and time stamps from the
+            DeltaV Continuous Historian database for the specified time domain for one or
+            more OPC HDA Items. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_A24DD520A94E4DDE9DBE24D8C5028837"><div class="li_content">IOPCHDA_SyncRead::ReadProcessed 
+          <p>This method requests an aggregate value or values to be computed
+            by the DeltaV Continuous Historian for one or more OPC HDA Items, providing
+            values, qualities, and time stamps. See IOPCHDA_Server::GetAggregates for a
+            list of supported aggregates. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_20BEBD8E6B084AABA9BF4A0D7915B1B2"><div class="li_content">IOPCHDA_SyncRead::ReadAtTime 
+          <p>This method is not supported by the DeltaV OPC History Server at
+            this time. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_A9E859A9E3C046C9A7C108BBE804769A"><div class="li_content">IOPCHDA_SyncRead::ReadModified 
+          <p>This method is not supported by the DeltaV OPC History Server at
+            this time. 
+          </p>
+ 
+        </div></li>
+ 
+        <li id="r_opc_hda_custom_interfaces_and_methods__li_EFC7A270787F46798E70D15CAA47D7F4"><div class="li_content">IOPCHDA_SyncRead::ReadAttribute 
+          <p>This method reads the attribute values and time stamps for the
+            specified time domain for an item. The DeltaV OPC History Server only supports
+            current values for attributes. See IOPCHDA_Server::GetItemAttributes for a list
+            of supported attributes. 
+          </p>
+ 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

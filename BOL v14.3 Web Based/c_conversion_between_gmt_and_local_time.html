@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Conversion between GMT and local time" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, DeltaV Reporter, local time, GMT, local time, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, DeltaV Reporter, local time, GMT, local time, DeltaV Reporter" name="keywords" /><meta content="c_deltav_reporter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_conversion_between_gmt_and_local_time" name="DC.Identifier" /><title>Conversion between GMT and local time</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_storage_and_precision.html" /><link rel="next" href="c_using_the_worksheet_function_dialogs.html" /></head><body class="fixed" id="c_conversion_between_gmt_and_local_time" data-relpath="c_conversion_between_gmt_and_local_time.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_conversion_between_gmt_and_local_time"></a>
+
+<h1 class="topictitle1">Conversion between GMT and local time</h1>
+<div><div></div>
+
+    <p>In parts of the world where daylight saving time is used, users must be
+      aware of issues arising from conversion between GMT and local times. Where
+      daylight saving time is never used (for example, Arizona) there is no problem
+      converting from GMT to local time and back again since there is a one-to-one
+      correlation between GMT and Local times. The conversion problems arise from the
+      fact that changes to or from daylight saving time affect the length of a day.
+      In the case of changing to daylight saving time, an hour is skipped altogether
+      in local time, whereas the change back from daylight saving time leads to
+      certain local times occurring twice.
+    </p>
+
+    <p>If you wish to create a report that shows one day&#39;s worth of data for
+      your plant, you could do so using the 
+      <span class="wintitle">Configure Calculated Data Function</span> worksheet
+      function dialog, supplying a start time and end time exactly one day apart.
+      These times would most likely be specified in cells in the worksheet with an
+      array formula referring to them by cell address. Furthermore, the end time is
+      likely to be expressed by a formula such as StartTime + &quot;24:00:00&quot;. Excel
+      ignores daylight saving time when calculating such formulas, so the end time
+      would show as being the same hour, exactly one day later than the start time.
+      For 363 days in the year (except for leap years), this formula would return 24
+      hours worth of data; but for one day each year there would be 23 hours worth of
+      data and for another day there would be 25 hours worth of data.
+    </p>
+
+    <p>You need to be aware that this will occur if you are using local time,
+      and design your worksheets accordingly. That is, allow extra space in the table
+      to accommodate the extra data as daylight saving time finishes; the table will
+      be shorter as daylight saving time begins.
+    </p>
+
+    <p>A similar, though potentially more serious, problem occurs where you
+      wish to find out data relating to an occurrence around the time that daylight
+      saving time starts.
+    </p>
+
+    <p>Consider a plant in a U.S. state that operates under Central Time. At
+      2:00 a.m. on October 31, 2004 daylight saving time ends (Central Daylight Time
+      finishes and Central Standard Time is used). The local time thus goes from
+      01:59:59 to 01:00:00. This is the second time it has been 01:00:00 that day. If
+      anything goes wrong in the plant during the next hour, it will not be possible
+      to view that data in DeltaV Reporter if local times are used. This is because,
+      in converting to GMT, the first occurrence of times between 01:00:00 and
+      01:59:59 on October 31, 2004 is assumed. You would need to choose to use either
+      GMT or GMT Offset when dealing with such issues.
+    </p>
+
+    <div class="section" id="c_conversion_between_gmt_and_local_time__conversionbetweenUTCandGMToffset"><a name="c_conversion_between_gmt_and_local_time__conversionbetweenUTCandGMToffset"></a><h2 class="sectiontitle">Conversion between GMT and GMT offset</h2>
+      
+      <p>This conversion mode does not take account of daylight saving time.
+        Therefore there are no conversion issues. A regular offset (which can be any
+        number of hours and minutes, up to 23:59) is applied to the recorded GMT times,
+        regardless of the recorded or current date.
+      </p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

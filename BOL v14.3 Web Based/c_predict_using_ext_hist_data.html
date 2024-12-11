@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using External Historical Data with Predict" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="DeltaV Predict, DeltaV Predict, file format for external historical data, using external historical data with" name="DC.subject" /><meta content="DeltaV Predict, DeltaV Predict, file format for external historical data, using external historical data with" name="keywords" /><meta content="c_model_predictive_control_function_block_execution.html" name="DC.Relation" scheme="URI" /><meta content="c_model_predictive_control_function_block_application_examples.html" name="DC.Relation" scheme="URI" /><meta content="c_predict.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_CD89CBC7F7CF4DC2808742FD747755A1" name="DC.Identifier" /><title>Using External Historical Data with Predict</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict_using_predict.html" /><link rel="next" href="c_predict_tailor_perform_predict.html" /></head><body class="fixed" id="concept_CD89CBC7F7CF4DC2808742FD747755A1" data-relpath="c_predict_using_ext_hist_data.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1"></a>
+
+<h1 class="topictitle1">Using External Historical Data with Predict</h1>
+<div> 
+	 <p>In some DeltaV installations, data may be collected and recorded either
+		manually or in a system that is not connected to the DeltaV system. In other
+		installations, historical data may have been saved in the historian of another
+		control system that is being replaced by the DeltaV system. In these cases, it
+		may save time to use this historical data to create process models and control
+		definitions to be used by the MPC function block in a DeltaV system. The
+		Predict application can use data from a file to develop a process that may then
+		be used to generate the MPC control. The Predict application can also verify a
+		model against data from a file. This section describes how DeltaV Predict uses
+		data files, the required data file format, and the utilities included in the
+		DeltaV system to export data from a historian into a file. 
+	 </p>
+ 
+	 <div class="section" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_C3D287B81BB14E319C1065F29544EC64"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_C3D287B81BB14E319C1065F29544EC64"></a><h2 class="sectiontitle">Developing a Process Model from a File </h2> 
+		 
+		<p>DeltaV Predict application normally uses data from a historian to
+		  create the process model used in control generation. However, DeltaV Predict
+		  can use historical data saved in data files as well. The data file must contain
+		  historical values for all inputs and outputs used in the MPC block and the data
+		  must be formatted correctly for DeltaV Predict to use. 
+		</p>
+ 
+		<p>To use historical data from a file, you must first create a module
+		  that contains an MPC function block. The MPC block must reference the DeltaV
+		  inputs and outputs that will be used in the control. Download this module to a
+		  controller<span> or Application Station</span> and then start DeltaV
+		  Predict. Connect DeltaV Predict to the MPC block. From the DeltaV Predict main
+		  menu, select either 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Autogenerate from
+				File</span></span> (to create a model and generate MPC control
+		  definition in one step) or 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Create Model From
+				File</span></span>. The 
+		  <span class="uicontrol">Create Model From File</span> option is grayed out
+		  unless you are in Expert mode. 
+		</p>
+ 
+		<p>When you select either of these options, a dialog appears in which you
+		  specify the data file to use. After you select the file and click 
+		  <span class="uicontrol">OK</span>, DeltaV Predict performs the selected command
+		  using the data file and presents the results as if you had used data from a
+		  historian. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_7F702DA53F1B449B845926E40D47BA12"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_7F702DA53F1B449B845926E40D47BA12"></a><h2 class="sectiontitle">Verifying a Process Model against Data from File</h2> 
+		 
+		<p>In order to validate the identified process model, DeltaV Predict
+		  application normally uses data on the trend from a historian or the original
+		  data used to create the model. However, DeltaV Predict can use historical data
+		  saved in data files as well. The data file must contain historical values for
+		  all inputs and outputs used in the MPC block and the data must be formatted
+		  correctly for DeltaV Predict to use. 
+		</p>
+ 
+		<p>To use historical data from a file, you must have created a model for
+		  the configured MPC function block. Verification options are grayed out unless
+		  you are in Expert mode. In DeltaV Predict select the model you wish to
+		  validate. You can either right-click and select 
+		  <span class="menucascade"><span class="uicontrol">Verify Model</span> &gt; <span class="uicontrol">Verify Model
+				Against File Data</span></span> or click the corresponding button
+		  on the model display. When you select either of these options, a dialog appears
+		  in which you specify the data file to use. After you select the file and click 
+		  <span class="uicontrol">OK</span>, DeltaV Predict verifies the model
+		  predictions against the data file and presents the results as if you had used
+		  data from a historian. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_5223E17AECB74A878E5EDC8CA2D50153"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_5223E17AECB74A878E5EDC8CA2D50153"></a><h2 class="sectiontitle">Verifying a Process Model against Data from File </h2> 
+		 
+		<p>In order to validate the identified process model, DeltaV Predict
+		  application normally uses data on the trend from a historian or the original
+		  data used to create the model. However, DeltaV Predict can use historical data
+		  saved in data files as well. The data file must contain historical values for
+		  all inputs and outputs used in the MPC block and the data must be formatted
+		  correctly for DeltaV Predict to use. 
+		</p>
+ 
+		<p>To use historical data from a file, you must have created a model for
+		  the configured MPC function block. Verification options are grayed out unless
+		  you are in Expert mode. In DeltaV Predict select the model you wish to
+		  validate. You can either right-click and select 
+		  <span class="menucascade"><span class="uicontrol">Verify Model</span> &gt; <span class="uicontrol">Verify Model
+				Against File Data</span></span> or click the corresponding button
+		  on the model display. When you select either of these options, a dialog appears
+		  in which you specify the data file to use. After you select the file and click 
+		  <span class="uicontrol">OK</span>, DeltaV Predict verifies the model
+		  predictions against the data file and presents the results as if you had used
+		  data from a historian. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_38553CB1B39C4FC1BE38892EA46A02D5"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_38553CB1B39C4FC1BE38892EA46A02D5"></a><h2 class="sectiontitle">Data File Format</h2> 
+		 
+		<p>You can create and verify models using data files. For best results,
+		  the values contained in the data file should reflect normal conditions over the
+		  operating range of the process. For model creation, the data is normally of the
+		  form obtained with open loop bump testing. Any input or output sample values
+		  that represent abnormal conditions should be replaced by a non-numeric string
+		  in the data file. Use a tool, such as Microsoft Excel, to format and edit the
+		  file. 
+		</p>
+ 
+		<p>The data files must be saved as .dat files and formatted in a
+		  particular way for DeltaV Predict to use them. The data files must contain the
+		  following information formatted as described: 
+		</p>
+ 
+		<p>Line 1 - Must contain the phrase 
+		  <strong>DeltaV_MPC_Data &lt;eol&gt;</strong> 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The above header specifies to DeltaV Predict that this
+		  is a historical data file. 
+		</div>
+ 
+		<p>Line 2 - Lists the 
+		  <strong>Number of Controlled Variables&lt;tab&gt;The Number of Constraint
+			 Variables&lt;tab&gt;The Number of Manipulated Variables&lt;tab&gt;The Number of
+			 Disturbance Variables&lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>The number of each type of variable should correspond to those that
+		  you configured in the associated MPC function block, except when any Controlled
+		  Variable is configured as an Optimizing variable. Refer to the Example Predict
+		  Data Files in this topic for examples. 
+		</p>
+ 
+		<p>Line 3 - Lists the 
+		  <strong>Number of samples in the file &lt;tab&gt; The sampling period in
+			 seconds &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>The sampling period must be the sampling period of the data in the
+		  file. 
+		</p>
+ 
+		<p>Line 4 - An 
+		  <strong>empty line &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>Line 5 - Lists the 
+		  <strong>identifiers of the Input and output references separated by tabs
+			 &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>The identifier names should match those that you configured in the
+		  associated MPC function block. They should be placed in the order of the
+		  configured variables, for example, for MPC block with three controlled
+		  variables, identifiers are in the order CNTRL1, CNTRL2,CNTRL3. Hence, the order
+		  will match that of the data, as indicated in Line 7. 
+		</p>
+ 
+		<p>Line 6 - An 
+		  <strong>empty line &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>Line 7 through the end of data - The data in the following order: 
+		  <strong>index of the sample&lt;tab&gt;first controlled variable
+			 value&lt;tab&gt;… last controlled variable value&lt;tab&gt;first constraint
+			 variable value&lt;tab&gt;… last constraint variable value&lt;tab&gt;first
+			 manipulated variable value&lt;tab&gt;… last manipulated variable
+			 value&lt;tab&gt;first disturbance variable value&lt;tab&gt;… last disturbance
+			 variable value &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>The order of the data should match the order of the configured
+		  variables, for example, for MPC block with four controlled variables, data is
+		  in the order CNTRL1, CNTRL2,…,CNTRL4. If the data contains values that do not
+		  reflect normal operating conditions, replace those values with non-numeric
+		  strings to indicate that these values should not be used in the model
+		  identification. During identification, the corresponding sample values are
+		  replaced by interpolating between the good data values. 
+		</p>
+ 
+		<p>Last Line - An 
+		  <strong>empty line &lt;eol&gt;</strong> 
+		</p>
+ 
+		<p>The following is an example Predict data file for a block consisting
+		  of two Controlled Variables (FI101 and PI102), one Constraint Variable (FI103),
+		  two manipulated variables (CV100 and CV102) and one measured Disturbance
+		  Variable (FI155). The example shows only the first 15 and the last three sample
+		  input and output values out of the 389 total. The data was obtained with a
+		  sampling period of 5 seconds. Note that some of the output and input data
+		  values have been flagged as bad (the values have been replaced by BAD, but
+		  could have been replaced by any non-numeric string). 
+		</p>
+ 
+		<div class="fignone" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__fig_33C9EA1694474BA6BBA6DE4E8D1E5DAE"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__fig_33C9EA1694474BA6BBA6DE4E8D1E5DAE"></a><div><span class="figcap">Example Predict Data File</span></div> 
+		   
+		  <pre class="codeblock">DeltaV_MPC_Data
+2        1        2        1
+389      5
+
+FI101    PI102    FI103    CV100    CV102    FI155
+
+1        298.9    49.7     51.4     50.1     40.0     15.0
+2        301.1    49.9     49.3     47.6     40.0     15.0
+3        301.8    49.7     49.7     52.3     40.0     15.0
+4        299.3    49.7     49.8     52.5     40.0     15.0
+5        299.7    49.2     48.9     49.5     45.0     19.0
+6        299.3    50.1     49.9     50.3     45.0     19.0
+7        299.1    50.0     49.9     50.9     45.0     19.0
+8        BAD      49.9     49.3     BAD      45.0     19.0
+9        299.7    49.2     50.7     49.8     45.0     19.0
+10       299.4    50.5     50.3     52.3     45.0     22.0
+11       298.6    50.1     50.3     50.6     45.0     22.0
+12       298.3    50.0     51.2     48.1     45.0     22.0
+13       298.9    BAD      50.9     50.5     45.0     22.0
+14       299.7    50.8     49.7     48.7     45.0     22.0
+15       300.0    49.8     48.5     52.8     45.0     22.0
+.        .        .        .        .        .        .
+.        .        .        .        .        .        .
+.        .        .        .        .        .        .
+387      300.8    50.0     49.4     48.3     35.0     17.0
+388      301.1    50.5     50.7     48.5     40.0     17.0
+389      301.0    50.2     49.7     51.4     40.0     17.0</pre>
+ 
+		</div>
+ 
+		<p> 
+		  <strong>Optimizing Variable</strong> - If one of the controlled variables is
+		  applied for optimization, no connection is required for the control input
+		  associated with the manipulated output used to set throughput. (In creating the
+		  data file for this case, the number of Controlled Variables does not include
+		  the one applied for optimization. For example, for the file shown above, if
+		  PI102 is marked for optimization, the data file will not include the column for
+		  PI102 and the number of controlled variables is one (1). The format is (only
+		  first three samples are shown): 
+		</p>
+ 
+		<div class="fignone" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__fig_4227CC842A18413099931AEBCBB9557F"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__fig_4227CC842A18413099931AEBCBB9557F"></a><div><span class="figcap">Example Predict Data File for Optimizing Variable</span></div> 
+		   
+		  <pre class="codeblock">DeltaV_MPC_Data
+ 1       1        2        1        (<em>1 CV though 2 configured</em>)
+389      5
+
+FI101    FI103    CV100    CV102    FI155    (<em>Optimizing CV identifier excluded</em>)
+
+1        298.9    51.4     50.1     40.0     15.0    (<em>5 data columns, not 6</em>)
+2        301.1    49.3     47.6     40.0     15.0
+3        301.8    49.7     52.3     40.0     15.0</pre>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_5A1AD0A440A44AF4AE9726325DFE9AF2"><a name="concept_CD89CBC7F7CF4DC2808742FD747755A1__section_5A1AD0A440A44AF4AE9726325DFE9AF2"></a><h2 class="sectiontitle">Extracting Data from the DeltaV Continuous Historian </h2> 
+		In
+		some cases, you may need to extract historical data from the DeltaV Continuous
+		Historian into one file that can be used in another DeltaV system to develop a
+		process model. You can export DeltaV Continuous Historian historical data to an
+		Excel spreadsheet using DeltaV Reporter. After saving the file in tab-delimited
+		format, you can easily create a file that conforms to the Predict format.
+		DeltaV Reporter is located in the 
+		<span class="nowrap"><span class="filepath">DeltaV\bin\DeltaVReporter</span></span> folder
+		on a DeltaV workstation or in the 
+		<span class="nowrap"><span class="filepath">DV_Extras\DeltaVReporter</span></span> folder
+		on the DeltaV installation disk #1. 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_model_predictive_control_function_block_execution.html">Model Predictive Control function block execution</a></div>
+<div><a href="c_model_predictive_control_function_block_application_examples.html">Model Predictive Control function block application examples</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

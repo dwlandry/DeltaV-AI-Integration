@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Evaluate and respond to annunciated CSLS faults" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="c_fault_detect_response_repair.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_439" name="DC.Identifier" /><title>Evaluate and respond to annunciated CSLS faults</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_maintalerts_csls_diag_param.html" /><link rel="next" href="c_evaluate_fatal_errors.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_439" data-relpath="c_evaluate_respond_faults.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_439"></a>
+
+<h1 class="topictitle1">Evaluate and respond to annunciated CSLS faults</h1>
+<div><p>
+  </p>
+ 
+	 <p> When a fault or other annunciated condition occurs, there are multiple
+		sources of information to be evaluated prior to taking action. The evidence
+		left by the condition is a function of the type of fault and whether the CSLS
+		is simplex or redundant. 
+	 </p>
+ 
+	 <div class="p"> The first step in the evaluation is determining whether the condition
+		is fatal or non- fatal: 
+	 <ul> 
+		<li><div class="li_content"> 
+		  <p> A 
+			 <em>fatal</em> error in a 
+			 <em>simplex</em> CSLS generally results in a process shutdown because
+			 output LS CHARMs of the CSLS are de-energized. COMM alarm occurs immediately
+			 since the unit goes through reset. After (if ) the failed CSLS is able to boot
+			 up the COMM alarm clears and PAST_ERROR is reported to show the transient fatal
+			 error. If the error persists (repeats within 1 minute from finishing boot up)
+			 the CSLS resets again and boots up in reduced mode posting FAILED alarm. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> A 
+			 <em>non-fatal</em> error in a 
+			 <em>simplex</em> CSLS does not impact the process. MAINT or ADVISE
+			 alarm(s) are posted depending on the condition(s). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> A 
+			 <em>fatal</em> error on 
+			 <em><strong>a single CSLS unit</strong></em> of a 
+			 <em>redundant</em> CSLS does not impact the process because the other
+			 CSLS unit continues to drive outputs. A fatal error on a single CSLS will
+			 result in CSLS switchover if the failed unit was operating as active at the
+			 moment of failure. MAINT alarm is posted because the partner unit with the
+			 fatal error is going through reset and is not available until finished the boot
+			 up. When (if) the failed standby CSLS unit boots up OK the MAINT alarm clears.
+			 PAST_ERROR on standby CSLS is reported to show the transient fatal error. If
+			 the error persists (repeats within 1 minute from finishing boot up) the standby
+			 CSLS resets again and boots up in reduced mode posting MAINT alarm that latches
+			 until the fault is repaired. 
+		  </p>
+ 
+		  <p> A 
+			 <em>fatal</em> error on 
+			 <em><strong>both CSLS units</strong></em> of a 
+			 <em>redundant</em> CSLS back-to-back with or without a CSLS switchover
+			 (or rather a fatal error on active CSLS with a faulty or absent partner)
+			 generally results in a process shutdown because output LS CHARMs of the CSLS
+			 are de-energized. COMM alarm occurs immediately since the units go through
+			 reset. After (if) the failed CSLSs are able to boot up (at least one) the COMM
+			 alarm clears and PAST_ERROR is reported to show the transient fatal error(s).
+			 If the error persists (repeats within 1 minute from finishing boot up) on both
+			 units again the CSLS units reset again and boots up in reduced mode posting
+			 FAILED alarm that latches until the fault is repaired 
+		  </p>
+ 
+		</div></li>
+ 
+		<li><div class="li_content"> 
+		  <p> A 
+			 <em>non-fatal</em> error in a 
+			 <em>redundant</em> CSLS results in MAINT or ADVISE alarm(s) depending
+			 on the condition(s).Non-fatal errors can occur on both active and standby units
+			 and do not cause switchovers. 
+		  </p>
+ 
+		  <p> Some non-fatal errors that occur on standby unit would not inhibit
+			 the CSLS switchover (PAVAIL is YES), others (like NVM error) do (PAVAIL is NO).
+			 Some non-fatal errors are not fatal as a single error and become fatal in
+			 conjunction with other errors (PRI and SEC peer errors). 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p> The next step is determining whether the error condition is still
+		present. Typically detected faults are persistent, that is, they are caused by
+		a hardware failure and require that the CSLS unit be replaced. But some
+		conditions are transient, clearing after being active briefly. In this case an
+		alarm that was posted to signal the fault clears (goes to inactive,
+		unacknowledged state). Diagnostic parameters do not indicate the cause of the
+		alarm because the condition is no longer active. Event Chronicle can be used to
+		determine which condition caused the alarm when the alarm is no longer active. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

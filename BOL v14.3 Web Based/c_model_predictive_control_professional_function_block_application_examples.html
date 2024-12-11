@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional function block application examples" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_mpc.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpcpro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_model_predictive_control_professional_function_block_application_examples" name="DC.Identifier" /><title>Model Predictive Control Professional function block application examples</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_mpc_professional_fb_directly_modifying_mpcpro_fb_params.html" /><link rel="next" href="c_model_predictive_control_professional_function_block_mpcpro_sample_input_template.html" /></head><body class="fixed" id="c_model_predictive_control_professional_function_block_application_examples" data-relpath="c_model_predictive_control_professional_function_block_application_examples.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_model_predictive_control_professional_function_block_application_examples"></a>
+
+<h1 class="topictitle1">Model Predictive Control Professional function block application
+    examples</h1>
+<div><div></div>
+ 
+    <p id="c_model_predictive_control_professional_function_block_application_examples__applicationexamplesMPCProfunctionblock"><a name="c_model_predictive_control_professional_function_block_application_examples__applicationexamplesMPCProfunctionblock"></a>The MPCPro function block
+      provided by DeltaV PredictPro can be used to address multivariable control
+      requirements. You can use the PredictPro application to create process models
+      and control definitions from process data. The automated test feature of the
+      PredictPro application allows the step response of Controlled or Constraint
+      outputs to be determined based on changes in the Manipulated inputs. This
+      capability can meet multivariable control requirements in all process
+      industries. In many cases, the MPCPro function block can replace control
+      techniques that have traditionally been used to address the control
+      requirements of multivariable processes.
+    </p>
+ 
+    <p>The implementation and commissioning of the MPCPro function block are
+      far simpler and faster than traditional techniques. The MPC function block
+      sections has an example of traditional techniques that can be replaced by the
+      MPC and MPCPro block.
+    </p>
+ 
+    <p>Larger and more complex applications that can benefit from MPCPro
+      control can be identified based on your process knowledge. Use the following
+      guidelines to determine when you should consider the  MPCPro block:
+    </p>
+ 
+    <a name="c_model_predictive_control_professional_function_block_application_examples__ul_85094307147E405494DC04B62FB84538"></a><ul id="c_model_predictive_control_professional_function_block_application_examples__ul_85094307147E405494DC04B62FB84538"> 
+      <li id="c_model_predictive_control_professional_function_block_application_examples__li_A8C770C460B643B785F76C356250A7BF"><div class="li_content"> 
+        <p>The number of interactive Control parameters, Constraints or
+          Disturbances exceed the capability of the MPC block.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_model_predictive_control_professional_function_block_application_examples__li_39560D1A70524F4BABD9B6963E66878E"><div class="li_content"> 
+        <p>The number of Manipulated parameters exceeds the number of
+          Controlled parameters. For example, many of the process outputs are defined as
+          Constraint parameters or there are more Manipulated parameters than the total
+          number of Constraint and Control parameters.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_model_predictive_control_professional_function_block_application_examples__li_44606477B6734E01974BA6000E699F67"><div class="li_content"> 
+        <p>You wish to maximize operating profit automatically based on the
+          cost of feedstock and profit of final outputs. Based on this cost information
+          and the process input and Constraint limits, the optimization capability of the
+          MPCPro block can be used to maximum operating profit.
+        </p>
+ 
+      </div></li>
+ 
+      <li id="c_model_predictive_control_professional_function_block_application_examples__li_29439CE853BA4239BD0E9FF3FAFCD48F"><div class="li_content"> 
+        <p>Feedstock cost are significant and there is some flexibility in the
+          way the product specification can be achieved.
+        </p>
+ 
+      </div></li>
+ 
+    </ul>
+ 
+    <p>The execution rate of the MPCPro function block is limited to one second
+      or slower. Therefore, MPCPro should be applied to processes where control
+      requirements can be satisfied at these execution speeds.
+    </p>
+ 
+    <p> 
+      <strong>Large multivariable applications</strong> 
+    </p>
+ 
+    <p>The design of many processes requires that the control strategy address
+      multiple Controlled, Constraint, and Disturbance outputs through the adjustment
+      of multiple Manipulated process inputs. The MPCPro function block can control
+      processes of size 40×80, for example, a total of 40 Disturbance and Manipulated
+      parameters, and a total of 80 Control and Constraint parameters.
+    </p>
+ 
+    <p>To show how MPCPro can be applied to the control of a multivariable
+      process, we will consider as an example, an oil fractionator process. This
+      problem has been published by Shell and includes typical process dynamics with
+      normalized inputs and output.  In this example, it is assumed that the heat
+      requirement of the column enters with the feed.The column has three product
+      draws and three side circulating loops that remove heat to achieve the desired
+      product separation. The heat duty associated with the bottom loop can be
+      adjusted.The heat duty of the other recirculating loop can be measured but is
+      determined by other parts of the plant.The specification for the top and side
+      draws are determined by economics and operating requirements.There is no
+      product specification for the bottom draw but there is an operating constraint
+      on the temperature in the lower part of the column.   The following figure
+      shows the process.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_EFFDD8454DB74FCAA628BAF3C3F152D2"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_EFFDD8454DB74FCAA628BAF3C3F152D2" src="MPCPro_Examp.gif" />
+    </p>
+ 
+    <p>From a control perspective, the process inputs and outputs can be
+      visualized in the following manner based on the process design, available
+      measurements, and operating requirements.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_E484581F518F4479976C668C509B9713"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_E484581F518F4479976C668C509B9713" src="MPCPro_Examp2.gif" />
+    </p>
+ 
+    <p>In general, it is recommended that the MPCPro block be included in a
+      module by itself. This allows the module to be downloaded at any time. The
+      MPCPro block can externally reference the measurements and control loops in
+      other control loops. For simplicity, the MPCPro block has been included in the
+      same modules as the measurements and loops it references.
+    </p>
+ 
+    <p>The complete configuration of the MPCPro block is shown in the following
+      figures. The setpoint limits are based on the normalized range in this example.
+      In an actual application, these limits should be set in engineering units based
+      on the actual range of the measurements and actuators.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_40051AB47CD9483DAC17C4807FCF7E4D"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_40051AB47CD9483DAC17C4807FCF7E4D" src="FB_PIC13.jpg" />
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_F23267EC8F5441D1AACEDF68AE775B5A"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_F23267EC8F5441D1AACEDF68AE775B5A" src="FB_PIC14.jpg" />
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_A0863AF795CE4260B70D27C55C38C012"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_A0863AF795CE4260B70D27C55C38C012" src="FB_PIC15.jpg" />
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_D4DB173E1ADB41C9BF50C84FDC422ECA"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_D4DB173E1ADB41C9BF50C84FDC422ECA" src="FB_PIC16.jpg" />
+    </p>
+ 
+    <p>After this module is downloaded, launch the DeltaV PredictPro
+      application to commission and test the control. The PredictPro application can
+      be launched from the 
+      <span class="uicontrol">Start</span> menu or by right-clicking the MPCPro block 
+      The following figure shows the main screen of the PredictPro application as
+      launched from the example MPCPro block.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_02C49C7526D046B38CA37889EFE8696D"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_02C49C7526D046B38CA37889EFE8696D" src="LgMulApp2.JPG" />
+    </p>
+
+    <p>Based on the MPCPro block configuration, the Control, Manipulated,
+      Constraint, and Disturbance parameters are automatically displayed. Notice that
+      the Description that was configured for each of these parameters is used in the
+      faceplate representation. For this example, the Control selection has already
+      been changed from Local to MPC which forced the downstream blocks to
+      automatically change their target mode to RCAS. Thus, the mode of the MPCPro
+      block is MAN. Also, notice that some parameters are being trended. This is
+      accomplished  by clicking the faceplate check box for the parameter to be
+      plotted.
+    </p>
+ 
+    <p>By selecting the 
+      <span class="uicontrol">Setup</span> button, the Manipulated parameters that are
+      included in the test can be selected, as shown below.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_0C8AE765E79B4CD687169C5EC47F1F93"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_0C8AE765E79B4CD687169C5EC47F1F93" src="LgMulApp3.JPG" />
+    </p>
+
+    <p>In this example, all the Manipulated parameters have been chosen for use
+      in the automated test. Click the 
+      <span class="uicontrol">Select All for Test</span> button to include all
+      parameters. The default step size of 5 percent will be used in the test. Since
+      all process outputs and disturbances are to be identified (the default
+      selection), nothing more must be done in the setup other than to specify an
+      estimated Time to Steady State. For this example, the time response of the
+      simulated process has been time-scaled and the estimated Time to Steady State
+      is input. Return to the application&#39;s top level view, and click the 
+      <span class="uicontrol">Test</span> button to run the test. In response, the
+      Manipulated parameters are automatically changed in a pseudo-random manner.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_594D0FD25B35491A96A26DA2DCC4EBB3"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_594D0FD25B35491A96A26DA2DCC4EBB3" src="LgMulApp4.JPG" />
+    </p>
+
+    <p>When the automated test is complete, the area of testing is
+      automatically selected as shown in the following figure.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_F1CB91C8BF2E423BB0D3F34FF4DC01B0"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_F1CB91C8BF2E423BB0D3F34FF4DC01B0" src="LgMulApp5.JPG" />
+    </p>
+
+    <p>Since the process operation during the time of test was normal, all the
+      test data will be used to generate the model. Thus, by selecting the 
+      <span class="uicontrol">Autogeneration</span> button, the model and controller
+      for the process is generated. Verification of the set response is shown below.
+      For purposes of this example, the process response has been scaled by a factor
+      of 100.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_6AF3C6D717114B86A97E7F1202B6A223"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_6AF3C6D717114B86A97E7F1202B6A223" src="LgMulApp6.JPG" />
+    </p>
+
+    <p>Based on the square error indicated in the verification, the model has
+      been accurately identified. Further verification of the model can be done by
+      examining each step response and comparing this to your knowledge of the
+      process. An example of the Top End Point Composition is shown in the following
+      figure.
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> When the 
+        <span class="uicontrol">Expert</span> option is selected, an approximation of
+        the step response dynamics is shown in the lower left corner of the screen as
+        shown in the following image.
+      </p>
+ 
+    </div>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_2640F2D12A304D0283632C4235338410"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_2640F2D12A304D0283632C4235338410" src="LgMulApp7.JPG" />
+    </p>
+
+    <p>Also, further confirmation of the model can be done by comparing the FIR
+      response to the ARX response and examining the confidence interval for one of
+      the step responses as shown in the following figure. Select 
+      <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>
+      to use this command.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_126904E60FD6480095CC5F97F9D544B1"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_126904E60FD6480095CC5F97F9D544B1" src="LgMulApp8.JPG" />
+    </p>
+
+    <p>The Control or Constraint parameter that best reflects changes in the
+      Manipulate parameter are automatically selected for use in the controller
+      generation. The Control or Constraint parameters that have been selected are
+      represented in different colors in the step response for each Manipulate
+      parameter. For example, the selection for the Top Draw Flow is shown in the
+      following figure.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_472A9CF0BBAB456B88357FD0FD080B4E"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_472A9CF0BBAB456B88357FD0FD080B4E" src="LgMulApp9.JPG" />
+    </p>
+
+    <p>The selection of the parameters used in control is based on the
+      parameters&#39; impact on the condition number associated with the control matrix
+      that is generated. Also, the deadtime and gain associated with a parameter
+      should be considered in this selection. Preference is given to Control
+      parameters if the performance is nearly the same as that given for Constraint
+      parameters. You can examine the Control and Constraint parameters selected for
+      the control generation by selecting Controller Setup in the left pane. Select 
+      <span class="menucascade"><span class="uicontrol">Option</span> &gt; <span class="uicontrol">Expert</span></span>
+      to see this option. For this example, the information displayed is shown in the
+      following figure.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_B7AA5A17CCC6496A8D85F33445EF2178"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_B7AA5A17CCC6496A8D85F33445EF2178" src="LgMulApp10.JPG" />
+    </p>
+
+    <p>For this example, the automatic choice of parameters gives a condition
+      number of 20.5. If the Control and Constraint parameters are highly co-linear,
+      that is reflecting the same information, it is possible that Control and
+      Constraint parameters cannot be selected for some of the Manipulate parameters.
+      Also, under certain conditions, the user can choose to force this condition by
+      removing a parameter in the selection list as shown above — if this leads to a
+      lower condition number. Generally, better control will be provided by a lower
+      condition number.
+    </p>
+ 
+    <p>The Standard objective function, provided as the default for MPCPro, can
+      be used without modification for many applications. This default objective
+      function is designed to provide control action that maintains the Control
+      parameters at setpoint while maintaining the constraint parameters within their
+      operating limits. When there are extra degrees of freedom for example, the
+      number of Manipulated parameters exceed the number of Controlled parameters as
+      in this example, the control action attempts to maintain the current position
+      of the Manipulated parameters. When it is predicted that a Constraint parameter
+      will violate one of its limits, the working setpoint of the Control parameters
+      can be automatically modified within their specified range. If there is a
+      conflict in satisfying the constraints and operating range, then the
+      requirement to maintain Control or Constraint parameters within their limits or
+      control rage is relaxed for those with the lowest priority so that the
+      remaining Control and Constraint parameters can be maintained within limits.
+      For this application, the Standard objective function can be used. However,
+      under certain market conditions, it can be desirable to maximize the top draw
+      while maintaining the composition. Thus, a second objective function can be
+      defined by selecting 
+      <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Optimization
+          Configuration</span></span>. The following image shows the 
+      <span class="wintitle">Configure Multiple Objective Functions</span> dialog.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_ED588F3C88854481BF157AFDC9A173E4"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_ED588F3C88854481BF157AFDC9A173E4" src="LgMulApp11.JPG" />
+    </p>
+ 
+    <p>In this case, the dollar profit associated with a percent change in the
+      top and side end point composition and the top draw flow are not known or can
+      change daily. Thus, the unit cost that is provided is used to indicate the
+      relative value of maintaining composition versus maximizing top draw. For this
+      objective, an objective name of MaxTopDraw is defined. Click the 
+      <span class="uicontrol">Operator Selectable</span> check box for this objective
+      to be available to the operator. Once any objectives have been defined, it is
+      important to download the module to use these new objective functions in
+      simulation and in on-line operation.
+    </p>
+ 
+    <p>To test the column control off-line, select the model in the left pane
+      and click the 
+      <span class="uicontrol">Simulate</span> button. This command is available if you
+      have selected 
+      <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>.
+      The following figure shows the Simulate interface for the example MPCPro block
+      when MPCPro is in Automatic mode and the Standard objective function has been
+      selected.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_53B85E0D61A04903BAB51F371E4864FE"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_53B85E0D61A04903BAB51F371E4864FE" src="LgMullApp12.JPG" />
+    </p>
+
+    <p>You can observe the control responses by changing the setpoint. You can
+      also change the control objective to examine the impact on the process. For
+      example, the impact of changing the objective from Standard to MaxTopDraw is
+      reflected in the trend as shown in the following figure.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_3D168A70931943C09952FED69E4E1298"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_3D168A70931943C09952FED69E4E1298" src="LgMulApp13.JPG" />
+    </p>
+
+    <p>Once the MPCPro control has been verified using PredictPro&#39;s simulation
+      environment, the module containing the MPCPro block can be put into service.
+      The predefined dynamos for PredictPro can be included in the Operator
+      Interface. The following figure shows an MPC Operate Pro view for this example.
+    </p>
+ 
+    <p><a name="c_model_predictive_control_professional_function_block_application_examples__image_330D8D1FF1494BFE9C728AB364E4EDDB"></a><img id="c_model_predictive_control_professional_function_block_application_examples__image_330D8D1FF1494BFE9C728AB364E4EDDB" src="LgMulApp14.JPG" />
+    </p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_spec_mpc.html">Model Predictive Control (MPC) function block</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

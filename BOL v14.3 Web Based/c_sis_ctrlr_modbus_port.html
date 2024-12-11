@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="SIS Controller Modbus port" name="DC.Title" /><meta content="SIS Controller, Modbus port" name="DC.subject" /><meta content="SIS Controller, Modbus port" name="keywords" /><meta content="t_bulk_edit_sisctlr_modbus_registers.html" name="DC.Relation" scheme="URI" /><meta content="t_configure_sis_controller_modbus_port_mapping.html" name="DC.Relation" scheme="URI" /><meta content="r_modbus_register_ranges.html" name="DC.Relation" scheme="URI" /><meta content="c_csls_system_config.html" name="DC.Relation" scheme="URI" /><meta content="c_csls_modbus_write.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_410" name="DC.Identifier" /><title>SIS Controller Modbus port</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_charm_failsafe_behavior.html" /><link rel="next" href="c_csls_modbus_write.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_410" data-relpath="c_sis_ctrlr_modbus_port.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_410"></a>
+
+<h1 class="topictitle1">SIS Controller Modbus port</h1>
+<div> 
+	 <p>For standalone safety systems, the DeltaV SIS controller can communicate
+		to a third-party control system through Modbus TCP with the DeltaV SIS
+		controller acting as a slave device. The DeltaV SIS controller supports both
+		simplex and redundant Modbus communication. 
+	 </p>
+ 
+	 <p>For simplex mode, connect one of the top ports of the DeltaV SIS
+		controller to the DeltaV ACN and the other top port to the Modbus master. You
+		must also enable network redundancy for the controller. To enable redundancy,
+		check the 
+		<span class="uicontrol">Enable network redundancy for this node</span> check box
+		on the SIS Controller properties dialog. 
+	 </p>
+ 
+	 <p>For redundant Modbus communication, connect the top ports of the DeltaV
+		SIS controller to the Modbus master and to the DeltaV ACN. On a SIS standalone
+		system, the DeltaV ACN enables connectivity to the SIS engineering station (a
+		DeltaV ProfessionalPLUS station). The top ports on the SIS controller handle
+		DeltaV communications and Modbus simultaneously using different IP addresses
+		for Modbus communication. 
+	 </p>
+ 
+	 <p>Configure the IP address for Modbus TCP through the 
+		<strong>Modbus Port Properties</strong> dialog. You also define Modbus TCP
+		registers and mappings through this dialog. The figure below shows an example
+		system. 
+	 </p>
+ 
+	 <div class="fignone"><div><span class="figcap">Connections to third-party control system through Modbus
+		  TCP</span></div> 
+		<br /><div class="imagecenter"><img class="imagecenter" src="3rd_party_modbus_connect.png" /></div><br />
+		
+	 </div>
+ 
+	 <p>The following table shows the register types and their data types and
+		the number of values and register addresses that can be configured. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_410__table_B650536004654DF19C110DC91A95FA4D_unique_1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_410__table_B650536004654DF19C110DC91A95FA4D_unique_1" rules="all" summary=""><caption><span class="tablecap">Modbus Port data configuration</span></caption><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" id="d1342825e61" valign="top" width="15.384615384615385%">Register type 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1342825e64" valign="top" width="15.384615384615385%">Data type 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1342825e67" valign="top" width="23.076923076923077%">Description 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1342825e70" valign="top" width="23.076923076923077%">Number of values 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1342825e73" valign="top" width="23.076923076923077%">Base register address (read-only and fixed) 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">coil 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">Boolean 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%">For discrete output parameter read/writes 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%">0 to 1000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R1 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">input status 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">Boolean 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%">For discrete input and status parameter reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%">0 to 1000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R10001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">float input 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">floating point 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%">Floating point for analog input parameter
+				reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%">0 to 3000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R30001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">integer input 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">8- or 16-bit unsigned 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%">Integer for integer value input parameter
+				reads 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%">0 to 3999 (restricted by the last register
+				being 39999) 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R36001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">float holding 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">floating point 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%"> Floating point for analog parameters 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%">0 to 3000 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R40001 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" headers="d1342825e61 " valign="top" width="15.384615384615385%">integer holding 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e64 " valign="top" width="15.384615384615385%">8- or 16-bit unsigned 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e67 " valign="top" width="23.076923076923077%"> Integer for integer value parameters 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e70 " valign="top" width="23.076923076923077%"> 0 to 3999 (restricted by the last register
+				being 49999) 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1342825e73 " valign="top" width="23.076923076923077%">R46001 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>There is only one data set for each register type and the data set
+		  must be sized large enough for registers of that type that will be used. The
+		  register offset is always 0. Each data set starts at the base address for that
+		  register type. 
+		</p>
+ 
+		<p>You can map parameters to Modbus port registers from the 
+		  <span class="wintitle">Register mapping</span> and 
+		  <span class="wintitle">Map Register</span> dialogs. However, because of the
+		  possible large number of parameters to map, using Bulk Edit is easier for
+		  initial configuration. 
+		</p>
+ 
+		<p>Only function block and module parameters can be mapped. There is one
+		  mapping table for the SIS Controller. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_410__section_07E8D045ED5846319272B074583216EE"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_410__section_07E8D045ED5846319272B074583216EE"></a><h2 class="sectiontitle">Supported Modbus TCP Function commands</h2> 
+		 
+		<p>The following function codes are supported from the Modbus interface. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_410__table_08A92B375F644CEE83CD43C7A806943F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_410__table_08A92B375F644CEE83CD43C7A806943F" rules="all" summary=""> 
+			  
+			  
+			 <thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1342825e229" valign="top" width="33.33333333333333%"> Function commands 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1342825e232" valign="top" width="66.66666666666666%"> Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>1 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Read multiple coils (1 bit per coil) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>2 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Read multiple input statuses (1 bit per status) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>3 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Read holding registers 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>4 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Read multiple input registers (2 bytes per register) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>5 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Write single coil (0x0000 = OFF, 0xFF00 = ON) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%">6 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%">Write single holding register (2 bytes) 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%"> 
+					 <p>15 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%"> 
+					 <p>Write multiple coils (1 bit per coil) 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1342825e229 " valign="top" width="33.33333333333333%">16 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1342825e232 " valign="top" width="66.66666666666666%">Write multiple holding registers (2 bytes per register) 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+  </div>
+<div><h2 class="sectiontitle">Subtopics:</h2>
+<ul class="ullinks">
+<li class="ulchildlink"><a href="c_csls_modbus_write.html">SIS Controller Modbus port write support</a><br />
+</li>
+</ul>
+
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_bulk_edit_sisctlr_modbus_registers.html">Bulk edit SIS Controller Modbus Port register mapping</a></div>
+<div><a href="t_configure_sis_controller_modbus_port_mapping.html">Configure SIS Controller Modbus port Data set mapping</a></div>
+<div><a href="r_modbus_register_ranges.html">Modbus register ranges</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

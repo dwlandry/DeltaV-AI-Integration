@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Splitter function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_splitter.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_splitter_function_block_execution" name="DC.Identifier" /><title>Splitter function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_splitter.html" /><link rel="next" href="c_splitter_function_block_modes.html" /></head><body class="fixed" id="c_splitter_function_block_execution" data-relpath="c_splitter_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_splitter_function_block_execution"></a>
+
+<h1 class="topictitle1">Splitter function block execution</h1>
+<div><div></div>
+
+    <p id="c_splitter_function_block_execution__blockexecutionsplitterfunctionblock"><a name="c_splitter_function_block_execution__blockexecutionsplitterfunctionblock"></a>You select how the outputs are calculated with parameter configuration. The inputs wired to the block determine the outputs.</p>
+
+    <p>
+      <strong>Calculating Outputs</strong>
+    </p>
+
+    <p>The block outputs (OUT_1 and OUT_2) are calculated from the block setpoint (SP) using the slope and limits established by the IN_ARRAY and OUT_ARRAY parameters. The four values of the IN_ARRAY determine the SP range used to calculate outputs based on the four values of the OUT_ARRAY output range. The following table illustrates the relationship between the block outputs and the array elements:</p>
+
+    
+<div class="tablenoborder"><a name="c_splitter_function_block_execution__table_E81C7DAB21EC42598CEB9620951A6953"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_splitter_function_block_execution__table_E81C7DAB21EC42598CEB9620951A6953" rules="all" summary=""><caption><span class="tablecap">Splitter Function Block Output Assignments</span></caption>
+        
+        
+        
+        
+        
+        <thead align="left">
+          <tr valign="top">
+            <th class="cellrowborder" id="d1378318e54" valign="top" width="15.649452269170583%">
+              <p>Block Output</p>
+
+            </th>
+
+            <th class="cellrowborder" colspan="2" id="d1378318e60" valign="top">
+              <p>IN_ARRAY Element</p>
+
+            </th>
+
+            <th class="cellrowborder" colspan="2" id="d1378318e66" valign="top">
+              <p>OUT_ARRAY Element</p>
+
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1378318e54 " valign="top" width="15.649452269170583%">
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="24.882629107981227%">
+              <p>Starting SP Value</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="20.970266040688582%">
+              <p>Ending SP Value</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="18.62284820031299%">
+              <p>Output Value for Starting SP Value</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="19.87480438184664%">
+              <p>Output Value for Ending SP Value</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1378318e54 " valign="top" width="15.649452269170583%">
+              <p>OUT_1</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="24.882629107981227%">
+              <p>X11</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="20.970266040688582%">
+              <p>X12</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="18.62284820031299%">
+              <p>Y11</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="19.87480438184664%">
+              <p>Y12</p>
+
+            </td>
+
+          </tr>
+
+          <tr valign="top">
+            <td class="cellrowborder" headers="d1378318e54 " valign="top" width="15.649452269170583%">
+              <p>OUT_2</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="24.882629107981227%">
+              <p>X21</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e60 " valign="top" width="20.970266040688582%">
+              <p>X22</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="18.62284820031299%">
+              <p>Y21</p>
+
+            </td>
+
+            <td class="cellrowborder" headers="d1378318e66 " valign="top" width="19.87480438184664%">
+              <p>Y22</p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+</div>
+
+    <p>Some constraints are enforced by the controller to guarantee useful output values:</p>
+
+    <a name="c_splitter_function_block_execution__ul_4352CD4A4AB74B41B61810D32E683EFC"></a><ul id="c_splitter_function_block_execution__ul_4352CD4A4AB74B41B61810D32E683EFC">
+      <li id="c_splitter_function_block_execution__li_2BC8771BFFF342958235860C8D436231"><div class="li_content">
+        <p>X12 must be greater than X11</p>
+
+      </div></li>
+
+      <li id="c_splitter_function_block_execution__li_8DDE82248BFF499D8C7B9D324D52A216"><div class="li_content">
+        <p>X22 must be greater than X21</p>
+
+      </div></li>
+
+      <li id="c_splitter_function_block_execution__li_5AB1D4E4DDCC4190826A4D94766F2200"><div class="li_content">
+        <p>X21 must be greater than or equal to X11</p>
+
+      </div></li>
+
+    </ul>
+
+    <p>Violation of any of these constraints locks the block into OOS mode and sets the BLOCK_ERR parameter to Configuration Error.</p>
+
+    <p>The OUT_1 parameter is set to Y11 when the SP value exceeds X12 when the LOCKVAL parameter is defined as follows:</p>
+
+    <pre class="codeblock">OUT_1 is Y11 when SP &gt; X12</pre>
+
+    <p>A configured hysteresis (default value equal to five percent of the X11-to-X12 span) is used to prevent OUT_1 from jumping between Y11 and Y12 at X12.</p>
+
+    <p>The following figures show the output values for three examples of IN_ARRAY and OUT_ARRAY elements:</p>
+
+    <div class="fignone" id="c_splitter_function_block_execution__fig_B005380FD844424E82E6B268C312EB97"><a name="c_splitter_function_block_execution__fig_B005380FD844424E82E6B268C312EB97"></a><div><span class="figcap">Splitter function block execution example 1</span></div>
+      <a name="c_splitter_function_block_execution__image_B3FA102A60A945AB8A9D67F43EFCF7AC"></a><img id="c_splitter_function_block_execution__image_B3FA102A60A945AB8A9D67F43EFCF7AC" src="fbhelp0236.gif" />
+    </div>
+
+    <div class="fignone" id="c_splitter_function_block_execution__fig_D95B8C2CA4E44131BD221CFCBD586EF5"><a name="c_splitter_function_block_execution__fig_D95B8C2CA4E44131BD221CFCBD586EF5"></a><div><span class="figcap">Splitter function block execution example 2</span></div>
+      <a name="c_splitter_function_block_execution__image_8DA8B824EC5F4C639DDEFD3D0D0500F1"></a><img id="c_splitter_function_block_execution__image_8DA8B824EC5F4C639DDEFD3D0D0500F1" src="fbhelp0237.gif" />
+    </div>
+
+    <div class="fignone" id="c_splitter_function_block_execution__fig_C5DC282CD35D4FDE8FBB527DF62130B0"><a name="c_splitter_function_block_execution__fig_C5DC282CD35D4FDE8FBB527DF62130B0"></a><div><span class="figcap">Splitter function block execution example 3</span></div>
+      
+      <a name="c_splitter_function_block_execution__image_CDE9C2F73F9848718473BA2D533CD662"></a><img id="c_splitter_function_block_execution__image_CDE9C2F73F9848718473BA2D533CD662" src="fbhelp0238.gif" />
+    </div>
+
+    <p>
+      <strong>Setpoint Limiting</strong>
+    </p>
+
+    <p>The setpoint is limited to the endpoints of the IN_ARRAY parameter values.</p>
+
+    <p>In Auto mode, you can apply rate of change limits to the setpoint by configuring the SP_RATE_UP and SP_RATE_DN parameters. Rate limiting applies only in Auto mode.</p>
+
+    <p>
+      <strong>Block Errors</strong>
+    </p>
+
+    <div class="p">The following conditions are reported in the BLOCK_ERR parameter:<a name="c_splitter_function_block_execution__ul_B472DDFD8AE24E13B0E46B74D1D60921"></a><ul id="c_splitter_function_block_execution__ul_B472DDFD8AE24E13B0E46B74D1D60921"><li id="c_splitter_function_block_execution__li_E66DCC747F0844F4886C1E18DDFDE1FC"><div class="li_content"><p>
+      <strong>Block configuration error</strong> — The block is wired to a HART channel and the HART device indicates that the function block&#39;s units are not compatible with the device. In this case, the Out of Service block error is also set.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_8DF5AE54DF8F48CCAF72D69AD9DF23CC"><div class="li_content"><p>
+      <strong>Simulate active</strong> — Simulation is enabled and the block is using a simulated value in its execution.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_45F3C7994AF94B35BC74466E010E88C2"><div class="li_content"><p>
+      <strong>Input failure/process variable has <em>Bad</em> status</strong> — The source of the block&#39;s process variable is bad. Indicates a hardware failure, a non-existent Device Signal Tag (DST), or a Bad status on the SIMULATE parameter.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_AEE88572AE7C4190931252327D2AC82B"><div class="li_content"><p>
+      <strong>Local Override</strong> — The block is in Local Override (LO) mode.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_6FD62A31A7C5426281066F96466BD770"><div class="li_content"><p>
+      <strong>Out of Service</strong> — The block is in Out of Service (OOS) mode.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_58BE5A3290F4499BB4DAB65FB4FF976C"><div class="li_content"><p>
+      <strong>Output failure</strong> — The status of BKCAL_IN_1 or BKCAL_IN 2 is Bad.</p>
+</div></li>
+<li id="c_splitter_function_block_execution__li_D7E9BCB656074681833C130EC143FDE3"><div class="li_content"><p>
+      <strong>Other Error</strong> — The status of CAS_IN is Bad.</p>
+</div></li>
+</ul>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

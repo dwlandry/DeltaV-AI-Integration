@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="CHARMs failure action operation" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_failure_action_settings.html" name="DC.Relation" scheme="URI" /><meta content="c_what_are_charms.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_140" name="DC.Identifier" /><title>CHARMs failure action operation</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_charm_io_downloads.html" /><link rel="next" href="c_charm_io_troubleshooting.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_140" data-relpath="c_charms_failure_action.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_140"></a>
+
+<h1 class="topictitle1">CHARMs failure action operation</h1>
+<div> 
+	 <p> CHARMs support the same type of failure action operation as I/O cards.
+		When the CIOC is downloaded, a two second time out period is enabled in the
+		CHARMs. If communications to the CIOC are lost for more than two seconds, the
+		CHARMs will enter the failure action mode. This two second timeout period is
+		not configurable by the user, nor can it be disabled. In addition, if the CIOC
+		loses communications with a controller for three seconds, all output CHARMs
+		assigned to that controller will enter the failure action mode. 
+	 </p>
+ 
+	 <div class="section" id="concept_74495CFD26EC43EFA995B219B6208892_unique_140__section_6CD3513D4F024894848FFC55FCE85344"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_140__section_6CD3513D4F024894848FFC55FCE85344"></a><h2 class="sectiontitle">Failure action by CHARM type</h2>
+		
+		<p>A CHARM&#39;s failure action operation depends upon its type. All
+		  configured CHARMs turn on the red Error LED, but only output CHARMs take any
+		  further failure action. The following failure action configuration options are
+		  available for 
+		  <em>configured</em> OUTPUT CHARMs:
+		</p>
+
+		<a name="concept_74495CFD26EC43EFA995B219B6208892_unique_140__ul_BD731E782E0E40188C625FAAFA86AC77"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_140__ul_BD731E782E0E40188C625FAAFA86AC77"> 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_140__li_E828FFF2EDE6402EA9843C5DBB078763"><div class="li_content">
+			 <p>Failure Action Mode – Designates if the CHARM should HOLD LAST
+				VALUE or OUTPUT FAILURE ACTION VALUE.
+			 </p>
+
+		  </div></li>
+ 
+		  <li id="concept_74495CFD26EC43EFA995B219B6208892_unique_140__li_D62FAA6C9C39438EA8E97C732787A65C"><div class="li_content">
+			 <p>Failure Action Value – Specifies the value used if the CHARM is
+				configured to OUTPUT FAILURE ACTION VALUE.
+			 </p>
+
+		  </div></li>
+ 
+		</ul>
+
+		
+<div class="tablenoborder"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_140__table_EB471D891C9845A0AAC79DE834858B20"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_74495CFD26EC43EFA995B219B6208892_unique_140__table_EB471D891C9845A0AAC79DE834858B20" rules="all" summary=""><thead align="left">
+				<tr valign="top">
+				  <th class="cellrowborder" id="d850932e53" valign="top">Card
+				  </th>
+
+				  <th class="cellrowborder" id="d850932e56" valign="top">Failure Action Mode options
+				  </th>
+
+				</tr>
+</thead>
+
+			 <tbody>
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d850932e53 " valign="top">
+					 <p>Analog Output
+					 </p>
+
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d850932e56 " valign="top">
+					 <p>Hold Last Value: The output is held at the last value
+						received from the controller before the failure action condition occurred. 
+					 </p>
+
+					 <p> Go to Configured Failure Action: The output is driven to
+						the configured failure action value when the failure action condition is
+						entered. 
+					 </p>
+
+					 <div class="note"><span class="notetitle">Note:</span> All outputs values below 1 mA (including failure action
+						values) are clamped to 1mA to ensure that the open loop detection mechanism of
+						the D/A converter is always operable.
+					 </div>
+
+				  </td>
+ 
+				</tr>
+
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d850932e53 " valign="top">
+					 <p>Discrete Output
+					 </p>
+
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d850932e56 " valign="top">
+					 <p>Hold Last Value: The outputs continue with the latest
+						configuration and output values. This applies to all CHARM types. If the CHARM
+						is configured to be continuous pulse output type, it continues with the latest
+						period and duty cycle. If it is configured to be a momentary pulse output type,
+						it continues to process the current pulse. No additional pulses can be
+						generated. 
+					 </p>
+
+					 <p> Go to Configured Failure Action: In this mode, failure
+						action forces the outputs to go to predefined levels. If the CHARM is
+						configured as momentary or continuous pulse output type, the pulse is aborted
+						for the failure action value.
+					 </p>
+
+				  </td>
+ 
+				</tr>
+
+			 </tbody>
+
+		  </table>
+</div>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_failure_action_settings.html">Failure action settings</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

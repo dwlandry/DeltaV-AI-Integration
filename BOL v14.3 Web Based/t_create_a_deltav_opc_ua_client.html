@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Create a DeltaV OPC UA client" name="DC.Title" /><meta content="" name="DC.Coverage" /><meta content="c_opc_ua_specifications.html" name="DC.Relation" scheme="URI" /><meta content="c_implementing_security_for_opc_ua_client.html" name="DC.Relation" scheme="URI" /><meta content="c_develop_certificate_solution.html" name="DC.Relation" scheme="URI" /><meta content="t_test_opc_ua_client-side_comms.html" name="DC.Relation" scheme="URI" /><meta content="c_opc_ua_and_the_deltav_system.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_create_a_deltav_opc_ua_client" name="DC.Identifier" /><title>Create a DeltaV OPC UA client</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="t_change_server_ports.html" /><link rel="next" href="c_opc_ua_and_dns_EIOC.html" /></head><body class="fixed" id="t_create_a_deltav_opc_ua_client" data-relpath="t_create_a_deltav_opc_ua_client.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_create_a_deltav_opc_ua_client"></a>
+
+<h1 class="topictitle1">Create a DeltaV OPC UA client</h1>
+<div> 
+	 <div class="section"> 
+		<div class="note"><span class="notetitle">Note:</span> This task describes how to create a DeltaV OPC UA client without
+		  security features. Refer to the related information for information on OPC UA
+		  security. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="p"> 
+		<div class="p"> 
+		<ul> 
+		  <li><div class="li_content">To create a working client, you need to know the endpoint URL of
+			 the associated OPC UA server. Record the server’s opc.tcp protocol URL before
+			 creating a client. To obtain the url of a DeltaV server: 
+			 <ul> 
+				<li><div class="li_content">For DeltaV workstation servers, click the OPC UA Server
+				  subsystem in the left pane of DeltaV Explorer. The right pane displays the
+				  opc.tcp endpoint url. Right click the endpoint and click 
+				  <span class="uicontrol">Properties</span>. Copy the url from the dialog. 
+				</div></li>
+ 
+				<li><div class="li_content">For DeltaV PK controller servers, click the OPC UA Server
+				  subsystem in the left pane of DeltaV Explorer and right-click 
+				  <span class="uicontrol">Properties</span>. Click the 
+				  <span class="uicontrol">Advanced</span> tab and copy the endpoint url. 
+				</div></li>
+ 
+			 </ul>
+ 
+			 <div class="note"><span class="notetitle">Note:</span>  
+				<p>The endpoint URL is not contained in the OPC UA server&#39;s FHX
+				  file. 
+				  <span id="t_create_a_deltav_opc_ua_client__ph_reconstruct_OPCUA_endpoint_URL_unique_1"><a name="t_create_a_deltav_opc_ua_client__ph_reconstruct_OPCUA_endpoint_URL_unique_1"></a>To reconstruct the URL, you
+			 can use the node&#39;s information in this format: 
+			 <var class="varname">protocol://machine:port/path</var>. For example, 
+			 <var class="varname">opc.tcp://192.168.1.2:4880/DVOpcUaServer</var> (where 
+			 <var class="varname">192.168.1.2</var> is the node&#39;s IP address. For
+			 workstation-based OPC UA servers, the hostname (the node&#39;s computer name) is
+			 valid in place of the IP address). 
+		  </span>
+				  
+				</p>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		  <li><div class="li_content">For EIOC clients, the port protocol must be 
+			 <span class="uicontrol">OPC UA</span>. To set the protocol, open the EIOC
+			 port properties in DeltaV Explorer, click the 
+			 <span class="uicontrol">Advanced</span> tab and select 
+			 <span class="uicontrol">OPC UA</span> under the 
+			 <span class="uicontrol">Protocol</span> drop-down list. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <ol><li class="stepexpand"> 
+		  <span>Navigate to the 
+			 <span class="uicontrol">OPC UA Client</span> subsystem in the DeltaV Explorer
+			 hierarchy. The client is under ProfessionalPlus workstations, Application
+			 workstations and EIOCs. This procedure is for a client on the ProfessionalPlus.
+			 The procedure for other client types is similar. 
+		  </span> 
+		    
+			 <div class="note"><span class="notetitle">Note:</span> Make sure the node name does not contain a 
+				<strong>$</strong> character. This is not a legal character in OPC UA
+				applications with digital certificates. 
+			 </div>
+ 
+		   
+		   <img src="DVEXP-hierarchy-client.png" />
+			 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>Select the OPC UA Client and right-click 
+			 <span class="uicontrol">Properties</span>. The system displays the 
+			 <span class="uicontrol">OPC UA Client</span> dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">Enable OPC UA Client</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click the 
+			 <strong>Certificate</strong> tab. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select the OPC UA Client and right-click, 
+			 <span class="uicontrol">New OPC UA Physical Device</span>. The system
+			 displays the physical device (PDT) properties dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>On the 
+			 <span class="uicontrol">General</span> tab, enter a description for the
+			 physical device. Physical devices correspond to OPC UA servers. You may want to
+			 include information in the description that identifies the server. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>On the 
+			 <span class="uicontrol">Primary 
+			 </span>tab, enter the opc.tpc protocol URL for the server in the
+			 
+			 <span class="uicontrol">Endpoint Url</span> field. 
+		  </span> 
+		    
+			 <div class="note" id="t_create_a_deltav_opc_ua_client__note_DNS_needed_for_hostname_only_entry"><a name="t_create_a_deltav_opc_ua_client__note_DNS_needed_for_hostname_only_entry"></a><span class="notetitle">Note:</span>  
+				  <p id="t_create_a_deltav_opc_ua_client__p_note_DNS_needed_for_hostname_only_entry"><a name="t_create_a_deltav_opc_ua_client__p_note_DNS_needed_for_hostname_only_entry"></a>If the URL
+					 contains a hostname and not an IP address, you must have a DNS server
+					 configured that will resolve that hostname to a static IP address with a lease
+					 time set to infinite (so that the IP address will remain in the DNS table). If
+					 a dynamic IP address is used for your endpoint (such as one assigned by DHCP),
+					 you will have to update the DNS table with the new IP address every time it is
+					 reassigned. 
+				  </p>
+ 
+				</div>
+ 
+		   
+		</li>
+<li class="stepexpand"> 
+		  <span>For redundant servers, enter the secondary opc.tcp protocol URL on
+			 the 
+			 <span class="uicontrol">Secondary</span> tab. This step is not required for
+			 simplex servers. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select the physical device in the DeltaV Explorer hierarchy and
+			 right-click, 
+			 <span class="uicontrol">New OPC UA Logical Device</span>. The system names
+			 physical devices PDT1, PDT2, and so on. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Select the logical device and right-click 
+			 <span class="uicontrol">Properties</span>. The software displays the 
+			 <span class="uicontrol">OPC UA Logical Device</span> dialog. The system names
+			 logical devices LDT1, LDT2, and so on. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>On the 
+			 <span class="uicontrol">General 
+			 </span>tab, enter a description to differentiate this from other
+			 logical devices. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>On the 
+			 <span class="uicontrol">Subscription Settings</span> tab, enter the 
+			 <span class="uicontrol">Publishing Interval</span>. The publishing interval
+			 is the interval at which the client pulls data from the server. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click the 
+			 <span class="uicontrol">OPC UA Client</span>, then right-click 
+			 <span class="uicontrol">Download</span>. 
+		  </span> 
+		  <span class="step_result"> The system displays the 
+			 <span class="uicontrol">Confirm Partial Download</span> dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Click 
+			 <span class="uicontrol">Yes</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>If you receive any warnings (for example, the primary connection
+			 for PDT1 does not have a server application certificate configured), click 
+			 <span class="uicontrol">Download Anyway</span>. 
+		  </span> 
+		</li>
+<li class="stepexpand"> 
+		  <span>Before creating signals in the client to read server data, test to
+			 make sure that the client can communication with the server. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_opc_ua_specifications.html">DeltaV OPC UA server and client capacities</a></div>
+<div><a href="c_implementing_security_for_opc_ua_client.html">Implementing security for a DeltaV OPC UA client</a></div>
+<div><a href="c_develop_certificate_solution.html">Developing a digital certification
+	 solution for OPC UA</a></div>
+<div><a href="t_test_opc_ua_client-side_comms.html">Test OPC UA client-side communications</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

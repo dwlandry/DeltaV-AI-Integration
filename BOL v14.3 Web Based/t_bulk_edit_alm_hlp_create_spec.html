@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Create alarm help format specification files" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_bulk_edit_alarm_help.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="t_bulk_edit_alm_hlp_create_spec" name="DC.Identifier" /><title>Create alarm help format specification files</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_bulk_edit_alm_hlp_fmt_spec.html" /><link rel="next" href="r_bulk_edit_alm_hlp_considerations.html" /></head><body class="fixed" id="t_bulk_edit_alm_hlp_create_spec" data-relpath="t_bulk_edit_alm_hlp_create_spec.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="t_bulk_edit_alm_hlp_create_spec"></a>
+
+<h1 class="topictitle1">Create alarm help format specification files</h1>
+<div><div></div>
+
+	 <div class="section" id="t_bulk_edit_alm_hlp_create_spec__context_456356AAF19347CE8724984DD4ED0A94"><a name="t_bulk_edit_alm_hlp_create_spec__context_456356AAF19347CE8724984DD4ED0A94"></a>
+		<p>If the existing format specification files do not meet your needs, or
+		  if you have modules that contain alarms that are different from the alarms
+		  supported in Module_AlmHlp.fmt, you can create your own format specification
+		  files. The following is an example of how to create a format specification file
+		  for custom modules in a configuration. In this example, the configuration has a
+		  ModuleTemplates category named Local that contains two module templates,
+		  MODULE_1 and MODULE_2. 
+		</p>
+
+		<p>MODULE_1 has alarms ALARM_1 and ALARM_2 defined. MODULE_2 has alarms
+		  ALARM_A and ALARM_B defined. You can create an alarm help format specification
+		  file for each module, but if you want to be able to bulk edit alarms for both
+		  types of modules in one text file you can create a format file that includes
+		  alarm information for both modules:
+		</p>
+
+	 </div>
+
+	 <a name="t_bulk_edit_alm_hlp_create_spec__steps_0316D144433C41B59C922A60E83E4CF3"></a><ol id="t_bulk_edit_alm_hlp_create_spec__steps_0316D144433C41B59C922A60E83E4CF3"><li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_D07A1BEADA424A32A1E91C1EBEBB93EF"><a name="t_bulk_edit_alm_hlp_create_spec__step_D07A1BEADA424A32A1E91C1EBEBB93EF"></a>
+		  <span>Open the 
+			 <span class="wintitle">Format specification</span> dialog (in DeltaV Explorer
+			 select 
+			 <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Format
+				  Specification</span> &gt; <span class="uicontrol">New</span></span>).
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_7270B078F9E84976AD8C35E707F9D4A8"><a name="t_bulk_edit_alm_hlp_create_spec__step_7270B078F9E84976AD8C35E707F9D4A8"></a>
+		  <span>Enter a meaningful name for the file and click 
+			 <span class="uicontrol">Next</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_559844244C3743D58F96D8AD1AC6E2EA"><a name="t_bulk_edit_alm_hlp_create_spec__step_559844244C3743D58F96D8AD1AC6E2EA"></a>
+		  <span>In the 
+			 <span class="uicontrol">Object type</span> field select 
+			 <span class="uicontrol">Module</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_8D2D0FF8B934420484E2AC362691B152"><a name="t_bulk_edit_alm_hlp_create_spec__step_8D2D0FF8B934420484E2AC362691B152"></a>
+		  <span>Click the 
+			 <span class="uicontrol">Browse</span> button next to the 
+			 <span class="uicontrol">Subtype</span> field and navigate to the Local
+			 ModuleTemplates folder. 
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_4DE8D4508781414C9A9B488E100F8540"><a name="t_bulk_edit_alm_hlp_create_spec__step_4DE8D4508781414C9A9B488E100F8540"></a>
+		  <span>Select one of the module templates and click 
+			 <span class="uicontrol">OK</span>. 
+		  </span>
+		   
+			 <div class="note"><span class="notetitle">Note:</span> 
+				<p> You can also browse to a module created from the template.
+				</p>
+
+			 </div>
+ 
+		  
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_B6E04C075C8F4C90943C13B54BF69B6F"><a name="t_bulk_edit_alm_hlp_create_spec__step_B6E04C075C8F4C90943C13B54BF69B6F"></a>
+		  <span>In the Field names area select the module_name field. 
+		  </span>
+		   
+			 <p>Because you are editing only alarm-related information and are not
+				creating new modules, this is the only field that is required to exist in the
+				format file. You can add other fields if you want. 
+			 </p>
+ 
+		  
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_521B9307AA7E4326A5FF6345269145C9"><a name="t_bulk_edit_alm_hlp_create_spec__step_521B9307AA7E4326A5FF6345269145C9"></a>
+		  <span>In the Field names area select the alarm parameters under 
+			 <span class="uicontrol">Alarms</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_0BCD8639F47344E89CF34109BDEE094C"><a name="t_bulk_edit_alm_hlp_create_spec__step_0BCD8639F47344E89CF34109BDEE094C"></a>
+		  <span>Click the 
+			 <span class="uicontrol">Browse</span> button next to the 
+			 <span class="uicontrol">Subtype</span> field and navigate to the Local
+			 ModuleTemplates folder.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_394ADFC61C4A46D69385A84D25938A95"><a name="t_bulk_edit_alm_hlp_create_spec__step_394ADFC61C4A46D69385A84D25938A95"></a>
+		  <span>Select the other module template and click 
+			 <span class="uicontrol">OK</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_0E03F6A2FA63486DA5C7117A9CE26BE8"><a name="t_bulk_edit_alm_hlp_create_spec__step_0E03F6A2FA63486DA5C7117A9CE26BE8"></a>
+		  <span>In the Field names area select the alarm parameters under 
+			 <span class="uicontrol">Alarms</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_FDEFEFA0910D464D85B3792BB9AFC634"><a name="t_bulk_edit_alm_hlp_create_spec__step_FDEFEFA0910D464D85B3792BB9AFC634"></a>
+		  <span>Click 
+			 <span class="uicontrol">Next</span>.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_E99FC218FA4C4039917F547CF29D202E"><a name="t_bulk_edit_alm_hlp_create_spec__step_E99FC218FA4C4039917F547CF29D202E"></a>
+		  <span>Click 
+			 <span class="uicontrol">Next</span> to accept the field order.
+		  </span>
+		</li>
+<li class="stepexpand" id="t_bulk_edit_alm_hlp_create_spec__step_F05298A0620047DF923AB653E0862B89"><a name="t_bulk_edit_alm_hlp_create_spec__step_F05298A0620047DF923AB653E0862B89"></a>
+		  <span>Click 
+			 <span class="uicontrol">Finish</span>.
+		  </span>
+		</li>
+</ol>
+
+	 <div class="section" id="t_bulk_edit_alm_hlp_create_spec__result_D83978C68FA6421E9FDA7697186E33C6"><a name="t_bulk_edit_alm_hlp_create_spec__result_D83978C68FA6421E9FDA7697186E33C6"></a>
+		<p>In DeltaV Explorer you can now navigate to an area that contains
+		  instances of these modules and export the alarm information for them.
+		</p>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

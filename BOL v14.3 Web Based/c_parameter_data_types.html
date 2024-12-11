@@ -1,0 +1,3883 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Parameter data types" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="parameter data types" name="DC.subject" /><meta content="parameter data types" name="keywords" /><meta content="c_floating_point_parameter.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_params_dynamic_ref.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_params_external_ref.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_params_internal_ref.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_params.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_parameter_data_types" name="DC.Identifier" /><title>Parameter data types</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_creating_custom_engineering_unit_descriptors.html" /><link rel="next" href="c_status_handling.html" /></head><body class="fixed" id="c_parameter_data_types" data-relpath="c_parameter_data_types.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_parameter_data_types"></a>
+
+<h1 class="topictitle1">Parameter data types</h1>
+<div><div></div>
+ 
+	 <p id="c_parameter_data_types__parameterdatatypes"><a name="c_parameter_data_types__parameterdatatypes"></a>Parameter data can be transmitted between blocks
+		and used for trending, alarming, diagnostics, and advanced control. Outputs
+		from one function block can be brought into another function block as
+		parameters for calculation or logic functions and sent to other function blocks
+		or to the field. 
+	 </p>
+ 
+	 <div class="p">Function block parameter data can be one of the following types: 
+	 <a name="c_parameter_data_types__ul_768BA3F652E4446396A9F1AD7D58789C"></a><ul id="c_parameter_data_types__ul_768BA3F652E4446396A9F1AD7D58789C"> 
+		<li id="c_parameter_data_types__li_46E88C5418D04EDD920188624E78AF95"><div class="li_content"> 
+		  <p><strong>Boolean</strong> — a logic value that is True (1) or False (0). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_0E80EC81B628411E9E44B1F639117BB5"><div class="li_content"> 
+		  <p> 
+			 <strong>Boolean with Status</strong> — a True or False value with status
+			 indicator. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_D386A817AFBB47CB86E69845A90D7C30"><div class="li_content"> 
+		  <p><strong>Discrete with Status</strong> — an unsigned 8-bit integer value with a
+			 status indicator. A value of 0 (zero) means False. A value between 1 and 255
+			 means True. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_067DD0DFF50B4B9C97B581B2D66ACBD5"><div class="li_content"> 
+		  <p> 
+			 <strong>Simulate Discrete</strong> — a discrete value that enables/disables
+			 simulation and a simulated discrete value and status. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_29B8F40CEB3D43588644E18919DD88D6"><div class="li_content"> 
+		  <p><strong>Dynamic Reference</strong> — a type of external parameter used to
+			 define a path to a value selected at run time. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_A1B9A733D90E4BD8A4E4C36EB72FC907"><div class="li_content"> 
+		  <p><strong>External Reference</strong> — a reference to a parameter outside the
+			 current module. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_255331F2F08348F4BE56263667D0809C"><div class="li_content"> 
+		  <p><strong>Floating Point</strong> — a number whose decimal point location is not
+			 fixed. This allows the calculation to consider significant digits information. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_D614B1F77F524623AEAD9E4033644C5D"><div class="li_content"> 
+		  <p> 
+			 <strong>Floating Point Array</strong> — an aggregate of floating point values. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_1366649AE9A744F48E8E71F17A2EB4AE"><div class="li_content"> 
+		  <p> 
+			 <strong>Floating Point with Status</strong> — a floating point value with a
+			 status indicator. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_5C1E5AFE13304025AB9AF6815EEFD5CE"><div class="li_content"> 
+		  <p> 
+			 <strong>Simulate Float</strong> — a discrete value that enables/disables
+			 simulation and a simulated floating point value and status. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_B5DE5F946A4C445196A3AE04F6C67DF2"><div class="li_content"> 
+		  <p><strong>I/O Reference</strong> — a value that assigns channel names in an I/O
+			 device. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_DD51C55DFC6740C69BD4A68861E40F16"><div class="li_content"> 
+		  <p><strong>Integer</strong> — a whole number. A signed integer has a positive or
+			 negative sign associated with it; an unsigned integer does not. Integer values
+			 can be 8-, 16-, or 32-bit values. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_0BF62AB7D425480A8496B64E07A6ED73"><div class="li_content"> 
+		  <p><strong>Internal Reference</strong> — a reference to a parameter within the
+			 current module. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_E1B04CC60143479FAE43361F0A4BF2A2"><div class="li_content"> 
+		  <p><strong>Mode</strong> — a collection of bitstrings that describe the target,
+			 actual, permitted, and normal modes of a block. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_7B5E2F60F9934425928DE7BB5B52FC7C"><div class="li_content"> 
+		  <p><strong>Named Set</strong> — a value from 0 to 255 that displays an assigned
+			 text message. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_AADBE3265690425BBAEEDACB3E99009E"><div class="li_content"> 
+		  <p><strong>Option Bitstring</strong> — an unsigned 16-bit value that indicates
+			 the chosen options. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_AD3DF6D61DA14A429E7DFE1136B37BA8"><div class="li_content"> 
+		  <p><strong>Scaling</strong> — a number that is used to convert a floating point
+			 value to the required engineering units. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_E1606F0DA7364532942FCC51C6767ABB"><div class="li_content"> 
+		  <p><strong>String</strong> — as many as 255 characters. Recipe parameters limit
+			 string values to 60 characters.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <p>You view the data type of each parameter by expanding the Parameter View
+		window in Control Studio. 
+	 </p>
+ 
+	 <p>Because data of different types can be transmitted between function
+		blocks, there are rules that govern data compatibility and conversions. The
+		data conversions are performed automatically by the DeltaV software. 
+	 </p>
+ 
+	 <p>Data types that have a status associated with them are treated in one of
+		three ways, depending on the conversion: 
+	 </p>
+ 
+	 <a name="c_parameter_data_types__ul_4A2B9C986A7A45A498456FBA97FAAB86"></a><ul id="c_parameter_data_types__ul_4A2B9C986A7A45A498456FBA97FAAB86"> 
+		<li id="c_parameter_data_types__li_8202B0BC5A274DC2A6266ED7A840FCDB"><div class="li_content"> 
+		  <p>When a data type with a status field is converted to another data
+			 type with a status field, the status field is copied from one to the other. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_70D7214682C44ACCB7908B1BA6F2881F"><div class="li_content"> 
+		  <p>When a data type with a status field is converted to a data type
+			 without a status field, the status field is lost. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_parameter_data_types__li_1D0A98F8785C4956AF6A56B3AF3D109B"><div class="li_content"> 
+		  <p>When a data type without a status field is converted to one with a
+			 status field, a 
+			 <em>Good</em> status field is created. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> If the source parameter value becomes a value that cannot be
+		  converted to the target data type (for example, a signed integer wired to an
+		  unsigned integer becomes negative), the target value retains the last converted
+		  value. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>The following table lists parameter data type compatibility information:
+		
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_parameter_data_types__table_D197565EDBF34B128F4FEF0803DC7DC1"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_parameter_data_types__table_D197565EDBF34B128F4FEF0803DC7DC1" rules="all" summary=""><caption><span class="tablecap">Function block parameter compatibility</span></caption><thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d1233790e235" valign="top" width="27.27272727272727%"> 
+				<p>Parameter Data Type 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1233790e241" valign="top" width="36.36363636363637%"> 
+				<p>Accepted Links 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d1233790e247" valign="top" width="36.36363636363637%"> 
+				<p>Comments 
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>8-bit Signed Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32 bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>16-bit Signed Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with Status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with Status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with Status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>32-bit Signed Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>8-bit Unsigned Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with Status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>16-bit Unsigned Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>32-bit Unsigned Integer</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>32-bit Unsigned Integer with status</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; precision loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="14" valign="top" width="27.27272727272727%"> 
+				<p><strong>Boolean</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="14" valign="top" width="27.27272727272727%"> 
+				<p><strong>Boolean with status</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>Floating Point</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>Floating Point with status</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p> Current value converted. If the number to be converted is
+				  larger than the extremes of the destination type, the previous converted value
+				  is retained. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>From 0 to 255, the current value is converted to integer. If the
+				  current value becomes greater than 255, the converted value remains at its
+				  previous value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>Floating Point Array</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point Array 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Compatible only when dimensions match exactly. Bit copy full
+				  parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>Simulate Float</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>None 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>Discrete with status</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into Target Mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>Simulate Discrete</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>None 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>Option Bitstring</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>From 0 to 255, the current value is converted to integer. If the
+				  current value becomes greater than 255, the converted value remains at its
+				  previous value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>Scaling</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Scaling 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="13" valign="top" width="27.27272727272727%"> 
+				<p><strong>Mode</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy full parameter. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Actual mode converted into current value. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>Access Permissions</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>None 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " valign="top" width="27.27272727272727%"> 
+				<p><strong>I/O Reference</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>None 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e235 " rowspan="15" valign="top" width="27.27272727272727%"> 
+				<p><strong>Named Set</strong> 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e247 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; clamped to extremes of destination
+				  type. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Signed Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>8-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>16-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>32-bit Unsigned Integer with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Floating Point with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Discrete with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted into target mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Boolean with status 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value set to zero if source current value equals zero.
+				  Else, current value set to one. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Option Bitstring 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Current value converted; no data loss. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Named Set 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d1233790e241 " valign="top" width="36.36363636363637%"> 
+				<p>Bit copy plus pointer duplication. 
+				</p>
+ 
+				<p> Set strings must match. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_floating_point_parameter.html">Floating point parameter</a></div>
+<div><a href="c_fblk_params_dynamic_ref.html">Dynamic Reference Parameter</a></div>
+<div><a href="c_fblk_params_external_ref.html">External Reference Parameter</a></div>
+<div><a href="c_fblk_params_internal_ref.html">Internal Reference Parameter</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

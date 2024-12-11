@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="PID function block application information" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_modes.html" name="DC.Relation" scheme="URI" /><meta content="c_pid_function_block_advanced_topics.html" name="DC.Relation" scheme="URI" /><meta content="c_control_selector_function_block_application_information.html" name="DC.Relation" scheme="URI" /><meta content="c_enhanced_control_selector_function_block_application_information.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_pid.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_pid_function_block_application_information" name="DC.Identifier" /><title>PID function block application information</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_pid_function_block_process_learning_and_adaptive_control_parameters.html" /><link rel="next" href="c_pid_function_block_advanced_topics.html" /></head><body class="fixed" id="c_pid_function_block_application_information" data-relpath="c_pid_function_block_application_information.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_pid_function_block_application_information"></a>
+
+<h1 class="topictitle1">PID function block application information</h1>
+<div><div></div>
+ 
+    <p id="c_pid_function_block_application_information__applicationinformationpidfunctionblock"><a name="c_pid_function_block_application_information__applicationinformationpidfunctionblock"></a>The PID function block is a
+      powerful, flexible control algorithm that is designed to work properly in a
+      variety of control strategies. The PID block is configured differently for
+      different applications. The following examples describe how to use the PID
+      block for closed loop control: basic PID loop, feedforward control, cascade
+      control with master and slave, complex cascade control with override, and PID
+      control with tracking. 
+    </p>
+ 
+    <p> 
+      <strong>Closed loop control</strong> 
+    </p>
+ 
+    <p>Implement basic closed loop control by taking the error difference
+      between the setpoint (SP) and the process variable (PV) and calculating a
+      control output signal using a PID (Proportional Integral Derivative) function
+      block. 
+    </p>
+ 
+    <p>Proportional control responds immediately and directly to a change in
+      the PV or SP. The proportional term (GAIN) applies a change in the loop output
+      based on the current magnitude of the error. With only the proportional term
+      (GAIN), the control loop will likely have a steady state error. 
+    </p>
+ 
+    <p>Integral control eliminates steady state error. It integrates the error
+      until it is negligible. The integral term (RESET) applies a correction based on
+      the magnitude and duration of the error. Lowering RESET increases integral
+      action. 
+    </p>
+ 
+    <p>The derivative term (RATE) applies a correction based on the rate of
+      change of error. Use derivative control where large measurement lags exist,
+      which is typically temperature control. 
+    </p>
+ 
+    <p>The MODE parameter is a switch that indicates the target and actual mode
+      of operation. Mode selection has a large impact on the operation of the PID
+      block. 
+    </p>
+ 
+    <p> 
+      <strong>Application example: Basic PID block for steam heater control</strong> 
+    </p>
+ 
+    <p>A process fluid is heated by steam in a heat exchanger, as in the
+      following example: 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_757E28CFECBC44C7A930F4148171E1D8"><a name="c_pid_function_block_application_information__fig_757E28CFECBC44C7A930F4148171E1D8"></a><div><span class="figcap">Basic setup for PID steam heater control</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_57226EAB7F6B46F8BBC0D2E52999B025"></a><img id="c_pid_function_block_application_information__image_57226EAB7F6B46F8BBC0D2E52999B025" src="fbhelp0182.gif" /> 
+    </div>
+ 
+    <p>In this example, the PID controller accepts the heated fluid
+      temperatures as an input and provides a signal to the AO block, which sends the
+      control signal to the steam feed valve. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> You can configure the PID function block by referencing the I/O
+        directly and not using AI and AO function blocks. In this case, I/O channels
+        are addressed with the parameters IO_IN and IO_OUT. Status information is
+        communicated to the block when you define the card and channel parameters. The
+        BKCAL communication between the PID and AO blocks is a necessary part of this
+        example. The advanced topics section has information on BKCAL communications. 
+      </p>
+ 
+    </div>
+ 
+    <p> 
+      <strong>Application example: Feedforward control</strong> 
+    </p>
+ 
+    <p>In the above example, control problems can arise because of a time delay
+      caused by thermal inertia between the two flow streams. If, for example, steam
+      flow declines, it can take some time for this disturbance to cause a drop in
+      the heated fluid&#39;s temperature. 
+    </p>
+ 
+    <p>Control can be improved by measuring this disturbance and reacting to it
+      before it manifests itself at the temperature transmitter. In the following
+      figure, steam flow is measured (FT). A feedforward signal is sent to the
+      controller to augment the signal to the valve if flow drops or to lower this
+      signal if steam flow rises. (This applies to a configuration where the higher
+      the signal, the greater the valve opening.) 
+    </p>
+ 
+    <p>In this steam heater system, adding feedforward control improves the
+      process outlet temperature response. The inlet steam flow is input to an AI
+      function block and is connected to the FF_VAL connector on the PID block.
+      Enable feedforward control (FF_ENABLE), scale the feedforward value (FF_SCALE),
+      and apply a gain determined by tuning (FF_GAIN). The following figure shows the
+      process and function block configuration for feedforward control: 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_83BAA6BC80184B429D2BE96AD9B6D8F8"><a name="c_pid_function_block_application_information__fig_83BAA6BC80184B429D2BE96AD9B6D8F8"></a><div><span class="figcap">PID function block feedforward control example</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_5C758DAECE45450CAD20DDB02EE11E4A"></a><img id="c_pid_function_block_application_information__image_5C758DAECE45450CAD20DDB02EE11E4A" src="fbhelp0183.gif" /> 
+    </div>
+ 
+    <p> 
+      <strong>Application example: Cascade control with master and slave loops</strong> 
+    </p>
+ 
+    <p>The feedforward scheme in the above example requires that some
+      correlation be predetermined between steam flow changes and the steam valve
+      opening adjustments they make. Another way to deal with the time delay problem
+      is to use cascaded controllers. This approach does not require finding a
+      correlation between steam flow changes and their steam valve opening
+      adjustments. In the cascade loop in the following figure, the output from the
+      master temperature loop is used as the setpoint for the slave steam flow loop.
+      The following diagram shows the process instrumentation for this example: 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_0D35E15130824ED7AEAB72CC23550AA3"><a name="c_pid_function_block_application_information__fig_0D35E15130824ED7AEAB72CC23550AA3"></a><div><span class="figcap">PID function block cascade control example</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_38B2211353C7404B9CFA8D5191C9CA3D"></a><img id="c_pid_function_block_application_information__image_38B2211353C7404B9CFA8D5191C9CA3D" src="fbhelp0184.gif" /> 
+    </div>
+ 
+    <p>The cascaded blocks shown can all be installed in a single module.
+      Another method of configuring function blocks for this example is to put the
+      temperature AI block and the master loop PID block in one module. The flow,
+      slave PID block, and AO block are in a second module. Select this method when
+      you want to reference faceplates and alarms separately. 
+    </p>
+ 
+    <p>In the PID function block, BYPASS is used when the control function
+      block is a slave block in a cascade. If a transmitter failure or some other
+      problem occurs that causes the slave controller to see a Bad input signal,
+      BYPASS can be activated so that the signal coming from the master controller
+      passes through the slave to the field. In this manner, the loop still has some
+      control; however, dynamic performance will suffer because a cascaded loop has
+      effectively been replaced with a single PID. 
+    </p>
+ 
+    <p> 
+      <strong>Application example: Cascade control with override</strong> 
+    </p>
+ 
+     
+    <p>You might need override with cascaded PIDs. The Control Selector and
+      Enhanced Control Selector function blocks have information on using override
+      control. 
+    </p>
+ 
+    <div class="note"><span class="notetitle">Note:</span>  
+      <p> Cascaded blocks use BKCAL_IN and BKCAL_OUT to pass statuses during
+        cascade initialization and in limited states. The advanced topics section has
+        information on BKCAL communications. 
+      </p>
+ 
+    </div>
+ 
+    <p> 
+      <strong>Application example: PID control with tracking</strong> 
+    </p>
+ 
+    <p>An example where tracking is useful is a process operating outside of
+      its normal operating range (for example, during a process startup). 
+    </p>
+ 
+    <p>In the following figure, a flow control valve is used to regulate the
+      flow rate supplied by a pump. When the pump is started, the output flow from
+      the pump is low for a short period while the pump is coming up to speed. The
+      flow control valve and controller do not operate effectively at this low flow. 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_2D660FF014B74A01994D551F7CD1CC31"><a name="c_pid_function_block_application_information__fig_2D660FF014B74A01994D551F7CD1CC31"></a><div><span class="figcap">PID control using tracking</span></div> 
+      <a name="c_pid_function_block_application_information__image_742126098D7E4BEBB5524BE5DE693247"></a><img id="c_pid_function_block_application_information__image_742126098D7E4BEBB5524BE5DE693247" src="fbhelp0185.gif" />
+      
+    </div>
+ 
+    <p>Tracking can be used in this situation to set the valve at a
+      predetermined opening for a given amount of time. The signal to start the pump
+      is also directed through a timed pulse block to turn tracking on for the time
+      duration specified in the timed pulse block. The tracking value is set at the
+      needed valve opening. When the pump starts, tracking starts. The valve opens to
+      the specified value for the duration of the timed pulse. At the end of the
+      pulse, tracking is turned off, and the PID can initiate its normal control,
+      regulating the valve to adjust the output flow. 
+    </p>
+ 
+    <p> 
+      <strong>Application example: Error-squared proportional only control applied
+        to integrating process</strong> 
+    </p>
+ 
+    <p>A PID block, configured for proportional only control, is applied to a
+      liquid level (for example, a surge tank level control might be performed this
+      way). 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_85060DF9EDDA4676816C0AB6FD4C4ADA"><a name="c_pid_function_block_application_information__fig_85060DF9EDDA4676816C0AB6FD4C4ADA"></a><div><span class="figcap">Proportional only control applied to a liquid level</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_54C1E2FE00E04ED7AF422E0D27266353"></a><img id="c_pid_function_block_application_information__image_54C1E2FE00E04ED7AF422E0D27266353" src="NL_Gain_Flow.gif" />
+      
+    </div>
+ 
+    <p>Use Nonlinear Gain Modification in FRSIPID_OPTS is selected. 
+    </p>
+ 
+    <p>Gain=2; Reset=0; Rate=0; NL_GAP=0; NL_HYST=0; NL_TBAND=50; NL_MINMOD=0.
+      This set of tuning parameters provides an error-squared output with a maximum
+      gain of 2. 
+    </p>
+ 
+    <p>Starting balanced at 50% of scale (BIAS=50%), a load disturbance
+      equivalent to 25% of OUT_SCALE is introduced. 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_F9C70A8A250941878C28999BBCF499B2"><a name="c_pid_function_block_application_information__fig_F9C70A8A250941878C28999BBCF499B2"></a><div><span class="figcap">Proportional error squared applied to integrating process</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_4C91EFD0467D4DF59AFA8428E44B43D6"></a><img id="c_pid_function_block_application_information__image_4C91EFD0467D4DF59AFA8428E44B43D6" src="Error_Squared.gif" />
+      
+    </div>
+ 
+    <p> 
+      <strong>Application example</strong>: 
+      <strong>PID with deadband, transition Band</strong>, 
+      <strong>and hysteresis</strong> 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_DCCD5E9E22174490A53E989DF73B8B17"><a name="c_pid_function_block_application_information__fig_DCCD5E9E22174490A53E989DF73B8B17"></a><div><span class="figcap">Control with deadband, transition band, and hysteresis</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_1ABA82D6BB264605B41EFB60EF30ED1F"></a><img id="c_pid_function_block_application_information__image_1ABA82D6BB264605B41EFB60EF30ED1F" src="Dead_Hys_Tran.gif" />
+      
+    </div>
+ 
+    <p>A self-regulating process is controlled with a PID configured for
+      deadband, hysteresis and transition band. The block diagram of the loop is
+      identical to that for the previous example. Tuning parameters are: NL_MINMOD=0;
+      NL_GAP=2; NL_HYST=3; NL_TBAND=3; GAIN=2; RESET=7.5; RATE=0. 
+    </p>
+ 
+    <p>A disturbance equivalent to 25% of OUTSCALE is introduced at the process
+      input. Until the error exceeds 5 (NL_GAP + NL_HYST), the output remains
+      constant. Once the controller begins adjusting its output it continues to
+      adjust until the error is brought to a value less than NL_GAP, at which point
+      the output is held constant. 
+    </p>
+ 
+    <p> 
+      <strong>Application example: Dynamic reset limiting in primary of a
+        cascade</strong> 
+    </p>
+ 
+    <p>Two PID blocks are configured in a cascade control configuration. The
+      MASTER PID is tuned for load response to approximately the best IAE (Integrated
+      Absolute Error), without FRSIPID_OPTS 
+      <span class="uicontrol">Dynamic Reset Limit</span> (DRL) option selected. The
+      MASTER PID is then tuned to give the identical IAE with the 
+      <span class="uicontrol">Dynamic Reset Limit</span> option selected. The response
+      for SP and load responses are compared: Note that in this example the MASTER is
+      using identical RESET and RATE, but in the case where the 
+      <span class="uicontrol">Dynamic Reset Limit</span> option is selected the GAIN
+      parameter is adjusted to about 1.6 the value applied in the case when option is
+      not selected. 
+    </p>
+ 
+    <a name="c_pid_function_block_application_information__image_92AA7678C006457FA53FCE347C9EEB14"></a><img id="c_pid_function_block_application_information__image_92AA7678C006457FA53FCE347C9EEB14" src="fbhelp0404.gif" />
+    
+    <p>Dynamic reset limiting in primary of a cascade 
+    </p>
+ 
+    <p><a name="c_pid_function_block_application_information__image_6008D3F087E548F4BBA01778B6B091C9"></a><img id="c_pid_function_block_application_information__image_6008D3F087E548F4BBA01778B6B091C9" src="spresponse.gif" />
+      
+    </p>
+ 
+    <p><a name="c_pid_function_block_application_information__image_817EE88DB8DA41D58B0FECF103AFE794"></a><img id="c_pid_function_block_application_information__image_817EE88DB8DA41D58B0FECF103AFE794" src="loadchange.gif" />
+      
+    </p>
+ 
+    <p>From the above plots it is apparent that master response is altered
+      significantly by the use of Dynamic Reset Limit. The response difference
+      illustrated is typical. The tendency to overshoot is much reduced. 
+    </p>
+ 
+    <p>Both the MASTER and SLAVE processes are then modified by doubling the
+      dead time in both. 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_1AD05901D3AE46F785548938F2B457D0"><a name="c_pid_function_block_application_information__fig_1AD05901D3AE46F785548938F2B457D0"></a><a name="c_pid_function_block_application_information__image_D8276C5D69D9483C898CDACF541E8637"></a><img id="c_pid_function_block_application_information__image_D8276C5D69D9483C898CDACF541E8637" src="spresponse-master.gif" />
+      
+    </div>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_639601B8261A4706A0A3CD3A9BCD38DE"><a name="c_pid_function_block_application_information__fig_639601B8261A4706A0A3CD3A9BCD38DE"></a><a name="c_pid_function_block_application_information__image_5808B086DBB145119C0E7B12A45C7F5E"></a><img id="c_pid_function_block_application_information__image_5808B086DBB145119C0E7B12A45C7F5E" src="loadchange-master.gif" />
+      
+    </div>
+ 
+    <p>When the 
+      <span class="uicontrol">Dynamic Reset Limit</span> option is selected the
+      responses are maintained at an acceptable level of performance, even though the
+      GAIN in that case is higher. Not only does Dynamic Reset Limit (or dynamic
+      external reset) provide reset limiting in cases of limit violations, it also
+      reduces the sensitivity of the control loop to changes in slave performance and
+      stability, while providing much higher stability margins in the MASTER. 
+    </p>
+ 
+    <p> 
+      <strong>Reset contribution under limited conditions </strong> 
+    </p>
+ 
+    <p>The following example illustrates the dynamic response of the PID block
+      when it is limited by the output limits compared to the response when the
+      output is limited by a downstream block. In the first case, a step change in
+      the feedforward input forces the calculated PID output to exceed the PID output
+      limit. 
+    </p>
+ 
+    <p>Depending on the length of time FF_VAL&#39;s step change is held (30% in the
+      figure), when it is changed back to 0% the OUT value returns to a value less
+      than 50%.  
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_47C38ADB76CF4E04B5CF902766CCFE8A"><a name="c_pid_function_block_application_information__fig_47C38ADB76CF4E04B5CF902766CCFE8A"></a><div><span class="figcap">Process response using PID limiting</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_33EBEC0808B94807B841FF43289B5388"></a><img id="c_pid_function_block_application_information__image_33EBEC0808B94807B841FF43289B5388" src="FF_BAD.gif" />
+      
+    </div>
+ 
+    <p>In the second case, the change in feedforward input causes a change that
+      exceeds the setpoint limit in a downstream block. 
+    </p>
+ 
+    <p>However, if only the portion of FF_VAL that forces the OUT value to
+      saturation has an impact on the process, then the reset contribution should not
+      change and the OUT value should return to its original value when FF_VAL
+      changes back to its initial value. This behavior can be achieved by setting the
+      PID output limits outside the value needed to trigger a limit condition in the
+      downstream block. In the second case, the PID output limits are increased so
+      that the change in the feedforward input causes the setpoint of the downstream
+      block to be limited, resulting in the BKCAL_IN having limit status. 
+    </p>
+ 
+    <p>For example, the PID OUT_HI_LIM may be 100 and the AO block SP_HI_LIM is
+      set to the 70% limit. If SP_HI_LIM is reached, the AO block BKCAL_OUT status
+      becomes Limited which prevents changes to the PID reset from forcing OUT
+      further past the limit. When a 30% FF_VAL is applied and removed to this
+      module, it behaves as shown in the following figure. 
+    </p>
+ 
+    <div class="fignone" id="c_pid_function_block_application_information__fig_FD79674C93EF419C8DC72F5070A89B96"><a name="c_pid_function_block_application_information__fig_FD79674C93EF419C8DC72F5070A89B96"></a><div><span class="figcap">Process response using downstream AO block limiting</span></div> 
+       
+      <a name="c_pid_function_block_application_information__image_B44350FC6E33451BBB846DF672667585"></a><img id="c_pid_function_block_application_information__image_B44350FC6E33451BBB846DF672667585" src="FF_GOOD.gif" />
+      
+    </div>
+ 
+    
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_fblk_modes.html">Function block modes</a></div>
+<div><a href="c_pid_function_block_advanced_topics.html">PID function block advanced topics</a></div>
+<div><a href="c_control_selector_function_block_application_information.html">Control Selector function block application
+    information</a></div>
+<div><a href="c_enhanced_control_selector_function_block_application_information.html">Enhanced Control Selector function block application
+    information</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

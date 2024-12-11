@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Model Predictive Control Professional Plus function block performance monitoring" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="MPCPlus function block, performance monitoring" name="DC.subject" /><meta content="MPCPlus function block, performance monitoring" name="keywords" /><meta content="c_fblk_spec_mpcplus.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_220" name="DC.Identifier" /><title>Model Predictive Control Professional Plus function block performance monitoring</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_model_predictive_control_plus_function_block_compensating_for_transport_delay.html" /><link rel="next" href="r_model_predictive_control_plus_function_block_parameters.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220" data-relpath="c_model_predictive_control_plus_function_block_performance_monitoring.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220"></a>
+
+<h1 class="topictitle1"> Model Predictive Control Professional Plus function block performance
+	 monitoring</h1>
+<div> 
+	 <p>The standard deviation and capability deviation are automatically
+		calculated for the Control and/or Constraint parameters included in the MPC
+		dynamic control. These calculations are based on a moving window equal to the
+		Time to Steady State. The largest calculated standard deviation and its
+		associated capability standard deviation are shown as parameters of the MPCPro
+		block, STDEV and STDEV_CAP. These parameters are used by Inspect with InSight
+		to monitor control variability. 
+	 </p>
+ 
+	 <p>When a Constraint or Control parameter is at or outside its limits or
+		range, its condition is indicated in the OUT_LIMIT_ACT and OUT_EXCEED_ACT
+		parameters. In addition, the percent time this condition was active is
+		indicated in the OUT_LIMIT_POT and OUT_EXCEED_POT parameters. Similarly, the
+		MV_LIMIT_ACT and MV_LIMIT_POT indicate when an MV is at its limit and the
+		percent time it was at its limit. The POT_RESET parameter can be used to reset
+		these percent time calculations. In these limit calculations, a configurable
+		amount of hysteresis is applied to avoid chatter in these limit indications
+		under conditions when the measurement contains significant noise. As shown
+		below, the hysteresis defines the amount that the value must return within its
+		limit or return to the limit before the at limit or exceed limit indication is
+		cleared. 
+	 </p>
+ 
+	 <div class="p"> To account for noise, a configurable dead band is placed around the
+		limit to determine the values of OUT_LIMIT_ACT[ ] and OUT_EXCEEDED_ACT[ ] as
+		shown in the following image. 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_442ABFF59287460BB6C076BC7CB849AF"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_442ABFF59287460BB6C076BC7CB849AF"></a><div><span class="figcap">Deadband placed around limit </span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_E84F00090FDD4C699AF16C53882B6DE6"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_E84F00090FDD4C699AF16C53882B6DE6" src="PerformMon1.GIF" /></div><br />
+		  
+		</div>
+ 
+	 </div>
+ 
+	 <div class="p"> When inside the dead band, the limit status is reported with hysteresis
+		as shown in the following example. 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_8C72CA0E6DD44A53A701204696F1853B"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_8C72CA0E6DD44A53A701204696F1853B"></a><div><span class="figcap"> Limit status reported with hysteresis </span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_E0D4841B048B4A0B92CC5C37C2B39F36"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_E0D4841B048B4A0B92CC5C37C2B39F36" src="LimitStat.gif" /></div><br />
+		  
+		</div>
+ 
+	 </div>
+ 
+	 <p> The default hysteresis is 1. If none of these cases occurred then the
+		limit status of PROC_OUTn is propagated thru to OUT_LIM_ACT[] (that is actually
+		the only way the status could be constant). For MVs the limit status of
+		BKCAL_IN is propagated. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  Exceeded is never flagged for MVs as it can only occur in OOS mode. 
+	 </div>
+ 
+	 <div class="p"> Constraint and Manipulated limits are always flagged if either high or
+		low limit is reached. For Controlled parameters, whether a limit condition is
+		flagged depends upon which limit is reached (hi/lo) and the desired move
+		direction for each process output (maximize/minimize). In general, a limit is
+		flagged when the Control variable has saturated at or exceeded the limit in the
+		undesired direction as shown in the following image. 
+		<div class="fignone" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_CFAFBDDE77D44F46AA2AFDDEDA647F2A"><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__fig_CFAFBDDE77D44F46AA2AFDDEDA647F2A"></a><div><span class="figcap"> Controlled variable limit flagging</span></div> 
+		  <br /><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_82B40F27CDF241CE8AA3989A5E8FFB0D"></a><div class="imageleft"><img class="imageleft" id="concept_74495CFD26EC43EFA995B219B6208892_unique_220__image_82B40F27CDF241CE8AA3989A5E8FFB0D" src="LimitFlagged.gif" /></div><br />
+		  
+		</div>
+ 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  Exceeded is flagged regardless of desired move direction. 
+	 </div>
+ 
+	 <p> The profit associated with the current operation and that which can be
+		achieved is calculated by the MPCPlus block based upon the objective function
+		in use and the cost associated with Manipulated, Control, and Constraint
+		parameters. These values are shown in the 
+		<span class="wintitle">Tuning</span> dialog that can be accessed from the
+		MPCOperate Pro application. Also, the MPCPlus block&#39;s OPT_PROFIT_CURR and
+		OPT_PROFIT_MAX parameters can be used to include this information in operator
+		displays or to assign it to the Continuous Historian for trending. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

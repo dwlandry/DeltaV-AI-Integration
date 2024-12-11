@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Analog Output function block application information" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="example, Analog Output function block, duty cycle control, pulse duration, input, output, Fieldbus, Analog Output block, write requests, limiting, PULSE_PERIOD, application example" name="DC.subject" /><meta content="example, Analog Output function block, duty cycle control, pulse duration, input, output, Fieldbus, Analog Output block, write requests, limiting, PULSE_PERIOD, application example" name="keywords" /><meta content="c_fblk_spec_analog_output.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_analog_output_function_block_application_information" name="DC.Identifier" /><title>Analog Output function block application information</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_analog_output_function_block_parameters.html" /><link rel="next" href="c_fblk_spec_discrete_input.html" /></head><body class="fixed" id="c_analog_output_function_block_application_information" data-relpath="c_analog_output_function_block_application_information.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_analog_output_function_block_application_information"></a>
+
+<h1 class="topictitle1">Analog Output function block application information</h1>
+<div><div></div>
+ 
+	 <p id="c_analog_output_function_block_application_information__applicationinformationanalogoutputfunctionblock"><a name="c_analog_output_function_block_application_information__applicationinformationanalogoutputfunctionblock"></a>The way you
+		configure an Analog Output function block and its associated input and output
+		channels and parameters depends on whether it has been assigned to a fieldbus
+		device and whether the field device requires a traditional 4 to 20 mA input, a
+		4 to 20 mA input using HART Communications Protocol, or a discrete pulse
+		duration input.
+	 </p>
+ 
+	 <p> 
+		<strong>AO block assigned to a Fieldbus valve</strong> 
+	 </p>
+ 
+	 <p>If a fieldbus valve loses air, or a fieldbus valve positioner loses
+		power, the valve will either go fully open or fully closed. This state is
+		determined by the valve itself and is often termed its shelf position or air
+		fail position. This state is different from the Fault State parameter
+		(FSTATE_VAL) of the Analog Output function block when it is assigned to a
+		fieldbus valve.
+	 </p>
+ 
+	 <p>By default the Analog Output function block&#39;s FSTATE_VAL and FSTATE_TIME
+		parameters are set to 0. This causes the block to hold the last value when
+		communication on the fieldbus is lost. It is highly recommended that you
+		configure the FSTATE_VAL parameter to correctly set the valve position if
+		fieldbus communications to the valve cease for the time period that you
+		configure with the FSTATE_TIME parameter. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> The FSTATE_VAL and FSTATE_TIME parameters only appear in the
+		  parameter list after the block has been assigned to a fieldbus device.
+		</p>
+ 
+	 </div>
+ 
+	 <p> 
+		<strong>Limit write requests to static or non-volatile parameters</strong> 
+	 </p>
+ 
+	 <p>It is recommended that you limit the number of periodic writes to all
+		static or non-volatile parameters, such as HI_HI_LIM, LOW_CUT, SP, TRACK_IN_D,
+		OUT, IO_OPTS, BIAS, STATUS_OPTS, SP_HI_LIM, and so on. Static parameter writes
+		increment the static revision counter, ST_REV, and are written to the device&#39;s
+		non-volatile memory. Fieldbus devices have a non-volatile memory write limit.
+		If a static or non-volatile parameter is configured to be written periodically,
+		the device can stop its normal operation after it reaches its limit or fail to
+		accept new values. Consult the device documentation to determine if a parameter
+		is static or non-volatile.
+	 </p>
+ 
+	 <p>Another way to configure your system to avoid burning out non-volatile
+		memory is to link a CALC block or PID block running in the controller to the AO
+		block running in the device. This method avoids the use of asynchronous writes
+		by writing to the AO block through a publisher/subscriber mechanism.
+	 </p>
+ 
+	 <p> 
+		<strong>To link a CALC block to the AO block</strong>:
+	 </p>
+ 
+	 <a name="c_analog_output_function_block_application_information__ol_06AC8D9689634FB483CD9E0CD7625A2A"></a><ol id="c_analog_output_function_block_application_information__ol_06AC8D9689634FB483CD9E0CD7625A2A"> 
+		<li id="c_analog_output_function_block_application_information__li_D3393FDF40324F3AA157853C5EF9AB12"><div class="li_content"> 
+		  <p>Set the AO block mode to CAS, AUTO, or MAN.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_analog_output_function_block_application_information__li_39C9BD1224CB43909A3F8186372EE7FB"><div class="li_content"> 
+		  <p>Link the CALC block&#39;s OUT parameter to the AO block&#39;s CAS_IN
+			 parameter.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p> 
+		<strong>To link a PID block to the AO block</strong>:
+	 </p>
+ 
+	 <a name="c_analog_output_function_block_application_information__ol_C98CD72B4E124BECBAF7FF7CDBAB926A"></a><ol id="c_analog_output_function_block_application_information__ol_C98CD72B4E124BECBAF7FF7CDBAB926A"> 
+		<li id="c_analog_output_function_block_application_information__li_4B7215396B1B435A9B801A0FA865C5B1"><div class="li_content"> 
+		  <p>Set the AO block mode to CAS, AUTO, or MAN.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_analog_output_function_block_application_information__li_D236E04B10714A3696FB1ABCF0E6FBB6"><div class="li_content"> 
+		  <p>Link the PID block&#39;s OUT parameter to the AO block&#39;s CAS_IN
+			 parameter.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_analog_output_function_block_application_information__li_D422D3D853624EE7863560C5333797E3"><div class="li_content"> 
+		  <p>Link the AO block&#39;s BKCAL_OUT parameter to the PID block&#39;s BKCAL_IN
+			 parameter.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_analog_output_function_block_application_information__li_4C184A5B0C0B4146B683E2D92D929F58"><div class="li_content"> 
+		  <p>Set the PID parameter CONTROL_OPTS to Track Enable.
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_analog_output_function_block_application_information__li_D3F493E9985B456FA0573958AE39CCBC"><div class="li_content"> 
+		  <p>Write a value to the AO block using the TRK_IN_D and TRK_VAL
+			 parameters.
+		  </p>
+ 
+		</div></li>
+ 
+	 </ol>
+ 
+	 <p> 
+		<strong>Actuator requiring traditional 4 to 20 mA input</strong> 
+	 </p>
+ 
+	 <div class="p">When an actuator is designed to accept a 4 to 20 mA signal, use the AO
+		Card, 4 to 20 mA for the output channel. You configure the associated output
+		channel and the Analog Output block as follows:
+	 <a name="c_analog_output_function_block_application_information__ul_A062C7B608624A708794512189C7E4CF"></a><ul id="c_analog_output_function_block_application_information__ul_A062C7B608624A708794512189C7E4CF">
+		<li id="c_analog_output_function_block_application_information__li_9720C4328FDE4771B2C9889F21FDC917"><div class="li_content">
+		  <p> 
+			 <strong>Channel type</strong>: Analog Output Channel
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_A3BC43397B0B41118678DA5CC9B68D87"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OUT parameter</strong>: Select OUT.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_52D72894568A41BABE61109550ED08CD"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_READBACK parameter</strong>: Select
+			 FIELD_VAL_PCT when the input is 4 to 20 mA.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_A6D55D7256004B63A7166C04D1B6E06D"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block PV_SCALE parameter</strong>: Set the range and
+			 engineering units to values that correspond to the Analog Output block&#39;s 4 to
+			 20 mA output. In many cases, PV_SCALE is set to 0 — 100%.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_4815B90E968F40D5B474E5242ACB504E"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OPTS parameter</strong>: Select Increase to
+			 Close when the actuator is designed to fail open.
+		  </p>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+ 
+	 <p>If you are using the CAS_IN connector wired from another block, the
+		Analog Output block&#39;s BKCAL_OUT parameter should be wired to the other block&#39;s
+		BKCAL_IN parameter.
+	 </p>
+ 
+	 <p> 
+		<strong>Application example</strong>: 
+		<strong>actuator requiring traditional 4 to 20 mA input</strong>
+	 </p>
+ 
+	 <p>Assume a regulating valve equipped with an air-operated actuator
+		interfaces to the analog output channel through an I/P transducer that requires
+		4 to 20 mA input. The Analog Output (AO) function block is used with an Analog
+		Input (AI) function block and a PID function block to control flow in a pipe.
+		The configuration differs depending on whether the valve actuator with the I/P
+		transducer is designed to allow the valve to fail closed or to fail open on the
+		loss of the 4 to 20 mA signal. The following table shows configuration settings
+		for each of these cases.
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_analog_output_function_block_application_information__table_A3A10ED2151A4975BF5E395DAC18B482"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_output_function_block_application_information__table_A3A10ED2151A4975BF5E395DAC18B482" rules="all" summary=""><caption><span class="tablecap">Analog Output function block configuration example for an actuator
+		requiring 4 to 20 mA input</span></caption> 
+		 
+		 
+		 
+		<thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d785370e252" valign="top" width="NaN%"> 
+				<p>Configuration Setting
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e258" valign="top" width="NaN%"> 
+				<p>Fail Close
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e264" valign="top" width="NaN%"> 
+				<p>Fail Open
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e252 " valign="top" width="NaN%"> 
+				<p>Channel Type
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e258 " valign="top" width="NaN%"> 
+				<p>Analog Output
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e264 " valign="top" width="NaN%"> 
+				<p>Analog Output
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e252 " valign="top" width="NaN%"> 
+				<p>IO_OUT
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e258 " valign="top" width="NaN%"> 
+				<p>OUT
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e264 " valign="top" width="NaN%"> 
+				<p>OUT
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e252 " valign="top" width="NaN%"> 
+				<p>PV_SCALE
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e258 " valign="top" width="NaN%"> 
+				<p>0 to 100%
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e264 " valign="top" width="NaN%"> 
+				<p>0 to 100%
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e252 " valign="top" width="NaN%"> 
+				<p>IO_OPTS Increase to Close
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e258 " valign="top" width="NaN%"> 
+				<p>Not selected
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e264 " valign="top" width="NaN%"> 
+				<p>Selected
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p>The following diagram is the function block diagram for this example.
+	 </p>
+ 
+	 <div class="fignone" id="c_analog_output_function_block_application_information__fig_013F196060FB4CE793E4C04FA0573144"><a name="c_analog_output_function_block_application_information__fig_013F196060FB4CE793E4C04FA0573144"></a><div><span class="figcap">Analog Output function block diagram example for an actuator
+		  requiring 4 to 20 mA input</span></div> 
+		 
+		<a name="c_analog_output_function_block_application_information__image_5AA5047CF68647A3A5357EFD42460768"></a><img id="c_analog_output_function_block_application_information__image_5AA5047CF68647A3A5357EFD42460768" src="fbhelp0090.gif" /> 
+	 </div>
+ 
+	 <p> 
+		<strong>Actuator requiring HART communications protocol 4 to 20 mA input</strong> 
+	 </p>
+ 
+	 <div class="p">When an actuator is designed to accept a 4 to 20 mA signal using the
+		HART Communications Protocol, use the AO Card, 4 to 20 mA, HART for the output
+		channel. Configure the associated output channel and the Analog Output block as
+		follows:
+	 <a name="c_analog_output_function_block_application_information__ul_DEC08E423CB845AFB6D27CD87AC5D382"></a><ul id="c_analog_output_function_block_application_information__ul_DEC08E423CB845AFB6D27CD87AC5D382">
+		<li id="c_analog_output_function_block_application_information__li_34C3BB3892874CD198DD1B2BFC0CFCB9"><div class="li_content">
+		  <p> 
+			 <strong>Channel type</strong>: HART Analog Output Channel
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_8BC247F88BAA4113969BB8865D336958"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OUT parameter</strong>: Select OUT.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_B255EBC93EBB46E99069FBA3EC5C351F"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_READBACK parameter</strong>: Select the HART
+			 device or dynamic variable that holds the desired value. Define the available
+			 variables through the DeltaV Explorer.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_733F6CA3C0CD46EABB56A6A288120AB9"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block PV_SCALE parameter</strong>: Set the range and
+			 engineering units to values that correspond to the Analog Output block&#39;s 4 to
+			 20 mA output. In many cases, PV_SCALE is set to 0 — 100%.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_11E597D94EB04EDBB0AF4E626C018595"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block XD_SCALE parameter</strong>: Set the range and
+			 engineering units to values that correspond to PV_SCALE. Set the engineering
+			 units to match those appropriate to the field device.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_8703207363AB481497014F091554EEE5"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OPTS parameter</strong>: Select Increase to
+			 Close when the actuator is designed to fail open.
+		  </p>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+ 
+	 <p>If you are using the CAS_IN connector wired from another block, the
+		Analog Output block&#39;s BKCAL_OUT parameter should be wired to the other block&#39;s
+		BKCAL_IN parameter.
+	 </p>
+ 
+	 <p> 
+		<strong>Application example</strong>: 
+		<strong>actuator requiring 4 to 20 mA input using HART communications
+		  protocol</strong>
+	 </p>
+ 
+	 <p>Assume a regulating valve and actuator that communicates using the HART
+		Communications Protocol interfaces to the analog output channel. The Analog
+		Output (AO) function block is used with an Analog Input (AI) function block and
+		a PID function block to control flow in a pipe. The configuration differs
+		depending on whether the valve actuator with the I/P transducer is designed to
+		allow the valve to fail closed or to fail open on the loss of the 4 to 20 mA
+		signal. The following table shows configuration settings for each of these
+		cases.
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_analog_output_function_block_application_information__table_8EB1D187D33E4AE1A1E6A0EAE67D581F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_output_function_block_application_information__table_8EB1D187D33E4AE1A1E6A0EAE67D581F" rules="all" summary=""><caption><span class="tablecap">Analog Output function block configuration example for an actuator
+		requiring 4 to 20 mA input</span></caption> 
+		 
+		 
+		 
+		<thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d785370e473" valign="top" width="NaN%"> 
+				<p>Configuration Setting
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e479" valign="top" width="NaN%"> 
+				<p>Fail Close
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e485" valign="top" width="NaN%"> 
+				<p>Fail Open
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e473 " valign="top" width="NaN%"> 
+				<p>Channel Type
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e479 " valign="top" width="NaN%"> 
+				<p>HART Analog Output
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e485 " valign="top" width="NaN%"> 
+				<p>HART Analog Output
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e473 " valign="top" width="NaN%"> 
+				<p>IO_OUT
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e479 " valign="top" width="NaN%"> 
+				<p>OUT
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e485 " valign="top" width="NaN%"> 
+				<p>OUT
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e473 " valign="top" width="NaN%"> 
+				<p>PV_SCALE
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e479 " valign="top" width="NaN%"> 
+				<p>0 to 100%
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e485 " valign="top" width="NaN%"> 
+				<p>0 to 100%
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e473 " valign="top" width="NaN%"> 
+				<p>IO_OPTS Increase to Close
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e479 " valign="top" width="NaN%"> 
+				<p>Not selected
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e485 " valign="top" width="NaN%"> 
+				<p>Selected
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p>The following diagram is the function block diagram for this example:
+	 </p>
+ 
+	 <div class="fignone" id="c_analog_output_function_block_application_information__fig_29370DF250F846D3AB083A05945EAB24"><a name="c_analog_output_function_block_application_information__fig_29370DF250F846D3AB083A05945EAB24"></a><div><span class="figcap">Analog Output function block diagram example for an actuator
+		  requiring 4 to 20 mA input</span></div> 
+		 
+		<a name="c_analog_output_function_block_application_information__image_46A4B5CC94B24BF2ADEE4E810B7F6B9B"></a><img id="c_analog_output_function_block_application_information__image_46A4B5CC94B24BF2ADEE4E810B7F6B9B" src="fbhelp0091.gif" /> 
+	 </div>
+ 
+	 <p> 
+		<strong>Field device requiring discrete pulse duration input</strong> 
+	 </p>
+ 
+	 <div class="p">When a field device, such as a heater band, is designed to accept a
+		pulse duration input, you use a DO card type for the output channel and you
+		configure the output channel and Analog Output function block as follows:
+	 <a name="c_analog_output_function_block_application_information__ul_E83B351D86384D49AE562D18CD394D1A"></a><ul id="c_analog_output_function_block_application_information__ul_E83B351D86384D49AE562D18CD394D1A">
+		<li id="c_analog_output_function_block_application_information__li_99B77552B02D484EB64F3EFDF52807DB"><div class="li_content">
+		  <p> 
+			 <strong>Channel type</strong>: Continuous Pulse Output Channel. Define the
+			 PULSE_PERIOD (in seconds) equal to the AO block execution period. Note that
+			 PULSE_PERIOD will probably be different than the module scan rate.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_C860810059C547C19C60EF32ED1D75B9"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OUT parameter</strong>: Select ON_TIME.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_18A8E42CCD4D49F1AB8538969BBF1F5B"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_READBACK parameter</strong>: Select
+			 FIELD_VAL_PCT when the input is 4 to 20mA. (Refer to the Analog Input function
+			 block information for HART input options.)
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_471B0104271546B9B78336F112B9AF20"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block PV_SCALE parameter</strong>: Set the range and
+			 engineering units to the values that correspond to the Analog Output block&#39;s
+			 output. In many cases, PV_SCALE is set to 0 — 100%.
+		  </p>
+
+		</div></li>
+
+		<li id="c_analog_output_function_block_application_information__li_8735F8D712704D4F80AA3BB69589CD7C"><div class="li_content">
+		  <p> 
+			 <strong>Analog Output block IO_OPTS parameter</strong>: Do not select Increase
+			 to Close.
+		  </p>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+ 
+	 <p>When the Analog Output function block is used for pulse duration output
+		through a discrete channel, the OUT value (in percent) is used to determine the
+		time on during the defined pulse period. For example, when OUT = 50%, the
+		discrete output channel is turned on for 50% of the defined PULSE_PERIOD. The
+		discrete output is turned on by the discrete card and is accurate to within 2
+		msec of the value determined by OUT and PULSE_PERIOD.
+	 </p>
+ 
+	 <p> 
+		<strong>Application example</strong>:<strong>Field device requiring pulse duration
+		  input</strong>
+	 </p>
+ 
+	 <p>Assume a heater band on an extruder interfaces to the discrete output
+		channel through a contactor that requires a pulse duration discrete input. The
+		Analog Output (AO) function block is used with an Analog Input (AI) function
+		block and a PID function block to control temperature by regulating duty cycle
+		(percent time on).
+	 </p>
+ 
+	 <p> In this example the PULSE_PERIOD is set to 10 seconds. The scan rate of
+		the module should be faster than this to achieve better temperature control and
+		satisfy the update requirements of the operator screen. But the AO function
+		block in the module needs to execute at the same rate as the PULSE_PERIOD. The
+		module scan rate in this example is two (2) seconds. The AO block scan
+		multiplier should be set to five (5) so that the block skips module execution
+		scans and executes at the same rate as the PULSE_PERIOD.
+	 </p>
+
+	 <p>With continuous heat applied (100% duty cycle), the energy input is 50
+		kW. The configuration differs depending on whether the AO block setpoint is to
+		be set in kW or in percent energy input. The following table shows
+		configuration settings for each of these cases.
+	 </p>
+ 
+	 
+<div class="tablenoborder"><a name="c_analog_output_function_block_application_information__table_A1174042948F4C40B130537BB9B398E9"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="c_analog_output_function_block_application_information__table_A1174042948F4C40B130537BB9B398E9" rules="all" summary=""><caption><span class="tablecap">Analog Output function block configuration example for an actuator
+		requiring pulse duration input</span></caption> 
+		 
+		 
+		 
+		<thead align="left"> 
+		  <tr valign="top"> 
+			 <th class="cellrowborder" id="d785370e691" valign="top" width="NaN%"> 
+				<p>Configuration Setting
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e697" valign="top" width="NaN%"> 
+				<p>Setpoint in Percent
+				</p>
+ 
+			 </th>
+ 
+			 <th class="cellrowborder" id="d785370e703" valign="top" width="NaN%"> 
+				<p>Setpoint in kW
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody> 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e691 " valign="top" width="NaN%"> 
+				<p>Channel Type
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e697 " valign="top" width="NaN%"> 
+				<p>Continuous Pulse Output, 10 sec
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e703 " valign="top" width="NaN%"> 
+				<p>Continuous Pulse Output, 10 sec
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e691 " valign="top" width="NaN%"> 
+				<p>AO Block IO_OUT Parameter
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e697 " valign="top" width="NaN%"> 
+				<p>ON_TIME
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e703 " valign="top" width="NaN%"> 
+				<p>ON_TIME
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e691 " valign="top" width="NaN%"> 
+				<p>PV_SCALE
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e697 " valign="top" width="NaN%"> 
+				<p>0 to 100%
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e703 " valign="top" width="NaN%"> 
+				<p>0 to 50 kW
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr valign="top"> 
+			 <td class="cellrowborder" headers="d785370e691 " valign="top" width="NaN%"> 
+				<p>IO_OPT Increase to Close
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e697 " valign="top" width="NaN%"> 
+				<p>Not selected
+				</p>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" headers="d785370e703 " valign="top" width="NaN%"> 
+				<p>Not selected
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p>The following figure is the function block diagram for this example:
+	 </p>
+ 
+	 <div class="fignone" id="c_analog_output_function_block_application_information__fig_6F60C05A545E44AAA872CE4420DB3A10"><a name="c_analog_output_function_block_application_information__fig_6F60C05A545E44AAA872CE4420DB3A10"></a><div><span class="figcap">Analog Output function block diagram for actuator requiring pulse
+		  duration input</span></div> 
+		 
+		<a name="c_analog_output_function_block_application_information__image_902C982BB981476CB839F31BA5850677"></a><img id="c_analog_output_function_block_application_information__image_902C982BB981476CB839F31BA5850677" src="fbhelp0092.gif" /> 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

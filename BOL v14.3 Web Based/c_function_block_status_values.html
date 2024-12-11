@@ -1,0 +1,4165 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Function block status values" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="function block status values, status propagation, status, determine worst, worse" name="DC.subject" /><meta content="function block status values, status propagation, status, determine worst, worse" name="keywords" /><meta content="c_fblk_status.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_function_block_status_values" name="DC.Identifier" /><title>Function block status values</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_status.html" /><link rel="next" href="c_fblk_alarms.html" /></head><body class="fixed" id="c_function_block_status_values" data-relpath="c_function_block_status_values.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_function_block_status_values"></a>
+
+<h1 class="topictitle1">Function block status values</h1>
+<div><div></div>
+ 
+	 <p id="c_function_block_status_values__functionblockstatusvalues"><a name="c_function_block_status_values__functionblockstatusvalues"></a>The following table lists all the
+		function block status values. 
+	 </p>
+ 
+	 <p>Status propogation is determined by first checking the quality (Bad=0,
+		Uncertain=1, GoodProcess=2, and GoodCascade=3). If one status has a lower value
+		than the other, then it is determined to be worse. If the quality value is the
+		same, then the quality substatuses of the two are compared, and the higher
+		substatus is determined to be worse. If the quality substatus is the same for
+		both, then the limit fields of the status are checked with the higher limit
+		being determined as worse. 
+	 </p>
+ 
+	 <p>Therefore, to determine the worst status between multiple values, find
+		the values you see is in the table and determine which value is worse by the
+		placement in the table. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"> 
+			 <tr> 
+				<th class="cellrowborder" id="d1040787e49" valign="top" width="NaN%"> 
+				  <p>Decimal Value 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1040787e55" valign="top" width="NaN%"> 
+				  <p>Status Value 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1040787e61" valign="top" width="NaN%"> 
+				  <p>Quality 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1040787e67" valign="top" width="NaN%"> 
+				  <p>Sub-Status 
+				  </p>
+ 
+				</th>
+ 
+				<th class="cellrowborder" id="d1040787e73" valign="top" width="NaN%"> 
+				  <p>Limit 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+</thead>
+ 
+		  <tbody> 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 0 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NonSpecific NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 1 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NonSpecific LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 2 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NonSpecific HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 3 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NonSpecific Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 4 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad ConfigErr NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ConfigErr 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 5 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad ConfigErr LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ConfigErr 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 6 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad ConfigErr HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ConfigErr 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 7 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad ConfigErr Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ConfigErr 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 8 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NotConnected NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotConnected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 9 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NotConnected LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotConnected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 10 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NotConnected HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotConnected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 11 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NotConnected Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotConnected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 12 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad DeviceFailure NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DeviceFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 13 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad DeviceFailure LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DeviceFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 14 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad DeviceFailure HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DeviceFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 15 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad DeviceFailure Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DeviceFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 16 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad SensorFailure NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 17 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad SensorFailure LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 18 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad SensorFailure HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 19 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad SensorFailure Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorFailure 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 20 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommLUV NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommLUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 21 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommLUV LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommLUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 22 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommLUV HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommLUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 23 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommLUV Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommLUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 24 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommNUV NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommNUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 25 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommNUV LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommNUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 26 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommNUV HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommNUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 27 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad NoCommNUV Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NoCommNUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 28 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad OutOfService NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> OutOfService 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 29 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad OutOfService LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> OutOfService 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 30 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad OutOfService HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> OutOfService 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 31 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Bad OutOfService Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Bad 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> OutOfService 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 64 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain NonSpecific NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 65 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain NonSpecific LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 66 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain NonSpecific HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 67 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain NonSpecific Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 68 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain LUV NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 69 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain LUV LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 70 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain LUV HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 71 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain LUV Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LUV 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 72 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain Substitute NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> Substitute 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 73 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain Substitute LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> Substitute 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 74 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain Substitute HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> Substitute 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 75 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain Substitute Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> Substitute 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 76 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain InitialValue NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitialValue 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 77 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain InitialValue LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitialValue 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 78 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain InitialValue HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitialValue 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 79 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain InitialValue Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitialValue 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 80 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SensorConversionNotAccurate NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorConversionNotAccurate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 81 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SensorConversionNotAccurate LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorConversionNotAccurate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 82 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SensorConversionNotAccurate HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorConversionNotAccurate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 83 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SensorConversionNotAccurate Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SensorConversionNotAccurate 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 84 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain EURangeViolation NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> EURangeViolation 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 85 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain EURangeViolation LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> EURangeViolation 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 86 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain EURangeViolation HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> EURangeViolation 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 87 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain EURangeViolation Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> EURangeViolation 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 88 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SubNormal NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SubNormal 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 89 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SubNormal LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SubNormal 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 90 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SubNormal HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SubNormal 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 91 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> Uncertain SubNormal Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> Uncertain 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> SubNormal 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 128 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade NonSpecific NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 129 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade NonSpecific LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 130 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade NonSpecific HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 131 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade NonSpecific Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 132 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveBlockAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 133 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveBlockAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 134 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveBlockAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 135 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveBlockAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 136 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveAdvisoryAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 137 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveAdvisoryAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 138 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveAdvisoryAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 139 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveAdvisoryAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 140 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveCriticalAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 141 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveCriticalAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 142 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveCriticalAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 143 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade ActiveCriticalAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> ActiveCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 144 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedBlockAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 145 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedBlockAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 146 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedBlockAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 147 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedBlockAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedBlockAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 148 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedAdvisoryAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 149 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedAdvisoryAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 150 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedAdvisoryAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 151 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedAdvisoryAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedAdvisoryAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 152 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedCriticalAlarm NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 153 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedCriticalAlarm LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 154 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedCriticalAlarm HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 155 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade UnacknowledgedCriticalAlarm Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodNonCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> UnacknowledgedCriticalAlarm 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 192 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NonSpecific NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 193 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NonSpecific LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 194 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NonSpecific HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 195 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NonSpecific Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NonSpecific 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 196 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationAcknowledge NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationAcknowledge 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 197 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationAcknowledge LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationAcknowledge 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 198 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationAcknowledge HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationAcknowledge 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 199 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationAcknowledge Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationAcknowledge 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 200 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationRequest NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationRequest 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 201 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationRequest LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationRequest 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 202 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationRequest HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationRequest 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 203 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitializationRequest Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitializationRequest 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 204 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotInvited NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotInvited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 205 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotInvited LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotInvited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 206 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotInvited HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotInvited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 207 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotInvited Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotInvited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 208 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotSelected NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotSelected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 209 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotSelected LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotSelected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 210 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotSelected HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotSelected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 211 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade NotSelected Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> NotSelected 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 212 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade DoNotSelect NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DoNotSelect 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 213 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade DoNotSelect LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DoNotSelect 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 214 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade DoNotSelect HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DoNotSelect 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 215 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade DoNotSelect Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> DoNotSelect 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 216 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade LocalOverride NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LocalOverride 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 217 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade LocalOverride LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LocalOverride 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 218 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade LocalOverride HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LocalOverride 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 219 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade LocalOverride Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> LocalOverride 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 220 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade FaultStateActive NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> FaultStateActive 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 221 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade FaultStateActive LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> FaultStateActive 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 222 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade FaultStateActive HighLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> FaultStateActive 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 223 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade FaultStateActive Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> FaultStateActive 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 224 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitiateFaultState NotLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitiateFaultState 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> NotLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 225 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitiateFaultState LowLimited 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitiateFaultState 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> LowLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 226 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitiateFaultState HighLimted 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitiateFaultState 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> HighLimited 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+			 <tr> 
+				<td class="cellrowborder" headers="d1040787e49 " valign="top" width="NaN%"> 
+				  <p> 227 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e55 " valign="top" width="NaN%"> 
+				  <p> GoodCascade InitiateFaultState Constant 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e61 " valign="top" width="NaN%"> 
+				  <p> GoodCascade 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e67 " valign="top" width="NaN%"> 
+				  <p> InitiateFaultState 
+				  </p>
+ 
+				</td>
+ 
+				<td class="cellrowborder" headers="d1040787e73 " valign="top" width="NaN%"> 
+				  <p> Constant 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

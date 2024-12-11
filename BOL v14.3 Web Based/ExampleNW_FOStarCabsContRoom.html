@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Fiber star network for multiple buildings with DeltaV Smart Switches, distributed controllers, and CHARMs I/O" name="DC.Title" /><meta content="Plan" name="DC.Coverage" /><meta content="Install" name="DC.Coverage" /><meta content="Ref_BuildTPAssemblies.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_2987DF78D79448F88152D6400D3D7B19_unique_39" name="DC.Identifier" /><title>Fiber star network for multiple buildings with DeltaV Smart Switches, distributed controllers, and CHARMs I/O</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="ExampleNW_FOStarSserFW.html" /><link rel="next" href="ExampleNW_TPWIOC.html" /></head><body class="fixed" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39" data-relpath="ExampleNW_FOStarCabsContRoom.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39"></a>
+
+<h1 class="topictitle1"> Fiber star network for multiple buildings with DeltaV Smart Switches,
+    distributed controllers, and CHARMs I/O</h1>
+<div> 
+    <div class="section" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__section_2E36B1B3C2A7405B8893A83716EB5669"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__section_2E36B1B3C2A7405B8893A83716EB5669"></a> 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p class="nowrap"> The images in this topic show an example
+          connection scheme; many other connection schemes are possible. For example, it
+          is possible to have a star network from a 24 port twisted pair switch to 24
+          buildings (not to exceed the DeltaV system capacities). There are many
+          combinations of star networks possible using a mixture of fiber-optic cable
+          that is required for outdoor cable runs and twisted pair cable for indoor 
+          <span class="nowrap">floor-to- floor</span> or 
+          <span class="nowrap">area-to-area</span> runs. The network shown in
+          the images physically supports 11,520 CHARMs due to the number of cabinets and
+          CIOCs shown; however, many more CHARMs are possible on a single network with
+          additional CIOCs and controllers located across the plant either in cabinets or
+          field enclosures or mounted on DIN rails in a standalone application. Refer to
+          the System Capacities topic for the supported ratio of CHARMs-to-CIOCs-to
+          controllers. In the image, notice that a single controller is located in each
+          building and several controllers are located in the control room. Because
+          approximately 1,440 CHARMs are located in each building in this example and
+          controllers support up to 1500 DSTs, it is convenient and very secure to locate
+          the controller to which the CHARMs are assigned in the same building on the
+          same side of the external fiber-optic links. Controllers can be located
+          anywhere on the network as long as the rules for the ratio of
+          CHARMs-to-CIOCs-to-controllers are followed. 
+        </p>
+ 
+      </div>
+ 
+      <p>The following image shows a top-down view of a network distributed
+        between eight buildings. 
+        <a href="ExampleNW_FOStarCabsContRoom.html#reference_2987DF78D79448F88152D6400D3D7B19_unique_39__fig_9BC2B3A09CFE40A4B01EC21C3B014884">Detailed view of the connections within each
+          building</a>
+        shows details on the connections within each building. 
+      </p>
+ 
+      <div class="fignone" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__fig_F30A7989F6EC4E8CA8E36324195FC584"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__fig_F30A7989F6EC4E8CA8E36324195FC584"></a><div><span class="figcap">DeltaV Smart Switches, distributed controllers, and CHARMs I/O
+          in a fiber-optic star network</span></div> 
+        <br /><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_49432D7AB0B34E349C3A06A960D39D34"></a><div class="imageleft"><img class="imageleft" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_49432D7AB0B34E349C3A06A960D39D34" src="Scaled_CabinetNWWithControlRoom.png" /></div><br />
+        
+      </div>
+ 
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__table_B6C66A7DFC814ECAA4171B48C1D55D6D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__table_B6C66A7DFC814ECAA4171B48C1D55D6D" rules="all" summary=""><thead align="left"> 
+            <tr> 
+              <th class="cellrowborder" id="d438657e54" valign="top" width="10.799136069114471%">Callout 
+              </th>
+ 
+              <th class="cellrowborder" id="d438657e57" valign="top" width="89.20086393088553%">Description 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e54 " valign="top" width="10.799136069114471%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_C0738A5C6E8640BC9732998EC99CB202"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_C0738A5C6E8640BC9732998EC99CB202" src="one.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e57 " valign="top" width="89.20086393088553%"> Fiber-optic cable must be used for outdoor
+                
+                <span class="nowrap">building-to-building</span>
+                communications for immunity from electromagnetic interference caused by near
+                lightning strikes; for ground isolation between buildings; and to gain
+                additional distance that goes beyond the 100 meters (328 ft) maximum allowed
+                for screened twisted pair cabling (ScTP). Both single-mode and multimode
+                fiber-optic cable can be used with the appropriate DeltaV Smart Switches but
+                only multimode fiber-optic cable can be used with the fiber-optic I/O Port
+                (IOP) on the CIOC Carrier. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e54 " valign="top" width="10.799136069114471%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_97F2DAD1248B41F7BCA4FAD65F9EA0EC"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_97F2DAD1248B41F7BCA4FAD65F9EA0EC" src="two.png" />
+                
+              </td>
+ 
+              <td class="nowrap" headers="d438657e57 " valign="top" width="89.20086393088553%"> The DeltaV RM100
+                Smart Switch is shown here ; however, there are other Smart Switch types that
+                could be used depending on the number of ports and cable media types needed for
+                each connection. The DeltaV RM100 Smart Switch shown here is the modular
+                version that is initially equipped with eight (8), fixed twisted pair
+                10/100mb/s ports and two blank panels. The blank panels can be removed and
+                8-port, hot-swappable, multimode and single-mode fiber-optic expansion modules
+                can be installed for these building-to-building fiber- optic connections.
+                Multimode fiber-optic cable only can be used with the fiber-optic I/O Port
+                (IOP) on the CIOC Carrier. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e54 " valign="top" width="10.799136069114471%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_33598E420C3C4C9D90E63518A59F5613"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_33598E420C3C4C9D90E63518A59F5613" src="three.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e57 " valign="top" width="89.20086393088553%"> This is a 100 meter (maximum)
+                straight-through or crossover cable. To prevent ground loops, build this cable
+                assembly with a shielded, metal-enclosed RJ45 connector on one end and an
+                isolated, plastic-enclosed RJ45 connector on the other end. The metal connector
+                end of this cable assembly must be placed on the switch and not on the PC. 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+      <div class="fignone" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__fig_9BC2B3A09CFE40A4B01EC21C3B014884"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__fig_9BC2B3A09CFE40A4B01EC21C3B014884"></a><div><span class="figcap">Detailed view of the connections within each
+          building</span></div> 
+        <br /><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_3C767948B6634F8A93BD5FD11CE43C1D"></a><div class="imageleft"><img class="imageleft" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_3C767948B6634F8A93BD5FD11CE43C1D" src="Detail_Building_connections.png" /></div><br />
+        
+      </div>
+ 
+      
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__table_E17EA8EA8D114E7AAF134BF28A037323"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__table_E17EA8EA8D114E7AAF134BF28A037323" rules="all" summary=""><thead align="left"> 
+            <tr> 
+              <th class="cellrowborder" id="d438657e116" valign="top" width="11.820330969267138%">Callout 
+              </th>
+ 
+              <th class="cellrowborder" id="d438657e119" valign="top" width="88.17966903073285%">Description 
+              </th>
+ 
+            </tr>
+</thead>
+ 
+          <tbody> 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_79E68C6AF9B7456F83510F108DEF4702"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_79E68C6AF9B7456F83510F108DEF4702" src="one.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">100 m (max) straight-through or crossover
+                cable. The shield on the controller&#39;s RJ45 connector connects only to a Faraday
+                cage in the controller; not to the controller&#39;s DC ground. Therefore, the RJ45
+                connectors are floating and the single point of ground is made at the switch to
+                which the controller is connected. Build this cable assembly with a shielded,
+                metal-enclosed RJ45 connector on both ends. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_50AB9A7F79DF48F883D7FE416FC0C0FA"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_50AB9A7F79DF48F883D7FE416FC0C0FA" src="two.png" /> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">100 m (max) straight-through or crossover
+                cable. To prevent ground loops, build this cable assembly with a shielded,
+                metal-enclosed RJ45 connector on one end and an isolated, plastic-enclosed RJ45
+                connector on the other end. The metal connector end of this cable must be
+                placed on the switch and not on the PC. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_F85EE81BF7894E1E90A6BCC18837008B"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_F85EE81BF7894E1E90A6BCC18837008B" src="three.png" /> 
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">For the 288 CHARM cabinet shown in this
+                image, the primary control network connects to CIOC1 located in the front left
+                of the cabinet and the secondary control network connects to CIOC3 located in
+                the front right of the cabinet. For the 576 CHARM cabinet, the secondary
+                control network connects to CIOC6 located in the back right of the cabinet. The
+                cascade (daisy-chained) connections between the connections are prewired with
+                100 m (maximum) straight-through or crossover cable. The shield on the CIOC&#39;s
+                RJ45 connector connects only to a Faraday cage in the CIOC; not to the CIOC&#39;s
+                DC ground. Therefore, the RJ45 connectors are floating and the single point of
+                ground is made at the switch to which the CIOC is connected. Build this cable
+                assembly with a shielded, metal-enclosed RJ45 connector on both ends. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_ADF0DAFF58C64FF9BCD8143EF77EB8C2"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_ADF0DAFF58C64FF9BCD8143EF77EB8C2" src="four.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Factory installed Cat 5e ScTP (shielded)
+                communications cable. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_B1AC0328255C4CF7B65845049AFFDFB1"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_B1AC0328255C4CF7B65845049AFFDFB1" src="five.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Factory installed multimode fiber-optic
+                cable. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_DD48738DA6AF4378B259EC568D809481"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_DD48738DA6AF4378B259EC568D809481" src="six.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Fiber-optic network adapter. Connections to
+                an internal redundant fiber-optic network are made through this patch panel.
+                The incoming external fibers must be terminated with SC connectors. The patch
+                panel consists of: 
+                <a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__ul_499445C9CB1447BEA78CA6C0398878AE"></a><ul id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__ul_499445C9CB1447BEA78CA6C0398878AE"> 
+                  <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__li_E808ABD679934A4E824F8EB66A512116"><div class="li_content">Two DIN
+                    rail-mounted, duplex SC-SC adapters. Each duplex adapter receives two
+                    SC-terminated fibers: one fiber is for incoming, receive data and the other
+                    fiber is for outgoing transmit data. One duplex adapter is for the primary
+                    DeltaV control network and the other is for the secondary DeltaV control
+                    network. 
+                  </div></li>
+ 
+                  <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__li_AAC6C61E6D3B4168A7E94AA29D8531CE"><div class="li_content">Two additional,
+                    duplex SC-SC adapters. The SC-SC adapters are compatible with the following
+                    types of fiber-optic cable: 
+                    <a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__ul_2B12DD12A1FD454CAFA5D51901C983B5"></a><ul id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__ul_2B12DD12A1FD454CAFA5D51901C983B5"> 
+                      <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__li_FF2C4AAD75664F3F8A8396B06FCDB4B5"><div class="li_content">Multimode
+                        (MM) in 62.5/125 micron core/cladding diameters (OM1) 
+                      </div></li>
+ 
+                      <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__li_A477AA670B23489D967B035429EF85CD"><div class="li_content">Multimode
+                        (MM) in 50/125 micron core/cladding diameters (OM2) 
+                      </div></li>
+ 
+                    </ul>
+ 
+                  </div></li>
+ 
+                </ul>
+ 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_B6F343CCC2DC4792A845DC5146F45E92"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_B6F343CCC2DC4792A845DC5146F45E92" src="seven.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">The DeltaV MD30 Smart Switch is shown for
+                reference. Other Smart Switch types could be used depending upon the number of
+                ports and cable media types needed for each connection. The MD30 Smart Switch
+                contains an extra module with two fiber-optic SFP slots (used for optional SFP
+                fiber-optic transceiver modules) and two twisted pair 10/100/1000 mb/s uplinks.
+                Up to two of the four ports on this module can be used simultaneously in any
+                combination of fiber and twisted pair. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_F189871427C6484580709A3297B16233"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_F189871427C6484580709A3297B16233" src="eight.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">The CIOC with a multimode fiber-optic
+                network interface (MTRJ port), is an edge device for an end-of-line group of
+                remotely located CHARMs I/O. CIOCs with a fiber-optic network interface cannot
+                be daisy-chained and are used for star-connected CHARMs networks as shown in
+                the image. The fiber-optic MTRJ port is for use with multimode fiber-optic
+                cable with diameters of 62.5/125 or 50.125 μm. The maximum distance supported
+                is in the 2 kilometer range; however, the actual distance supported is
+                influenced by the number and quality of fiber-optic splices, patch panels, and
+                grade and attenuation of the fiber-optic cable. Refer to the CIOC Carrier
+                specifications for the fiber-optic link budget. Single mode fiber-optic cable
+                is not supported. For single mode fiber applications, a low port number,
+                external fiber-optic switch can be used to link the twisted-pair version of the
+                CIOC using fiber-optic cable. Refer to the DeltaV Smart Switch Product Data
+                Sheets for more information. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_362C3BE849954C049922A82E95DBACB6"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_362C3BE849954C049922A82E95DBACB6" src="nine.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Multimode fiber-optic modules for the
+                DeltaV 24 VDC powered rail-mounted Smart Switches. DeltaV Smart Switches with
+                other form factors such as the 19 inch AC powered rack mounted switches and the
+                fixed port 24 VDC rail-mounted switches are also available with multimode
+                fiber-optic ports. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_9987643F6B9A4DF88C2F917B5D132ECF"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_9987643F6B9A4DF88C2F917B5D132ECF" src="ten.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">The redundant controller could be located
+                on different switches near the control room in a different building or located
+                as shown here with its CIOC/CHARMs hardware. There can be up to 12 switches
+                daisy-chained between CIOC/CHARMs hardware and the controllers they communicate
+                with 
+                <em>when all are on the same side of the firewall</em>. Do not
+                place a firewall between the CIOC/CHARMs and their associated controllers.
+                Controllers and CIOCs must reside on the same DeltaV network, not separated by
+                firewalls or routers. Up to eight controllers and many CIOCs can be placed on
+                the protected side of a DeltaV Controller Firewall. A preferred method of
+                connecting other buildings/areas to the main control room Ethernet switch is to
+                use a network star so that each leg of the star supports one remote area or
+                building. Using a star topology is generally preferred by maintenance personnel
+                because they know that if they are working on one leg of a star and power is
+                removed from that area the communication chain would not be broken. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_28B5D3C25F3E4BC7893ED25B5754BD87"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_28B5D3C25F3E4BC7893ED25B5754BD87" src="eleven.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Factory installed cascade (daisy-chained)
+                connections between the CIOCs are Cat 5e ScTP (shielded) communications cable. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_EDB3A301F87649E1912AD13AB27B90A1"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_EDB3A301F87649E1912AD13AB27B90A1" src="twelve.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Twisted pair module (4 port) for the DeltaV
+                24 VDC powered rail-mounted switches. DeltaV Smart Switches with other form
+                factors such as 19 inch rack-mounted switches and the fixed port 24 VDC
+                rail-mounted switches are also available with twisted pair ports. 
+              </td>
+ 
+            </tr>
+ 
+            <tr> 
+              <td class="cellrowborder" headers="d438657e116 " valign="top" width="11.820330969267138%"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_19E184A3E18944DAB40BB2CC9C4F82C0"></a><img id="reference_2987DF78D79448F88152D6400D3D7B19_unique_39__image_19E184A3E18944DAB40BB2CC9C4F82C0" src="thirteen.png" />
+                
+              </td>
+ 
+              <td class="cellrowborder" headers="d438657e119 " valign="top" width="88.17966903073285%">Rather than continue to the next building
+                in a daisy-chain, the preferred method is to end the link in this building and
+                implement it as one leg of a star (eliminating link A and link B). 
+              </td>
+ 
+            </tr>
+ 
+          </tbody>
+ 
+        </table>
+</div>
+ 
+    </div>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="Ref_BuildTPAssemblies.html">Building twisted pair cable assemblies</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

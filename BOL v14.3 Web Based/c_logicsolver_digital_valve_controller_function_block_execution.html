@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Digital Valve Controller function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Digital Valve Controller (LSDVC), Digital Valve Controller (LSDVC) function block" name="DC.subject" /><meta content="SIS function blocks, Digital Valve Controller (LSDVC), Digital Valve Controller (LSDVC) function block" name="keywords" /><meta content="c_ls_fblk_spec_dvc.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logic_solver_digital_valve_controller_function_block_execution" name="DC.Identifier" /><title>Logic Solver Digital Valve Controller function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_logicsolver_digital_valve_controller_function_block_functional_overview.html" /><link rel="next" href="c_logicsolver_digital_valve_controller_function_block_alarm_detection.html" /></head><body class="fixed" id="c_logic_solver_digital_valve_controller_function_block_execution" data-relpath="c_logicsolver_digital_valve_controller_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logic_solver_digital_valve_controller_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Digital Valve Controller function block
+	 execution</h1>
+<div><div></div>
+ 
+	 <p>Because the Logic Solver is a De-energized to Trip environment the
+		normal operating value of the output is On (1) and the tripped value is Off
+		(0). 
+	 </p>
+ 
+	 <p>To use the LSDVC block in a safety shutdown application, assign IO_OUT
+		to a Logic Solver HART Two-state Output channel or LS CHARM connected to a
+		Fisher Controls DVC6000ESD digital valve controller. Typically, the CAS_IN_D
+		input of the LSDVC block would be wired from an EFFECT output of an upstream
+		LSCEM block. Default LSDVC block behavior passes the value of CAS_IN_D to
+		OUT_D.  
+	 </p>
+ 
+	 <p>You can wire feedback from the DVC6000ESD to the RDBK_IN_D input
+		parameter of the LSDVC block. This input would typically be wired from an LSDI
+		function block representing a limit switch. The RDBK_IN_D value becomes the
+		PV_D of the LSDVC block. If the configurable time CFM_TRIP_TIME expires before
+		PV_D confirms the off state, the DO_ALERTS 
+		<em>Failed to confirm after trip command</em> becomes True. If RDBK_IN_D is
+		not wired, PV_D has the same value as OUT_D, so confirmation is immediate. 
+	 </p>
+ 
+	 <p><strong>Fault State Detection</strong> 
+	 </p>
+ 
+	 <p>The LSDVC block enters a fault state when any of three conditions is
+		detected and a corresponding option has been selected for the detected
+		condition. When the fault state is active, the block forces OUT_D to Off, sets
+		the Fault State Active bit in BLOCK_ERR, and sets FAULT_STATE to Active. The
+		FSTATE_OPTS options are selected by default and include: 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_A6D662F71729458097DDCE86F1AD4F0E"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_A6D662F71729458097DDCE86F1AD4F0E"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_B69D84889AE243EF92ECA65581B61EF7"><div class="li_content"> 
+		  <p>Enable detection based on CAS_IN_D status 
+		  </p>
+ 
+		  <p>If the status of CAS_IN_D becomes Bad, FSTATE_TIMER begins
+			 incrementing from 0.0. If the status remains Bad for FSTATE_TIME seconds, OUT_D
+			 is forced to 0 (zero). FSTATE_TIMER continues to increment while the status of
+			 CAS_IN_D is Bad. The fault state condition clears immediately when the status
+			 transitions away from Bad. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_C93FFB6F7D124282A3610E31DAAB4CD7"><div class="li_content"> 
+		  <p>Enable detection based on output status 
+		  </p>
+ 
+		  <p>OUT_D is forced to Off if the Logic Solver detects a short or open
+			 in the field wiring (status of OUT_D is Bad SensorFailure LowLimited) while
+			 OUT_D is being commanded On. The LSDVC block reacts to this status by forcing
+			 the output Off to track the state of the DVC6000ESD. Note that FSTATE_TIME has
+			 no effect when the fault state is a result of OUT_D status. 
+		  </p>
+ 
+		  <div class="note"><span class="notetitle">Note:</span>  
+			 <p> If you use this option you must also require a reset, either in
+				this block or in an upstream LSCEM block, because an active fault state
+				condition clears when the block drives the output Off. Requiring a reset
+				prevents the block from driving the output back to On during the next scan. 
+			 </p>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_B20824936C7D4A678358AA9CEE8E8DF3"><div class="li_content"> 
+		  <p>Enable detection based on PV_D value 
+		  </p>
+ 
+		  <p>OUT_D is forced to 0 based on feedback from the final element wired
+			 into RDBK_IN_D. The final element is confirmed Off (PV_D is 0) while OUT_D is
+			 commanded On. Use this option to force the output off if a failure of the final
+			 element is not detected by a Logic Solver diagnostic. RDBK_IN_D should be wired
+			 when using this option, otherwise PV_D has the same value as OUT_D. Note that
+			 FSTATE_TIME has no effect when the fault state is a result of the value of
+			 PV_D. 
+		  </p>
+ 
+		  <div class="note"><span class="notetitle">Note:</span>  
+			 <p> If you use this option you must also require a reset, either in
+				this block or in an upstream LSCEM block, because an active fault state
+				condition clears when the block drives the output Off. Requiring a reset
+				prevents the block from driving the output back to On during the next scan. 
+			 </p>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>FSTATE_TIMER is a writeable parameter. Be advised that writing to
+		FSTATE_TIMER can cause the state of OUT_D to change depending on the value
+		written. 
+	 </p>
+ 
+	 <p><strong>Determining the value of OUT_D and writing the output value</strong> 
+	 </p>
+ 
+	 <p>The following figure is the state transition diagram for OUT_D_STATE.
+		When OUT_D_STATE is Off or Off - Ready to Reset, the value of OUT_D is Off (0)
+		and the Logic Solver channel or LS CHARM defined by IO_OUT is written to Off.
+		When OUT_D_STATE is On, OUT_D is On and IO_OUT is written to On. 
+	 </p>
+ 
+	 <div class="fignone" id="c_logic_solver_digital_valve_controller_function_block_execution__fig_A542B45100974544ADFC4EF545C8B8BC"><a name="c_logic_solver_digital_valve_controller_function_block_execution__fig_A542B45100974544ADFC4EF545C8B8BC"></a><div><span class="figcap">OUT_D_STATE Transition Diagram</span></div> 
+		<br /><a name="c_logic_solver_digital_valve_controller_function_block_execution__image_963C799345264655BABC35A9A86A63B0"></a><div class="imageleft"><img class="imageleft" id="c_logic_solver_digital_valve_controller_function_block_execution__image_963C799345264655BABC35A9A86A63B0" src="SIS_DVC_exe1.gif" /></div><br /> 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> To require a manual reset to transition OUT_D to On (1), it is
+		  recommended that you configure this in an upstream LSCEM block, not the LSDVC
+		  block. The LSCEM block has a number of features that enhance the reset logic.
+		  The ability to require resets in the LSDVC block (using the REQUIRE_RESET
+		  parameter) is provided if you do not have voter and LSCEM blocks to implement
+		  shutdown logic. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>If you set the LSDVC block&#39;s REQUIRE_RESET parameter to True, any
+		transition of OUT_D to Off (0) causes OUT_D to remain Off until all of the
+		following conditions are met: 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_D3CE14DD3D774EFC84CF5AC353052480"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_D3CE14DD3D774EFC84CF5AC353052480"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_50784756C98B4CDF8F80AB1617914209"><div class="li_content"> 
+		  <p>CAS_IN_D equals 1 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_6FC9DD4078E9461EB1966DC74B89E26F"><div class="li_content"> 
+		  <p>FAULT_STATE is not active 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_E6A8AE54160D44E2ADD8F42B79528960"><div class="li_content"> 
+		  <p>RESET is True 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>RESET should be changed to True using a button on a faceplate or process
+		display in DeltaV Operate. The block changes RESET back to False. Do not expose
+		RESET as an input on the block and wire to it. If you need to reset an LSDVC
+		block from SIS module logic, use an LSCALC function block to do a conditional
+		assignment to RESET. 
+	 </p>
+ 
+	 <p>When REQUIRE_RESET is False, OUT_D&#39;s value is based on the value of
+		CAS_IN_D unless the fault state is active. 
+	 </p>
+ 
+	 <p>When OUT_D_STATE is Off or Off - Ready to Reset, the value of OUT_D is
+		Off and the channel or LS CHARM on this Logic Solver defined by IO_OUT is
+		written to Off. This results in the configured OFF_CURRENT value (0 or 4 mA)
+		being sent to the Logic Solver&#39;s HART Two-state Output channel or LS CHARM
+		defined in IO_OUT. 
+	 </p>
+ 
+	 <p>When OUT_D_STATE is On, OUT_D is On and the channel or LS CHARM is
+		written to On. This results in 20 mA being sent to the Logic Solver&#39;s HART
+		Two-state Output Channel or LS CHARM. 
+	 </p>
+ 
+	 <p><strong>Determining the value of PV_D</strong> 
+	 </p>
+ 
+	 <p>PV_D normally gets its value from RDBK_IN_D. If the status of RDBK_IN_D
+		is BadNotConnected, PV_D has the same value as OUT_D. Use the invert input
+		option in the upstream LSDI function block if you are using a closed limit
+		switch. You can manipulate PV_D to test an operator display or test the
+		confirmation alarm condition by using simulation in the upstream input function
+		block (simulation available when the Logic Solver is assigned to the
+		ProfessionalPLUS workstation as a simulated Logic Solver). 
+	 </p>
+ 
+	 <p><strong>Determining the value of DO_ALERTS</strong> 
+	 </p>
+ 
+	 <p>The DO_ALERTS parameter reports two alarm conditions set by the block
+		(inactive = 0, active = 1): 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_1573E061D61246F383DA2D1A248450C7"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_1573E061D61246F383DA2D1A248450C7"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_0364EE7AF8EB4B74AD105145BB5BA51B"><div class="li_content"> 
+		  <p>Failed to confirm after trip command 
+		  </p>
+ 
+		  <p>The device fails to confirm after being commanded to trip. On any
+			 transition of OUT_D to Off, the block starts a confirmation timer. If the value
+			 of PV_D is not 0 within CFM_TRIP_TIME seconds, the alert 
+			 <em>Failed to confirm after trip command</em> becomes True. The alert
+			 clears when OUT_D transitions to On (1) or PV_D transitions to Off (0). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_EFBCF28E92564E778499D3E9D12FDFF3"><div class="li_content"> 
+		  <p>Confirm lost while commanded On 
+		  </p>
+ 
+		  <p>The device confirms Off while it is being commanded On. When
+			 OUT_D_STATE is On and PV_D has transitioned to 1, the condition is detected if
+			 PV_D becomes 0, for example if the device has a failure that causes it to
+			 confirm in the Off state. The alert clears on the next transition of
+			 OUT_D_STATE to On.  
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p><strong>Partial stroke testing</strong> 
+	 </p>
+ 
+	 <p>Perform partial stroke testing of a DVC6000ESD in one of the following
+		ways: 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_F6BAAAD4924747279DAC1E2A34BAB775"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_F6BAAAD4924747279DAC1E2A34BAB775"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_B8289C17E4E64AE090C491E6B625448D"><div class="li_content"> 
+		  <p>Initiate a test from a workstation using DeltaV Operate or Control
+			 Studio Online/Debug by a secure write to the PST_START parameter in the LSDVC
+			 block. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_18146C1EB5A04762A8AED57ADF4BEAD8"><div class="li_content"> 
+		  <p>Use a Calc block in an SIS module to initiate a test by
+			 conditionally writing the PST_START parameter in the LSDVC block. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_9205FB4217B94789B611CC756A2EC46E"><div class="li_content"> 
+		  <p>Configure the LSDVC block to periodically initiate the test based on
+			 the block&#39;s PST_PERIOD_TIME parameter. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p>  Do not attempt to initiate consecutive partial stroke tests from the
+		  logic unless you verify that each test completes before initiating the next.
+		  Otherwise, the first test succeeds and subsequent tests fail or are denied
+		  until the first test completes.  
+		</p>
+ 
+	 </div>
+ 
+	 <p>The partial stroke testing facility in the LSDVC block is in one of
+		three states as indicated in the PST_STATE parameter, whose state transition
+		diagram is shown in the following figure. 
+	 </p>
+ 
+	 <div class="fignone" id="c_logic_solver_digital_valve_controller_function_block_execution__fig_EDE98E5E16E04E3486ADC76AEB1DB6FA"><a name="c_logic_solver_digital_valve_controller_function_block_execution__fig_EDE98E5E16E04E3486ADC76AEB1DB6FA"></a><div><span class="figcap">PST_STATE Transition Diagram</span></div> 
+		<br /><a name="c_logic_solver_digital_valve_controller_function_block_execution__image_858773ACB20B407B889DBBC3752FE78C"></a><div class="imageleft"><img class="imageleft" id="c_logic_solver_digital_valve_controller_function_block_execution__image_858773ACB20B407B889DBBC3752FE78C" src="SIS_DVC_exe2.gif" /></div><br /> 
+	 </div>
+ 
+	 <p>The partial stroke testing state is Idle when the block has not been
+		configured to initiate tests periodically, that is, PST_PERIOD_TIME is zero
+		hours, and the block is waiting for a manual test to be initiated by PST_START.
+		
+	 </p>
+ 
+	 <p>The state is Armed when PST_PERIOD_TIME is greater than zero and
+		PST_NEXT_TIMER is timing down. A test starts when PST_NEXT_TIMER reaches zero
+		(times out), or if prior to timing out, a manual test is started. 
+	 </p>
+ 
+	 <p>The state transitions to PST in Progress when a test is started from
+		Idle or Armed. The block sends a request to the IO subsystem to initiate a
+		partial stroke test. The block generates an event based on whether the test was
+		successful, failed, or denied. The state then transitions to Armed or Idle
+		based on the value of PST_PERIOD_TIME. 
+	 </p>
+ 
+	 <p>A partial stroke test can fail for a number of reasons: 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_768115E844D8470F9C7E5D5698C3BB1C"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_768115E844D8470F9C7E5D5698C3BB1C"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_018F228872D54118B7890914A2CAEF84"><div class="li_content"> 
+		  <p>The DVC6000ESD returns a test failed response 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_C423EF51CE484D1A8BF7E2339EE48B44"><div class="li_content"> 
+		  <p>The Logic Solver I/O processor is not in the Ready state when the
+			 block requests a test 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_9B1C3C2FD7F84C89948B820AFD6CB2A6"><div class="li_content"> 
+		  <p>The Logic Solver I/O processor goes to the NoComm state after the
+			 test is initiated 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_418AF60733904953B7432C49850B8439"><div class="li_content"> 
+		  <p>The Logic Solver control subsystem does not get a response from the
+			 Logic Solver I/O processor for 180 seconds while PST_STATE is 
+			 <em>PST In Progress</em>. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>When a partial stroke test fails, the block sets the PST_ALERTS 
+		<em>Test failed</em>. The alert remains set until the next time PST_STATE
+		is 
+		<em>PST in Progress</em>. 
+	 </p>
+ 
+	 <p>The partial stroke test can be denied by the DVC6000ESD when it is in
+		some modes of operation, for example, it is being calibrated or a test has been
+		initiated from Valvelink, or the connected HART device does not support partial
+		stroke testing. When a test is denied, the block sets the PST_ALERTS 
+		<em>Test Denied</em>, where it remains set until the next time PST_STATE is
+		
+		<em>PST in Progress</em>. 
+	 </p>
+ 
+	 <p>When PST_STATE is Armed or Idle, the block compares the elapsed time
+		since the last successful test, PST_SINCE_TIMER, to the maximum allowed time
+		between successful tests, PST_REQ_INTERVAL, and sets a the PST_ALERTS 
+		<em>No successful test in the required interval</em> if the time has been
+		exceeded (unless the required interval is zero). PST_SINCE_TIMER is set to zero
+		after a test succeeds. PST_SINCE_TIMER does not begin incrementing after an
+		initial download of the Logic Solver until a successful test has occurred. 
+	 </p>
+ 
+	 <p>A transition can occur between Idle and Armed when PST_PERIOD_TIME is
+		written in runtime, or on the first scan after a download if PST_PERIOD_TIME
+		has changed. When the state is Idle, changing PST_PERIOD_TIME to a value
+		greater than zero causes the state to change to Armed and PST_NEXT_TIMER to be
+		initialized. When the state is Armed, writing PST_PERIOD_TIME to zero changes
+		the state to Idle. When Armed, a greater than zero write to PST_PERIOD_TIME
+		changes PST_NEXT_TIMER to the value written to PST_PERIOD_TIME if that value is
+		less than the current value of PST_NEXT_TIMER. PST_NEXT_TIMER is decremented
+		when the state is Armed. 
+	 </p>
+ 
+	 <p>When a download of the Logic Solver occurs where there is an existing
+		configuration running, the current state and timer values are copied from
+		running LSDVC blocks to retain the values. 
+	 </p>
+ 
+	 <p><strong>Event Generation</strong> 
+	 </p>
+ 
+	 <p>The LSDVC block generates an event record when any of the following
+		conditions become active and the REPORT_OPTS option 
+		<em>Event records are not generated</em> is not selected: 
+	 </p>
+ 
+	 <a name="c_logic_solver_digital_valve_controller_function_block_execution__ul_3A5767A48FDB42A6AEE0F3F351B6D2C7"></a><ul id="c_logic_solver_digital_valve_controller_function_block_execution__ul_3A5767A48FDB42A6AEE0F3F351B6D2C7"> 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_1B725DC3D9FB40B8A1C0DAFCE2E75964"><div class="li_content"> 
+		  <p>The block has set DO_ALERTS 
+			 <em>Failed to confirm following a command to trip</em>. The event
+			 record shows the path to the LSDVC block and the 
+			 <em>Failed to confirm after trip command</em> text string along with
+			 the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_C174B3689D0941C8A1F72A81CC4DEE0B"><div class="li_content"> 
+		  <p>The block has set DO_ALERTS 
+			 <em>Confirm lost while commanded On</em>. The event record shows the
+			 path to the LSDVC block and the text 
+			 <em>Confirm lost while commanded On</em> along with the time of
+			 occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_8AF7FABA537D4EBABADF8B11A1F56182"><div class="li_content"> 
+		  <p>The command to trip was successful and RDBK_IN_D has been wired. The
+			 event record shows the path to the LSDVC block and the text 
+			 <em>Successful confirmation following a command to trip</em> along with
+			 the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_FB6DC155F3AB4AFC8F68AA3AACA632C1"><div class="li_content"> 
+		  <p>The block has set PST_ALERTS 
+			 <em>Test failed</em>. The event record shows the path to the LSDVC
+			 block and the text string 
+			 <em>Partial stroke test failed</em> along with the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_05034B9EEABB4A8AAF7751D7DFB42B47"><div class="li_content"> 
+		  <p>The block has set PST_ALERTS 
+			 <em>Test denied</em>. The event record shows the path to the LSDVC
+			 block and the text string 
+			 <em>Partial stroke test denied</em> along with the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_0DC775B0DFF145AD812CBEAFC0FCE5F6"><div class="li_content"> 
+		  <p>The block has set PST_ALERTS 
+			 <em>No successful test in the required interval</em>. The event record
+			 shows the path to the LSDVC block and the text string 
+			 <em>Partial stroke test past due</em> along with the time of
+			 occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_digital_valve_controller_function_block_execution__li_64C8FB19A003436CB8800306B21C2F33"><div class="li_content"> 
+		  <p>The partial stroke test is successful. The event record shows the
+			 path to the LSDVC block and the text 
+			 <em>Successful partial stroke test</em> along with the time of
+			 occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Information needed to configure the external network" name="DC.Title" /><meta content="Maintain" name="DC.Coverage" /><meta content="t_configure_external_network.html" name="DC.Relation" scheme="URI" /><meta content="r_worksheet_firewall_external.html" name="DC.Relation" scheme="URI" /><meta content="t_smart_firewall_add_route.html" name="DC.Relation" scheme="URI" /><meta content="r_worksheet_firewall_config.html" name="DC.Relation" scheme="URI" /><meta content="c_smart_firewall_configuration.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_74495CFD26EC43EFA995B219B6208892_unique_315" name="DC.Identifier" /><title>Information needed to configure the external network</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_smart_firewall_int_config.html" /><link rel="next" href="c_smart_firewall_config_apps.html" /></head><body class="fixed" id="concept_74495CFD26EC43EFA995B219B6208892_unique_315" data-relpath="c_smart_firewall_ext_config.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_74495CFD26EC43EFA995B219B6208892_unique_315"></a>
+
+<h1 class="topictitle1"> Information needed to configure the external network</h1>
+<div> 
+	 <p>The address of the firewall&#39;s external network (business, plant LAN,
+		DMZ) port can act as a DHCP client and can be assigned by the site&#39;s DHCP
+		server or it can be set to a static address by the firewall administrator. This
+		address will be the gateway address to the firewall&#39;s routing function. It is
+		used when providing network routing information to configure external routes or
+		to manually update the computer routing table using the 
+		<strong>route add</strong> command. Emerson recommends that you give the firewall a
+		static IP address without DNS information. When a firewall with static IP
+		addressing is rebooted, its IP address persists; the DHCP server does not give
+		it a different IP address. This ensures that the routing information configured
+		for the external workstations remains correct. Correct routing information is
+		required for the external workstations to communicate with internal
+		workstations across the firewall. 
+	 </p>
+ 
+	 <p> Consult with your IT department and obtain the following information
+		required to configure the firewall&#39;s external network for static IP addressing.
+		We recommend that you record this information on the 
+		<em>Worksheet for Smart Firewall Configuration</em> and record the external
+		workstation names and IP addresses on the 
+		<em>Worksheet for external workstation names and IP addresses</em>. 
+	 </p>
+ 
+	 <a name="concept_74495CFD26EC43EFA995B219B6208892_unique_315__ul_B8435B9D73CF44A7B984457D59A4C0A5"></a><ul id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__ul_B8435B9D73CF44A7B984457D59A4C0A5"> 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_9960AFEFD25C46F69AF210497420A770"><div class="li_content"> Does the firewall have a
+		  dedicated IP address assigned by the administrator (recommended)? 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_A8A37F396E21449B87B49EABDFAEAF94"><div class="li_content"> What is the external
+		  network address? 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_2CB4C109482B4584A2BDD1AD7314C912"><div class="li_content"> What is the external
+		  network subnet mask? 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_33EE453851FB453AAC965CFCCF1D3463"><div class="li_content"> If DNS servers are used,
+		  what are their IP addresses (2 max)? 
+		  <div class="note"><span class="notetitle">Note:</span> Emerson strongly recommends that DNS addresses are not used. This
+			 prevents users from entering a URL address in an internet browser on a DeltaV
+			 workstation and accessing the internet. 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_836AA8C637A44CD9BFFBBD6F9682F9A9"><div class="li_content"> What is the gateway&#39;s IP
+		  address? 
+		  <div class="note"><span class="notetitle">Note:</span> For the Smart Firewall this is the same address as the external
+			 network address. This is also the address used as the gateway parameter in the 
+			 <strong>route add</strong> command. 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="concept_74495CFD26EC43EFA995B219B6208892_unique_315__li_7C2803C1D1BB4AEF99883896BD61736A"><div class="li_content"> Can users on the external
+		  network log into the firewall with read-only privileges? 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>When you have gathered all the necessary information and completed the
+		worksheet, you are ready to configure the external network. 
+	 </p>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="t_configure_external_network.html"> Configure the external network</a></div>
+<div><a href="r_worksheet_firewall_external.html">Worksheet for external workstation names and IP addresses</a></div>
+<div><a href="t_smart_firewall_add_route.html"> Add a static route to a workstation</a></div>
+<div><a href="r_worksheet_firewall_config.html">Worksheet for Smart Firewall configuration</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

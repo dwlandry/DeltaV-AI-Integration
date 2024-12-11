@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="DeltaV Operate scripting tips" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_general_ifix_scripting_tips" name="DC.Identifier" /><title>DeltaV Operate scripting tips</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_optimizing_your_vba_project_development.html" /><link rel="next" href="vba_vba_coding_help_features.html" /></head><body class="fixed" id="vba_general_ifix_scripting_tips" data-relpath="vba_general_ifix_scripting_tips.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_general_ifix_scripting_tips"></a>
+
+<h1 class="topictitle1">DeltaV Operate scripting tips</h1>
+<div><div></div>
+<p id="vba_general_ifix_scripting_tips__DeltaVOperateScriptingTips"><a name="vba_general_ifix_scripting_tips__DeltaVOperateScriptingTips"></a>This section lists some tips to keep in mind when writing VBA scripts within DeltaV Operate.</p>
+<div class="section" id="vba_general_ifix_scripting_tips__CreatingaShapewithaVBAScript"><a name="vba_general_ifix_scripting_tips__CreatingaShapewithaVBAScript"></a><h2 class="sectiontitle">Creating a Shape with a VBA Script</h2><p>Use the following script to create a shape through a VBA script:</p>
+
+<pre class="pre">
+Dim Pic As Object
+Dim Shape As Object
+
+Set Pic = Application.ActiveDocument.Page
+Shape.HorizontalPosition = 10
+Shape.VerticalPosition = 10
+Shape.Width = 30
+Shape.Height = 30
+Shape.ForegroundColor = RGB( 255, 0, 0 )
+</pre>
+<p>The BuildObject method creates the object. Once the object is created, you can perform one of these options:</p>
+<a name="vba_general_ifix_scripting_tips__ul_980D02940CF74571BC18ECCCB5DC84F5"></a><ul id="vba_general_ifix_scripting_tips__ul_980D02940CF74571BC18ECCCB5DC84F5">
+<li id="vba_general_ifix_scripting_tips__li_3D42A83622FA418781FACF0647097359"><div class="li_content"><p>Set the object&#39;s properties through VBA code.</p>
+</div></li>
+
+<li id="vba_general_ifix_scripting_tips__li_346BE66628FC48D5BDFB1E0ACD6123B7"><div class="li_content"><p>Call the CreateWithMouse method (as in the above example) to change your mouse cursor into the draw cursor and then configure the properties of the object using the traditional DeltaV Operate user inteface.</p>
+</div></li>
+
+</ul>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__UsingDeltaVOperateCollections"><a name="vba_general_ifix_scripting_tips__UsingDeltaVOperateCollections"></a><h2 class="sectiontitle">Using DeltaV Operate Collections</h2><p>Use a BaseCount of 1 when using DeltaV Operate collections such as SelectedShapes, Procedures, ContainedSelections, ContainedObjects, and Documents. See the VBA Help file for more information on collections.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__ConnectingAnimationObjectstoDataSources"><a name="vba_general_ifix_scripting_tips__ConnectingAnimationObjectstoDataSources"></a><h2 class="sectiontitle">Connecting Animation Objects to Data Sources</h2><p>To connect an animation object and a data source, use the SetSource method to set the Animation object&#39;s source property:</p>
+
+<pre class="pre">
+AnimationObj.SetSource &quot;FIX32.NODE.TAG.FIELD&quot;, False, _
+ExpressionEditor1.RefreshRate, ExpressionEditor1.DeadBand, _
+ExpressionEditor1.Tolerance
+</pre>
+<p>The SetSource method allows you to set the data source&#39;s refresh rate, deadband, and tolerance. The second parameter lets you set an undefined object as the data source. (True indicates a UseAnyway condition.)</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__ReusingScripts"><a name="vba_general_ifix_scripting_tips__ReusingScripts"></a><h2 class="sectiontitle">Reusing Scripts</h2><p>You can develop scripts directly in the main VBA project; however, this approach makes reusing the scripts more difficult. Instead, you should store subroutines in a separate module and then call these subroutines from the main project when you want to reuse the scripts. This allows you to export and then import the scripts into a new project with minimal modification, and also provides a more modular, component-based design.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__CuttingandPastingCode"><a name="vba_general_ifix_scripting_tips__CuttingandPastingCode"></a><h2 class="sectiontitle">Cutting and Pasting Code</h2><p>You can cut (or copy) and paste an object from one project to another by dragging and dropping that object. Although this operation directly copies the VB code within the object to the new project, it does not automatically copy the event entries (a Click event, for example). Make sure you copy the content of the event entry into a subroutine (by selecting Edit Script from the object&#39;s pop-up menu) before pasting the code into the new project.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__LimitonVBALineLength"><a name="vba_general_ifix_scripting_tips__LimitonVBALineLength"></a><h2 class="sectiontitle">Limit on VBA Line Length</h2><p>The line length in VBA is limited to 1024 characters.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__VBAReferences"><a name="vba_general_ifix_scripting_tips__VBAReferences"></a><h2 class="sectiontitle">VBA References</h2><p>VBA allows you to add an object library or type library reference to your project, which makes another application&#39;s objects available in your code. These additions to your VBA project are called <strong>references</strong>. You can view, add, and delete references by selecting the References command from the Tools menu in the Visual Basic Editor (VBE).</p>
+<p>Whenever you add a control into a picture, the control&#39;s type library is referenced by the picture within VBA. When you delete a control from a picture, the reference to the control is automatically removed to increase performance. However, you should never manually remove the references to &quot;Project_FactoryGlobals&quot; or &quot;Project_User&quot;.</p>
+<p>Whenever you reference objects, controls, or mechanisms in VBA, follow the guidelines in the following sections. To learn more about references in VBA, refer to the VBA Help file.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__section_70B874A48530465B894A0FFD2284067D"><a name="vba_general_ifix_scripting_tips__section_70B874A48530465B894A0FFD2284067D"></a><h2 class="sectiontitle">Deleting Objects Referenced by Name in a Script</h2><p>Any object that is referenced by name in a script cannot be deleted. For example, in the following sample script the code in Rect2_Click will execute, but the pen will not be deleted:</p>
+
+<pre class="pre">
+Rect1_Click()
+    Pen1.Source = &quot;dvsys.AI_30.F_CV&quot;
+End Sub
+
+Rect2_Click()
+    Chart1.DeletePen 1
+End Sub
+</pre>
+<p>If you wanted to access the object in this example without referencing it by name, you could use the following code in Rect1_Click ():</p>
+
+<pre class="pre">
+Rect1_Click()
+    Dim o as object
+    set o = Chart1.Pens.Item(1)
+    o.Source = &quot;dvsys.AI_30.F_CV&quot;
+End Sub
+</pre>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__section_708C1DAC9E41464FB7A0182B9F8A59F3"><a name="vba_general_ifix_scripting_tips__section_708C1DAC9E41464FB7A0182B9F8A59F3"></a><h2 class="sectiontitle">Using Deleted Object Types in Scripts</h2><p>When an object (2Dshape, FixDynamics object, ActiveX control) is deleted from a picture and no object of that type are left in the picture, the reference to that object&#39;s type library in the VBA project is removed. To continue to use this object&#39;s type in scripts, you must manually add a reference to the type library in the VBE by selecting References from the Tools menu and selecting the type library.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__TrackingErrorsinSubroutines"><a name="vba_general_ifix_scripting_tips__TrackingErrorsinSubroutines"></a><h2 class="sectiontitle">Dragging and Dropping Dynamos or Toolbar Buttons</h2><p>You should be aware of the following behavior when dragging and dropping a Dynamo into a picture, cutting and pasting a Dynamo, or dragging and dropping a toolbar button from a category into a toolbar:</p>
+<a name="vba_general_ifix_scripting_tips__ul_AD58ED2FEAEF4F799B87013E7357500D"></a><ul id="vba_general_ifix_scripting_tips__ul_AD58ED2FEAEF4F799B87013E7357500D">
+<li id="vba_general_ifix_scripting_tips__li_CBE86EA7DA0745698E32029A29CD0698"><div class="li_content"><p>VBA copies all forms, scripts, events, and sub-forms associated with the toolbar button or Dynamo.</p>
+</div></li>
+
+<li id="vba_general_ifix_scripting_tips__li_B169C6E3FB6F4BD894DFA3ABC6C60797"><div class="li_content"><p>VBA does not copy any VBA modules or class modules associated with the toolbar button or Dynamo. Code that you put in these modules will not run if you drag the Dynamo or the toolbar button to another picture or toolbar.</p>
+</div></li>
+
+<li id="vba_general_ifix_scripting_tips__li_01F5970603F642DB985F10BE9A6A5C58"><div class="li_content"><p>VBA does not copy references to other objects such as controls or DLLs that you create for toolbar buttons or Dynamos. For example, if you include a third-party OCX as a control on a form for a toolbar button, VBA does not copy the reference when you drag the toolbar button to a toolbar. The script will not run until you open the Visual Basic Editor and create a reference to the OCX for the toolbar project.</p>
+</div></li>
+
+</ul>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__section_AC1DF9E4DEEB478EAD299539B5172858"><a name="vba_general_ifix_scripting_tips__section_AC1DF9E4DEEB478EAD299539B5172858"></a><h2 class="sectiontitle">Tracking Errors in Subroutines</h2><p>Every global subroutine includes an optional parameter called intErrorMode. The intErrorMode parameter allows users to trap errors and to send them to Alarm Services. There are three options for the intErrorMode.</p>
+
+<div class="tablenoborder"><a name="vba_general_ifix_scripting_tips__table_2F04D8A09EC846C88D01C5E030D50FB7"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="vba_general_ifix_scripting_tips__table_2F04D8A09EC846C88D01C5E030D50FB7" rules="all" summary=""><thead align="left"><tr>
+<th class="cellrowborder" id="d3561415e130" valign="top"><p>Enter this option...</p>
+</th>
+
+<th class="cellrowborder" id="d3561415e134" valign="top"><p>To...</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr>
+<td class="cellrowborder" headers="d3561415e130 " valign="top"><p>
+0
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3561415e134 " valign="top"><p>
+Use the default error handling. Allows subroutines to provide the error messages. If no entry is made for the intErrorMode parameter, the default is used.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3561415e130 " valign="top"><p>
+1
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3561415e134 " valign="top"><p>
+Allow the user to handle the error messages. Errors in the subroutines are passed back to the calling routine for handling.
+</p>
+</td>
+
+</tr>
+<tr>
+<td class="cellrowborder" headers="d3561415e130 " valign="top"><p>
+2
+</p>
+</td>
+
+<td class="cellrowborder" headers="d3561415e134 " valign="top"><p>
+Write errors to all Alarm Services. No error messages display. Instead, the errors are written to all DeltaV Operate Alarm Services, including the Alarm History window.
+</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, if you use the intErrorMode parameter with the OpenDigitalPoint subroutine, the command would look like:</p>
+
+<pre class="pre">
+OpenDigitalPoint <var class="varname">[DigitalPoint]</var>, <var class="varname">[intErrorMode]
+</var>
+</pre>
+ </div>
+<div class="section" id="vba_general_ifix_scripting_tips__section_BB0B1D9275084D10A0AD3BDA6132139D"><a name="vba_general_ifix_scripting_tips__section_BB0B1D9275084D10A0AD3BDA6132139D"></a><h2 class="sectiontitle">Examples</h2><p>For the OpenPicture subroutine, you get the standard error message if you enter 0 for the intErrorMode, as shown in the following example:</p>
+
+<pre class="pre">
+OpenPicture &quot;BadPic&quot;, , , , 0
+</pre>
+<p>When you use 0 for the intErrorMode, if you try to open a picture that does not exist, a message box appears whose title is the name of the picture that made the erroneous call and whose contents are the error number and error description.</p>
+<p>If you enter a 1 for intErrorMode, the error is raised for you to handle:</p>
+
+<pre class="pre">
+OpenPicture &quot;BadPic&quot;, , , , 1
+</pre>
+<p>Your error handling code would have to look something like this:</p>
+
+<pre class="pre">
+On Error Goto Errorhandler
+OpenPicture &quot;BadPic&quot;, , , , 1
+End Sub
+Errorhandler:
+    Msgbox &quot;my error message&quot; + Chr(13) + Cstr(Err.Number) + 
+Chr(13) + Err.Description, , Err.Source
+</pre>
+<p>If you enter a 2 for intErrorMode, the error is sent to all Alarm Services, including the Alarm History window using the SendOperatorMessage method:</p>
+
+<pre class="pre">
+OpenPicture &quot;BadPic&quot;, , , , 2
+</pre>
+<p>When you use 2 for the intErrorMode, you provide for silent error tracking.</p>
+</div>
+<div class="section" id="vba_general_ifix_scripting_tips__FilteringoutGlobalPages"><a name="vba_general_ifix_scripting_tips__FilteringoutGlobalPages"></a><h2 class="sectiontitle">Filtering out Global Pages</h2><p>Plug and Solve and expert globals can affect existing scripts that loop through the documents collection. If you have scripts that loop through the documents collection, and you want to filter out all global pages to look at your documents only, look at the Document. Type property using the following sample code:</p>
+
+<pre class="pre">
+If docobj.Type = &quot;FixGlobalsServer.FixGlobalsServer.1&quot; 
+then 
+<strong>&#39;this is a global page
+</strong>
+</pre>
+</div>
+</div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

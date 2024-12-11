@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="CondRead function" name="DC.Title" /><meta content="" name="abstract" /><meta content="" name="description" /><meta content="functions, DeltaV Live, Emerson-specific, DLSYS object, CondRead function" name="DC.subject" /><meta content="functions, DeltaV Live, Emerson-specific, DLSYS object, CondRead function" name="keywords" /><meta content="r_scripting_dlsys_object.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="reference_2987DF78D79448F88152D6400D3D7B19_unique_206" name="DC.Identifier" /><title>CondRead function</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_scripting_dlsys_object.html" /><link rel="next" href="r_scripting_exists_function.html" /></head><body class="fixed" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206" data-relpath="r_scripting_condread_function.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206"></a>
+
+<h1 class="topictitle1">CondRead function</h1>
+<div><p>
+  </p>
+ 
+	 <div class="section" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__refsyn_CF405CC967B9426C9BB4047FA293AE6C"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__refsyn_CF405CC967B9426C9BB4047FA293AE6C"></a>CondRead() reads a
+		parameter path and returns either the parameter value or a specified fallback
+		value (if the path fails the Exists() test). 
+		<dl> 
+		   
+			 <dt class="dlterm">Arguments 
+			 </dt>
+ 
+			 <dd> 2 
+				
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_56CFAB97233948DDBB5B4801ED6A3F80"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_56CFAB97233948DDBB5B4801ED6A3F80" rules="all" summary=""><thead align="left"> 
+						<tr> 
+						  <th class="cellrowborder" id="d3102375e44" valign="top" width="33.33333333333333%">Argument 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3102375e47" valign="top" width="66.66666666666666%">Description 
+						  </th>
+ 
+						</tr>
+</thead>
+ 
+					 <tbody> 
+						<tr> 
+						  <td class="cellrowborder" headers="d3102375e44 " valign="top" width="33.33333333333333%"><samp class="codeph"><var class="varname">path
+								  string</var></samp> 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3102375e47 " valign="top" width="66.66666666666666%">A literal or graphics expression that
+							 resolves to a DeltaV parameter path. 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3102375e44 " valign="top" width="33.33333333333333%"><samp class="codeph"><var class="varname">fallback
+								  value</var></samp> 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3102375e47 " valign="top" width="66.66666666666666%">The value to return if the 
+							 <samp class="codeph"><var class="varname">path string</var></samp> does not
+							 exist (fails the Exists() test). 
+						  </td>
+ 
+						</tr>
+ 
+					 </tbody>
+ 
+				  </table>
+</div>
+ 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Return values (string) 
+			 </dt>
+ 
+			 <dd>The value of the specified path, if Exists() returns True. 
+			 </dd>
+ 
+			 <dd class="ddexpand"> The specified fallback value, if Exists() returns False. 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Syntax 
+			 </dt>
+ 
+			 <dd><samp class="codeph">DLSYS.CondRead(<var class="varname">path string</var>, 
+				  <var class="varname">fallback value</var>)</samp> 
+				 
+			 </dd>
+ 
+		   
+		   
+			 <dt class="dlterm">Examples 
+			 </dt>
+ 
+			 <dd> 
+				<div class="p">The examples in this table demonstrate how to use CondRead() to
+				  replace data that cannot be read (has &#39;bad&#39; data quality) with a designated
+				  fallback value. 
+				
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_2580AA2E164D4886A9CF2CF45CC474A6"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_2580AA2E164D4886A9CF2CF45CC474A6" rules="all" summary=""><thead align="left"> 
+						<tr> 
+						  <th class="cellrowborder" id="d3102375e136" valign="top" width="66.66666666666666%">Example 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3102375e139" valign="top" width="33.33333333333333%">Result
+						  </th>
+ 
+						</tr>
+</thead>
+ 
+					 <tbody> 
+						<tr> 
+						  <td class="cellrowborder" headers="d3102375e136 " valign="top" width="66.66666666666666%"> 
+							 <pre class="codeblock">DLSYS.condRead(&quot;MOD1/PID1/SP&quot;,DLSYS[&quot;MOD1/PID2/SP&quot;)</pre>
+ 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3102375e139 " valign="top" width="33.33333333333333%">The set point of MOD1&#39;s PID2 block. 
+						  </td>
+ 
+						</tr>
+ 
+						<tr> 
+						  <td class="cellrowborder" headers="d3102375e136 " valign="top" width="66.66666666666666%"> 
+							 <pre class="codeblock">DLSYS.condRead(&quot;MOD1/PARAM1&quot;,DLSYS(&quot;MOD1/PARAM2&quot;)</pre>
+ 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3102375e139 " valign="top" width="33.33333333333333%">MOD2&#39;s PARAM2 
+						  </td>
+ 
+						</tr>
+ 
+					 </tbody>
+ 
+				  </table>
+</div>
+ 
+				</div>
+ 
+			 </dd>
+ 
+			 <dd class="ddexpand"> 
+				<div class="p">This example demonstrates how to use CondRead() to extract
+				  bit-level data from data values that hold bit-packed information. 
+				
+<div class="tablenoborder"><a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_A168F74CFC9C4268AC99F7AA9447EB0D"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__table_A168F74CFC9C4268AC99F7AA9447EB0D" rules="all" summary=""><thead align="left"> 
+						<tr> 
+						  <th class="cellrowborder" id="d3102375e187" valign="top" width="66.66666666666666%">Example 
+						  </th>
+ 
+						  <th class="cellrowborder" id="d3102375e190" valign="top" width="33.33333333333333%">Result
+						  </th>
+ 
+						</tr>
+</thead>
+ 
+					 <tbody> 
+						<tr> 
+						  <td class="cellrowborder" headers="d3102375e187 " valign="top" width="66.66666666666666%">Assume you have a running module that
+							 contains a Boolean Fan Output function block with four outputs. On a display,
+							 add a data link that allows online changes and whose expression is 
+							 <samp class="codeph">DLSYS[&quot;MOD2/BFO1/IN_INT.CV&quot;]</samp>. Add a
+							 second data link with the following expression: 
+							 <pre class="codeblock">DLSYS.WriteAsync(&quot;MOD2/BFO1/IN_INT&quot;, 16)Dsp.Text1.Label = 
+DLSYS.condReadBit(&#39;MOD2/BFO1/IN_INT&#39;, 1, 1,&#39;GoodNonCascade&#39;)Dsp.Text2.Label = 
+DLSYS.condReadBit(&quot;MOD2/BFO1/IN_INT&quot;, 2,0)Dsp.Text3.Label = 
+DLSYS.condReadBit(&quot;MOD2/BFO1/IN_INT&quot;,3,0)Dsp.Text4.Label = 
+DLSYS.condReadBit(&quot;MOD2/BFO1/IN_INT&quot;,4,0)Dsp.Text5.Label = 
+DLSYS.condReadBit(&quot;MOD2/BFO1/IN_INT&quot;,5,0)</pre>
+ 
+						  </td>
+ 
+						  <td class="cellrowborder" headers="d3102375e190 " valign="top" width="33.33333333333333%">When the DeltaV Live user modifies
+							 the input value of the Boolean Fan Output block, the data link&#39;s label shows
+							 the bit-level data. 
+						  </td>
+ 
+						</tr>
+ 
+					 </tbody>
+ 
+				  </table>
+</div>
+ 
+				</div>
+ 
+				<a name="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__ul_070A4700C4DB4571885CC5CC5B29F896"></a><ul id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__ul_070A4700C4DB4571885CC5CC5B29F896"> 
+				  <li id="reference_2987DF78D79448F88152D6400D3D7B19_unique_206__li_89599B989B324A31AB40F77CBDA7D18D"><div class="li_content"> 
+				  </div></li>
+ 
+				</ul>
+ 
+			 </dd>
+ 
+		   
+		</dl>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

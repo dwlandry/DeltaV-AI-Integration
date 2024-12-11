@@ -1,0 +1,4972 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="DeltaV-specific VBA functions" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Subroutines, functions, DeltaV, VBA, FRS, FRS Function, frs_User_prefs, frsAddMenuItem, frsAddmenuSeperator, frsAssemblePath, frsAssert, frsCheckForConfirmation, frsCheckForEvent, frsCheckForMainPic, frsCheckMod4Param, frsCheckNickName, frsCheckPictureProperties, frsCloseConfirmationDialog, frsCommonTasks, frsCloseFile, frsClosePic, frsCreatePopupMenu, frsDisassembleAnyPathFB, frsDisassembleAnyPath, frsDoesPicExist, frsDynamoExpert, frsExitOIDialog, frsExpertClosePic, frsFindFile, frsFindLocObj, frsGetAlias, frsGetCaption, frsGetComputerName, frsGetDVInstallFolder, frsGetFileSpec, frsGetMonitorNumber, frsGetMonitorNumberObj, frsGetMyMonitorNumber, frsGetPicture, frsHandleError, frsHasProperty, frsInitPositionClass, frsInputAnyModuleNameDT, frsInputAnyModuleNameFP, frsInputAnyModuleNamePD, frsInsufficientPrivilegeDialog, frsIsAComment, frsIsAlpha, frsIsDualMonitor, frsIsMulitpleCopyPic, frsIsPicOpen, frsIsPicturePinned, frsLabDataEntry, frsLoadDetail, frsLoadFaceplate, frsLoadFbDetail, frsLoadFbFaceplate, frsLoadFbTrend, frsLoadMainPicture, frsLoadTGDPictureDynamic, frsLoadtgdPictureDynamicN, frsLoadTrend, frsLogicalToHimetrics, frsNewPicture, frsObjExists, frsOpenAlarmList, frsOpenAlarmSupress, frsOpenPic, frsOpenSchedule, frsOpenTGDPictureDynamic, frsOpenUnacknowlededPromptsPicture, frsParamPath, frsPicNameOK, frsPrintMainPicture, frsProperty, frsReadValue, frsRemoveGroups, frsReplace, frsResize, frsReverseInStr, frsRunTask, frsSavePicture, frsSetCaption, frsSetInputTimeout, frsSetTextBoxState, frsShowPopupMenu, frsSound, frsStartDebug, frsSuspendAll, frsTrace, frsUserConfigPrivChk, frsValidateNamedSetEntry, frsValidatePictureName, frsSetValidateTag, frsWriteValue, frsOpenUserPicture, frsDesktopOpenPopupPicture, frsDesktopOpenPicture, frsOpenPictureByName, frsScreenResolution, frsMonitorOrientation, frsDesktopSize, frsNumScreens, frsGetPicXRelative, frsGetPicYRelative, frsPicXRelative, frsPicYRelative, frsPicHeight, frsPicWidth, frsScreenPoint, frsScreenStartXPos, frsScreenStartYPos, frsPictureName, frsPictureNickname, frsMovePicture, frsScreenNumFromPoint, frsScreenName, frsScreenNum, frsScreenLayout, frsTotalNumScreens, frsCurrentMainPicName, frsReplacePictureOnScreen, frsDesktopReplacePicture, frsDesktopIsInputTimedOut, frsDesktopSetInputTimeout, frsDesktopGetFeatureRevisionInformation, frsDekstopSetFeatureRevisionInformation, frsPictureHistoryListInit, frsModuleHistoryListInit, frsSetinitialMainPics, frsIsOperatingScreen, frsPositionForm, frsSelectDefaultScreen, Let frsDefaultScreen, Get frsDefaultScreen, picpath, iafpath, stdpath, tracepath, iabpath, heppath, detpath, defpath, trbpath, trnpath, temppath, pocfppath, frsDesktopGetInputTimeout, frsDeltaVDesktopErrorLookup, frsGetLasError, frsDisableMultipleHead, frsMonitorNumfromPoint, frsConvertMonitorNumToDeltaVScreen, frsConvertDeltaVScreenToMonitorNum, frsMonitorNum, frsOperatorKeyboard, frsClosingPicture, frsGetCoordinates, frsXToRel, frsYToRel, frsProtectBoundaries, frsSetInitialToolbar, frsSetToolbarHelp, frsSetInitialAlarmBanner, frsSetAlarmBannerHelp" name="DC.subject" /><meta content="Subroutines, functions, DeltaV, VBA, FRS, FRS Function, frs_User_prefs, frsAddMenuItem, frsAddmenuSeperator, frsAssemblePath, frsAssert, frsCheckForConfirmation, frsCheckForEvent, frsCheckForMainPic, frsCheckMod4Param, frsCheckNickName, frsCheckPictureProperties, frsCloseConfirmationDialog, frsCommonTasks, frsCloseFile, frsClosePic, frsCreatePopupMenu, frsDisassembleAnyPathFB, frsDisassembleAnyPath, frsDoesPicExist, frsDynamoExpert, frsExitOIDialog, frsExpertClosePic, frsFindFile, frsFindLocObj, frsGetAlias, frsGetCaption, frsGetComputerName, frsGetDVInstallFolder, frsGetFileSpec, frsGetMonitorNumber, frsGetMonitorNumberObj, frsGetMyMonitorNumber, frsGetPicture, frsHandleError, frsHasProperty, frsInitPositionClass, frsInputAnyModuleNameDT, frsInputAnyModuleNameFP, frsInputAnyModuleNamePD, frsInsufficientPrivilegeDialog, frsIsAComment, frsIsAlpha, frsIsDualMonitor, frsIsMulitpleCopyPic, frsIsPicOpen, frsIsPicturePinned, frsLabDataEntry, frsLoadDetail, frsLoadFaceplate, frsLoadFbDetail, frsLoadFbFaceplate, frsLoadFbTrend, frsLoadMainPicture, frsLoadTGDPictureDynamic, frsLoadtgdPictureDynamicN, frsLoadTrend, frsLogicalToHimetrics, frsNewPicture, frsObjExists, frsOpenAlarmList, frsOpenAlarmSupress, frsOpenPic, frsOpenSchedule, frsOpenTGDPictureDynamic, frsOpenUnacknowlededPromptsPicture, frsParamPath, frsPicNameOK, frsPrintMainPicture, frsProperty, frsReadValue, frsRemoveGroups, frsReplace, frsResize, frsReverseInStr, frsRunTask, frsSavePicture, frsSetCaption, frsSetInputTimeout, frsSetTextBoxState, frsShowPopupMenu, frsSound, frsStartDebug, frsSuspendAll, frsTrace, frsUserConfigPrivChk, frsValidateNamedSetEntry, frsValidatePictureName, frsSetValidateTag, frsWriteValue, frsOpenUserPicture, frsDesktopOpenPopupPicture, frsDesktopOpenPicture, frsOpenPictureByName, frsScreenResolution, frsMonitorOrientation, frsDesktopSize, frsNumScreens, frsGetPicXRelative, frsGetPicYRelative, frsPicXRelative, frsPicYRelative, frsPicHeight, frsPicWidth, frsScreenPoint, frsScreenStartXPos, frsScreenStartYPos, frsPictureName, frsPictureNickname, frsMovePicture, frsScreenNumFromPoint, frsScreenName, frsScreenNum, frsScreenLayout, frsTotalNumScreens, frsCurrentMainPicName, frsReplacePictureOnScreen, frsDesktopReplacePicture, frsDesktopIsInputTimedOut, frsDesktopSetInputTimeout, frsDesktopGetFeatureRevisionInformation, frsDekstopSetFeatureRevisionInformation, frsPictureHistoryListInit, frsModuleHistoryListInit, frsSetinitialMainPics, frsIsOperatingScreen, frsPositionForm, frsSelectDefaultScreen, Let frsDefaultScreen, Get frsDefaultScreen, picpath, iafpath, stdpath, tracepath, iabpath, heppath, detpath, defpath, trbpath, trnpath, temppath, pocfppath, frsDesktopGetInputTimeout, frsDeltaVDesktopErrorLookup, frsGetLasError, frsDisableMultipleHead, frsMonitorNumfromPoint, frsConvertMonitorNumToDeltaVScreen, frsConvertDeltaVScreenToMonitorNum, frsMonitorNum, frsOperatorKeyboard, frsClosingPicture, frsGetCoordinates, frsXToRel, frsYToRel, frsProtectBoundaries, frsSetInitialToolbar, frsSetToolbarHelp, frsSetInitialAlarmBanner, frsSetAlarmBannerHelp" name="keywords" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="deltav-specific-vba-functions" name="DC.Identifier" /><title>DeltaV-specific VBA functions</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_datatype_checking_and_the_vba_compiler.html" /><link rel="next" href="vba_optimizing_your_vba_project_development.html" /></head><body class="fixed" id="deltav-specific-vba-functions" data-relpath="deltav-specific-vba-functions.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="deltav-specific-vba-functions"></a>
+
+<h1 class="topictitle1">DeltaV-specific VBA functions</h1>
+<div><div></div>
+ 
+	 <div class="section" id="deltav-specific-vba-functions__section_35464601D9464C6B8C144BC62D8251C4"><a name="deltav-specific-vba-functions__section_35464601D9464C6B8C144BC62D8251C4"></a> 
+		<p id="deltav-specific-vba-functions__TopOfPage_unique_1"><a name="deltav-specific-vba-functions__TopOfPage_unique_1"></a>For more information and examples on how to use these
+		  functions, refer to the Visual Basic Editor&#39;s Automation Help in DeltaV
+		  Operate. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="deltav-specific-vba-functions__standardDeltaVspecificVBAfunctions"><a name="deltav-specific-vba-functions__standardDeltaVspecificVBAfunctions"></a><h2 class="sectiontitle">Standard DeltaV-Specific VBA Functions</h2> 
+		 
+		<p>The following table lists standard DeltaV-Specific VBA Functions. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="deltav-specific-vba-functions__table_3A432EDBE635473E8F180DB6071D0C7F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="deltav-specific-vba-functions__table_3A432EDBE635473E8F180DB6071D0C7F" rules="all" summary=""><thead align="left"> 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d1463041e420" valign="top" width="50.495049504950494%"> 
+					 <p>FRS Function 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1463041e426" valign="top" width="49.504950495049506%"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frs_User_prefs 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Opens the User Settings dialog. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsAddMenuItem 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> Entry as String, _ 
+					 </p>
+ 
+					 <p> Optional EntryEnabled As Boolean = True) 
+					 </p>
+ 
+					 <p> As Long 
+					 </p>
+ 
+					 <p>Sequentially adds an entry to the menu. Returns the error
+						code from the AddMenuEntry popupmenuclass method. 
+					 </p>
+ 
+					 <p>Entry - The string to be added to the menu. 
+					 </p>
+ 
+					 <p> EntryEnabled - set to True to enable new menu entry. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsAddMenuSeperator 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Adds a separator to the next position in the menu. Returns
+						error code from the AddSeperatorEntry popupmenuclass method. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsAssemblePath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> strParampath As String, _ 
+					 </p>
+ 
+					 <p> Optional strServer As String, _ 
+					 </p>
+ 
+					 <p> Optional strNode As String, _ 
+					 </p>
+ 
+					 <p> Optional strMod As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB1 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB2 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB3 As String, _ 
+					 </p>
+ 
+					 <p> Optional strParam As String, _ 
+					 </p>
+ 
+					 <p> Optional strField As String, _ 
+					 </p>
+ 
+					 <p> Optional strExpression As String, _ 
+					 </p>
+ 
+					 <p> Optional strZone As String) _ 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Converts the components of the path into a full path. 
+					 </p>
+ 
+					 <p>strParampath - The full parameter path. 
+					 </p>
+ 
+					 <p> strServer - The server of the path. 
+					 </p>
+ 
+					 <p> strNode - The node in the parameter path. 
+					 </p>
+ 
+					 <p> strMod - The module in the parameter path. 
+					 </p>
+ 
+					 <p> strFB1 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB2- The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB3 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strParam - The parameter in the parameter path. 
+					 </p>
+ 
+					 <p> strField - The field in the parameter path. 
+					 </p>
+ 
+					 <p> strExpressions - Anything after the field (for an
+						expressions). 
+					 </p>
+ 
+					 <p> strZone - The zone name in the parameter path. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsAssert 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(blnExpression As Boolean, 
+					 </p>
+ 
+					 <p> Optional strMessage As String) 
+					 </p>
+ 
+					 <p> Allows the operator to go to debug mode when an error
+						occurs. 
+					 </p>
+ 
+					 <p> blnExpression - Set to False to enter debug mode. 
+					 </p>
+ 
+					 <p> strMessage - Error message displayed on the assert dialog. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckForConfirmation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> ConfirmRequired as Boolean, _ 
+					 </p>
+ 
+					 <p> Optional Caption as string = &quot; &quot;) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Displays the Data Entry Expert confirmation dialog (which is
+						actually a form that allows the Data Entry Expert to timeout gracefully). 
+					 </p>
+ 
+					 <p>ConfirmRequired - When True, confirmation is required. 
+					 </p>
+ 
+					 <p> Optional Caption - The string displayed on the dialog. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckForEvent 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> oObj as object, _ 
+					 </p>
+ 
+					 <p> sEventName as String, _ 
+					 </p>
+ 
+					 <p> lEventIndex as Long) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Checks for the event handler (sEventName) on the object
+						(oObj) and returns True if found; otherwise, returns False. The event index is
+						returned if the event is found. 
+					 </p>
+ 
+					 <p>oObj - The object being checked. 
+					 </p>
+ 
+					 <p> sEventName - The event handler on the object being checked.
+						
+					 </p>
+ 
+					 <p> lEventIndex - The event index that is returned if the event
+						is found. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckForMainPic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strPic as String) As Boolean 
+					 </p>
+ 
+					 <p>Checks if the picture passed in is a main picture, toolbar,
+						or alarm banner picture. 
+					 </p>
+ 
+					 <p>strPic - The picture name. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckMod4Param 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(nmaf As String) As Boolean 
+					 </p>
+ 
+					 <p> Checks to see if a parameter is configured on a module by
+						performing a ReadValue of the attribute. Nmaf must be a syntactically correct
+						tag and module should exist. 
+					 </p>
+ 
+					 <p> nmaf - The node module attribute field. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckNickName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(NN As String) As Boolean 
+					 </p>
+ 
+					 <p>Checks if the passed in nickname is one of the nicknames of
+						either Toolbar/2, Mainpicture/2, alarmban, or alarmbn2. Returns True if
+						nickname matches one of the above names. 
+					 </p>
+ 
+					 <p>NN - The nickname being checked. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCheckPictureProperties 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Checks the active picture for the following: 
+					 </p>
+ 
+					 <p> Excessive datalinks with animations 
+					 </p>
+ 
+					 <p> Datalinks with incorrect display formatting 
+					 </p>
+ 
+					 <p> Empty groups 
+					 </p>
+ 
+					 <p>Results are reported to the user and the user is given the
+						option of viewing (in Notepad) the list of datalinks that match one of the
+						above considerations. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCloseConfirmationDialog 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Boolean 
+					 </p>
+ 
+					 <p>Searches the list of open forms looking for the
+						&quot;frmDataEntryConfirmation&quot; form and closes it if found. If found and closed,
+						returns True; otherwise, returns False. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCloseFile 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Used by the Close File button on the tool bar to close the
+						current file. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsClosePic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Optional picName As String) 
+					 </p>
+ 
+					 <p> Closes a picture. Will close a main picture. 
+					 </p>
+ 
+					 <p> picName - Name of picture to close. If empty, the current
+						picture is closed. You can use an alias instead of picture name. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsCreatePopupMenu 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Creates a popup menu. Uses the Popup Menu Class. The handle
+						to the menu is returned and should be passed to all subsequent calls. Returns
+						the error code from the OpenPopupMenu popupmenuclass method. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsDisassembleAnyPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> strParampath As String, 
+					 </p>
+ 
+					 <p> Optional strServer As String, _ 
+					 </p>
+ 
+					 <p> Optional strNode As String, _ 
+					 </p>
+ 
+					 <p> Optional strMod As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB1 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB2 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB3 As String, _ 
+					 </p>
+ 
+					 <p> Optional strParam As String, _ 
+					 </p>
+ 
+					 <p> Optional strField As String, _ 
+					 </p>
+ 
+					 <p> Optional strScale As String, _ 
+					 </p>
+ 
+					 <p> Optional blnFB As Boolean, _ 
+					 </p>
+ 
+					 <p> Optional bAllowTG As Boolean, _ 
+					 </p>
+ 
+					 <p> Optional strZone As String) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Disassembles paths with Server.Node.Tag.Field[scale]. 
+					 </p>
+ 
+					 <p>strParampath - The full parameter path. 
+					 </p>
+ 
+					 <p> strServer - The server of the path. If a server is not
+						given in the input string, it will return the default server. 
+					 </p>
+ 
+					 <p> strNode - The node in the parameter path. 
+					 </p>
+ 
+					 <p> strMod - The module in the parameter path. 
+					 </p>
+ 
+					 <p> strFB1 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB2- The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB3 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strParam - The parameter in the parameter path. 
+					 </p>
+ 
+					 <p> strField - The field in the parameter path. 
+					 </p>
+ 
+					 <p> strScale - The special scaling parameter field in the
+						parameter path. 
+					 </p>
+ 
+					 <p> blnFB - The Boolean that, if True, requires the final entry
+						in string to be a function block name. 
+					 </p>
+ 
+					 <p> bAllowTG - When True, a tag group name is used in the
+						parameter path. 
+					 </p>
+ 
+					 <p> strZone - The zone name in the parameter path. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsDisassembleAnyPathFB 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> strInString As String, _ 
+					 </p>
+ 
+					 <p> Optional strServer As String, _ 
+					 </p>
+ 
+					 <p> Optional strNode As String, _ 
+					 </p>
+ 
+					 <p> Optional strMod As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB1 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB2 As String, _ 
+					 </p>
+ 
+					 <p> Optional strFB3 As String, _ 
+					 </p>
+ 
+					 <p> Optional strParam As String, _ 
+					 </p>
+ 
+					 <p> Optional strField As String, _ 
+					 </p>
+ 
+					 <p> Optional strScale As String, _ 
+					 </p>
+ 
+					 <p> Optional strExpression As String, 
+					 </p>
+ 
+					 <p> Optional bAllowTG As Boolean, _ 
+					 </p>
+ 
+					 <p> Optional strZone As String) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Disassembles any function block path. 
+					 </p>
+ 
+					 <p>strInString - The input function block path. 
+					 </p>
+ 
+					 <p> strServer - The server of the path. If a server is not
+						given in the input string, it will return the default server. 
+					 </p>
+ 
+					 <p> strNode - The node in the parameter path. 
+					 </p>
+ 
+					 <p> strMod - The module in the parameter path. 
+					 </p>
+ 
+					 <p> strFB1 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB2- The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strFB3 - The function block in the parameter path. 
+					 </p>
+ 
+					 <p> strParam - The parameter in the parameter path. 
+					 </p>
+ 
+					 <p> strField - The field in the parameter path. 
+					 </p>
+ 
+					 <p> strScale - The special scaling parameter field in the
+						parameter path. 
+					 </p>
+ 
+					 <p> strExpression - Anything after the scale (for an
+						expressions). 
+					 </p>
+ 
+					 <p> bAllowTG - When True, a tag group name is used in the
+						parameter path. 
+					 </p>
+ 
+					 <p> strZone - The zone name in the parameter path. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsDisassemblePath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <div class="note"><span class="notetitle">Note:</span>  
+						<p> This function is no longer used but remains for backwards
+						  compatibility. Use frsDisassembleAnyPath or frsDisassembleAnyPathFB instead. 
+						</p>
+ 
+					 </div>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsDoesPicExist 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> sPN As String, _ 
+					 </p>
+ 
+					 <p> Optional path As String = &quot;&quot;) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Checks to see if the picture exists. If exists, returns the
+						full path. 
+					 </p>
+ 
+					 <p>sPN - The name of the picture searching for. 
+					 </p>
+ 
+					 <p> path - the path to the picture. Defaults to the
+						system.picturepath directory if blank. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsDynamoExpert 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Calls the Build Dynamo Expert. Use the Build Dynamo button
+						on the tool bar. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsExitOIDialog 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Displays a dialog to confirm the operator wants to exit
+						DeltaV Operate. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsExpertClosePic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(picName As String) 
+					 </p>
+ 
+					 <p> Called by the frsClosePic subroutine. Closes a picture
+						based on the picName, alias, or find the current open picture. Will not close
+						the main picture. 
+					 </p>
+ 
+					 <p> picName - The picture name or alias that you want to close.
+						If no file name is specified, the current picture closes. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsFindFile 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> FileToFind As String, _ 
+					 </p>
+ 
+					 <p> RootDir As String, _ 
+					 </p>
+ 
+					 <p> Optional CheckSubFolder As Boolean = True, _ 
+					 </p>
+ 
+					 <p> Optional FullFileName As Variant) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Searches from the location specified in RootDir. Searches
+						all subfolders for the file specified in FileToFind if CheckSubFolder is True.
+						Returns the full path to that file (if found). 
+					 </p>
+ 
+					 <p>FileToFind - The filename searching for. 
+					 </p>
+ 
+					 <p> RootDir - The starting directory (root) for the search. 
+					 </p>
+ 
+					 <p> CheckSubFolder - The command to check the subfolders (of
+						the directory specified in RootDir). Defaults to True. 
+					 </p>
+ 
+					 <p> FullFileName - The result of the search with the full path
+						and filename. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsFindLocObj 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(startObject As Object, 
+					 </p>
+ 
+					 <p> PartialName As String) As Object 
+					 </p>
+ 
+					 <p> Finds a contained object. Returns nothing if the object is
+						not found. 
+					 </p>
+ 
+					 <p> startObject - The object in which to start searching. 
+					 </p>
+ 
+					 <p> PartialName - A partial (or full) name of the object to be
+						found. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetAlias 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objpicture As Object) As String 
+					 </p>
+ 
+					 <p> Returns the alias or nickname of a picture. 
+					 </p>
+ 
+					 <p> Return - The alias or nickname of the picture. 
+					 </p>
+ 
+					 <p> objpicture - Picture object. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetCaption 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objPicture As Object) As String 
+					 </p>
+ 
+					 <p> Returns the caption of the object. Returns an empty string
+						on any error. 
+					 </p>
+ 
+					 <p> objPicture - The page object to get the caption. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetComputerName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As String 
+					 </p>
+ 
+					 <p> Returns the computer name. Returns an empty string on any
+						error. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetDVInstallFolder 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As String 
+					 </p>
+ 
+					 <p>Reads the Windows Registry key to find the installed DeltaV
+						folder. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetFileSpec 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strFileSpec As String, 
+					 </p>
+ 
+					 <p> strBasePath As String) As String 
+					 </p>
+ 
+					 <p> Determines if fileSpec is in a path relative to the pic
+						directory or in the base path. If fileSpec contains a &#39;\&#39; it is relative to the
+						pic directory; otherwise, it is in the base path. The existence of the file
+						will not be tested. 
+					 </p>
+ 
+					 <p> strFileSpec - The name of the file. 
+					 </p>
+ 
+					 <p> strBasePath - The base path. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetMonitorNumber 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(picName As String) As Long 
+					 </p>
+ 
+					 <p> Returns what monitor the picture is on. 
+					 </p>
+ 
+					 <p> picName - The name of the picture for which you are
+						checking monitors. If no file name is specified, the current picture checked. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetMonitorNumberObj 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(PicObj As Object) As Long 
+					 </p>
+ 
+					 <p> Returns what monitor the object is on. 
+					 </p>
+ 
+					 <p> PicObj - The object name for which you are checking
+						monitors. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetMyMonitorNumber 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Returns the monitor number of the picture that is active. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsGetPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(pic As Object) As Boolean 
+					 </p>
+ 
+					 <p> Returns the picture object in Pic. Returns True if picture
+						is found; otherwise, returns False if picture is not found or there is an
+						error. 
+					 </p>
+ 
+					 <p> pic - Picture to get. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsHandleError 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> The FRSI error handler. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsHasProperty 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objObject As Object, 
+					 </p>
+ 
+					 <p> strProperty As String) As Boolean 
+					 </p>
+ 
+					 <p> Determines if an object contains a specific property.
+						Returns True if property is found; otherwise, returns False. 
+					 </p>
+ 
+					 <p> objObject - Object to search. 
+					 </p>
+ 
+					 <p> strProperty - The name of property for which it is looking.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsInitPositionClass 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strName As String, 
+					 </p>
+ 
+					 <p> lngXCoor As Long, 
+					 </p>
+ 
+					 <p> lngYCoor As Long, 
+					 </p>
+ 
+					 <p> blnBottomPinned As Boolean, 
+					 </p>
+ 
+					 <p> blnRightPinned As Boolean) 
+					 </p>
+ 
+					 <p> Used by the Popup Positioning Control in the frsPopups
+						dynamo set. Retains the last position of the window, provided the window was
+						closed using frsClosePic. 
+					 </p>
+ 
+					 <p> strName - The name of the window. 
+					 </p>
+ 
+					 <p> lngXCoor - The X coordinate to use for the window&#39;s initial
+						position. 
+					 </p>
+ 
+					 <p> lngYCoor - The Y coordinate to use for the window&#39;s initial
+						position. 
+					 </p>
+ 
+					 <p> blnBottomPinned - Sets whether the bottom of the window is
+						pinned. 
+					 </p>
+ 
+					 <p> blnRightPinned - Sets whether the right side of the window
+						is pinned. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsInputAnyModuleNameDT 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> objPic As Object, _ 
+					 </p>
+ 
+					 <p> Optional strModPassed As String = &quot; &quot;, _ 
+					 </p>
+ 
+					 <p> Optional lngMonOverride As Long = 0, _ 
+					 </p>
+ 
+					 <p> Optional blnDoNotAsk As Boolean = False, _ 
+					 </p>
+ 
+					 <p> Optional strServerHint As String = &quot;&quot;) 
+					 </p>
+ 
+					 <p>Opens the module&#39;s detail display picture from any supported
+						server. 
+					 </p>
+ 
+					 <p>objPic - The object picture name. 
+					 </p>
+ 
+					 <p> strModPassed - The module name. 
+					 </p>
+ 
+					 <p> lngMonOverride - The monitor number. If entered, overrides
+						the current monitor action. 
+					 </p>
+ 
+					 <p> blnDoNotAsk - The command to not prompt for any questions.
+						When True, no questions are asked and the routine ends if it cannot complete.
+						The default is False. 
+					 </p>
+ 
+					 <p> strServerHint - The server name, if known. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsInputAnyModuleNameFP 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> objPic As Object, _ 
+					 </p>
+ 
+					 <p> Optional strModPassed As String, _ 
+					 </p>
+ 
+					 <p> Optional blnDoNotAsk As Boolean = False, _ 
+					 </p>
+ 
+					 <p> Optional strServerHint As String = &quot;&quot;) 
+					 </p>
+ 
+					 <p>Opens the module&#39;s faceplate from any supported server. 
+					 </p>
+ 
+					 <p>objPic - The object picture name. 
+					 </p>
+ 
+					 <p> strModPassed - The module name. 
+					 </p>
+ 
+					 <p> blnDoNotAsk - The command to not prompt for any questions.
+						When True, no questions are asked and the routine ends if it cannot complete.
+						The default is False. 
+					 </p>
+ 
+					 <p> strServerHint - the server name, if known. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsInputAnyModuleNamePD 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> objPic As Object, _ 
+					 </p>
+ 
+					 <p> Optional strModPassed As String = &quot;&quot;, _ 
+					 </p>
+ 
+					 <p> Optional lngMonOverride As Long = 0, _ 
+					 </p>
+ 
+					 <p> Optional blnDoNotAks As Boolean = False, _ 
+					 </p>
+ 
+					 <p> Optional strServerHint As String = &quot;&quot;) 
+					 </p>
+ 
+					 <p>Opens the module&#39;s primary display from any supported
+						server. 
+					 </p>
+ 
+					 <p>objPic - The object picture name. 
+					 </p>
+ 
+					 <p> strModPassed - The module name. 
+					 </p>
+ 
+					 <p> lngMonOverride - The monitor number. If entered, overrides
+						the current monitor action. 
+					 </p>
+ 
+					 <p> blnDoNotAsk - The command to not prompt for any questions.
+						When True, no questions are asked and the routine ends if it cannot complete.
+						The default is False. 
+					 </p>
+ 
+					 <p> strServerHint - the server name, if known. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsInsufficientPrivilegeDialog 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Displays an error dialog stating that the operator does not
+						have privilege to perform the operation requested. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsAComment 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Line As String) As Boolean 
+					 </p>
+ 
+					 <p>Checks if the line is a comment line. True is a comment.
+						False is not a comment. 
+					 </p>
+ 
+					 <p>Line - The line being checked. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsAlpha 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(sCh As String) As Boolean 
+					 </p>
+ 
+					 <p>Checks if string is an alphabetic (not numeric) string. Not
+						case sensitive. Returns True if string is alphabetic; otherwise, returns False
+						if string is not alphabetic. 
+					 </p>
+ 
+					 <p>sCh - The character string being checked. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsDualMonitor 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Boolean 
+					 </p>
+ 
+					 <p> Returns True if it is a multiple monitor system. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsMultipleCopyPic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(oPic As Object) As Boolean 
+					 </p>
+ 
+					 <p>Returns True if the picture has multiple copies. That is, if
+						there are copies of the picture in the Temp folder. 
+					 </p>
+ 
+					 <p>oPic - The object picture name. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsPicOpen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(PN As String) As Boolean 
+					 </p>
+ 
+					 <p>Searches the list of documents open on the system and
+						returns True if a match is found; otherwise, returns False. 
+					 </p>
+ 
+					 <p>PN - The picture name. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsIsPicturePinned 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(PicObj As Object) As Boolean 
+					 </p>
+ 
+					 <p> Returns True if the picture is locked; otherwise, returns
+						False. Used on popups, for example, faceplates. 
+					 </p>
+ 
+					 <p> PicObj - The object name for which you are checking the
+						pinned state. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLabDataEntry 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objDynamo) 
+					 </p>
+ 
+					 <p> This subroutine is specifically designed for the Lab Entry
+						function block. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadDetail 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNM As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Opens a detail picture for a module. 
+					 </p>
+ 
+					 <p> strNM - The module for which the detail display will open
+						using the format server.node.module. 
+					 </p>
+ 
+					 <p> lngDoMonitor - This is the monitor on which to open the
+						detail display. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadFaceplate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNM As String, 
+					 </p>
+ 
+					 <p> Optional lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Displays a faceplate for a module. 
+					 </p>
+ 
+					 <p> strNM - The module for which the faceplate will open using
+						the format node.module. 
+					 </p>
+ 
+					 <p> lngDoMonitor - The monitor to open the faceplate on.
+						Defaults to Monitor 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadFbDetail 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNMB As String, 
+					 </p>
+ 
+					 <p> strPic As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Opens a detail display for a function block detail picture
+						when given the block in the format server.node.module\functionblock and a
+						monitor. Requires the full picture path or defaults to the Pic folder. The path
+						must be in UNC (\\nodename\folder\file). 
+					 </p>
+ 
+					 <p> strPic - The full path to the detail picture name for the
+						function block. 
+					 </p>
+ 
+					 <p> strNMB - This is the server.node.module\functionblock to
+						open. 
+					 </p>
+ 
+					 <p> lngDoMonitor - This is the monitor to open the detail on. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadFbFaceplate 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strPic As String, 
+					 </p>
+ 
+					 <p> strNMB As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Opens a function block faceplate for a function block when
+						given the block in the format server.node.module\functionblock and a monitor.
+						Requires the full faceplate picture path or defaults to the Pic folder. The
+						path must be in UNC (\\nodename\folder\file). 
+					 </p>
+ 
+					 <p>Use the Open Faceplate Expert instead. 
+					 </p>
+ 
+					 <p> strPic - The full path to the faceplate picture name for
+						the function block. 
+					 </p>
+ 
+					 <p> strNMB - A string with the server.node.module. 
+					 </p>
+ 
+					 <p> lngDoMonitor - The monitor to open the faceplate on.
+						Defaults to Monitor 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadFbTrend 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNMB As String, 
+					 </p>
+ 
+					 <p> strPic As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Opens a function block trend picture when given the block
+						in the format server.node.module and a monitor. Requires the full trend path or
+						defaults to the Pic folder. The path must be in UNC (\\nodename\folder\file). 
+					 </p>
+ 
+					 <p> strNMB - This is the server.node.module to open. 
+					 </p>
+ 
+					 <p> strPic - The full path to the trend picture name for the
+						function block without the &quot;_trn&quot;. 
+					 </p>
+ 
+					 <p> lngDoMonitor - This is the monitor to open the trend on. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadMainPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNM As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Opens the primary control display for a module. Use the
+						format node.module and specify a monitor. 
+					 </p>
+ 
+					 <p> strNM - This is the node.module to open. 
+					 </p>
+ 
+					 <p> lngDoMonitor - This is the monitor to open the main display
+						on. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadTGDPictureDynamic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objpicture As Object, 
+					 </p>
+ 
+					 <p> symbol As Variant, 
+					 </p>
+ 
+					 <p> replacement As Variant) 
+					 </p>
+ 
+					 <p> Performs a temporary (for this opening only), dynamic (as
+						it opens) substitution on a picture that is open. 
+					 </p>
+ 
+					 <p> objpicture - The picture object on which the substitution
+						is being done. 
+					 </p>
+ 
+					 <p> Symbol - The symbol ARRAY in the picture that the
+						substitution will be performed on. This must be an array of the same size as
+						the replacement. 
+					 </p>
+ 
+					 <p> Replacement - The string ARRAY that will be inserted in for
+						the symbol. This must be an array of the same size as the symbol. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadtgdPictureDynamicN 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strPictureName As String, symbol, replacement) 
+					 </p>
+ 
+					 <p> Performs a temporary (for this opening only), dynamic (as
+						it opens) substitution on a picture that is open. If the picture is not open
+						substitution is not performed. Replaces the need to use
+						frsLoadTGDPictureDynamic where the substitution is done by picture object. 
+					 </p>
+ 
+					 <p> strPictureName - The picture name on which the substitution
+						is being done. 
+					 </p>
+ 
+					 <p> Symbol - The symbol ARRAY in the picture that the
+						substitution will be performed on. This must be an array of the same size as
+						the replacement. 
+					 </p>
+ 
+					 <p> Replacement - The string ARRAY that will be inserted in for
+						the symbol. This must be an array of the same size as the symbol. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLoadTrend 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strNM As String, 
+					 </p>
+ 
+					 <p> lngDoMonitor As Long) 
+					 </p>
+ 
+					 <p> Use this function to open a real-time trend display for a
+						module. Use the format node.module and specify a monitor. 
+					 </p>
+ 
+					 <p> strNM - The module for which the trend will open using the
+						format node.module. 
+					 </p>
+ 
+					 <p> lngDoMonitor - The monitor on which to open the trend. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsLogicalToHimetrics 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(sngLength As Double, 
+					 </p>
+ 
+					 <p> objpicture As Object) As Double 
+					 </p>
+ 
+					 <p> Converts the length of the picture or object&#39;s logical
+						units into himetrics. 
+					 </p>
+ 
+					 <p> sngLength - The length to convert in picture Logical units.
+						
+					 </p>
+ 
+					 <p> objpicture - The picture that contains the control that
+						needs the length converted to himetrics. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsMsgBox 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(ByVal Prompt As String, 
+					 </p>
+ 
+					 <p> Optional Buttons As VbMsgBoxStyle = vbOKOnly, 
+					 </p>
+ 
+					 <p> Optional Title As String = &quot;DeltaV Operate&quot;, 
+					 </p>
+ 
+					 <p> Optional HelpFile As String = &quot;&quot;, 
+					 </p>
+ 
+					 <p> Optional Context As Long = 0) As VbMsgBoxResult 
+					 </p>
+ 
+					 <p>Creates a message box (dialog) that is repositioned at the
+						cursor. The interface and behavior is the same as MsgBox. 
+					 </p>
+ 
+					 <p>Prompt - The text displayed on the message box. 
+					 </p>
+ 
+					 <p> Buttons - Defaults to the OK button only. Can be overridden
+						to show any of the other MsgBox buttons. 
+					 </p>
+ 
+					 <p> Title - The text in the title bar of the message box. 
+					 </p>
+ 
+					 <p> HelpFile - The name of the help file to call when the Help
+						button is clicked. 
+					 </p>
+ 
+					 <p> Context - This is the context index for the help file. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsMsgBoxEx 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>ByVal Prompt As String, 
+					 </p>
+ 
+					 <p> ByVal ButtonCaptions as String, 
+					 </p>
+ 
+					 <p> ByVal ButtonRetVal, 
+					 </p>
+ 
+					 <p> Options As VbMsgBoxStyle = vbOKOnly, 
+					 </p>
+ 
+					 <p> Title As String = &quot;DeltaV Operate&quot;) As VbMsgBoxResult 
+					 </p>
+ 
+					 <p>Behaves in a manner similar to frsMsgBox but the buttons and
+						return values can be customized by the user. A maximum of four (4) buttons can
+						be displayed. 
+					 </p>
+ 
+					 <p>Prompt - The text displayed on the message box. 
+					 </p>
+ 
+					 <p> ButtonCaptions - Variant array of strings displayed on the
+						buttons. One-to-one correspondence to ButtonRetVal. 
+					 </p>
+ 
+					 <p> ButtonRetVal - Variant array of numeric values that are
+						returned when the button is pressed. vbCancel can also be returned from the &quot;X&quot;
+						on the title bar. 
+					 </p>
+ 
+					 <p> Options - Determines the default button (when the ENTER key
+						on the keyboard is pressed) and which image will be displayed. Can be omitted
+						from the call in which case no image is displayed. 
+					 </p>
+ 
+					 <p> Title - The text in the title bar of the message box. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsNewPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Opens the dialog to create a new picture from a template. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsObjExists 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(ObjectName As String, 
+					 </p>
+ 
+					 <p> Optional baseObject As Object, 
+					 </p>
+ 
+					 <p> Optional returnObject As Object) As Boolean 
+					 </p>
+ 
+					 <p> Searches for the name of an object in either the current
+						open picture or a baseObject (if specified). It returns the handle to the
+						object if found and nothing if not found. 
+					 </p>
+ 
+					 <p> ObjectName - This is the name of the object for which it is
+						looking. 
+					 </p>
+ 
+					 <p> baseObject - The object to look in for the ObjectName. If
+						left blank, this function will look for an open picture. 
+					 </p>
+ 
+					 <p> returnObject - Returns the handle to the object if found
+						and nothing if not found. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenAlarmList 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Optional strArea As String, 
+					 </p>
+ 
+					 <p> Optional lngMonitor As Long) 
+					 </p>
+ 
+					 <p> Use this subroutine to open the alarm list by area. It is
+						recommended that instead of writing this code, you use the Alarm List button
+						and set the area. 
+					 </p>
+ 
+					 <p> strArea - Name of the alarm area or if empty (default) all
+						alarm areas will be displayed. 
+					 </p>
+ 
+					 <p> lngMonitor - The monitor to open the picture on. Defaults
+						to 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenAlarmSupress 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Optional strArea As String, 
+					 </p>
+ 
+					 <p> Optional lngMonitor As Long) 
+					 </p>
+ 
+					 <p> Use this subroutine to open the alarm suppress list by
+						area. It is recommended that instead of writing this code, you use the Alarm
+						Suppress List button and set the area. 
+					 </p>
+ 
+					 <p> strArea - Name of the alarm area or if empty (default) all
+						alarm areas will be displayed. 
+					 </p>
+ 
+					 <p> lngMonitor - The monitor to open the picture on. Defaults
+						to 1. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenPic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(picture As String, 
+					 </p>
+ 
+					 <p> Optional PictureAlias As String, 
+					 </p>
+ 
+					 <p> Optional lngTopPosition As Long, 
+					 </p>
+ 
+					 <p> Optional lngLeftPosition As Long, 
+					 </p>
+ 
+					 <p> Optional picCaption as String) 
+					 </p>
+ 
+					 <p> The typical use of this subroutine is to click on an object
+						and display a picture. Configure this usage with the DeltaV Operate Expert. 
+					 </p>
+ 
+					 <p> picture - The file name of the picture to open. 
+					 </p>
+ 
+					 <p> PictureAlias - Alias or nickname to assign to the picture. 
+					 </p>
+ 
+					 <p> lngTopPosition - The position to place the top of the
+						picture. 
+					 </p>
+ 
+					 <p> lngLeftPosition - The position to place the left side of
+						the picture. 
+					 </p>
+ 
+					 <p> picCaption - The caption to display in the title bar of the
+						picture being opened. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenSchedule 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strScheduleName As String, 
+					 </p>
+ 
+					 <p> Optional strSchedulePath As String) 
+					 </p>
+ 
+					 <p> Opens a schedule. 
+					 </p>
+ 
+					 <p> strScheduleName - The name of the schedule to open. 
+					 </p>
+ 
+					 <p> strSchedulePath - The path to open the schedule from, when
+						not in the default path of c:\DeltaV\DvData\Graphics-iFix\pdb\. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenTGDPictureDynamic 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(picture As String, 
+					 </p>
+ 
+					 <p> symbol As Variant, 
+					 </p>
+ 
+					 <p> replacement As Variant, 
+					 </p>
+ 
+					 <p> Optional Y As Single, 
+					 </p>
+ 
+					 <p> Optional X As Single, 
+					 </p>
+ 
+					 <p> Optional caption As String, 
+					 </p>
+ 
+					 <p> Optional nickname As String) As Object 
+					 </p>
+ 
+					 <p> Opens a picture and performs a temporary (for this opening
+						only), dynamic (as it opens) substitution on the picture. 
+					 </p>
+ 
+					 <p> Picture - Name of the picture to open. 
+					 </p>
+ 
+					 <p> Symbol - The symbol ARRAY in the picture that the
+						substitution will be performed on. This must be an array of the same size as
+						the replacement. 
+					 </p>
+ 
+					 <p> Replacement - The string ARRAY that will be inserted in for
+						the symbol. This must be an array of the same size as the symbol. 
+					 </p>
+ 
+					 <p> Y - The top coordinates of the picture in pixels. 
+					 </p>
+ 
+					 <p> X - The left coordinates of the picture in pixels. 
+					 </p>
+ 
+					 <p> caption - The caption to display on the title bar of the
+						picture being opened. 
+					 </p>
+ 
+					 <p> nickname - The nickname being assigned to the picture being
+						opened. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsOpenUnacknowlegedPromptsPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p>Replaces the current picture with the UnacknowledgedPrompts
+						picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsParamPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <div class="note"><span class="notetitle">Note:</span>  
+						<p> This function is no longer used but remains for backwards
+						  compatibility. Use frsAssemblePath instead. 
+						</p>
+ 
+					 </div>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsPictureNameOK 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(sPicName As String) As Boolean 
+					 </p>
+ 
+					 <p>Validates the passed in picture name against valid naming
+						conventions as follows: 
+					 </p>
+ 
+					 <p> The first character must be alpha 
+					 </p>
+ 
+					 <p> Remaining characters can be alpha, numeric, or &#39;_&#39; 
+					 </p>
+ 
+					 <p> The filename must not exceed 31 
+					 </p>
+ 
+					 <p>The GRF extension is optional. 
+					 </p>
+ 
+					 <p>sPicName - The picture name being validated. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsPrintMainPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(lngMonitor As Long) 
+					 </p>
+ 
+					 <p> Prints a picture on the windows default printer. Use the
+						Print button on the main template for this function. 
+					 </p>
+ 
+					 <p> lngMonitor - Monitor displaying picture to print. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsProperty 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Opens the multiple property form. Used in configuration
+						only. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsReadValue 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(DataPoint As String, 
+					 </p>
+ 
+					 <p> Optional lngErrNumber As Long, 
+					 </p>
+ 
+					 <p> Optional strErrDescription As String, 
+					 </p>
+ 
+					 <p> Optional blnShowErrorDialog As Boolean) 
+					 </p>
+ 
+					 <p> Reads a database value, such as setpoint or mode. 
+					 </p>
+ 
+					 <p> DataPoint - Tag to be read. 
+					 </p>
+ 
+					 <p> lngErrNumber - Status of read. 0 if read was successful.
+						Returns the error number if read is not successful. 
+					 </p>
+ 
+					 <p> strErrDescription - Error string. Empty if successful. 
+					 </p>
+ 
+					 <p> blnShowErrorDialog - Show an error dialog. True (default) -
+						post an error dialog when an error is encountered. False - do not post an error
+						dialog if an error is encountered. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsRemoveGroups 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p>Ungroups an object. If nothing is selected on the picture,
+						all groups on the picture are ungrouped. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsReplace 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Changes the index of multiple groups. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsResize 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Opens the dialog that allows you to change the size of a
+						picture. The preferred method is to use the Resize Picture button. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsReverseInStr 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Optional Start As Long, 
+					 </p>
+ 
+					 <p> Optional String1 As String, 
+					 </p>
+ 
+					 <p> Optional String2 As String, 
+					 </p>
+ 
+					 <p> Optional Compare As Long) As Long 
+					 </p>
+ 
+					 <p> This function will return the position of the last instance
+						of String2 found in String1. 
+					 </p>
+ 
+					 <p> Start - Sets the starting position for each search using
+						the character position in the string. 
+					 </p>
+ 
+					 <p> String1 - String being searched. 
+					 </p>
+ 
+					 <p> String2 - String expression sought. 
+					 </p>
+ 
+					 <p> Compare - Specify 0 (default) to perform a binary
+						comparison. Specify 1 to perform a textual comparison that is not case
+						sensitive. For Microsoft Access only, specify 2 to perform a comparison based
+						on information contained in your database. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsRunTask 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(strExecutable As String, 
+					 </p>
+ 
+					 <p> Optional strParameters As String, 
+					 </p>
+ 
+					 <p> Optional blnErrorFlag As Boolean) As Double 
+					 </p>
+ 
+					 <p> To launch an application from DeltaV Operate 
+					 </p>
+ 
+					 <p> strExecutable - Name of the executable to run. 
+					 </p>
+ 
+					 <p> strParameters - Command line input parameters for the
+						executable. 
+					 </p>
+ 
+					 <p> blnErrorFlag - Enables/disables error reporting. Defaults
+						to True (enabled). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSavePicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Called by the Save button on the tool bar. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSetAlias 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objpicture As Object, 
+					 </p>
+ 
+					 <p> PictureAlias As String) As String 
+					 </p>
+ 
+					 <p> Set the alias or nickname of a picture. 
+					 </p>
+ 
+					 <p> objpicture - Picture object. 
+					 </p>
+ 
+					 <p> PictureAlias - Alias or nickname to assign to the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSetCaption 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(objpicture As Object, 
+					 </p>
+ 
+					 <p> strCaption As String) As Boolean 
+					 </p>
+ 
+					 <p> Set the caption of a picture. 
+					 </p>
+ 
+					 <p> objpicture - Picture object. 
+					 </p>
+ 
+					 <p> strCaption - New caption. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSetInputTimeout 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(NewITO As Long) 
+					 </p>
+ 
+					 <p>Sets a new input timeout, overriding the existing input
+						timeout. Unit is in seconds. 
+					 </p>
+ 
+					 <p>NewITO - The new input timeout value. Default is 30 seconds.
+						
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSetTextBoxState 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> TB As TextBox, _ 
+					 </p>
+ 
+					 <p> EnableFlag As Boolean) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Enables or disables a text box. Returns True if the text box
+						enable/disable state is set; otherwise, returns False. 
+					 </p>
+ 
+					 <p>TB - The text box being enabled or disabled. 
+					 </p>
+ 
+					 <p> EnableFlag - The Boolean flag that is set to enable or
+						disable the text box. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsShowPopupMenu 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Displays the menu. This function will not return until the
+						left mouse button is clicked (whether or not the cursor is over the menu).
+						Returns the sequence number for the menu item selected. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSound 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(fileName As String) 
+					 </p>
+ 
+					 <p> Plays a sound. Specify the complete path; otherwise,
+						defaults to the PIC directory. cannot use UND (\\nodename\folder\file) format
+						in the sound file path. Must use a valid drive letter path (D:\folder\file). 
+					 </p>
+ 
+					 <p> fileName - Filename of the sound file. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsStartDebug 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p> Creates an instance of the trace class and opens the
+						tracebox 
+					 </p>
+ 
+					 <p> if trace has been enabled. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsSuspendAll 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(PauseTime As Long) 
+					 </p>
+ 
+					 <p> 
+						<strong>Caution</strong> For internal use only. Not recommended for all
+						customers. Suspending a VBA thread suspends ALL processes since VBA is
+						single-threaded. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsTrace 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(msg As String, 
+					 </p>
+ 
+					 <p> Optional Severity As String, 
+					 </p>
+ 
+					 <p> Optional Project As String, Optional Id As String) 
+					 </p>
+ 
+					 <p> Adds a user defined message to the trace class. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsUserConfigPrivChk 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( ) As Boolean 
+					 </p>
+ 
+					 <p> Checks if the currently logged-in user has configuration
+						privileges. Returns True if the user can configure; otherwise, returns False. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsValidateNamedSetEntry 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(PBName As String) As Boolean 
+					 </p>
+ 
+					 <p>Validates a DeltaV named set item against current valid
+						naming conventions as follows: 
+					 </p>
+ 
+					 <p> the name&#39;s maximum length = 48 
+					 </p>
+ 
+					 <p> the name has at least one Alpha character 
+					 </p>
+ 
+					 <p> the name is Alphanumeric 
+					 </p>
+ 
+					 <p> the name can contain the additional characters of &quot;$&quot;, &quot;_&quot;,
+						&quot;-&quot;, &quot;?&quot;, &quot;/&quot;, &quot; &quot; (space) 
+					 </p>
+ 
+					 <p>PBName - The name of the named set entry. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsValidatePictureName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>( _ 
+					 </p>
+ 
+					 <p> sPicName As String, _ 
+					 </p>
+ 
+					 <p> Optional PicPath As String = &quot;&quot;) 
+					 </p>
+ 
+					 <p> As Boolean 
+					 </p>
+ 
+					 <p>Validates if the picture&#39;s name syntax is correct (as
+						defined by frsPictureNameOK and if True, checks if the picture exists. 
+					 </p>
+ 
+					 <p>sPicName - The picture name to be validated. 
+					 </p>
+ 
+					 <p> PicPath - The path to the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsValidateTag 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(sInput As String) As Boolean 
+					 </p>
+ 
+					 <p>Validates a tag on a picture. Checks that the characters are
+						the following: 
+					 </p>
+ 
+					 <p> A-Z 
+					 </p>
+ 
+					 <p> a-z 
+					 </p>
+ 
+					 <p> $ 
+					 </p>
+ 
+					 <p> a number 
+					 </p>
+ 
+					 <p> an underscore. 
+					 </p>
+ 
+					 <p> a dash 
+					 </p>
+ 
+					 <p>sInput - The input (tag) to be validated. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e420 " valign="top" width="50.495049504950494%"> 
+					 <p>frsWriteValue 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e426 " valign="top" width="49.504950495049506%"> 
+					 <p>(Value As String, 
+					 </p>
+ 
+					 <p> DataPoint As String, 
+					 </p>
+ 
+					 <p> Optional lngErrNumber As Long, 
+					 </p>
+ 
+					 <p> Optional strErrDescription As String, 
+					 </p>
+ 
+					 <p> Optional blnShowErrorDialog As Boolean) 
+					 </p>
+ 
+					 <p> Writes to a module parameter such as setpoint or mode 
+					 </p>
+ 
+					 <p> Value - Data to be written. 
+					 </p>
+ 
+					 <p> DataPoint - Tag to be written to. 
+					 </p>
+ 
+					 <p> lngErrNumber - Status of read. 0 if write was successful. 
+					 </p>
+ 
+					 <p> strErrDescription - Error string. Empty if successful. 
+					 </p>
+ 
+					 <p> blnShowErrorDialog - Show an error dialog. True (default) -
+						post an error dialog when an error is encountered. False - do not post an error
+						dialog if an error is encountered. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="deltav-specific-vba-functions__multiplemonitorworkstationVBAfunctions"><a name="deltav-specific-vba-functions__multiplemonitorworkstationVBAfunctions"></a><h2 class="sectiontitle">Multiple Monitor Workstation VBA Functions</h2> 
+		 
+		<p>For more information and examples on how to use these functions, refer
+		  to the Visual Basic Editor&#39;s Automation Help in DeltaV Operate. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  
+		  <p>DeltaV screen (DV_SCREENS) refers to the DeltaV screen name, that
+			 is, Primary, Secondary, USER1 and USER2. Screen refers to the monitor number as
+			 configured by the video driver when installing the hardware for a multiple
+			 monitor workstation. Screens are numbered 1, 2, 3 and 4. 
+		  </p>
+ 
+		</div>
+ 
+		
+<div class="tablenoborder"><a name="deltav-specific-vba-functions__table_BBFD4727C6FB4290BA7345770E7C44E2"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="deltav-specific-vba-functions__table_BBFD4727C6FB4290BA7345770E7C44E2" rules="all" summary=""><thead align="left"> 
+				<tr valign="top"> 
+				  <th class="cellrowborder" id="d1463041e3190" valign="top"> 
+					 <p>FRS Function 
+					 </p>
+ 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1463041e3196" valign="top"> 
+					 <p>Description 
+					 </p>
+ 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>DefPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV detail function block path. Equivalent to
+						system.picturepath &amp; &quot;\DetailFB\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>DetPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV detail path. Equivalent to
+						system.picturepath &amp; &quot;\Detail\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsClosingPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object) 
+					 </p>
+ 
+					 <p>Closes the popup picture referenced retaining the picture&#39;s
+						position on the screen. 
+					 </p>
+ 
+					 <p>oPic - Object reference to the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsConvertDeltaVScreenToMonitorNum 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Scr As DV_SCREENS) As Long 
+					 </p>
+ 
+					 <p>Returns the monitor number as configured by the video driver
+						(1, 2, 3, 4) for the DeltaV screen name (Primary, Secondary, USER1 and USER2)
+						given. 
+					 </p>
+ 
+					 <p>Scr - The DeltaV screen name to be converted. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsConvertMonitorNumToDeltavScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal MonNum As Long) As DV_SCREENS 
+					 </p>
+ 
+					 <p>Returns the enumeration of the DeltaV screen name for the
+						monitor number (1, 2, 3, 4) given. 
+					 </p>
+ 
+					 <p>MonNum - The number of the monitor to convert. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsCurrentMainPicName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( 
+					 </p>
+ 
+					 <p> Optional Screen As DV_SCREENS) As String 
+					 </p>
+ 
+					 <p>Returns the current main picture name. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of the screen. If Screen is not
+						specified, the name of the default screen number is used. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDeltaVDesktopErrorLookup 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal errNumber as Long, 
+					 </p>
+ 
+					 <p> Optional ExtendedError As Long) As String 
+					 </p>
+ 
+					 <p>Returns the error string for the error number given. 
+					 </p>
+ 
+					 <p>errNumber - The number of the error message to be looked up.
+						
+					 </p>
+ 
+					 <p> ExtendedError - The number of the extended error message. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopGetFeatureRevisionInformation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Feature As DV_IFIX_REVISION) As String 
+					 </p>
+ 
+					 <p>Returns the revision information string for the selected
+						feature. 
+					 </p>
+ 
+					 <p>Feature - Enumeration of the feature revision data. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopIsInputTimedOut 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(InputVal As Long) As Boolean 
+					 </p>
+ 
+					 <p>Checks if the passed in value is greater than the current
+						input timeout value. True is InputVal is greater that the default timeout
+						value. 
+					 </p>
+ 
+					 <p>InputVal - Typically, this is a counter value that is
+						periodically incremented. If input timeout is disabled, this parameter is set
+						to 0. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopOpenPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> ByVal PicType As DV_PICTURES, 
+					 </p>
+ 
+					 <p> Optional Xpos As Long, 
+					 </p>
+ 
+					 <p> Optional Ypos As Long 
+					 </p>
+ 
+					 <p> Optional NN As String) As Boolean 
+					 </p>
+ 
+					 <p>Opens a predefined DeltaV picture on the desired screen.
+						Coordinates are relative to the upper left corner of the screen. If coordinates
+						are not provided, standard DeltaV defaults are used. Returns True if PicType
+						and Screen are valid. Picture might not open for other reasons that are not
+						indicated in the status. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen on which to open the picture.
+						
+					 </p>
+ 
+					 <p> PicType - Enumeration of picture to open. 
+					 </p>
+ 
+					 <p> Xpos - Horizontal position of the picture in pixels. 
+					 </p>
+ 
+					 <p> Ypos - Vertical position of the picture in pixels. 
+					 </p>
+ 
+					 <p> NN - The nickname of the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopOpenPopupPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object, 
+					 </p>
+ 
+					 <p> ByVal PicType As DV_PICTURES, 
+					 </p>
+ 
+					 <p> Optional Symbol As Variant, 
+					 </p>
+ 
+					 <p> Optional Replace As Variant, 
+					 </p>
+ 
+					 <p> Optional Xpos as Long, 
+					 </p>
+ 
+					 <p> Optional Ypos as Long, 
+					 </p>
+ 
+					 <p> Optional CenterOnScreen As Boolean = False 
+					 </p>
+ 
+					 <p> Optional NewCaption As String) As Boolean 
+					 </p>
+ 
+					 <p>Opens a predefined DeltaV picture at the indicated
+						coordinates. The picture will be opened immediately adjacent to oPic and is not
+						allowed to be split across screens. If the picture will open across screens, it
+						is repositioned to the other side of the picture. Returns True if the picture
+						was successfully opened. 
+					 </p>
+ 
+					 <p>oPic - The picture reference of the parent picture. 
+					 </p>
+ 
+					 <p> PicType - Enumeration of the DeltaV predefined picture. 
+					 </p>
+ 
+					 <p> Symbol- Tag group symbol to be replaced. 
+					 </p>
+ 
+					 <p> Replace - Tag group replace value. 
+					 </p>
+ 
+					 <p> Xpos - X or left position of the picture. 
+					 </p>
+ 
+					 <p> Ypos - Y or top position of the picture. 
+					 </p>
+ 
+					 <p> CenterOnScreen - Position picture in center of screen. 
+					 </p>
+ 
+					 <p> NewCaption - The string displayed in the title bar of the
+						picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopReplacePicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal NewPicture As String, 
+					 </p>
+ 
+					 <p> Optional OldPicture As String, 
+					 </p>
+ 
+					 <p> Optional TagGrp As String, 
+					 </p>
+ 
+					 <p> Optional ErrMode As Integer) 
+					 </p>
+ 
+					 <p>Replaces an existing picture with a new picture. 
+					 </p>
+ 
+					 <p>NewPicture - Name of picture to open. Defaults to the Pic
+						folder if full path is not included. 
+					 </p>
+ 
+					 <p> OldPicture - Name of the picture to be replaced. If not
+						specified, defaults to the active picture. 
+					 </p>
+ 
+					 <p> TagGrp - Name of tag group file if required by NewPicture. 
+					 </p>
+ 
+					 <p> ErrMode - Indicates how errors should be handled. Use the
+						default value and the default error handler is called. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopSetFeatureRevisionInformation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Feature As DV_IFIX_REVISION, 
+					 </p>
+ 
+					 <p> ByVal RevInfo As String) As Boolean 
+					 </p>
+ 
+					 <p>Sets the feature revision information string. The feature
+						must be defined in the DV_IFIX_REVISION enumeration. True if the feature
+						revision is valid; otherwise, False. 
+					 </p>
+ 
+					 <p>Feature - Enumeration of the feature revision data. 
+					 </p>
+ 
+					 <p> RevInfo - Feature revision information string. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopSetInputTimeout 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal NewInputTimeout As Integer) 
+					 </p>
+ 
+					 <p>Sets the current input timeout value. Input timeout value
+						can be set from 1 to 600 seconds. A value of 0 disables the input timeout. The
+						NewInputTimeout is clamped from 0 to 600 seconds. Default input timeout is 30
+						seconds. 
+					 </p>
+ 
+					 <p>The input timeout is used when DeltaV Operate requests data
+						from the user. The input forms are modal and all display processing is halted
+						until the user enters the data or cancels the operation. When the timeout
+						period expires, the input form is closed and display processing resumes. 
+					 </p>
+ 
+					 <p>NewInputTimeout - New timeout value. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDesktopSize 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(X As Long, 
+					 </p>
+ 
+					 <p> Y As Long) 
+					 </p>
+ 
+					 <p>Returns the X and Y resolution of a desktop. This is the
+						visible region of the display that might span multiple monitors. 
+					 </p>
+ 
+					 <p>X - Number of horizontal pixels. 
+					 </p>
+ 
+					 <p> Y - Number of vertical pixels. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsDisableMultipleHead 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Value As Long) 
+					 </p>
+ 
+					 <p>Disables the multiple monitor feature. 
+					 </p>
+ 
+					 <p>Value - The value (1) to disable the feature. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetCoordinates 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object, 
+					 </p>
+ 
+					 <p> Xpos As Long, 
+					 </p>
+ 
+					 <p> Ypos As Long) As Boolean 
+					 </p>
+ 
+					 <p>Returns True when it gets the x and y coordinates of the
+						picture referenced. 
+					 </p>
+ 
+					 <p>oPic - The object reference to the picture. 
+					 </p>
+ 
+					 <p> Xpos - X or left position of the picture. 
+					 </p>
+ 
+					 <p> Ypos - Y or top position of the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetInputTimeout 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Returns the current value for the input timeout. There are
+						no input parameters for this function. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetLastError 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( 
+					 </p>
+ 
+					 <p> Optional ErrorText As Variant, 
+					 </p>
+ 
+					 <p> Optional ByVal ClearError As Boolean) As Long 
+					 </p>
+ 
+					 <p>Returns the last error as Long. 
+					 </p>
+ 
+					 <p>ErrorText -The error text that corresponds to the error
+						number. 
+					 </p>
+ 
+					 <p> ClearError - True to clear the last error. False to retain
+						the last error. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetNextAvailableMainPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(PN, ByVal Screen As DV_SCREENS, ByVal AsPopUp as Boolean)
+						As String 
+					 </p>
+ 
+					 <p>Returns the full path of a copy of the specified main
+						picture. 
+					 </p>
+ 
+					 <p>PN - The main picture&#39;s name. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen on which to open the
+						picture. 
+					 </p>
+ 
+					 <p> AsPopUp - If True, the main picture&#39;s copy is opened as a
+						popup picture. If False, the main picture&#39;s copy is opened as a main picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetPicXRelative 
+					 </p>
+ 
+					 <p><em>Legacy interface for Custom Keyboard project</em> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) 
+					 </p>
+ 
+					 <p>Returns the relative horizontal offset of a picture relative
+						to the upper left corner of a screen as Long. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsGetPicYRelative 
+					 </p>
+ 
+					 <p><em>Legacy interface for Custom Keyboard project</em> 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) 
+					 </p>
+ 
+					 <p>Returns the relative vertical offset of a picture relative
+						to the upper left corner of a screen as Long. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsIsOperatingScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal CurMon As DV_SCREENS) As Boolean 
+					 </p>
+ 
+					 <p>Returns True if the CurMon in the operator keyboard screen;
+						otherwise, returns False. 
+					 </p>
+ 
+					 <p>CurMon - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsModuleHistoryListInit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(byVal ModList, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) As Boolean 
+					 </p>
+ 
+					 <p>Pre-populates the module history list. 
+					 </p>
+ 
+					 <p>ModList - An array of strings that contains the module
+						names. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsMonitorNum 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object) As Long 
+					 </p>
+ 
+					 <p>Returns the monitor number (1, 2, 3, 4 - as configured by
+						the video driver ) on which the picture is open. 
+					 </p>
+ 
+					 <p>oPic - The object reference to the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsMonitorNumFromPoint 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( 
+					 </p>
+ 
+					 <p> Optional Xpos As Long, 
+					 </p>
+ 
+					 <p> Optional Ypos As Long) As Long 
+					 </p>
+ 
+					 <p>Returns the monitor number (1, 2, 3, 4- as configured by the
+						video driver ) for where the cursor is. 
+					 </p>
+ 
+					 <p>Xpos - X or left position of the picture. 
+					 </p>
+ 
+					 <p> Ypos - Y or top position of the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsMonitorOrientation 
+					 </p>
+ 
+					 <p>See Also: frsScreenLayout 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) As DV_SCREEN_ORIENTATION 
+					 </p>
+ 
+					 <p>Returns the monitor orientation as determined from the
+						desktop size and screen resolution. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsMovePicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object, 
+					 </p>
+ 
+					 <p> PicType As DV_PICTURES, 
+					 </p>
+ 
+					 <p> Optional NewScreen As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Moves a picture to another screen. If a new screen is not
+						specified, a dialog will display allowing the operator to select the new
+						screen. 
+					 </p>
+ 
+					 <p>When the picture is opened on the new screen, it will be in
+						the same relative X and Y location as the old screen. 
+					 </p>
+ 
+					 <p>This procedure does nothing on a single screen system. 
+					 </p>
+ 
+					 <p>oPic - Object reference to the picture to be moved. 
+					 </p>
+ 
+					 <p> PicType - This parameter is not used. 
+					 </p>
+ 
+					 <p> NewScreen - Enumeration of the screen to move the picture
+						to. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsNumScreens 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(X As Long, 
+					 </p>
+ 
+					 <p> Y As Long) 
+					 </p>
+ 
+					 <p>Returns the number of screens horizontally and vertically. 
+					 </p>
+ 
+					 <p>X - Number of screens horizontally. 
+					 </p>
+ 
+					 <p> Y - Number of screens vertically. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsOpenPictureByName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicName As String, 
+					 </p>
+ 
+					 <p> byVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> Optional Xpos As Long, 
+					 </p>
+ 
+					 <p> Optional Ypos As Long, 
+					 </p>
+ 
+					 <p> Optional NN As String) As Boolean 
+					 </p>
+ 
+					 <p>Opens a picture on the desired screen. Coordinates are
+						relative to the upper left corner of the screen. Returns True if picture exists
+						on the disk. Picture might not open for other reasons that are not indicated in
+						the status. 
+					 </p>
+ 
+					 <p>PicName - Name of the picture to open. Defaults to the Pic
+						folder if full path is not included. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of screen on which to open the
+						picture. 
+					 </p>
+ 
+					 <p> Xpos - Horizontal position of the picture in pixels. 
+					 </p>
+ 
+					 <p> Ypos - Vertical position of the picture in pixels. 
+					 </p>
+ 
+					 <p> NN - NickName of the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsOpenUserPicture 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PictureName As String, 
+					 </p>
+ 
+					 <p> ByVal Screen as DV_SCREENS, 
+					 </p>
+ 
+					 <p> Optional PictureAlias As String 
+					 </p>
+ 
+					 <p> Optional PictureCaption As String 
+					 </p>
+ 
+					 <p> Optional PicType as DV_PICTURES 
+					 </p>
+ 
+					 <p> Optional offsetX As Long 
+					 </p>
+ 
+					 <p> Optional offsetY As Long) As Boolean 
+					 </p>
+ 
+					 <p>Opens a user picture on the desired screen. Returns True if
+						the picture was successfully opened. 
+					 </p>
+ 
+					 <p>PictureName - Name of picture to open. Defaults to the Pic
+						folder if full path is not included. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of screen on which to open the
+						picture. 
+					 </p>
+ 
+					 <p> PictureAlias - Pictures alias or nickname. 
+					 </p>
+ 
+					 <p> PictureCaption - Caption of the picture that will displayed
+						on the left side of the title bar. 
+					 </p>
+ 
+					 <p> PicType - Enumeration of picture. 
+					 </p>
+ 
+					 <p> offsetX - The offset of the horizontal boundary. 
+					 </p>
+ 
+					 <p> offsetY - The offset of the vertical boundary. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsOperatorKeyboard 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) As Boolean 
+					 </p>
+ 
+					 <p>Returns True if the screen is the Operator Keyboard screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPicHeight 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) 
+					 </p>
+ 
+					 <p>Returns the height of the indicated picture in pixels. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPictureHistoryListInit 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicList, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) As Boolean 
+					 </p>
+ 
+					 <p>Pre-populates the main history list. 
+					 </p>
+ 
+					 <p>PicList - An array of strings that contains the picture
+						names. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPictureName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> ByVal PicType As DV_PICTURES) As String 
+					 </p>
+ 
+					 <p>Returns the predefined picture name as string. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen. 
+					 </p>
+ 
+					 <p> PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPictureNickname 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> ByVal PicType As DV_PICTURES) As String 
+					 </p>
+ 
+					 <p>Returns the predefined pictures&#39; nickname as a string. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPicWidth 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) as Long 
+					 </p>
+ 
+					 <p>Returns the width of the indicated picture in pixels. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPicXRelative 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) 
+					 </p>
+ 
+					 <p>Returns the relative horizontal offset of a picture relative
+						to the upper left corner of a screen as Long. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPicYRelative 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicType As DV_PICTURES) 
+					 </p>
+ 
+					 <p>Returns the relative vertical offset of a picture relative
+						to the upper left corner of a screen as Long. 
+					 </p>
+ 
+					 <p>PicType - Enumeration of picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsPositionForm 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(uForm As Object, 
+					 </p>
+ 
+					 <p> Optional Xpos As Long, 
+					 </p>
+ 
+					 <p> Optional Ypos As Long) As Boolean 
+					 </p>
+ 
+					 <p>Positions the upper left corner of the form at a specific
+						location. If Xpos and Ypos are not specified, the form is positioned at the
+						cursor. If the new position of the form will result in it being split across
+						two screens, the forms position will be adjusted as needed to keep the form on
+						one screen. 
+					 </p>
+ 
+					 <p>uForm - Object reference the form to be positioned. 
+					 </p>
+ 
+					 <p> Xpos - New X position for the form. 
+					 </p>
+ 
+					 <p> Ypos - New Y position for the form. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsProtectBoundaries 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object, 
+					 </p>
+ 
+					 <p> ByRef offsetX As Long, 
+					 </p>
+ 
+					 <p> ByRef offset Y As Long) 
+					 </p>
+ 
+					 <p>Positions the referenced picture entirely on the screen from
+						theX and Y offsets given and the resolution of the screen. 
+					 </p>
+ 
+					 <p>oPic - The object reference of the picture. 
+					 </p>
+ 
+					 <p> offsetX - The offset of the horizontal boundary. 
+					 </p>
+ 
+					 <p> offsetY - The offset of the vertical boundary. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsReplacePictureOnScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal NewPic As String, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> Optional TagGrp As String) As Boolean 
+					 </p>
+ 
+					 <p>Replaces the picture on the indicated screen with NewPic. 
+					 </p>
+ 
+					 <p>NewPic - Name of picture to open. Defaults to the Pic folder
+						if full path is not included. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen on which to open NewPic.
+						
+					 </p>
+ 
+					 <p> TagGrp - Name of tag group file if required by NewPic. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenLayout 
+					 </p>
+ 
+					 <p>See Also:frsMonitorOrientation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) As DV_SCREEN_ORIENTATION 
+					 </p>
+ 
+					 <p>Returns the current screen layout. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenName 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object) As Long 
+					 </p>
+ 
+					 <p>Returns the name of the screen that the picture, oPic, is
+						on. 
+					 </p>
+ 
+					 <p>oPic - Object reference to a picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenNum 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(oPic As Object) As Long 
+					 </p>
+ 
+					 <p>Returns the screen on which oPic is currently being
+						displayed. This is a dynamic check so if the picture is moved to another screen
+						by dragging, it will return the new screen number. 
+					 </p>
+ 
+					 <p>oPic - Object reference to the picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenNumFromPoint 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( 
+					 </p>
+ 
+					 <p> Optional Xpos As Long, 
+					 </p>
+ 
+					 <p> Optional Ypos As Long) As Long 
+					 </p>
+ 
+					 <p>Returns the screen that contains the point indicated by Xpos
+						and Ypos. If Xpos and Ypos are not specified, the current cursor location is
+						used. 
+					 </p>
+ 
+					 <p>Xpos - The X coordinate. 
+					 </p>
+ 
+					 <p> Ypos - The Y coordinate. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenPoint 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS 
+					 </p>
+ 
+					 <p> X As Long 
+					 </p>
+ 
+					 <p> Y As Long) 
+					 </p>
+ 
+					 <p>Contains the center point of the indicated screen in the X
+						and Y values. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen. 
+					 </p>
+ 
+					 <p> X - Absolute horizontal center of the indicated screen in
+						pixels. 
+					 </p>
+ 
+					 <p> Y - Absolute vertical center of the indicated screen in
+						pixels. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenResolution 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(X As Long, 
+					 </p>
+ 
+					 <p> Y As Long) 
+					 </p>
+ 
+					 <p>Contains the X and Y resolution of a screen. Note: The
+						resolution is the same for all screens. 
+					 </p>
+ 
+					 <p>X - Number of horizontal pixels on each screen. 
+					 </p>
+ 
+					 <p> Y - Number of vertical pixels on each screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenStartXPos 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS) As Long 
+					 </p>
+ 
+					 <p>Returns the absolute horizontal position of the upper left
+						corner of the indicated screen. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsScreenStartYPos 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS) As Long 
+					 </p>
+ 
+					 <p>Returns the absolute vertical position of the upper left
+						corner of the indicated screen. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSelectDefaultScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) 
+					 </p>
+ 
+					 <p>Displays the dialog to select and set the default screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetAlarmBannerHelp 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal ABHelpName As String, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Defines the help file to open for a screen&#39;s alarm banner. 
+					 </p>
+ 
+					 <p>ABHelpName - Name of the help file. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetInitialAlarmBanner 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal AlarmBannerName As String, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Populates the screen with the initial alarm banner. 
+					 </p>
+ 
+					 <p>AlarmBannerName - Name of the alarm banner picture file. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetInitialMainPics 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal PicName As String, 
+					 </p>
+ 
+					 <p> ByVal Screens As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Sets the initial picture that will be opened on the
+						indicated screen when DeltaV Operate is started. The picture must be on the
+						disk to succeed. This procedure is called from frs_Schedule when
+						frsVariables.gs_initial_Main(X).currentvalue is changed, usually from
+						UserSettings.grf. &quot;X&quot; is the screen number from 1 to 4 (PRIMARY_SCREEN to
+						USER2). A message is written to the trace object when the initial picture is
+						changed. 
+					 </p>
+ 
+					 <p>PicName - Name of the new initial picture. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetInitialToolbar 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal ToolBarName As String, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Populates the screen with the initial toolbar. 
+					 </p>
+ 
+					 <p>ToolBarName - Name of the toolbar picture file. 
+					 </p>
+ 
+					 <p> Screen - Enumeration of screen 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetPictureCoordinates 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal Screen As DV_SCREENS, 
+					 </p>
+ 
+					 <p> ByVal PicType As DV_PICTURES, 
+					 </p>
+ 
+					 <p> ByVal NewRelativeXPos As Long, 
+					 </p>
+ 
+					 <p> ByVal NewRelativeYPos as Long) As Boolean 
+					 </p>
+ 
+					 <p>Sets the X and Y coordinates of the picture being opened. 
+					 </p>
+ 
+					 <p>Screen - Enumeration of screen 
+					 </p>
+ 
+					 <p> PicType - Enumeration of picture type 
+					 </p>
+ 
+					 <p> NewRelativeXPos - the X coordinate of the picture starting
+						at the top left of the screen. 
+					 </p>
+ 
+					 <p> NewRelativeYPos - the Y coordinate of the picture starting
+						at the top left of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsSetToolbarHelp 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal TBHelpName As String, 
+					 </p>
+ 
+					 <p> ByVal Screen As DV_SCREENS) 
+					 </p>
+ 
+					 <p>Defines the help file to open for the toolbar. 
+					 </p>
+ 
+					 <p>TBHelpName - Name of the help file. 
+					 </p>
+ 
+					 <p> Screen -Enumeration of screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsTotalNumScreens 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>( ) As Long 
+					 </p>
+ 
+					 <p>Returns the total number of screens detected on the
+						computer. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsXToRel 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(X As Long, 
+					 </p>
+ 
+					 <p> oPic As Object) As Long 
+					 </p>
+ 
+					 <p>Returns the X coordinate of the picture referenced relative
+						to the upper left corner of the screen. 
+					 </p>
+ 
+					 <p>X -The left coordinates of the picture in pixels. 
+					 </p>
+ 
+					 <p> oPic - The object reference picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>frsYToRel 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(Y As Long, 
+					 </p>
+ 
+					 <p> oPic As Object) As Long 
+					 </p>
+ 
+					 <p>Returns the Y coordinate of the picture referenced relative
+						to the upper left corner of the screen. 
+					 </p>
+ 
+					 <p>Y - The top coordinate of the picture in pixels. 
+					 </p>
+ 
+					 <p> oPic - The object reference picture. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>Get frsDefaultScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p> Returns the current default screen. The property,
+						frsDefaultScreen is returned as DV_SCREENS. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>HepPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV help path. Equivalent to
+						system.picturepath &amp; &quot;\Help\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>IabPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV faceplate function block path. Equivalent
+						to system.picturepath &amp; &quot;\FaceplateFB\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>IafPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV faceplate path. Equivalent to
+						system.picturepath &amp; &quot;\Faceplate\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>Let frsDefaultScreen 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>(ByVal DefMon As DV_SCREENS) 
+					 </p>
+ 
+					 <p>This property sets the default screen. If Screen is not
+						valid, the default screen is not set and the DVDesktopError is set to
+						SCREEN_NUMBER_OUT_OF_RANGE. 
+					 </p>
+ 
+					 <p>DefMon - Enumeration of the screen. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>MainTempPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the main picture&#39;s temp path where the copy is. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>PicPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV picture path. Equivalent to
+						system.picturepath. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>PocfpPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV POC faceplate path. Equivalent to
+						system.picturepath &amp; &quot;\POC\Faceplate\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>StdPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV standard path. Equivalent to
+						system.picturepath &amp; &quot;\Standard\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>TempPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV temp path. Equivalent to
+						system.picturepath &amp; &quot;\Temp\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>TracePath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV trace path. Equivalent to
+						system.picturepath &amp; &quot;\Standard\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>TrbPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV trend function block path. Equivalent to
+						system.picturepath &amp; &quot;\TrendFB\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr valign="top"> 
+				  <td class="cellrowborder" headers="d1463041e3190 " valign="top"> 
+					 <p>TrnPath 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e3196 " valign="top"> 
+					 <p>As String 
+					 </p>
+ 
+					 <p>Returns the DeltaV trend path. Equivalent to
+						system.picturepath &amp; &quot;\Trend\&quot;. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="deltav-specific-vba-functions__section_01E4240FF5494407AC3401C3FE6D6025"><a name="deltav-specific-vba-functions__section_01E4240FF5494407AC3401C3FE6D6025"></a><h2 class="sectiontitle">Remote Client Session-specific VBA Functions</h2> 
+		 
+		
+<div class="tablenoborder"><a name="deltav-specific-vba-functions__table_F759EA9CDF754F169A918D22EEB40D61"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="deltav-specific-vba-functions__table_F759EA9CDF754F169A918D22EEB40D61" rules="all" summary=""><thead align="left"> 
+				<tr> 
+				  <th class="cellrowborder" id="d1463041e5107" valign="top" width="NaN%">FRS Function 
+				  </th>
+ 
+				  <th class="cellrowborder" id="d1463041e5110" valign="top" width="NaN%">Description 
+				  </th>
+ 
+				</tr>
+</thead>
+ 
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e5107 " valign="top" width="NaN%">frslsTerminalServer 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e5110 " valign="top" width="NaN%"> 
+					 <p>Returns true if the machine is accessed using a terminal
+						(remote desktop). 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e5107 " valign="top" width="NaN%">frsGetTerminalServerName 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e5110 " valign="top" width="NaN%"> 
+					 <p>Returns the Remote Desktop Services session&#39;s name. Returns
+						a null value if not on a Remote Desktop Services session. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" headers="d1463041e5107 " valign="top" width="NaN%">frsGetTGDFileName 
+				  </td>
+ 
+				  <td class="cellrowborder" headers="d1463041e5110 " valign="top" width="NaN%"> 
+					 <p>Returns the prefix for the tag group file. 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> For more information on remote client session-specific settings,
+		  see 
+		  <a href="order_of_precedence_for_lofiles.html#order_of_precedence_for_lofiles">The order in which the system applies the settings files</a>.
+		  
+		</div>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

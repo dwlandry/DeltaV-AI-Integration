@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Tune with InSight Application Guidelines" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="application examples, application examples, cascade loop tuning, feedforward loop tuning, single feedback loop tuning, application guidelines, application guidelines, controller design selection, tuning rules, cascade loop tuning, controller design, DeltaV Tune, DeltaV Tune, application examples, feedforward loop tuning, guidelines, application, tuning, single feedback loop tuning, tuning rules" name="DC.subject" /><meta content="application examples, application examples, cascade loop tuning, feedforward loop tuning, single feedback loop tuning, application guidelines, application guidelines, controller design selection, tuning rules, cascade loop tuning, controller design, DeltaV Tune, DeltaV Tune, application examples, feedforward loop tuning, guidelines, application, tuning, single feedback loop tuning, tuning rules" name="keywords" /><meta content="c_insight_dvtune_using.html" name="DC.Relation" scheme="URI" /><meta content="c_analog_control_module_templates.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_4F552431500A4FD484D72BB05F41BACA" name="DC.Identifier" /><title>Tune with InSight Application Guidelines</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_dvtune_using.html" /><link rel="next" href="c_fuzzy_dvfuz.html" /></head><body class="fixed" id="concept_4F552431500A4FD484D72BB05F41BACA" data-relpath="c_insight_dvtune_apps.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_4F552431500A4FD484D72BB05F41BACA"></a>
+
+<h1 class="topictitle1">Tune with InSight Application Guidelines</h1>
+<div> 
+    <p>The DeltaV InSight selections for on-demand and adaptive tune are
+      suitable for tuning most control loops. Because it is flexible and easy to use,
+      these tuning tools in DeltaV InSight require little initial setup. However, to
+      achieve the best results with InSight, adhere to the guidelines specified in
+      the following sections.
+    </p>
+ 
+    <div class="section" id="concept_4F552431500A4FD484D72BB05F41BACA__section_C6A3E4370B44410C9DC504F8BC6BF934"><a name="concept_4F552431500A4FD484D72BB05F41BACA__section_C6A3E4370B44410C9DC504F8BC6BF934"></a><h2 class="sectiontitle">Tuning Rules</h2> 
+       
+      <p>To obtain proper tuning results, observe the following basic rules:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ul_0B0C956EC69648B195B67AF7B715C4FB"></a><ul id="concept_4F552431500A4FD484D72BB05F41BACA__ul_0B0C956EC69648B195B67AF7B715C4FB"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_572A1D075BCF4D61B9D6BEFEF412CA8D"><div class="li_content">Equipment must be in good
+          operating condition.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_7227860B10484E88A3E143AB0F069310"><div class="li_content">Studies on thousands of
+          loops showed that valve problems cause 30 to 35 percent of loop tuning
+          problems. This means that one out of every three loops needs valve improvements
+          to make proper loop control.If the calculated values seem out of the ordinary,
+          this might indicate valve problems. If the gain of the calculated values is too
+          high or the reset is too small, check your valves. Many valves experience the
+          stem&#39;s sticking or hysteresis in movement that cause improper model
+          identification and loop tuning.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_E67989667664485DA1FBBACF62F5269B"><div class="li_content">Before tuning a loop using
+          on-demand tuning, the loop must be stable. When initiating testing, on-demand
+          tuning allows you to start the test when the difference between the SP and the
+          PV is large. However, to achieve optimal results, make sure that PV is close to
+          SP before you start tuning.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_708B1849B4264B369E21E93434BB36CF"><div class="li_content">If the SP and PV values
+          are not close, a warning is issued when Test is initiated. After you select
+          Force, the identification continues.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_589C45DF2CEA415BB01D00A69E022311"><div class="li_content">The Step size for adaptive
+          and on-demand tuning must be large enough for the change to be reflected in the
+          controlled parameter.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_DC2210BD0C0549B29B3E383ED5A10668"><div class="li_content">The setpoint or output
+          (OUT) change defined for adaptive tune or for the output (OUT) change (or Step
+          size) for on-demand tune must cause an appropriate change in the PV. If the
+          change in the PV is not large enough, the tuning process will not be
+          successful. A process model might not be observed under the following
+          conditions:
+          <div class="p">
+          <a name="concept_4F552431500A4FD484D72BB05F41BACA__ul_4C4CCCBB3F8B4698B1C1BC908361B068"></a><ul id="concept_4F552431500A4FD484D72BB05F41BACA__ul_4C4CCCBB3F8B4698B1C1BC908361B068">
+            <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_35E80D88493144A3A63284DB37C5C465"><div class="li_content">Load disturbances
+              affect the PV.
+            </div></li>
+
+            <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_35357A261076419ABFB11BE8C763FD84"><div class="li_content">The system is too
+              noisy.
+            </div></li>
+
+            <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_9CD167FA0DB04CC7BD8285A40ECEEFA4"><div class="li_content">A valve is stuck.
+            </div></li>
+
+          </ul>
+
+          </div>
+If a process model is not identified, check for those things that
+          might affect the process response to change in OUT (for on-demand or adaptive
+          tuning) or setpoint (for adaptive tuning).
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_609B23A604C34CCC94199E59236DBB9A"><div class="li_content">Your process must be able
+          to handle the step change required for tuning.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_58CE86BA43C34E2F903DC80D24EC896A"><div class="li_content">When using on-demand
+          tuning or the inject change feature of adaptive tuning, make sure that the step
+          change does not cause a relief valve to open or any interlocks to be triggered,
+          either of which could affect the tuning results.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_1F37770CCA30445AB90BDB4EF10EFF09"><div class="li_content">When using either
+          on-demand or adaptive tuning, neither the SP, the PV, nor the output (OUT)
+          should be near its limits.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_50AE3330F9A64F2B9DE397E315B45C09"><div class="li_content">When a process model is
+          identified, the SP and PV should not be within 10 percent of the loop&#39;s
+          engineering unit limits and the output (OUT) should not be within 10 percent of
+          the configured limits. If these values are outside of the specified range, the
+          process response could be affected and the calculations of loop dynamics would
+          be inaccurate.
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="concept_4F552431500A4FD484D72BB05F41BACA__section_3A75B38F71BD4EEDA95C182BE3C78F08"><a name="concept_4F552431500A4FD484D72BB05F41BACA__section_3A75B38F71BD4EEDA95C182BE3C78F08"></a><h2 class="sectiontitle">Selecting a Controller Design</h2> 
+       
+      <p>The on-demand and adaptive tuning features of DeltaV InSight provide a
+        wide choice of tuning rules and features that can be used to provide the best
+        tuning for a loop. Here are some general guidelines:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ul_05DF750FC94C4FEFA3D5DAEE9DF0B340"></a><ul id="concept_4F552431500A4FD484D72BB05F41BACA__ul_05DF750FC94C4FEFA3D5DAEE9DF0B340"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_FD22424EB0684BB7BFDBE30A4E0FFC5F"><div class="li_content">After you change tuning
+          values, observe the loop for a period of time to see its reaction to noise,
+          disturbances, or small SP step changes.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_F888652912D3485084625531CBC65B95"><div class="li_content">If the loop performance is
+          not satisfactory, first change the speed of response (Faster or Slower). If you
+          are using On-Demand tuning, you can modify the process type selected for the
+          tuning rule. Also, you can click the 
+          <span class="uicontrol">Expert</span> button to use an advanced tuning rule.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_5E60236F93844CABB2F9F40728451641"><div class="li_content">If the loop performance is
+          still not satisfactory, you can try an alternative process type or the Expert
+          tuning selection (using the same process model).
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>General guidelines for tuning rule selection:
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ul_F9809F6BB2D04A9885D491B77D8DA494"></a><ul id="concept_4F552431500A4FD484D72BB05F41BACA__ul_F9809F6BB2D04A9885D491B77D8DA494"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_84E65CF6A17A4C34B8D9B378D56DA777"><div class="li_content">The PI design is the most
+          common choice for flow, liquid level, and gas pressure control.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_B79E7EDD05744D75A12ACB17CB871888"><div class="li_content">PID control, along with
+          feedforward and cascade strategies, is often used for temperature control, pH
+          control, and composition control. (The composition control might require some
+          limits on derivative action.)
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_D77AB9BA713D48D5AD2C9139A5F4A566"><div class="li_content">If you have tuned a loop
+          by trial and error and it works well, you might consider using the tuning
+          recommendations to verify your settings and tune your loop more precisely. If
+          the values calculated by on-demand or adaptive tuning are drastically different
+          than your trial and error values, consider the new values closely before
+          changing block tuning parameters.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_A2F4CD5BE2284AFDA0426736FCC7EDBE"><div class="li_content">The PID designs are
+          limited for some applications. For example, if the ratio of the time delay of a
+          loop to time constant exceeds 1, the PID performance cannot be guaranteed. The
+          tuning results must be carefully verified. If the response is not acceptable,
+          you might need to modify the tuning results. For such applications, using the
+          Smith predictor for control (that can be commissioned using on-demand tuning)
+          might provide better results.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_AF1C6CE2D85844B7A351003A2F062060"><div class="li_content">The process response for
+          the recommended tuning provided by on-demand or adaptive tuning can be viewed
+          by selecting 
+          <span class="uicontrol">Simulate</span>. This response should match what you
+          see after applying the recommended tuning if the identified model accurately
+          reflects the process gain and dynamics.
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="concept_4F552431500A4FD484D72BB05F41BACA__section_BDEAEC578247473694139B9EDB1B55DE"><a name="concept_4F552431500A4FD484D72BB05F41BACA__section_BDEAEC578247473694139B9EDB1B55DE"></a><h2 class="sectiontitle">Application Examples </h2> 
+       
+      <p>This section provides some general application examples to help you
+        use adaptive and on-demand tuning to commission your process loops. The
+        following sections provide examples of a single feedback loop, a cascade
+        control loop, and a feedforward control loop. 
+      </p>
+ 
+      <p> 
+        <strong>Tuning a Single Feedback Loop 
+        </strong> 
+      </p>
+ 
+      <p>For an example of tuning a single feedback loop, refer to the
+        temperature loop in the following figure. In this example, steam is fed into
+        the heat exchanger, and water is passed through a header in the steam heater.
+        The water absorbs heat from the steam.
+      </p>
+ 
+      <div class="fignone" id="concept_4F552431500A4FD484D72BB05F41BACA__fig_FE3D8CB6DE174AFBAC0B1DB01FFAA871"><a name="concept_4F552431500A4FD484D72BB05F41BACA__fig_FE3D8CB6DE174AFBAC0B1DB01FFAA871"></a><div><span class="figcap">Steam Heater</span></div> 
+         
+        <a name="concept_4F552431500A4FD484D72BB05F41BACA__image_F0A2C351AE2D444980F54B052C6B24F2"></a><img id="concept_4F552431500A4FD484D72BB05F41BACA__image_F0A2C351AE2D444980F54B052C6B24F2" src="ichelp0065.gif" /> 
+      </div>
+ 
+      <p>In the Tuning Calculation panel, the process type should be
+        Temperature for on-demand tuning. You would probably start tuning this loop
+        with a Normal loop response setting, unless the loop has some unusual
+        characteristics. If you select the 
+        <span class="uicontrol">Expert</span> button or are using Adaptive Tune, you
+        should start tuning with a tuning rule for PID.
+      </p>
+ 
+      <p>After tuning the loop and placing it in operation, observe the
+        response to SP changes and load disturbances caused by process upsets. If the
+        loop demonstrates too much overshoot, first try changing the loop response to
+        SLOW and update the tuning. If you still experience too much overshoot for the
+        process, you can select a different advanced tuning rule with lower gain. You
+        can experiment with different tuning rules or factors using a tuning rule such
+        as Lambda factor until you get the results you want.
+      </p>
+ 
+      <p> 
+        <strong>Tuning Cascade Control Loops</strong> 
+      </p>
+ 
+      <p>You can use adaptive and on-demand tuning to commission cascade
+        control loops. However, because the loops for cascade control are interactive,
+        you must identify the process and apply the recommended tuning in a particular
+        order. You need to tune the secondary (or slave) loop first and the primary (or
+        master) loop last. For example, refer to the cascade loop for controlling level
+        in the following figure. The primary loop controls the level. The secondary
+        loop controls the inlet flow.
+      </p>
+ 
+      <div class="fignone" id="concept_4F552431500A4FD484D72BB05F41BACA__fig_7D7D40C85A224206922A19C03BE2F465"><a name="concept_4F552431500A4FD484D72BB05F41BACA__fig_7D7D40C85A224206922A19C03BE2F465"></a><div><span class="figcap">Cascade Level Control</span></div> 
+         
+        <a name="concept_4F552431500A4FD484D72BB05F41BACA__image_D2931139AD4D4EFDB65984E6B411611D"></a><img id="concept_4F552431500A4FD484D72BB05F41BACA__image_D2931139AD4D4EFDB65984E6B411611D" src="ichelp0066.gif" /> 
+      </div>
+ 
+      <p>Perform these steps to use InSight to tune the cascade control loop in
+        the above figure:
+      </p>
+ 
+      <p>On-demand Tuning
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ol_0B5653032ECF4A0993DD91CA329DC243"></a><ol id="concept_4F552431500A4FD484D72BB05F41BACA__ol_0B5653032ECF4A0993DD91CA329DC243"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_BEA2CC4759384084A726ED53EF85995E"><div class="li_content">Put the secondary
+          controller into Auto or Man mode to allow the loop to settle.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_5346128817714602962A7E97B66F6CBB"><div class="li_content">Tune the secondary loop as
+          if it were a single feedback loop using InSight.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_FFC97F07A9104CF5B0CE30FC7603213B"><div class="li_content">Switch the secondary
+          controller to Cascade mode.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_FCF99287635C4483A124E20FE927F06F"><div class="li_content">Adjust the SP of the
+          primary controller to match the PV.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_37E657C2139245C0BD9286EE19B11627"><div class="li_content">Tune the primary loop
+          using InSight.
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>Adaptive Tuning
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ol_AD0E095A9BAB4959826B292D8D2B4ED6"></a><ol id="concept_4F552431500A4FD484D72BB05F41BACA__ol_AD0E095A9BAB4959826B292D8D2B4ED6"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_1DB4EB7DF3C840C78A6C00D017D7C693"><div class="li_content">Examine the models that
+          have been identified for the secondary loop. If these are consistent, apply the
+          recommended tuning to the secondary loop.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_64F7B6ACD1E2448CA557FD72ADCE7461"><div class="li_content">After applying the
+          secondary tuning, wait until new models are identified for the primary loop
+          (since the secondary tuning impacts the process model identified for the
+          primary loop).
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_A8054D785216477BA31F9D7FE6A74F45"><div class="li_content">Examine the models that
+          have been identified for the primary loop. If these are consistent apply the
+          recommended tuning to the secondary loop.
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>Use these same steps for tuning most cascade loops.
+      </p>
+ 
+      <p> 
+        <strong>Tuning Feedforward Control Loops</strong> 
+      </p>
+ 
+      <p>You can tune the feedback portion of a feedforward control loop using
+        on-demand or adaptive tuning but best results are achieved if the feedforward
+        value is fairly consistent during the time the model is identified. Begin with
+        the Normal dynamics setting.
+      </p>
+ 
+      <p>The temperature control feedforward loop in the following figure is
+        similar to the single-loop steam heater example, but the flow rate for the
+        water flowing into the heat exchanger is fed forward to the temperature
+        controller.
+      </p>
+ 
+      <p>To use InSight to tune the feedforward control loop in the following
+        figure, perform these steps:
+      </p>
+ 
+      <p>On-demand Tuning
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ol_A91E013694A0419390E40361DA664EE3"></a><ol id="concept_4F552431500A4FD484D72BB05F41BACA__ol_A91E013694A0419390E40361DA664EE3"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_988E84A56338498199340190E184C0E9"><div class="li_content">Disable the feedforward
+          portion of the loop and hold the input constant.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_407A8006156D49AABB7D58C535B200BE"><div class="li_content">Typically, you can disable
+          the feedforward input by changing the FF_ENABLE parameter of the block from
+          True to False.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_C4BCA28D6EE84416B6D22D3FEAB2133A"><div class="li_content">Using InSight, tune the
+          control loop as if it were a single feedback loop.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_617A8B9D6242449787374C20BD344CD2"><div class="li_content">Return the feedforward
+          portion of the loop to normal operation by setting FF_ENABLE parameter of the
+          block to True.
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <p>Adaptive Tune
+      </p>
+ 
+      <div class="p"> 
+      <a name="concept_4F552431500A4FD484D72BB05F41BACA__ol_D72A58E9BD424983B0EB0486308B4820"></a><ol id="concept_4F552431500A4FD484D72BB05F41BACA__ol_D72A58E9BD424983B0EB0486308B4820"> 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_CD2365017A85474297FE7C70AC4C23BE"><div class="li_content">Examine the models that
+          have been identified for the feedback control. Use an average of multiple
+          models to minimize the impact of changes in the feedforward loop while models
+          were being identified.
+        </div></li>
+ 
+        <li id="concept_4F552431500A4FD484D72BB05F41BACA__li_5BB0D0C57BE74B53A307388671B11645"><div class="li_content">Apply the recommended
+          tuning
+        </div></li>
+ 
+      </ol>
+ 
+      </div>
+ 
+      <div class="fignone" id="concept_4F552431500A4FD484D72BB05F41BACA__fig_7784F58EFBA24F99A91363C483633B0A"><a name="concept_4F552431500A4FD484D72BB05F41BACA__fig_7784F58EFBA24F99A91363C483633B0A"></a><div><span class="figcap">Feedforward Control Diagram</span></div> 
+         
+        <a name="concept_4F552431500A4FD484D72BB05F41BACA__image_4F516954942D4AD2B18024E30862E8A2"></a><img id="concept_4F552431500A4FD484D72BB05F41BACA__image_4F516954942D4AD2B18024E30862E8A2" src="ichelp0067.gif" /> 
+      </div>
+ 
+      <p>Use the same procedure to tune most feedforward control loops.
+      </p>
+ 
+      <p>The guidelines and examples contained in this section are suggestions
+        for typical control loops. Select the approach that is best for your particular
+        application.
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_dvtune_using.html">Using Tune with InSight</a></div>
+<div><a href="c_analog_control_module_templates.html">Analog control module templates</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

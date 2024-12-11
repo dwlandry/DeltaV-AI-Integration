@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Adding a confirm to an action" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="confirm expression" name="DC.subject" /><meta content="confirm expression" name="keywords" /><meta content="c_AGITATE_phase_logic_configuration.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_adding_a_confirm_to_an_action" name="DC.Identifier" /><title>Adding a confirm to an action</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_AGITATE_phase_logic_configuration.html" /><link rel="next" href="c_configuring_agitate_running_logic_overview.html" /></head><body class="fixed" id="c_adding_a_confirm_to_an_action" data-relpath="c_adding_a_confirm_to_an_action.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_adding_a_confirm_to_an_action"></a>
+
+<h1 class="topictitle1">Adding a confirm to an action</h1>
+<div><div></div>
+ 
+	 <p>You can add a confirm expression to an action that has a pulse
+		qualifier. For instance, you may want to confirm that a valve has closed before
+		going on to the next action or the next step. You can configure the action with
+		a confirm expression, rather than write the expression in a delay condition or
+		transition condition.
+	 </p>
+ 
+	 <p>After a step (for example, CLOSE_VLVS) that has one or more actions with
+		confirms, you would add a transition or termination with an expression such as:
+	 </p>
+ 
+	 <pre class="codeblock">(&#39;CLOSE_VLVS/PENDING_CONFIRMS.CV&#39; = 0) AND</pre>
+ 
+	 <pre class="codeblock">(&#39;CLOSE_VLVS/CONFIRM_FAIL.CV&#39; = FALSE)</pre>
+ 
+	 <p>If there are no pending confirms and no failed confirms, then the step
+		action or actions have completed successfully. If the expression evaluates to
+		TRUE, the SFC will proceed to the next step.
+	 </p>
+ 
+	 <p>To add a confirm expression, select the action, right-click and open the
+		
+		<span class="wintitle">Action Properties</span> dialog . Check the 
+		<span class="uicontrol">Confirm action for pulse qualifier</span> box and use the
+		Expression Assistant to write the expression. Or, click the 
+		<span class="uicontrol">Default Expression</span> button to use the default
+		confirm expression.
+	 </p>
+ 
+	 <p>As an example, the confirm expression for a step action to close an
+		inlet valve could be written as:
+	 </p>
+ 
+	 <pre class="codeblock">&#39;//#COLOR_IN_VLV#/DC1/PV_D&#39; = &#39;vlvnc-pv:CLOSED&#39;</pre>
+ 
+	 <a name="c_adding_a_confirm_to_an_action__image_8576A505AA294517B9A5A9AD7B8C014B"></a><img id="c_adding_a_confirm_to_an_action__image_8576A505AA294517B9A5A9AD7B8C014B" src="bthelp0049.gif" />
+	 <p>A confirm requires either a Timeout value or a Timeout expression. You
+		could either set the Confirm Timeout to a Time value of 5 (meaning that if the
+		valve does not close within 5 seconds, the confirm times out; a timeout value
+		of 0 means there is no time limit on the confirm timeout) or set the Confirm
+		Timeout expression to:
+	 </p>
+ 
+	 <pre class="codeblock">&#39;//#COLOR_IN_VLV#/DC1/FAIL&#39; = 1</pre>
+ 
+	 <p>meaning that if the inlet valve module fails before the valve is closed,
+		the confirm times out.
+	 </p>
+ 
+	 <p>When a step becomes active, the PENDING_CONFIRMS parameter for the step
+		is set equal to the number of actions with confirms in the step. In our
+		example, we have one action with one confirm; therefore, PENDING_CONFIRMS is
+		set to 1. When a confirm either completes or times out, the PENDING_CONFIRMS is
+		decreased by one. When all confirm actions within the step have either
+		completed or timed out, PENDING_CONFIRMS is set to 0.
+	 </p>
+ 
+	 <p>If a confirm condition times out (the Confirm Timeout time expires or
+		the Confirm Timeout expression becomes TRUE before the Confirm expression
+		becomes TRUE), the FAILED_CONFIRMS parameter is incremented by 1 and the
+		CONFIRM_FAIL parameter is set to TRUE.
+	 </p>
+ 
+	 <p>The CONFIRM_FAIL parameter is available at the action level, the step
+		level, and the state logic level. It can be used in the failure monitoring
+		logic to send the phase to the holding state, send a message to the operator,
+		or take other appropriate action.
+	 </p>
+ 
+	 <p>In real world batch applications, adding confirms to actions can greatly
+		simplify configuration of the logic, especially when there are numerous actions
+		that have to be completed and confirmed before going on to the next step.
+	 </p>
+ 
+	 <p>For example, if there were three inlet valves that had to be closed, the
+		actions could be written in separate steps with confirming transition
+		conditions after each, or the three actions could be written in one step
+		followed by a complex transition statement. More concisely, all three actions
+		could be written in one step with a confirm for each action. Adding the
+		confirms to the actions would simplify the logic, as shown in the following
+		diagram.
+	 </p>
+ 
+	 <a name="c_adding_a_confirm_to_an_action__image_230F9FB676B440FAA3EB684C336682AE"></a><img id="c_adding_a_confirm_to_an_action__image_230F9FB676B440FAA3EB684C336682AE" src="bthelp0051.gif" />
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

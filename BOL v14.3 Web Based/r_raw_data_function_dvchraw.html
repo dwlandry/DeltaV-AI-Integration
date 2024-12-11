@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Raw Data function (DvCHRaw)" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="maintain" name="DC.Coverage" /><meta content="DeltaV Reporter, worksheet functions, Raw Data function, Raw Data function, DeltaV Reporter" name="DC.subject" /><meta content="DeltaV Reporter, worksheet functions, Raw Data function, Raw Data function, DeltaV Reporter" name="keywords" /><meta content="c_worksheet_function_reference.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="r_raw_data_function_dvchraw" name="DC.Identifier" /><title>Raw Data function (DvCHRaw)</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_single_value_function_dvchvalue.html" /><link rel="next" href="r_interpolated_data_function_dvchinterpolated.html" /></head><body class="fixed" id="r_raw_data_function_dvchraw" data-relpath="r_raw_data_function_dvchraw.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_raw_data_function_dvchraw"></a>
+
+<h1 class="topictitle1">Raw Data function (DvCHRaw)</h1>
+<div><div></div>
+ 
+    <div class="section" id="r_raw_data_function_dvchraw__section_8616BF573FDF43D0852D90CE4828E493"><a name="r_raw_data_function_dvchraw__section_8616BF573FDF43D0852D90CE4828E493"></a> 
+      <p>This worksheet function can be used to retrieve available samples for
+        a single tag within a specified time period. The function must be entered as an
+        array formula in a range that has the appropriate number of rows and columns.
+        You can use the 
+        <span class="wintitle">Configure Raw Data Function</span> dialog in DeltaV
+        Reporter to set up a call to this function. 
+      </p>
+ 
+      <p><strong>Syntax</strong> 
+      </p>
+ 
+      <p>DvCHRaw(connection, tag, show_header, columns, time_mode,
+        period_start, period_end, start_boundary, end_boundary, max_num_values) 
+      </p>
+ 
+      <p><strong>Example Array Formula</strong> 
+      </p>
+ 
+      <p>=DvCHRaw(&quot;localhost&quot;,&quot;DeltaV=MAIN_WORKSTATION
+        CHS250_1S/SGGN1/OUT.CV&quot;,TRUE,&quot;Value;Timestamp,Local;Parameter
+        Status,IsGood;Collection Status,Text&quot;,&quot;GMT&quot;,&quot;10/11/08 3:02:05 PM&quot;,&quot;10/12/08
+        3:02:05 PM&quot;,1,1,50) 
+      </p>
+ 
+      <p><strong>Function Arguments</strong> 
+      </p>
+ 
+      <dl> 
+         
+          <dt class="dlterm">connection 
+          </dt>
+ 
+          <dd>The node name of the DeltaV Continuous Historian server. 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">tag 
+          </dt>
+ 
+          <dd> 
+            <p>The DeltaV tag for which you want to retrieve data. The tag can
+              be text, such as FIC101.PV, or a cell reference. In the case of a cell
+              reference (such as $A$1), the contents of the referenced cell must contain a
+              valid tag. 
+            </p>
+ 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">show_header 
+          </dt>
+ 
+          <dd> 
+            <p>A Boolean (TRUE or FALSE) that indicates whether or not you want
+              the returned data to have a column header row. 
+            </p>
+ 
+          </dd>
+ 
+         
+         
+          <dt class="dlterm">columns 
+          </dt>
+ 
+          <dd> 
+            <div class="p">A string that defines the columns to be included in the
+              worksheet. Column definitions are separated by semicolons. Each column
+              definition comprises the column name and, optionally, various attributes
+              relating to that specific column. Column attributes are separated by commas.
+              The following columns and attributes are supported: 
+            <a name="r_raw_data_function_dvchraw__ul_6900A239CDC84B6E86BBE7B8CCAD504A"></a><ul id="r_raw_data_function_dvchraw__ul_6900A239CDC84B6E86BBE7B8CCAD504A"> 
+              <li id="r_raw_data_function_dvchraw__li_A0C58CC087B94964BD8171E33284881E"><div class="li_content"> 
+                <div class="p">Column name: Timestamp 
+                <a name="r_raw_data_function_dvchraw__ul_53302BE419F64C39BC355106E5CBC576"></a><ul id="r_raw_data_function_dvchraw__ul_53302BE419F64C39BC355106E5CBC576"> 
+                  <li id="r_raw_data_function_dvchraw__li_71EDB036995F408FB4B4F18508D6D7E8"><div class="li_content"> 
+                    <p>Mode attribute: Local, GMT, or GMT ±hh:mm 
+                    </p>
+ 
+                  </div></li>
+ 
+                </ul>
+ 
+                </div>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_3CAF2B5CC57E4ADBA61C25B94515FF81"><div class="li_content"> 
+                <div class="p">Column name: Value 
+                <a name="r_raw_data_function_dvchraw__ul_A45AFB4816DF4460B2B30FC9E51DCD0C"></a><ul id="r_raw_data_function_dvchraw__ul_A45AFB4816DF4460B2B30FC9E51DCD0C"> 
+                  <li id="r_raw_data_function_dvchraw__li_B8022D5675A34E788D2322336E352D65"><div class="li_content"> 
+                    <p>For Int32, UInt32, and Float data types, the value
+                      stored by Excel is a Variant Double. 
+                    </p>
+ 
+                  </div></li>
+ 
+                  <li id="r_raw_data_function_dvchraw__li_52219D572368425C81E96775D3927703"><div class="li_content"> 
+                    <p> For strings, the value stored by Excel is a Variant
+                      String. 
+                    </p>
+ 
+                  </div></li>
+ 
+                  <li id="r_raw_data_function_dvchraw__li_085C9F462D0F40078E8CCCBE3E9E70C9"><div class="li_content"> 
+                    <p> For enumerations, the value stored by Excel is the
+                      state name in a Variant String. 
+                    </p>
+ 
+                  </div></li>
+ 
+                </ul>
+ 
+                </div>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_74D301AA411C417ABDE7F40A30765606"><div class="li_content"> 
+                <div class="p">Column name: Parameter Status (that is, FfStatus) 
+                <a name="r_raw_data_function_dvchraw__ul_0BFAA8AF30FE4C3297390ABCE5EF4889"></a><ul id="r_raw_data_function_dvchraw__ul_0BFAA8AF30FE4C3297390ABCE5EF4889"> 
+                  <li id="r_raw_data_function_dvchraw__li_8D03713A49004684B59881426BB618B5"><div class="li_content"> 
+                    <div class="p">Mode attribute. Valid modes are: 
+                    <a name="r_raw_data_function_dvchraw__ul_9571593BC59C483BA21A806758B91370"></a><ul id="r_raw_data_function_dvchraw__ul_9571593BC59C483BA21A806758B91370"> 
+                      <li id="r_raw_data_function_dvchraw__li_9B06A8AFE7DD4CC39684EFCE7F443CE0"><div class="li_content"> 
+                        <p>Text – which yields a descriptive string, such as
+                          GoodNonCascade NonSpecific NotLimited 
+                        </p>
+ 
+                      </div></li>
+ 
+                      <li id="r_raw_data_function_dvchraw__li_15C70DCCD80444479F336B0AE85D11DC"><div class="li_content"> 
+                        <p> IsGood – which yields a Boolean: TRUE if the
+                          parameter status is good, or FALSE if it is not good (that is, bad or
+                          uncertain) 
+                        </p>
+ 
+                      </div></li>
+ 
+                      <li id="r_raw_data_function_dvchraw__li_59C0E94C02BF46938C603C250B8D635D"><div class="li_content"> 
+                        <p> Number – which yields the raw value as an integer 
+                        </p>
+ 
+                      </div></li>
+ 
+                    </ul>
+ 
+                    </div>
+ 
+                  </div></li>
+ 
+                </ul>
+ 
+                </div>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_BA788249880E47809E7B5B3E82EFAC9C"><div class="li_content"> 
+                <div class="p">Column name: Collection Status (that is, DvCHStatus) 
+                <a name="r_raw_data_function_dvchraw__ul_AEBDBDDDF7894ADD8D5B698300A45996"></a><ul id="r_raw_data_function_dvchraw__ul_AEBDBDDDF7894ADD8D5B698300A45996"> 
+                  <li id="r_raw_data_function_dvchraw__li_EBE3B51B86444A8798797066BB43402E"><div class="li_content"> 
+                    <div class="p">Mode attribute. Valid modes are: 
+                    <a name="r_raw_data_function_dvchraw__ul_8B2BC905BAFF45E688C538E0A34B7481"></a><ul id="r_raw_data_function_dvchraw__ul_8B2BC905BAFF45E688C538E0A34B7481"> 
+                      <li id="r_raw_data_function_dvchraw__li_4FA7947AA8E94BD893715AFB479837E2"><div class="li_content"> 
+                        <p>Text – which yields a descriptive string 
+                        </p>
+ 
+                      </div></li>
+ 
+                      <li id="r_raw_data_function_dvchraw__li_A455FE9BED4A496B9D051CD659570308"><div class="li_content"> 
+                        <p>IsGood – which yields a Boolean: TRUE if the
+                          collection status is good (that is, 0) or FALSE if it is not good (not zero) 
+                        </p>
+ 
+                      </div></li>
+ 
+                      <li id="r_raw_data_function_dvchraw__li_2789E384093442EFAAFC52F072AEEC39"><div class="li_content"> 
+                        <p>Number – which yields the raw value as an integer 
+                        </p>
+ 
+                      </div></li>
+ 
+                    </ul>
+ 
+                    </div>
+ 
+                  </div></li>
+ 
+                </ul>
+ 
+                </div>
+ 
+              </div></li>
+ 
+            </ul>
+ 
+            </div>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <dl> 
+         
+          <dt class="dlterm">time_mode 
+          </dt>
+ 
+          <dd> 
+            <div class="p">Indicates how the time stamp argument should be interpreted. The
+              DeltaV Continuous Historian database records all times in GMT; the time_mode
+              argument specifies what conversion, if any, should be applied to the supplied
+              time stamp in order to convert to GMT. 
+            <a name="r_raw_data_function_dvchraw__ul_06BC4A83B40A4784B3836B05B8CE261D"></a><ul id="r_raw_data_function_dvchraw__ul_06BC4A83B40A4784B3836B05B8CE261D"> 
+              <li id="r_raw_data_function_dvchraw__li_43D0AE9398404E6A955404D10BA7FE68"><div class="li_content"> 
+                <p>Local – the time stamp is treated as being in the time zone
+                  of the client PC. Conversion to GMT takes into consideration whether the time
+                  stamp falls within daylight saving time. 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_1435C11994974DE78A648C87AF9E5994"><div class="li_content"> 
+                <p>GMT – no conversion is necessary 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_80C5770EBBE74E5EAA9AF951724B8C4A"><div class="li_content"> 
+                <p>GMT ±hh:mm – the time is adjusted by the specified hh:mm;
+                  daylight saving time has no effect. 
+                </p>
+ 
+              </div></li>
+ 
+            </ul>
+ 
+            </div>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <dl> 
+         
+          <dt class="dlterm">period_start 
+          </dt>
+ 
+          <dd> 
+            <p>The time stamp of the start of the period. Specify period_start
+              as text or a cell reference. 
+            </p>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <dl> 
+         
+          <dt class="dlterm">period_end 
+          </dt>
+ 
+          <dd> 
+            <p>The time stamp of the end of the period. Specify period_end as
+              text or a cell reference. 
+            </p>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> If period_start is a later time than period_end, samples are
+          retrieved in reverse chronological order from the (later) start time toward the
+          (earlier) end time. 
+        </p>
+ 
+        <p> If you specify the period_start or period_end argument as a cell
+          reference, the cell must contain a valid date and time in standard Excel
+          format, not exceeding millisecond precision—for example, &quot;10/12/2008
+          21:06:40.676&quot;. 
+        </p>
+ 
+      </div>
+ 
+      <dl> 
+         
+          <dt class="dlterm">start_boundary 
+          </dt>
+ 
+          <dd> 
+            <div class="p">Defines how the start boundary is handled: 
+            <a name="r_raw_data_function_dvchraw__ul_E3BEB339581142DFB805BD3C9631DF7A"></a><ul id="r_raw_data_function_dvchraw__ul_E3BEB339581142DFB805BD3C9631DF7A"> 
+              <li id="r_raw_data_function_dvchraw__li_2A0C0DA91461403C9E1C66ED16C75D12"><div class="li_content"> 
+                <p>If 0 (inside), the first sample returned is the first sample
+                  after (or at exactly the same time as) the period_start. 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_6E6C710F47B74515B9786859D61998CF"><div class="li_content"> 
+                <p>If 1 (outside), the first sample returned is the first
+                  sample before (or at exactly the same time as) the period_start. 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_34DD88B1DE7A48F6AACE27D5335151E0"><div class="li_content"> 
+                <p>If 2 (interpolated), an interpolated sample is created for
+                  the period_start time. 
+                </p>
+ 
+              </div></li>
+ 
+            </ul>
+ 
+            </div>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <dl> 
+         
+          <dt class="dlterm">end_boundary 
+          </dt>
+ 
+          <dd> 
+            <div class="p"> Defines how the end boundary is handled: 
+            <a name="r_raw_data_function_dvchraw__ul_3D9B859A885342CBB6DC4874C36065F0"></a><ul id="r_raw_data_function_dvchraw__ul_3D9B859A885342CBB6DC4874C36065F0"> 
+              <li id="r_raw_data_function_dvchraw__li_87150DA8046346B29D3A9960DD4ECA18"><div class="li_content"> 
+                <p>If 0 (inside), the last sample returned is the first sample
+                  before (or at exactly the same time as) the period_end. 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_9AFF987C123D4EA7925E1453D3DE1015"><div class="li_content"> 
+                <p>If 1 (outside), the last sample returned is the first sample
+                  after (or at exactly the same time as) the period_end. 
+                </p>
+ 
+              </div></li>
+ 
+              <li id="r_raw_data_function_dvchraw__li_31B651BA1DCA4CAB87E8F723C8593F0E"><div class="li_content"> 
+                <p>If 2 (interpolated), an interpolated sample is created for
+                  the period_end time. 
+                </p>
+ 
+              </div></li>
+ 
+            </ul>
+ 
+            </div>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+      <dl> 
+         
+          <dt class="dlterm">max_num_values 
+          </dt>
+ 
+          <dd> 
+            <p> The maximum number of values you wish to retrieve. Any samples
+              in the database within the time period in excess of this number are not
+              retrieved. If max_num_values is set to –1, all samples within the time period
+              are retrieved. 
+            </p>
+ 
+          </dd>
+ 
+         
+      </dl>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

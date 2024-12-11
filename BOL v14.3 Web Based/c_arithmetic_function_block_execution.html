@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Arithmetic function block execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_fblk_spec_arithmetic.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_arithmetic_function_block_execution" name="DC.Identifier" /><title>Arithmetic function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_arithmetic.html" /><link rel="next" href="c_arithmetic_function_block_modes.html" /></head><body class="fixed" id="c_arithmetic_function_block_execution" data-relpath="c_arithmetic_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_arithmetic_function_block_execution"></a>
+
+<h1 class="topictitle1">Arithmetic function block execution</h1>
+<div><div></div>
+
+	 <p id="c_arithmetic_function_block_execution__blockexecutionarithmeticfunctionblock"><a name="c_arithmetic_function_block_execution__blockexecutionarithmeticfunctionblock"></a>The Arithmetic function block
+		provides range extension and compensation through nine arithmetic types.
+	 </p>
+
+	 <p>There are two inputs (IN and IN_LO) used in calculating PV. Inputs used
+		to form the PV must come from devices with the desired engineering units. PV is
+		then combined with up to three inputs (IN_1, IN_2, and IN_3) through the
+		user-selected compensation function (ARITH_TYPE) to calculate the value of
+		func. A gain is applied to func, and then a bias is added to get the value
+		PRE_OUT. In AUTO, PRE_OUT is used for OUT.
+	 </p>
+
+	 <p><strong>Range extension and calculation of PV</strong>
+	 </p>
+
+	 <p>When both IN and IN_LO are usable, the following formula is applied to
+		calculate range extension for PV:
+	 </p>
+
+	 <p>PV = G×IN+(1-G)×IN_LO
+	 </p>
+
+	 <p>G is zero for IN less than or equal to RANGE_LO. It is one when IN is
+		greater than RANGE_HI. It is interpolated from zero to one over the range of
+		RANGE_LO to RANGE_HI. If the status of IN_LO is unusable and IN is usable and
+		greater than RANGE_LO, then G will be set to one.
+	 </p>
+
+	 <p><strong>Compensation input calculations</strong>
+	 </p>
+
+	 <p>For each of the inputs (IN_1, IN_2, IN_3), there is a gain and bias. The
+		bias can be used to correct for absolute temperature or pressure. The gain can
+		be used to normalize terms within a square root function. The compensation
+		terms (t) are calculated as follows:
+	 </p>
+
+	 <a name="c_arithmetic_function_block_execution__ul_F77CDB484C344426B22A8A4EBC6E8C58"></a><ul id="c_arithmetic_function_block_execution__ul_F77CDB484C344426B22A8A4EBC6E8C58"> 
+		<li id="c_arithmetic_function_block_execution__li_DC85AFA519074917900E39195AB10C9D"><div class="li_content">
+		  <p>When IN_(k) is usable:  
+		  </p>
+
+		  <p>t(k) = GAIN_IN(k)×(BIAS_IN(k) + IN_ (k))
+		  </p>
+
+		</div></li>
+ 
+		<li id="c_arithmetic_function_block_execution__li_45E5889DF5774D1FBF4327174B1DA9FC"><div class="li_content">
+		  <p>When IN_(k) is not usable, then t(k) gets the value of the last t(k)
+			 computed with a usable input.
+		  </p>
+
+		</div></li>
+ 
+	 </ul>
+
+	 <p><strong>Application example</strong>
+	 </p>
+
+	 <p>The Arithmetic block can be used for pressure and temperature
+		compensation of a gas stream. IN is the measured flow from OUT of an Analog
+		Input function block. IN_1 is the measured pressure, and IN_2 is the measured
+		temperature, both from OUT of an Analog Input function block. If the flowmeter
+		is a differential pressure type, the flow must be linearized in the instrument
+		or in the AI function block.
+	 </p>
+
+	 <p>ARITH_TYPE is 
+		<strong>flow compensation linear</strong> if a mass flowmeter is used or 
+		<strong>flow compensation square root</strong> if the flowmeter is differential
+		pressure.
+	 </p>
+
+	 <p>BIAS_IN_1 is a factor to convert measured pressure to absolute pressure.
+		If pressure units are PSIG, for example, enter 14.696 for BIAS_IN_1.
+	 </p>
+
+	 <p>GAIN_IN_1 is 1 / (reference pressure + factor to convert to absolute
+		pressure). Reference pressure is the calibration pressure for the flowmeter. If
+		the calibration pressure is 50 PSIG, for example, enter 0.01546 for GAIN_IN_1.
+	 </p>
+
+	 <p>BIAS_IN_2 is a factor to convert measured temperature to absolute
+		temperature. If temperature units are degF, for example, enter 459.7 for
+		BIAS_IN_2.
+	 </p>
+
+	 <p>GAIN_IN_2 is 1 / (reference temperature + factor to convert to absolute
+		temperature). Reference temperature is the calibration temperature for the
+		flowmeter. If the calibration temperature is 350 degF, for example, enter
+		0.001235 for GAIN_IN_2.
+	 </p>
+
+	 <p><strong>Block errors</strong>
+	 </p>
+
+	 <div class="p">The following conditions are reported in the BLOCK_ERR parameter:
+	 <a name="c_arithmetic_function_block_execution__ul_65E18F5E120E40EBA366E3EB9BE22FD1"></a><ul id="c_arithmetic_function_block_execution__ul_65E18F5E120E40EBA366E3EB9BE22FD1">
+		<li id="c_arithmetic_function_block_execution__li_2C578FFA9463420DB8E73FBB27C67C99"><div class="li_content">
+		  <p><strong>Out of Service</strong> — The block is in Out of Service (OOS) mode.
+		  </p>
+
+		</div></li>
+
+		<li id="c_arithmetic_function_block_execution__li_EC7C33490A90464D9F5EC071951BE844"><div class="li_content">
+		  <p><strong>Input failure/process variable has 
+				<em>Bad</em> status</strong> — The source of the block&#39;s process variable
+			 is bad.
+		  </p>
+
+		</div></li>
+
+	 </ul>
+
+	 </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

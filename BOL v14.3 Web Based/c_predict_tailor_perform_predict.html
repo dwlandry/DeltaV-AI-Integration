@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Tailoring MPC Control Performance" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="c_predict.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_D10833FBA4234EB287904CA22C610FBA" name="DC.Identifier" /><title>Tailoring MPC Control Performance</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict_using_ext_hist_data.html" /><link rel="next" href="c_predict_pro.html" /></head><body class="fixed" id="concept_D10833FBA4234EB287904CA22C610FBA" data-relpath="c_predict_tailor_perform_predict.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_D10833FBA4234EB287904CA22C610FBA"></a>
+
+<h1 class="topictitle1">Tailoring MPC Control Performance</h1>
+<div> 
+	 <p>The MPC controller minimizes future control errors and control moves.
+		The control calculations assume that your process response is reasonably linear
+		over its normal operating range. If the process model has been accurately
+		identified during testing, the default controller settings used in controller
+		generation should provide stable operation and acceptable performance.
+	 </p>
+ 
+	 <p>If you would like a faster or slower control response, select the 
+		<span class="uicontrol">Expert</span> option. This allows you to independently
+		create the model and generate the controller. After the model is created, you
+		can make adjustments to it before it is used in controller generation. Also,
+		you can examine and modify the default parameters that are used in controller
+		generation to meet your specific application requirements.
+	 </p>
+ 
+	 <p>When developing a typical MPC application, keep in mind that the default
+		settings for MPC controller generation will provide a good response for most
+		applications. Also, make sure that you apply setpoint trajectory (using the
+		setpoint filter) if you observe an oscillatory response.
+	 </p>
+ 
+	 <p>The following sections provide detailed information about procedures
+		that will assist you in achieving the level of control performance you need for
+		your application:
+	 </p>
+ 
+	 <div class="p"> 
+	 <a name="concept_D10833FBA4234EB287904CA22C610FBA__ul_5070C1F5F28C4EEDB8FB826EF4DCBCD2"></a><ul id="concept_D10833FBA4234EB287904CA22C610FBA__ul_5070C1F5F28C4EEDB8FB826EF4DCBCD2"> 
+		<li id="concept_D10833FBA4234EB287904CA22C610FBA__li_D1635F63E1D249C8AED6FEFE3F75CDFA"><div class="li_content"> Reviewing the Process Model
+		  
+		</div></li>
+ 
+		<li id="concept_D10833FBA4234EB287904CA22C610FBA__li_3BA8A3375C5D4F11B9C4FA7613AC4763"><div class="li_content"> Setting the Parameters Used
+		  in Controller Generation 
+		</div></li>
+ 
+		<li id="concept_D10833FBA4234EB287904CA22C610FBA__li_F490ABD724DE48B4A1F23B241E1FC051"><div class="li_content"> Testing the Response Using
+		  Simulation 
+		</div></li>
+ 
+		<li id="concept_D10833FBA4234EB287904CA22C610FBA__li_5704F90E352144F8846520819CFF790F"><div class="li_content"> Adjusting MPC Once Control
+		  Is in Service 
+		</div></li>
+ 
+	 </ul>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_72ED90C86C5C4D3B992CE24ACE785F4C"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_72ED90C86C5C4D3B992CE24ACE785F4C"></a><h2 class="sectiontitle">Reviewing the Process Model </h2> 
+		 
+		<p>After you have used DeltaV Predict to identify a model of your
+		  process, review the model to ensure that it reflects your knowledge of the
+		  process. It is recommended that you include the following steps in your review:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D10833FBA4234EB287904CA22C610FBA__ol_0E724EF7D2A34034BAA75CB01FBFFB29"></a><ol id="concept_D10833FBA4234EB287904CA22C610FBA__ol_0E724EF7D2A34034BAA75CB01FBFFB29"> 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_547328EA48E44E4CAC2EFCDBCAD6DA54"><div class="li_content"> 
+			 <strong>Inspect validation errors for all process outputs</strong>. Select 
+			 <span class="uicontrol">Verify Model</span> and observe the error between the
+			 calculated output and the actual output for a selected data set that represents
+			 normal operation. If there is a large error, you might need to examine the
+			 associated step response in more detail. Refer to the figure entitled 
+			 <em>Model Verification with Incorrect Process Gain</em>. This figure
+			 shows model verification where the model gain is approximately two times
+			 smaller than true process gain. Notice that this error in model gain results in
+			 much smaller changes in predicted process output (shown in green) and a high
+			 average squared error (2.93 percent per scan). Also, refer to the figure
+			 entitled 
+			 <em>Verification with Correct Model</em>. This figure shows the same
+			 validation plot as the previous figure but with an acceptable error (0.56
+			 percent per scan) and a model that accurately reflects the process (that is,
+			 the model gain is approximately 1 percent in error).
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_190A1371FB224C40898FAE395DE20B81"><div class="li_content"> 
+			 <strong>Inspect every step response</strong>. Verify that the gain sign is
+			 correct and that the gain value is in the range you would expect based on your
+			 knowledge of the process. Select the 
+			 <span class="uicontrol">FIR</span> check box and compare the ARX and FIR
+			 models over the initial part of the response curve. Typically, if the ARX and
+			 FIR models match, the process model is accurate. If both of the ARX and FIR
+			 curves are smooth but show a ten percent or more difference in process gain, it
+			 is recommended that you take advantage of the design feature and correct the
+			 process gain to place the curve in the middle of the FIR and ARX responses.
+			 Refer to the figure entitled 
+			 <em>FIR and ARX for Poor Model</em>. In this figure, FIR and ARX differ
+			 from each other a great deal. Such model inaccuracy might have occurred because
+			 the deadtime was close to 60 scans (the maximum FIR horizon), and FIR produced
+			 a poor result. Another possible reason could be that the deadtime identified by
+			 FIR was too large, causing an inverse gain for ARX. Having the same data but a
+			 larger time to steady state often improves such a model (for example, the
+			 figure entitled 
+			 <em>ARX and FIR for Good Model</em>). After the time to steady state
+			 was doubled in the latter figure, the FIR and ARX matched acceptably. As
+			 previously stated, the deadtime was too large in the former figure (50 seconds,
+			 which is close to the maximum FIR horizon of 60 scans). The scan period is
+			 doubled in the latter figure (<em>ARX and FIR for Good Model</em>). Also, its
+			 deadtime accounts for only 25 scans and was properly identified.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_CD5500E4FDA042A7A2FB43D6BFEFBC6A"><div class="li_content"> 
+			 <strong>Make minor corrections in process dynamics</strong>. Noisy data may
+			 introduce error in the process model identified by DeltaV Predict. Frequently,
+			 noise is reflected in a step response that is not smooth in shape. In such
+			 situations, it is recommended that you use DeltaV Predict&#39;s graphical or
+			 numerical step response design tools to smooth out the step response.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_9F7EBE5E1F6E4E0480435593AAE78D50"><div class="li_content"> 
+			 <strong>Correct step responses that deviate from expected ranges</strong>.
+			 Noisy data, insufficient excitation, or insufficient test time may produce a
+			 process model that is not satisfactory for control. However, if plant
+			 conditions do not allow for a better test, consider correcting the model based
+			 on your knowledge of the process, information gathered by observing trends of
+			 the measurement, and the process simulations. Typically, you can either select 
+			 <span class="uicontrol">Design Response</span>, and then enter step response
+			 parameters, or use the graphical design option. Make sure that you clean up any
+			 residual step responses with gains that are 10 times smaller than the highest
+			 gains with irregular shapes.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_4D5095C064F04C4D86FEA7BFE76BC488"><div class="li_content"> 
+			 <strong>Inspect validation after making model changes</strong>. If you have
+			 modified the model identified by DeltaV Predict, select 
+			 <span class="uicontrol">Verify Model</span> and observe how well the
+			 calculated and actual outputs match in a selected set of data.
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_454D1087C8E245D287B36604BD34B960"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_454D1087C8E245D287B36604BD34B960"></a><div><span class="figcap">Model Verification with Incorrect Process Gain</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_E2E915B6573A4A43B23BE0B298C18407"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_E2E915B6573A4A43B23BE0B298C18407" src="TailorMPC1.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_181870E0FB8C4B739B11FA1645442290"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_181870E0FB8C4B739B11FA1645442290"></a><div><span class="figcap">Verification with Correct Model</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_3672159A4C1949178BF93386B2A5E441"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_3672159A4C1949178BF93386B2A5E441" src="TailorMPC2.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_3E6AED1468F14BD5B3915B865853AA50"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_3E6AED1468F14BD5B3915B865853AA50"></a><div><span class="figcap">FIR and ARX for Poor Model</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_AD410E9D41B348F698E50F68970D4BD3"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_AD410E9D41B348F698E50F68970D4BD3" src="TailorMPC3.gif" /> 
+		</div>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_7A80A441A50242E881C87F5FF7ECA1A0"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_7A80A441A50242E881C87F5FF7ECA1A0"></a><div><span class="figcap">ARX and FIR for Good Model</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_775A25FB13824667A90F977F6E30917B"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_775A25FB13824667A90F977F6E30917B" src="TailorMPC4.gif" /> 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_618757E4855D4E6F900B07C26B69C66D"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_618757E4855D4E6F900B07C26B69C66D"></a><h2 class="sectiontitle">Setting the Parameters Used in Controller Generation </h2> 
+		 
+		<p>The MPC controller is generated from the process model and controller
+		  design parameters. You can use the Penalty on Move (PM) and and Penalty on
+		  Error (PE) parameters to adjust the robustness of control and the speed of
+		  response, respectively. You can adjust these parameters from the dialog that
+		  appears after you select 
+		  <span class="uicontrol">Generate Controller.</span>
+		</p>
+ 
+		<p>The following topics provide detailed information about the PM and PE
+		  parameters:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D10833FBA4234EB287904CA22C610FBA__ul_22BC93F745074CE69D4A0A3F8A545DE8"></a><ul id="concept_D10833FBA4234EB287904CA22C610FBA__ul_22BC93F745074CE69D4A0A3F8A545DE8"> 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_A31C2D6240B14045948454AAA560CE35"><div class="li_content"> Control Robustness 
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_089B4579F6D14555B26E145BF39667F5"><div class="li_content"> Control Sensitivity 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_A744F4C5A02041FFBA3E2070A20F4932"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_A744F4C5A02041FFBA3E2070A20F4932"></a><h2 class="sectiontitle">Control Robustness </h2> 
+		 
+		<p>Sensitivity of control to changes in process dynamics is determined by
+		  the controller robustness. The parameter used in controller generation that
+		  most impacts robustness is the Penalty on Move (PM) parameter. The PM controls
+		  how much the MPC controller is penalized for change in the manipulated output
+		  (MV). The Penalty on Move parameter is defined independently for every MV.
+		  Large PM values result in a slow controller with a wide stability margin. With
+		  such settings, the control is relatively insensitive to change in either the
+		  process or the model errors. Small PM values result in a fast controller with a
+		  narrow stability margin. When the model used in generating the control
+		  accurately reflects the process gain and dynamics, changing the PM value does
+		  not affect the controller performance significantly. However, a difference in
+		  the controller performance might occur if the model does not match the real
+		  process. To ensure a stable and responsive MPC operation when the model is
+		  within ±20 percent accuracy, the following setting for the PM value is
+		  recommended.
+		</p>
+ 
+		<p> 
+		  <em>PMi = 3(1 + DTi/20 + Gi * DTi/40)</em> 
+		</p>
+ 
+		<p>where:
+		</p>
+ 
+		<p> 
+		  <em>DTi</em> is the deadtime/module execution period (in MPC scans) for 
+		  <em>Mvi</em> -&gt; 
+		  <em>Cvi relation</em>
+		</p>
+ 
+		<p> 
+		  <em>Gi - gain (no units) for Mvi</em> -&gt; 
+		  <em>Cvi relation</em> 
+		</p>
+ 
+		<p>When you select 
+		  <span class="uicontrol">Generate Control</span>, the values of the PM
+		  parameters shown in the parameter dialog were calculated as described above. In
+		  most cases, the calculated settings for the PM give good control, even if the
+		  model error is greater than ±20 percent. It is recommended that you use the
+		  default settings. Only change these settings if the online operation of MPC
+		  does not meet your control objectives.
+		</p>
+ 
+		<div class="p">
+		  <div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_49587252356240D784CEFC2E851F1CDC"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_49587252356240D784CEFC2E851F1CDC"></a><div><span class="figcap">Setpoint Step Response with Default Settings</span></div>
+			 <br /><a name="concept_D10833FBA4234EB287904CA22C610FBA__image_80E371851DDE4ADAA3FB8EEADD704EB0"></a><div class="imageleft"><img class="imageleft" id="concept_D10833FBA4234EB287904CA22C610FBA__image_80E371851DDE4ADAA3FB8EEADD704EB0" src="TailorMPC5.gif" /></div><br />
+		  </div>
+ 
+		</div>
+ 
+		<p>The above figure shows an example of a setpoint step response with a
+		  good model match. The PE equals 1, and the PM equals 4 (default).
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_4ECAD17EB4834A988E3CE73CB2E41518"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_4ECAD17EB4834A988E3CE73CB2E41518"></a><h2 class="sectiontitle">Control Sensitivity </h2> 
+		 
+		<p>To meet your application requirements, you can give higher priority to
+		  one Controlled Variable (CV). The Penalty on Error (PE) factor allows more
+		  importance to be placed on a specific CV. The default value for the PE is 1 for
+		  all CVs; this value should provide good control for most applications. You can
+		  change the PE from this default value to prioritize control action. However,
+		  you should 
+		  <em>not</em> use it to change overall control performance. When you want
+		  more sensitive control for a specific CV, set the associated PE to a value
+		  greater than 1. If you want to relax control, set the associated PE to a value
+		  less than 1. Typically, it is recommended that you only change the PE 
+		  <em>after</em> adjusting the MPC controller using the Penalty on Move
+		  (PM) and testing in simulation. If the control strategy clearly indicates that
+		  one of the controlled variables should be of lower priority, you can set the
+		  associated PE to a value of 0.8 initially. After testing in simulation, you can
+		  adjust the PE value over a range of 0.5-1.5. Only move outside this range after
+		  verifying controller operation on the real process. The primary criterion for
+		  adjusting the PE is acceptable variability on a specific controlled parameter.
+		</p>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_3D763D2C075547FFB6BB927ACBE58BC9"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_3D763D2C075547FFB6BB927ACBE58BC9"></a><div><span class="figcap">Setpoint Step Response with Model Mismatch</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_DF63638C7D9F4A2284E48569F80250CD"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_DF63638C7D9F4A2284E48569F80250CD" src="TailorMPC6.gif" /> 
+		</div>
+ 
+		<p>The above figure illustrates a setpoint step response with the same PE
+		  and PM as in the previous figure. However, process gain is set at 2.5 times the
+		  model gain.
+		</p>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_05CAE547D1BE4FC29F8B01244056BAB6"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_05CAE547D1BE4FC29F8B01244056BAB6"></a><div><span class="figcap">Utilization of the PE to Compensate for Model Mismatch</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_4A87F92E3FC9404F9A33D2DEB9F3778B"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_4A87F92E3FC9404F9A33D2DEB9F3778B" src="TailorMPC7.gif" /> 
+		</div>
+ 
+		<p>The above figure shows the same process-model mismatch as in the
+		  previous figure, except that the PM equals 20 (five times the default setting).
+		</p>
+ 
+		<p>It is recommended that you 
+		  <em>not</em> change default values of the other parameters in the
+		  Generate Control window.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_54B4172C01F74D2497A50309A16A5BBF"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_54B4172C01F74D2497A50309A16A5BBF"></a><h2 class="sectiontitle">Testing the Response Using Simulation</h2> 
+		After controller
+		generation, you can use the Simulate feature of DeltaV Predict to test the
+		control performance. Using this simulation environment, you can observe the
+		control response for setpoint changes, measured and unmeasured disturbance,
+		constraints handling, and optimization. You can adjust the maximum MV move and
+		setpoint trajectory online and test them in this simulation environment. If you
+		make any changes to the PM or the PE, you must generate the controller before
+		you test these changes. 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_A3639E88D65B435694574CF00B2565FA"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_A3639E88D65B435694574CF00B2565FA"></a><h2 class="sectiontitle">Maximum MV Move </h2> 
+		 
+		<p>From the detail display for each MV, you can specify the maximum limit
+		  for changes in the MV. It is recommended that you specify this limit so that
+		  control moves are not limited during normal operations. You can do so by
+		  setting the limit to the output span of the MV. Responsive control with little
+		  or no overshoot should be observed when the defaults parameter values for
+		  controller generation have been used. It is recommended that you change the
+		  simulated process gain by ±50 percent and observe the response to verify that a
+		  satisfactory response is still achieved.
+		</p>
+ 
+		<p>For some processes, you might need to set the maximum MV move based on
+		  process equipment limits. After you make these adjustments, you should not
+		  observe a significant difference in MPC performance. However, if you notice
+		  that the control response 
+		  <em>has</em> changed, you might consider relaxing the MV move limits or
+		  increasing the PM settings.
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_53315D07353F47EFB64F7B99B0EE832D"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_53315D07353F47EFB64F7B99B0EE832D"></a><h2 class="sectiontitle">Setpoint Trajectory </h2> 
+		 
+		<p>You can modify the setpoint trajectories that are used in the control
+		  online. Adjust the associated setpoint filter from the detail display of the
+		  MPC Operate interface. Modify the setpoint trajectory through this filter to
+		  increase overall controller robustness after controller generation and
+		  download. If a specific controlled parameter exhibits an oscillatory response,
+		  you can increase the setpoint filter to provide more stable control.
+		</p>
+ 
+		<div class="fignone" id="concept_D10833FBA4234EB287904CA22C610FBA__fig_4E1E394A636A4D3188B8085EC0B0D6FE"><a name="concept_D10833FBA4234EB287904CA22C610FBA__fig_4E1E394A636A4D3188B8085EC0B0D6FE"></a><div><span class="figcap">Utilization of Setpoint Filter to Compensate for Model
+			 Mismatch</span></div> 
+		   
+		  <a name="concept_D10833FBA4234EB287904CA22C610FBA__image_26420C82C89A43F5BC20F5A290A46010"></a><img id="concept_D10833FBA4234EB287904CA22C610FBA__image_26420C82C89A43F5BC20F5A290A46010" src="TailorMPC8.gif" /> 
+		</div>
+ 
+		<p>The above figure shows the same process/model mismatch and controller
+		  generation settings as in the figure entitled 
+		  <em>Setpoint Step Response for Model Mismatch</em>. The controller
+		  performance is adjusted online by a setpoint filter that equals 120 (prediction
+		  horizon or PH) for the first step response and 240 (2 times PH) for the second
+		  step response.
+		</p>
+ 
+		<p>It is recommended that you apply the following rules when adjusting
+		  the setpoint filter time constant:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D10833FBA4234EB287904CA22C610FBA__ul_FC52D526C11E4BCC9DFF6BC71B5B8F55"></a><ul id="concept_D10833FBA4234EB287904CA22C610FBA__ul_FC52D526C11E4BCC9DFF6BC71B5B8F55"> 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_179BA5F6638944F0BE7BBBB1A9DECDCE"><div class="li_content">Set the setpoint filter
+			 time constant to a value that is one half of the configured Time to Steady
+			 State (in seconds). If the control response is still too fast after making this
+			 change, increase the filter in the same increment or up to twice the time to
+			 steady state.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_39CABCF8020641EFA34AA7E55BFCDE72"><div class="li_content">Once you are close to the
+			 response that you want, make small adjustments until you achieve that response.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_3AB520D5CCCC4A73A9D9FEE2B1270DC4"><div class="li_content">If MPC operation is not
+			 improved by changing the setpoint filter, it is recommended that you increase
+			 the PM by fifty percent, generate the controller, and then repeat the
+			 simulation.
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_7BD4FE4842C34DD49EB0EE43BE2AAD49"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_7BD4FE4842C34DD49EB0EE43BE2AAD49"></a><h2 class="sectiontitle">Adjusting the PM and the PE </h2> 
+		 
+		<p>You can use the DeltaV Predict simulation environment to evaluate the
+		  impact of changes in the PM and PE. To do so, you must modifiy these parameters
+		  and then generate the control. Then, you can test the new control using the
+		  simulation environment provided by DeltaV Predict. Use the following guidelines
+		  to adjust these parameters:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D10833FBA4234EB287904CA22C610FBA__ul_196F823C885249F1A41FBF3898656CF8"></a><ul id="concept_D10833FBA4234EB287904CA22C610FBA__ul_196F823C885249F1A41FBF3898656CF8"> 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_D33FF632BD3645338ED9604776996DDC"><div class="li_content">Increase the PM value (in
+			 fifty percent increments) for any manipulated variables that are moving more
+			 than the acceptable limits.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_857ED55F48FD49E8A05E3147CC93784B"><div class="li_content">Decrease the PM for
+			 manipulated variables that are not responsive. It is recommended that they do 
+			 <em>not</em> go below the default minimum PM values (the PM min = 3).
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_4B8F4744B46F41F8BCBA1B167C15B806"><div class="li_content">Increase or decrease the
+			 PE, depending on process control requirements.
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_5ADCD5ED88A74DC3A43FF4E53E150F09"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_5ADCD5ED88A74DC3A43FF4E53E150F09"></a><h2 class="sectiontitle">Adjusting MPC Once Control Is in Service </h2> 
+		 
+		<p>After testing the MPC block in the DeltaV Predict simulation
+		  environment, you can download the module containing the MPC block to the
+		  controller and use it to control the process. The performance should match what
+		  you observed when testing the control in this simulation environment. However,
+		  if the process model identified by DeltaV Predict does 
+		  <em>not</em> accurately reflect the process gain and dynamics, the
+		  performance may not be the same as seen in simulation. In such cases, you can
+		  adjust controller performance using the following rules:
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_D10833FBA4234EB287904CA22C610FBA__ul_BBE41C533FA74B89BD23E4D0157D960C"></a><ul id="concept_D10833FBA4234EB287904CA22C610FBA__ul_BBE41C533FA74B89BD23E4D0157D960C"> 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_1AE792615DDB41E3A4206533E6B05F0E"><div class="li_content">Adjust the setpoint
+			 trajectory using the controlled parameter setpoint filter.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_3B1BA40EEF774094A01251924F3A0AFE"><div class="li_content">If the previous step is
+			 not successful, adjust the PM (and the PE, if necessary) parameters, test in
+			 simulation, and then download the module to use the adjusted PM and PE values.
+		  </div></li>
+ 
+		  <li id="concept_D10833FBA4234EB287904CA22C610FBA__li_5ADD1244D1DC438F88955BCF0CDCB792"><div class="li_content">When adjusting a
+			 controller, it is important to use your understanding of process behavior as
+			 well as achievable control objectives.
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_D10833FBA4234EB287904CA22C610FBA__section_371C3F25B25949CA84B2DFA930909D89"><a name="concept_D10833FBA4234EB287904CA22C610FBA__section_371C3F25B25949CA84B2DFA930909D89"></a><h2 class="sectiontitle">Adjusting the Modeling Error Filter</h2> 
+		 
+		<p>For every control scan, MPC validates the process model&#39;s output
+		  prediction by comparing it to the measurement. Normally, there is some
+		  disparity caused by a model mismatch or by unmeasured disturbances. The MPC
+		  prediction is corrected to match the current measurement. As a result, the next
+		  MV move accounts for the correction; this is in essence MPC feedback action.
+		</p>
+ 
+		<p>Full error correction is beneficial for unmeasured disturbance
+		  compensation when the model is good. If the model time constant or a particular
+		  dead time mismatch exists, complete prediction compensation to match the
+		  measurement could deteriorate the dynamic response. Therefore, a filter is
+		  applied with a factor that defines which fraction of the error is compensated
+		  at one scan.
+		</p>
+ 
+		<p>The default filter factor value is 0.75. This value works well for the
+		  majority of applications. Expert users can adjust the filter factor in the
+		  range of 0.4 to1.0. Increasing the filter factor causes better disturbances
+		  compensation. Filter factor values close to 1.0 should be avoided for models
+		  with a significant dead time mismatch.
+		</p>
+ 
+		<p>The filter factor is a hidden parameter; the path to it is: MODULE/MPC
+		  BLOCK/MOD_CORR_FACTOR[#], where # is the CV number. One way to change and
+		  preserve this parameter during an upload or download is to use a simple
+		  calculation block in the module that writes the parameter to the MPC function
+		  block. The calculation expression for one filter factor CV[1] can be expressed
+		  as:
+		</p>
+ 
+		<p>&#39;//MPCPRO/MPC-PRO1/MOD_CORR_FACTOR[1]&#39; := 1.0;
+		</p>
+ 
+		<p>OUT1 := &#39;//MPCPRO/MPC-PRO1/MOD_CORR_FACTOR[1]&#39; ;
+		</p>
+ 
+		<p>To minimize calculations, set the block execution to once every 10 or
+		  so module scans.
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

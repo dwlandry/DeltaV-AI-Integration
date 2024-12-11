@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using Tune with InSight" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="block tuning, printing, saving, configuration, simulator, DeltaV Tune, DeltaV Tune, modifying Trend display area, simulator configuration, DT margin, DT margin, robustness plot, Expert feature, fieldbus, Learning, loop tuning, establishing, models, operator interface, PID, process dynamics, identifying, Process Learning, process models, programming implementation, robustness plot, robustness plot, DT margin, surge, robustness, simulated response, simulated response, creating a, layout, tuning parameters, simulator configuration, step size, tuning display, tuning parameters, tuning parameters, simulated response, tuning rules" name="DC.subject" /><meta content="block tuning, printing, saving, configuration, simulator, DeltaV Tune, DeltaV Tune, modifying Trend display area, simulator configuration, DT margin, DT margin, robustness plot, Expert feature, fieldbus, Learning, loop tuning, establishing, models, operator interface, PID, process dynamics, identifying, Process Learning, process models, programming implementation, robustness plot, robustness plot, DT margin, surge, robustness, simulated response, simulated response, creating a, layout, tuning parameters, simulator configuration, step size, tuning display, tuning parameters, tuning parameters, simulated response, tuning rules" name="keywords" /><meta content="c_insight_overview.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_perform_reports.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_using_dv_inspect.html" name="DC.Relation" scheme="URI" /><meta content="c_automatically_assign_dv_function_blocks_to_h1.html" name="DC.Relation" scheme="URI" /><meta content="c_pid_deadtime_module_template.html" name="DC.Relation" scheme="URI" /><meta content="c_insight_dvtune.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_4A8D7E453B6D44298378066226DBC7EC" name="DC.Identifier" /><title>Using Tune with InSight</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_insight_dvtune.html" /><link rel="next" href="c_insight_dvtune_apps.html" /></head><body class="fixed" id="concept_4A8D7E453B6D44298378066226DBC7EC" data-relpath="c_insight_dvtune_using.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_4A8D7E453B6D44298378066226DBC7EC"></a>
+
+<h1 class="topictitle1">Using Tune with InSight</h1>
+<div> 
+	 <p>InSight tuning allows you to quickly tune a loop with minimal input. You
+		can tune with InSight if you have Tuning and Control keys assigned to your user
+		account. If this is your first time tuning with InSight, you might want to use
+		simulator modules for PID and FLC blocks before tuning a live process. 
+	 </p>
+ 
+	 <p>Typically, tuning is started by selecting the item of interest in the
+		hierarchy in the Inspect with InSight application and using the Inspect 
+		<span class="wintitle">Overview</span> and 
+		<span class="wintitle">Summary</span> pages to determine which loops require
+		tuning. When you are ready to tune the loops, select the Tune navigation pane.
+		The following image shows InSight opened to the 
+		<span class="wintitle">Summary</span> page. The cursor, in the lower-left corner
+		in the image, is pointing to the Tune navigation pane. 
+	 </p>
+ 
+	 <div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EC92B070B7F34474B5401D7C025CAC38"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EC92B070B7F34474B5401D7C025CAC38"></a><div><span class="figcap">Switching to Tune from within InSight</span></div> 
+		 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_B5E9A67E12C847CA9E7B279EE9256758"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_B5E9A67E12C847CA9E7B279EE9256758" src="InSpect-Summary.png" /> 
+	 </div>
+ 
+	 <p>There are two complementary ways to tune a loop: On-Demand and Adaptive
+		Tuning. 
+	 </p>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_2C40B17C682A4551B1F44A82C753E7F2"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_2C40B17C682A4551B1F44A82C753E7F2"></a><h2 class="sectiontitle">About On-Demand Tuning </h2> 
+		 
+		<p>On-Demand Tuning applies to all PID and FLC blocks. If InSight is
+		  open, you can begin On-Demand Tuning by selecting the 
+		  <span class="uicontrol">On-Demand Tuning</span> tab. If InSight is not open,
+		  you can select the PID or FLC block to be tuned in Control Studio or DeltaV
+		  Explorer, right-click the block and then select 
+		  <span class="uicontrol">Tune with InSight</span>. 
+		</p>
+ 
+		<p>The typical On-Demand Tuning procedure involves: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ol_40BB3DF0A4EC40FB9B21BAF63163EFC5"></a><ol id="concept_4A8D7E453B6D44298378066226DBC7EC__ol_40BB3DF0A4EC40FB9B21BAF63163EFC5"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_C51382EFF65C49E19F13F7AA56F6918E"><div class="li_content">Identifying the process
+			 dynamics. This is done automatically by the test initiated at your request. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_12E90C23B74140C6AFC9919772B3858F"><div class="li_content">Selecting the basis for
+			 tuning either by specifying the process type or the tuning rule to be used. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_025634044DF244B9AC7B495824F83C34"><div class="li_content">Validating the tuning
+			 results using the Simulate selection. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_578EC798A32A4BE0988141B79512D3BB"><div class="li_content">Updating the current
+			 controller tuning. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p>Before tuning a loop, the PV should be reasonably stable and near the
+		  SP. If the loop is 
+		  <em>not</em> stable, the calculated control variables will be
+		  inconsistent and possibly inaccurate. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> Before starting the tuning process, make sure that the
+		  loop is reasonably stabilized at the SP. Observe the noises and disturbances of
+		  the system. If the controller output is constantly changing due to noise or
+		  disturbances, you might consider beginning tuning the loop from the Manual
+		  mode. This approach will provide you with better results. 
+		</div>
+ 
+		<p>If the loop you are tuning has an extremely high noise level, the
+		  calculated tuning might be inconsistent. If the PV is stable but the controller
+		  output is constantly changing, your process loop might require noise
+		  protection. 
+		</p>
+ 
+		<p>If a loop&#39;s scan rate has been changed significantly several times
+		  after a loop has been tuned, it is recommended that you retune the loop for
+		  optimal performance. Retuning a loop is important when the loop scan rate has
+		  been increased, which can in extreme cases cause loop instability. If the
+		  process test is unacceptable when the scan rate has been increased, consider
+		  using the saved test results with the previous scan period at a slower desired
+		  response for tuning. 
+		</p>
+ 
+		<p>If the PV and the controller output are stable, you can start tuning
+		  the loop On-Demand. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_704C5CB3F5FB425CBD97710F52B9B84F"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_704C5CB3F5FB425CBD97710F52B9B84F"></a><h2 class="sectiontitle">About Adaptive Tuning and Adaptive Control </h2> 
+		 
+		<p> 
+		  <strong>Adaptive Tuning</strong> 
+		</p>
+ 
+		<p>Adaptive Tuning is available if Process Learning has been enabled on a
+		  PID block. With Adaptive Tuning, process model development is triggered by
+		  changes in control parameters that occur in day-to-day operations such as a
+		  change to SP in AUTO or a change to OUT in MANUAL. When Process Learning is
+		  enabled, Adaptive Tuning automatically occurs in the DeltaV controller. Process
+		  Learning can be enabled from the DeltaV Explorer or from the InSight hierarchy.
+		  
+		</p>
+ 
+		<p>Adaptive Tuning can be started from InSight by selecting the 
+		  <span class="wintitle">Adaptive Tuning</span> page or by selecting a PID or FLC
+		  block with Process Learning enabled in DeltaV Explorer and selecting 
+		  <span class="uicontrol">Tune with InSight</span> from the context menu.
+		  Typically, Adaptive Tuning involves: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ol_9E6B37AEDC0F4BEF9F60D1433B782A78"></a><ol id="concept_4A8D7E453B6D44298378066226DBC7EC__ol_9E6B37AEDC0F4BEF9F60D1433B782A78"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_DFCA0CE2BC424B08919239B08977099C"><div class="li_content">Setting or validating the
+			 default settings on the 
+			 <span class="wintitle">Learning Setup</span> page. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_F2616E72645D40819116AC5CF2975F9D"><div class="li_content">Identifying the Adaptive
+			 Tuning process dynamics derived from the automatically generated process model.
+			 Models are generated when there is a change to SP in AUTO or a change to OUT in
+			 MANUAL. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_61825DA454EC47AF944DF35375FB508A"><div class="li_content">Specifying the tuning rule
+			 to be used with the model to determine the tuning values. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_E3AE30946BDC4B95B079410500DBC20C"><div class="li_content">Specifying the Adapt mode:
+			 
+			 <span class="uicontrol">Off</span>, 
+			 <span class="uicontrol">Partial</span>, or 
+			 <span class="uicontrol">Full</span>. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_E48AAD0345884B148CF5A41D7659640D"><div class="li_content">Validating the process
+			 model using the 
+			 <span class="wintitle">Models Viewing</span> page. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_50A4E60872DF4FFABDFAFEBAA55B512D"><div class="li_content">Validating the tuning
+			 results using the 
+			 <span class="wintitle">Simulate</span> page. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_B732A9C652DA4A03B2BF1B4587EED275"><div class="li_content">Updating the controller&#39;s
+			 tuning parameters. 
+		  </div></li>
+ 
+		</ol>
+ 
+		</div>
+ 
+		<p> 
+		  <strong>Adaptive Control</strong> 
+		</p>
+ 
+		<p>Adaptive Control includes all of the Adaptive Tuning capabilities plus
+		  the ability to create models in up to five regions and to automatically change
+		  control loop tuning. An Adaptive Control license is required for full or
+		  partial Adaptive Control and to create models in regions. Process Learning must
+		  be enabled for Adaptive Control. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_9173DE7ED41F428EA0D2820EDCCDE7FC"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_9173DE7ED41F428EA0D2820EDCCDE7FC"></a><h2 class="sectiontitle">About Process Learning </h2> 
+		 
+		<p>When Process Learning is enabled, the DeltaV system automatically
+		  identifies process models and stores a recent history of the models. Models are
+		  not used for Adaptive Control until a license is assigned to the PID block.
+		  Licenses can be assigned to PID blocks running in the controller only. Process
+		  Learning can be enabled on PID blocks running in the controller, H1 card, and
+		  fieldbus devices. InSight can be used to view, analyze, and select the models
+		  that will be used to establish the recommended tuning. Process Learning can be
+		  enabled through the context menu at the following levels in the DeltaV
+		  Explorer: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_43BC43124041418EB4675BD4C26BA079"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_43BC43124041418EB4675BD4C26BA079"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_541D8D252ED343589368A76EF920F1D0"><div class="li_content">Areas 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_101DC1B39DD74201BCAE9372ECCAEB2E"><div class="li_content">Assigned Modules 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_DCFFA34CA0EB40A0A317FA9F98093950"><div class="li_content">Module 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_6116C9AA279E4E7F8E0007939389F422"><div class="li_content">Equipment modules 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_3D13F974CFDF4236976C1C9BA1F38A47"><div class="li_content">Unit modules 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_B3F44DE87F73491C854433A316C0CC88"><div class="li_content">Process cells 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span>  Enabling Process Learning has a small, but non-trivial
+		  impact on the controller&#39;s capacity and performance. The impact to the
+		  controller&#39;s capacity can be determined by monitoring the controller&#39;s FreMem
+		  parameter. A decrease of 10 KB per PID block can be expected when Process
+		  Learning is enabled. The impact to the controller&#39;s performance can be
+		  determined by monitoring the FreTim attribute (for M-Series and SD Plus
+		  controllers) or Perf_Index (for SQ, SX, and SZ controllers). The impact on the
+		  performance will range between .05% and 0.1% per PID block as measured by the
+		  FreTim parameter. 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> To upload changes to the ENABLE_LEARNING and PROCESS_TYPE
+		  parameters in an instance of a module class, enable 
+		  <span class="uicontrol">Allow instance value to be configured</span> in the
+		  module class. 
+		</div>
+ 
+		<p>Process Learning can also be enabled from the InSight hierarchy by
+		  selecting an item in the hierarchy, and then clicking 
+		  <span class="uicontrol">Enable Learning</span> from the context menu. The
+		  following image shows how to enable Process Learning from a PID block in the
+		  InSight hierarchy. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_9F7A1FF94B8448BC8D21E988D56AB40F"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_9F7A1FF94B8448BC8D21E988D56AB40F"></a><div><span class="figcap">Enabling Process Learning from a PID Block in the InSight
+			 Hierarchy</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_B7D818018FB946448389E3167E536100"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_B7D818018FB946448389E3167E536100" src="EnableLearning.gif" /> 
+		</div>
+ 
+		<p>The 
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_E512227A8A474F3299C944DE7A1AF42D"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_E512227A8A474F3299C944DE7A1AF42D" src="LearningIcon.gif" /> next to an item in the hierarchy
+		  indicates that Process Learning has been enabled at that level. Process
+		  Learning can be enabled and disabled at any level in the InSight hierarchy. A
+		  red X on the Process Learning icon indicates that Process Learning was
+		  requested but not enabled due to systems problems such as low memory. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Only PID blocks at the top level in a module can have learning
+		  enabled. PID blocks in embedded or linked composites cannot be enabled for
+		  learning. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_837DD1B2125D4CC6B9DD275B8F8FEA49"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_837DD1B2125D4CC6B9DD275B8F8FEA49"></a><h2 class="sectiontitle">Opening InSight for Tuning </h2> 
+		 
+		<p>Tuning can be initiated from Control Studio, the DeltaV Explorer, the
+		  operator faceplate, or the 
+		  <span class="uicontrol">Start</span> menu. 
+		</p>
+ 
+		<p>To initiate tuning from Control Studio, select a PID or FLC block, and
+		  then click 
+		  <span class="uicontrol">Tune with InSight</span> from the context menu. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_070365D6A5524D7981DDB02A551DF381"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_070365D6A5524D7981DDB02A551DF381"></a><div><span class="figcap">Opening InSight from Control Studio</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_68211BF079FF4C1C988125CFB64C2B97"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_68211BF079FF4C1C988125CFB64C2B97" src="InSgt-OpenTune-CS.jpg" /> 
+		</div>
+ 
+		<p>To initiate tuning from the DeltaV Explorer, select a module assigned
+		  to a controller or the specific block of a module, and then select 
+		  <span class="uicontrol">Tune with InSight</span> from the context menu. The
+		  following figure shows how to open InSight for tuning from a module assigned to
+		  a controller in DeltaV Explorer. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_014BF78056D34CE19DF0A34F77F0BFF3"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_014BF78056D34CE19DF0A34F77F0BFF3"></a><div><span class="figcap">Opening InSight from the DeltaV Explorer</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_135B914A4A1C4EAC9E5B351EB4C685D1"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_135B914A4A1C4EAC9E5B351EB4C685D1" src="InSgt-Tune-Open-Exp.jpg" /> 
+		</div>
+ 
+		<p>In DeltaV Operate, a button is provided to open InSight from the
+		  detail display for the PID and FLC block. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EBCF315453A2440B86834C2477BF6B29"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EBCF315453A2440B86834C2477BF6B29"></a><div><span class="figcap">InSight Button on a Detail Display</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_686F569206E24D4A92F7CF4582CF0FF4"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_686F569206E24D4A92F7CF4582CF0FF4" src="DetailDisplay.gif" /> 
+		</div>
+ 
+		<p>Alternatively, you can invoke InSight from the 
+		  <span class="uicontrol">Start</span> menu. 
+		</p>
+ 
+		<p>When InSight is first opened, the historical information plotted on
+		  the graph is collected from the PC from which the application was launched. If
+		  your historical information is assigned to another PC, click 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Select Continuous
+				Historian Node</span></span> and use the 
+		  <span class="wintitle">Set Default Data Servers</span> dialog to select the PC
+		  from which historical information is collected. 
+		</p>
+ 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_E2037198C00549479A75718F8EC93BF6"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_E2037198C00549479A75718F8EC93BF6" src="DefaultDataServer.png" /> 
+		<div class="tip"><span class="tiptitle">Tip:</span>  
+		  <p>To improve performance when collecting historical data with the
+			 Advanced Continuous Historian or with a PI Server enterprise historian, enable
+			 the 
+			 <span class="uicontrol">Connect to Advance Continuous Historian Server</span>
+			 option of the 
+			 <span class="wintitle">Set Default Data Servers</span> dialog. 
+		  </p>
+ 
+		</div>
+ 
+		<p>After InSight is opened for tuning, the system creates models if
+		  Process Learning is enabled and uses the models in Adaptive Control if licenses
+		  are assigned to PID blocks running in the controller. The InSight user
+		  interface consists of the hierarchy in the left pane and seven pages: 
+		  <span class="wintitle">Overview</span>, 
+		  <span class="wintitle">On-Demand Tuning</span>, 
+		  <span class="wintitle">Adaptive Tuning</span>, 
+		  <span class="wintitle">Adaptive Control</span>, 
+		  <span class="wintitle">Models Viewing</span>, 
+		  <span class="wintitle">Learning Setup</span>, and 
+		  <span class="wintitle">Simulate</span>. When Process Learning is enabled but no
+		  licenses are assigned, the 
+		  <span class="wintitle">Adaptive Control</span> page is not active. When Process
+		  Learning is enabled and licenses are assigned, all pages are active. The
+		  following image shows InSight opened to the 
+		  <span class="wintitle">Overview</span> page with a licensed block with Process
+		  Learning enabled selected in the hierarchy. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_567147E9FC884457A6FC6D2367775A76"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_567147E9FC884457A6FC6D2367775A76"></a><div><span class="figcap">InSight Opened at the Overview Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_810CEF818A7846FAB50EAFF985AAF975"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_810CEF818A7846FAB50EAFF985AAF975" src="overview-license.png" /> 
+		</div>
+ 
+		<p>Before describing the various pages on the InSight interface, we will
+		  explain how to use InSight tuning with fieldbus devices. Go directly to the
+		  other topics in this document if you are not tuning PID blocks in fieldbus
+		  devices. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_6EB1C7DA182340E5953B46C0672601DF"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_6EB1C7DA182340E5953B46C0672601DF"></a><h2 class="sectiontitle">Using InSight Tuning with Fieldbus Devices </h2> 
+		 
+		<p>You can use On-Demand Tuning with PID blocks executing in fieldbus
+		  devices (FFPID blocks) and in the H1 card, FFPID_RMT blocks, and with PID and
+		  Fuzzy logic blocks assigned to execute in the controller. 
+		</p>
+ 
+		<p>You have several options on how to implement control options with
+		  fieldbus devices: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_7813F7B4C2ED4A2787FC676BBAA0B5F4"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_7813F7B4C2ED4A2787FC676BBAA0B5F4"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_9451F4164B3847E093A9C8426209D72E"><div class="li_content">You can assign all
+			 elements of the control loop to fieldbus devices. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_47F73B58C9AF46A7A8060B28501CEE40"><div class="li_content">You can assign the PID
+			 loop to the transmitter or the valve. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_ED3FE44CA7D24DD996653383BC94CCBB"><div class="li_content">You can assign portions of
+			 the control loop, such as the PID block, to the DeltaV controller and assign
+			 the remaining blocks, such as AI and AO, to fieldbus devices. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_BBC6E7809F2249A9A2E3959D8C0578F1"><div class="li_content">You can assign a subset of
+			 DeltaV function blocks to automatically run in the H1 card. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>There are several things that affect control performance when using
+		  fieldbus devices: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D1F2EA12CBF34818ABA2757C0CDD8306"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D1F2EA12CBF34818ABA2757C0CDD8306"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8E6FDA8F3F31419E8594D2BFDC3DB79E"><div class="li_content">Function block execution,
+			 maximum response time for minimum schedule spacing between compel data
+			 messages, and slot time. These items depend on the device manufacturer&#39;s
+			 technology and design. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_55268230C88946C180C5860F354E1807"><div class="li_content">Whether control is
+			 performed in the fieldbus device or control system. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_A05066C3F9EF45918E0102E154764BF7"><div class="li_content">The scheduling of block
+			 execution and communications on the fieldbus segment. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Macrocycle is the time for scheduled and unscheduled communications.
+		  Scheduled communications includes function block execution time and transfer
+		  time (minimum schedule spacing). Unscheduled (asynchronous) communications are
+		  for Client-Server types (Function Block Views, SP changes, and Device Alarms
+		  for example). A minimum time for unscheduled communications is added to
+		  determine the macrocycle time. In the following image, the periods labeled XFR
+		  represent scheduled communications on the macrocycle. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_A9AF051DFF0F4D4D821DAD51D336205A"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_A9AF051DFF0F4D4D821DAD51D336205A" src="fbtune1.gif" /> 
+		</p>
+ 
+		<p>If you split control between fieldbus devices and the DeltaV
+		  controller, the execution of the module in the controller is not synchronized
+		  with the function block execution in the fieldbus segments. This lack of
+		  synchronization introduces a variable delay in the control loop as great as the
+		  segment macrocycle. For example, a 1/2 second loop in which control is split
+		  can have as much as 1/2 second of additional variable delay. The added delay
+		  affects control loop tuning and can result in and increased variability in a
+		  fast control loop. 
+		</p>
+ 
+		<p>You will not see these types of delays if the Auto_assign function
+		  block to H1 card option is enabled for modules because block execution is
+		  synchronized with I/O blocks on the fieldbus segment. 
+		</p>
+ 
+		<p>InSight uses a hidden modifier to the PID block to capture process
+		  dynamics. In most manufacturer&#39;s fieldbus devices, this modifier is attached to
+		  a PID block in the controller that shadows the PID block in the device. You
+		  cannot see the PID block in the controller, or its hidden modifier. 
+		</p>
+ 
+		<p>All new Emerson fieldbus devices will include the hidden modifier in
+		  the PID block in the device. This eliminates errors introduced by
+		  communications delay or jitter and supports tuning of even the fastest loops.
+		  There are no changes to how the On-Demand Tuning interface looks and operates.
+		  The ability to tune loops running in fieldbus devices leads to reduced
+		  variability for fast process dynamics. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_50991BB2911646FC9982AC8322C0CE84"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_50991BB2911646FC9982AC8322C0CE84"></a><h2 class="sectiontitle">Using the Overview Page </h2> 
+		 
+		<p>Select an item in the hierarchy to see the percent of downloaded
+		  modules at that level that contain blocks with abnormal conditions. An area is
+		  selected in the hierarchy in the following image. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EB65CA886EB54ACDA3C5EE60155D26B8"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_EB65CA886EB54ACDA3C5EE60155D26B8"></a><div><span class="figcap">Tune with InSight Overview Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_C709D011C8434CAD86B7ED546830573F"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_C709D011C8434CAD86B7ED546830573F" src="Tune-Overview.png" /> 
+		</div>
+ 
+		<p>The Control Condition section graphically shows the percent of modules
+		  or blocks at the selected level in the hierarchy that have abnormal conditions.
+		  The actual number of modules or blocks that have abnormal conditions is shown
+		  on the graph. The Control Utilization value indicates proximity to ideal
+		  control and whether control blocks were used as designed. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_562359C497B84CDAB82A6CF421F45364"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_562359C497B84CDAB82A6CF421F45364"></a><h2 class="sectiontitle">Using the On-Demand Tuning Page </h2> 
+		 
+		<p>After you select a block for tuning, InSight must identify the process
+		  dynamics associated with the control loop. Look at the Test Process panel on
+		  the left side of the 
+		  <span class="wintitle">On-Demand Tuning</span> page. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_8E1801B72C3D46929409EB603D56B652"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_8E1801B72C3D46929409EB603D56B652"></a><div><span class="figcap">Test Process Panel</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_F9AC4DAC0B53403196EDB534F35C2F1B"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_F9AC4DAC0B53403196EDB534F35C2F1B" src="TestProcessPanel.gif" /> 
+		</div>
+ 
+		<p>Process dynamics are determined automatically by InSight. If the
+		  controlled parameter (PV) reflects an accumulation or imbalance between inlet
+		  and outlet flow, select the Integrating process. The percent change in the PID
+		  block output from its initial value is determined by the selected 
+		  <strong>step size</strong>. A default step size of 3 percent is sufficient for
+		  most situations. For most processes, start tuning with a step size of 3
+		  percent. If the gain of the loop is high or the process is integrating (not
+		  self-regulating), use 3 percent initially. Use a step size of 5 or 10 percent
+		  if tuning does not develop oscillations with a 3 percent step size. The tuning
+		  might not develop oscillations if the gain of the loop is extremely low or the
+		  loop has too much noise. However, a 10 percent step size is not recommended for
+		  integrated processes. 
+		</p>
+ 
+		<p>In some cases, process measurement is noisy or characterized by
+		  significant load disturbances. If such conditions exist, expert users can
+		  achieve better results by customizing the setup to use relay hysteresis or
+		  extend the length of testing. To customize the setup, enable the expert options
+		  by selecting 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>,
+		  and then click the 
+		  <span class="uicontrol">Custom</span> button on the 
+		  <span class="wintitle">On-Demand Tuning</span> page to open the 
+		  <span class="wintitle">Custom Setup</span> dialog. 
+		</p>
+ 
+		<p> 
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_26C64D3A7C2E4566BC642BF5536D52EB"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_26C64D3A7C2E4566BC642BF5536D52EB" src="CustomSetup.jpg" /> 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_4720412EB27E482D8910F8A84A19833A"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_4720412EB27E482D8910F8A84A19833A"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_D39723657A0345CA901B0F59E9FBF034"><div class="li_content"> 
+			 <span class="uicontrol">Number of oscillation periods</span> - enter a value
+			 between 1 and 5. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_89B5594BC7BE405991944D22B183EAC1"><div class="li_content"> 
+			 <span class="uicontrol">Hysteresis</span> - enter a value for PV hysteresis
+			 during the process test. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_D1E30FE34BB3450FB0168210C6C49B03"><div class="li_content"> 
+			 <span class="uicontrol">Auto-Extra Cycle</span> - adds an additional
+			 oscillation period with increased process deadtime for better process model
+			 identification. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_1AD4E870D7FF488EA4DF384BFD9F82F2"><div class="li_content"> 
+			 <span class="uicontrol">Auto-Hysteresis</span> - automatically defines PV
+			 hysteresis during the process test based on the process noise 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>If the process characteristics such as gain, time constants, noise,
+		  scaling, and so on seem out of the normal range, click the 
+		  <span class="uicontrol">Default Process</span> button to modify the tuner
+		  settings to better fit the process characteristics. Note that the 
+		  <span class="uicontrol">Expected Process Response</span> option is not
+		  supported for PID blocks running in fieldbus devices. 
+		</p>
+ 
+		<p>After checking these entries and making the appropriate changes, click
+		  
+		  <span class="uicontrol">Test</span> to initiate testing of the process and
+		  identify process dynamics. 
+		</p>
+ 
+		<p> 
+		  <strong>Caution</strong> Before starting the tuning process, make sure that the
+		  loop is reasonably stabilized at the SP. If the PV is not close to the SP,
+		  begin tuning the loop from Manual mode. 
+		</p>
+ 
+		<p>After selecting 
+		  <span class="uicontrol">Test</span>, the PID block output adjusts from its
+		  initial value by the step size. You can stop testing at any time by clicking
+		  the 
+		  <span class="uicontrol">Abort</span> button. When testing is not active, you
+		  can change the target mode and the SP of the block from the Controller panel.
+		  You can change output when mode is in Manual. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_59D805C389A546829BDE222E1661B1F9"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_59D805C389A546829BDE222E1661B1F9"></a><div><span class="figcap">Controller Panel</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_A805CB0E49D3432985EAF9166C540082"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_A805CB0E49D3432985EAF9166C540082" src="ichelp0048.gif" /> 
+		</div>
+ 
+		<p>Typical changes made during testing in the PID block output (Output),
+		  input (PV), and actual mode are shown in the following example. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_F9CA52E23C2D4B7286B79CFDD16779CA"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_F9CA52E23C2D4B7286B79CFDD16779CA"></a><div><span class="figcap">PID Changes Shown on the Graph</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_AE49366695194D9F9E0147688A10E8DA"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_AE49366695194D9F9E0147688A10E8DA" src="Tune-On-Demand.png" /> 
+		</div>
+ 
+		<p>When tuning a loop, the SP and output should not be at either end of
+		  their respective ranges. The output must be no lower than 10 percent of the
+		  range and no higher than 90 percent of the range or the oscillations will be
+		  affected. 
+		</p>
+ 
+		<p>The PV of a loop should be close to the SP when you begin tuning.
+		  InSight checks the values for the SP and the PV before tuning the loop. If the
+		  deviation is too large, this indicates that the loop is not stable enough to
+		  begin the tuning process. The tuner waits until the SP-PV value is within the
+		  required limit. 
+		</p>
+ 
+		<p>If, under normal operations, either the SP is not close to the PV, the
+		  loop is influenced by disturbances, or a loop is in a transient condition, the
+		  tuning results will not be as accurate and consistent as those from properly
+		  stabilized loops. 
+		</p>
+ 
+		<p>If tuning proceeds properly, the state changes to an active state, and
+		  the control block actual mode changes to Local Override (LO). The time between
+		  each change in the block output depends on the process response time. For
+		  example, a change in the process input (block output) might not be immediately
+		  reflected because of process delay in the controlled parameter (block PV).
+		  Watch the trend display area during the tuning process. If loop trend traces
+		  are not typical or tuning does not start, restore the initial loop conditions
+		  by clicking the 
+		  <span class="uicontrol">Abort</span> button. On rare occasions, InSight may not
+		  detect a response and the test becomes stuck in LO mode with no PV movement.
+		  Again watch the trend display area during the test and if you notice that the
+		  test keeps the mode in LO for a long period of time with no PV movement, click
+		  the 
+		  <span class="uicontrol">Abort</span> button to return the mode to its original
+		  state. 
+		</p>
+ 
+		<p>While testing is active, status is shown as Testing process in the
+		  Test Process panel. The progression of the testing is indicated by a bar graph
+		  showing percent completion, as shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_E2094F9174194A65B18F60383A939801"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_E2094F9174194A65B18F60383A939801"></a><div><span class="figcap">Testing Status Indicator</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_542FE4D7CD0C420EA1581859E984844A"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_542FE4D7CD0C420EA1581859E984844A" src="ichelp0050.gif" /> 
+		</div>
+ 
+		<p>A yellow circle icon appears next to the control block in the
+		  hierarchy to indicate that testing is active. The yellow circle icon overwrites
+		  the 
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_5EEAFF55659243F992CFE3A7A033C907"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_5EEAFF55659243F992CFE3A7A033C907" src="LearningIcon.gif" /> icon if Process Learning is
+		  enabled for the block. The following figure shows how these icons appear in the
+		  hierarchy. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_E2CF7857E3834B63A60351B65F37CE31"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_E2CF7857E3834B63A60351B65F37CE31"></a><div><span class="figcap">Testing is Active Icon</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_13B4B7ED35D7492FA9A2BD97C3D4FE43"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_13B4B7ED35D7492FA9A2BD97C3D4FE43" src="TestingActiveIcon.gif" /> 
+		</div>
+ 
+		<p>The Testing is Active icon remains next to the control block until the
+		  test completes and the block is selected to view the test results. Only five
+		  tests can be run at one time. 
+		</p>
+ 
+		<p>When the status of a parameter changes, the color of the trend on the
+		  graph changes. For good data values, trends appear in the colors indicated in
+		  the Parameter Reference area. The trend color goes to yellow for parameter
+		  values that change from Good to Uncertain or Limited and to red for values that
+		  change from Good to Bad. 
+		</p>
+ 
+		<p>Once testing is successfully completed, the loop returns to the
+		  original mode and original output. The process dynamics that were identified
+		  are shown in process results for a self-regulating process, as shown in the
+		  following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_85B97DCA18AD4A4385020745169AB98C"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_85B97DCA18AD4A4385020745169AB98C"></a><div><span class="figcap">Process Dynamics for a Self-Regulating Process</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_94B6A39EC3D249D1990E05DAE077B68E"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_94B6A39EC3D249D1990E05DAE077B68E" src="ichelp0051.gif" /> 
+		</div>
+ 
+		<p>When Integrating process is selected, the process dynamics for an
+		  integrating process are displayed, as shown in the following figure. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_930B04965F4C4DBA8F52323E96B03786"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_930B04965F4C4DBA8F52323E96B03786"></a><div><span class="figcap">Process Dynamics for an Integrating Process</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_CDCCAF90643E4019900CE354AB9AF97C"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_CDCCAF90643E4019900CE354AB9AF97C" src="ichelp0052.gif" /> 
+		</div>
+ 
+		<p>The dynamic values displayed vary with the process controlled by this
+		  block. You can repeat the tuning procedure for the same loop by selecting 
+		  <span class="uicontrol">Test</span> again. 
+		</p>
+ 
+		<p>If abnormal conditions are detected during testing that might impact
+		  the accuracy with which the process dynamics can be identified, a warning or an
+		  error message is issued. When the detected condition prevents testing to be
+		  completed successfully, an error message is generated and tuning is stopped. 
+		</p>
+ 
+		<p>Once testing is successfully completed, proceed to the central area of
+		  the Tuning Calculation panel. Here, you can supervise tuning calculations based
+		  on the identified process dynamics. If testing did not complete successfully,
+		  an appropriate warning message is issued. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_3EA65AE54A4F49C9AAC9D62C7EA90836"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_3EA65AE54A4F49C9AAC9D62C7EA90836"></a><h2 class="sectiontitle">Establishing Loop Tuning </h2> 
+		 
+		<p>In the loop tuning phase for a PID block using the Normal selection,
+		  the following Tuning Calculation panel appears: 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_858614EC5F2B47ED88E27DF6A1B3A43A"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_858614EC5F2B47ED88E27DF6A1B3A43A"></a><div><span class="figcap">Tuning Calculation Panel</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_CDB3F789888545A7A914E3C35BC24D98"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_CDB3F789888545A7A914E3C35BC24D98" src="InSgt-Tune-TuningCalc.gif" /> 
+		</div>
+ 
+		<p>The 
+		  <span class="uicontrol">Desired Response</span> options are 
+		  <span class="uicontrol">Normal</span>, 
+		  <span class="uicontrol">Slow</span>, and 
+		  <span class="uicontrol">Fast</span>. 
+		</p>
+ 
+		<p>If an FLC block is being tuned, the Tuning Calculation panel displays
+		  the recommended scaling factors for the FLC block, as shown below: 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_714B070351684BF39155E5B69A6A60B1"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_714B070351684BF39155E5B69A6A60B1"></a><div><span class="figcap">Recommended Scaling Factors for an FLC Block</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_BEA45CAAC48547F39B2E958BF34E11D1"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_BEA45CAAC48547F39B2E958BF34E11D1" src="InSgt-Tune-FLC.gif" /> 
+		</div>
+ 
+		<p>The recommended block tuning settings are provided automatically,
+		  based on the identified process dynamics, the process type, and the loop
+		  response selected in this panel. When using the 
+		  <span class="uicontrol">Normal</span> setting, tuning calculations are
+		  performed by non-linear estimators. Non-linear estimators correct major
+		  deficiencies of Ziegler-Nichols tuning: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_EC44F6656D7B4B00A817675C62E3E236"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_EC44F6656D7B4B00A817675C62E3E236"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_26167F4F52C849268309BF8DA0C34877"><div class="li_content">too short controller
+			 integral time for processes with small deadtime to time constant ratios 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_08AA04F0811A4483B4E3F819621672F2"><div class="li_content">excessive controller
+			 integral time for processes with a significant deadtime 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_BB2EFBAA3DF4411B87022584EF1804B1"><div class="li_content">excessive controller gain
+			 for processes with small deadtimes 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>You can modify the recommended tuning values by entering the values
+		  you want into the fields provided. To transfer these settings from the
+		  workstation to the PID or FLC block, select 
+		  <span class="uicontrol">Update=&gt;</span> in the bottom of the panel. After
+		  selecting 
+		  <span class="uicontrol">Update=&gt;</span>, the recommended settings are
+		  transferred to the block, and the new tuning values are displayed as the
+		  current settings. To restore the original settings, select 
+		  <span class="uicontrol">Restore</span> in the Controller panel. 
+		</p>
+ 
+		<p>The default process type for a PID block using the Normal selection is
+		  Typical - PI. This default is used for the initial tuning recommendation unless
+		  you change the process type. However, if this selection does not match the
+		  process, you must change the process type to one of the following selections: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_A681132DBB0248DE8C34BBF063405D84"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_A681132DBB0248DE8C34BBF063405D84"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_D70EBC888A5D4509BC2D01936A843CC4"><div class="li_content"> 
+			 <span class="uicontrol">Typical - PID</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_6E87C39123C84B3AA791D96C1A336BAB"><div class="li_content"> 
+			 <span class="uicontrol">Temperature</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8218B3712F6D4F6F9B5EBD030E4D01D4"><div class="li_content"> 
+			 <span class="uicontrol">Gas Pressure</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_C1F3B38C2CB343F1BE99AE1C8FCAE78E"><div class="li_content"> 
+			 <span class="uicontrol">Flow</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8CEA380CFFB04ADF8A67E8B5C5DDDF86"><div class="li_content"> 
+			 <span class="uicontrol">Liquid pressure</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_7CB8A20132EE43B3950A250D88E10828"><div class="li_content"> 
+			 <span class="uicontrol">Tight Level</span> 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_DB9476A098FC49ABBBA693F38EBF0947"><div class="li_content"> 
+			 <span class="uicontrol">Deadtime dominant</span> 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>After you change the selection, the recommended tuning is updated. 
+		</p>
+ 
+		<p>If the process is identified without messages, the results are
+		  displayed in the Process test results area. If the identified process deadtime
+		  is greater than a quarter of the time constant, you can improve loop
+		  performance by clicking 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>.
+		  
+		</p>
+ 
+		<p>If the identified process deadtime is greater than the time constant,
+		  select 
+		  <span class="uicontrol">Deadtime dominant</span>. If you have applied the Smith
+		  predictor in your control module, click 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>,
+		  and then select 
+		  <span class="uicontrol">Lambda Smith Predictor</span> in the Tuning Calculation
+		  panel. 
+		</p>
+ 
+		<p>The following information applies to PID function block tuning: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_30534EB473BF4BA0B497A5B40A9DAF2D"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_30534EB473BF4BA0B497A5B40A9DAF2D"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_9A1D464EC73C4FD3B00719F8DADC1833"><div class="li_content">The loop response
+			 specifies the speed at which a control loop responds to process upsets and SP
+			 changes. The recommended proportional gain for a particular process changes
+			 depending on the loop response. The default setting of Normal gives moderate
+			 response. By selecting 
+			 <span class="uicontrol">Fast</span>, the controller output change is greater
+			 and loop&#39;s response faster. Selecting 
+			 <span class="uicontrol">Slow</span> has the opposite effect. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_9980CB74637F4158975228B963179FFA"><div class="li_content">If, after determining the
+			 process characteristics, the process gain is less than .6 or greater than 2.5,
+			 model-based tuning is not recommended. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_F7F8BFA795E9486CBE9449A138102F11"><div class="li_content">If the Expert option is
+			 not selected, you are then using the modified Ziegler-Nichols tuning rules.
+			 This is the default selection and should be used as a first choice. However, if
+			 you find that the tuning results are not satisfactory, you can then click 
+			 <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>.
+			 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_757C837278D24A3682046F626D3012CB"><div class="li_content">If you select 
+			 <span class="uicontrol">Use model-based tuning</span>, you are then using one
+			 of the following: the Lambda PI tuning rules with a Lambda factor of 1.5 for 
+			 <span class="uicontrol">Normal Selection</span>, 2.0 for 
+			 <span class="uicontrol">Slow Selection</span>, and 1.25 for 
+			 <span class="uicontrol">Fast Selection</span><em>or</em> the IMC PID tuning
+			 rules with a filter factor of 1.5 for 
+			 <span class="uicontrol">Normal Selection</span>, 2.0 for 
+			 <span class="uicontrol">Slow Selection</span>, and 1.25 for 
+			 <span class="uicontrol">Fast Selection</span>. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_4E1CD3733B9A4B6EBCD0A587C649A55C"><div class="li_content">If you want to change some
+			 of the tuning factors, click 
+			 <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>,
+			 and then change the desired factors. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_9240BA008C79435387E599D1BD7FA10D"><div class="li_content">PI tuning is not valid for
+			 PID blocks with the STRUCTURE parameter set to PD action on error. Rate will be
+			 calculated. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Once tuning is complete, you can change the setup and calculate new
+		  values, try tuning the loop again, or modify the calculated values. You can use
+		  the Trend display area to monitor the loop response with the new tuning. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_74D83DF56E1B4182BB4C8B11C3663655"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_74D83DF56E1B4182BB4C8B11C3663655"></a><h2 class="sectiontitle">Manually Entering Model Parameters </h2> 
+		 
+		<p>If for some reason the process cannot be tested or the process test
+		  results do not satisfy your expectations, expert users can enter or correct the
+		  Tune process model manually for both PID loops and FLC loops. 
+		</p>
+ 
+		<p>For PID loops, click any process model parameter in the Test Process
+		  section to open the 
+		  <span class="wintitle">Process Model Parameters</span> dialog. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_B1F473A5EDE14F5886F242D6392642EB"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_B1F473A5EDE14F5886F242D6392642EB"></a><div><span class="figcap">Process Model Parameters Dialog</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_C8A1165E23FF4E1EA91043798A574BC7"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_C8A1165E23FF4E1EA91043798A574BC7" src="ProcessModelParams.png" /> 
+		</div>
+ 
+		<p>Parameters marked by an asterisk (*) must be non-zero for the selected
+		  process type of tuning method. The dialog displays five parameters for
+		  non-integrating processes and four parameters for integrating processes. Two or
+		  three parameters are marked for particular selections. After clicking the 
+		  <span class="uicontrol">OK</span> button, the entered process model is used for
+		  the PID parameter calculations. 
+		</p>
+ 
+		<p>The procedure for manually entering model parameters for FLC loops is
+		  identical to PID loops. Be aware that you may not get the expected FLC superior
+		  performance if the process dead time to time constant ratio exceeds 0.25. In
+		  this case, DeltaV Predict is likely to provide better results. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_C4BD0A0B2CF84CB885500187464338AF"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_C4BD0A0B2CF84CB885500187464338AF"></a><h2 class="sectiontitle">Using Other Features </h2> 
+		 
+		<p>InSight tuning can be used on various processes that operate over a
+		  wide dynamic range. This section describes how the default settings associated
+		  with trend scaling, testing amplitude, and duration can be changed to
+		  compensate for the process range or operating conditions. Following the
+		  information in this section ensures that the best possible tuning is achieved
+		  for all operating conditions. The Expert selections available in tuning and the
+		  options available for saving or printing block tuning are discussed as well.
+		  Also included is detailed information about the offline simulation capability
+		  that is provided with this product to support training on InSight. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_F983694B511648DA8CEB27AAD76E7CEF"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_F983694B511648DA8CEB27AAD76E7CEF"></a><h2 class="sectiontitle">Modifying the Trend Display Area </h2> 
+		 
+		<p>In the top of the InSight window, a trend of the block PV, output, SP,
+		  and actual mode is shown. You can adjust the time frame displayed for the
+		  parameters shown in the Trend display area using the following selections shown
+		  in the toolbar: 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__table_507B806CC28A49C194FA95A9664C126F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_4A8D7E453B6D44298378066226DBC7EC__table_507B806CC28A49C194FA95A9664C126F" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_6E796A9740D740719C00C27BC33532E5"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_6E796A9740D740719C00C27BC33532E5" src="ichelp0055.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Scroll Back</span> - Shifts the trend
+					 information back in time by one screen. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_E5397775A61E4F4F9967837FD2B38957"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_E5397775A61E4F4F9967837FD2B38957" src="ichelp0056.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Small Back</span> - Shifts the trend
+					 information back one unit in time. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_836D839D4BCE4B858FBAFF876ED112B8"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_836D839D4BCE4B858FBAFF876ED112B8" src="ichelp0057.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Small Forward</span> - Shifts the trend
+					 information forward one unit in time. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_84F3E4D9C44D477F9D069DD285FD977D"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_84F3E4D9C44D477F9D069DD285FD977D" src="ichelp0058.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Scroll Forward</span> - Shifts the trend
+					 information forward in time by one screen. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_F81DDE1A196040F4A980E20F58105D26"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_F81DDE1A196040F4A980E20F58105D26" src="ichelp0059.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Decrease time span</span> - Decreases the time
+					 represented by the Trend display area by approximately 25 percent. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_F5560442CC3D48458BDCF59616A256D3"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_F5560442CC3D48458BDCF59616A256D3" src="ichelp0060.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Increase time span</span> - Increases the time
+					 represented by the Trend display area by approximately 25 percent. 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<p>The span of the PV, SP, and Output are initially displayed in full
+		  range. You can modify the trend range to show values over a smaller or larger
+		  range than the default value. In the Controller panel, right-click the box
+		  associated with the parameter (<span class="uicontrol">SP</span>, 
+		  <span class="uicontrol">OUT</span>, or 
+		  <span class="uicontrol">PV</span>) whose trend range is to be modified, and
+		  then select 
+		  <span class="uicontrol">Properties</span>. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_BB6B5427A27B4BC798CA384C2035D2A4"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_BB6B5427A27B4BC798CA384C2035D2A4"></a><div><span class="figcap">Controller Panel</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_253298F0B8594CDEBFCE5DE586800558"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_253298F0B8594CDEBFCE5DE586800558" src="OnDemandControllerPanel.gif" /> 
+		</div>
+ 
+		<p>Then, click 
+		  <span class="uicontrol">Set Y Scale</span>, and then select either 
+		  <span class="uicontrol">Manual</span> or 
+		  <span class="uicontrol">Auto Scale</span>. 
+		</p>
+ 
+		<p>Select either the 
+		  <span class="uicontrol">Compress range</span> or 
+		  <span class="uicontrol">Expand range</span> button provided in the toolbar: 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__table_EEC414F34EC24493834E59464564A0DD"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_4A8D7E453B6D44298378066226DBC7EC__table_EEC414F34EC24493834E59464564A0DD" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_E026E5B94E5D46AEA77A4ED034AAA8D8"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_E026E5B94E5D46AEA77A4ED034AAA8D8" src="ichelp0062.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Compress range</span> - Reduces the span of the
+					 selected trend range by approximately 10 percent. 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_6E58A4AE40DC46599428835FF9D3DDD7"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_6E58A4AE40DC46599428835FF9D3DDD7" src="ichelp0063.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <span class="uicontrol">Expand range</span> - Increases the span of the
+					 selected trend range by approximately 10 percent. 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_5C9AECCF60274223A82E17C53CA19294"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_5C9AECCF60274223A82E17C53CA19294"></a><h2 class="sectiontitle">Using the Expert Feature </h2> 
+		 
+		<p>The Expert feature allows you to retain all Normal selections and
+		  select your specific tuning rule to use with the loop response in calculating
+		  the best tuning of a PID block. When you click 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>,
+		  the available tuning methods for the PID are displayed in the Control Panel
+		  area, as shown in the following figures. The figure on the left shows the
+		  tuning method selections for non-integrating process and the figure on the
+		  right shows the selections for integrating processes. Enable this option by
+		  selecting the 
+		  <span class="uicontrol">Integrating process</span> check box in the Test
+		  Process area. 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__table_8D797CABCA3F41DEAB4F67A1D980D62F"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_4A8D7E453B6D44298378066226DBC7EC__table_8D797CABCA3F41DEAB4F67A1D980D62F" rules="all" summary=""> 
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_71132264A8A049409AD3546D115B8AA6"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_71132264A8A049409AD3546D115B8AA6" src="OnDemadTuning%20CalcNoInteg.gif" /> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_EE4B49EF58C347448A9DEF840A528794"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_EE4B49EF58C347448A9DEF840A528794" src="OnDemadTuning%20CalcInteg.gif" /> 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="important"><span class="importanttitle">Important:</span> If you are using the Expert feature you should
+		  have expert knowledge of the process you are tuning. You must use the Expert
+		  feature with care and always check that the time constant InSight calculates
+		  represents the actual process time constant. Because the Normal tuning rules
+		  give good results in most cases, we recommend the use of the Normal selection
+		  for most applications. 
+		</div>
+ 
+		<p>Some of the tuning rules provided in advanced tuning are very
+		  specialized. For PID and PI loops, use Lambda or IMC tuning rules first. These
+		  settings should be satisfactory in most cases. If you have a thorough
+		  understanding of loop tuning, you can use some of the alternate tuning rules.
+		  If the tuning results are not satisfactory, you can change the rule selection. 
+		</p>
+ 
+		<p>For non-integrating processes, the Expert selection provides the
+		  following tuning rules: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_71AFAA198212437BA9A7235FFAD6EA76"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_71AFAA198212437BA9A7235FFAD6EA76"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_CA5E38954E644B2188EE96DF797E48FB"><div class="li_content"> 
+			 <strong>Ziegler-Nichols - PI</strong> - This tuning rule provides the basic
+			 rules for calculating controller settings from ultimate gain and ultimate
+			 period. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_D24924D641294864BFCF26FEF55B3566"><div class="li_content"> 
+			 <strong>Lambda - PI</strong> - This tuning rule allows the desired ratio of
+			 closed loop time constant to open loop time constant to be specified through
+			 the Lambda factor. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_71826E16AD414FE5BAFC0B6EB56EFA5E"><div class="li_content"> 
+			 <strong>Lambda - Smith predictor</strong> - This tuning rule should be used
+			 with the PID_DEADTIME Module Template. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_968DFFC86DA84A42871E55AA8ACC15DE"><div class="li_content"> 
+			 <strong>Internal Model Control - PID</strong> - This tuning rule provides
+			 proportional, integral, and derivative control and assumes a first order
+			 process with a time delay. During tuning, the model is identified and the
+			 tuning values are calculated. The procedure for identifying the model is a
+			 patented Fisher-Rosemount Systems technique. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>For integrating processes, the Expert selection provides: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_B0C602F04A654E878F427532AD7BCFED"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_B0C602F04A654E878F427532AD7BCFED"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8B6B0705B66E459D903D6B0D866A4BF7"><div class="li_content"> 
+			 <strong>Lambda</strong> - 
+			 <strong>Averaging Level</strong> - 
+			 <strong>PI</strong> - This tuning rule is similar to the Lambda tuning rule,
+			 but it works for integrating level loops. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The IMC tuning rule is especially useful when a process deadtime is
+		  longer than half of the process time constant. The process deadtime and the
+		  process time constant are shown in the Process Test panel. 
+		</p>
+ 
+		<p>The 
+		  <span class="uicontrol">Tuning Method</span> options in the Expert Feature
+		  include the alternate tuning rules, 
+		  <span class="uicontrol">Typical - PI</span> and 
+		  <span class="uicontrol">Typical - PID</span>, which are also available when
+		  using the Normal selection. 
+		</p>
+ 
+		<p>When a process deadtime is equal to or greater than the process time
+		  constant, it is beneficial to apply Smith Predictor. 
+		</p>
+ 
+		<p>To change the Expert setting, you do 
+		  <em>not</em> have to retune the loop. Once InSight has obtained the
+		  process dynamics for a loop, it can calculate new controller settings for
+		  different Expert selections. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_65518B4A581B41428B45F8355339A188"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_65518B4A581B41428B45F8355339A188"></a><h2 class="sectiontitle">Specifying the Number of Decimal Places </h2> 
+		 
+		<p>You can specify the number of decimal places that will be used
+		  throughout the application when you modify parameter values. Click 
+		  <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Number of Decimal
+				Places</span></span> to open the 
+		  <span class="wintitle">Number of Decimal Places Setting</span> dialog. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_1318544BC1484DFB8521E9C66E630DBA"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_1318544BC1484DFB8521E9C66E630DBA"></a><div><span class="figcap">Number of Decimal Places Dialog</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_EE7681FDC2D146D09FB96128B4F57E17"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_EE7681FDC2D146D09FB96128B4F57E17" src="NumberofDecPlaces.png" /> 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_7A01F258028C40488D8C7F0392AAF9F6"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_7A01F258028C40488D8C7F0392AAF9F6"></a><h2 class="sectiontitle">Saving and Printing Block Tuning </h2> 
+		 
+		<p>When tuning a block, you can save the current test data to a file by
+		  clicking 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Save
+				File</span></span>. The parameter values used in the tuning process
+		  are saved in the 
+		  <span class="nowrap"><span class="filepath">DVData\InSight</span></span>
+		  folder. By clicking 
+		  <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Save File
+				As</span></span>, you can specify the folder. When you have
+		  finished tuning and are closing InSight, you are also given an opportunity to
+		  save. When initiating tuning with InSight, it is possible to start the tuning
+		  process using previously saved values. 
+		</p>
+ 
+		<p>After tuning a block, you can obtain a hard copy of the tuning
+		  parameters and selections made in InSight. You can initiate this request either
+		  by selecting the 
+		  <span class="uicontrol">Print</span> option under 
+		  <span class="uicontrol">File</span> or selecting the 
+		  <span class="uicontrol">Print</span> icon in the toolbar. In response, a
+		  single-page summary of the parameters used in tuning is printed on the
+		  user-specified printer. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_2A3CC17868534B6EA60C18EA89219E1B"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_2A3CC17868534B6EA60C18EA89219E1B"></a><h2 class="sectiontitle">Using the Adaptive Tuning Page </h2> 
+		 
+		<p>If Process Learning has been enabled on a PID block, when you select
+		  the PID block in InSight, the 
+		  <span class="wintitle">Adaptive Tuning</span> page is available as shown in the
+		  following image. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_75A473020B4B4707B7B114A2D2566325"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_75A473020B4B4707B7B114A2D2566325"></a><div><span class="figcap">The Adaptive Tuning Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_3F4F690E51914DB6AA4A00D879848B82"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_3F4F690E51914DB6AA4A00D879848B82" src="Tune-AdaptiveTune.png" /> 
+		</div>
+ 
+		<p>The Process Model panel shows the values for Process Gain, Time
+		  Constant, and Deadtime from the last good model. 
+		</p>
+ 
+		<p>The Model Quality indicator (green or red) shows if the model is good
+		  relative to a minimum value (approximately 50% in a 0-100% scale) that defines
+		  a good model. Model quality is based on an adaptation history of the models for
+		  each region as well as consistency and model deviation over time. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> To improve model quality for integrating processes,
+		  apply a PV filter with a time constant of 1 to 3 PID scan periods. 
+		</div>
+ 
+		<p>The 
+		  <span class="uicontrol">Settings</span> button opens the 
+		  <span class="wintitle">Region Settings</span> dialog. 
+		</p>
+ 
+		<p>In Adaptive Control, regions are used to divide the range of a
+		  non-linear state parameter into piecewise linear segments. As a simple example,
+		  process gain can change as a function of a valve stem position if the final
+		  control element has non-linear installed characteristics. The valve&#39;s output
+		  signal can be configured as the state parameter and the state parameter can be
+		  split into as many as five (5) regions. The regions can be aligned for
+		  linearity such that each region in a non-linear range is made linear. In full
+		  Adapt mode, InSight automatically updates the models in each region. When the
+		  state parameter changes from one region to another, the model values and tuning
+		  change to the last good model and tuning created for that region. 
+		</p>
+ 
+		<p>From the 
+		  <span class="wintitle">Adaptive Tuning</span> page the 
+		  <span class="wintitle">Region Settings</span> dialog can be used to set region
+		  boundaries, view the values of the last and approved model in that region, view
+		  the quality of the last model, and center the limits. 
+		</p>
+ 
+		<p>The Status area indicates if a model has been triggered and the
+		  current status of model creation. Model triggering criteria (Setpoint and/or
+		  Out change in MAN) is specified on the 
+		  <span class="wintitle">Learning Setup</span> page. Possible values for 
+		  <span class="uicontrol">Identification</span> are: 
+		  <span class="uicontrol">Awaiting Trigger</span>, 
+		  <span class="uicontrol">Triggered</span>, 
+		  <span class="uicontrol">Results Pending</span>, 
+		  <span class="uicontrol">Disabled</span>, 
+		  <span class="uicontrol">Waiting for Valid Data</span>, 
+		  <span class="uicontrol">Model Near Limits</span> (5% of the parameter range).
+		  Possible values for 
+		  <span class="uicontrol">Data</span> are: 
+		  <span class="uicontrol">Initializing</span>, 
+		  <span class="uicontrol">OK</span>, 
+		  <span class="uicontrol">Bad</span>, 
+		  <span class="uicontrol">Disabled</span>. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The Model Near Limits status can persist if the model&#39;s
+		  values for Gain, Time Constant, and Dead Time are within 5% of the parameter
+		  range. If the Model Near Limits status persists, reduce the values for both the
+		  High and Low limits. In other words, move the limits in, not out. 
+		</div>
+ 
+		<p>Once a model is successfully identified, it is a good idea to examine
+		  the previous model and compare it to the current model using the Models Viewing
+		  page. When you are confident that the current model is consistent with previous
+		  models and that the model values are not limited, use the Tuning Calculation
+		  panel to select the tuning rule and desired response time and to manipulate the
+		  tuning calculations based on the identified process model. The tuning rules are
+		  for model-based tuning only. The Tuning Index indicates the potential for
+		  improving control performance by updating controller tuning according to the
+		  current identified model and the selected tuning rule. 
+		</p>
+ 
+		<p>You can change the Adapt target mode by clicking the 
+		  <span class="uicontrol">Adapt mode</span> field. The 
+		  <span class="uicontrol">Adapt mode</span> options are: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D6597B74A5254E2D9DE68CFEAA150525"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D6597B74A5254E2D9DE68CFEAA150525"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_5C22B6E1F9C94A98A68668B30EB8E1DA"><div class="li_content"> 
+			 <span class="uicontrol">Off</span> - The controller calculates new models and
+			 tuning for each region but does not adjust the closed-loop tuning parameters.
+			 The control loop uses the default tuning parameters. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_F0C64C80DE1749848A56693F262731D7"><div class="li_content"> 
+			 <span class="uicontrol">Partial Adapt</span> - the controller calculates new
+			 models and tuning for each region and adjusts closed-loop tuning based on the
+			 approved models for each region. The controller adjustments are made only for
+			 models the user has reviewed and approved. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_A65E53873A154209892958177844B34B"><div class="li_content"> 
+			 <span class="uicontrol">Full Adapt</span> - the controller calculates new
+			 models and tuning for each region and automatically adjusts closed-loop tuning
+			 based on the last model calculated for each region. No user review or approval
+			 is required. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>When you are satisfied with the tuning values presented in the
+		  Recommended Settings area, click the Update=&gt; button to send these values to
+		  the controller. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_D5E7188689794012BBFB9FE472329458"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_D5E7188689794012BBFB9FE472329458"></a><h2 class="sectiontitle">Using the Adaptive Control Page </h2> 
+		 
+		<p>The 
+		  <span class="wintitle">Adaptive Control</span> page is available when a license
+		  has been assigned to a PID block. This page is used to view and modify the
+		  adapted model parameters in the controller and to see detailed information for
+		  each region. 
+		</p>
+ 
+		<p>Expert users can use this page to: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D135C93D42F34860A5AE2F1F26BA733D"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_D135C93D42F34860A5AE2F1F26BA733D"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_EA23DE4E00284C888D517FB7985DFDCF"><div class="li_content">Change the tuning method
+			 and Lambda factor 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8AA99320FD2A461292276D580BFC13EB"><div class="li_content">View the values for Closed
+			 Loop Time Constant and Tuning Index 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_27523B832D9C4424AF20E7E478F82917"><div class="li_content">Modify controller values 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_2EDB89613FA6454686B9CDDE2C86E5BA"><div class="li_content">Change controller and
+			 Adapt modes. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Non-expert users can use this page to: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_0D555A4121604905A246E99DCD215C8C"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_0D555A4121604905A246E99DCD215C8C"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_F58CCE22D8FE4FC0A8B5DB8E55DD2E7D"><div class="li_content">Change the process type
+			 and desired response time 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_7045DD7173564B73AB51E36BEBC6FF3C"><div class="li_content">Modify controller values 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_0CA73A3E3A7147AAAA3C6C5D149DCE0E"><div class="li_content">Change controller and
+			 Adapt modes 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_6AE3B5B28B534F648DAB0454DD19888A"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_6AE3B5B28B534F648DAB0454DD19888A"></a><div><span class="figcap">Adaptive Control Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_E68E5BBB42A348C2B1B3ECE40037C1F8"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_E68E5BBB42A348C2B1B3ECE40037C1F8" src="Tune-AdaptiveControl.png" /> 
+		</div>
+ 
+		<p>Both expert and non-expert users can view the values for: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_7B38FAAC136C44CF8399D95609C64B70"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_7B38FAAC136C44CF8399D95609C64B70"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_C14336D95FCA4E979206E611CE5609CE"><div class="li_content">GAIN_WRK - In full Adapt
+			 mode, the working gain is the block&#39;s current Gain that is calculated based on
+			 the last model calculated for the current active region. In partial Adapt mode,
+			 this value corresponds to the current Gain that is calculated based on the
+			 approved model for the current active region. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_1FE5540D53C1431FBBCBEEBD26DFD789"><div class="li_content">RESET_WRK - In full Adapt
+			 mode, the working reset is the block&#39;s current Reset value that is calculated
+			 based on the last model calculated for the active region. In partial Adapt
+			 mode, this value corresponds to the current Reset value calculated based on the
+			 approved model for the current region. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_B4DB3E2B009A4C2A94A67D1975810DCD"><div class="li_content">RATE_WRK - In full Adapt
+			 mode, the working rate is the block&#39;s current Rate value that is calculated
+			 based on the last model calculated for the active region. In partial Adapt
+			 mode, this value corresponds to the current Rate value that is calculated based
+			 on the approved model for the current region. 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>The chart in the lower left hand corner shows information on the
+		  models created in each region configured for the block. Model quality is
+		  indicated by color: red means that the quality of the last model in the region
+		  is bad and green means that the quality of the last model in the region is
+		  good. The dark gray area shows the model values in the current region. The 
+		  <span class="wintitle">Region Settings</span> dialog can be opened from the
+		  chart. Click the chart, and then select 
+		  <span class="uicontrol">Settings</span> from the context menu. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Normally, when the quality of the last model in a
+		  region is good, the quality indicators are green and the Adapt Mode is Full and
+		  when the quality of the last model in a region is bad, the quality indicators
+		  are red and the Adapt Mode is Off. However, if the module is partially
+		  downloaded or redundant controllers are switched over during model calculation,
+		  the model quality is initialized and the quality indicators go to red but the
+		  Adapt Mode stays at Full. In this case, perform several more model
+		  identifications to restore the model quality. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_8DA698E305D24A849A684A0C14EA698E"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_8DA698E305D24A849A684A0C14EA698E"></a><h2 class="sectiontitle">Using the Models Viewing Page </h2> 
+		 
+		<p>Use the 
+		  <span class="wintitle">Models Viewing</span> page to analyze and compare models
+		  that have been previously identified. From this page you can: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_82F9B1115DDC4BDF9D63CEF1E634A0AF"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_82F9B1115DDC4BDF9D63CEF1E634A0AF"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_0997323E21574188978CA087CB64611B"><div class="li_content">Select a previous model or
+			 an average of selected models to replace the current model 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_8E33710678C24988A1415BA3EBBEC268"><div class="li_content">Plot models in a variety
+			 of ways to review past models. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_D2AA1CB4FE4C459FBE54021289ABEDF2"><div class="li_content">Change the number of
+			 regions and region boundaries 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_313FD16A57A84C81AD6BD1CC6EC1DF0B"><div class="li_content">Select the state parameter
+			 and Adapt mode 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_DC38555E512746EB8CB4CD878E4F9C06"><div class="li_content">Copy models to the
+			 clipboard and copy models and model limits from one region to another 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_0846930B87F9450DAB1E0E4E87B19366"><div class="li_content">Save a model to the model
+			 database 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p> 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_DD3E17D2F25C49FCBCF3D33F1C23F8AF"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_DD3E17D2F25C49FCBCF3D33F1C23F8AF"></a><div><span class="figcap">The Models Viewing Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_8B30BCDC7A044129B3AB5E4E284F2591"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_8B30BCDC7A044129B3AB5E4E284F2591" src="Tune-ModelsViewing.png" /> 
+		</div>
+ 
+		<p>Whenever a loop is selected, the application automatically loads up to
+		  200 models that have been identified and stored in the model database for the
+		  loop. If the number of models exceeds 200, models are automatically removed
+		  from the database. Lower quality and older models are removed first.
+		  Information about the models such as timestamp, quality and process information
+		  are shown in the top portion of the page. Model quality is based on an
+		  adaptation history of the models for each region as well as consistency and
+		  model deviation over time. Sort the models by clicking a column heading. 
+		</p>
+ 
+		<div class="important"><span class="importanttitle">Important:</span> Be aware that it is difficult to identify good
+		  quality models for integrating processes&#39; PID loops in AUTO mode. For
+		  integrating processes, step changes to the SP in AUTO mode may result in less
+		  accurate models and deteriorating model quality. However in MAN mode, step
+		  changes to OUT result in more accurate models and improved model quality. Be
+		  sure that you carefully monitor an integrating process in MAN mode to ensure
+		  that the process does not run away. 
+		</div>
+ 
+		<p>Delete a model from this page by selecting the model, and then
+		  clicking 
+		  <span class="uicontrol">Delete Model</span> from the context menu. Use the
+		  SHIFT and CTRL keys to select multiple models to delete. 
+		</p>
+ 
+		<p>Models can be plotted against Time, Quality, and process variable
+		  information such as PV, OUT, working SP and Other. Select a model or multiple
+		  models, and then click 
+		  <span class="uicontrol">Plot Selected</span> from the context menu, or use the
+		  boxes that appear next to the model to select the models to plot. The legend,
+		  on top of the graph, explains what is being trended on the graph. To remove a
+		  plotted model from the graph, select the model in the Model list, and then
+		  click 
+		  <span class="uicontrol">Remove Selected</span> from the context menu. 
+		</p>
+ 
+		<p>Use the 
+		  <span class="uicontrol">State parameter</span> drop-down list to select a state
+		  parameter to explore process non-linearity relative to the selected state. A
+		  non-linear state parameter can be split into as many as five (5) regions. Use
+		  the 
+		  <span class="uicontrol">Number of regions</span> drop-down list to specify the
+		  number of regions. Possible state parameter values are: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_6CFA4B5EB8E74FC89D3D4C0687A2A960"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_6CFA4B5EB8E74FC89D3D4C0687A2A960"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_0323B5E853DE471798BF4233CBDAE61E"><div class="li_content"> 
+			 <span class="uicontrol">OUT</span> - the controller output/process model
+			 input 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_DFA6487E0D454E84B2BF4DAB11D64BA6"><div class="li_content"> 
+			 <span class="uicontrol">PV</span> - the Process Variable/process model output
+			 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_85CB9FF012204395B59C177A12875265"><div class="li_content"> 
+			 <span class="uicontrol">SP_WRK</span> - the PV working setpoint 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_BE0F1EE5AF884EE2951A9E7E4D942FC3"><div class="li_content"> 
+			 <span class="uicontrol">Aux</span> - a user-defined value. It can be
+			 calculated from several process parameters 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>Click the 
+		  <span class="uicontrol">Settings</span> button to open the 
+		  <span class="wintitle">Region Settings</span> dialog. 
+		</p>
+ 
+		<p>Use this dialog to view and use the average and last model parameter
+		  values for the selected models per region. To use the last or average values,
+		  click the &gt;&gt; and &lt;&lt; buttons to approve the values. You can edit the
+		  approved values and the high and low limits for model parameters and re-center
+		  the high and low limits from this dialog. You can also modify the region
+		  description. This dialog can also be accessed through the context menu from the
+		  Model list and the chart. 
+		</p>
+ 
+		<div class="note"><span class="notetitle">Note:</span> Changes made through the 
+		  <span class="wintitle">Region Settings</span> dialog do not take effect until
+		  the 
+		  <span class="uicontrol">Update Controller</span> button is selected. 
+		</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> The 
+		  <span class="uicontrol">Use Approved model for Recommended Tuning
+			 Settings</span> checkbox causes the software to use the approved model to
+		  calculate the 
+		  <span class="uicontrol">Recommended Settings</span> in the 
+		  <span class="uicontrol">Adaptive Tuning</span> dialog for this region. When the
+		  software identifies a new model, it overwrites the last model. 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_4154DCD6EFD54EDD85F03620B5FED97B"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_4154DCD6EFD54EDD85F03620B5FED97B"></a><h2 class="sectiontitle">Using the Learning Setup Page </h2> 
+		 
+		<p>The 
+		  <span class="wintitle">Learning Setup</span> page contains six areas: Trigger to
+		  adapt, Maximum change in model per cycle, Initialize Model/Data, Inject out
+		  change, Process, and Misc. Options. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_F6B43ECEFD9345C4B591C38E3408155B"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_F6B43ECEFD9345C4B591C38E3408155B"></a><div><span class="figcap">The Learning Setup Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_40CF3D6A5BEC414B9976C3FB2B82CF43"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_40CF3D6A5BEC414B9976C3FB2B82CF43" src="Tune-LearningSetup.png" /> 
+		</div>
+ 
+		<p>Trigger to Adapt - Allows you to select whether changes in setpoint in
+		  Automatic mode or changes in output in Manual mode trigger adaptation of the
+		  model. Use the 
+		  <span class="uicontrol">Identification Delay</span> option to select a time
+		  period after model identification completes when the defined triggers will not
+		  trigger adaptation. Use the 
+		  <span class="uicontrol">Setpoint Change</span> drop-down list to select the
+		  percentage of setpoint change that triggers adaptation. Use the 
+		  <span class="uicontrol">Out Change scale</span> drop-down list to select the
+		  percent of out change in manual that triggers adaptation. 
+		</p>
+ 
+		<p>Maximum Change in Model per cycle - Allows you to configure the
+		  maximum change that a new identification can deviate from the last good model.
+		  The maximum change selections are in terms of percent of the span for the
+		  current range high limit. These limits do not take effect until the module is
+		  downloaded and five (5) models have been identified after the download. 
+		</p>
+ 
+		<p>Inject Out Change - Allows you to enable automatic injection of a
+		  disturbance in the controller output when the setpoint or control output does
+		  not change enough to trigger adaptation of the feedback model under normal
+		  operating conditions. The magnitude of the injected change is specified in
+		  terms of the percent of output span. The 
+		  <span class="uicontrol">When not adapted</span> option enables automatic
+		  injection of a disturbance in the controller output only when no adaptation is
+		  triggered by the setpoint or control output or if the triggered adaptation does
+		  not provide a good quality model. Also, you can define the time that must pass
+		  (in seconds) from the last identification before a change is injected in the
+		  control output. Normally, out change should be higher than OUT change in MAN,
+		  especially for noisy loops. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span> In a noisy loop, disable Inject out change if the
+		  maximum output change is not high enough to provide reliable process
+		  identification. Increase the maximum output change until you observe the
+		  injection on the trend. 
+		</div>
+ 
+		<p>Process - Allows you to modify the default selection associated with
+		  the process response to correctly reflect the equipment that is being
+		  controlled. If the process exhibits an integrating response to a change in its
+		  input, for example tank level, 
+		  <span class="uicontrol">Integrating</span> should be selected. When 
+		  <span class="uicontrol">Integrating</span> is selected, the process model
+		  automatically reflects the two parameters that describe integrating processes: 
+		  <span class="uicontrol">Integrating Process Gain</span> and 
+		  <span class="uicontrol">Deadtime</span>. The Process section also includes the
+		  estimated current and minimum time to steady state used to determine the amount
+		  of information that must be collected for identification. By default, the
+		  values for time to steady state are automatically based on the tuning or the
+		  time to steady state values you enter before the module is first downloaded.
+		  The minimum time to steady state value is used to initialize the current time
+		  to steady state. You can modify the minimum time to steady state based on your
+		  knowledge of the process to make the initial identification faster and also to
+		  ensure that under all conditions a minimum set of data is collected. The
+		  current time to steady state value is updated based on the last model. 
+		</p>
+ 
+		<div class="tip"><span class="tiptitle">Tip:</span>  
+		  <p>Integrating process loops, as shown in the example below, must use
+			 Lambda time instead of Lambda factor. 
+		  </p>
+ 
+		  <p><br /><img src="learning_setup_integrating_processes.png" /><br />
+			 
+		  </p>
+ 
+		  <p>Specify that InSight use Lambda time instead of Lambda factor in the
+			 Properties of the ADP_OPTIONS parameter in Control Studio as shown below: 
+		  </p>
+ 
+		  <p><br /><img src="lambda_time.png" /><br />
+			 
+		  </p>
+ 
+		  <p>The InSight application should then appear similar to the following
+			 example: 
+		  </p>
+ 
+		  <p><br /><img src="insight_integrating_processes.png" /><br />
+			 
+		  </p>
+ 
+		</div>
+ 
+		<p>Initialize Model/Data - Allows you to choose how the data is
+		  initialized. Select the 
+		  <span class="uicontrol">Default</span> button to initialize the actual process
+		  model parameters (Gain, Time Constant, and Deadtime) from the current PID
+		  controller tuning parameters (Gain, Reset, Rate). Select the 
+		  <span class="uicontrol">Steady State</span> button to initialize the data in
+		  the buffer by assigning the current values for PV and OUT to all PV and OUT
+		  parameters. 
+		</p>
+ 
+		<p>Misc. Options - The 
+		  <span class="uicontrol">Identification Out Limit</span> (0.0-50.0) option
+		  allows you to define a region, above 0% and below 100% of the controller&#39;s OUT
+		  value, in which identification is prohibited. Whenever the controller&#39;s OUT
+		  value falls into the defined region, identification is aborted or the
+		  identification buffers are invalidated. The 
+		  <span class="uicontrol">Allowable bad samples</span> (0-5) option is used to
+		  specify the number of consecutive Bad (Bad, Uncertain, Limited) PV samples that
+		  are allowed for identification. This option allows you to filter noise that
+		  would otherwise invalidate identification. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_9D46DB2B40B042C89B14EE4291A7B55B"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_9D46DB2B40B042C89B14EE4291A7B55B"></a><h2 class="sectiontitle">Using the Simulate Page </h2> 
+		 
+		<p>Use the 
+		  <span class="wintitle">Simulate</span> page to see simulated loop responses for
+		  FLC and PID control blocks and robustness plotting and tuning for the PID
+		  control block based on the block&#39;s On-Demand Tuning or the approved model&#39;s
+		  Adaptive Tuning. Use the 
+		  <span class="uicontrol">On-Demand Tuning</span> or 
+		  <span class="uicontrol">Adaptive Tuning</span> buttons to select the simulation
+		  criteria. Simulated responses use the identified process parameters. 
+		</p>
+ 
+		<div class="fignone" id="concept_4A8D7E453B6D44298378066226DBC7EC__fig_837B876824CB4C22AE7FAE5258A9CD0F"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__fig_837B876824CB4C22AE7FAE5258A9CD0F"></a><div><span class="figcap">The Simulate Page</span></div> 
+		   
+		  <a name="concept_4A8D7E453B6D44298378066226DBC7EC__image_813FA182FFAB4642A5926A3BE7A591EA"></a><img id="concept_4A8D7E453B6D44298378066226DBC7EC__image_813FA182FFAB4642A5926A3BE7A591EA" src="Tune-Simulate.png" /> 
+		</div>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_FF8A81CB7A514EA19C3484142DB83454"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_FF8A81CB7A514EA19C3484142DB83454"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_865B8752A60F45839CE5CFD0389FA4D1"><div class="li_content">If the control block is an
+			 FLC, the Simulated Response and Robustness window will open with a simulated
+			 setpoint response. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_A03681354AD94F4F8A40F34CA4C3771E"><div class="li_content">If the control block is a
+			 PID, the recommended tuning parameters will be checked for stability and the
+			 PID structure checked for validity and normalcy. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_4A6039BB17974E5994E4DD2F18707908"><div class="li_content"> 
+			 <div class="p"> 
+			 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_1E500B1764CD46568BC9B51D864EFB91"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_1E500B1764CD46568BC9B51D864EFB91"> 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_1B26C8B1F7AF40DDAACC921314A50527"><div class="li_content">If you select the 
+				  <span class="uicontrol">Integrating Process</span> check box and the PID
+				  structure is one of the I+D structures, then a message will be displayed
+				  indicating an invalid configuration. You will not be able to proceed to the
+				  Simulated Response and Robustness window. 
+				</div></li>
+ 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_0D296E5AB353480AB6EBE83123E42DC2"><div class="li_content">If the robustness
+				  calculations determine that the recommended tuning parameters yield an unstable
+				  result, a message will be displayed indicating unstable tuning. You can proceed
+				  to the Simulated Response and Robustness window by clicking 
+				  <span class="uicontrol">OK</span> in the message box. 
+				</div></li>
+ 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_6FB056E9DBB041E2BAFC11715F4E91F0"><div class="li_content">If you do not select
+				  the 
+				  <span class="uicontrol">Integrating Process</span> check box and the
+				  structure is a P+D, then a message will be displayed indicating that this is an
+				  unusual configuration. You may proceed to the Simulated Response and Robustness
+				  window by clicking 
+				  <span class="uicontrol">OK</span> in the message box. 
+				</div></li>
+ 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_BECEA21243E647FAB04F5A9F11FC5FFA"><div class="li_content">If there are no
+				  unusual or invalid conditions, then the Simulated Response and Robustness
+				  window will be opened without any warning messages. 
+				</div></li>
+ 
+			 </ul>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_23523319A82E4B5EB8A770E9B4B58FAA"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_23523319A82E4B5EB8A770E9B4B58FAA"></a><h2 class="sectiontitle">Simulated Response and Robustness Layout </h2> 
+		 
+		<p>In the top half of the window is a simulated response trend plot with
+		  performance variables and simulation selection buttons on the right. In the
+		  lower-right section of the window, are the recommended and current tuning
+		  parameter display boxes with an 
+		  <span class="uicontrol">Update</span> button immediately below them. If the
+		  control block is a PID, DT Margin and (if you selected the 
+		  <span class="uicontrol">Integrating Process</span> check box) % Surge are
+		  displayed. If the control block is an FLC, DT Margin and % Surge are not
+		  displayed. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_CDC58670AA2D4271BA9E133175BD0922"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_CDC58670AA2D4271BA9E133175BD0922"></a><h2 class="sectiontitle">Simulated Response </h2> 
+		 
+		<p>You activate the first simulated response when you open the 
+		  <span class="wintitle">Simulate</span> page. Any new tuning parameter entries
+		  (or for the PID any new robustness map tuning selection) will cause a new
+		  simulated response to appear immediately. You may select whether you want a
+		  setpoint or disturbance step response simulated for the entry and/or current
+		  controller tuning parameters. Make your selections as follows: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_35E4C684F221488FB5088CA601179963"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_35E4C684F221488FB5088CA601179963"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_96073A91D673487B8D444FFE728510F9"><div class="li_content">To select setpoint (SP) or
+			 disturbance simulated response, click either the 
+			 <span class="uicontrol">SP</span> or 
+			 <span class="uicontrol">Disturbance</span> button. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_BACFA0B6D2DD456293951471E4396F12"><div class="li_content">To cause the current
+			 controller tuning parameter responses for PV and OUT to be presented with the
+			 entry tuning parameter response, select the 
+			 <span class="uicontrol">Controller</span> check box. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_6E55F06CA649409CBF171561C983628B"><div class="li_content">Any change in your
+			 selections will cause the simulated response plot to be updated. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_B375760879C34FDBAFEC5FF1A9B56837"><div class="li_content">There are three (3)
+			 performance variables that are updated after every new simulated response. 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_7E16C16FC1C34AAF857360E8646EBF0F"><div class="li_content"> 
+			 <div class="p"> 
+			 <a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_4D72439BFF95444991E43DA486AC1697"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_4D72439BFF95444991E43DA486AC1697"> 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_137EFFD2891B4DA594324424718B5AED"><div class="li_content">Overshoot - Presented
+				  as percent of step change by which the process variable overshoots the new
+				  setpoint. 
+				</div></li>
+ 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_5DC383D463F8429B9F567C361A2FAC8E"><div class="li_content">IAE - Integrated
+				  Absolute Error is presented for all SP responses. IAE will also be displayed
+				  for disturbance responses if you did not select the 
+				  <span class="uicontrol">Integrating Process</span> check box before you
+				  clicked the 
+				  <span class="uicontrol">SIMULATE</span> button. 
+				</div></li>
+ 
+				<li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_ED5AD0DC9DC44C64B26A748CD39C7534"><div class="li_content">Arrest - Arrest is
+				  displayed for disturbance responses if you selected the 
+				  <span class="uicontrol">Integrating Process</span> check box. Arrest is
+				  the time it takes for the control to stop the process variable movement away
+				  from setpoint. It is also the time at which the maximum error during the
+				  response time occurs. 
+				</div></li>
+ 
+			 </ul>
+ 
+			 </div>
+ 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_FD06BB96884547009638E2252A4B7F58"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_FD06BB96884547009638E2252A4B7F58"></a><h2 class="sectiontitle">Entry and Recommended Tuning Parameters </h2> 
+		 
+		<p>You may enter the entry tuning parameters in either of the following
+		  ways: 
+		</p>
+ 
+		<div class="p"> 
+		<a name="concept_4A8D7E453B6D44298378066226DBC7EC__ul_8FF813D1F6B849ED986B36E9976D7CD9"></a><ul id="concept_4A8D7E453B6D44298378066226DBC7EC__ul_8FF813D1F6B849ED986B36E9976D7CD9"> 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_95948EAA2EC6422FBFE5A01583F4E52A"><div class="li_content">Directly by clicking one
+			 of the parameter display boxes and entering new value(s) 
+		  </div></li>
+ 
+		  <li id="concept_4A8D7E453B6D44298378066226DBC7EC__li_987465C71DEC4BD588D8A40D31E82173"><div class="li_content">By clicking within the
+			 robustness plot 
+		  </div></li>
+ 
+		</ul>
+ 
+		</div>
+ 
+		<p>You may update the recommended tuning parameters with the entry tuning
+		  parameters by pushing the 
+		  <span class="uicontrol">Update=&gt;</span> button. The recommended parameters
+		  may be updated to the control block in the controller with the 
+		  <span class="uicontrol">Update=&gt;</span> button on the main window. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_D12BEBC40DA6437A907BD67237852697"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_D12BEBC40DA6437A907BD67237852697"></a><h2 class="sectiontitle">Robustness Plot </h2> 
+		 
+		<p>The robustness plot presents a range of tuning parameters in the form
+		  of an area or a line. The horizontal axis is the Gain Margin (dimensionless
+		  ratio of gain at which the loop will become unstable to the gain of the
+		  controller). The vertical axis is the Phase Margin in degrees. 
+		</p>
+ 
+		<p>The robustness plot is only displayed for the PID function block. This
+		  plot is displayed as an area whenever the PID structure is one of the P+I+D
+		  types. Otherwise, it is a line. In the unusual case where the PID structure is
+		  a P+D type and you did not select the 
+		  <span class="uicontrol">Integrating Process</span> check box, the robustness
+		  plot will be a horizontal line with an unlabelled phase margin axis. 
+		</p>
+ 
+		<p>You may select new entry tuning parameters by clicking within the
+		  presented area (or near the line if that is what is presented). This action
+		  will update entry tuning parameters and trigger a new simulated response. 
+		</p>
+ 
+		<p>Entry tuning parameters are annotated by a triangle. Recommended
+		  tuning parameters are annotated by a rectangle. Annotations are moved to the
+		  correct location on the map whenever the respective tuning parameters are
+		  adjusted. If a tuning parameter set is outside the area or off the line, the
+		  annotation will be displayed in yellow. If the robustness calculations
+		  determine that a tuning parameter set is unstable, the annotation will appear
+		  in red at the bottom left corner of the robustness plot. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_C5B56CCC2019416BB267BC1381219A5C"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_C5B56CCC2019416BB267BC1381219A5C"></a><h2 class="sectiontitle">DT Margin </h2> 
+		 
+		<p>DT Margin is the amount of process deadtime increase (in seconds) that
+		  causes a loop to become unstable. It applies to the entry tuning parameters,
+		  whether selected from the robustness plot or entered directly. Whenever entry
+		  tuning parameters are detected as unstable, DT Margin will be displayed as N/A.
+		  
+		</p>
+ 
+		<p>DT Margin is only displayed for PID control blocks. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_B612CA6024814A0D9FD49896D90FFC47"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_B612CA6024814A0D9FD49896D90FFC47"></a><h2 class="sectiontitle">Percent (%) Surge </h2> 
+		 
+		<p>This variable is only displayed when the 
+		  <span class="uicontrol">Integrating Process</span> check box has been selected.
+		  It represents the percentage of tank capacity used to absorb a 100 percent
+		  difference in process input (PID output) and load. 
+		</p>
+ 
+		<p>% Surge is only displayed for PID control blocks. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="concept_4A8D7E453B6D44298378066226DBC7EC__section_1E802D2B80D14CE89ED11600BDFB0A28"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__section_1E802D2B80D14CE89ED11600BDFB0A28"></a><h2 class="sectiontitle">The Simulator Configuration </h2> 
+		 
+		<p>As part of InSight tuning, two modules containing simulated PID and
+		  FLC blocks are provided with your DeltaV system. These modules can be used as a
+		  training tool that allows you to become familiar with the tuning procedure
+		  before applying it to the actual process. 
+		</p>
+ 
+		<p>The simulator modules contain function blocks that simulate a heater
+		  process. In order for these modules to be referenced by InSight, you only need
+		  to download the simulator modules to a DeltaV controller. 
+		</p>
+ 
+		<p>The following module templates found in the DeltaV library for the
+		  process simulator are provided in the Simulate folder: 
+		</p>
+ 
+		
+<div class="tablenoborder"><a name="concept_4A8D7E453B6D44298378066226DBC7EC__table_156BA5ED1E144AD3910CF005338689D7"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="concept_4A8D7E453B6D44298378066226DBC7EC__table_156BA5ED1E144AD3910CF005338689D7" rules="all" summary=""> 
+			  
+			  
+			  
+			 <tbody> 
+				<tr> 
+				  <td align="center" class="cellrowborder" colspan="3" valign="top"> 
+					 <strong>InSight Simulator Modules</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Description</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Tag</strong> 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <strong>Comments</strong> 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>PID Loop and Process Simulation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>SIM_SR_PID 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>PID test loop with process simulation 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+				<tr> 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Fuzzy Logic Loop and Simulation 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>SIM_SR_FLC 
+					 </p>
+ 
+				  </td>
+ 
+				  <td class="cellrowborder" valign="top" width="NaN%"> 
+					 <p>Fuzzy test loop with process simulation 
+					 </p>
+ 
+				  </td>
+ 
+				</tr>
+ 
+			 </tbody>
+ 
+		  </table>
+</div>
+ 
+		<div class="note"><span class="notetitle">Note:</span> You only need to download the simulator modules to one
+		  DeltaV controller. 
+		</div>
+ 
+		<p>You can view the simulation modules with an interface created by
+		  special simulation Dynamos. When you select the detail display from the
+		  faceplates for these Dynamos, a representation of the simulated process is
+		  shown. These simulator modules do 
+		  <em>not</em> use real I/O; therefore, they will not interrupt any other
+		  module&#39;s operation currently running in the controller. 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_insight_overview.html">DeltaV InSight</a></div>
+<div><a href="c_insight_perform_reports.html">InSight Performance Reports </a></div>
+<div><a href="c_insight_using_dv_inspect.html">Using Inspect with InSight</a></div>
+<div><a href="c_automatically_assign_dv_function_blocks_to_h1.html">Automatically assigning DeltaV function blocks to the H1 card</a></div>
+<div><a href="c_pid_deadtime_module_template.html">PID_DEADTIME module template</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

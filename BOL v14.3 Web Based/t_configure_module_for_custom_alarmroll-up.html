@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Configure a control module to perform a customized alarm roll-up" name="DC.Title" /><meta content="" name="DC.Coverage" /><meta content="alarm roll-up, HP_Alarms" name="DC.subject" /><meta content="alarm roll-up, HP_Alarms" name="keywords" /><meta content="highperf_alarmunitindicator_dynamo.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="task_135963F9D77E4E34A22726FEA28CF3DC" name="DC.Identifier" /><title>Configure a control module to perform a customized alarm roll-up</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="configure_alm_statistics_module.html" /><link rel="next" href="c_deltav_alarm_help.html" /></head><body class="fixed" id="task_135963F9D77E4E34A22726FEA28CF3DC" data-relpath="t_configure_module_for_custom_alarmroll-up.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="task_135963F9D77E4E34A22726FEA28CF3DC"></a>
+
+<h1 class="topictitle1">Configure a control module to perform a customized alarm
+	 roll-up</h1>
+<div> 
+	 <div class="p" id="task_135963F9D77E4E34A22726FEA28CF3DC__prereq_E1DF28646F6B4A57AFE357802DD14F59"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__prereq_E1DF28646F6B4A57AFE357802DD14F59"></a> 
+		<p>The Alarm Unit dynamo (HP_Alarms) shows alarm count information. This
+		  dynamo can be configured to perform alarm roll-ups in modules matching the
+		  normal breakdown of Area &gt; Unit &gt; Equipment Module &gt; Module or in
+		  modules that do now match the normal breakdown of Area &gt; Unit &gt; Equipment
+		  Module &gt; Module. 
+		</p>
+ 
+		<p>The steps below show how to configure a control module to perform a
+		  customized alarm roll-up. 
+		</p>
+ 
+	 </div>
+ 
+	 <div class="section" id="task_135963F9D77E4E34A22726FEA28CF3DC__context_DDB131BA0ED74C5A8224F9B3DA7DA36B"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__context_DDB131BA0ED74C5A8224F9B3DA7DA36B"></a> 
+	 </div>
+ 
+	 <a name="task_135963F9D77E4E34A22726FEA28CF3DC__steps_2CEACB4234E24B97A2267DD673F855E1"></a><ol id="task_135963F9D77E4E34A22726FEA28CF3DC__steps_2CEACB4234E24B97A2267DD673F855E1"><li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_A6552CF96CDC412389B9748970985508"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_A6552CF96CDC412389B9748970985508"></a> 
+		  <span>Open the module in Control Studio. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_E8A9953B03EC478683CDA7E6DBC95185"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_E8A9953B03EC478683CDA7E6DBC95185"></a> 
+		  <span>Add a CALC block to the module. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_6FCAAB1FC6C24E24861FD6C76BC0DDBB"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_6FCAAB1FC6C24E24861FD6C76BC0DDBB"></a> 
+		  <span>Add these parameters at the module level: 
+		  </span> 
+		    
+			 
+<div class="tablenoborder"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__table_D4F6974F3AE3480B950ED2432FAC32DE"></a><table border="1" cellpadding="4" cellspacing="0" frame="border" id="task_135963F9D77E4E34A22726FEA28CF3DC__table_D4F6974F3AE3480B950ED2432FAC32DE" rules="all" summary=""><thead align="left"> 
+					 <tr> 
+						<th class="cellrowborder" id="d3442138e61" valign="top" width="NaN%">Parameter 
+						</th>
+ 
+						<th class="cellrowborder" id="d3442138e64" valign="top" width="NaN%">Description 
+						</th>
+ 
+					 </tr>
+</thead>
+ 
+				  <tbody> 
+					 <tr> 
+						<td class="cellrowborder" headers="d3442138e61 " valign="top" width="NaN%">PRI 
+						</td>
+ 
+						<td class="cellrowborder" headers="d3442138e64 " valign="top" width="NaN%">Represents the module&#39;s highest alarm&#39;s
+						  priority. 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td class="cellrowborder" headers="d3442138e61 " valign="top" width="NaN%">CUALM 
+						</td>
+ 
+						<td class="cellrowborder" headers="d3442138e64 " valign="top" width="NaN%">Represents whether the module&#39;s highest
+						  alarm is a new alarm. 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td class="cellrowborder" headers="d3442138e61 " valign="top" width="NaN%">NALM 
+						</td>
+ 
+						<td class="cellrowborder" headers="d3442138e64 " valign="top" width="NaN%">Represents the highest alarm&#39;s current
+						  state. 
+						</td>
+ 
+					 </tr>
+ 
+					 <tr> 
+						<td class="cellrowborder" headers="d3442138e61 " valign="top" width="NaN%">COUNT 
+						</td>
+ 
+						<td class="cellrowborder" headers="d3442138e64 " valign="top" width="NaN%">Counts the total number of annunciated
+						  alarms. 
+						  <p>That is, it counts all alarms that are
+							 Active/Unacknowledged, Active/Acknowledged, and Inactive/Unacknowledged. 
+						  </p>
+ 
+						</td>
+ 
+					 </tr>
+ 
+				  </tbody>
+ 
+				</table>
+</div>
+ 
+		   
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_9DC7E71994664E1D88C0988C137E9A5D"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_9DC7E71994664E1D88C0988C137E9A5D"></a> 
+		  <span>Add the following code to the module: 
+		  </span> 
+		    
+			 <pre class="codeblock">Pn := 255;
+Cn := 0;
+Nn := 0;
+Count := 0;
+
+Pt := &#39;//MODULE/ALARMS[1].PRI&#39;;
+Ct := &#39;//MODULE/ALARMS[1].CUALM&#39;;
+Nt := &#39;//MODULE/ALARMS[1].NALM&#39;;
+IF ((Nt &gt; Nn) OR (Ct * (Cn - 1) &lt; 0) OR ((Nt = Nn) AND ((Ct != 0)=(Cn != 0)) AND (Pt &gt; Pn))) THEN
+Pn := Pt;
+Cn := Ct;
+Nn := Nt;
+Count := Count + 1;
+ELSE
+IF (Nt &gt; 0) OR (Ct &gt; 0) THEN
+Count := Count + 1;
+END_IF;
+END_IF;
+
+
+&#39;^/PRI&#39; := Pn;
+&#39;^/CUALM&#39; := Cn;
+&#39;^/COUNT&#39; := Count;
+&#39;^/NALM&#39; := Nn;
+</pre>
+ 
+		   
+		  <a name="task_135963F9D77E4E34A22726FEA28CF3DC__substeps_80B9BF869BAC47798BE2692D70C54B32"></a><ol id="task_135963F9D77E4E34A22726FEA28CF3DC__substeps_80B9BF869BAC47798BE2692D70C54B32" type="a"> 
+			 <li class="substep" id="task_135963F9D77E4E34A22726FEA28CF3DC__substep_FCC6BE47A7C94C6F848D2DC6EE60D179"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__substep_FCC6BE47A7C94C6F848D2DC6EE60D179"></a><div class="li_content"> 
+				<span>Replace 
+				  <samp class="codeph">MODULE</samp> with the module name. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_1144C9E3BE3B44CDBD436DEE178F8157"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_1144C9E3BE3B44CDBD436DEE178F8157"></a> 
+		  <span>If you want additional modules included in the alarm roll-up,
+			 duplicate the following code for each module: 
+		  </span> 
+		    
+			 <pre class="codeblock">Pt := &#39;//MODULE/ALARMS[1].PRI&#39;;
+Ct := &#39;//MODULE/ALARMS[1].CUALM&#39;;
+Nt := &#39;//MODULE/ALARMS[1].NALM&#39;;
+IF ((Nt &gt; Nn) OR (Ct * (Cn - 1) &lt; 0) OR ((Nt = Nn) AND ((Ct != 0)=(Cn != 0)) AND (Pt &gt; Pn))) THEN
+Pn := Pt;
+Cn := Ct;
+Nn := Nt;
+Count := Count + 1;
+ELSE
+IF (Nt &gt; 0) OR (Ct &gt; 0) THEN
+Count := Count + 1;
+END_IF;
+END_IF;</pre>
+ 
+		   
+		  <a name="task_135963F9D77E4E34A22726FEA28CF3DC__substeps_B514941B347F472BAD3DBBC6D1230686"></a><ol id="task_135963F9D77E4E34A22726FEA28CF3DC__substeps_B514941B347F472BAD3DBBC6D1230686" type="a"> 
+			 <li class="substep" id="task_135963F9D77E4E34A22726FEA28CF3DC__substep_41C5ACBD699A4DF8A7A87A4FB65E1278"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__substep_41C5ACBD699A4DF8A7A87A4FB65E1278"></a><div class="li_content"> 
+				<span>Replace each 
+				  <samp class="codeph">MODULE</samp> with the appropriate module name. 
+				</span> 
+			 </div></li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_343462C986E64DE8848D102ED9CF551E"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_343462C986E64DE8848D102ED9CF551E"></a> 
+		  <span>Save the module. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_DA39615F7F7644DC8B99FA962DD4CAB9"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_DA39615F7F7644DC8B99FA962DD4CAB9"></a> 
+		  <span>In DeltaV Operate Configure, open the HP_Alarms&#39; 
+			 <span class="uicontrol">Dynamo Properties</span> dialog. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_B2D1EDE9A37D4C2AA7CE8F0FE0789608"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_B2D1EDE9A37D4C2AA7CE8F0FE0789608"></a> 
+		  <span>Select the 
+			 <span class="uicontrol">Custom</span> radio button. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_EF1341371ED04382BC8E42AD948BA906"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_EF1341371ED04382BC8E42AD948BA906"></a> 
+		  <span>Browse to the module&#39;s PRI, NALM, CUALM, and COUNT parameters. 
+		  </span> 
+		</li>
+<li class="stepexpand" id="task_135963F9D77E4E34A22726FEA28CF3DC__step_6C0217C19FB640A5A26AD92CC9757409"><a name="task_135963F9D77E4E34A22726FEA28CF3DC__step_6C0217C19FB640A5A26AD92CC9757409"></a> 
+		  <span>Click 
+			 <span class="uicontrol">OK</span> to save the changes and close the dialog. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="highperf_alarmunitindicator_dynamo.html">High Performance Unit Alarms Indicator dynamo (HP_Alarms)</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

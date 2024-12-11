@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Matrix Parameter References" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="matrix, parameter, matrix parameter reference, reference, matrix parameter" name="DC.subject" /><meta content="matrix, parameter, matrix parameter reference, reference, matrix parameter" name="keywords" /><meta content="c_syntaxrules.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="matrixparameterreferences" name="DC.Identifier" /><title>Matrix Parameter References</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_ioreferences.html" /><link rel="next" href="c_inputsoutputsofthecalclogicblock.html" /></head><body class="fixed" id="matrixparameterreferences" data-relpath="c_matrixparameterreferences.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="matrixparameterreferences"></a>
+
+<h1 class="topictitle1">Matrix Parameter References</h1>
+<div><div></div>
+
+    <p>In the DeltaV system, a matrix parameter is defined as a two-dimensional floating point array parameter. Arrays can contain as many as 240 elements. Arrays are arranged in a [row][column] combination of up to 127 by 127 as long at the total number of elements does not exceed the 240 element maximum.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> You cannot change the size of an array during runtime. Attempts to write to the .ROWS or .COLS fields of a matrix parameter are ignored.</p>
+
+    </div>
+
+    <p>The array parameter participates in redundancy only if the number of elements is 200 or less. If there are more than 200 elements, the parameter does not transfer across the controller redundancy link.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> In batch expressions you can use array elements as values for step attributes, phase parameters, report parameters, recipe formula parameters, recipe step parameters, and unit parameters.</p>
+
+    </div>
+
+    <p>Define a matrix by specifying Floating point array when defining an output parameter.</p>
+
+    <a name="matrixparameterreferences__image_CF28267896C14E5EB48B510B9D0BB54C"></a><img id="matrixparameterreferences__image_CF28267896C14E5EB48B510B9D0BB54C" src="DB_Matrix.gif" />
+    <p>
+      <em>Properties of an Output Parameter Configured as a 3 by 3 Floating Point Array</em>
+    </p>
+
+    <p>Access array elements by extending the database reference with indices. There are two ways to do this:</p>
+
+    <a name="matrixparameterreferences__ul_305CE781290741E5B0252DDD568DDDE8"></a><ul id="matrixparameterreferences__ul_305CE781290741E5B0252DDD568DDDE8">
+      <li id="matrixparameterreferences__li_29C336DA0DA94E9798C9687A0E0B6F83"><div class="li_content">
+        <p>
+          <samp class="codeph">&#39;array&#39;[row][column]</samp>
+        </p>
+
+      <p>In this form the array index references (row and column) are outside of the single quotes. The row and column specifiers can be variables or expressions. This form returns the default field (.CV) value of an array element. The index values are checked against the matrix definition.</p>
+<p>For example:</p>
+<pre class="codeblock">
+          <samp class="codeph">&#39;ARRAY1&#39;[MY_INDEX][2*abs(a)]</samp>
+        </pre>
+<p>The row index value is a variable and the column index variable value is an expression.</p>
+</div></li>
+
+      
+      <li id="matrixparameterreferences__li_0019FA7BD1964742A84115C8A6006021"><div class="li_content">
+        <p>
+          <samp class="codeph">&#39;array[row][column].field&#39;</samp>
+        </p>
+
+      <p>In this form the entire array reference is enclosed in single quotes and <em>field</em> is required. In this form row and column specifiers <strong><em>must</em></strong> be integer constants. The index values are checked against the index dimensions. You must use this form to access fields other than CV.</p>
+<p>For example:</p>
+<pre class="codeblock">
+          <samp class="codeph">&#39;ARRAY1[2][3].AWST&#39;</samp>
+        </pre>
+</div></li>
+
+      
+    </ul>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> Matrix Parameter indices start at 1 but an index of 0 (zero) is interpreted as 1. For example, an index of [0][0] is interpreted as [1][1].</p>
+
+    </div>
+
+    <p>Use either of these forms to access array elements in expressions. Note that you must enter array indexes manually in the expression editor.</p>
+
+    <p>To add and display historical array parameters, the syntax must be entered as follows:</p>
+
+    <pre class="codeblock">   &#39;Module/reference[2][1].CV&#39;</pre>
+
+    <p>To display and use the array parameter in DeltaV Operate, reference the array on the graphic as follows:</p>
+
+    <pre class="codeblock">   &#39;DVSYS.Module/reference[2][1].F_CV&#39;</pre>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <p> The DeltaV system updates array parameter values in the workstations every 10 seconds. Array values that change more frequently than 10 seconds cannot all be properly displayed at the workstations.</p>
+
+    </div>
+
+    <p>When using matrix parameter referencing and the array resides in a different controller from the module writing to it, create the logic (in the module) to confirm each array element write before attempting the next array element write. Confirmation is not needed if the array and module both reside in the same controller.</p>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

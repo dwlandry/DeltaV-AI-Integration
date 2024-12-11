@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="Appendix E - NE33, S88.01, and DeltaV terms compared" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="Namur, NE33, S88.01, IEC 61512-1, EN 61512-1" name="DC.subject" /><meta content="Namur, NE33, S88.01, IEC 61512-1, EN 61512-1" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="r_appndxe" name="DC.Identifier" /><title>Appendix E - NE33, S88.01, and DeltaV terms compared</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="r_newreportsamplecode.html" /><link rel="next" href="c_appndxf.html" /></head><body class="fixed" id="r_appndxe" data-relpath="r_appndxe.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="r_appndxe"></a>
+
+<h1 class="topictitle1">Appendix E - NE33, S88.01, and DeltaV terms compared</h1>
+<div><div></div>
+<div class="section"><p><cite>S88.01/IEC 61512-1</cite> became the European standard in May 1999 as <cite>CENELEC EN 61512-1</cite>. It has been transferred to a national standard in the countries of the European Community. Also, in Europe, S88.01 is the official standard for batch control.</p>
+<p>However, the German NAMUR recommendation, <cite>NE33 Requirements</cite>, to be met by systems for recipe-based operations, has influenced the way process and control engineers look at batch and how they design and structure batch processes and automation in Europe.</p>
+<p>This appendix gives a short comparison between NE33 and S88.01 terminology and provides some ideas on how to implement the NE33-structured automation concepts into the DeltaV system in an efficient manner.</p>
+<p>The same terms used in S88.01 and NE33 are not always are based on the same definitions. The following matrix shows the NE33 terminology in relation to both S88.01 and the functionality of DeltaV Batch.</p>
+<p>The main difference between S88.01 and NE33 is the assignment between procedural objects and equipment.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d2253795e51" valign="top" width="NaN%"><p>Procedural Model</p>
+</th>
+
+<th class="cellrowborder" id="d2253795e55" valign="top" width="NaN%"><p>Equipment Model S88.01</p>
+</th>
+
+<th class="cellrowborder" id="d2253795e59" valign="top" width="NaN%"><p>Equipment Model NE33</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d2253795e51 " valign="top" width="NaN%"><p>Procedure</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e55 " valign="top" width="NaN%"><p>Process Cell</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e59 " valign="top" width="NaN%"><p>Process Cell</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e51 " valign="top" width="NaN%"><p>Unit Procedure</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e55 " valign="top" width="NaN%"><p>Unit</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e59 " valign="top" width="NaN%"><p>Unit</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e51 " valign="top" width="NaN%"><p>Operation</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e55 " valign="top" width="NaN%"><p>Unit</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e59 " valign="top" width="NaN%"><p>Unit</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e51 " valign="top" width="NaN%"><p>Phase/Basis Function</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e55 " valign="top" width="NaN%"><p>Unit</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e59 " valign="top" width="NaN%"><p>Equipment Module</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+<p>According to NE33, a phase (called a basis function) is equipment independent and can be executed on different units in a different way (for example, heating or cooling with two or three thermal media). In the NE33 approach, the basis functions are carried out on equipment modules through equipment type-specific technical functions. Each equipment module (dosing, heating, agitating, pressure, and so on) controls its own equipment (valves, pumps, and so on). This means that a unit typically contains a set of equipment modules (about 10 to 20 for a reactor unit). During recipe execution, those equipment modules execute their technical functions triggered by the basis functions. This structure results in a more parallel execution of technical functions than in an S88.01 environment.</p>
+<p>According to S88.01, a phase is the lowest level of the procedural structure and carries out its control on a unit by controlling control modules or S88.01 equipment modules. A phase, by this definition, has no dedicated equipment. Therefore, a phase is just a part of an operation and controls all the equipment necessary to fulfill its task. During recipe execution, phases run in a more sequential way than in an NE33 structure.</p>
+<div class="note"><span class="notetitle">Note:</span> <p> The NE33 and S88.01 terms are defined from the respective published standards. Some definitions are taken as a whole while others are partial. For a complete definition or explanation of any term, please refer to the published standard.</p>
+</div>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" frame="border" rules="all" summary=""><caption><span class="tablecap">Comparison between NE33, S88.01, and DeltaV Terminology</span></caption><thead align="left"><tr valign="top">
+<th class="cellrowborder" id="d2253795e137" valign="top" width="NaN%"><p>Terms and Definitions of NAMUR Recommendation NE33</p>
+</th>
+
+<th class="cellrowborder" id="d2253795e141" valign="top" width="NaN%"><p>Relating Terms and Definitions of S88.01/IEC 61512-1/EN 61512-1</p>
+</th>
+
+<th class="cellrowborder" id="d2253795e145" valign="top" width="NaN%"><p>Corresponding DeltaV Implementation</p>
+</th>
+
+</tr>
+</thead>
+<tbody><tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Basis function</strong>
+
+</p>
+<p>A function that gets realized by technical functions of one or several units. Their realization may vary from unit to unit (for example, control of environmental conditions, such as tempering; blending the content by stirring; putting material in measured quantities in and out, such as dosing).</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Phase</strong>
+
+</p>
+<p>The lowest level of a procedural element in the procedural control model. It provides an interface to basic control. A series of steps that causes one or more equipment- or process-oriented actions. These actions issue commands to set or change controller constants, modes, or algorithms (for example, heat or drain).</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Phase class</strong>
+
+</p>
+<p>The corresponding DeltaV term to the NE33 term basis function. When the phase class and its phase parameters are created, there are different ways to implement the potential various technical functions for this basis function in the DeltaV system (see technical function).</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Basis operation</strong>
+
+
+</p>
+<p>According to the process engineering interpretation, the term <strong>unit operation</strong> is used. It refers to typical material processing or transformations common to many productions (for example, dissolution, distillation, or certain reactions, such as hydration or sulphonation). If biological process engineering is included, basic biotechnical operations, such as fermentation, must be included as well.</p>
+<p>According to control engineering interpretation, the term <strong>conduct operation</strong> is used. It signifies a reusable sequence of actions. For the production of different products applying similar production technologies (for example, similar processes, materials, reactions, risk potential, and so on), a number of conduct operations can be developed. A suitable combination of these conduct operations provides the required recipes for individual products.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Process operation</strong>
+</p>
+<p>A major processing activity that usually results in a chemical or physical change in the material being processed and that is defined without consideration of the actual target equipment configuration.</p>
+<p>
+<strong>Operation</strong>
+
+</p>
+<p>A procedural element defining an independent processing activity consisting of the algorithm necessary for the initiation, organization, and control of phases.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Operations</strong>
+
+</p>
+<p>Written in the DeltaV system as Procedural Function Charts (PFC). Within an operation, phases execute sequentially and/or concurrently.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Basis recipe</strong>
+
+</p>
+<p>A source recipe scaled (for example, laboratory, pilot plant, large-scale plant) and adapted to a specific mode of operation (that is, continuous, batch). It contains all source recipe data (process stages, unit operations, material properties and ratios) as well as operating instructions for individual process stages. An operating instruction is an event controlled combination of actions. The actions are described by basis functions. A possible means of describing operating instructions is a functional diagram. In the case of discontinuous process stages, operating instructions may consist of individual conduct operations that are defined by means of basis functions.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Master recipe</strong>
+
+</p>
+<p>A type of recipe that accounts for equipment capabilities and may include process cell-specific information.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Procedure and formulas</strong>
+
+</p>
+<p>Combined, these relate to the S88.01 master recipe definition and the NE33 basis recipe definition.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Batch</strong>
+
+</p>
+<p>Quantity of a product produced in a single consistent production run. Each batch is provided with an identification number that identifies the batch and makes it possible to trace back and check the production of this batch through all production stages and tests.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Batch</strong>
+
+
+</p>
+<p>The material that is being produced or has been produced by a single execution of a batch process.</p>
+<p>An entity that represents the production of material at any point in the process</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Procedure, formula, and unit binding uniquely named by a batch ID</strong>
+
+</p>
+<p>Combined are the representations of the NE33 term, Batch as implemented in the DeltaV system.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Batch report</strong>
+
+</p>
+<p>Documents the production of a batch and includes selected recipe data, actual data and events.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Batch record</strong>
+</p>
+<p>All recorded information pertaining to a batch is referred to as the batch history. The batch history typically includes the batch-specific information.</p>
+<p>
+<strong>Batch report</strong>
+
+</p>
+<p>The extraction of data related to one or more batches is called a batch report. The extraction and ordering of the data in a report may vary based on the intended recipient of the batch report.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Batch journal</strong>
+</p>
+<p>The recorded information pertaining to a batch.</p>
+<p>
+<strong>Batch report</strong>
+
+</p>
+<p>The extraction of batch-related data in a predefined or user-defined format.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Control function</strong>
+
+
+</p>
+<p>Basis function made production and process cell specific.</p>
+<p>For this purpose a basis function is supplemented by data from the production order (that is, actual quantity data) and by the respective technical function of a chosen unit. Therefore, a control function serves to activate a technical function.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Equipment phase</strong>
+
+</p>
+<p>A phase that is part of equipment control</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Unit phase and phase parameters</strong>
+
+</p>
+<p>An NE33 control function is created in the DeltaV system at the time that an operator or a batch starts a phase on a unit.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Control operation</strong>
+
+</p>
+<p>Basis operation adapted to a specific production and process cell.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Equipment operation</strong>
+
+</p>
+<p>An operation that is part of equipment control</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Unit Operation and phase parameters</strong>
+
+</p>
+<p>An NE33 control operation is created in the DeltaV system at the time that an operator or a batch starts an operation on a unit</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Control phase</strong>
+
+</p>
+<p>In control engineering applications, coded programs often provide technical functions. In this case the program is also referred to as a control phase.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Equipment phase</strong>
+
+</p>
+<p>A phase that is part of equipment control</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Unit phase and phase parameters</strong>
+
+</p>
+<p>An NE33 control function is created in the DeltaV system at the time an operator or a batch starts a phase on a unit.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Control recipe</strong>
+
+
+</p>
+<p>Basis recipe made batch specific. A control recipe contains all information necessary for the production of a product based on the technical functions of a process cell.</p>
+<p>This includes all information of the basis recipe, the basis function references in the functional diagram being replaced by the control function references.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Equipment procedure</strong>
+
+</p>
+<p>A procedure that is part or equipment control</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Procedure, unit binding, and formula</strong>
+
+</p>
+<p>An NE33 control recipe in the DeltaV system is created at the time a batch is added to the batch list of the Batch Operator Interface.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Device</strong>
+
+</p>
+<p>Technical equipment, such as machines, apparatus, instruments forming part of a process cell as well as passive parts, such as vessels and piping.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Control module</strong>
+
+</p>
+<p>The lowest level grouping of equipment in the physical model that can carry out basic control.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Control module</strong>
+
+
+</p>
+<p>In the DeltaV software, it is the same as the S88.01 definition.</p>
+<p>The DeltaV software provides multiple algorithms types for control module logic. The algorithm types are Function Block Diagram, Sequential Function Chart, Command-driven and State-driven algorithms.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Equipment module</strong>
+
+</p>
+<p>Several devices can be grouped to form an equipment module. This is useful if the devices are working together and are realizing one or several basis functions. Each device should be part of only one equipment module.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Equipment module</strong>
+
+</p>
+<p>A functional group of equipment that can carry out a finite number of specific minor processing activities.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Equipment module</strong>
+
+
+</p>
+<p>In the DeltaV software, it is the same as the S88.01 definition.</p>
+<p>The DeltaV software provides multiple algorithms types for equipment module logic. The algorithm types are Function Block Diagram, Sequential Function Chart, Command-driven, State-driven, Phase Algorithm, Phase with command-driven run logic, and Phase with state-driven run logic.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Modes of operation</strong>
+
+</p>
+<p>Different alternative technical functions of the same equipment module are named modes of operation of the equipment module.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p>
+In S88.01, typically different modes of operation, such as heating and cooling on the equipment module (NE33) heating/cooling system, are realized as different phases.
+</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Phase input parameter of type Named Set</strong>
+
+</p>
+<p>The phase logic branches into the different modes of operation depending on the phase parameter value.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Partial recipe</strong>
+
+</p>
+<p>Part of a recipe describing a process stage.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Unit procedure</strong>
+
+</p>
+<p>A recipe level consisting of operations and the algorithm that controls the initiation, organization, and execution sequence of the operations.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Unit procedure as procedural function chart (PFC)</strong>
+
+</p>
+<p>In the DeltaV system, the unit procedure is written as a procedural function chart.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Plant</strong>
+
+</p>
+<p>Set of all production areas including the respective infrastructure on a common site.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Site</strong>
+
+</p>
+<p>A component of a batch manufacturing enterprise that is identified by physical, geographical or logical segmentation within the enterprise.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Areas and process cells</strong>
+
+</p>
+<p>In a DeltaV system, the areas and their process cells together comprise the batch site.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Process</strong>
+
+</p>
+<p>A sequence of chemical, physical or biological operations to extract, produce or dispose of materials or products. In other words, a process is a procedure to reach a goal. The process industry uses chemical, physical and biological know-how and methods with the aim to extract, produce, transform or dispose of materials. For example, synthesis of ammonia according to Haber and Bosch.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Process</strong>
+
+</p>
+<p>A sequence of chemical, physical or biological activities for the conservation, transport, or storage of material or energy.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Process</strong>
+
+</p>
+<p>A collection of physical devices and methods used in the production or manufacturing of a product.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Process cell</strong>
+
+</p>
+<p>The ensemble of all necessary and stand-by facilities and buildings required for the implementation of a process.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Process cell</strong>
+
+</p>
+<p>A logical grouping of units that includes the equipment required for production of one or more batches. It defines the span of logical control of one set of process equipment within an area.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Process cell</strong>
+
+</p>
+<p>A set of equipment within an area required for production of one or more batches.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Production area</strong>
+
+</p>
+<p>A collection of several equal or associated process cells and respective auxiliary equipment.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Area</strong>
+
+</p>
+<p>A component of a batch manufacturing site that is identified by physical, geographical, or logical segmentation within the site.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Areas</strong>
+
+</p>
+<p>A logical division of a process control system. Areas typically represent plant locations or main processing functions. They are the highest level of structure within the DeltaV system.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Production report</strong>
+
+</p>
+<p>Contains the actual data of the production process for a specific lot (for example, quantity produced).</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Batch report</strong>
+
+</p>
+<p>The extraction of data related to one or more batches is called a batch report. The extraction and ordering of the data in a report may vary based on the intended recipient of the batch report.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Batch report</strong>
+
+</p>
+<p>A logical grouping of units that includes the equipment required for production of one or more batches.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Production order</strong>
+
+</p>
+<p>Includes specifications concerning the product, quantity, required quality, and time target. As a rule, the processing of a production order means the actual production of a lot.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"> </td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Recipes, formulas, and the batch list</strong>
+
+</p>
+<p>The recipe and the formula together make up the production order. The batch list contains production orders in that it contains the recipes and formulas used in a batch.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Recipe</strong>
+
+</p>
+<p>Prescribed production procedure for a product. It describes what is required and which steps have to be taken to implement the process.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Recipe</strong>
+
+</p>
+<p>A set of information that uniquely identifies the ingredients, the quantities of ingredients, and the production equipment required to manufacture a product.</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Procedure and formula</strong>
+
+
+</p>
+<p>The procedure defines the strategy for accomplishing the task of making a batch. It consists of all of the unit procedures defined for a recipe.</p>
+<p>The formula defines variables to produce a variation of the product.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Technical function</strong>
+
+
+</p>
+<p>The realization of a basis function by a unit</p>
+<p>This term covers the following aspects:
+</p>
+<p>
+the process engineering purpose (basis function)
+</p>
+<p>
+the involved devices (equipment module)
+</p>
+<p>
+the functionality (control program or operator instruction)</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"> </td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Phase Logic</strong>
+
+</p>
+<p>In a DeltaV system, the phase logic is the term that corresponds to the NE33 term technical function.</p>
+<p>There are two different ways to implement the phase logic for the technical functions in the DeltaV system:</p>
+<p>
+1. Phase Logic Modules (PLM) that are linked to the basis functions by configuring them as class-based PLMs. In this case, the phase logic in the DeltaV system is separated from the phase logic of the phase class and can either be configured for each single PLM or by linking the PLM&#39;s phase state to composite templates.
+
+
+</p>
+<p>2. The phase logic of the phase class is used to write the control program for the phases. In this case, the differences in the equipment have to be covered either in the logic of the phase class directly or by using equipment modules with a unique interface to the phase but different logic that reflects the differences in the equipment.</p>
+<p>To write the phase logic in a generic way, aliasing can be used in case of class-based phase logic. In case of the use of PLMs or equipment modules, the logic has to be written using dynamic references.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Unit</strong>
+
+</p>
+<p>A component of a process cell that may be operated independently, at least part of the time</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"><p><strong>Unit</strong>
+
+</p>
+<p>A collection of associated control modules and/or equipment modules and other process equipment in which one or more major processing activities can be conducted</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"><p><strong>Unit</strong>
+
+</p>
+<p>A major piece of equipment in a process cell that performs a specific task. It consists of all the equipment and control modules that are needed to perform the task.</p>
+</td>
+
+</tr>
+<tr valign="top">
+<td class="cellrowborder" headers="d2253795e137 " valign="top" width="NaN%"><p><strong>Working recipe</strong>
+
+</p>
+<p>Control recipe for the operation of non-automated process cells</p>
+</td>
+
+<td class="cellrowborder" headers="d2253795e141 " valign="top" width="NaN%"> </td>
+
+<td class="cellrowborder" headers="d2253795e145 " valign="top" width="NaN%"> </td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

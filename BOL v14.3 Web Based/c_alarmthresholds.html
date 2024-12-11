@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Alarm thresholds" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="thresholds, alarms, alarm" name="DC.subject" /><meta content="thresholds, alarms, alarm" name="keywords" /><meta content="ws_customizing_the_deltav_operate_environment.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_alarmthresholds" name="DC.Identifier" /><title>Alarm thresholds</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_sounding_the_horn_with_alarms.html" /><link rel="next" href="c_menucommands.html" /></head><body class="fixed" id="c_alarmthresholds" data-relpath="c_alarmthresholds.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_alarmthresholds"></a>
+
+<h1 class="topictitle1">Alarm thresholds</h1>
+<div><div></div>
+ 
+	 <p>The workstation alarm threshold determines what priority of alarms are
+		shown in the alarm banner and sound the horns. The UserSettings.grf file
+		contains one setting each for process alarms, device alarms, hardware alarms,
+		as well as one setting each for SIS process, SIS device, and SIS hardware
+		alarms.  
+	 </p>
+ 
+	 <p>By default, workstations are defined to show and annunciate all
+		(priorities 4 -15) process alarms, SIS process alarms, and SIS hardware alarms.
+		By default, workstations are defined to show and annunciate a subset
+		(priorities 8 - 15) of hardware alarms, device alarms, and SIS device alarms. 
+	 </p>
+ 
+	 <p>This means that hardware, device and SIS device alarms with priorities
+		below 8 will not be shown in the alarm banner and will not sound the horn.
+		These alarm defaults were selected because many low priority alarms do not
+		represent a potential impact on the process and are primarily intended for
+		maintenance personal. However, these alarms are still visible to the operator
+		in the Alarm Summary display, in user-defined graphics and in the Event
+		Chronicle. 
+	 </p>
+ 
+	 <p>The default alarm threshold setting may be modified for one or more
+		workstations in the UserSettings.grf file. The workstation variables used for
+		alarm thresholds are 
+	 </p>
+ 
+	 <p>frsVariables.gn_ProcessAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p> frsVariables.gn_DeviceAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p> frsVariables.gn_HardwareAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p> frsVariables.gn_SISProcessAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p> frsVariables.gn_SISDeviceAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p> frsVariables.gn_SISHardwareAlarmThreshold.CurrentValue 
+	 </p>
+ 
+	 <p>These variables can also be changed dynamically while in run mode. For
+		example a button can be configured to modify the alarm banner to only show and
+		annunciate process alarms of priorities above 12, for use during an upset. 
+	 </p>
+ 
+	 <p>You can customize the priority of the alarms displayed in the alarm
+		banner by adjusting the Alarm Threshold values in the UserSettings.grf file.
+		The default settings display all process alarms, all hardware alarms, HART, and
+		fieldbus device alarms of priority eight (8) and above. This means that the
+		highest priority alarm, whether hardware, process or device would occupy the
+		leftmost position in the alarm banner. Node status is shown in the lower right
+		corner of the alarm banner. 
+	 </p>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> Hardware alarms default to enabled on newly created nodes. Node
+		  status is unaffected by the enabling or disabling of hardware alarms. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>The node status section of the alarm banner shows the highest priority
+		hardware problem based on node integrity. You can use the alarmban_HAC.grf file
+		if you want to replace the node status section of the alarm banner with the
+		highest priority hardware problem based on hardware alarms. To remove hardware
+		alarms from the highest priority alarms shown in the alarm banner, adjust the
+		Alarm Threshold values in the UserSettings.grf file such that the hardware
+		alarm threshold is set to 10. The highest priority hardware problem based on
+		hardware alarms is still shown on the lower right corner of the alarm banner. 
+	 </p>
+ 
+	 <p>Out-of-the-box layout files already use the _HAC alarm banners on
+		primary monitors, with the exception of the operator keyboard layout files. To
+		use the alarmban_HAC.grf picture for your operator keyboard alarm banners, set
+		the default initialized alarm banner in the UserSettings.grf or a Layout file.
+		Instructions for editing the UserSettings.grf and Layout file to customize the
+		DeltaV Operate environment. for additional information. 
+	 </p>
+ 
+	 <div class="fignone" id="c_alarmthresholds__fig_809C30D7EEFA4D55A359BEFF9EEE57AB"><a name="c_alarmthresholds__fig_809C30D7EEFA4D55A359BEFF9EEE57AB"></a><div><span class="figcap">DeltaV Operate alarm banner with highest priority hardware alarm
+		  shown</span></div> 
+		 
+		<a name="c_alarmthresholds__image_0390DA30B35546DD80720CFEAA8353A9"></a><img id="c_alarmthresholds__image_0390DA30B35546DD80720CFEAA8353A9" src="almbnnr_hac.png" /> 
+	 </div>
+ 
+  </div>
+<div><div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="ws_customizing_the_deltav_operate_environment.html">Customizing the DeltaV Operate environment</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

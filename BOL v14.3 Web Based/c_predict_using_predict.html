@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Using DeltaV Predict" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="commissioning MPC, Creating an MPC Module, DeltaV Predict, using, MPC function block, commissioning, MPC operator interface, defining, MPC Process Simulate, MPC Process Simulator function block, MPC Simulate, MPC Simulation, Simulate, MPC" name="DC.subject" /><meta content="commissioning MPC, Creating an MPC Module, DeltaV Predict, using, MPC function block, commissioning, MPC operator interface, defining, MPC Process Simulate, MPC Process Simulator function block, MPC Simulate, MPC Simulation, Simulate, MPC" name="keywords" /><meta content="c_data_exclusion_and_interpolation.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_mpc.html" name="DC.Relation" scheme="URI" /><meta content="mpcoperatefaceplate.html" name="DC.Relation" scheme="URI" /><meta content="dynamoreference.html" name="DC.Relation" scheme="URI" /><meta content="c_predict.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="concept_E1843E8C96F7430A964F08BE3E7DAA36" name="DC.Identifier" /><title>Using DeltaV Predict</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_predict.html" /><link rel="next" href="c_predict_using_ext_hist_data.html" /></head><body class="fixed" id="concept_E1843E8C96F7430A964F08BE3E7DAA36" data-relpath="c_predict_using_predict.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36"></a>
+
+<h1 class="topictitle1">Using DeltaV Predict</h1>
+<div>
+    <p>DeltaV Predict allows you to create and automatically commission
+multivariable control strategies. After downloading a module that
+contains an MPC function block, the Predict application allows you
+to automatically test the process. The historical data collected on
+the process response during testing may be viewed using the Predict
+application. Also, the data collected for a module containing a
+block is used by this application to create a step response model
+of the process. Based on the identified process model, the Predict
+application automatically defines the control for the MPC function
+block. Also, you can launch the MPC Operator Interface from the
+Predict application. This section examines the features of DeltaV
+Predict.
+</p>
+
+    <div class="section" id="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_FC38A2F82F51435D9CD5F1D01971E63A"><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_FC38A2F82F51435D9CD5F1D01971E63A"></a><h2 class="sectiontitle">Creating an MPC Module
+</h2>
+      
+      <p>Applying DeltaV Predict to the control of a process unit begins
+with the creation of a control strategy that utilizes the MPC
+function block. You can use the MPC function block to address
+multivariable control that traditionally was addressed using PID
+with feedforward, override, and decoupling control techniques.
+Also, because of MPC&#39;s ability to handle processes with difficult
+dynamics (for example, long deadtime), in some cases, you can use
+MPC to replace a single PID controller. In addition, you can use
+the capability of the MPC function block to maximize the throughput
+of a unit that is limiting production.</p>
+
+      <p>In DeltaV Control Studio, you can configure the inputs and
+outputs of the MPC function block to meet your particular control
+application. Three types of inputs to the function block can be
+defined:</p>
+
+      <div class="p">
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_AAA77248EA174EFE9FBDD829FD786C7E"></a><ul id="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_AAA77248EA174EFE9FBDD829FD786C7E">
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_DF59300E9B214BEFB12BEADA398311AA"><div class="li_content">Control (CNTRL) - Process output measurement that is to be
+maintained at a specific setpoint value through the control action
+of the MPC function block.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_1091DBB4B06144728F619189AF6CBD7C"><div class="li_content">Disturbance (DSTRB) - Process input measurement that impacts
+one of the control parameters of the MPC function block.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_A98FC12BB74A4FC595CCCDFB19C6D963"><div class="li_content">Constraint (CNSTR) - Process output measurement that is to be
+maintained within constraint limits through the control action of
+the MPC function block.</div></li>
+
+        </ul>
+
+      </div>
+
+      <p>The Manipulated (MNPLT) parameters of the MPC function block can
+be wired to process inputs. These inputs are set using either the
+Analog Output (AO) function block or another control block (for
+example, a PID function block). The setpoint of these blocks is
+adjusted to maintain the MPC control parameters at target and the
+constraint parameters within their associated limits. You can
+assign a custom name to these inputs and outputs for display in the
+Predict application and the MPC operator view dynamo. An example of
+an MPC function block and typical input/output connections are
+shown in the following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_A3FAB2F140014AE2A2D4C46E53291693"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_A3FAB2F140014AE2A2D4C46E53291693" src="mpc_example.gif" />
+      </p>
+
+      
+    </div>
+
+    <div class="section" id="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_B77302CAE92648D1B9DCD89B653B4E85"><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_B77302CAE92648D1B9DCD89B653B4E85"></a><h2 class="sectiontitle">Commissioning MPC
+</h2>
+      
+      <p>After downloading an MPC function block to a DeltaV controller,
+verify that the transmitters and valves that provide the inputs and
+utilize the outputs of the MPC function block are working
+correctly. Also, make sure the Continuous Historian is enabled and
+the area containing the module has been assigned to the Continuous
+Historian. Once you have verified all I/Os to the MPC function
+block, you can use the Predict application to commission the MPC
+control. You can select the Predict application by right-clicking
+the MPC function block when the module is online. In response, the
+Predict application is launched and the following interface
+appears.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_853095F15FFE4A09BD5650878F569CFD"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_853095F15FFE4A09BD5650878F569CFD" src="PredictOpen.gif" />
+      </p>
+
+      <p>The control (CNTRL) parameters are trended automatically. Up to
+six of the MPC inputs and outputs can be trended at one time. For
+good data values, trends appear in the colors indicated in the
+parameter data area. The color varies to indicate questionable
+status (yellow for uncertain or limited values, red for bad
+values). To add or delete a parameter from the trend, double-click
+the parameter in the <span class="wintitle">Operation Trend</span> pane. When you right-click a
+selected parameter, options are provided that allow you to modify
+the trend view (that is, change the trend range). You can use the
+toolbar controls or the slider bar to adjust the time window that
+is shown on the trend.</p>
+
+      <p>The process dynamics may be determined by the Predict
+application using an automated testing feature. Before such testing
+can be done, the blocks wired to the manipulated outputs of the MPC
+block must be in the correct mode. By selecting the <span class="uicontrol">MPC</span> button in
+the <span class="wintitle">Control</span> pane, you can force all the downstream blocks to the
+right mode. After doing this, note that the actual mode of the MPC
+function block changes from IMAN to MAN.</p>
+
+      <p>The size of the change made in the manipulated parameters during
+testing is determined by the step size entry (in percent of scale)
+where 0 indicates no change should be made. Enter the longest time
+(in seconds) that it takes for the process to respond to changes in
+inputs as the <span class="uicontrol">Time to Steady State</span>. With the downstream blocks in
+their remote mode and the <span class="uicontrol">Time to Steady State</span> specified, select
+<span class="uicontrol">Test</span> to initiate automatic testing of the process. In response, the
+manipulated parameters will automatically change in a pseudo-random
+manner over a time approximately equal to six times the time to
+steady state.</p>
+
+      <p>If any process output exhibits integrating response, use the
+following guidelines to estimate the <span class="uicontrol">Time to Steady State</span> (Tss)
+value:</p>
+
+      <div class="p">
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_4D10FDB99C994D19945FAFBF2489E27E"></a><ul id="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_4D10FDB99C994D19945FAFBF2489E27E">
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_BD016D6C0C0249EEABB8DF3D7FBB02DA"><div class="li_content">For integrating responses with insignificant lag and/or
+processes where the non-integrating response is significantly
+slower than integrating, limit the Tss to the approximate time it
+takes for the integrating process variable to reach one half of its
+operational limit value(s), when a normal change is applied to the
+process input.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_8F920DA133E749B4819B637F55942875"><div class="li_content">For processes with significant lag, the recommended Tss is 120
+* approximate lag, provided the limiting condition of guideline 1
+is not violated.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_0287730F9F174C97BF62D321DDDB7D1C"><div class="li_content">If the identified response is still not satisfactory or the
+slow dynamics of non-integrating responses necessitate violating
+guideline 1, estimate the response based on the physical (for
+example, volume of a tank) and operational process parameters (for
+example, flow rates, low/high tank level limits, and so on). Then
+enter the response parameters (Gain per second, dead time, and
+first order lag, if any) in the corresponding fields of the <span class="wintitle">Step Response Design</span> dialog.</div></li>
+
+        </ul>
+
+      </div>
+
+      <p>Whenever feasible, change disturbance variables manually during
+testing with a variable period (approximately Tss) squarewave.</p>
+
+      <p>While testing is active, the actual mode of the MPC function
+block changes to LO. During testing, a manipulated parameter can be
+changed using the <span class="wintitle">Operation Trend</span> pane. The portion of testing that
+is complete is indicated by a progression bar. The estimated time
+remaining to complete the test is shown below the progression
+bar.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_B3DD6645C8B04EC0BC5E5E2ECDAB9C6A"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_B3DD6645C8B04EC0BC5E5E2ECDAB9C6A" src="TestProcess.gif" />
+      </p>
+
+      <p>Upon completion of the test, a green area automatically covers
+portions of the trend associated with the time that testing was
+active. You can adjust the time covered by the green area either by
+dragging the start and end divider bars or positioning the bars by
+right-clicking the chart.</p>
+
+      <p>The area of test data that reflects normal process operating
+conditions is indicated by dragging the green area over the data on
+the trend window. You can exclude data within the green bar that
+does not represent normal operation by right-clicking within that
+area and stretching the resulting red bar over the bad data. After
+you select the test data, indicate if the control or constraint
+parameters are integrating, and then select <span class="uicontrol">Autogenerate</span> to create
+a step response model for the process and the associated control.</p>
+
+      <div class="important"><span class="importanttitle">Important:</span> The module that contains the MPC block should not be
+open in Control Studio when you request Autogenerate since the MPC
+function block is updated during autogenerate. To utilize the
+generated control, you must first download the associated module.
+The process model that is created is shown automatically in the
+DeltaV Predict application screen. Double-clicking gives you a more
+detailed view from which you can modify your step response, as
+shown in the following figure.</div>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_EAAFE2E5D2D64783AE4352B60753C184"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_EAAFE2E5D2D64783AE4352B60753C184" src="NormalModel.gif" />
+      </p>
+
+      <div class="note"><span class="notetitle">Note:</span> It is recommended that system time adjustments are
+not made over the data collection period. If it is necessary to
+make system time adjustments, it is best to exclude the data over
+the time range.</div>
+
+      <p>Any disturbances included in the control should be closely
+examined. The associated step response might be inaccurate if an
+input did not change significantly in the data used for
+autogenerate. If this occurs, a warning message will be displayed
+when the model is generated. In addition, this will be indicated in
+some cases by the step response that is shown as a straight line
+(that is, no response). One means of determining if the step
+response is accurate is to compare the ARX model to the FIR
+response. This can be done by identifying yourself as an expert by
+selecting <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>, and then selecting the <span class="uicontrol">FIR</span> check box.
+Both responses will be displayed, as shown in the following
+figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_5CAEE32018004AF7A7B0557C6C0EF13D"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_5CAEE32018004AF7A7B0557C6C0EF13D" src="FIRResponse.gif" />
+      </p>
+
+      <div class="note"><span class="notetitle">Note:</span> Only the first 40 points of the FIR response will be
+displayed.</div>
+
+      <p>In some cases, the ARX and FIR responses might not agree. In
+such a case, you might need to use other data that includes times
+when the input changed. Then, you will need to regenerate the model
+and the controller. Alternatively, if you are familiar with the
+process dynamics, you can identify yourself as an expert by
+selecting <span class="menucascade"><span class="uicontrol">Options</span> &gt; <span class="uicontrol">Expert</span></span>, and then modify the step response to
+reflect your knowledge of the process.</p>
+
+      <p>There are three methods you can use to modify the step response.
+The first method entails selecting the step response to be
+modified, right-clicking the response area, and then adding points.
+Click the new points that define the desired step response, as
+shown in the following figure. Click <span class="uicontrol">Plot</span> to display the new step
+response. Select <span class="uicontrol">Save</span> to save the new step response.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_3EC3527FB5424F1080E3835CA61D00E9"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_3EC3527FB5424F1080E3835CA61D00E9" src="ModifyStepGrap.gif" />
+      </p>
+
+      <p>
+If you
+are familiar with the process delay and time constants associated
+with inputs, you can use the second method of modifying the step
+response. For this method, enter the response directly by selecting
+<span class="uicontrol">Design Response</span> (as shown in the following figure), and then select
+u when you are finished to save the new step response.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_6CA295D43E834CE39D0D28386946F282"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_6CA295D43E834CE39D0D28386946F282" src="DesignResponse.gif" />
+      </p>
+
+      <p>Also, by selecting <span class="uicontrol">Edit Coefficients</span>, you can change individual
+points in the step response. Select <span class="uicontrol">Save</span> when you are finished to
+save the new step response.</p>
+
+      <p>Make sure that you clean up any residual step responses with
+gains that are ten times smaller than the highest gains with
+irregular shapes.</p>
+
+      <p>Once you have modified the step response, you can examine the
+accuracy of the model by selecting <span class="uicontrol">Verify</span> from the model overview.
+In response, you can examine the calculated output based on the
+model (as opposed to the actual process output) either for the time
+frame defined by the green area of the trend plot or for the
+original data used in generating the model. In response, you can
+examine the actual process output in direct comparison (as opposed
+to the output based on the calculated model) either for the time
+frame defined by the green area of the trend plot or for the
+original data used in generating the model. You can also examine
+the XY plot of the actual process output against the calculated
+output and the corresponding best fit line. In addition, you can
+use statistics that are provided to indicate how closely the model
+matches the plant data. The <span class="wintitle">Model Verification</span> window is shown in
+the following figure.</p>
+
+      <div class="note"><span class="notetitle">Note:</span> Only the first 65,000 samples will be displayed.</div>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_ADB638418823400D968FC123CF702569"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_ADB638418823400D968FC123CF702569" src="Verify1.gif" />
+      </p>
+
+      <p>Once you are satisfied that the model accurately reflects the
+process dynamics, select <span class="uicontrol">Generate Control</span> to update the MPC
+configuration for the new model. When the control is generated from
+a selected model, control parameters used to generate the control
+are displayed.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_41900B09DE344EA296A5E9D98552CCC3"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_41900B09DE344EA296A5E9D98552CCC3" src="ControlGeneration.gif" />
+      </p>
+
+      <p>In most cases, it is recommended that you leave the control
+generation parameters at their default values and select <span class="uicontrol">Start</span> (in
+the <span class="wintitle">Controller Generation</span> dialog) to generate the control. If you
+have expert MPC knowledge, you can change the default values to
+address special requirements. For example, you can increase the
+Penalty on Move to make the control more robust. Decreasing the
+Penalty on Move makes the controller more responsive. Doing so may
+also be advantageous for unmeasured disturbance compensation.
+Setting the Penalty on Move to less than the default value would
+require you to take extra precaution when commissioning. Decreasing
+the PM might be necessary if the controller is primarily intended
+for disturbance compensation. To get the proper speed of response,
+you may need to set the PM to ten times less than the default
+values. This may cause oscillatory control for some CVs. If an
+oscillatory CV does not require tight control, decreasing the
+Penalty on Error for that CV should alleviate the problem. If not,
+you must increase the PM until stability is achieved.</p>
+
+      <p>Qualitatively, increasing the PE decreases the sum of
+error-squared for the associated CV; increasing the PM decreases
+the sum of the square of MV moves. Generally, increasing the PE
+decreases the stability margin, and increasing the PM increases the
+stability margin. The specific effect achieved is very much
+dependent on the step responses of the process; so, caution
+<em>must</em> be exercised. If the objective is tight regulation or
+load response for a particular CV, and the PE on another CV, which
+is affected by MVs that affect the target CV, is decreased, then
+the stability margin for both CVs will increase. The additional
+margin makes it possible to decrease the PM on one or more MVs that
+affect the target CV, thereby improving its control response. The
+relationship of the PE to CVs can be viewed as a relative weighing
+of error significance. Since error is evaluated on the basis of
+percent of span, the same PE value can have different meanings,
+depending on the span of the CV. For example, the PE applied to a
+pressure with a span 600 psi differs in units of psi than the same
+PE applied to a pressure with a span of 300 psi.</p>
+
+      <p>For the new control definition to be used after completing
+control generation, you must download the associated module. All
+MPC parameters have assigned defaults. You can verify and refine
+the MPC configuration and control generation during simulation.
+During online operation of the MPC function block in Control
+Studio, you can adjust only those parameters of the block that do
+not impact the controller. Also, you can only change parameters
+that are used during Control Studio controller generation in
+offline mode. Any changes in these parameters require that you
+regenerate the controller in order for the changes to be used in
+the MPC control.</p>
+
+    </div>
+
+    <div class="section" id="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_3BB5BE25C037413BA13FBA0751B762F7"><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_3BB5BE25C037413BA13FBA0751B762F7"></a><h2 class="sectiontitle">Defining an MPC Operator Interface
+</h2>
+      
+      <p>You can create an operator interface for the MPC function block
+using the frsAdvCFncblk dynamo set in DeltaV Operate in configure
+mode.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_51C533D0E05B46ACBA42A3315D611237"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_51C533D0E05B46ACBA42A3315D611237" src="Dynamos.gif" />
+      </p>
+
+      <p>Place the dynamo provided for each control, constraint, and
+manipulated parameter adjacent to the associated I/O or control
+block on the process graphic. These dynamos provide additional
+information on the MPC target or limit values, as shown in the
+following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_6D9DF044BAC9422B808BD518890B45E5"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_6D9DF044BAC9422B808BD518890B45E5" src="displaycnt.gif" />
+      </p>
+
+      <p>Place the MPC_Oper dynamo on the primary graphic display of the
+process that is controlled by MPC. When you access this dynamo (or
+the one on the faceplate), a predefined view of MPC control is
+provided that you can use to make setpoint and mode changes
+associated with the MPC function block. An example of this display
+is shown in the following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_EA30DC597AC240BA93FAAABB5EA9BBD7"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_EA30DC597AC240BA93FAAABB5EA9BBD7" src="PredictOper.gif" />
+      </p>
+
+      
+    </div>
+
+    <div class="section" id="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_D74F0F656B064AA7930205B2DB4C7D6D"><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_D74F0F656B064AA7930205B2DB4C7D6D"></a><h2 class="sectiontitle">MPC Simulate
+</h2>
+      
+      <p>MPC Simulate allows you to run the MPC function block locally
+without having to download the controller. A simulation of the
+process is provided based on the process model that was identified
+using DeltaV Predict. You can simulate control as well as the
+process response to changes made by the Predict control. Using MPC
+Simulate&#39;s special interface, you can interact with the control
+just as you would during an actual process. You can add noise and
+unmeasured load disturbances to the process inputs. MPC Simulate
+also allows you to evaluate the control performance of the MPC
+function block for different plant operating conditions. In
+addition, you can perform an expedient test on the control without
+disturbing actual plant operations. In this way, MPC Simulate can
+also serve as an operator training tool.</p>
+
+      <p>The prerequisites for running MPC Simulate are as follows:</p>
+
+      <div class="p">
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_2C6E4A3CD43F4864B8CDF805B8995EC1"></a><ul id="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_2C6E4A3CD43F4864B8CDF805B8995EC1">
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_511276275F364299BC648235E946CFF0"><div class="li_content">The module that contains an MPC function block to be simulated
+exists in the persistent database (that is, the model and the MPC
+controller have been generated).</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_A7F123706BD341498C154E38C6F0356E"><div class="li_content">DeltaV Predict is open on the module of interest.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_C52D6609A7DA4519AF3F2D3CB2AE8EA5"><div class="li_content">You have generated a process model using the Predict
+application and the block of interest.</div></li>
+
+        </ul>
+
+      </div>
+
+      <p>To access MPC Simulate, you must use the <span class="uicontrol">Options</span> menu, and then
+identify yourself as an expert. Then, either select the process
+model that you want to use for the process simulation from the
+models that have been generated and click the <span class="uicontrol">Simulate</span> button
+located at the bottom of the screen or select the process model in
+the hierarchy tree, right-click, and select <span class="uicontrol">Simulate</span>. Refer to the
+following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_75088E45CD134ED9AF55C1816CC740A6"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_75088E45CD134ED9AF55C1816CC740A6" src="MPCSimulatecallouts.gif" />
+      </p>
+
+      <p>The following window appears.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_322E9B1F45564207AF1B9AEFD8729A05"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_322E9B1F45564207AF1B9AEFD8729A05" src="MPCSimulategui.gif" />
+      </p>
+
+      <p>MPC Simulate functions similarly to MPC Operate. However, MPC
+Simulate also allows you to perform the following functions to
+support simulation:</p>
+
+      <div class="p">
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_381C8420DBC84E1C91349B2A298AFC8F"></a><ul id="concept_E1843E8C96F7430A964F08BE3E7DAA36__ul_381C8420DBC84E1C91349B2A298AFC8F">
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_B2CA0916A6B641EF9102C186CED3FB13"><div class="li_content">Execution of the process and control simulation in speeds that
+are either faster or slower than real time. This allows you to
+evaluate the performance of a process that is slow in
+response.</div></li>
+
+          <li id="concept_E1843E8C96F7430A964F08BE3E7DAA36__li_9A718C7D84F243B2A6FB359923B2D72F"><div class="li_content">Introduction of disturbances that will be added to the process
+output or disturbance input used in the simulation. You can
+evaluate the impact of noise and unmeasured load disturbances on
+the process control and change the value of measured load
+disturbances inputs.</div></li>
+
+        </ul>
+
+      </div>
+
+      
+      <p>All values and ranges are based on your MPC function block&#39;s
+configuration. MPC Simulate shows the names of both the configured
+model and the simulation model. The trend area continually updates
+(that is, it defaults to Continuous mode upon launching). The
+future area comprises one third of the graph, and it is yellow to
+distinguish it from that of MPC Operate, which is green. Initially,
+the time scale on the chart is based on the time when you launched
+MPC Simulate. As you change the real-time execution multiplier, the
+time change reflects that multiplier. You can change the setpoint
+and manipulate variable. Also, the effects on predicted control and
+constraint variables are shown in the trend and the faceplates. You
+can either select and change the real-time execution multiplier to
+be used in the Continuous mode or you can select the Step mode (by
+clicking the <span class="uicontrol">Advance</span> button). Refer to the following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_16446E7CF12F4F02B8BBBC5703704BF9"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_16446E7CF12F4F02B8BBBC5703704BF9" src="ExecutionSpeed.gif" />
+      </p>
+
+      <p>When using the real-time execution multiplier, select the <span class="uicontrol">Pause</span>
+button to freeze the display of the multiplier change temporarily.
+Select the <span class="uicontrol">Resume</span> button to continue updates. When using the Step
+mode (by clicking the <span class="uicontrol">Advance</span> button), the trend is a snapshot, and
+the MPC function block execution is only performed on request. You
+can also change from Step mode back to Continuous mode by clicking
+the <span class="uicontrol">Resume</span> button.</p>
+
+      <p>To force a disturbance on a process output or disturbance input,
+select the parameter to which the disturbance is to be added. The
+faceplate for this parameter is displayed in the left pane of the
+MPC Simulate interface. Use the selections provided in the bottom
+half of this faceplate to specify the disturbance to be introduced,
+as shown in the following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_AA045B4FF7F144BA988C98E9CB31F82B"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_AA045B4FF7F144BA988C98E9CB31F82B" src="NoiseForSimulation.gif" />
+      </p>
+
+      <p>Once you have finished using MPC Simulate, you can save the file
+you created for future reference. Doing so saves not only the trend
+selection and the Y-scale. It also saves all user-adjusted values
+for signal amplitude, the bias, and the period for the next
+simulation run on the same module. For this module, you can select
+a new model to be used in simulation. When you do so, if you
+previously saved this setup information, it can be used with the
+new model. In addition, the previously used setup data becomes the
+default.</p>
+
+    </div>
+
+    <div class="section" id="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_00582D8BE0DE4C629F9E6B0A660D9AC8"><a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__section_00582D8BE0DE4C629F9E6B0A660D9AC8"></a><h2 class="sectiontitle">MPC Process Simulate
+</h2>
+      
+      <p>After you have generated the MPC control, you can provide
+operator training on MPC by creating a module that contains the MPC
+function block and an MPC Process Simulator block, as shown in the
+following figure.</p>
+
+      <p>
+        <a name="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_13B76761FCA54E31AB8227B6AEF6E3AE"></a><img id="concept_E1843E8C96F7430A964F08BE3E7DAA36__image_13B76761FCA54E31AB8227B6AEF6E3AE" src="MPC_SIM_CS.gif" />
+      </p>
+
+      <p>You can assign a process model to the MPC Process Simulator
+block by right-clicking the block in DeltaV Control Studio, and
+then selecting <span class="uicontrol">Predict</span>. This launches the Predict application, from
+which you can assign a model to the MPC Process Simulator function
+block. To assign a model, select <span class="menucascade"><span class="uicontrol">File</span> &gt; <span class="uicontrol">Assign Simulation Model</span></span>. In
+response, the models that were previously created are displayed.
+The model that you select must have the same number and types of
+inputs and outputs as the MPC Process Simulator function block.
+After assigning a model, you must download the module for the
+assigned model to be used.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_data_exclusion_and_interpolation.html">Data exclusion and interpolation</a></div>
+<div><a href="c_fblk_spec_mpc.html">Model Predictive Control (MPC) function block</a></div>
+<div><a href="mpcoperatefaceplate.html">MPC Operate and MPC Operate Pro faceplate</a></div>
+<div><a href="dynamoreference.html">FrsModules dynamo reference</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

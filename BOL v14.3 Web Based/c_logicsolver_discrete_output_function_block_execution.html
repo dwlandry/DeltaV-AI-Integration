@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Logic Solver Discrete Output function block execution" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="SIS function blocks, Discrete Output (LSDO), Discrete Output (LSDO) function block" name="DC.subject" /><meta content="SIS function blocks, Discrete Output (LSDO), Discrete Output (LSDO) function block" name="keywords" /><meta content="c_ls_fblk_spec_do.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_logic_solver_discrete_output_function_block_execution" name="DC.Identifier" /><title>Logic Solver Discrete Output function block execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_logicsolver_discrete_output_function_block_functional_overview.html" /><link rel="next" href="c_logicsolver_discrete_output_function_block_alarm_detection.html" /></head><body class="fixed" id="c_logic_solver_discrete_output_function_block_execution" data-relpath="c_logicsolver_discrete_output_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_logic_solver_discrete_output_function_block_execution"></a>
+
+<h1 class="topictitle1">Logic Solver Discrete Output function block
+	 execution</h1>
+<div><div></div>
+ 
+	 <p id="c_logic_solver_discrete_output_function_block_execution__blockexecution"><a name="c_logic_solver_discrete_output_function_block_execution__blockexecution"></a>Because the Logic Solver is a De-energized to Trip
+		environment the normal operating value of the output is On (1) and the tripped
+		value is Off (0). 
+	 </p>
+ 
+	 <p>To use the LSDO block in a safety shutdown application, assign IO_OUT to
+		a Logic Solver Discrete Output channel or LS CHARM connected to a valve
+		controller. Typically, the CAS_IN_D input of the LSDO block would be wired from
+		an EFFECT output of an upstream LSCEM block. Default LSDO block behavior passes
+		the value of CAS_IN_D to OUT_D. 
+	 </p>
+ 
+	 <p>You can wire feedback from the final element to the RDBK_IN_D input
+		parameter of the LSDO block. This input would typically be wired from an LSDI
+		function block representing a limit switch. The RDBK_IN_D value becomes the
+		PV_D of the LSDO block. If the configurable time CFM_TRIP_TIME expires before
+		PV_D confirms the off state, the DO_ALERTS 
+		<em>Failed to confirm after trip command</em> becomes True. If RDBK_IN_D is
+		not wired, PV_D has the same value as OUT_D, so confirmation is immediate. 
+	 </p>
+ 
+	 <p><strong>Fault State Detection</strong> 
+	 </p>
+ 
+	 <p>The LSDO block enters a fault state when any of three conditions is
+		detected and a corresponding option has been selected for the detected
+		condition. When the fault state is active, the block forces OUT_D to Off, sets
+		the Fault State Active bit in BLOCK_ERR, and sets FAULT_STATE to Active. The
+		FSTATE_OPTS options are selected by default and include: 
+	 </p>
+ 
+	 <a name="c_logic_solver_discrete_output_function_block_execution__ul_0C10BB77134F481099B43C2E8D8598D6"></a><ul id="c_logic_solver_discrete_output_function_block_execution__ul_0C10BB77134F481099B43C2E8D8598D6"> 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_D99F204D3B5743E89D18C8278A215265"><div class="li_content"> 
+		  <p>Enable detection based on CAS_IN_D status 
+		  </p>
+ 
+		  <p>If the status of CAS_IN_D becomes Bad, FSTATE_TIMER begins
+			 incrementing from 0.0. If the status remains Bad for FSTATE_TIME seconds, OUT_D
+			 is forced to Off (0). FSTATE_TIMER continues to increment while the status of
+			 CAS_IN_D is Bad. The fault state condition clears immediately when the status
+			 transitions away from Bad. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_F8CC3B164D8B4E03B4CA35F94228C0CD"><div class="li_content"> 
+		  <p>Enable detection based on output status 
+		  </p>
+ 
+		  <p>OUT_D is forced to Off if the Logic Solver detects a short or open
+			 in the field wiring (status of OUT_D is Bad SensorFailure LowLimited) while
+			 OUT_D is being commanded On. The LSDO block reacts to this status by forcing
+			 the output Off to track the state of the final element. Note that FSTATE_TIME
+			 has no effect when the fault state is a result of OUT_D status. 
+		  </p>
+ 
+		  <div class="note"><span class="notetitle">Note:</span>  
+			 <p> If you use this option you must also require a reset, either in
+				this block or in an upstream LSCEM block, because an active fault state
+				condition clears when the block drives the output Off. Requiring a reset
+				prevents the block from driving the output back to On during the next scan. 
+			 </p>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_1F9692545A8B418D9F8AC2F45429B727"><div class="li_content"> 
+		  <p>Enable detection based on PV_D value 
+		  </p>
+ 
+		  <p>OUT_D is forced to 0 based on feedback from the final element wired
+			 into RDBK_IN_D. The final element is confirmed Off (PV_D is 0) while OUT_D is
+			 commanded On. Use this option to force the output Off if a failure of the final
+			 element is not detected by a Logic Solver diagnostic. RDBK_IN_D should be wired
+			 when using this option, otherwise PV_D has the same value as OUT_D. Note that
+			 FSTATE_TIME has no effect when the fault state is a result of the value of
+			 PV_D. 
+		  </p>
+ 
+		  <div class="note"><span class="notetitle">Note:</span>  
+			 <p> If you use this option you must also require a reset, either in
+				this block or in an upstream LSCEM block, because an active fault state
+				condition clears when the block drives the output Off. Requiring a reset
+				prevents the block from driving the output back to On during the next scan. 
+			 </p>
+ 
+		  </div>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>FSTATE_TIMER is a writeable parameter. Be advised that writing to
+		FSTATE_TIMER can cause the state of OUT_D to change depending on the value
+		written. 
+	 </p>
+ 
+	 <p><strong>Determining the Value of OUT_D and Writing the Output Value</strong> 
+	 </p>
+ 
+	 <p>The following figure is the state transition diagram for OUT_D_STATE.
+		When OUT_D_STATE is Off or Off - Ready to Reset, the value of OUT_D is Off (0)
+		and the Logic Solver channel or LS CHARM defined by IO_OUT is written to Off.
+		When OUT_D_STATE is On, OUT_D is On (1) and IO_OUT is written to On. 
+	 </p>
+ 
+	 <div class="fignone" id="c_logic_solver_discrete_output_function_block_execution__fig_55CD695741C04D42B2E79DE1D176C9B7"><a name="c_logic_solver_discrete_output_function_block_execution__fig_55CD695741C04D42B2E79DE1D176C9B7"></a><div><span class="figcap">OUT_D_STATE Transition Diagram</span></div> 
+		<a name="c_logic_solver_discrete_output_function_block_execution__image_3F7EFE9989DE4D078D76BBD7ED587902"></a><img id="c_logic_solver_discrete_output_function_block_execution__image_3F7EFE9989DE4D078D76BBD7ED587902" src="SIS_DO_exe.gif" /> 
+	 </div>
+ 
+	 <div class="note"><span class="notetitle">Note:</span>  
+		<p> To require a manual reset to transition OUT_D to On (1), it is
+		  recommended that you configure this in an upstream LSCEM block, not the LSDO
+		  block. The LSCEM block has a number of features that enhance the reset logic.
+		  The ability to require resets in the LSDO block (using the REQUIRE_RESET
+		  parameter) is provided if you do not have voter and LSCEM blocks to implement
+		  shutdown logic. 
+		</p>
+ 
+	 </div>
+ 
+	 <p>If you set the LSDO block&#39;s REQUIRE_RESET parameter to True, any
+		transition of OUT_D to Off (0) causes OUT_D to remain Off until all of the
+		following conditions are met: 
+	 </p>
+ 
+	 <a name="c_logic_solver_discrete_output_function_block_execution__ul_E1F18CC59C1D44349C3F39F031DFA87F"></a><ul id="c_logic_solver_discrete_output_function_block_execution__ul_E1F18CC59C1D44349C3F39F031DFA87F"> 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_F8220543F4454FC3867686519ED3E92F"><div class="li_content"> 
+		  <p>CAS_IN_D equals 1 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_13AA688AEB774340B761230CFF49335D"><div class="li_content"> 
+		  <p>FAULT_STATE is not active 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_9DA8B11C7F264B06A9C74E2F1ADBE446"><div class="li_content"> 
+		  <p>RESET is True 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p>RESET should be changed to True using a button on a faceplate or process
+		display in DeltaV Operate. The block changes RESET back to False. Do not expose
+		RESET as an input on the block and wire to it. If you need to reset an LSDO
+		block from SIS module logic, use an LSCALC function block to do a conditional
+		assignment to RESET. 
+	 </p>
+ 
+	 <p>When OUT_D_STATE is Off or Off - Ready to Reset, the value of OUT_D is 0
+		and the channel or LS CHARM on this Logic Solver defined by IO_OUT is written
+		to Off. 
+	 </p>
+ 
+	 <p>When OUT_D_STATE is On, OUT_D is 1 and the channel or LS CHARM is
+		written to On. 
+	 </p>
+ 
+	 <p><strong>Determining the Value of PV_D</strong> 
+	 </p>
+ 
+	 <p>PV_D normally gets its value from RDBK_IN_D. If the status of RDBK_IN_D
+		is BadNotConnected, PV_D has the same value as OUT_D. Use the invert input
+		option in the upstream LSDI function block if you are using a closed limit
+		switch. You can manipulate PV_D to test an operator display or test the
+		confirmation alarm condition by using simulation in the upstream input function
+		block (simulation available when the Logic Solver is assigned to the
+		ProfessionalPLUS workstation as a simulated Logic Solver card). 
+	 </p>
+ 
+	 <p><strong>Determining the Value of DO_ALERTS</strong> 
+	 </p>
+ 
+	 <p>The DO_ALERTS parameter reports two alarm conditions set by the block
+		(inactive = 0, active = 1): 
+	 </p>
+ 
+	 <a name="c_logic_solver_discrete_output_function_block_execution__ul_8967F35F21A94007B70CEA4AC8CFF444"></a><ul id="c_logic_solver_discrete_output_function_block_execution__ul_8967F35F21A94007B70CEA4AC8CFF444"> 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_AB3EA54C0C5544C6BFA74EDC4F714AC0"><div class="li_content"> 
+		  <p>Failed to confirm after trip command 
+		  </p>
+ 
+		  <p>The device fails to confirm after being commanded to trip. On any
+			 transition of OUT_D to Off, the block starts a confirmation timer. If the value
+			 of PV_D is not 0 within CFM_TRIP_TIME seconds, the alert 
+			 <em>Failed to confirm after trip command</em> becomes True. The alert
+			 clears when OUT_D transitions to On (1) or PV_D transitions to Off (0). 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_5BC8B54CB50E42BEB0B7E3B38E962C93"><div class="li_content"> 
+		  <p>Confirm lost while commanded On 
+		  </p>
+ 
+		  <p>The device confirms Off while it is being commanded On. When
+			 OUT_D_STATE is On and PV_D has transitioned to 1, the condition is detected if
+			 PV_D becomes 0, for example if the device has a failure that causes it to
+			 confirm in the Off state. The alert clears on the next transition of
+			 OUT_D_STATE to On.  
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+	 <p><strong>Event Generation</strong> 
+	 </p>
+ 
+	 <p>The LSDO block generates an event record when any of the following
+		conditions become active and the REPORT_OPTS option 
+		<em>Event records are not generated</em> is not selected: 
+	 </p>
+ 
+	 <a name="c_logic_solver_discrete_output_function_block_execution__ul_7898984E83064A0ABA6EF5A8E40C0642"></a><ul id="c_logic_solver_discrete_output_function_block_execution__ul_7898984E83064A0ABA6EF5A8E40C0642"> 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_6A7731F3026B4C6192F3DFF311D702C6"><div class="li_content"> 
+		  <p>The block has set DO_ALERTS 
+			 <em>Failed to confirm following a command to trip</em>. The event
+			 record shows the path to the LSDO block and the 
+			 <em>Failed to confirm after trip command</em> text string along with
+			 the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_9381601D6BCA438B8A7AE65E0A3509CA"><div class="li_content"> 
+		  <p>The block has set DO_ALERTS 
+			 <em>Confirm lost while commanded On</em>. The event record shows the
+			 path to the LSDO block and the text 
+			 <em>Confirm lost while commanded On</em> along with the time of
+			 occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+		<li id="c_logic_solver_discrete_output_function_block_execution__li_27B407BA423D44E48ACFD8A048DEA0BB"><div class="li_content"> 
+		  <p>The command to trip was successful and RDBK_IN_D has been wired. The
+			 event record shows the path to the LSDO block and the text 
+			 <em>Successful confirmation following a command to trip</em> along with
+			 the time of occurrence. 
+		  </p>
+ 
+		</div></li>
+ 
+	 </ul>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

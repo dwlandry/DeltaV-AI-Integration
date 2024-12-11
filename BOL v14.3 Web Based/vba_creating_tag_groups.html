@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Creating tag groups" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_creating_tag_groups" name="DC.Identifier" /><title>Creating tag groups</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_creating_dynamos.html" /><link rel="next" href="vba_manipulating_charts.html" /></head><body class="fixed" id="vba_creating_tag_groups" data-relpath="vba_creating_tag_groups.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_creating_tag_groups"></a>
+
+<h1 class="topictitle1">Creating tag groups</h1>
+<div><div></div>
+
+    <p id="vba_creating_tag_groups__CreatingTagGroups"><a name="vba_creating_tag_groups__CreatingTagGroups"></a>The examples in this section illustrate how to use VBA scripts to create and use tags. For more information on tag groups, refer to <a href="drw_using_tag_groups_in_pictures.html">Using Tag Groups in Pictures</a>.</p>
+
+    <div class="section" id="vba_creating_tag_groups__CreatingtheTagGroupFileObject"><a name="vba_creating_tag_groups__CreatingtheTagGroupFileObject"></a><h2 class="sectiontitle">Creating the Tag Group File Object</h2>
+      
+      <p>You can create or modify a tag group file using the TagGroupDefinitionInterface. You can access the interface by creating a tag group file object. The following script creates a tag group file object.</p>
+
+      <pre class="pre">
+Dim TGD as Object
+set TGD = _
+CreateObject(&quot;TagGroupDefinitionInterfaceDll.TagGroupDefinition
+Interface&quot;)
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_creating_tag_groups__RetrievingTagGroupData"><a name="vba_creating_tag_groups__RetrievingTagGroupData"></a><h2 class="sectiontitle">Retrieving Tag Group Data</h2>
+      
+      <p>Once you create the tag group file object, you must retrieve the data in the file before you can modify it. To retrieve the data, use the following script.</p>
+
+      <pre class="pre">
+<strong>&#39;TokenList is an array of tag group symbols
+</strong>Dim sTokenList() as String, TokenList as Variant
+
+<strong>&#39;ReplacementList is an array of tag group substititions
+</strong>Dim sReplacementList() as String, ReplacementList as Variant
+
+<strong>&#39;DescriptionList is an array of tag group descriptions
+</strong>Dim sDescriptionList() as String, DescriptionList as Variant
+
+<strong>&#39;Create the tag group file object
+</strong>Dim TGD As Object
+
+Set TGD = _
+CreateObject(&quot;TagGroupDefinitionInterfaceDll._
+TagGroupDefinitionInterface&quot;)
+
+<strong>&#39;In order for the following method to execute without error,
+</strong><strong>&#39;you need to have a Tag Group file named test or you 
+replace </strong><strong>&#39;the </strong>&quot;
+<strong>test</strong>&quot;
+<strong> parameter with the name of your tag group file.
+</strong>
+TGD.RetrieveDefinition &quot;Test&quot;, 2, TokenList, ReplacementList, _
+DescriptionList
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_creating_tag_groups__ModifyingTagGroupData"><a name="vba_creating_tag_groups__ModifyingTagGroupData"></a><h2 class="sectiontitle">Modifying Tag Group Data</h2>
+      
+      <p>After the tag group data is retrieved, your script can modify the data. For example, you can change an element in the sReplacementList array and then save to the tag group file with the UpdateDefinition method. The following script shows how to change the substitition for elements 2 and 3 and save them to the tag group file.</p>
+
+    </div>
+
+    <div class="section" id="vba_creating_tag_groups__110107"><a name="vba_creating_tag_groups__110107"></a><h2 class="sectiontitle">Example: Modifying Tag Group Data</h2>
+      
+      <pre class="pre">
+Dim sTokenList(4) as String, TokenList as Variant
+Dim sReplacementList(4) as String, ReplacementList as Variant
+Dim sDescriptionList(4) as String, DescriptionList as Variant
+Dim TGD As Object
+
+<strong>&#39;Retrieve Tag Group data from tag group file
+</strong>Set TGD = CreateObject(&quot;TagGroupDefinitionInterfaceDll._
+TagGroupDefinitionInterface&quot;)
+<strong>&#39;In order for the following method to execute without error,
+</strong><strong>&#39;you need to have a tag group file named 
+</strong>&quot;<strong>test1</strong>&quot;<strong> or you will
+</strong><strong>&#39;replace the </strong>&quot;<strong>
+Test1</strong>&quot;<strong> parameter with the name of your tag group 
+&#39;file.
+</strong>
+TGD.RetrieveDefinition &quot;Test1&quot;, 4, TokenList, ReplacementList, _
+DescriptionList
+
+<strong>&#39;Modify tag group data
+</strong>TokenList(2) = &quot;Tag3&quot;
+TokenList(3) = &quot;Tag4&quot;
+ReplacementList (2) = &quot;FIX32.NODE2.AI1.F_CV&quot;
+ReplacementList (3) = &quot;FIX32.NODE2.AI2.F_CV&quot;
+DescriptionList (2) = &quot;Temperature for Node 2&quot;
+DescriptionList (3) = &quot;Pressure for Node 2&quot;
+
+<strong>&#39;Create the tag group file object and save modified tag group file
+</strong>Set TGD = _
+CreateObject(&quot;TagGroupDefinitionInterfaceDll._
+TagGroupDefinitionInterface&quot;)
+TGD.UpdateDefinition &quot;Test&quot;, 4, TokenList, ReplacementList, _
+DescriptionList
+Set TGD = Nothing
+</pre>
+
+    </div>
+
+    <div class="section" id="vba_creating_tag_groups__ManipulatingTagGroups"><a name="vba_creating_tag_groups__ManipulatingTagGroups"></a><h2 class="sectiontitle">Manipulating Tag Groups</h2>
+      
+      <p>As a final example, we provide the following Command button script. This script iterates through all the tag group variables in a picture and creates a substitution string based on the name of the tag group variable. This script assumes that the picture containing the Command button has retrieved the tag groups from the Tag Group object with the RetrieveDefinition method first.</p>
+
+    </div>
+
+    <div class="section"><h2 class="sectiontitle">Example: Manipulating Tag Group Data</h2>
+      
+      <pre class="pre">
+Private Sub CommandButton1_Click()
+    Dim vaSymbols As Variant
+    Dim vaSubstitutions As Variant
+    Dim vaDescriptions As Variant
+    Dim sSubstitutions() As String
+    Dim sDescriptions() As String
+<span>    </span>Dim PicPath as string
+
+<strong>    &#39;This will contain the number of symbols in a picture 
+</strong>    Dim Size As Integer 
+    Dim Counter As Integer
+    Dim FileName As String
+
+<strong>    &#39;Set the filename
+</strong>    FileName = &quot;Test&quot; 
+
+<strong>    &#39;Delete tag group file if it exists.  Kill permanently
+</strong><strong>    &#39;deletes the specified file form the hard drive.  Use with 
+</strong>    <strong>&#39;caution.
+</strong>    PicPath = System.PicturePath
+
+    If DIR(PicPath + FileName + &quot;.TGD&quot; &lt;&gt;  &quot;&quot; Then
+        Kill PicPath + FileName  + &quot;.TGD&quot; 
+    End If
+
+<strong>    &#39;Get the symbols from the picture
+</strong>    Me.RetrieveTagGroupVariables Size, vaSymbols
+    If Size = 0 Then
+    Exit Sub
+    End If
+    ReDim sSubstitutions(Size - 1) As String
+    ReDim sDescriptions(Size - 1) As String
+
+<strong>    &#39;Fill in the symbols and the descriptions
+</strong>    For Counter = 0 To Size - 1
+    Temp$ = &quot;dvsys.&quot; + vaSymbols(count2) + &quot;.f_cv&quot;
+    sSubstitutions(Counter) = Temp$
+    sDescriptions(Counter) = &quot;Generated tag&quot;
+    Next Counter
+
+<strong>    &#39;Create the tag group file object
+</strong>    Dim TGF As Object
+    vaSubstitutions = sSubstitutions
+    vaDescriptions = sDescriptions
+    Set TGF = _
+    CreateObject(&quot;TagGroupDefinitionInterfaceDll_
+    .TagGroupDefinitionInterface&quot;)
+    TGF.UpdateDefinition FileName, Size, vaSymbols, _ 
+    vaSubstitutions, vaDescriptions
+</pre>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

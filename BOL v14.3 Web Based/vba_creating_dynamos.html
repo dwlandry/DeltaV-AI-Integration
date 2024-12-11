@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Creating dynamos" name="DC.Title" /><meta content="Configure" name="DC.Coverage" /><meta content="vba_intro.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="vba_creating_dynamos" name="DC.Identifier" /><title>Creating dynamos</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="vba_working_with_the_scheduler_and_the_doevents_function.html" /><link rel="next" href="vba_creating_tag_groups.html" /></head><body class="fixed" id="vba_creating_dynamos" data-relpath="vba_creating_dynamos.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="vba_creating_dynamos"></a>
+
+<h1 class="topictitle1">Creating dynamos</h1>
+<div><div></div>
+
+    <p id="vba_creating_dynamos__CreatingDynamos"><a name="vba_creating_dynamos__CreatingDynamos"></a>DeltaV Operate provides an easy and fast way to create dynamos. The Build Dynamo Expert is available on the DeltaV Tools toolbar. Refer to the <a href="dv_builddynamo.html">Build Dynamo Expert</a> topic for more information on using this expert.</p>
+
+    <p>This chapter provides an example for creating your own Dynamos and Dynamo sets. Once you become more comfortable building Dynamos, you can learn quite a bit about writing VBA scripts that work with DeltaV Operate by examining the scripts behind the Dynamos that are shipped with DeltaV Operate.</p>
+
+    <div class="note"><span class="notetitle">Note:</span> 
+      <a name="vba_creating_dynamos__ul_4DF4067DBC0842FF8906266445FF4162"></a><ul id="vba_creating_dynamos__ul_4DF4067DBC0842FF8906266445FF4162"><li id="vba_creating_dynamos__li_8B02CCACC9BD4023A0441D2876767C61"><div class="li_content"><p> Avoid using dynamos on custom faceplates that require tag groups. The dynamo edit script does not allow use of tag groups. Although it is possible to configure dynamos using tag groups by manually changing the datalink path, such use is not supported. </p>
+</div></li>
+<li id="vba_creating_dynamos__li_DD1B58D8A9504C129667095FFFD7BABE"><div class="li_content"><p> In DeltaV Operate Dynamo sets, Dynamos are assigned their own properties with Get and Set functions and subroutines. This is the methodology we suggest for building complex Dynamos.</p>
+</div></li>
+</ul>
+
+    </div>
+
+    
+    <div class="section" id="vba_creating_dynamos__CreatingaNewDynamo"><a name="vba_creating_dynamos__CreatingaNewDynamo"></a><h2 class="sectiontitle">Creating a New Dynamo</h2>
+      
+      <p>Dynamos are simply groups of objects; they can be as complex or as simple as you need them to be. Remember that loading Dynamos with more than 200 objects may cause performance to suffer.</p>
+
+      <p>DeltaV Operate provides an easy and fast way to create dynamos. The Build Dynamo Expert is available on the DeltaV Tools toolbar. Refer to <a href="dv_builddynamo.html">Build Dynamo Expert</a> for more information on using this expert.</p>
+
+    </div>
+
+    <div class="section" id="vba_creating_dynamos__BuildingaDynamoObject"><a name="vba_creating_dynamos__BuildingaDynamoObject"></a><h2 class="sectiontitle">Building a Dynamo Object</h2>
+      
+      <a name="vba_creating_dynamos__ol_00E8DD6BE62C4E3DAF2DF328C52CCE4F"></a><ol id="vba_creating_dynamos__ol_00E8DD6BE62C4E3DAF2DF328C52CCE4F">
+        <li id="vba_creating_dynamos__li_28EA09BBCC334A429FCC576A19D102B4"><div class="li_content">
+          <p>Open a new picture.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_84B35E844562410AB9AF782BFBEE7B76"><div class="li_content">
+          <p>Insert an Oval.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_D2BD5183035648309B7A34EE24AFD022"><div class="li_content">
+          <p>In the Properties window, change the Name property of the Oval to <strong>dynOval</strong>.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_8F77F305AD2345688FB24D538DE0CC6F"><div class="li_content">
+          <p>Animate the <strong>VerticalFillPercentage</strong> property to any tag in the process database.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_creating_dynamos__BuildingtheDynamoForm"><a name="vba_creating_dynamos__BuildingtheDynamoForm"></a><h2 class="sectiontitle">Building the Dynamo Form</h2>
+      
+      <a name="vba_creating_dynamos__ol_6F3BC8C1B122455E94B787C39D5DEEA6"></a><ol id="vba_creating_dynamos__ol_6F3BC8C1B122455E94B787C39D5DEEA6">
+        <li id="vba_creating_dynamos__li_C20DA048CC4F495F8C06B8EE8AD1133C"><div class="li_content">
+          <p>Right-click the <strong>dynOval</strong> object and select Edit Script from the pop-up menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_434FD82C85964C309198BE79AA5A0657"><div class="li_content">
+          <p>In the VBE, select UserForm from the Insert menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_4C9D99A27BE941438F0BC67D9C653CD0"><div class="li_content">
+          <p>If the Properties window is not already displayed, select Property Window from the View menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_0BE7DD6A9DEE45FDA9A5BBBFE2A20170"><div class="li_content">
+          <p>In the Properties window, change the Name property of the form to <strong>frmDyn1</strong>.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_32DDF658928343DC8B2F484707B5E80E"><div class="li_content">
+          <p>Select Additional Controls from the Tools menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_BE67196CF6494D0AAE71355A62639930"><div class="li_content">
+          <p>Select the iFIX Expression Editor Control and click OK.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_51CA5B03B4014DE3B6C4A96F78B73373"><div class="li_content">
+          <p>Select the Expression Editor control from the toolbox and add it to the form.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_B1D2DE9A7061436486319349F5AAFEBF"><div class="li_content">
+          <p>Add a Command button on the form.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_3661F4DB6E6B4B8185B048B955FD2CE4"><div class="li_content">
+          <p>Right-click the Command button and select View Code from the pop-up menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_8A8BE68E9AAD44F6957EEAB4CAA35462"><div class="li_content">
+          <p>Enter the following script:
+</p>
+
+          <pre class="pre">
+frmDyn1.hide
+</pre>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_181C6F6C0ABD4730BB5E392FB375FE89"><div class="li_content">
+          <p>Select &quot;General&quot; from the Object Drop Down List (in the upper left of the Code Window).</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_5A0B40C1FC774E49BE55ADC52178FD3B"><div class="li_content">
+          <p>Enter the following script:
+</p>
+
+          <pre class="pre">
+&#39;FormVersion: 1.0
+</pre>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_69EE3366E57F4A67B7C87AC96F452D78"><div class="li_content">
+          <p>Select the script window for dynOval.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_115CB8C7931C4F95A8C6EB269173FF1C"><div class="li_content">
+          <p>Choose Edit from the Procedure drop-down list.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_1B52ED30F3F04DB4933B5EE0F9A86E04"><div class="li_content">
+          <p>Enter the following script:</p>
+
+          <pre class="pre">
+Private Sub Oval1_Edit()
+    Dim FillObj As Object
+    frmDyn1.Show
+
+    <strong>&#39;FindLocalObject (below) is a subroutine in 
+</strong>    <strong>&#39;FactoryGlobals Global Subroutines. In this case, it </strong> 
+    <strong>&#39;finds the animation object that you created off of the 
+</strong>    <strong>&#39;oval in step 4 of Building the Dynamo Object.
+</strong>
+    Set FillObj = FindLocalObject(Oval1, _
+    &quot;AnimatedVerticalFillPercentage&quot;)
+    FillObj.Source = frmDyn1.ExpressionEditor1.EditText
+End Sub
+</pre>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_B34BFF247531425A87EBCD5747066732"><div class="li_content">
+          <p>Close the VBE.</p>
+
+        </div></li>
+
+      </ol>
+
+    </div>
+
+    <div class="section" id="vba_creating_dynamos__CreatingaNewDynamoSet"><a name="vba_creating_dynamos__CreatingaNewDynamoSet"></a><h2 class="sectiontitle">Creating a New Dynamo Set</h2>
+      
+      <a name="vba_creating_dynamos__ol_56A5B38C013F4C9795B01F0D8C6A807B"></a><ol id="vba_creating_dynamos__ol_56A5B38C013F4C9795B01F0D8C6A807B">
+        <li id="vba_creating_dynamos__li_5DA7D86CF80A469C90A75F02362F3114"><div class="li_content">
+          <p>In DeltaV Operate, select New Dynamo Set from the File menu.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_BBBCC00E56B94927885E04FA9C0DE69B"><div class="li_content">
+          <p>Drag the Dynamo that you created earlier in this section, <strong>dynOval</strong>, into the new Dynamo set.</p>
+
+        </div></li>
+
+        <li id="vba_creating_dynamos__li_5ADEE8D98CD54FFE998CF4720BB4753D"><div class="li_content">
+          <p>Select Save from the File menu and name your Dynamo set.</p>
+
+        </div></li>
+
+      </ol>
+
+      <p>For more information on Dynamos, refer to the <a href="drw_customizing_pictures_with_dynamos.html">Using Dynamos to Customize Pictures</a>.</p>
+
+    </div>
+
+  </div>
+<div>
+<div class="familylinks">
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>

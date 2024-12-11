@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en"><head data-approot=""><!-- saved from url=(0014)about:internet -->
+<meta charset="utf-8" /><meta name="viewport" content="initial-scale=1, maximum-scale=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Analog Tracking function block configuration and execution" name="DC.Title" /><meta content="configure" name="DC.Coverage" /><meta content="c_expressions.html" name="DC.Relation" scheme="URI" /><meta content="c_fblk_spec_analog_tracking.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="c_analog_tracking_function_block_execution" name="DC.Identifier" /><title>Analog Tracking function block configuration and execution</title><link href="static/screen.css?iv/RYqzn" rel="stylesheet" /><link href="static/print.css?EupNBz/e" media="print" rel="stylesheet" /><script src="static/head.js?7B+HUC3W" type="text/javascript"></script><link rel="prev" href="c_fblk_spec_analog_tracking.html" /><link rel="next" href="c_analog_tracking_block_alarm_detection.html" /></head><body class="fixed" id="c_analog_tracking_function_block_execution" data-relpath="c_analog_tracking_function_block_execution.html"><div class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"> <div class="row row-offcanvas row-offcanvas-left" id="header"> <div class="col-md-3 col-md-push-9 sidebar-offcanvas" id="search_form_container"><form class="navbar-form" id="search_form" role="search"><div class="input-group"><input class="form-control" id="search_textbox" type="text" placeholder="Enter search terms"><div class="input-group-btn"><button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button></div></input></div></form></div><div class="col-md-3 col-md-pull-3" id="logo_container"><button class="visible-xs visible-sm navbar-toggle pull-left" data-toggle="offcanvas"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">                        </span></button></div><div class="col-md-6 col-md-pull-3 hidden-xs hidden-sm" id="pubtitle_container"><div id="pubtitle">DeltaV Books Online (DeltaV 14.3)</div></div></div></div></div><div class="container-fluid"><div class="row row-offcanvas row-offcanvas-left"><div class="col-md-3 sidebar-offcanvas" id="leftbar"><div class="panel-group" id="accordion"><div class="panel panel-default" id="toc_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#toc_pane"><span>Contents</span></a></h4></div><div class="panel-collapse collapse" id="toc_pane" data-breadcrumbtext="BreadCrumb TOC"><div class="panel-body"><nav id="toc_nav"></nav></div></div></div><div class="panel panel-default" id="index_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#index_pane"><span>Index</span></a></h4></div><div class="panel-collapse collapse" id="index_pane" data-breadcrumbtext="BreadCrumb Index"><div class="panel-body"><nav id="index_nav"></nav></div></div></div><div class="panel panel-default" id="glossary_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#glossary_pane"><span>Glossary</span></a></h4></div><div class="panel-collapse collapse" id="glossary_pane" data-breadcrumbtext="BreadCrumb Glossary"><div class="panel-body"><nav id="glossary_nav"></nav></div></div></div><div class="panel panel-default" id="search_container"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#search_pane"><span>Search</span><span class="badge pull-right" id="search_count"></span></a></h4></div><div class="panel-collapse collapse" id="search_pane" data-breadcrumbtext="BreadCrumb Search"><div class="panel-body"><nav id="search_nav"><div id="search_message">No search has been performed.</div></nav></div></div></div></div></div><div class="col-md-9" id="center"><div id="toolbar"><a id="button_back" href="#" title="Previous topic"><span class="glyphicon glyphicon-chevron-left"></span></a><a id="button_forward" href="#" title="Next topic"><span class="glyphicon glyphicon-chevron-right"></span></a><a id="button_highlighting" href="#" title="Toggle Highlighting"><span class="glyphicon glyphicon-pencil"></span></a><a id="button_email" href="mailto:" title="Email Us:  "><span class="glyphicon glyphicon-envelope"></span></a><a id="button_print" href="#" title="Print"><span class="flaticon-print5"></span></a><a id="button_print_all" href="#" title="Print All"><span class="flaticon-printer70"></span></a></div><div class="btn-group btn-breadcrumb" id="breadcrumbs"> <a class="btn btn-default" id="crumb_home" href="index.html" title="Home"><i class="glyphicon toc_pane_img" id="crumb_home_image">   </i><span id="crumb_home_text">Home</span></a><div class="crumb btn btn-default" id="crumb_tooltip">...</div></div><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div><a name="c_analog_tracking_function_block_execution"></a>
+
+<h1 class="topictitle1">Analog Tracking function block configuration and execution</h1>
+<div><div></div>
+ 
+    <p>This section explains Analog Tracking block configuration and how it
+      affects block execution. The block can process up to 16 tracking conditions
+      directly. 
+    </p>
+ 
+    <div class="p"> For each specified condition, you can configure the following
+      parameters: 
+    <a name="c_analog_tracking_function_block_execution__ul_EFE202A56C07404FAEB0D84C2739DF47"></a><ul id="c_analog_tracking_function_block_execution__ul_EFE202A56C07404FAEB0D84C2739DF47"> 
+      <li id="c_analog_tracking_function_block_execution__li_688B4E6E892E4D1B8D237DE68922C5DF"><div class="li_content">Description 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_FC121804F217497DA454974324A03FFC"><div class="li_content">Expression to evaluate 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_3505EE6FC455441D96D0B3262B604393"><div class="li_content">Delay On time 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_7C87D4AE6B8B4BFCB760082C33825135"><div class="li_content">Delay Off time 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_853433F6DC474DAB959558F01D0C46C2"><div class="li_content">If a Reset required to
+        unlatch the output value 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_BB3C9514DE7E4D45A8FB0CE4AB260473"><div class="li_content">Whether the target block is
+        set to Manual (Hold in Manual) 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_564E63E26C5C4CEF95B6F88695ED1F91"><div class="li_content">The Track Value 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_900822F2B58A434CA645A2B30925567C"><div class="li_content">Disable the condition 
+      </div></li>
+ 
+      <li id="c_analog_tracking_function_block_execution__li_7E28E958370F48FE847CB08C2B0C2F9C"><div class="li_content">If the condition can be
+        disabled 
+      </div></li>
+ 
+    </ul>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_D3C369A2C9F9436784F947CAB1DB97B1"><a name="c_analog_tracking_function_block_execution__section_D3C369A2C9F9436784F947CAB1DB97B1"></a><h2 class="sectiontitle">Configure the number and order of tracking conditions and the
+        number of conditions used</h2> 
+       
+      <p> Configure tracking conditions from the dialog that opens from the 
+        <span class="uicontrol">Properties</span> selection on a block&#39;s context menu.
+        From the dialog you can add and modify conditions. By default, an AT block has
+        one tracking condition but there can between 0 and 16 conditions. 
+      </p>
+ 
+      <p> In an instance of a class-based module, tracking conditions cannot be
+        added or deleted, but their evaluation order can be changed and the number of
+        conditions used (evaluated) can be set by the parameter T_USED_CND. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_4089D20F28A74F2BAA142AC74F54A166"><a name="c_analog_tracking_function_block_execution__section_4089D20F28A74F2BAA142AC74F54A166"></a><h2 class="sectiontitle">Delay tracking conditions transitioning to True</h2> 
+       
+      <p> When condition 
+        <em>n</em> is True for longer than T_DELAY_ON<em>n</em> and
+        T_DISABLE<em>n</em> is False, T_PRE_OUT_D<em>n</em> and T_OUT_D<em>n</em> are set.
+        When condition 
+        <em>n</em> is True for less than T_DELAY_ON<em>n</em>, the timer resets
+        until condition 
+        <em>n</em> evaluates to True again. 
+      </p>
+ 
+      <p> This functionality is similar to the CND function block. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_E548E969E8E74DE78CC6D7DAAE3BB1F2"><a name="c_analog_tracking_function_block_execution__section_E548E969E8E74DE78CC6D7DAAE3BB1F2"></a><h2 class="sectiontitle">Delay tracking conditions transitioning to False </h2> 
+       
+      <p> T_OUT_D<em>n</em> and T_PRE_OUT_D<em>n</em> are set to True after
+        T_DELAY_ON<em>n</em> is reached and remain True until condition 
+        <em>n</em> evaluates to False for longer than T_DELAY_OFF<em>n</em>. If the
+        condition is True for less than T_DELAY_OFF<em>n</em>, T_OUT_D<em>n</em>, and
+        T_PRE_OUT_D<em>n</em> remain True. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_B0E28D35602546E7AF33C432AB21B586"><a name="c_analog_tracking_function_block_execution__section_B0E28D35602546E7AF33C432AB21B586"></a><h2 class="sectiontitle">Disable tracking conditions</h2> 
+       
+      <p> Condition 
+        <em>n</em> can be disabled only when T_HIGHER_MNG<em>n</em> is False. 
+      </p>
+ 
+      <p> When 
+        <em>n</em> is true, condition 
+        <em>n</em> logic evaluation is ignored and T_OUT_D<em>n</em> is not set.
+        The functionality is the same as the CND function block. However, when the
+        expression evaluates to True, T_PRE_OUT_D<em>n</em> is set and its value can be
+        used in other logic. 
+      </p>
+ 
+      <p> When T_HIGHER_MNG<em>n</em> is True, T_OUT_D<em>n</em> and
+        T_PRE_OUT_D<em>n</em> are equal regardless of the value of T_DISABLE<em>n</em>. 
+      </p>
+ 
+      <p> DISABLE_ACT and the bypass alarm are set as soon as at least one
+        tracking condition is disabled. DISABLE_ACT is the logical OR of the
+        T_DISABLE<em>n</em> parameters. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_9173F7D96EF24837B1698560ACDBF96B"><a name="c_analog_tracking_function_block_execution__section_9173F7D96EF24837B1698560ACDBF96B"></a><h2 class="sectiontitle">Latch tracking conditions</h2> 
+       
+      <p> The outputs of the tracking conditions can be individually latched by
+        setting the condition reset required parameter T_RESET_REQD<em>n</em> to True. 
+      </p>
+ 
+      <p> When T_RESET_REQD<em>n</em> is True, and T_OUT_D<em>n</em> is True, and 
+        <span class="nowrap">FDBK_IN &gt; OUT + OUT_HYS</span> or 
+        <span class="nowrap">FDBK_IN &lt; OUT - OUT_HYS</span>, then
+        T_L_OUT_D<em>n</em> is set to True (when FDBK_IN status is bad, the latching
+        occurs immediately when the first two conditions are satisfied). As long as
+        T_RESET_REQD<em>n</em> is True, T_L_OUT_D<em>n</em> remains True even if
+        T_OUT_D<em>n</em> returns to False or 
+        <span class="nowrap">OUT - OUT_HYS ≤ FDBK_IN ≤ OUT + OUT_HYS</span>. 
+      </p>
+ 
+      <p> When T_RESET_REQD<em>n</em> is False, T_L_OUT_D<em>n</em> is a copy of
+        T_OUT_D<em>n</em>. 
+      </p>
+ 
+      <p> When all tracking conditions evaluate to False (including True
+        conditions that are disabled), but at least one T_L_OUT_D<em>n</em> remains True,
+        block tracking reset required parameter RESET_REQD is set to True to indicate
+        that there are no active tracking conditions (all 
+        <span class="nowrap">T_OUT_D<em>n</em> = False</span>), but the block
+        has to be reset to clear the latched tracking condition(s). Otherwise,
+        RESET_REQD is False. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_B4EA05538EBF4E68942E935019AEC968"><a name="c_analog_tracking_function_block_execution__section_B4EA05538EBF4E68942E935019AEC968"></a><h2 class="sectiontitle">Unlatch tracking conditions</h2> 
+       
+      <p> When T_RESET_REQD<em>n</em> is True, T_L_OUT_D<em>n</em> returns to False
+        only when T_OUT_D<em>n</em> is False and RESET_D transitions from zero to a
+        non-zero value. If T_OUT_D<em>n</em> is True, T_L_OUT_D<em>n</em> stays latched. 
+      </p>
+ 
+      <p> When T_RESET_REQD<em>n</em> is False, the parameter RESET_D has no
+        effect on T_L_OUT_D<em>n</em>. 
+      </p>
+ 
+      <p> When all T_L_OUT_D<em>n</em> are False, 
+      <span class="option">RESET_REQD</span> is set to False. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_CDED366994164DA9938D6FE5E56071FF"><a name="c_analog_tracking_function_block_execution__section_CDED366994164DA9938D6FE5E56071FF"></a><h2 class="sectiontitle">Detect tracking conditions that evaluate to True</h2> 
+       
+      <p> The Analog Tracking function block detects when one or more tracking
+        conditions evaluate to True and sets the block outputs accordingly. 
+      </p>
+ 
+      <p> The tracking discrete output OUT_D is the logical OR of
+        T_OUT_D<em>n</em> and T_L_OUT_D<em>n</em>. OUT_D is False when all the
+        T_OUT_D<em>n</em> and T_L_OUT_D<em>n</em> parameters are False. OUT_D is True when
+        at least one T_OUT_D<em>n</em> or T_L_OUT_D<em>n</em> is True. 
+      </p>
+ 
+      <p>OUT_INT is the unsigned 16-bit binary weighted output value that
+        represents the bit combination of T_OUT_D<em>n</em> or T_L_OUT_D<em>n</em>. OUT_INT
+        is non-zero when at least one T_OUT_D<em>n</em> or T_L_OUT_D<em>n</em> is True. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_7717AD42D9944643B60C47F8AF1313C1"><a name="c_analog_tracking_function_block_execution__section_7717AD42D9944643B60C47F8AF1313C1"></a><h2 class="sectiontitle">Select the tracking condition analog output Value</h2> 
+       
+      <p> The value of OUT is either 0 or the value of one of the condition
+        track values (T_VAL<em>n</em>). 
+      </p>
+ 
+      <p> When all the T_L_OUT_D<em>n</em> parameters are False, OUT_INT is zero
+        and OUT is also zero. 
+      </p>
+ 
+      <p> When only one tracking condition 
+        <em>n</em> is active or latched (T_L_OUT_D<em>n</em> is True), OUT is equal
+        to T_VAL<em>n</em>. 
+      </p>
+ 
+      <p> When more than one tracking condition is active or latched, OUT is
+        equal to the T_VAL<em>n</em> parameter associated with the active or latched
+        tracking condition having the smallest condition number. Therefore, configure
+        the tracking condition that has the highest priority as condition 
+        <em>1</em>. OUT is recalculated each scan. 
+      </p>
+ 
+      <p> If the status of the tracked signal is Bad, error options exist to
+        continue tracking the bad value, to stop tracking, or to use the last good
+        value. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> When all the T_VAL<em>n</em> parameters of the configured tracking
+          conditions have the same value, the configuration order of the tracking
+          conditions has no importance. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_9AEC2AA6CB8445E39004E1E611190BEA"><a name="c_analog_tracking_function_block_execution__section_9AEC2AA6CB8445E39004E1E611190BEA"></a><h2 class="sectiontitle">Trap the first active tracking condition</h2> 
+       
+      <div class="p"> The Analog Tracking function block traps the tracking conditions that
+        are active when all of the following conditions are True: 
+      <a name="c_analog_tracking_function_block_execution__ol_42979A5B263A41E3B88AAB73B2E9126E"></a><ul id="c_analog_tracking_function_block_execution__ol_42979A5B263A41E3B88AAB73B2E9126E"> 
+        <li id="c_analog_tracking_function_block_execution__li_471002657D1541A79A5995193F39AAB9"><div class="li_content"> OUT_INT is non-zero
+          (there is at least one condition active or latched); 
+        </div></li>
+ 
+        <li id="c_analog_tracking_function_block_execution__li_BE13411FF361429EB8DD73BB069A49C6"><div class="li_content">ARM_TRAP is True (the trap
+          mechanism is armed); 
+        </div></li>
+ 
+        <li id="c_analog_tracking_function_block_execution__li_0B9BB0DE85FD4E3E9C7666800371A21C"><div class="li_content"><span class="nowrap">FDBK_IN &gt; OUT + OUT_HYS</span> or<span class="nowrap"> FDBK_IN &lt; OUT - OUT_HYS</span> (the downstream block
+          that has to track has an output value FDBK_IN that is outside the limits set by
+          the AT block tracking output OUT value +/- output hysteresis OUT_HYS). 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> When FDBK_IN status is bad, the FIRST_OUT trap occurs immediately
+          when the first two conditions are satisfied. 
+        </p>
+ 
+      </div>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> FDBK_IN can be connected to the OUT parameter of the downstream PID
+          block, and it corresponds to the command provided by the PID block. 
+        </p>
+ 
+      </div>
+ 
+      <p> When the trap occurs, FIRST_OUT is the bit value of the highest
+        priority condition (lowest condition number) that is currently active. 
+      </p>
+ 
+      <p> FIRST_OUT retains its value until it is reset or another condition
+        that has a different track value (T_VAL<em>n</em>) and a higher priority becomes
+        active. FIRST_OUT changes to the bit value of the newly active condition. 
+      </p>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> If trapping is required under certain conditions only, configure a
+          CND function block and wire its output OUT_D to the ARM_TRAP parameter of the
+          Analog Tracking function block. 
+        </p>
+ 
+      </div>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <p> If the first out output should not be updated after the first trap
+          that occurred since the last reset, even if 
+          <span class="nowrap">FDBK_IN &gt; OUT + OUT_HYS</span> or 
+          <span class="nowrap">FDBK_IN &lt; OUT - OUT_HYS</span>, configure
+          the expression of a CND block to 
+          <em><span class="nowrap">AT/FIRST_OUT = 0</span></em> and wire the
+          OUT_D of the CND block to the input ARM_TRAP of the AT block. 
+        </p>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_D6580E3E318F44D6AFECA12AD7561CB6"><a name="c_analog_tracking_function_block_execution__section_D6580E3E318F44D6AFECA12AD7561CB6"></a><h2 class="sectiontitle">Reset the first active tracking condition</h2> 
+       
+      <div class="p"> When FIRST_OUT is nonzero, the block resets it to zero when: 
+      <a name="c_analog_tracking_function_block_execution__ol_78C930B586364F3A8338D233FE1B1652"></a><ul id="c_analog_tracking_function_block_execution__ol_78C930B586364F3A8338D233FE1B1652"> 
+        <li id="c_analog_tracking_function_block_execution__li_BE72B7BA071243A798574149C8EFB619"><div class="li_content"> A block reset is
+          triggered (RESET_D transitions from zero to a non-zero value) or 
+        </div></li>
+ 
+        <li id="c_analog_tracking_function_block_execution__li_8CB45FDF28CE47DD80F7C570DD3677C3"><div class="li_content">There are no longer any
+          active or latched tracking conditions (all T_L_OUT_D<em>n</em> = 0) and FDBK_IN
+          moves beyond OUT +/- OUT_HYS. 
+        </div></li>
+ 
+      </ul>
+ 
+      </div>
+ 
+      <p>If FDBK_IN status is bad, there is no auto reset for FIRST_OUT and it
+        must be manually reset. 
+      </p>
+ 
+      <p> After a reset, FIRST_OUT remains zero until the next trap occurs. 
+      </p>
+ 
+      <p> When the value of FIRST_OUT is zero, its status is GoodNonCascade. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_2EB74766FB2E4EE3BDD157A300C8EEE8"><a name="c_analog_tracking_function_block_execution__section_2EB74766FB2E4EE3BDD157A300C8EEE8"></a><h2 class="sectiontitle">Reset the function block</h2> 
+       
+      <p>When RESET_D transitions from zero to a non-zero value, FIRST_OUT is
+        cleared and the tracking conditions that are latched and no longer active are
+        unlatched. 
+      </p>
+ 
+      <p> If RESET_D is True, it is set to False at the end of execution. 
+      </p>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_1BF78D8DF6064B03A99FDEF7713F345A"><a name="c_analog_tracking_function_block_execution__section_1BF78D8DF6064B03A99FDEF7713F345A"></a><h2 class="sectiontitle">Hold in Manual for control loop modules</h2> 
+       
+      <div class="p"> The mode of the target analog block wired to OUT_D is set to Manual
+        when:
+      <ul>
+        <li><div class="li_content">T_HOLD_MAN<em>n</em> and T_L_OUT_D<em>n</em> are both True
+        </div></li>
+
+        <li><div class="li_content"><span class="nowrap">FDBK_IN &gt; OUT + OUT_HYS</span> or 
+          <span class="nowrap">FDBK_IN &lt; OUT - OUT_HYS</span>
+        </div></li>
+
+      </ul>
+
+      </div>
+ 
+      <div class="note"><span class="notetitle">Note:</span>  
+        <div class="p"> 
+        <a name="c_analog_tracking_function_block_execution__ul_26BA49D87F684CC2A6D61ECD16B25B7F"></a><ul id="c_analog_tracking_function_block_execution__ul_26BA49D87F684CC2A6D61ECD16B25B7F"> 
+          <li id="c_analog_tracking_function_block_execution__li_A87B698F4AE843CDA21A72B26FD00031"><div class="li_content">If multiple blocks are
+            wired to OUT_D, only the first block wired is set to Manual. 
+          </div></li>
+ 
+          <li id="c_analog_tracking_function_block_execution__li_F54EC4153BBB40BB98DD07CC837E33A5"><div class="li_content">Validation of the wired
+            connection to the downstream block is performed only during download. 
+          </div></li>
+ 
+        </ul>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <div class="section" id="c_analog_tracking_function_block_execution__section_FB8DE49406C04FA7A03E56FBDD5DC1E7"><a name="c_analog_tracking_function_block_execution__section_FB8DE49406C04FA7A03E56FBDD5DC1E7"></a><h2 class="sectiontitle">Block Description </h2> 
+       
+      <p>When a trap occurs, the DESC parameter in the event record is the
+        configured description of the first condition to become True. 
+      </p>
+ 
+    </div>
+ 
+  </div>
+<div>
+<div class="familylinks">
+</div>
+<div class="relinfo relconcepts"><strong>Related information</strong><br />
+<div><a href="c_expressions.html">Expressions</a></div>
+</div>
+</div>
+</article></div></div></div><script src="static/body.js?cLXcVG1Z" type="text/javascript"></script></body></html>
